@@ -1,4 +1,6 @@
 # Ignore these file types
 
+*/OriginalContent/gsheets/credentials
+
 *.mod
 *.sbmi
