@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Factions>
+ 
+
+  <!-- faction 2b -->
+    <Faction Tag="FAF" Founder="FAF Founder">
+      <Id>
+        <TypeId>MyObjectBuilder_FactionDefinition</TypeId>
+        <SubtypeId>Free Agaris Forces</SubtypeId>
+		  </Id>
+		  <DisplayName>Free Agaris Forces</DisplayName>
+      <IsDefault>true</IsDefault>
+	  <DefaultRelation>Neutral</DefaultRelation>
+	  <AcceptHumans>false</AcceptHumans>
+      <AutoAcceptMember>false</AutoAcceptMember>
+	  <DiscoveredByDefault>false</DiscoveredByDefault>
+	  <StartingBalance>1000000000</StartingBalance>
+      <FactionIcon>Textures\FactionLogo\faction\logo02.png</FactionIcon>
+	  	   <Description>The Free Agaris Forces, driven by a longing for democratic ideals, are rebels who seek to restore liberty to the Ares System. United against the oppressive rule of the Goldo Corporation, they fight for the freedom and autonomy of Agaris. Their ranks comprise individuals from diverse backgrounds, all bound together by a shared determination to reclaim what has been lost.</Description>
+    </Faction> 
+	
+	
+  <!-- faction 3A -->
+    <Faction Tag="GC" Founder="GC Founder">
+      <Id>
+        <TypeId>MyObjectBuilder_FactionDefinition</TypeId>
+        <SubtypeId>Goldo Corporation</SubtypeId>
+      </Id>
+      <DisplayName>Goldo Corporation</DisplayName>
+      <IsDefault>true</IsDefault>
+	  <DefaultRelation>Neutral</DefaultRelation>
+	  <AcceptHumans>false</AcceptHumans>
+      <AutoAcceptMember>false</AutoAcceptMember>
+	        <DiscoveredByDefault>false</DiscoveredByDefault>
+		<StartingBalance>1000000000</StartingBalance>
+      <FactionIcon>Textures\FactionLogo\Others\OtherIcon_13.dds</FactionIcon>
+	  	   <Description>The Goldo Corporation, once a rising power, now stands as the dominant force in the Ares System. Their fleets, equipped with cutting-edge technology from Result Oriented Sciences, have conquered rival factions and established supremacy. They rule with an iron grip, using their immense resources to enforce order and maintain control over key strategic assets.</Description>
+    </Faction> 
+	
+	
+ 
+	
+ <!-- faction 4 -->
+    <Faction Tag="ITC" Founder="ITC Founder">
+      <Id>
+        <TypeId>MyObjectBuilder_FactionDefinition</TypeId>
+        <SubtypeId>Interstellar Trade Corporation</SubtypeId>
+      </Id>
+      <DisplayName>Interstellar Trade Corporation</DisplayName>
+      <IsDefault>true</IsDefault>
+	  <DefaultRelation>Neutral</DefaultRelation>
+	  <AcceptHumans>false</AcceptHumans>
+      <AutoAcceptMember>false</AutoAcceptMember>
+	<StartingBalance>1000000000</StartingBalance>
+	        <DiscoveredByDefault>false</DiscoveredByDefault>
+      <FactionIcon>Textures\FactionLogo\Others\OtherIcon_13.dds</FactionIcon>
+	  	   <Description>The Interstellar Trade Corporation, headquartered on the prosperous planet Thora-4, has risen to prominence in the post-war era. Benefiting from the system's newfound peace and growth, they wield significant economic influence and engage in interstellar commerce on a massive scale. Their trade routes span vast distances, fueling the system's prosperity, while simultaneously making them a target for pirates seeking to exploit their wealth.</Description>
+    </Faction> 
+
+	
+
+	
+  </Factions>   
+  
+</Definitions>
