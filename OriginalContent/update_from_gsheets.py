@@ -8,8 +8,10 @@ from bs4 import BeautifulSoup
 
 
 SPREADSHEETS = {
+    'Autopilot': ['1wb4ar82IzcofB7UOXgYEwL2NCnCJINZJwdNL8tqZFqw', 'Rival AI Autopilot', 'Encounters'],
     'Behavior': ['15nN5NMh0ivqrrG9U6tim4sqW8dcKwvBBvM_peIXn5yc', 'Rival AI Behavior', 'Encounters'],
-    'Trigger': ['1YYjm9Y0HpRuZet7RWw_DOT7DHtBBw4czOJ6-K7415cc', 'Rival AI Trigger', 'Encounters']
+    'Trigger': ['1YYjm9Y0HpRuZet7RWw_DOT7DHtBBw4czOJ6-K7415cc', 'Rival AI Trigger', 'Encounters'],
+    'TriggerGroup': ['1Yw4pItiEtsliY997-DWA7nZp0XmI483Rhh174jDYpiw', 'Rival AI TriggerGroup', 'Encounters']
 }
 
 OUTPUT_DIR = os.path.join(os.getcwd(), 'Content', 'Data')
@@ -105,7 +107,10 @@ def reorganize_table_to_dict(rows) -> dict:
                 entry = {}
                 for idx, item in enumerate(row):
                     if idx == 2:
-                        encounter_type = item
+                        if item is None:
+                            encounter_type = "Invalid"
+                        else:
+                            encounter_type = item
                         continue
 
                     if item is not None:
@@ -184,6 +189,9 @@ def write_ec_sbc(filetype, rows):
 
 
 def main():
+
+    #SPREADSHEETS = {'Autopilot': ['1wb4ar82IzcofB7UOXgYEwL2NCnCJINZJwdNL8tqZFqw', 'Rival AI Autopilot', 'Encounters']}
+
     results = {}
     for key, val in SPREADSHEETS.items():
         results = scrape_spreadsheet(val)
