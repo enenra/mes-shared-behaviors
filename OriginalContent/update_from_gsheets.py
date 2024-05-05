@@ -8,11 +8,11 @@ from bs4 import BeautifulSoup
 
 
 SPREADSHEETS = {
-    'Trigger': ['1YYjm9Y0HpRuZet7RWw_DOT7DHtBBw4czOJ6-K7415cc', 'Rival AI Trigger'],
-    'Behavior': ['15nN5NMh0ivqrrG9U6tim4sqW8dcKwvBBvM_peIXn5yc', 'Rival AI Behavior']
+    'Trigger': ['1YYjm9Y0HpRuZet7RWw_DOT7DHtBBw4czOJ6-K7415cc', 'Rival AI Trigger', 'Encounters'],
+    'Behavior': ['15nN5NMh0ivqrrG9U6tim4sqW8dcKwvBBvM_peIXn5yc', 'Rival AI Behavior', 'Encounters']
 }
 
-OUTPUT_DIR = os.path.join(os.getcwd(), 'Content', 'Data', 'MES')
+OUTPUT_DIR = os.path.join(os.getcwd(), 'Content', 'Data')
 
 
 def scrape_spreadsheet(spreadsheet) -> list:
@@ -94,7 +94,7 @@ def fix_indents(xml_formatted) -> str:
 
 def write_ec_sbc(filetype, rows):
 
-    entries = []
+    entries = {}
     for row_idx, row in enumerate(rows):
         if row_idx == 0:
             header = row
@@ -102,47 +102,59 @@ def write_ec_sbc(filetype, rows):
         else:
             entry = {}
             for idx, item in enumerate(row):
+
+                if idx == 0:
+                    encounter_type = item
+                    continue
+
                 if item is not None:
                     entry[header[idx]] = item
-            entries.append(entry)
 
-    defs = ET.Element('Definitions')
-    defs.set('xmlns:xsi', 'http://www.w3.org/2001/XMLSchema-instance')
-    defs.set('xmlns:xsd', 'http://www.w3.org/2001/XMLSchema')
+            if encounter_type in entries:
+                entries[encounter_type].append(entry)
+            else:
+                entries[encounter_type] = [entry]
 
-    for e in entries:
-        ec = ET.SubElement(defs, 'EntityComponent')
-        ec.set('xsi:type', 'MyObjectBuilder_InventoryComponentDefinition')
 
-        id = ET.SubElement(ec, 'Id')
-        type_id = ET.SubElement(id, 'TypeId')
-        type_id.text = 'Inventory'
-        subtype_id = ET.SubElement(id, 'SubtypeId')
-        subtype_id.text = e['Name']
+    for et, et_content in entries.items():
+        defs = ET.Element('Definitions')
+        defs.set('xmlns:xsi', 'http://www.w3.org/2001/XMLSchema-instance')
+        defs.set('xmlns:xsd', 'http://www.w3.org/2001/XMLSchema')
 
-        desc = ET.SubElement(ec, 'Description')
+        for e in et_content:
+            ec = ET.SubElement(defs, 'EntityComponent')
+            ec.set('xsi:type', 'MyObjectBuilder_InventoryComponentDefinition')
 
-        params = create_mes_parameter(SPREADSHEETS[filetype][1])
-        for k, v in e.items():
-            if k == 'Name':
-                continue
-            params += create_mes_parameter(k, v)
-        
-        params += '\n'
-        desc.text = params
+            id = ET.SubElement(ec, 'Id')
+            type_id = ET.SubElement(id, 'TypeId')
+            type_id.text = 'Inventory'
+            subtype_id = ET.SubElement(id, 'SubtypeId')
+            subtype_id.text = e['Name']
 
-    temp_string = ET.tostring(defs, 'utf-8')
-    temp_string.decode('ascii')
-    xml_string = xml.dom.minidom.parseString(temp_string)
-    xml_formatted = xml_string.toprettyxml()
+            desc = ET.SubElement(ec, 'Description')
 
-    xml_formatted = fix_indents(xml_formatted)
-    xml_formatted = xml_formatted.replace('<?xml version="1.0" ?>', f'<?xml version="1.0"?>\n\n<!-- Created from GSheet export on {datetime.now()} -->\n')
+            params = create_mes_parameter(SPREADSHEETS[filetype][1])
+            for k, v in e.items():
+                if k == 'Name':
+                    continue
+                params += create_mes_parameter(k, v)
+            
+            params += '\n'
+            desc.text = params
 
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
-    target_file = os.path.join(OUTPUT_DIR, filetype + '.sbc')
-    exported_xml = open(target_file, "w")
-    exported_xml.write(xml_formatted)
+        temp_string = ET.tostring(defs, 'utf-8')
+        temp_string.decode('ascii')
+        xml_string = xml.dom.minidom.parseString(temp_string)
+        xml_formatted = xml_string.toprettyxml()
+
+        xml_formatted = fix_indents(xml_formatted)
+        xml_formatted = xml_formatted.replace('<?xml version="1.0" ?>', f'<?xml version="1.0"?>\n\n<!-- Created from GSheet export on {datetime.now()} -->\n')
+
+        path = os.path.join(OUTPUT_DIR, SPREADSHEETS[filetype][2], et)
+        os.makedirs(path, exist_ok=True)
+        target_file = os.path.join(path, filetype + '_' + et + '.sbc')
+        exported_xml = open(target_file, "w")
+        exported_xml.write(xml_formatted)
 
 
 def main():
