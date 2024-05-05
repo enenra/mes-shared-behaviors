@@ -8,8 +8,8 @@ from bs4 import BeautifulSoup
 
 
 SPREADSHEETS = {
-    'Trigger': ['1YYjm9Y0HpRuZet7RWw_DOT7DHtBBw4czOJ6-K7415cc', 'Rival AI Trigger', 'Encounters'],
-    'Behavior': ['15nN5NMh0ivqrrG9U6tim4sqW8dcKwvBBvM_peIXn5yc', 'Rival AI Behavior', 'Encounters']
+    'Behavior': ['15nN5NMh0ivqrrG9U6tim4sqW8dcKwvBBvM_peIXn5yc', 'Rival AI Behavior', 'Encounters'],
+    'Trigger': ['1YYjm9Y0HpRuZet7RWw_DOT7DHtBBw4czOJ6-K7415cc', 'Rival AI Trigger', 'Encounters']
 }
 
 OUTPUT_DIR = os.path.join(os.getcwd(), 'Content', 'Data')
@@ -34,9 +34,6 @@ def scrape_spreadsheet(spreadsheet) -> list:
         for idx, cell in enumerate(row):
             if row[0] == '*Internal* Reference':
                 cell = cell.replace(" ", "")
-
-            if idx in [0, 1]:
-                continue
 
             if cell[0] == '*':
                 end = cell[1:].find('*')
@@ -78,9 +75,58 @@ def scrape_spreadsheet(spreadsheet) -> list:
     return formatted_list
 
 
+def insert_into_entry(entries, header, name, value):
+    for et in entries.values():
+        for e in et:
+            if e['Name'] == name:
+                if isinstance(e[header], list):
+                    e[header].append(value)
+                else:
+                    temp = e[header]
+                    e[header] = []
+                    e[header].append(temp)
+                    e[header].append(value)            
+
+
+def reorganize_table_to_dict(rows) -> dict:
+
+    entries = {}
+    for row_idx, row in enumerate(rows):
+        if row_idx == 0:
+            header = row
+
+        else:
+            if row[1] != "1":
+                for idx, item in enumerate(row):
+                    if item not in [False, None] and idx not in [0, 1]:
+                        insert_into_entry(entries, header[idx], row[0], item)
+
+            else:
+                entry = {}
+                for idx, item in enumerate(row):
+                    if idx == 2:
+                        encounter_type = item
+                        continue
+
+                    if item is not None:
+                        entry[header[idx]] = item
+
+                if encounter_type in entries:
+                    entries[encounter_type].append(entry)
+                else:
+                    entries[encounter_type] = [entry]
+
+    return entries
+
+
 def create_mes_parameter(valuename, value=None) -> str:
     if value is None:
         return f"\n\n\t\t\t[{valuename}]\n\n"
+    elif isinstance(value, list):
+        params = ""
+        for i in value:
+            params += f"\t\t\t[{valuename}:{i}]\n"
+        return params
     else:
         return f"\t\t\t[{valuename}:{value}]\n"
     
@@ -94,27 +140,7 @@ def fix_indents(xml_formatted) -> str:
 
 def write_ec_sbc(filetype, rows):
 
-    entries = {}
-    for row_idx, row in enumerate(rows):
-        if row_idx == 0:
-            header = row
-
-        else:
-            entry = {}
-            for idx, item in enumerate(row):
-
-                if idx == 0:
-                    encounter_type = item
-                    continue
-
-                if item is not None:
-                    entry[header[idx]] = item
-
-            if encounter_type in entries:
-                entries[encounter_type].append(entry)
-            else:
-                entries[encounter_type] = [entry]
-
+    entries = reorganize_table_to_dict(rows)
 
     for et, et_content in entries.items():
         defs = ET.Element('Definitions')
@@ -135,7 +161,7 @@ def write_ec_sbc(filetype, rows):
 
             params = create_mes_parameter(SPREADSHEETS[filetype][1])
             for k, v in e.items():
-                if k == 'Name':
+                if k in ['Reference', '#','Name']:
                     continue
                 params += create_mes_parameter(k, v)
             
