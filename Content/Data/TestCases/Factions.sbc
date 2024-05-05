@@ -1,0 +1,54 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <Factions>
+
+    <Faction Tag="TST1" Founder="MSB Founder 1">
+      <Id>
+        <TypeId>MyObjectBuilder_FactionDefinition</TypeId>
+        <SubtypeId>MSB_Faction_Test_1</SubtypeId>
+      </Id>
+      <DisplayName>Test Faction 1</DisplayName>
+      <IsDefault>true</IsDefault>
+      <DefaultRelation>Neutral</DefaultRelation>
+      <AcceptHumans>false</AcceptHumans>
+      <AutoAcceptMember>false</AutoAcceptMember>
+      <DiscoveredByDefault>true</DiscoveredByDefault>
+      <StartingBalance>1000000000</StartingBalance>
+      <FactionIcon>Textures\FactionLogo\faction\logo01.png</FactionIcon>
+      <Description>A MES Shared Behaviors faction.</Description>
+    </Faction>
+
+    <Faction Tag="TST2" Founder="MSB Founder 2">
+      <Id>
+        <TypeId>MyObjectBuilder_FactionDefinition</TypeId>
+        <SubtypeId>MSB_Faction_Test_2</SubtypeId>
+      </Id>
+      <DisplayName>Test Faction 2</DisplayName>
+      <IsDefault>true</IsDefault>
+      <DefaultRelation>Neutral</DefaultRelation>
+      <AcceptHumans>false</AcceptHumans>
+      <AutoAcceptMember>false</AutoAcceptMember>
+      <DiscoveredByDefault>true</DiscoveredByDefault>
+      <StartingBalance>1000000000</StartingBalance>
+      <FactionIcon>Textures\FactionLogo\faction\logo02.png</FactionIcon>
+      <Description>A MES Shared Behaviors faction.</Description>
+    </Faction>
+
+    <Faction Tag="TST3" Founder="MSB Founder 3">
+      <Id>
+        <TypeId>MyObjectBuilder_FactionDefinition</TypeId>
+        <SubtypeId>MSB_Faction_Test_3</SubtypeId>
+      </Id>
+      <DisplayName>Test Faction 3</DisplayName>
+      <IsDefault>true</IsDefault>
+      <DefaultRelation>Neutral</DefaultRelation>
+      <AcceptHumans>false</AcceptHumans>
+      <AutoAcceptMember>false</AutoAcceptMember>
+      <DiscoveredByDefault>true</DiscoveredByDefault>
+      <StartingBalance>1000000000</StartingBalance>
+      <FactionIcon>Textures\FactionLogo\faction\logo03.png</FactionIcon>
+      <Description>A MES Shared Behaviors faction.</Description>
+    </Faction>
+
+  </Factions>
+</Definitions>
