@@ -10,6 +10,7 @@ from bs4 import BeautifulSoup
 SPREADSHEETS = {
     'Autopilot': ['1wb4ar82IzcofB7UOXgYEwL2NCnCJINZJwdNL8tqZFqw', 'Rival AI Autopilot', 'Encounters'],
     'Behavior': ['15nN5NMh0ivqrrG9U6tim4sqW8dcKwvBBvM_peIXn5yc', 'Rival AI Behavior', 'Encounters'],
+    'Chat': ['1D_DgYZQPQT22zH-mBNHSuX4cLQti6FmzTol7dZxKuPM', 'Rival AI Chat', 'Encounters'],
     'Trigger': ['1YYjm9Y0HpRuZet7RWw_DOT7DHtBBw4czOJ6-K7415cc', 'Rival AI Trigger', 'Encounters'],
     'TriggerGroup': ['1Yw4pItiEtsliY997-DWA7nZp0XmI483Rhh174jDYpiw', 'Rival AI TriggerGroup', 'Encounters']
 }
@@ -190,7 +191,7 @@ def write_ec_sbc(filetype, rows):
 
 def main():
 
-    #SPREADSHEETS = {'Autopilot': ['1wb4ar82IzcofB7UOXgYEwL2NCnCJINZJwdNL8tqZFqw', 'Rival AI Autopilot', 'Encounters']}
+    #SPREADSHEETS = {'Chat': ['1D_DgYZQPQT22zH-mBNHSuX4cLQti6FmzTol7dZxKuPM', 'Rival AI Chat', 'Encounters']}
 
     results = {}
     for key, val in SPREADSHEETS.items():
