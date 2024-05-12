@@ -396,11 +396,32 @@ HasNoTarget
 	
 	
 	<!-- ============== DAMAGE ============= -->
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Context_Damage-Condition-Hostile-Damage</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+	[CheckTrueBooleans:true]
+	
+
+	[IsAttackerHostile:true]
+
+      </Description>
+      
+    </EntityComponent>
+
 	
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>FAC-Context-Condition-Hostile-PlayerDamage</SubtypeId>
+          <SubtypeId>FAC-Context_Damage-Condition-Hostile-PlayerDamage</SubtypeId>
       </Id>
       <Description>
 
@@ -417,10 +438,15 @@ HasNoTarget
       
     </EntityComponent>
 	
+	
+	
+	
+	
+	
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>FAC-Context-Condition-Neutral-PlayerDamage</SubtypeId>
+          <SubtypeId>FAC-Context_Damage-Condition-Neutral-PlayerDamage</SubtypeId>
       </Id>
       <Description>
 
@@ -440,7 +466,7 @@ HasNoTarget
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>FAC-Context-Condition-Friendly-PlayerDamage</SubtypeId>
+          <SubtypeId>FAC-Context_Damage-Condition-Friendly-PlayerDamage</SubtypeId>
       </Id>
       <Description>
 
@@ -524,7 +550,11 @@ HasNoTarget
 	[CheckIfDamagerIsNpc:true]
       </Description>
       
-    </EntityComponent>			
+    </EntityComponent>		
+
+
+
+	
 	
 	<!-- PlayerInvloded + NPC -->
 	

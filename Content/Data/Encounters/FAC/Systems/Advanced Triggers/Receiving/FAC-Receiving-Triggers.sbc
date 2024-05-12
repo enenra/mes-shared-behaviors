@@ -1,0 +1,66 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+<!--
+
+EnemyDestroyed
+
+EnemyDestroyedwithPlayerHelp
+EnemyDestroyedwithPlayerMadeFinalShot
+
+
+GCDestroyed
+GCDestroyedwithPlayerHelp
+GCDestroyedwithPlayerMadeFinalShot
+
+{FactionTag}Destroyed
+{FactionTag}DestroyedwithPlayerHelp
+{FactionTag}DestroyedwithPlayerMadeFinalShot
+
+-->
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Context_Receiving-Trigger-EnemyDown</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:CommandReceived]
+	[UseTrigger:true]
+	[StartsReady:true]
+	[CommandReceiveCode:EnemyDestroyed]
+	[MaxActions:1]
+
+	[Actions:FAC-Common-Action-EnemyDown]	
+	  
+      </Description>
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>FAC-Context_Receiving-Action-EnemyDown</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+
+	[DebugMessage:ShipEvent EnemyDown] 
+
+	[ManuallyActivateTrigger:true]
+	[ManuallyActivatedTriggerTags:AdvancedTrigger-EnemyDown]
+	[ForceManualTriggerActivation:false]
+
+      </Description>
+      
+    </EntityComponent>
+
+
+<!-- What am I doing? This is pointless-->
+	
+	
+  </EntityComponents>
+</Definitions>
