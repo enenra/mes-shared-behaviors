@@ -4,32 +4,56 @@
 
     <DialogueCue>
       <DialogueCueId>Greeting</DialogueCueId>
-	 
 	  <Entries> 
-		<EventConditionId>EventA</EventConditionId>
+		<EventConditionId>Current Event A is happening</EventConditionId>
 		<Entry> 
-			<Message>EventA: Greetings</Message>
+			<Message>Welcome {PlayerName}! Currently we are dealing with event A</Message>
 			<AudioId></AudioId>  	
 			<Weights>200</Weights>
 		</Entry>
 	
 	  </Entries>
-	  
 	  <Entries> 
-		<EventConditionId></EventConditionId>
+		<EventConditionId></EventConditionId> <!-- Event A is not happening so skip that entry, because this one is below it ths one is now evaluated. So this is default -->
 		<Entry> 
-			<Message>De2fault</Message>
+			<Message>Welcome {PlayerName}!</Message>
 			<AudioId></AudioId>  	
 			<Weights>1</Weights>
 		</Entry>
 		<Entry> 
-			<Message>De2fault2</Message>
+			<Message>Hi there {PlayerName}!</Message>
 			<AudioId></AudioId>  	
 			<Weights>1</Weights>
 		</Entry>
 	
 	  </Entries>	  
 		  
+    </DialogueCue>	
+
+    <DialogueCue>
+      <DialogueCueId>FriendlyFre</DialogueCueId>
+	  <Entries> 
+		<Entry> 
+			<Message>Have you lost your mind?</Message>
+			<AudioId></AudioId>  	
+			<Weights>1</Weights>
+		</Entry>
+		<Entry> 
+			<Message>What are you doing?!</Message>
+			<AudioId></AudioId>  	
+			<Weights>1</Weights>
+		</Entry>
+		<Entry> 
+			<Message>Save it for the enemy!</Message>
+			<AudioId></AudioId>  	
+			<Weights>1</Weights>
+		</Entry>		
+		<Entry> 
+			<Message>Ow! Was it something I said?</Message>
+			<AudioId></AudioId>  	
+			<Weights>1</Weights>
+		</Entry>			
+	  </Entries>	  
     </DialogueCue>	
 
 </DialogueBank>

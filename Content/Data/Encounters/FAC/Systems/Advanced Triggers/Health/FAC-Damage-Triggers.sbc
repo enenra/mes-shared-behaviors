@@ -5,12 +5,12 @@
 <!--================= 
 
 
-{FactionTag}Destoyed
-EnemyDestoyed
-{FactionTag}DestoyedwithPlayerHelp
-EnemyDestoyedwithPlayerHelp
-{FactionTag}DestoyedwithPlayerMadeFinalShot
-EnemyDestoyedwithPlayerMadeFinalShot
+{FactionTag}Destroyed
+EnemyDestroyed
+{FactionTag}DestroyedwithPlayerHelp
+EnemyDestroyedwithPlayerHelp
+{FactionTag}DestroyedwithPlayerMadeFinalShot
+EnemyDestroyedwithPlayerMadeFinalShot
 
 
 
@@ -20,7 +20,6 @@ EnemyDestoyedwithPlayerMadeFinalShot
 - UnderFireHealthLow (Done)
 - UnderFireLostWeapons (Done)
 - UnderFireGoingDown (Done)
-
 
 
 FAC-Context_Damage-AdvancedTrigger-DamageByNeutral
@@ -34,8 +33,6 @@ FAC-Context_Damage-AdvancedTrigger-UnderFire
 FAC-Context_UnderFire-AdvancedTrigger-UnderFireHealthLow
 FAC-Context_UnderFire-AdvancedTrigger-UnderFireLostWeapons
 FAC-Context_UnderFire-AdvancedTrigger-UnderFireGoingDown
-
-
 
 FAC-Context_Damage-Trigger-Compromised-PlayerNotHelped
 FAC-Context_Damage-Trigger-Compromised-PlayerMadeFinalShot
@@ -335,9 +332,6 @@ FAC-Context_Damage-Trigger-Compromised-PlayerHelped
 
 	[DebugMessage:ShipEvent UnderFire] 
 
-[ManuallyActivateTrigger:true]
-[ManuallyActivatedTriggerTags:]
-[ForceManualTriggerActivation:false]
 
 	[SetBooleansTrue:UnderFire]
 	
@@ -662,7 +656,7 @@ FAC-Context_Damage-Trigger-Compromised-PlayerHelped
 
 	[RivalAI Command]
 
-	[CommandCode:{FactionTag}DestoyedwithPlayerHelp]
+	[CommandCode:{FactionTag}DestroyedwithPlayerHelp]
 	[MatchSenderReceiverOwners:false]
 	[SingleRecipient:true]
 	[IgnoreAntennaRequirement:true]
@@ -683,7 +677,7 @@ FAC-Context_Damage-Trigger-Compromised-PlayerHelped
 	[RivalAI Command]
 
 	[CommandDelayTicks:20]
-	[CommandCode:EnemyDestoyedwithPlayerHelp]
+	[CommandCode:EnemyDestroyedwithPlayerHelp]
 	[MatchSenderReceiverOwners:false]
 	
 	[CheckRelationSenderReceiver:true]
@@ -746,7 +740,7 @@ FAC-Context_Damage-Trigger-Compromised-PlayerHelped
 
 	[RivalAI Command]
 
-	[CommandCode:{FactionTag}DestoyedwithPlayerMadeFinalShot]
+	[CommandCode:{FactionTag}DestroyedwithPlayerMadeFinalShot]
 	[MatchSenderReceiverOwners:false]
 	[SingleRecipient:true]
 	[IgnoreAntennaRequirement:true]
@@ -767,7 +761,7 @@ FAC-Context_Damage-Trigger-Compromised-PlayerHelped
 	[RivalAI Command]
 
 	[CommandDelayTicks:20]
-	[CommandCode:EnemyDestoyedwithPlayerMadeFinalShot]
+	[CommandCode:EnemyDestroyedwithPlayerMadeFinalShot]
 	[MatchSenderReceiverOwners:false]
 	
 	[CheckRelationSenderReceiver:true]
@@ -831,7 +825,7 @@ FAC-Context_Damage-Trigger-Compromised-PlayerHelped
 
 	[RivalAI Command]
 
-	[CommandCode:{FactionTag}Destoyed]
+	[CommandCode:{FactionTag}Destroyed]
 	[MatchSenderReceiverOwners:false]
 	[SingleRecipient:true]
 	[IgnoreAntennaRequirement:true]
@@ -852,7 +846,7 @@ FAC-Context_Damage-Trigger-Compromised-PlayerHelped
 	[RivalAI Command]
 
 	[CommandDelayTicks:20]
-	[CommandCode:EnemyDestoyed]
+	[CommandCode:EnemyDestroyed]
 	[MatchSenderReceiverOwners:false]
 	
 	[CheckRelationSenderReceiver:true]
