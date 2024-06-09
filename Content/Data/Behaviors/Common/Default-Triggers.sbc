@@ -1,0 +1,90 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+<!-- 
+
+[Triggers:MSB_Default_Triggers_MaxRange]
+[Triggers:MSB_Default_Trigger_FACAliveCheck]
+
+-->
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_Default_Triggers_MaxRange</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:Session]
+	[UseTrigger:true]
+	[StartsReady:true]
+	[MinCooldownMs:450000]
+	[MaxCooldownMs:600000]
+
+
+	  [Actions:MSB_All_Action_MaxRange]	  
+      </Description>
+      
+    </EntityComponent>	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_All_Action_MaxRange</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Action]
+      
+		[SetWeaponsToMaxRange:true]
+
+      </Description>
+      
+    </EntityComponent>
+	
+
+	
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Default_Trigger_FACAliveCheck</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:CommandReceived]
+        [CommandReceiveCode:{Faction}AliveCheck]
+
+        [StartsReady:true]
+        [MaxActions:-1]
+        [Actions:MSB_Common_Action_FACAliveCheck]
+      </Description>
+
+    </EntityComponent>
+
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Common_Action_FACAliveCheck</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+
+[ResetCooldownTimeOfEvents:true]
+[ResetEventCooldownTags:{Faction}AliveCheck]
+
+      </Description>
+
+    </EntityComponent>	
+	
+	
+	
+  </EntityComponents>
+</Definitions>

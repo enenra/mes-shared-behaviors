@@ -1,0 +1,172 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_Static_CommonTriggersGroup</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI TriggerGroup]
+      
+	[Triggers:MSB_Context_Trigger_Start]	  
+ 	[Triggers:MSB_Context_Trigger_NormaltoHighAlert]	    
+ 	[Triggers:MSB_Context_Trigger_Damage]   
+   
+	[Triggers:MSB_Context_Trigger_NoTarget_ReadyforNormal]	
+	[Triggers:MSB_Context_Trigger_StayHostile]			
+	[Triggers:MSB_Context_Trigger_Hostile_to_Normal]	  
+	  
+	[Triggers:MSB_Context_Trigger_PlayerNear]
+	[Triggers:MSB_Context_Trigger_PlayerFar]	  
+	  
+	[Triggers:MSB_ContextDamage_Trigger_Hostile_PlayerDamage]
+
+	[Triggers:MSB_ContextDamage_Trigger_DamageUnderFire]
+	[Triggers:MSB_ContextDamage_Trigger_NoLongerUnderFire]
+
+	[Triggers:MSB_ContextDamage_TriggerEvent_UnderFire]
+	
+	[Triggers:MSB_ContextUnderFire_TriggerEvent_UnderFireHealthLow]
+	[Triggers:MSB_ContextUnderFire_TriggerEvent_UnderFireLostWeapons]
+	[Triggers:MSB_ContextUnderFire_TriggerEvent_UnderFireGoingDown]
+
+	[Triggers:MSB_ContextDamage_Trigger_Compromised_PlayerNotHelped]
+	[Triggers:MSB_ContextDamage_Trigger_Compromised_PlayerMadeFinalShot]
+	[Triggers:MSB_ContextDamage_Trigger_Compromised_PlayerHelped]	  
+	  
+	[Triggers:MSB_ContextTarget_TriggerEvent_TargetGettingAway]
+
+	[Triggers:MSB_ContextTarget_Trigger_TargetHasBeenClose]
+	[Triggers:MSB_ContextTarget_Trigger_LostTarget]
+	[Triggers:MSB_ContextTarget_Trigger_SwitchTarget]	  
+	  
+	[Triggers:MSB_Common_Trigger_DamageByNeutral]
+	[Triggers:MSB_Common_Trigger_DamageByFriendly]
+
+	[Triggers:MSB_Default_Triggers_MaxRange]
+	[Triggers:MSB_Default_Trigger_FACAliveCheck]
+	
+	
+	[Triggers:MSB_Common_Triggers_SendScore]
+	[Triggers:MSB_Common_Trigger_AddScoreToTotalScore]
+	[Triggers:MSB_Common_Trigger_LeaderDead]
+	[Triggers:MSB_Common_Trigger_IsNotStrongest]
+	[Triggers:MSB_Common_Trigger_OtherIsLeader]
+	[Triggers:MSB_Common_Trigger_MakeLeader]
+	[Triggers:MSB_Common_Trigger_MakeSubordinate]
+		
+	[Triggers:MSB_Leader_Trigger_AnnouncePresence]
+	[Triggers:MSB_Leader_Trigger_ProcessEscortRequest]			
+	[Triggers:MSB_Leader_Trigger_LeaderDead]
+
+	  
+	[Triggers:MSB_Subordinate_Trigger_RequestEscortSlot]
+	[Triggers:MSB_Subordinate_Trigger_SwitchToEscort]
+		
+		
+		
+	[Triggers:MSB_Common_Trigger_DebugMentionRetreat]	
+		
+		
+      </Description>
+      
+    </EntityComponent>
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_Dynamic_CommonTriggersGroup</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI TriggerGroup]
+      
+	[Triggers:MSB_Context_Trigger_Start]	  
+ 	[Triggers:MSB_Context_Trigger_NormaltoHighAlert]	    
+ 	[Triggers:MSB_Context_Trigger_Damage]   
+   
+	[Triggers:MSB_Context_Trigger_NoTarget_ReadyforNormal]	
+	[Triggers:MSB_Context_Trigger_StayHostile]			
+	[Triggers:MSB_Context_Trigger_Hostile_to_Normal]	  
+	  
+	[Triggers:MSB_Context_Trigger_PlayerNear]
+	[Triggers:MSB_Context_Trigger_PlayerFar]	  
+	  
+	[Triggers:MSB_ContextDamage_Trigger_Hostile_PlayerDamage]
+
+	[Triggers:MSB_ContextDamage_Trigger_DamageUnderFire]
+	[Triggers:MSB_ContextDamage_Trigger_NoLongerUnderFire]
+
+	[Triggers:MSB_ContextDamage_TriggerEvent_UnderFire]
+	
+	[Triggers:MSB_ContextUnderFire_TriggerEvent_UnderFireHealthLow]
+	[Triggers:MSB_ContextUnderFire_TriggerEvent_UnderFireLostWeapons]
+	[Triggers:MSB_ContextUnderFire_TriggerEvent_UnderFireGoingDown]
+
+	[Triggers:MSB_ContextDamage_Trigger_Compromised_PlayerNotHelped]
+	[Triggers:MSB_ContextDamage_Trigger_Compromised_PlayerMadeFinalShot]
+	[Triggers:MSB_ContextDamage_Trigger_Compromised_PlayerHelped]	  
+	  
+	[Triggers:MSB_ContextTarget_TriggerEvent_TargetGettingAway]
+
+	[Triggers:MSB_ContextTarget_Trigger_TargetHasBeenClose]
+	[Triggers:MSB_ContextTarget_Trigger_LostTarget]
+	[Triggers:MSB_ContextTarget_Trigger_SwitchTarget]	  
+	  
+	[Triggers:MSB_Common_Trigger_DamageByNeutral]
+	[Triggers:MSB_Common_Trigger_DamageByFriendly]
+
+	[Triggers:MSB_Default_Triggers_MaxRange]
+	[Triggers:MSB_Default_Trigger_FACAliveCheck]
+	
+	
+	[Triggers:MSB_Common_Triggers_SendScore]
+	[Triggers:MSB_Common_Trigger_AddScoreToTotalScore]
+	[Triggers:MSB_Common_Trigger_LeaderDead]
+	[Triggers:MSB_Common_Trigger_IsNotStrongest]
+	[Triggers:MSB_Common_Trigger_OtherIsLeader]
+	[Triggers:MSB_Common_Trigger_MakeLeader]
+	[Triggers:MSB_Common_Trigger_MakeSubordinate]
+		
+	[Triggers:MSB_Leader_Trigger_AnnouncePresence]
+	[Triggers:MSB_Leader_Trigger_ProcessEscortRequest]			
+	[Triggers:MSB_Leader_Trigger_LeaderDead]
+
+	  
+	[Triggers:MSB_Subordinate_Trigger_RequestEscortSlot]
+	[Triggers:MSB_Subordinate_Trigger_SwitchToEscort]
+		
+		
+		
+	[Triggers:MSB_Common_Trigger_DebugMentionRetreat]	
+		
+	[Triggers:MSB_Context_ManualTrigger_DynamicNoLongerInBattle]
+	[Triggers:MSB_Context_ManualTrigger_InitDynamicBattle]
+
+	[Triggers:MSB_Context_Trigger_ReceiveBaseStrike]
+	[Triggers:MSB_Context_Trigger_TargetIsEnemeyStaticBase]
+	[Triggers:MSB_Context_Trigger_EnemeyStaticBaseInTheArea]
+	[Triggers:MSB_Context_Trigger_EnemeyStaticBaseInTheArea_Fail]
+
+	[Triggers:MSB_Context_Trigger_ReceiveDefendMe_FirstTime]
+	[Triggers:MSB_Context_Trigger_DefendMe_NoLongerReceiving]
+	[Triggers:MSB_Context_Trigger_ReceiveDefendMe_ResetCooldown]
+
+
+
+	
+      </Description>
+      
+    </EntityComponent>
+
+
+
+
+
+	
+	
+  </EntityComponents>
+</Definitions>

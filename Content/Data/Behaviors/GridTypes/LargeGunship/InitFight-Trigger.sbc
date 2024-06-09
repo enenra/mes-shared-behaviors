@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+<!-- 
+
+
+CargoShip (Neutral)
+HorseFly (Neutral)
+
+
+-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_LargeGunShip_Trigger_InitFight</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+		
+		[Tags:GridType_InitFight]
+		
+        [UseTrigger:false]
+        [Type:Timer]
+
+        [MinCooldownMs:1500]
+        [MaxCooldownMs:1501]
+        [StartsReady:false]
+
+        [MaxActions:1]
+        [Actions:MSB_LargeGunShip_Action_InitFight]
+
+      </Description>
+
+    </EntityComponent>
+
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_LargeGunShip_Action_InitFight</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+	[ChangeBehaviorSubclass:true]  
+	[NewBehaviorSubclass:Horsefly]
+
+	[ChangeAutopilotProfile:true]
+	[AutopilotProfile:Secondary]	
+
+	[UseChatBroadcast:true]
+	[ChatData:MSB_LargeGunShip_Chat_InitFight]
+
+
+
+      </Description>
+      
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_LargeGunShip_Chat_InitFight</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:1]
+      [BroadcastRandomly:true]
+      
+      [Author:{AntennaName}]
+      [Color:Red]
+      
+      [ChatMessages:InitFight, switching behavoir to horsefly]
+      [ChatAudio:ArcHudGPSNotification2]
+      [BroadcastChatType:Chat]
+      
+
+      </Description>
+      
+      
+    </EntityComponent>
+	
+	
+	
+	
+
+	
+	
+	
+	
+	
+  </EntityComponents>
+</Definitions>

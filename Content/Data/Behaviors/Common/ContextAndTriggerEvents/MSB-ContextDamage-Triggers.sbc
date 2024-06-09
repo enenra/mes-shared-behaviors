@@ -1,0 +1,776 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+<!--================= 
+
+
+{FactionTag}Destroyed
+EnemyDestroyed
+{FactionTag}DestroyedwithPlayerHelp
+EnemyDestroyedwithPlayerHelp
+{FactionTag}DestroyedwithPlayerMadeFinalShot
+EnemyDestroyedwithPlayerMadeFinalShot
+
+_ DamageByFriendly (Done)
+_ DamageByNeutral (Done)
+_ UnderFire (Done)
+_ UnderFireHealthLow (Done)
+_ UnderFireLostWeapons (Done)
+_ UnderFireGoingDown (Done)
+
+
+
+	[Triggers:MSB_ContextDamage_Trigger_Hostile_PlayerDamage]
+
+	[Triggers:MSB_ContextDamage_Trigger_DamageUnderFire]
+	[Triggers:MSB_ContextDamage_Trigger_NoLongerUnderFire]
+
+	[Triggers:MSB_ContextDamage_TriggerEvent_UnderFire]
+	[Triggers:MSB_ContextUnderFire_TriggerEvent_UnderFireHealthLow]
+	[Triggers:MSB_ContextUnderFire_TriggerEvent_UnderFireLostWeapons]
+	[Triggers:MSB_ContextUnderFire_TriggerEvent_UnderFireGoingDown]
+
+	[Triggers:MSB_ContextDamage_Trigger_Compromised_PlayerNotHelped]
+	[Triggers:MSB_ContextDamage_Trigger_Compromised_PlayerMadeFinalShot]
+	[Triggers:MSB_ContextDamage_Trigger_Compromised_PlayerHelped]
+
+
+==================-->
+
+
+
+
+
+<!-- Damage -->
+
+
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_ContextDamage_Trigger_Hostile_PlayerDamage</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:Damage]
+	[DamageTypes:Any]
+
+	[UseTrigger:true]
+	[StartsReady:true]
+	[Conditions:MSB_ContextDamage_Condition_Hostile_PlayerDamage]
+
+	[MinCooldownMs:1000]
+	[MaxCooldownMs:1001]
+	[MaxActions:-1]
+
+
+	[Actions:MSB_ContextDamage_Action_Hostile_PlayerDamage]	
+	  
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_ContextDamage_Action_Hostile_PlayerDamage</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+
+	[UseChatBroadcast:true]
+	[ChatData:MSB_Common_Chat_Hostile_PlayerDamage]
+	[IncreaseCounters:CountPlayerDamage]
+      </Description>
+      
+    </EntityComponent>
+
+
+<!-- UnderFire -->
+
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_ContextDamage_Trigger_DamageUnderFire</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:Damage]
+	[DamageTypes:Any]
+
+	[UseTrigger:true]
+	[StartsReady:true]
+	[Conditions:MSB_ContextDamage_Condition_Hostile_Damage]
+
+	[MinCooldownMs:100]
+	[MaxCooldownMs:101]
+	[MaxActions:-1]
+
+
+	[Actions:MSB_ContextDamage_Action_DamageUnderFire]	
+	  
+      </Description>
+      
+    </EntityComponent>	
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_ContextDamage_Action_DamageUnderFire</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+
+	[IncreaseCounters:UnderFireCount]
+	
+	[ResetCooldownTimeOfTriggers:true]
+	
+	[ResetTriggerCooldownNames:MSB_ContextDamage_Action_UnderFire]
+      </Description>
+      
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_ContextDamage_Trigger_NoLongerUnderFire</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:Timer]
+	[UseTrigger:true]
+
+	[MinCooldownMs:4000]
+	[MaxCooldownMs:4001]	
+	[MaxActions:-1]
+
+	[Actions:MSB_ContextDamage_Action_NoLongerUnderFire]
+
+      </Description>
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_ContextDamage_Action_NoLongerUnderFire</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+
+	[ResetCounters:UnderFireCount]
+	
+	[SetBooleansFalse:UnderFire]
+	
+	[DisableTriggers:true]
+	[DisableTriggerTags:ContextUnderFire]	
+	
+      </Description>
+      
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_ContextDamage_Condition_UnderFireReady</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+
+	[CheckCustomCounters:true]
+	[CustomCounters:UnderFireCount]
+	[CustomCountersTargets:11]
+	[CounterCompareTypes:GreaterOrEqual]
+
+      </Description>
+      
+    </EntityComponent>
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_ContextDamage_TriggerEvent_UnderFire</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:Timer]
+	[UseTrigger:true]
+	[Conditions:MSB_ContextDamage_Condition_UnderFireReady]
+	[MinCooldownMs:100]
+	[MaxCooldownMs:101]	
+	[MaxActions:-1]
+
+
+	[Actions:MSB_ContextDamage_Action_UnderFire]
+
+      </Description>
+    </EntityComponent>
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_ContextDamage_Action_UnderFire</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+
+	[DebugMessage:ShipEvent UnderFire] 
+
+
+	[SetBooleansTrue:UnderFire]
+	
+	
+	[ResetCooldownTimeOfTriggers:true]
+	[ResetTriggerCooldownTags:ContextUnderFire]	
+	
+[EnableTriggers:true]
+[EnableTriggerTags:ContextUnderFire]
+	
+      </Description>
+      
+    </EntityComponent>
+
+
+	
+
+
+
+
+
+<!-- UnderFire Mode -->
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_ContextUnderFire_TriggerEvent_UnderFireHealthLow</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Tags:ContextUnderFire]
+	[UseTrigger:false]
+	
+	[Type:HealthPercentage]
+	[PercentageOfHealthRemaining:20]
+	[UseFailCondition:true]	
+	
+	[MinCooldownMs:100]
+	[MaxCooldownMs:101]	
+	[MaxActions:-1]
+
+	[Actions:MSB_ContextUnderFire_Action_UnderFireHealthLow]
+      </Description>
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_ContextUnderFire_Action_UnderFireHealthLow</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+
+	[DebugMessage:ShipEvent UnderFireHealthLow] 
+	
+	[ManuallyActivateTrigger:true]
+	[ManuallyActivatedTriggerTags:TriggerEvent_UnderFireHealthLow]
+	[ForceManualTriggerActivation:false]
+
+	[DisableTriggers:true]
+	[DisableTriggerTags:ContextUnderFire]
+      </Description>
+    </EntityComponent>
+	
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_ContextUnderFire_TriggerEvent_UnderFireLostWeapons</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Tags:ContextUnderFire]
+	[UseTrigger:false]
+	
+	[Type:NoWeapon]
+
+	[MinCooldownMs:100]
+	[MaxCooldownMs:101]	
+	[MaxActions:-1]
+
+	[Actions:MSB_ContextUnderFire_Action_UnderFireLostWeapons]
+      </Description>
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_ContextUnderFire_Action_UnderFireLostWeapons</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+
+	[DebugMessage:ShipEvent UnderFireLostWeapons] 
+	
+	[ManuallyActivateTrigger:true]
+	[ManuallyActivatedTriggerTags:TriggerEvent_UnderFireLostWeapons]
+	[ForceManualTriggerActivation:false]
+
+	[DisableTriggers:true]
+	[DisableTriggerTags:ContextUnderFire]
+      </Description>
+    </EntityComponent>	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_ContextUnderFire_TriggerEvent_UnderFireGoingDown</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Tags:ContextUnderFire]
+	[UseTrigger:false]
+	
+	[Type:Timer]
+	
+	[Condition:MSB_ContextUnderFire_Condition_CheckSufficientUpwardThrust]
+
+	[MinCooldownMs:100]
+	[MaxCooldownMs:101]	
+	[MaxActions:-1]
+
+	[Actions:MSB_ContextUnderFire_Action_UnderFireGoingDown]
+      </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_ContextUnderFire_Condition_CheckSufficientUpwardThrust</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+
+	[CheckSufficientUpwardThrust:true]
+	
+      </Description>
+      
+    </EntityComponent>	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_ContextUnderFire_Action_UnderFireGoingDown</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+
+
+
+	[DebugMessage:ShipEvent UnderFireGoingDown] 
+	
+	
+	[ManuallyActivateTrigger:true]
+	[ManuallyActivatedTriggerTags:TriggerEvent_UnderFireGoingDown]
+	[ForceManualTriggerActivation:false]
+
+	[DisableTriggers:true]
+	[DisableTriggerTags:ContextUnderFire]
+      </Description>
+    </EntityComponent>		
+	
+
+
+<!-- Compromised -->
+
+	
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_ContextDamage_Trigger_PlayerHelpedNPC</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:Damage]
+	[DamageTypes:Any]
+
+
+	[UseTrigger:true]
+	[StartsReady:true]
+	[Conditions:MSB_ContextDamage_Condition_PlayerHelpedNPC]
+	[MaxActions:1]	
+	
+	
+	[Actions:MSB_ContextDamage_Action_PlayerHelpedNPC]	
+      </Description>
+      
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_Common_Action_PlayerHelpedNPC</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+	[EnableTriggers:true]
+	[EnableTriggerNames:MSB_ContextDamage_Trigger_Compromised_PlayerHelped]
+	[EnableTriggerNames:MSB_ContextDamage_Trigger_Compromised_PlayerMadeFinalShot]
+	
+	
+	[DisableTriggers:true]
+	[DisableTriggerNames:MSB_ContextDamage_Trigger_Compromised_PlayerNotHelped]
+
+
+
+
+      </Description>
+      
+    </EntityComponent>
+	
+	
+	<!--
+
+	PlayerHelped
+	PlayerMadeFinalShot 
+	
+	-->
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_ContextDamage_Condition_PlayerMadeFinalShot</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+
+	[CheckTrueBooleans:true]
+	[TrueBooleans:UnderFire]
+	
+	[CheckIfDamagerIsPlayer:true]
+      </Description>
+    </EntityComponent>		
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_ContextDamage_Condition_PlayerMadeFinalShot_Fail</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[UseFailCondition:true]
+	[MatchAnyCondition:false]
+
+	[CheckTrueBooleans:true]
+	[TrueBooleans:UnderFire]
+	
+	[CheckIfDamagerIsPlayer:true]
+      </Description>
+    </EntityComponent>			
+	
+	
+	<!-- PlayerHelped -->
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_ContextDamage_Trigger_Compromised_PlayerHelped</SubtypeId>
+      </Id>
+      <Description>
+	[RivalAI Trigger]
+	[Type:Compromised]
+	[Conditions:MSB_ContextDamage_Condition_PlayerMadeFinalShot_Fail]
+	[UseTrigger:false]
+	[StartsReady:true]
+	[MaxActions:1]	
+	
+	
+	[Actions:MSB_ContextDamage_Action_Compromised_PlayerHelped]	
+      </Description>
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_ContextDamage_Action_Compromised_PlayerHelped</SubtypeId>
+      </Id>
+      <Description>
+	[RivalAI Action]
+
+	[UseChatBroadcast:true]
+	[ChatData:MSB_Common_Chat_PlayerHelpedNPC]
+	
+	
+	[BroadcastCommandProfiles:true]
+	[CommandProfileIds:MSB_ContextDamage_Command_PlayerHelped_Faction]
+	[CommandProfileIds:MSB_ContextDamage_Command_PlayerHelped_Enemy]	
+      </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_ContextDamage_Command_PlayerHelped_Faction</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Command]
+
+	[CommandCode:{FactionTag}DestroyedwithPlayerHelp]
+	[MatchSenderReceiverOwners:false]
+	[SingleRecipient:true]
+	[IgnoreAntennaRequirement:true]
+	[IgnoreReceiverAntennaRequirement:true]
+	[Radius:2000]
+	
+	</Description>
+    </EntityComponent>
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_ContextDamage_Command_PlayerHelped_Enemy</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Command]
+
+	[CommandDelayTicks:20]
+	[CommandCode:EnemyDestroyedwithPlayerHelp]
+	[MatchSenderReceiverOwners:false]
+	
+	[CheckRelationSenderReceiver:true]
+	[Relation:Enemy]
+	
+	
+	[SingleRecipient:true]
+	[IgnoreAntennaRequirement:true]
+	[IgnoreReceiverAntennaRequirement:true]
+	[Radius:2000]
+		</Description>
+    </EntityComponent>
+		
+	
+<!-- PlayerMadeFinalShot -->
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_ContextDamage_Trigger_Compromised_PlayerMadeFinalShot</SubtypeId>
+      </Id>
+      <Description>
+	[RivalAI Trigger]
+	[Type:Compromised]
+	[Conditions:MSB_ContextDamage_Condition_PlayerMadeFinalShot]
+	[UseTrigger:false]
+	[StartsReady:true]
+	[MaxActions:1]	
+	
+	
+	[Actions:MSB_ContextDamage_Action_Compromised_PlayerMadeFinalShot]	
+      </Description>
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_ContextDamage_Action_Compromised_PlayerMadeFinalShot</SubtypeId>
+      </Id>
+      <Description>
+	[RivalAI Action]
+
+	[UseChatBroadcast:true]
+	[ChatData:MSB_Common_Chat_PlayerHelpedNPC]
+	
+	
+	[BroadcastCommandProfiles:true]
+	[CommandProfileIds:MSB_ContextDamage_Command_PlayerMadeFinalShot_Faction]
+	[CommandProfileIds:MSB_ContextDamage_Command_PlayerMadeFinalShot_Enemy]	
+      </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_ContextDamage_Command_PlayerMadeFinalShot_Faction</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Command]
+
+	[CommandCode:{FactionTag}DestroyedwithPlayerMadeFinalShot]
+	[MatchSenderReceiverOwners:false]
+	[SingleRecipient:true]
+	[IgnoreAntennaRequirement:true]
+	[IgnoreReceiverAntennaRequirement:true]
+	[Radius:2000]
+	
+	</Description>
+    </EntityComponent>
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_ContextDamage_Command_PlayerMadeFinalShot_Enemy</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Command]
+
+	[CommandDelayTicks:20]
+	[CommandCode:EnemyDestroyedwithPlayerMadeFinalShot]
+	[MatchSenderReceiverOwners:false]
+	
+	[CheckRelationSenderReceiver:true]
+	[Relation:Enemy]
+	
+	
+	[SingleRecipient:true]
+	[IgnoreAntennaRequirement:true]
+	[IgnoreReceiverAntennaRequirement:true]
+	[Radius:2000]
+		</Description>
+    </EntityComponent>
+
+
+
+
+
+<!-- PlayerNotHelped-->
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_ContextDamage_Trigger_Compromised_PlayerNotHelped</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:Compromised]
+	[UseTrigger:true]
+	[StartsReady:true]
+	[MaxActions:1]	
+	
+	
+	[Actions:MSB_ContextDamage_Action_Compromised_PlayerNotHelped]	
+      </Description>
+      
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_ContextDamage_Action_Compromised_PlayerNotHelped</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+
+	[BroadcastCommandProfiles:true]
+	[CommandProfileIds:MSB_ContextDamage_Command_PlayerNotHelped_Faction]
+	[CommandProfileIds:MSB_ContextDamage_Command_PlayerNotHelped_Enemy]	
+      </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_ContextDamage_Command_PlayerNotHelped_Faction</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Command]
+
+	[CommandCode:{FactionTag}Destroyed]
+	[MatchSenderReceiverOwners:false]
+	[SingleRecipient:true]
+	[IgnoreAntennaRequirement:true]
+	[IgnoreReceiverAntennaRequirement:true]
+	[Radius:2000]
+	
+	</Description>
+    </EntityComponent>
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_ContextDamage_Command_PlayerNotHelped_Enemy</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Command]
+
+	[CommandDelayTicks:20]
+	[CommandCode:EnemyDestroyed]
+	[MatchSenderReceiverOwners:false]
+	
+	[CheckRelationSenderReceiver:true]
+	[Relation:Enemy]
+	
+	
+	[SingleRecipient:true]
+	[IgnoreAntennaRequirement:true]
+	[IgnoreReceiverAntennaRequirement:true]
+	[Radius:2000]
+		</Description>
+    </EntityComponent>
+
+
+
+
+
+
+	
+	
+  </EntityComponents>
+</Definitions>

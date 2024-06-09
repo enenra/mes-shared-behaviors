@@ -1,0 +1,101 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_ContextTriggers</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI TriggerGroup]
+      
+	[Triggers:MSB_Context_Trigger_Start]	  
+ 	[Triggers:MSB_Context_Trigger_NormaltoHighAlert]	    
+ 	[Triggers:MSB_Context_Trigger_Damage]   
+   
+	[Triggers:MSB_Context_Trigger_NoTarget_ReadyforNormal]	
+	[Triggers:MSB_Context_Trigger_StayHostile]			
+	[Triggers:MSB_Context_Trigger_Hostile_to_Normal]	  
+	  
+	[Triggers:MSB_Context_Trigger_PlayerNear]
+	[Triggers:MSB_Context_Trigger_PlayerFar]
+
+      </Description>
+      
+    </EntityComponent>
+	
+	<!-- Only for dynamic -->
+
+<!--	
+
+[Triggers:MSB_Context_ManualTrigger_DynamicNoLongerInBattle]
+[Triggers:MSB_Context_ManualTrigger_InitDynamicBattle]
+
+[Triggers:MSB_Context_Trigger_ReceiveBaseStrike]
+[Triggers:MSB_Context_Trigger_TargetIsEnemeyStaticBase]
+[Triggers:MSB_Context_Trigger_EnemeyStaticBaseInTheArea]
+[Triggers:MSB_Context_Trigger_EnemeyStaticBaseInTheArea_Fail]
+
+[Triggers:MSB_Context_Trigger_ReceiveDefendMe_FirstTime]
+[Triggers:MSB_Context_Trigger_DefendMe_NoLongerReceiving]
+[Triggers:MSB_Context_Trigger_ReceiveDefendMe_ResetCooldown]
+
+
+-->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>ContextDamage</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI TriggerGroup]
+      
+
+	[Triggers:MSB_ContextDamage_Trigger_Hostile_PlayerDamage]
+
+	[Triggers:MSB_ContextDamage_Trigger_DamageUnderFire]
+	[Triggers:MSB_ContextDamage_Trigger_NoLongerUnderFire]
+
+	[Triggers:MSB_ContextDamage_TriggerEvent_UnderFire]
+	
+	[Triggers:MSB_ContextUnderFire_TriggerEvent_UnderFireHealthLow]
+	[Triggers:MSB_ContextUnderFire_TriggerEvent_UnderFireLostWeapons]
+	[Triggers:MSB_ContextUnderFire_TriggerEvent_UnderFireGoingDown]
+
+	[Triggers:MSB_ContextDamage_Trigger_Compromised_PlayerNotHelped]
+	[Triggers:MSB_ContextDamage_Trigger_Compromised_PlayerMadeFinalShot]
+	[Triggers:MSB_ContextDamage_Trigger_Compromised_PlayerHelped]
+
+      </Description>
+    </EntityComponent>
+	
+	
+	
+	
+	    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>ContextTarget</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI TriggerGroup]
+      
+[Triggers:MSB_ContextTarget_TriggerEvent_TargetGettingAway]
+
+[Triggers:MSB_ContextTarget_Trigger_TargetHasBeenClose]
+[Triggers:MSB_ContextTarget_Trigger_LostTarget]
+[Triggers:MSB_ContextTarget_Trigger_SwitchTarget]
+
+      </Description>
+      
+    </EntityComponent>
+	
+	
+	
+  </EntityComponents>
+</Definitions>
