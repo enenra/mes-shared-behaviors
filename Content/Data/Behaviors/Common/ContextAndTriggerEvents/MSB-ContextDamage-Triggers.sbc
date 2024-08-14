@@ -27,9 +27,6 @@ _ MSB_TriggerEvent_UnderFireGoingDown (Done)
 [Triggers:MSB_ContextDamage_Trigger_Friendly_PlayerDamage]
 
 
-
-
-
 [Triggers:MSB_ContextDamage_Trigger_NoLongerUnderFire]
 
 [Triggers:MSB_ContextDamage_TriggerEvent_UnderFire]
@@ -784,7 +781,7 @@ Mmh we will need to evaluate if the cooldown makes sense.
 	[RivalAI Command]
 
 	[CommandDelayTicks:50]
-	[CommandCode:{FactionTag}DestroyedwithPlayerHelp]
+	[CommandCode:MSB_{FactionTag}DestroyedwithPlayerHelp]
 	[MatchSenderReceiverOwners:false]
 	[SingleRecipient:true]
 	[IgnoreAntennaRequirement:true]
@@ -805,7 +802,7 @@ Mmh we will need to evaluate if the cooldown makes sense.
 	[RivalAI Command]
 
 	[CommandDelayTicks:120]
-	[CommandCode:EnemyDestroyedwithPlayerHelp]
+	[CommandCode:MSB_EnemyDestroyedwithPlayerHelp]
 	[MatchSenderReceiverOwners:false]
 	
 	[CheckRelationSenderReceiver:true]
@@ -870,7 +867,7 @@ Mmh we will need to evaluate if the cooldown makes sense.
 
 	[CommandDelayTicks:50]
 	
-	[CommandCode:{FactionTag}DestroyedwithPlayerMadeFinalShot]
+	[CommandCode:MSB_{FactionTag}DestroyedwithPlayerMadeFinalShot]
 	[MatchSenderReceiverOwners:false]
 	[SingleRecipient:true]
 	[IgnoreAntennaRequirement:true]
@@ -892,7 +889,7 @@ Mmh we will need to evaluate if the cooldown makes sense.
 
 
 	[CommandDelayTicks:120]
-	[CommandCode:EnemyDestroyedwithPlayerMadeFinalShot]
+	[CommandCode:MSB_EnemyDestroyedwithPlayerMadeFinalShot]
 	[MatchSenderReceiverOwners:false]
 	
 	[CheckRelationSenderReceiver:true]
@@ -957,7 +954,7 @@ Mmh we will need to evaluate if the cooldown makes sense.
 	[RivalAI Command]
 
 	[CommandDelayTicks:50]
-	[CommandCode:{FactionTag}Destroyed]
+	[CommandCode:MSB_{FactionTag}Destroyed]
 	[MatchSenderReceiverOwners:false]
 	[SingleRecipient:true]
 	[IgnoreAntennaRequirement:true]
@@ -978,7 +975,7 @@ Mmh we will need to evaluate if the cooldown makes sense.
 	[RivalAI Command]
 
 	[CommandDelayTicks:120]
-	[CommandCode:EnemyDestroyed]
+	[CommandCode:MSB_EnemyDestroyed]
 	[MatchSenderReceiverOwners:false]
 	
 	[CheckRelationSenderReceiver:true]
