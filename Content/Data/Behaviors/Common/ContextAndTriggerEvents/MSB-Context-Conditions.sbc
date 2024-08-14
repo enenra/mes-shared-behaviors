@@ -19,14 +19,10 @@ MSB_Context_Condition_SettingBattle
 
 
 
-
-
-
 Player
 MSB_Context_Condition_PlayerHostile
 MSB_Context_Condition_PlayerNeutral
 MSB_Context_Condition_PlayerFriendly
-
 
 
 MSB_Context_Condition_NormalHostile
@@ -39,12 +35,6 @@ MSB_Context_Condition_BattleFriendly
 
 MSB_Context_Condition_AttackedbyNPC
 MSB_Context_Condition_AttackedbyPlayer
-
-
-MSB_Context_Condition_Hostile_PlayerDamage
-MSB_Context_Condition_Neutral_PlayerDamage
-MSB_Context_Condition_Friendly_PlayerDamage
-
 
 
 MSB_Context_Condition_AttackedbyPlayer

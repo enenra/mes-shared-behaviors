@@ -5,6 +5,14 @@
 
 [Triggers:MSB_Context_Trigger_PlayerNear]
 
+Do not remove, these booleans are used in 
+
+
+MSB_Context_Condition_NormalNeutralPlayerNearNoTarget
+
+
+
+
 -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
