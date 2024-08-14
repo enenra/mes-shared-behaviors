@@ -11,12 +11,12 @@ EnemyDestroyedwithPlayerHelp
 {FactionTag}DestroyedwithPlayerMadeFinalShot
 EnemyDestroyedwithPlayerMadeFinalShot
 
-_ TriggerEvent_DamageByFriendly (Done)
-_ TriggerEvent_DamageByNeutral (Done)
-_ TriggerEvent_UnderFire (Done)
-_ TriggerEvent_UnderFireHealthLow (Done)
-_ TriggerEvent_UnderFireLostWeapons (Done)
-_ TriggerEvent_UnderFireGoingDown (Done)
+_ MSB_TriggerEvent_DamageByFriendly (Done)
+_ MSB_TriggerEvent_DamageByNeutral (Done)
+_ MSB_TriggerEvent_UnderFire (Done)
+_ MSB_TriggerEvent_UnderFireHealthLow (Done)
+_ MSB_TriggerEvent_UnderFireLostWeapons (Done)
+_ MSB_TriggerEvent_UnderFireGoingDown (Done)
 
 
 
@@ -259,7 +259,7 @@ NPCDamge ->
 	[RivalAI Action]
 	
 	[ManuallyActivateTrigger:true]
-	[ManuallyActivatedTriggerTags:TriggerEvent_DamageByFriendly]
+	[ManuallyActivatedTriggerTags:MSB_TriggerEvent_DamageByFriendly]
 	[ForceManualTriggerActivation:false]
       </Description>
     </EntityComponent>
@@ -273,7 +273,7 @@ NPCDamge ->
 	[RivalAI Action]
 	
 	[ManuallyActivateTrigger:true]
-	[ManuallyActivatedTriggerTags:TriggerEvent_DamageByNeutral]
+	[ManuallyActivatedTriggerTags:MSB_TriggerEvent_DamageByNeutral]
 	[ForceManualTriggerActivation:false]
       </Description>
     </EntityComponent>	
@@ -466,7 +466,7 @@ Mmh we will need to evaluate if the cooldown makes sense.
 	
 	
 	[ManuallyActivateTrigger:true]
-	[ManuallyActivatedTriggerTags:TriggerEvent_UnderFire]
+	[ManuallyActivatedTriggerTags:MSB_TriggerEvent_UnderFire]
 	[ForceManualTriggerActivation:false]
 	
       </Description>
@@ -518,7 +518,7 @@ Mmh we will need to evaluate if the cooldown makes sense.
 	[DebugMessage:TriggerEvent UnderFireHealthLow] 
 	
 	[ManuallyActivateTrigger:true]
-	[ManuallyActivatedTriggerTags:TriggerEvent_UnderFireHealthLow]
+	[ManuallyActivatedTriggerTags:MSB_TriggerEvent_UnderFireHealthLow]
 	[ForceManualTriggerActivation:false]
 
 	[ResetCooldownTimeOfTriggers:true]
@@ -562,7 +562,7 @@ Mmh we will need to evaluate if the cooldown makes sense.
 	[DebugMessage:TriggerEvent UnderFireLostWeapons] 
 	
 	[ManuallyActivateTrigger:true]
-	[ManuallyActivatedTriggerTags:TriggerEvent_UnderFireLostWeapons]
+	[ManuallyActivatedTriggerTags:MSB_TriggerEvent_UnderFireLostWeapons]
 	[ForceManualTriggerActivation:false]
 
 	[ResetCooldownTimeOfTriggers:true]
@@ -626,7 +626,7 @@ Mmh we will need to evaluate if the cooldown makes sense.
 	[DebugMessage:TriggerEvent UnderFireGoingDown] 
 	
 	[ManuallyActivateTrigger:true]
-	[ManuallyActivatedTriggerTags:TriggerEvent_UnderFireGoingDown]
+	[ManuallyActivatedTriggerTags:MSB_TriggerEvent_UnderFireGoingDown]
 	[ForceManualTriggerActivation:false]
 
 	[ResetCooldownTimeOfTriggers:true]

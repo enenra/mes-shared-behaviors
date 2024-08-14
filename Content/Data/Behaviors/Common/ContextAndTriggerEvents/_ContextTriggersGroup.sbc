@@ -55,13 +55,16 @@
 	[RivalAI TriggerGroup]
       
 
-	[Triggers:MSB_ContextDamage_Trigger_Hostile_PlayerDamage]
+	[Triggers:MSB_ContextDamage_Trigger_Hostile_NPCDamage]
 
-	[Triggers:MSB_ContextDamage_Trigger_DamageUnderFire]
+	[Triggers:MSB_ContextDamage_Trigger_Hostile_PlayerDamage]
+	[Triggers:MSB_ContextDamage_Trigger_Neutral_PlayerDamage]
+	[Triggers:MSB_ContextDamage_Trigger_Friendly_PlayerDamage]
+
+
 	[Triggers:MSB_ContextDamage_Trigger_NoLongerUnderFire]
 
 	[Triggers:MSB_ContextDamage_TriggerEvent_UnderFire]
-	
 	[Triggers:MSB_ContextUnderFire_TriggerEvent_UnderFireHealthLow]
 	[Triggers:MSB_ContextUnderFire_TriggerEvent_UnderFireLostWeapons]
 	[Triggers:MSB_ContextUnderFire_TriggerEvent_UnderFireGoingDown]
