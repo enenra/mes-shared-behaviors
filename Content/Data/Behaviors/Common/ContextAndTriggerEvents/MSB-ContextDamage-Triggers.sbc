@@ -11,8 +11,8 @@ EnemyDestroyedwithPlayerHelp
 {FactionTag}DestroyedwithPlayerMadeFinalShot
 EnemyDestroyedwithPlayerMadeFinalShot
 
-_ DamageByFriendly (Done)
-_ DamageByNeutral (Done)
+_ TriggerEvent_DamageByFriendly (Done)
+_ TriggerEvent_DamageByNeutral (Done)
 _ TriggerEvent_UnderFire (Done)
 _ TriggerEvent_UnderFireHealthLow (Done)
 _ TriggerEvent_UnderFireLostWeapons (Done)
@@ -30,9 +30,6 @@ _ TriggerEvent_UnderFireGoingDown (Done)
 
 
 
-
-
-[Triggers:MSB_ContextDamage_Trigger_DamageUnderFire]
 [Triggers:MSB_ContextDamage_Trigger_NoLongerUnderFire]
 
 [Triggers:MSB_ContextDamage_TriggerEvent_UnderFire]
@@ -465,8 +462,8 @@ Mmh we will need to evaluate if the cooldown makes sense.
 	[PercentageOfHealthRemaining:20]
 	[UseFailCondition:true]	
 	
-	[MinCooldownMs:100]
-	[MaxCooldownMs:101]	
+	[MinCooldownMs:4800]
+	[MaxCooldownMs:4801]	
 	[MaxActions:1]
 
 	[Actions:MSB_ContextUnderFire_Action_UnderFireHealthLow]
@@ -488,8 +485,8 @@ Mmh we will need to evaluate if the cooldown makes sense.
 	[ManuallyActivatedTriggerTags:TriggerEvent_UnderFireHealthLow]
 	[ForceManualTriggerActivation:false]
 
-	[DisableTriggers:true]
-	[DisableTriggerTags:ContextUnderFire]
+	[ResetCooldownTimeOfTriggers:true]
+	[ResetTriggerCooldownTags:ContextUnderFire]	
       </Description>
     </EntityComponent>
 	
@@ -508,8 +505,8 @@ Mmh we will need to evaluate if the cooldown makes sense.
 	
 	[Type:NoWeapon]
 
-	[MinCooldownMs:100]
-	[MaxCooldownMs:101]	
+	[MinCooldownMs:1000]
+	[MaxCooldownMs:1001]
 	[MaxActions:1]
 
 	[Actions:MSB_ContextUnderFire_Action_UnderFireLostWeapons]
@@ -532,8 +529,8 @@ Mmh we will need to evaluate if the cooldown makes sense.
 	[ManuallyActivatedTriggerTags:TriggerEvent_UnderFireLostWeapons]
 	[ForceManualTriggerActivation:false]
 
-	[DisableTriggers:true]
-	[DisableTriggerTags:ContextUnderFire]
+	[ResetCooldownTimeOfTriggers:true]
+	[ResetTriggerCooldownTags:ContextUnderFire]	
       </Description>
     </EntityComponent>	
 	
@@ -553,9 +550,9 @@ Mmh we will need to evaluate if the cooldown makes sense.
 	
 	[Condition:MSB_ContextUnderFire_Condition_CheckSufficientUpwardThrust]
 
-	[MinCooldownMs:100]
-	[MaxCooldownMs:101]	
-	[MaxActions:-]
+	[MinCooldownMs:4100]
+	[MaxCooldownMs:4101]	
+	[MaxActions:1]
 
 	[Actions:MSB_ContextUnderFire_Action_UnderFireGoingDown]
       </Description>
@@ -590,17 +587,14 @@ Mmh we will need to evaluate if the cooldown makes sense.
 
 	[RivalAI Action]
 
-
-
 	[DebugMessage:TriggerEvent UnderFireGoingDown] 
-	
 	
 	[ManuallyActivateTrigger:true]
 	[ManuallyActivatedTriggerTags:TriggerEvent_UnderFireGoingDown]
 	[ForceManualTriggerActivation:false]
 
-	[DisableTriggers:true]
-	[DisableTriggerTags:ContextUnderFire]
+	[ResetCooldownTimeOfTriggers:true]
+	[ResetTriggerCooldownTags:ContextUnderFire]	
       </Description>
     </EntityComponent>		
 	
@@ -753,6 +747,7 @@ Mmh we will need to evaluate if the cooldown makes sense.
 
 	[RivalAI Command]
 
+	[CommandDelayTicks:50]
 	[CommandCode:{FactionTag}DestroyedwithPlayerHelp]
 	[MatchSenderReceiverOwners:false]
 	[SingleRecipient:true]
@@ -773,7 +768,7 @@ Mmh we will need to evaluate if the cooldown makes sense.
 
 	[RivalAI Command]
 
-	[CommandDelayTicks:20]
+	[CommandDelayTicks:120]
 	[CommandCode:EnemyDestroyedwithPlayerHelp]
 	[MatchSenderReceiverOwners:false]
 	
@@ -837,6 +832,8 @@ Mmh we will need to evaluate if the cooldown makes sense.
 
 	[RivalAI Command]
 
+	[CommandDelayTicks:50]
+	
 	[CommandCode:{FactionTag}DestroyedwithPlayerMadeFinalShot]
 	[MatchSenderReceiverOwners:false]
 	[SingleRecipient:true]
@@ -857,7 +854,8 @@ Mmh we will need to evaluate if the cooldown makes sense.
 
 	[RivalAI Command]
 
-	[CommandDelayTicks:20]
+
+	[CommandDelayTicks:120]
 	[CommandCode:EnemyDestroyedwithPlayerMadeFinalShot]
 	[MatchSenderReceiverOwners:false]
 	
@@ -922,6 +920,7 @@ Mmh we will need to evaluate if the cooldown makes sense.
 
 	[RivalAI Command]
 
+	[CommandDelayTicks:50]
 	[CommandCode:{FactionTag}Destroyed]
 	[MatchSenderReceiverOwners:false]
 	[SingleRecipient:true]
@@ -942,7 +941,7 @@ Mmh we will need to evaluate if the cooldown makes sense.
 
 	[RivalAI Command]
 
-	[CommandDelayTicks:20]
+	[CommandDelayTicks:120]
 	[CommandCode:EnemyDestroyed]
 	[MatchSenderReceiverOwners:false]
 	
