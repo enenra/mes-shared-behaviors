@@ -249,18 +249,6 @@ NPCDamge ->
 
 
 
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextDamage_Action_IncreaseCountPlayerDamage</SubtypeId>
-      </Id>
-      <Description>
-	[RivalAI Action]
-	
-	[IncreaseCounters:CountPlayerDamage]
-      </Description>
-    </EntityComponent>
-
 
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
