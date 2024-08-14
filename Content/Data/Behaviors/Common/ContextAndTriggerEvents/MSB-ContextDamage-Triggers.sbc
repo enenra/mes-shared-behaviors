@@ -217,6 +217,8 @@ NPCDamge ->
 
 	[Actions:MSB_ContextDamage_Action_IncreaseCountPlayerDamage]	
 	[Actions:MSB_ContextDamage_Action_IncreaseUnderFireCount]	
+	[Actions:MSB_ContextDamage_Action_DamageByNeutral]	
+
       </Description>
     </EntityComponent>	
 
@@ -239,6 +241,8 @@ NPCDamge ->
 	[MaxCooldownMs:1001]
 	[MaxActions:-1]
 
+	[Actions:MSB_ContextDamage_Action_DamageByFriendly]	
+	
       </Description>
     </EntityComponent>	
 
@@ -257,6 +261,50 @@ NPCDamge ->
       </Description>
     </EntityComponent>
 
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_ContextDamage_Action_DamageByFriendly</SubtypeId>
+      </Id>
+      <Description>
+	[RivalAI Action]
+	
+	[ManuallyActivateTrigger:true]
+	[ManuallyActivatedTriggerTags:TriggerEvent_DamageByFriendly]
+	[ForceManualTriggerActivation:false]
+      </Description>
+    </EntityComponent>
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_ContextDamage_Action_DamageByNeutral</SubtypeId>
+      </Id>
+      <Description>
+	[RivalAI Action]
+	
+	[ManuallyActivateTrigger:true]
+	[ManuallyActivatedTriggerTags:TriggerEvent_DamageByNeutral]
+	[ForceManualTriggerActivation:false]
+      </Description>
+    </EntityComponent>	
+	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_ContextDamage_Action_IncreaseCountPlayerDamage</SubtypeId>
+      </Id>
+      <Description>
+	[RivalAI Action]
+	
+	[IncreaseCounters:CountPlayerDamage]
+      </Description>
+    </EntityComponent>	
+	
+	
 
 <!-- UnderFire -->
 
