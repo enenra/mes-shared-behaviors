@@ -306,11 +306,6 @@ HasNoTarget
     </EntityComponent>
 
 
-
-
-
-
-
 <!--Battle -->
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
