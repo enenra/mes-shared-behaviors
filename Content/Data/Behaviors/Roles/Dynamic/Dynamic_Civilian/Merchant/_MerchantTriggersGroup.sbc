@@ -5,13 +5,21 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>CargoshipTriggersGroup</SubtypeId>
+          <SubtypeId>MerchantTriggersGroup</SubtypeId>
       </Id>
       <Description>
 
 	[RivalAI TriggerGroup]
       
-[Triggers:MSB_CargoShip_Trigger_CargoCompromised]
+[Triggers:MSB_Merchant_Trigger_MerchantAreaTimeout]
+[Triggers:MSB_Merchant_Trigger_RulesOfAcquisition]
+[Triggers:MSB_Merchant_Trigger_ResumeCourse]
+[Triggers:MSB_Merchant_Trigger_StopForPlayer]
+[Triggers:MSB_Merchant_Trigger_VisitPlayerBase]
+[Triggers:MSB_Merchant_Trigger_ArriveAtStation]
+[Triggers:MSB_Merchant_Trigger_StartLanding]
+[Triggers:MSB_Merchant_Trigger_ArrivedAtLandingSite]
+
 	
       </Description>
       

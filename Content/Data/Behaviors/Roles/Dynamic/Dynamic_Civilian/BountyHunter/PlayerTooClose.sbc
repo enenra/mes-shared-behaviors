@@ -1,0 +1,104 @@
+﻿<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+<!--
+
+[Triggers:MSB_BounterHunter_Trigger_PlayerTooClose]
+[Triggers:MSB_BounterHunter_Trigger_PlayerTooClose_ReputationLoss]
+
+-->
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_BounterHunter_Trigger_PlayerTooClose</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:PlayerNear]
+	[UseTrigger:true]
+	[StartsReady:true]
+	[TargetDistance:100]
+	[MinCooldownMs:90000]
+	[MaxCooldownMs:90001]
+	[Conditions:MSB_Context_Condition_NormalNeutral]
+	[Actions:MSB_BounterHunter_Action_PlayerTooClose]
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_BounterHunter_Action_PlayerTooClose</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+		[PlayDialogueCue:true]
+		[DialogueCueId:BountyHunter_PlayerTooClose]
+
+      </Description>
+
+    </EntityComponent>
+	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_BounterHunter_Trigger_PlayerTooClose_ReputationLoss</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Trigger]
+	[Type:PlayerNear]
+	[UseTrigger:true]
+	[StartsReady:true]
+	[TargetDistance:100]
+	[MinCooldownMs:2000]
+	[MaxCooldownMs:2001]
+	[Conditions:MSB_Context_Condition_NormalNeutral]
+	[Actions:MSB_BounterHunter_Action_PlayerTooClose_ReputationLoss]
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_BounterHunter_Action_PlayerTooClose_ReputationLoss</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+	[ChangeReputationWithPlayers:true]
+	[ReputationChangeRadius:800]
+	[ReputationChangeFactions:{Self}]
+	[ReputationChangeAmount:-10]
+	[ReputationChangesForAllRadiusPlayerFactionMembers:true]
+
+      </Description>
+
+    </EntityComponent>
+		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+  </EntityComponents>
+</Definitions>

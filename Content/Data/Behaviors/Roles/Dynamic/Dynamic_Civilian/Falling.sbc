@@ -1,0 +1,81 @@
+﻿<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+
+
+<!--
+[Triggers:MSB_DynamicCivilian_Trigger_Falling]
+
+
+-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicCivilian_Trigger_Falling</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES AI Trigger]
+
+        [UseTrigger:false]
+        [Type:Timer]
+        [MinCooldownMs:2000]
+        [MaxCooldownMs:4000]
+
+        [Conditions:MSB_DynamicCivilian_Condition_Falling]
+        
+        [StartsReady:false]
+        [MaxActions:1]
+        [Actions:MSB_DynamicCivilian_Action_Falling]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicCivilian_Condition_Falling</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES AI Condition]
+
+        [UseFailCondition:true]
+        [CheckSufficientUpwardThrust:true]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicCivilian_Action_Falling</SubtypeId>
+      </Id>
+      <Description>
+
+        [MES AI Action]
+
+		[PlayDialogueCue:true]
+		[DialogueCueId:DynamicCivillian_Falling]
+
+        [ToggleBlocksOfType:true]
+
+        [BlockTypesToToggle:MyObjectBuilder_Parachute/LgParachute]
+        [BlockTypeToggles:On]
+
+        [BlockTypesToToggle:MyObjectBuilder_Parachute/SmParachute]
+        [BlockTypeToggles:On]
+
+        [TerminateBehavior:true]
+
+      </Description>
+
+    </EntityComponent>
+
+
+    
+  </EntityComponents>
+</Definitions>

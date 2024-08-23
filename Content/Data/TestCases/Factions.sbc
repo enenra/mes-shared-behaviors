@@ -1,7 +1,7 @@
 <?xml version="1.0"?>
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <Factions>
-
+<!--
     <Faction Tag="TST1" Founder="MSB Founder 1">
       <Id>
         <TypeId>MyObjectBuilder_FactionDefinition</TypeId>
@@ -49,6 +49,7 @@
       <FactionIcon>Textures\FactionLogo\faction\logo03.png</FactionIcon>
       <Description>A MES Shared Behaviors faction.</Description>
     </Faction>
+-->
 
   </Factions>
 </Definitions>

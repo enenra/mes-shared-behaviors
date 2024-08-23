@@ -5,13 +5,14 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>CargoshipTriggersGroup</SubtypeId>
+          <SubtypeId>BountyHunterTriggersGroup</SubtypeId>
       </Id>
       <Description>
 
-	[RivalAI TriggerGroup]
-      
-[Triggers:MSB_CargoShip_Trigger_CargoCompromised]
+		[RivalAI TriggerGroup]
+		  
+		[Triggers:MSB_BounterHunter_Trigger_PlayerTooClose]
+		[Triggers:MSB_BounterHunter_Trigger_PlayerTooClose_ReputationLoss]
 	
       </Description>
       

@@ -5,13 +5,13 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>CargoshipTriggersGroup</SubtypeId>
+          <SubtypeId>Dynamic_TriggersGroup</SubtypeId>
       </Id>
       <Description>
 
 	[RivalAI TriggerGroup]
-      
-[Triggers:MSB_CargoShip_Trigger_CargoCompromised]
+
+	[Triggers:MSB_Dynamic_Trigger_Compromised]
 	
       </Description>
       
