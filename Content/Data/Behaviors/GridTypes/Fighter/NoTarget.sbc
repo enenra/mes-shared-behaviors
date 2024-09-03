@@ -5,22 +5,22 @@
 
 <!--
 LostTarget -> ResetCooldown Of NextRigger
-[Triggers:FAC-Drone-Trigger-LostTarget]
+[Triggers:MSB-Drone-Trigger-LostTarget]
 
 
 
 10s no Target? + TaskLeaderisNotReady -> Go into Patrol Mode && ResetCooldown
-[Triggers:FAC-Drone-Trigger-SwitchtoPatrol]
+[Triggers:MSB-Drone-Trigger-SwitchtoPatrol]
 
 
 3 min still no Target -> Retreat 
-[Triggers:FAC-Drone-Trigger-Retreat]
+[Triggers:MSB-Drone-Trigger-Retreat]
 	
 	
 	
 	
 HasTarget -> Reset it	
-[Triggers:FAC-Drone-Trigger-HasTarget]	
+[Triggers:MSB-Drone-Trigger-HasTarget]	
 	
 
 	
@@ -29,7 +29,7 @@ HasTarget -> Reset it
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>FAC-Drone-Trigger-LostTarget</SubtypeId>
+          <SubtypeId>MSB_Drone_Trigger_LostTarget</SubtypeId>
       </Id>
       <Description>
 
@@ -39,7 +39,7 @@ HasTarget -> Reset it
 	  [StartsReady:true]
 
 	  [MaxActions:-1]
-	  [Actions:FAC-Drone-Action-LostTarget]
+	  [Actions:MSB_Drone_Action_LostTarget]
 	  
       </Description>
       
@@ -48,25 +48,25 @@ HasTarget -> Reset it
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>FAC-Drone-Action-LostTarget</SubtypeId>
+          <SubtypeId>MSB_Drone_Action_LostTarget</SubtypeId>
       </Id>
       <Description>
 
 	[RivalAI Action]
 
 	[EnableTriggers:true]
-	[EnableTriggerNames:FAC-Drone-Trigger-SwitchtoPatrol]
-	[EnableTriggerNames:FAC-Drone-Trigger-HasTarget]	
+	[EnableTriggerNames:MSB_Drone_Trigger_SwitchtoPatrol]
+	[EnableTriggerNames:MSB_Drone_Trigger_HasTarget]	
 	
 	
 	[ResetCooldownTimeOfTriggers:true]
-	[ResetTriggerCooldownNames:FAC-Drone-Trigger-SwitchtoPatrol]	
+	[ResetTriggerCooldownNames:MSB-Drone-Trigger-SwitchtoPatrol]	
 	
 	
 	
 	[DisableTriggers:true]
-	[DisableTriggerNames:FAC-Drone-Trigger-LostTarget]			
-	[DisableTriggerNames:FAC-Drone-Trigger-Retreat]		
+	[DisableTriggerNames:MSB_Drone_Trigger_LostTarget]			
+	[DisableTriggerNames:MSB_Drone_Trigger_Retreat]		
 	</Description>
 
     </EntityComponent>	
@@ -75,7 +75,7 @@ HasTarget -> Reset it
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>FAC-Drone-Trigger-SwitchtoPatrol</SubtypeId>
+          <SubtypeId>MSB_Drone_Trigger_SwitchtoPatrol</SubtypeId>
       </Id>
       <Description>
 
@@ -83,11 +83,11 @@ HasTarget -> Reset it
 	[Type:NoTarget]
 	[MinCooldownMs:10000]	  
 	[MinCooldownMs:10001]	
-	[Conditions:FAC-Drone-Condition-TaskLeaderisNotReady]
+	[Conditions:MSB-Drone-Condition-TaskLeaderisNotReady]
 	[UseTrigger:false]
 	[StartsReady:false]
 	[MaxActions:-1]
-	[Actions:FAC-Drone-Action-SwitchtoPatrol]
+	[Actions:MSB_Drone_Action_SwitchtoPatrol]
 	  
       </Description>
       
@@ -97,7 +97,7 @@ HasTarget -> Reset it
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
 	<Id>
 	  <TypeId>Inventory</TypeId>
-	  <SubtypeId>FAC-Drone-Condition-TaskLeaderisNotReady</SubtypeId>
+	  <SubtypeId>MSB_Drone_Condition_TaskLeaderisNotReady</SubtypeId>
 	</Id>
 	<Description>
 	[RivalAI Condition]
@@ -114,34 +114,34 @@ HasTarget -> Reset it
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>FAC-Drone-Action-SwitchtoPatrol</SubtypeId>
+          <SubtypeId>MSB_Drone_Action_SwitchtoPatrol</SubtypeId>
       </Id>
       <Description>
 
 	[RivalAI Action]
 
 	[DisableTriggers:true]
-	[DisableTriggerNames:FAC-Drone-Trigger-SwitchtoPatrol]
+	[DisableTriggerNames:MSB_Drone_Trigger_SwitchtoPatrol]
 
 	[ChangeBehaviorSubclass:true]  
 	[NewBehaviorSubclass:Patrol]
 
 	[UseChatBroadcast:true]
-	[ChatData:FAC-Drone-Chat-SwitchtoPatrol]
+	[ChatData:MSB_Drone_Chat_SwitchtoPatrol]
 
 
 
 
 	[DisableTriggers:true]
-	[DisableTriggerNames:FAC-Drone-Trigger-SwitchtoPatrol]			
-	[DisableTriggerNames:FAC-Drone-Trigger-LostTarget]	
+	[DisableTriggerNames:MSB_Drone_Trigger_SwitchtoPatrol]			
+	[DisableTriggerNames:MSB_Drone_Trigger_LostTarget]	
 
 	[EnableTriggers:true]
-	[EnableTriggerNames:FAC-Drone-Trigger-HasTarget]	
-	[EnableTriggerNames:FAC-Drone-Trigger-Retreat]		
+	[EnableTriggerNames:MSB_Drone_Trigger_HasTarget]	
+	[EnableTriggerNames:MSB_Drone_Trigger_Retreat]		
 
 	[ResetCooldownTimeOfTriggers:true]
-	[ResetTriggerCooldownNames:FAC-Drone-Trigger-Retreat]
+	[ResetTriggerCooldownNames:MSB-Drone-Trigger-Retreat]
 
       </Description>
       
@@ -151,7 +151,7 @@ HasTarget -> Reset it
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>FAC-Drone-Chat-SwitchtoPatrol</SubtypeId>
+          <SubtypeId>MSB_Drone_Chat_SwitchtoPatrol</SubtypeId>
       </Id>
 	  
       <Description>
@@ -182,7 +182,7 @@ HasTarget -> Reset it
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>FAC-Drone-Trigger-Retreat</SubtypeId>
+          <SubtypeId>MSB_Drone_Trigger_Retreat</SubtypeId>
       </Id>
       <Description>
 
@@ -193,7 +193,7 @@ HasTarget -> Reset it
 	[UseTrigger:false]
 	[StartsReady:false]
 	[MaxActions:-1]
-	[Actions:FAC-Drone-Action-Retreat]
+	[Actions:MSB_Drone_Action_Retreat]
 	  
       </Description>
       
@@ -203,7 +203,7 @@ HasTarget -> Reset it
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>FAC-Drone-Action-Retreat</SubtypeId>
+          <SubtypeId>MSB_Drone_Action_Retreat</SubtypeId>
       </Id>
       <Description>
 
@@ -227,7 +227,7 @@ HasTarget -> Reset it
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>FAC-Drone-Trigger-HasTarget</SubtypeId>
+          <SubtypeId>MSB_Drone_Trigger_HasTarget</SubtypeId>
       </Id>
       <Description>
 
@@ -238,7 +238,7 @@ HasTarget -> Reset it
 	  [StartsReady:true]
 
 	  [MaxActions:-1]
-	  [Actions:FAC-Drone-Action-HasTarget]
+	  [Actions:MSB_Drone_Action_HasTarget]
 	  
       </Description>
       
@@ -248,7 +248,7 @@ HasTarget -> Reset it
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>FAC-Drone-Action-HasTarget</SubtypeId>
+          <SubtypeId>MSB_Drone_Action_HasTarget</SubtypeId>
       </Id>
       <Description>
 
@@ -258,12 +258,12 @@ HasTarget -> Reset it
 
 	
 	[EnableTriggers:true]
-	[EnableTriggerNames:FAC-Drone-Trigger-LostTarget]
+	[EnableTriggerNames:MSB_Drone_Trigger_LostTarget]
 	
 	[DisableTriggers:true]
-	[DisableTriggerNames:FAC-Drone-Trigger-HasTarget]	
-	[DisableTriggerNames:FAC-Drone-Trigger-SwitchtoPatrol]		
-	[DisableTriggerNames:FAC-Drone-Trigger-Retreat]		
+	[DisableTriggerNames:MSB_Drone_Trigger_HasTarget]	
+	[DisableTriggerNames:MSB_Drone_Trigger_SwitchtoPatrol]		
+	[DisableTriggerNames:MSB_Drone_Trigger_Retreat]		
 	
 	
       </Description>

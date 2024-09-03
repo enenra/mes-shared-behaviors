@@ -5,17 +5,17 @@
 	<!--
 	
 	
-	[AutopilotData:FAC-Dropship-Autopilot-1]
-	[SecondaryAutopilotData:FAC-Dropship-Autopilot-2]	
+	[AutopilotData:MSB-Dropship-Autopilot-1]
+	[SecondaryAutopilotData:MSB-Dropship-Autopilot-2]	
 	
 	
 
-	[Triggers:FAC-Dropship-Trigger-MoveToLanding]
-	[Triggers:FAC-Dropship-Trigger-StartLanding]	
+	[Triggers:MSB-Dropship-Trigger-MoveToLanding]
+	[Triggers:MSB-Dropship-Trigger-StartLanding]	
 	
-	[Triggers:FAC-Dropship-Trigger-ArrivedAtLandingSite]	
+	[Triggers:MSB-Dropship-Trigger-ArrivedAtLandingSite]	
 
-	[Triggers:FAC-Dropship-Trigger-LeaveLandingSite]	
+	[Triggers:MSB-Dropship-Trigger-LeaveLandingSite]	
 	
 	-->
 	
@@ -23,7 +23,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>FAC-Dropship-Trigger-MoveToLanding</SubtypeId>
+          <SubtypeId>MSB_Dropship_Trigger_MoveToLanding</SubtypeId>
       </Id>
       <Description>
 
@@ -31,9 +31,9 @@
 	  [Type:TargetNear]
 	  [UseTrigger:true]
 	  [TargetDistance:800]
-	[Conditions:FAC-Dropship-Condition-MoveToLanding]
+	[Conditions:MSB-Dropship-Condition-MoveToLanding]
 	  [MaxActions:1]
-	  [Actions:FAC-Dropship-Action-MoveToLanding]
+	  [Actions:MSB_Dropship_Action_MoveToLanding]
       </Description>
     </EntityComponent>
 
@@ -44,14 +44,14 @@
 	
 
 	[AddWaypoints:true]
-	[WaypointsToAdd:FAC-Dropship-Waypoint-LandingSite]
+	[WaypointsToAdd:MSB-Dropship-Waypoint-LandingSite]
 
 	-->
 	
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-Dropship-Condition-MoveToLanding</SubtypeId>
+        <SubtypeId>MSB_Dropship_Condition_MoveToLanding</SubtypeId>
       </Id>
       <Description>
 
@@ -80,7 +80,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>FAC-Dropship-Action-MoveToLanding</SubtypeId>
+          <SubtypeId>MSB_Dropship_Action_MoveToLanding</SubtypeId>
       </Id>
       <Description>
 
@@ -100,7 +100,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>FAC-Dropship-Trigger-StartLanding</SubtypeId>
+          <SubtypeId>MSB_Dropship_Trigger_StartLanding</SubtypeId>
       </Id>
       <Description>
 
@@ -109,7 +109,7 @@
 	  [UseTrigger:true]
 	  [TargetDistance:400]
 	  [MaxActions:1]
-	  [Actions:FAC-Dropship-Action-StartLanding]
+	  [Actions:MSB_Dropship_Action_StartLanding]
       </Description>
     </EntityComponent>
 
@@ -117,7 +117,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>FAC-Dropship-Action-StartLanding</SubtypeId>
+          <SubtypeId>MSB_Dropship_Action_StartLanding</SubtypeId>
       </Id>
       <Description>
 
@@ -134,7 +134,7 @@
 	 <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>FAC-Dropship-Waypoint-LandingSite</SubtypeId>
+          <SubtypeId>MSB_Dropship_Waypoint_LandingSite</SubtypeId>
       </Id>
       <Description>
 
@@ -155,7 +155,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>FAC-Dropship-Trigger-ArrivedAtLandingSite</SubtypeId>
+          <SubtypeId>MSB_Dropship_Trigger_ArrivedAtLandingSite</SubtypeId>
       </Id>
       <Description>
 
@@ -163,11 +163,11 @@
 	  [Type:Timer]
 	  [UseTrigger:true]
 	[StartsReady:true]
-		[Conditions:FAC-Dropship-Condition-ArrivedAtLandingSite]
+		[Conditions:MSB-Dropship-Condition-ArrivedAtLandingSite]
 
 		
 	  [MaxActions:1]
-	  [Actions:FAC-Dropship-Action-ArrivedAtLandingSite]
+	  [Actions:MSB_Dropship_Action_ArrivedAtLandingSite]
       </Description>
     </EntityComponent>		
 	
@@ -175,7 +175,7 @@
 	    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-Dropship-Condition-ArrivedAtLandingSite</SubtypeId>
+        <SubtypeId>MSB_Dropship_Condition_ArrivedAtLandingSite</SubtypeId>
       </Id>
       <Description>
 
@@ -198,18 +198,18 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-Dropship-Action-ArrivedAtLandingSite</SubtypeId>
+        <SubtypeId>MSB_Dropship_Action_ArrivedAtLandingSite</SubtypeId>
       </Id>
       <Description>
 
         [RivalAI Action]
 
         [EnableTriggers:true]
-        [EnableTriggerNames:FAC-Dropship-Trigger-LeaveLandingSite]
+        [EnableTriggerNames:MSB_Dropship_Trigger_LeaveLandingSite]
 
 
         [ResetCooldownTimeOfTriggers:true]
-        [ResetTriggerCooldownNames:FAC-Dropship-Trigger-LeaveLandingSite]
+        [ResetTriggerCooldownNames:MSB-Dropship-Trigger-LeaveLandingSite]
 		
 		
         [ChangeBehaviorSubclass:true]
@@ -232,7 +232,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-Dropship-Trigger-LeaveLandingSite</SubtypeId>
+        <SubtypeId>MSB_Dropship_Trigger_LeaveLandingSite</SubtypeId>
       </Id>
       <Description>
 
@@ -241,14 +241,14 @@
         [UseTrigger:false]
         [Type:Timer]
 
-        [Conditions:FAC-Dropship-Condition-LeaveLandingSite]
+        [Conditions:MSB-Dropship-Condition-LeaveLandingSite]
 
         [MinCooldownMs:1500]
         [MaxCooldownMs:1501]
         [StartsReady:false]
 
         [MaxActions:1]
-        [Actions:FAC-Dropship-Action-LeaveLandingSite]
+        [Actions:MSB_Dropship_Action_LeaveLandingSite]
 
       </Description>
 
@@ -257,7 +257,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-Dropship-Condition-LeaveLandingSite</SubtypeId>
+        <SubtypeId>MSB_Dropship_Condition_LeaveLandingSite</SubtypeId>
       </Id>
       <Description>
 
@@ -278,7 +278,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-Dropship-Action-LeaveLandingSite</SubtypeId>
+        <SubtypeId>MSB_Dropship_Action_LeaveLandingSite</SubtypeId>
       </Id>
       <Description>
 

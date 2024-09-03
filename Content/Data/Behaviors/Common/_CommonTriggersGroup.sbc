@@ -44,7 +44,7 @@
 	[Triggers:MSB_Common_Trigger_DamageByFriendly]
 
 	[Triggers:MSB_Default_Triggers_MaxRange]
-	[Triggers:MSB_Default_Trigger_FACAliveCheck]
+	[Triggers:MSB_Default_Trigger_MSBAliveCheck]
 	
 	
 	[Triggers:MSB_Common_Triggers_SendScore]
@@ -117,7 +117,7 @@
 	[Triggers:MSB_Common_Trigger_DamageByFriendly]
 
 	[Triggers:MSB_Default_Triggers_MaxRange]
-	[Triggers:MSB_Default_Trigger_FACAliveCheck]
+	[Triggers:MSB_Default_Trigger_MSBAliveCheck]
 	
 	
 	[Triggers:MSB_Common_Triggers_SendScore]

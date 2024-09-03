@@ -6,15 +6,15 @@
   
   
   
-[Triggers:FAC-OffensiveEscortDrone-Trigger-RequestEscortSlot]
+[Triggers:MSB-OffensiveEscortDrone-Trigger-RequestEscortSlot]
 
-[Triggers:FAC-OffensiveEscortDrone-Trigger-AggressionSwitchEscort]
+[Triggers:MSB-OffensiveEscortDrone-Trigger-AggressionSwitchEscort]
 
-[Triggers:FAC-OffensiveEscortDrone-Trigger-TaskLeaderisNotReady
+[Triggers:MSB-OffensiveEscortDrone-Trigger-TaskLeaderisNotReady
 
-[Triggers:FAC-OffensiveEscortDrone-Trigger-TaskLeaderisReady
+[Triggers:MSB-OffensiveEscortDrone-Trigger-TaskLeaderisReady
 
-[Triggers:FAC-OffensiveEscortDrone-Trigger-NoTargetSwitchEscort
+[Triggers:MSB-OffensiveEscortDrone-Trigger-NoTargetSwitchEscort
 
 
 
@@ -29,7 +29,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-OffensiveEscortDrone-Trigger-RequestEscortSlot</SubtypeId>
+        <SubtypeId>MSB_OffensiveEscortDrone_Trigger_RequestEscortSlot</SubtypeId>
       </Id>
       <Description>
 
@@ -43,7 +43,7 @@
         [StartsReady:false]
 
         [MaxActions:-1]
-        [Actions:FAC-OffensiveEscortDrone-Action-RequestEscortSlot]
+        [Actions:MSB_OffensiveEscortDrone_Action_RequestEscortSlot]
 
       </Description>
 
@@ -52,17 +52,17 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-OffensiveEscortDrone-Action-RequestEscortSlot</SubtypeId>
+        <SubtypeId>MSB_OffensiveEscortDrone_Action_RequestEscortSlot</SubtypeId>
       </Id>
       <Description>
 
         [RivalAI Action]
 
         [BroadcastCommandProfiles:true]
-        [CommandProfileIds:FAC-OffensiveEscortDrone-Command-RequestEscortSlot]
+        [CommandProfileIds:MSB-OffensiveEscortDrone-Command-RequestEscortSlot]
 
         [DisableTriggers:true]
-        [DisableTriggerNames:FAC-OffensiveEscortDrone-Trigger-RequestEscortSlot]
+        [DisableTriggerNames:MSB_OffensiveEscortDrone_Trigger_RequestEscortSlot]
 
       </Description>
 
@@ -71,7 +71,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-OffensiveEscortDrone-Command-RequestEscortSlot</SubtypeId>
+        <SubtypeId>MSB_OffensiveEscortDrone_Command_RequestEscortSlot</SubtypeId>
       </Id>
       <Description>
 
@@ -99,7 +99,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-OffensiveEscortDrone-Trigger-AggressionSwitchEscort</SubtypeId>
+        <SubtypeId>MSB_OffensiveEscortDrone_Trigger_AggressionSwitchEscort</SubtypeId>
       </Id>
       <Description>
 
@@ -112,7 +112,7 @@
 
         [StartsReady:true]
         [MaxActions:-1]
-        [Actions:FAC-OffensiveEscortDrone-Action-AggressionSwitchEscort]
+        [Actions:MSB_OffensiveEscortDrone_Action_AggressionSwitchEscort]
 
       </Description>
 
@@ -122,24 +122,24 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-OffensiveEscortDrone-Action-AggressionSwitchEscort</SubtypeId>
+        <SubtypeId>MSB_OffensiveEscortDrone_Action_AggressionSwitchEscort</SubtypeId>
       </Id>
       <Description>
 
         [RivalAI Action]
 
         [UseChatBroadcast:true]
-        [ChatData:FAC-OffensiveEscortDrone-Chat-AggressionSwitchEscort]
+        [ChatData:MSB_OffensiveEscortDrone_Chat_AggressionSwitchEscort]
 
         [ChangeBehaviorSubclass:true]
         [NewBehaviorSubclass:Fighter]
 
 
         [DisableTriggers:true]
-        [DisableTriggerNames:FAC-OffensiveEscortDrone-Trigger-AggressionSwitchEscort]
+        [DisableTriggerNames:MSB_OffensiveEscortDrone_Trigger_AggressionSwitchEscort]
 
         [EnableTriggers:true]
-        [EnableTriggerNames:FAC-OffensiveEscortDrone-Trigger-NoTargetSwitchEscort]
+        [EnableTriggerNames:MSB_OffensiveEscortDrone_Trigger_NoTargetSwitchEscort]
 		
 
       </Description>
@@ -150,7 +150,7 @@
   	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>FAC-OffensiveEscortDrone-Chat-AggressionSwitchEscort</SubtypeId>
+          <SubtypeId>MSB_OffensiveEscortDrone_Chat_AggressionSwitchEscort</SubtypeId>
       </Id>
 	  
       <Description>
@@ -185,7 +185,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-OffensiveEscortDrone-Trigger-TaskLeaderisNotReady</SubtypeId>
+        <SubtypeId>MSB_OffensiveEscortDrone_Trigger_TaskLeaderisNotReady</SubtypeId>
       </Id>
       <Description>
 
@@ -197,7 +197,7 @@
         [StartsReady:true]
 		
         [MaxActions:-1]
-        [Actions:FAC-OffensiveEscortDrone-Action-TaskLeaderisNotReady]
+        [Actions:MSB_OffensiveEscortDrone_Action_TaskLeaderisNotReady]
 
       </Description>
 
@@ -208,7 +208,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-OffensiveEscortDrone-Action-TaskLeaderisNotReady</SubtypeId>
+        <SubtypeId>MSB_OffensiveEscortDrone_Action_TaskLeaderisNotReady</SubtypeId>
       </Id>
       <Description>
 
@@ -231,7 +231,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-OffensiveEscortDrone-Trigger-TaskLeaderisReady</SubtypeId>
+        <SubtypeId>MSB_OffensiveEscortDrone_Trigger_TaskLeaderisReady</SubtypeId>
       </Id>
       <Description>
 
@@ -243,7 +243,7 @@
         [StartsReady:true]
 		
         [MaxActions:-1]
-        [Actions:FAC-OffensiveEscortDrone-Action-TaskLeaderisReady]
+        [Actions:MSB_OffensiveEscortDrone_Action_TaskLeaderisReady]
 
       </Description>
 
@@ -253,7 +253,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-OffensiveEscortDrone-Action-TaskLeaderisReady</SubtypeId>
+        <SubtypeId>MSB_OffensiveEscortDrone_Action_TaskLeaderisReady</SubtypeId>
       </Id>
       <Description>
 
@@ -275,7 +275,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-OffensiveEscortDrone-Trigger-NoTargetSwitchEscort</SubtypeId>
+        <SubtypeId>MSB_OffensiveEscortDrone_Trigger_NoTargetSwitchEscort</SubtypeId>
       </Id>
       <Description>
 
@@ -285,14 +285,14 @@
 	[Type:NoTarget]
 	[TargetDistance:2000]
 	[StartsReady:true]
-	[Conditions:FAC-OffensiveEscortDrone-Condition-TaskLeaderisReady]
+	[Conditions:MSB-OffensiveEscortDrone-Condition-TaskLeaderisReady]
 	  
 	[MinCooldownMs:6000]
 	[MaxCooldownMs:9000]		
 		
 
 	[MaxActions:-1]
-	[Actions:FAC-OffensiveEscortDrone-Action-PassiveSwitchPatrol]
+	[Actions:MSB_OffensiveEscortDrone_Action_PassiveSwitchPatrol]
 
       </Description>
 
@@ -302,7 +302,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>FAC-OffensiveEscortDrone-Condition-TaskLeaderisReady</SubtypeId>
+          <SubtypeId>MSB_OffensiveEscortDrone_Condition_TaskLeaderisReady</SubtypeId>
       </Id>
       <Description>
       [RivalAI Condition]
@@ -323,23 +323,23 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-OffensiveEscortDrone-Action-PassiveSwitchPatrol</SubtypeId>
+        <SubtypeId>MSB_OffensiveEscortDrone_Action_PassiveSwitchPatrol</SubtypeId>
       </Id>
       <Description>
 
         [RivalAI Action]
 
         [UseChatBroadcast:true]
-        [ChatData:FAC-OffensiveEscortDrone-Chat-PassiveSwitchPatrol]
+        [ChatData:MSB_OffensiveEscortDrone_Chat_PassiveSwitchPatrol]
 
         [ChangeBehaviorSubclass:true]
         [NewBehaviorSubclass:Escort]
 
         [DisableTriggers:true]
-        [DisableTriggerNames:FAC-OffensiveEscortDrone-Trigger-NoTargetSwitchEscort]
+        [DisableTriggerNames:MSB_OffensiveEscortDrone_Trigger_NoTargetSwitchEscort]
 
         [EnableTriggers:true]
-        [EnableTriggerNames:FAC-OffensiveEscortDrone-Trigger-AggressionSwitchEscort]
+        [EnableTriggerNames:MSB_OffensiveEscortDrone_Trigger_AggressionSwitchEscort]
 
       </Description>
 
@@ -349,7 +349,7 @@
   	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>FAC-OffensiveEscortDrone-Chat-PassiveSwitchPatrol</SubtypeId>
+          <SubtypeId>MSB_OffensiveEscortDrone_Chat_PassiveSwitchPatrol</SubtypeId>
       </Id>
 	  
       <Description>

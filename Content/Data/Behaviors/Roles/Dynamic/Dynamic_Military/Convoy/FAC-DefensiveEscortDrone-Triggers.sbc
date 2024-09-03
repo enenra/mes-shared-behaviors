@@ -4,19 +4,19 @@
  
  
  <!--
- FAC-DefensiveEscortDrone-Trigger-RequestEscortSlot
+ MSB-DefensiveEscortDrone-Trigger-RequestEscortSlot
  
- FAC-DefensiveEscortDrone-Trigger-AggressionSwitchEscort
+ MSB-DefensiveEscortDrone-Trigger-AggressionSwitchEscort
  
  
- FAC-DefensiveEscortDrone-Trigger-TargetfarSwitchEscort
+ MSB-DefensiveEscortDrone-Trigger-TargetfarSwitchEscort
  
  -->
  
    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-DefensiveEscortDrone-Trigger-RequestEscortSlot</SubtypeId>
+        <SubtypeId>MSB_DefensiveEscortDrone_Trigger_RequestEscortSlot</SubtypeId>
       </Id>
       <Description>
 
@@ -30,7 +30,7 @@
         [StartsReady:false]
 
         [MaxActions:-1]
-        [Actions:FAC-DefensiveEscortDrone-Action-RequestEscortSlot]
+        [Actions:MSB_DefensiveEscortDrone_Action_RequestEscortSlot]
 
       </Description>
 
@@ -40,7 +40,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-DefensiveEscortDrone-Trigger-AggressionSwitchEscort</SubtypeId>
+        <SubtypeId>MSB_DefensiveEscortDrone_Trigger_AggressionSwitchEscort</SubtypeId>
       </Id>
       <Description>
 
@@ -53,7 +53,7 @@
 
         [StartsReady:true]
         [MaxActions:-1]
-        [Actions:FAC-DefensiveEscortDrone-Action-AggressionSwitchEscort]
+        [Actions:MSB_DefensiveEscortDrone_Action_AggressionSwitchEscort]
 
       </Description>
 
@@ -63,7 +63,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-DefensiveEscortDrone-Trigger-TargetfarSwitchEscort</SubtypeId>
+        <SubtypeId>MSB_DefensiveEscortDrone_Trigger_TargetfarSwitchEscort</SubtypeId>
       </Id>
       <Description>
 
@@ -76,7 +76,7 @@
 
         [StartsReady:true]
         [MaxActions:-1]
-        [Actions:FAC-DefensiveEscortDrone-Action-PassiveSwitchPatrol]
+        [Actions:MSB_DefensiveEscortDrone_Action_PassiveSwitchPatrol]
 
       </Description>
 
@@ -87,17 +87,17 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-DefensiveEscortDrone-Action-RequestEscortSlot</SubtypeId>
+        <SubtypeId>MSB_DefensiveEscortDrone_Action_RequestEscortSlot</SubtypeId>
       </Id>
       <Description>
 
         [RivalAI Action]
 
         [BroadcastCommandProfiles:true]
-        [CommandProfileIds:FAC-DefensiveEscortDrone-Command-RequestEscortSlot]
+        [CommandProfileIds:MSB-DefensiveEscortDrone-Command-RequestEscortSlot]
 
         [DisableTriggers:true]
-        [DisableTriggerNames:FAC-DefensiveEscortDrone-Trigger-RequestEscortSlot]
+        [DisableTriggerNames:MSB_DefensiveEscortDrone_Trigger_RequestEscortSlot]
 
       </Description>
 
@@ -107,7 +107,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-DefensiveEscortDrone-Command-RequestEscortSlot</SubtypeId>
+        <SubtypeId>MSB_DefensiveEscortDrone_Command_RequestEscortSlot</SubtypeId>
       </Id>
       <Description>
         [RivalAI Command]
@@ -122,46 +122,46 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-DefensiveEscortDrone-Action-AggressionSwitchEscort</SubtypeId>
+        <SubtypeId>MSB_DefensiveEscortDrone_Action_AggressionSwitchEscort</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
 
         [UseChatBroadcast:true]
-        [ChatData:FAC-DefensiveEscortDrone-Chat-AggressionSwitchEscort]
+        [ChatData:MSB_DefensiveEscortDrone_Chat_AggressionSwitchEscort]
 
         [ChangeBehaviorSubclass:true]
         [NewBehaviorSubclass:Fighter]
 
 
         [DisableTriggers:true]
-        [DisableTriggerNames:FAC-DefensiveEscortDrone-Trigger-AggressionSwitchEscort]
+        [DisableTriggerNames:MSB_DefensiveEscortDrone_Trigger_AggressionSwitchEscort]
 
         [EnableTriggers:true]
-        [EnableTriggerNames:FAC-DefensiveEscortDrone-Trigger-TargetfarSwitchEscort]
+        [EnableTriggerNames:MSB_DefensiveEscortDrone_Trigger_TargetfarSwitchEscort]
       </Description>
     </EntityComponent>
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-DefensiveEscortDrone-Action-PassiveSwitchPatrol</SubtypeId>
+        <SubtypeId>MSB_DefensiveEscortDrone_Action_PassiveSwitchPatrol</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
 
         [UseChatBroadcast:true]
-        [ChatData:FAC-DefensiveEscortDrone-Chat-PassiveSwitchPatrol]
+        [ChatData:MSB_DefensiveEscortDrone_Chat_PassiveSwitchPatrol]
 
         [ChangeBehaviorSubclass:true]
         [NewBehaviorSubclass:Escort]
 
 
         [DisableTriggers:true]
-        [DisableTriggerNames:FAC-DefensiveEscortDrone-Trigger-TargetfarSwitchEscort]
+        [DisableTriggerNames:MSB_DefensiveEscortDrone_Trigger_TargetfarSwitchEscort]
 
         [EnableTriggers:true]
-        [EnableTriggerNames:FAC-DefensiveEscortDrone-Trigger-AggressionSwitchEscort]
+        [EnableTriggerNames:MSB_DefensiveEscortDrone_Trigger_AggressionSwitchEscort]
       </Description>
     </EntityComponent>		
 	
@@ -169,7 +169,7 @@
      <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-DefensiveEscortDrone-Chat-PassiveSwitchPatrol</SubtypeId>
+        <SubtypeId>MSB_DefensiveEscortDrone_Chat_PassiveSwitchPatrol</SubtypeId>
       </Id>
       <Description>
 
@@ -194,7 +194,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>FAC-DefensiveEscortDrone-Chat-AggressionSwitchEscort</SubtypeId>
+          <SubtypeId>MSB_DefensiveEscortDrone_Chat_AggressionSwitchEscort</SubtypeId>
       </Id>
 	  
       <Description>

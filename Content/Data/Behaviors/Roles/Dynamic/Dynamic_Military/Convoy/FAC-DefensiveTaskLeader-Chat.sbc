@@ -6,7 +6,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>FAC-DefensiveTaskLeader-Chat-Escort</SubtypeId>
+          <SubtypeId>MSB_DefensiveTaskLeader_Chat_Escort</SubtypeId>
       </Id>
 	  
       <Description>

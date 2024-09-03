@@ -5,7 +5,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-DefensiveTaskLeader-Action-ProcessEscortRequest</SubtypeId>
+        <SubtypeId>MSB_DefensiveTaskLeader_Action_ProcessEscortRequest</SubtypeId>
       </Id>
       <Description>
 
@@ -13,7 +13,7 @@
 
       [AssignEscortFromCommand:true]
       [UseChatBroadcast:true]
-      [ChatData:FAC-DefensiveTaskLeader-Chat-Escort]		
+      [ChatData:MSB_DefensiveTaskLeader_Chat_Escort]		
 
       </Description>
 

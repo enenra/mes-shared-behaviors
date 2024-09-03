@@ -4,15 +4,15 @@
 
 <!--
 
-[Triggers:FAC-SpaceStation-Triggers-Unload-ResetCooldown]
-[Triggers:FAC-SpaceStation-Triggers-Unload]
+[Triggers:MSB-SpaceStation-Triggers-Unload-ResetCooldown]
+[Triggers:MSB-SpaceStation-Triggers-Unload]
 
 -->
 
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>FAC-SpaceStation-Triggers-Unload-ResetCooldown</SubtypeId>
+          <SubtypeId>MSB_SpaceStation_Triggers_Unload_ResetCooldown</SubtypeId>
       </Id>
       <Description>
 
@@ -25,7 +25,7 @@
 	[MaxCooldownMs:3100]
 
 
-	  [Actions:FAC-SpaceStation-Action-Unload-ResetCooldown]	  
+	  [Actions:MSB_SpaceStation_Action_Unload_ResetCooldown]	  
       </Description>
       
     </EntityComponent>	
@@ -34,14 +34,14 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>FAC-SpaceStation-Action-Unload-ResetCooldown</SubtypeId>
+          <SubtypeId>MSB_SpaceStation_Action_Unload_ResetCooldown</SubtypeId>
       </Id>
       <Description>
 
       [RivalAI Action]
       
 	[ResetCooldownTimeOfTriggers:true]
-	[ResetTriggerCooldownNames:FAC-SpaceStation-Triggers-Unload]
+	[ResetTriggerCooldownNames:MSB-SpaceStation-Triggers-Unload]
 
 
       </Description>
@@ -52,7 +52,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>FAC-SpaceStation-Triggers-Unload</SubtypeId>
+          <SubtypeId>MSB_SpaceStation_Triggers_Unload</SubtypeId>
       </Id>
       <Description>
 
@@ -65,7 +65,7 @@
 	[MaxCooldownMs:9001]
 
 
-	  [Actions:FAC-SpaceStation-Action-Unload]	  
+	  [Actions:MSB_SpaceStation_Action_Unload]	  
       </Description>
       
     </EntityComponent>	
@@ -74,7 +74,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>FAC-SpaceStation-Action-Unload</SubtypeId>
+          <SubtypeId>MSB_SpaceStation_Action_Unload</SubtypeId>
       </Id>
       <Description>
 

@@ -9,18 +9,18 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>FAC-OffensiveEscortSystem-Drone-TriggerGroup</SubtypeId>
+          <SubtypeId>MSB_OffensiveEscortSystem_Drone_TriggerGroup</SubtypeId>
       </Id>
       <Description>
 
 	[RivalAI TriggerGroup]
 
-	[Triggers:FAC-OffensiveEscortDrone-Trigger-RequestEscortSlot]		
-	[Triggers:FAC-OffensiveEscortDrone-Trigger-AggressionSwitchEscort]	
+	[Triggers:MSB_OffensiveEscortDrone_Trigger_RequestEscortSlot]		
+	[Triggers:MSB_OffensiveEscortDrone_Trigger_AggressionSwitchEscort]	
 	
-	[Triggers:FAC-OffensiveEscortDrone-Trigger-TaskLeaderisNotReady]		
-	[Triggers:FAC-OffensiveEscortDrone-Trigger-TaskLeaderisReady]		
-	[Triggers:FAC-OffensiveEscortDrone-Trigger-NoTargetSwitchEscort]
+	[Triggers:MSB_OffensiveEscortDrone_Trigger_TaskLeaderisNotReady]		
+	[Triggers:MSB_OffensiveEscortDrone_Trigger_TaskLeaderisReady]		
+	[Triggers:MSB_OffensiveEscortDrone_Trigger_NoTargetSwitchEscort]
 
 
 	
@@ -31,18 +31,18 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>FAC-OffensiveEscortSystem-TaskLeader-TriggerGroup</SubtypeId>
+          <SubtypeId>MSB_OffensiveEscortSystem_TaskLeader_TriggerGroup</SubtypeId>
       </Id>
       <Description>
 
 	[RivalAI TriggerGroup]
 
-	[Triggers:FAC-OffensiveTaskLeader-Trigger-ProcessEscortRequest]		
-	[Triggers:FAC-OffensiveTaskLeader-Trigger-TargetNear1500]	
+	[Triggers:MSB_OffensiveTaskLeader_Trigger_ProcessEscortRequest]		
+	[Triggers:MSB_OffensiveTaskLeader_Trigger_TargetNear1500]	
 	
-	[Triggers:FAC-OffensiveTaskLeader-Trigger-HasTarget]	
-	[Triggers:FAC-OffensiveTaskLeader-Trigger-NoTarget]	
-	[Triggers:FAC-OffensiveTaskLeader-Trigger-SwitchtoCargo]
+	[Triggers:MSB_OffensiveTaskLeader_Trigger_HasTarget]	
+	[Triggers:MSB_OffensiveTaskLeader_Trigger_NoTarget]	
+	[Triggers:MSB_OffensiveTaskLeader_Trigger_SwitchtoCargo]
 	
 	
       </Description>
@@ -53,18 +53,18 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>FAC-OffensiveEscortSystem-TaskLeader-TriggerGroup-Hunter</SubtypeId>
+          <SubtypeId>MSB_OffensiveEscortSystem_TaskLeader_TriggerGroup_Hunter</SubtypeId>
       </Id>
       <Description>
 
 	[RivalAI TriggerGroup]
 
-	[Triggers:FAC-OffensiveTaskLeader-Trigger-ProcessEscortRequest]		
-	[Triggers:FAC-OffensiveTaskLeader-Trigger-TargetNear1500]	
+	[Triggers:MSB_OffensiveTaskLeader_Trigger_ProcessEscortRequest]		
+	[Triggers:MSB_OffensiveTaskLeader_Trigger_TargetNear1500]	
 	
-	[Triggers:FAC-OffensiveTaskLeader-Trigger-HasTarget-Hunter]	
-	[Triggers:FAC-OffensiveTaskLeader-Trigger-NoTarget-Hunter]	
-	[Triggers:FAC-OffensiveTaskLeader-Trigger-SwitchtoCargo-Hunter]
+	[Triggers:MSB_OffensiveTaskLeader_Trigger_HasTarget_Hunter]	
+	[Triggers:MSB_OffensiveTaskLeader_Trigger_NoTarget_Hunter]	
+	[Triggers:MSB_OffensiveTaskLeader_Trigger_SwitchtoCargo_Hunter]
 	
 	
       </Description>

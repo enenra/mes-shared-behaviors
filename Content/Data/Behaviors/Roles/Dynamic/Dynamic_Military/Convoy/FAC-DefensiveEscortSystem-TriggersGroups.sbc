@@ -5,15 +5,15 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>FAC-DefensiveEscortSystem-Drone-TriggerGroup</SubtypeId>
+          <SubtypeId>MSB_DefensiveEscortSystem_Drone_TriggerGroup</SubtypeId>
       </Id>
       <Description>
 
 	[RivalAI TriggerGroup]
 
-	[Triggers:FAC-DefensiveEscortDrone-Trigger-RequestEscortSlot]		
-	[Triggers:FAC-DefensiveEscortDrone-Trigger-AggressionSwitchEscort]	
-	[Triggers:FAC-DefensiveEscortDrone-Trigger-TargetfarSwitchEscort]	
+	[Triggers:MSB_DefensiveEscortDrone_Trigger_RequestEscortSlot]		
+	[Triggers:MSB_DefensiveEscortDrone_Trigger_AggressionSwitchEscort]	
+	[Triggers:MSB_DefensiveEscortDrone_Trigger_TargetfarSwitchEscort]	
 	
       </Description>
     </EntityComponent> 	
@@ -22,13 +22,13 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>FAC-DefensiveEscortSystem-TaskLeader-TriggerGroup</SubtypeId>
+          <SubtypeId>MSB_DefensiveEscortSystem_TaskLeader_TriggerGroup</SubtypeId>
       </Id>
       <Description>
 
 	[RivalAI TriggerGroup]
 
-	[Triggers:FAC-DefensiveTaskLeader-Trigger-ProcessEscortRequest]		
+	[Triggers:MSB_DefensiveTaskLeader_Trigger_ProcessEscortRequest]		
 
 	
 	

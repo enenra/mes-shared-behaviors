@@ -4,15 +4,15 @@
 
 <!--
 
-[Triggers:FAC-Static-Triggers-Unload-ResetCooldown]
-[Triggers:FAC-Static-Triggers-Unload]
+[Triggers:MSB-Static-Triggers-Unload-ResetCooldown]
+[Triggers:MSB-Static-Triggers-Unload]
 
 -->
 
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>FAC-Static-Triggers-Unload-ResetCooldown</SubtypeId>
+          <SubtypeId>MSB_Static_Triggers_Unload_ResetCooldown</SubtypeId>
       </Id>
       <Description>
 
@@ -25,7 +25,7 @@
 	[MaxCooldownMs:3100]
 
 
-	  [Actions:FAC-Static-Action-Unload-ResetCooldown]	  
+	  [Actions:MSB_Static_Action_Unload_ResetCooldown]	  
       </Description>
       
     </EntityComponent>	
@@ -34,14 +34,14 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>FAC-Static-Action-Unload-ResetCooldown</SubtypeId>
+          <SubtypeId>MSB_Static_Action_Unload_ResetCooldown</SubtypeId>
       </Id>
       <Description>
 
       [RivalAI Action]
       
 	[ResetCooldownTimeOfTriggers:true]
-	[ResetTriggerCooldownNames:FAC-Static-Triggers-Unload]
+	[ResetTriggerCooldownNames:MSB-Static-Triggers-Unload]
 
 
       </Description>
@@ -52,7 +52,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>FAC-Static-Triggers-Unload</SubtypeId>
+          <SubtypeId>MSB_Static_Triggers_Unload</SubtypeId>
       </Id>
       <Description>
 
@@ -66,7 +66,7 @@
 [MaxActions:1]
 
 
-	  [Actions:FAC-Static-Action-Unload]	  
+	  [Actions:MSB_Static_Action_Unload]	  
       </Description>
       
     </EntityComponent>	
@@ -75,7 +75,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>FAC-Static-Action-Unload</SubtypeId>
+          <SubtypeId>MSB_Static_Action_Unload</SubtypeId>
       </Id>
       <Description>
 

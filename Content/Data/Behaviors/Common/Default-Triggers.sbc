@@ -5,7 +5,7 @@
 <!-- 
 
 [Triggers:MSB_Default_Triggers_MaxRange]
-[Triggers:MSB_Default_Trigger_FACAliveCheck]
+[Triggers:MSB_Default_Trigger_MSBAliveCheck]
 
 -->
 
@@ -50,7 +50,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Default_Trigger_FACAliveCheck</SubtypeId>
+        <SubtypeId>MSB_Default_Trigger_MSBAliveCheck</SubtypeId>
       </Id>
       <Description>
 
@@ -62,7 +62,7 @@
 
         [StartsReady:true]
         [MaxActions:-1]
-        [Actions:MSB_Common_Action_FACAliveCheck]
+        [Actions:MSB_Common_Action_MSBAliveCheck]
       </Description>
 
     </EntityComponent>
@@ -71,7 +71,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Common_Action_FACAliveCheck</SubtypeId>
+        <SubtypeId>MSB_Common_Action_MSBAliveCheck</SubtypeId>
       </Id>
       <Description>
 

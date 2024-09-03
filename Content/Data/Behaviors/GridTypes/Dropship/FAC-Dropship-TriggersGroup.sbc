@@ -6,24 +6,24 @@
 	<!--
 	
 	
-	[AutopilotData:FAC-Dropship-Autopilot-1]
-	[SecondaryAutopilotData:FAC-Dropship-Autopilot-2]	
+	[AutopilotData:MSB-Dropship-Autopilot-1]
+	[SecondaryAutopilotData:MSB-Dropship-Autopilot-2]	
 	
 	-->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>FAC-Dropship-CommonTriggers</SubtypeId>
+          <SubtypeId>MSB_Dropship_CommonTriggers</SubtypeId>
       </Id>
       <Description>
 
       [RivalAI TriggerGroup]
-	[Triggers:FAC-Dropship-Trigger-MoveToLanding]
-	[Triggers:FAC-Dropship-Trigger-StartLanding]	
+	[Triggers:MSB_Dropship_Trigger_MoveToLanding]
+	[Triggers:MSB_Dropship_Trigger_StartLanding]	
 	
-	[Triggers:FAC-Dropship-Trigger-ArrivedAtLandingSite]	
+	[Triggers:MSB_Dropship_Trigger_ArrivedAtLandingSite]	
 
-	[Triggers:FAC-Dropship-Trigger-LeaveLandingSite]	
+	[Triggers:MSB_Dropship_Trigger_LeaveLandingSite]	
 		
       </Description>
       

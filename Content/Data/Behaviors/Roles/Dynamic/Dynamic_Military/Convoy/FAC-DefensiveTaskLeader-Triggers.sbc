@@ -6,7 +6,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-DefensiveTaskLeader-Trigger-ProcessEscortRequest</SubtypeId>
+        <SubtypeId>MSB_DefensiveTaskLeader_Trigger_ProcessEscortRequest</SubtypeId>
       </Id>
       <Description>
 
@@ -20,7 +20,7 @@
         [MinCooldownMs:0]
         [MaxCooldownMs:0]
         [MaxActions:-1]
-        [Actions:FAC-DefensiveTaskLeader-Action-ProcessEscortRequest]
+        [Actions:MSB_DefensiveTaskLeader_Action_ProcessEscortRequest]
 
       </Description>
 

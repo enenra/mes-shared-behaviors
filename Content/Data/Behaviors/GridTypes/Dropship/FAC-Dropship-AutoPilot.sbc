@@ -6,7 +6,7 @@
    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-Dropship-Autopilot</SubtypeId>
+        <SubtypeId>MSB_Dropship_Autopilot</SubtypeId>
       </Id>
       <Description>
 
@@ -31,7 +31,7 @@
    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-Dropship-Autopilot-PreLanding</SubtypeId>
+        <SubtypeId>MSB_Dropship_Autopilot_PreLanding</SubtypeId>
       </Id>
       <Description>
 
@@ -61,7 +61,7 @@
    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-Dropship-Autopilot-Landing</SubtypeId>
+        <SubtypeId>MSB_Dropship_Autopilot_Landing</SubtypeId>
       </Id>
       <Description>
 

@@ -5,14 +5,14 @@
 
 
 <!--
-[Triggers:FAC-Trigger-OffensiveDrone-TargetUnderGround]
-[Triggers:FAC-Action-OffensiveDrone-ResetAutopilot]
+[Triggers:MSB-Trigger-OffensiveDrone-TargetUnderGround]
+[Triggers:MSB-Action-OffensiveDrone-ResetAutopilot]
 
 -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-Trigger-OffensiveDrone-TargetUnderGround</SubtypeId>
+        <SubtypeId>MSB_Trigger_OffensiveDrone_TargetUnderGround</SubtypeId>
       </Id>
       <Description>
 
@@ -24,11 +24,11 @@
         [MinCooldownMs:5000]
         [MaxCooldownMs:5001]
 		
-		[Conditions:FAC-Condition-OffensiveDrone-TargetUnderGround]
+		[Conditions:MSB-Condition-OffensiveDrone-TargetUnderGround]
 		
         [StartsReady:true]
         [MaxActions:-1]
-        [Actions:FAC-Action-OffensiveDrone-TargetUnderGround]
+        [Actions:MSB_Action_OffensiveDrone_TargetUnderGround]
 
       </Description>
 
@@ -38,7 +38,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-Condition-OffensiveDrone-TargetUnderGround</SubtypeId>
+        <SubtypeId>MSB_Condition_OffensiveDrone_TargetUnderGround</SubtypeId>
       </Id>
       <Description>
 
@@ -63,7 +63,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-Action-OffensiveDrone-TargetUnderGround</SubtypeId>
+        <SubtypeId>MSB_Action_OffensiveDrone_TargetUnderGround</SubtypeId>
       </Id>
       <Description>
 
@@ -78,10 +78,10 @@
 
 
         [DisableTriggers:true]
-        [DisableTriggerNames:FAC-Trigger-OffensiveDrone-TargetUnderGround]
+        [DisableTriggerNames:MSB_Trigger_OffensiveDrone_TargetUnderGround]
 
         [EnableTriggers:true]
-        [EnableTriggerNames:FAC-Trigger-OffensiveDrone-ResetAutopilot]
+        [EnableTriggerNames:MSB_Trigger_OffensiveDrone_ResetAutopilot]
 
 
 
@@ -94,7 +94,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-Trigger-OffensiveDrone-ResetAutopilot</SubtypeId>
+        <SubtypeId>MSB_Trigger_OffensiveDrone_ResetAutopilot</SubtypeId>
       </Id>
       <Description>
 
@@ -106,11 +106,11 @@
         [MinCooldownMs:600]
         [MaxCooldownMs:601]
 		
-		[Conditions:FAC-Condition-OffensiveDrone-TargetAboveGround]
+		[Conditions:MSB-Condition-OffensiveDrone-TargetAboveGround]
 		
         [StartsReady:true]
         [MaxActions:-1]
-        [Actions:FAC-Action-OffensiveDrone-ResetAutopilot]
+        [Actions:MSB_Action_OffensiveDrone_ResetAutopilot]
 
       </Description>
 
@@ -120,7 +120,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-Condition-OffensiveDrone-TargetAboveGround</SubtypeId>
+        <SubtypeId>MSB_Condition_OffensiveDrone_TargetAboveGround</SubtypeId>
       </Id>
       <Description>
 
@@ -141,7 +141,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-Action-OffensiveDrone-ResetAutopilot</SubtypeId>
+        <SubtypeId>MSB_Action_OffensiveDrone_ResetAutopilot</SubtypeId>
       </Id>
       <Description>
 
@@ -155,10 +155,10 @@
 		[AutopilotProfile:Primary]
 
         [DisableTriggers:true]
-        [DisableTriggerNames:FAC-Trigger-OffensiveDrone-ResetAutopilot]
+        [DisableTriggerNames:MSB_Trigger_OffensiveDrone_ResetAutopilot]
 		
 		[EnableTriggers:true]
-        [EnableTriggerNames:FAC-Trigger-OffensiveDrone-TargetUnderGround]
+        [EnableTriggerNames:MSB_Trigger_OffensiveDrone_TargetUnderGround]
 
 
       </Description>

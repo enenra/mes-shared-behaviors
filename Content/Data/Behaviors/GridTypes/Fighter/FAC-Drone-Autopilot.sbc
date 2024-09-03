@@ -5,7 +5,7 @@
 
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-Drone-Autopilot-Strike</SubtypeId>
+        <SubtypeId>MSB_Drone_Autopilot_Strike</SubtypeId>
       </Id>
       <Description>
 
@@ -49,7 +49,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-Drone-Autopilot-Fighter</SubtypeId>
+        <SubtypeId>MSB_Drone_Autopilot_Fighter</SubtypeId>
       </Id>
       <Description>
 
@@ -86,7 +86,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-Drone-Autopilot-Fighter-LowAltitude</SubtypeId>
+        <SubtypeId>MSB_Drone_Autopilot_Fighter_LowAltitude</SubtypeId>
       </Id>
       <Description>
 
@@ -140,7 +140,7 @@
    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAF-EscortAutopilot</SubtypeId>
+        <SubtypeId>FAF_EscortAutopilot</SubtypeId>
       </Id>
       <Description>
 
@@ -170,7 +170,7 @@
    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAF-EscortAutopilot-B</SubtypeId>
+        <SubtypeId>FAF_EscortAutopilot_B</SubtypeId>
       </Id>
       <Description>
 
