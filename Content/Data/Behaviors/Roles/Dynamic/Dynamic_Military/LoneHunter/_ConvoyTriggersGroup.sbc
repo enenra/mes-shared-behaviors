@@ -5,7 +5,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>LoneHunterTriggersGroup</SubtypeId>
+          <SubtypeId>MSB_LoneHunter_TriggersGroup</SubtypeId>
       </Id>
       <Description>
 

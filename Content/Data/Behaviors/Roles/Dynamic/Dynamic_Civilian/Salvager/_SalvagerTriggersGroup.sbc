@@ -5,7 +5,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>CargoshipTriggersGroup</SubtypeId>
+          <SubtypeId>MSB_Salvager_TriggersGroup</SubtypeId>
       </Id>
       <Description>
 

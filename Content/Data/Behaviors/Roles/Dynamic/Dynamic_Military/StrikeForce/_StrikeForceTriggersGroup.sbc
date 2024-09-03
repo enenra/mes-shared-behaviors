@@ -5,7 +5,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>StrikeForceTriggersGroup</SubtypeId>
+          <SubtypeId>MSB_StrikeForce_TriggersGroup</SubtypeId>
       </Id>
       <Description>
 

@@ -5,7 +5,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MerchantTriggersGroup</SubtypeId>
+          <SubtypeId>MSB_MerchantTriggersGroup</SubtypeId>
       </Id>
       <Description>
 

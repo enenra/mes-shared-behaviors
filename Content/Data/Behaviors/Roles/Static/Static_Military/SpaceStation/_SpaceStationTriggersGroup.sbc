@@ -5,7 +5,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_SpaceStationTriggersGroup</SubtypeId>
+          <SubtypeId>MSB_SpaceStation_TriggersGroup</SubtypeId>
       </Id>
       <Description>
 

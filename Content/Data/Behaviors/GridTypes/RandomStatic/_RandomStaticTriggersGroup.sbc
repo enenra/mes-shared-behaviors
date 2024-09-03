@@ -5,7 +5,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>FixedStaticTriggersGroup</SubtypeId>
+          <SubtypeId>MSB_RandomStatic_TriggersGroup</SubtypeId>
       </Id>
       <Description>
 
