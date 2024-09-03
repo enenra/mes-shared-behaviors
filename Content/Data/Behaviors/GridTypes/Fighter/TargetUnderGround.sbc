@@ -24,7 +24,7 @@
         [MinCooldownMs:5000]
         [MaxCooldownMs:5001]
 		
-		[Conditions:MSB-Condition-OffensiveDrone-TargetUnderGround]
+		[Conditions:MSB_Condition_OffensiveDrone_TargetUnderGround]
 		
         [StartsReady:true]
         [MaxActions:-1]
@@ -106,7 +106,7 @@
         [MinCooldownMs:600]
         [MaxCooldownMs:601]
 		
-		[Conditions:MSB-Condition-OffensiveDrone-TargetAboveGround]
+		[Conditions:MSB_Condition_OffensiveDrone_TargetAboveGround]
 		
         [StartsReady:true]
         [MaxActions:-1]

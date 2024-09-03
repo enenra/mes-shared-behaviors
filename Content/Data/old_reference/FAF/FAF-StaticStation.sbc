@@ -32,7 +32,7 @@
 			[IgnoreCombatPhase:true]
 			[IgnoreCleanupRules:true]
 			[SandboxVariables:FAFCarcosa]			
-			[ZoneConditions:ZoneCondition-ZoneAaW]
+			[ZoneConditions:ZoneCondition_ZoneAaW]
 			</Description>
 			<Icon>Textures\GUI\Icons\Fake.dds</Icon>  
 			<IsPirate>true</IsPirate>
@@ -46,7 +46,7 @@
 						<Z>0.0</Z>
 					</Position>
 					<Speed>0</Speed>
-					<Behaviour>FAF-CapturableController-Behavior</Behaviour>
+					<Behaviour>FAF_CapturableController_Behavior</Behaviour>
 				<PlaceToGridOrigin>true</PlaceToGridOrigin>
 				</Prefab>
 			</Prefabs>

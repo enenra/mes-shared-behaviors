@@ -5,7 +5,7 @@
 	<SpawnGroup>
 			<Id>
 				<TypeId>SpawnGroupDefinition</TypeId> 
-				<SubtypeId>ITC-SpawnGroup-AtmoCargo-Mercant</SubtypeId>
+				<SubtypeId>ITC_SpawnGroup_AtmoCargo_Mercant</SubtypeId>
 			</Id>
 			<Description>
 
@@ -63,7 +63,7 @@
 					<Z>0.0</Z>
 				</Position>
 				<Speed>25</Speed>
-				<Behaviour>ITC-Cargo-Behavior</Behaviour>
+				<Behaviour>ITC_Cargo_Behavior</Behaviour>
 			</Prefab>
 			
 			
@@ -74,7 +74,7 @@
 					<Z>0.0</Z>
 				</Position>
 				<Speed>25</Speed>
-				<Behaviour>ITC-Cargo-Behavior</Behaviour>
+				<Behaviour>ITC_Cargo_Behavior</Behaviour>
 			</Prefab>
 			
 			<Prefab SubtypeId="ITC - Titania">
@@ -84,7 +84,7 @@
 					<Z>0.0</Z>
 				</Position>
 				<Speed>25</Speed>
-				<Behaviour>ITC-Cargo-Behavior</Behaviour>
+				<Behaviour>ITC_Cargo_Behavior</Behaviour>
 			</Prefab>
 							
 							
@@ -95,7 +95,7 @@
 					<Z>0.0</Z>
 				</Position>
 				<Speed>25</Speed>
-				<Behaviour>ITC-Cargo-Behavior</Behaviour>
+				<Behaviour>ITC_Cargo_Behavior</Behaviour>
 			</Prefab>							
 							
 				
@@ -115,7 +115,7 @@
 			<SpawnGroup>
 			<Id>
 				<TypeId>SpawnGroupDefinition</TypeId> 
-				<SubtypeId>ITC-SpawnGroup-SpaceCargo</SubtypeId>
+				<SubtypeId>ITC_SpawnGroup_SpaceCargo</SubtypeId>
 			</Id>
 			<Description>
 
@@ -163,7 +163,7 @@
 					<Z>0.0</Z>
 				</Position>
 				<Speed>25</Speed>
-				<Behaviour>ITC-Cargo-Behavior</Behaviour>
+				<Behaviour>ITC_Cargo_Behavior</Behaviour>
 			</Prefab>
 			
 			
@@ -174,7 +174,7 @@
 					<Z>0.0</Z>
 				</Position>
 				<Speed>25</Speed>
-				<Behaviour>ITC-Cargo-Behavior</Behaviour>
+				<Behaviour>ITC_Cargo_Behavior</Behaviour>
 			</Prefab>
 			
 			<Prefab SubtypeId="ITC-SpaceCargo3">
@@ -184,7 +184,7 @@
 					<Z>0.0</Z>
 				</Position>
 				<Speed>25</Speed>
-				<Behaviour>ITC-Cargo-Behavior</Behaviour>
+				<Behaviour>ITC_Cargo_Behavior</Behaviour>
 			</Prefab>
 							
 				
@@ -200,7 +200,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>ITC-Cargo-Behavior</SubtypeId>
+          <SubtypeId>ITC_Cargo_Behavior</SubtypeId>
       </Id>
       <Description>
 
@@ -208,7 +208,7 @@
       [BehaviorName:CargoShip]
 	  
 	[AutopilotData:FAC-Cargo-Autopilot]
-	[TertiaryAutopilotData:FAC-Cargo-Autopilot-Landing]
+	[TertiaryAutopilotData:FAC_Cargo_Autopilot_Landing]
 
 	  
 	[TriggerGroups:MSB_Dynamic_CommonTriggersGroup] 	
@@ -226,7 +226,7 @@
 
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-Cargo-Autopilot</SubtypeId>
+        <SubtypeId>MSB_Cargo_Autopilot</SubtypeId>
       </Id>
       <Description>
 
@@ -261,7 +261,7 @@
    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-Cargo-Autopilot-Landing</SubtypeId>
+        <SubtypeId>MSB_Cargo_Autopilot_Landing</SubtypeId>
       </Id>
       <Description>
 

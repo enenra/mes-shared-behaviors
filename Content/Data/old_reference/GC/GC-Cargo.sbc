@@ -5,7 +5,7 @@
 	<SpawnGroup>
 			<Id>
 				<TypeId>SpawnGroupDefinition</TypeId> 
-				<SubtypeId>GC-SpawnGroup-Cargo-Escort</SubtypeId>
+				<SubtypeId>GC_SpawnGroup_Cargo_Escort</SubtypeId>
 			</Id>
 			<Description>
 
@@ -66,7 +66,7 @@
 				<Z>0.0</Z>
 			</Position>
 			<Speed>25</Speed>
-			<Behaviour>GC-DefensiveEscortDrone-Behavior1</Behaviour>
+			<Behaviour>GC_DefensiveEscortDrone_Behavior1</Behaviour>
 		</Prefab>			
 
 	
@@ -77,7 +77,7 @@
 					<Z>0.0</Z>
 				</Position>
 				<Speed>25</Speed>
-				<Behaviour>GC-DefensiveEscortDrone-Behavior1</Behaviour>
+				<Behaviour>GC_DefensiveEscortDrone_Behavior1</Behaviour>
 			</Prefab>	
 
 
@@ -89,7 +89,7 @@
 					<Z>0.0</Z>
 				</Position>
 				<Speed>25</Speed>
-				<Behaviour>GC-Cargo-Behavior</Behaviour>
+				<Behaviour>GC_Cargo_Behavior</Behaviour>
 			</Prefab>
 
 			<Prefab SubtypeId="GC-SmallCargoTransport">
@@ -99,7 +99,7 @@
 					<Z>0.0</Z>
 				</Position>
 				<Speed>25</Speed>
-				<Behaviour>GC-Cargo-Behavior</Behaviour>
+				<Behaviour>GC_Cargo_Behavior</Behaviour>
 			</Prefab>
 			
 		</Prefabs>	
@@ -112,7 +112,7 @@
 		<SpawnGroup>
 			<Id>
 				<TypeId>SpawnGroupDefinition</TypeId> 
-				<SubtypeId>GC-SpawnGroup-SpaceCargo</SubtypeId>
+				<SubtypeId>GC_SpawnGroup_SpaceCargo</SubtypeId>
 			</Id>
 			<Description>
 
@@ -172,7 +172,7 @@
 					<Z>0.0</Z>
 				</Position>
 				<Speed>25</Speed>
-				<Behaviour>GC-DefensiveEscortDrone-Behavior</Behaviour>
+				<Behaviour>GC_DefensiveEscortDrone_Behavior</Behaviour>
 			</Prefab>					
 		
 			<Prefab SubtypeId="GC-Fighter-MK3">
@@ -182,7 +182,7 @@
 					<Z>0.0</Z>
 				</Position>
 				<Speed>25</Speed>
-				<Behaviour>GC-DefensiveEscortDrone-Behavior</Behaviour>
+				<Behaviour>GC_DefensiveEscortDrone_Behavior</Behaviour>
 			</Prefab>					
 
 		
@@ -194,7 +194,7 @@
 					<Z>0.0</Z>
 				</Position>
 				<Speed>25</Speed>
-				<Behaviour>GC-Cargo-Behavior</Behaviour>
+				<Behaviour>GC_Cargo_Behavior</Behaviour>
 			</Prefab>
 			
 		
@@ -205,7 +205,7 @@
 					<Z>0.0</Z>
 				</Position>
 				<Speed>25</Speed>
-				<Behaviour>GC-Cargo-Behavior</Behaviour>
+				<Behaviour>GC_Cargo_Behavior</Behaviour>
 			</Prefab>
 			
 			<Prefab SubtypeId="GC-HydroVessel1">
@@ -215,7 +215,7 @@
 					<Z>0.0</Z>
 				</Position>
 				<Speed>25</Speed>
-				<Behaviour>GC-Cargo-Behavior</Behaviour>
+				<Behaviour>GC_Cargo_Behavior</Behaviour>
 			</Prefab>
 				
 				

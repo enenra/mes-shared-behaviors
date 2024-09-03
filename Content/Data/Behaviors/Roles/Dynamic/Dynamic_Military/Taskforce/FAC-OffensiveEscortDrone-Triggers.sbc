@@ -285,7 +285,7 @@
 	[Type:NoTarget]
 	[TargetDistance:2000]
 	[StartsReady:true]
-	[Conditions:MSB-OffensiveEscortDrone-Condition-TaskLeaderisReady]
+	[Conditions:MSB_OffensiveEscortDrone_Condition_TaskLeaderisReady]
 	  
 	[MinCooldownMs:6000]
 	[MaxCooldownMs:9000]		

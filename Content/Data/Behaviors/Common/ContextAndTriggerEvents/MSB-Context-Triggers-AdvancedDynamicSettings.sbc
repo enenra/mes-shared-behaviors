@@ -264,7 +264,7 @@ MSB_Context_ManualTrigger_InitDynamicBattle
 
       [RivalAI Command]
       
-	[CommandCode:GC-SOS]
+	[CommandCode:GC_SOS]
 	[MatchSenderReceiverOwners:true]
 	[SendTargetEntityId:true]
 

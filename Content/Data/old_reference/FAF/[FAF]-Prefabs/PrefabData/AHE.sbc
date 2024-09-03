@@ -5,7 +5,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AHE-PrefabData-Fighter</SubtypeId>
+          <SubtypeId>AHE_PrefabData_Fighter</SubtypeId>
       </Id>
       <Description>
 
@@ -22,7 +22,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>AHE-Manipulation-Fighter</SubtypeId>
+        <SubtypeId>AHE_Manipulation_Fighter</SubtypeId>
       </Id>
       <Description>
 
@@ -47,7 +47,7 @@
      <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AHE-PrefabData-CS612</SubtypeId>
+          <SubtypeId>AHE_PrefabData_CS612</SubtypeId>
       </Id>
       <Description>
 
@@ -65,7 +65,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>AHE-Manipulation-CS612</SubtypeId>
+        <SubtypeId>AHE_Manipulation_CS612</SubtypeId>
       </Id>
       <Description>
 
@@ -91,7 +91,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AHE-PrefabData-Oracle</SubtypeId>
+          <SubtypeId>AHE_PrefabData_Oracle</SubtypeId>
       </Id>
       <Description>
 
@@ -111,7 +111,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>AHE-Manipulation-Oracle</SubtypeId>
+        <SubtypeId>AHE_Manipulation_Oracle</SubtypeId>
       </Id>
       <Description>
 
@@ -136,7 +136,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AHE-PrefabData-GunBoat</SubtypeId>
+          <SubtypeId>AHE_PrefabData_GunBoat</SubtypeId>
       </Id>
       <Description>
 
@@ -156,7 +156,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>AHE-PrefabData-CargoTransport</SubtypeId>
+          <SubtypeId>AHE_PrefabData_CargoTransport</SubtypeId>
       </Id>
       <Description>
 
@@ -173,7 +173,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>AHE-Manipulation-CargoTransport</SubtypeId>
+        <SubtypeId>AHE_Manipulation_CargoTransport</SubtypeId>
       </Id>
       <Description>
 

@@ -31,7 +31,7 @@
 	  [Type:TargetNear]
 	  [UseTrigger:true]
 	  [TargetDistance:800]
-	[Conditions:MSB-Dropship-Condition-MoveToLanding]
+	[Conditions:MSB_Dropship_Condition_MoveToLanding]
 	  [MaxActions:1]
 	  [Actions:MSB_Dropship_Action_MoveToLanding]
       </Description>
@@ -163,7 +163,7 @@
 	  [Type:Timer]
 	  [UseTrigger:true]
 	[StartsReady:true]
-		[Conditions:MSB-Dropship-Condition-ArrivedAtLandingSite]
+		[Conditions:MSB_Dropship_Condition_ArrivedAtLandingSite]
 
 		
 	  [MaxActions:1]
@@ -241,7 +241,7 @@
         [UseTrigger:false]
         [Type:Timer]
 
-        [Conditions:MSB-Dropship-Condition-LeaveLandingSite]
+        [Conditions:MSB_Dropship_Condition_LeaveLandingSite]
 
         [MinCooldownMs:1500]
         [MaxCooldownMs:1501]

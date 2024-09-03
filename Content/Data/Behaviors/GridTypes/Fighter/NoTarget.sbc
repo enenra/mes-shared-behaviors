@@ -83,7 +83,7 @@ HasTarget -> Reset it
 	[Type:NoTarget]
 	[MinCooldownMs:10000]	  
 	[MinCooldownMs:10001]	
-	[Conditions:MSB-Drone-Condition-TaskLeaderisNotReady]
+	[Conditions:MSB_Drone_Condition_TaskLeaderisNotReady]
 	[UseTrigger:false]
 	[StartsReady:false]
 	[MaxActions:-1]

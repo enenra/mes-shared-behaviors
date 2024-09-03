@@ -5,7 +5,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>ITC-PrefabData-Scorpion</SubtypeId>
+          <SubtypeId>ITC_PrefabData_Scorpion</SubtypeId>
       </Id>
       <Description>
 
@@ -22,7 +22,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>ITC-Manipulation-Scorpion</SubtypeId>
+        <SubtypeId>ITC_Manipulation_Scorpion</SubtypeId>
       </Id>
       <Description>
 

@@ -5,7 +5,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>SimpleTest-Behavior</SubtypeId>
+          <SubtypeId>SimpleTest_Behavior</SubtypeId>
       </Id>
       <Description>
 
@@ -27,7 +27,7 @@
 
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAC-Cargo-Autopilot</SubtypeId>
+        <SubtypeId>MSB_Cargo_Autopilot</SubtypeId>
       </Id>
       <Description>
 

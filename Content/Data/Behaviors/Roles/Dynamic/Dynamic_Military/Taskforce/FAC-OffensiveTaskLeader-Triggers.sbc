@@ -366,7 +366,7 @@
 	[Type:Timer]
 	[UseTrigger:false]
 	[StartsReady:false]
-	[Conditions:MSB-OffensiveTaskLeader-Condition-NoTarget]
+	[Conditions:MSB_OffensiveTaskLeader_Condition_NoTarget]
 	  
 	[MinCooldownMs:6000]
 	[MaxCooldownMs:9000]
@@ -609,7 +609,7 @@
 	[Type:Timer]
 	[UseTrigger:false]
 	[StartsReady:false]
-	[Conditions:MSB-OffensiveTaskLeader-Condition-NoTarget]
+	[Conditions:MSB_OffensiveTaskLeader_Condition_NoTarget]
 	  
 	[MinCooldownMs:6000]
 	[MaxCooldownMs:9000]

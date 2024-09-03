@@ -5,7 +5,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>FAF-PrefabData-Tetrach</SubtypeId>
+          <SubtypeId>FAF_PrefabData_Tetrach</SubtypeId>
       </Id>
       <Description>
 
@@ -22,7 +22,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAF-Manipulation-Tetrach</SubtypeId>
+        <SubtypeId>FAF_Manipulation_Tetrach</SubtypeId>
       </Id>
       <Description>
 
@@ -50,7 +50,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>FAF-PrefabData-CS612</SubtypeId>
+          <SubtypeId>FAF_PrefabData_CS612</SubtypeId>
       </Id>
       <Description>
 
@@ -68,7 +68,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAF-Manipulation-CS612</SubtypeId>
+        <SubtypeId>FAF_Manipulation_CS612</SubtypeId>
       </Id>
       <Description>
 
@@ -94,7 +94,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>FAF-PrefabData-Oracle</SubtypeId>
+          <SubtypeId>FAF_PrefabData_Oracle</SubtypeId>
       </Id>
       <Description>
 
@@ -114,7 +114,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAF-Manipulation-Oracle</SubtypeId>
+        <SubtypeId>FAF_Manipulation_Oracle</SubtypeId>
       </Id>
       <Description>
 
@@ -140,7 +140,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>FAF-PrefabData-SupplyFreighter</SubtypeId>
+          <SubtypeId>FAF_PrefabData_SupplyFreighter</SubtypeId>
       </Id>
       <Description>
 
@@ -158,7 +158,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>FAF-Manipulation-SupplyFreighter</SubtypeId>
+        <SubtypeId>FAF_Manipulation_SupplyFreighter</SubtypeId>
       </Id>
       <Description>
 

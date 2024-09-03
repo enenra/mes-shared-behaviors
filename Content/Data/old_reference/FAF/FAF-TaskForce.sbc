@@ -6,7 +6,7 @@
 		<SpawnGroup>
 			<Id>
 				<TypeId>SpawnGroupDefinition</TypeId> 
-				<SubtypeId>FAF-SpawnGroup-Tetrarch_Squadron</SubtypeId>
+				<SubtypeId>FAF_SpawnGroup_Tetrarch_Squadron</SubtypeId>
 			</Id>
 			<Description>
 		[Modular Encounters SpawnGroup]
@@ -39,7 +39,7 @@
 						<Z>0.0</Z>
 					</Position>
 					<Speed>25</Speed>
-					<Behaviour>FAF-Squadron-2-Behavior</Behaviour>
+					<Behaviour>FAF_Squadron_2_Behavior</Behaviour>
 				</Prefab>
 
 				<Prefab SubtypeId="FAF-TetrarchFighter">
@@ -49,7 +49,7 @@
 						<Z>0.0</Z>
 					</Position>
 					<Speed>25</Speed>
-					<Behaviour>FAF-Squadron-1-Behavior</Behaviour>
+					<Behaviour>FAF_Squadron_1_Behavior</Behaviour>
 				</Prefab>
 
 				<Prefab SubtypeId="FAF-TetrarchFighter">
@@ -59,7 +59,7 @@
 						<Z>0.0</Z>
 					</Position>
 					<Speed>25</Speed>
-					<Behaviour>FAF-Squadron-3-Behavior</Behaviour>
+					<Behaviour>FAF_Squadron_3_Behavior</Behaviour>
 				</Prefab>
 			</Prefabs>			
 		</SpawnGroup>
@@ -68,7 +68,7 @@
 	<SpawnGroup>
 			<Id>
 				<TypeId>SpawnGroupDefinition</TypeId> 
-				<SubtypeId>FAF-SpawnGroup-RebelAttackForce</SubtypeId>
+				<SubtypeId>FAF_SpawnGroup_RebelAttackForce</SubtypeId>
 			</Id>
 		<Description>
 		[Modular Encounters SpawnGroup]
@@ -122,7 +122,7 @@
 						<Z>0.0</Z>
 					</Position>
 					<Speed>25</Speed>
-					<Behaviour>FAF-OffensiveEscortDrone-Behavior</Behaviour>
+					<Behaviour>FAF_OffensiveEscortDrone_Behavior</Behaviour>
 				</Prefab>
 
 				<Prefab SubtypeId="FAF-TetrarchFighter">
@@ -132,7 +132,7 @@
 						<Z>0.0</Z>
 					</Position>
 					<Speed>25</Speed>
-					<Behaviour>FAF-OffensiveEscortDrone-Behavior</Behaviour>
+					<Behaviour>FAF_OffensiveEscortDrone_Behavior</Behaviour>
 				</Prefab>
 			
 		
@@ -143,7 +143,7 @@
 						<Z>0.0</Z>
 					</Position>
 					<Speed>25</Speed>
-					<Behaviour>FAF-LDroneTaskLeader-Behavior</Behaviour>
+					<Behaviour>FAF_LDroneTaskLeader_Behavior</Behaviour>
 				</Prefab>
 	
 	
@@ -154,7 +154,7 @@
 						<Z>0.0</Z>
 					</Position>
 					<Speed>25</Speed>
-					<Behaviour>FAF-LDroneTaskLeader-Behavior</Behaviour>
+					<Behaviour>FAF_LDroneTaskLeader_Behavior</Behaviour>
 				</Prefab>		
 
 		</Prefabs>			

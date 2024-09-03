@@ -5,7 +5,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>GC-PrefabData-Fighter</SubtypeId>
+          <SubtypeId>GC_PrefabData_Fighter</SubtypeId>
       </Id>
       <Description>
 
@@ -24,7 +24,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>GC-Manipulation-Fighter</SubtypeId>
+        <SubtypeId>GC_Manipulation_Fighter</SubtypeId>
       </Id>
       <Description>
 
@@ -49,7 +49,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>GC-PrefabData-Gunship</SubtypeId>
+          <SubtypeId>GC_PrefabData_Gunship</SubtypeId>
       </Id>
       <Description>
 
@@ -69,7 +69,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>GC-Manipulation-Gunship</SubtypeId>
+        <SubtypeId>GC_Manipulation_Gunship</SubtypeId>
       </Id>
       <Description>
 
