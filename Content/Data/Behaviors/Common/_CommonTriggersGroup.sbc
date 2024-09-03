@@ -5,7 +5,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Static_CommonTriggersGroup</SubtypeId>
+          <SubtypeId>MSB_StaticCommon_TriggersGroup</SubtypeId>
       </Id>
       <Description>
 
@@ -43,8 +43,8 @@
 	[Triggers:MSB_Common_Trigger_DamageByNeutral]
 	[Triggers:MSB_Common_Trigger_DamageByFriendly]
 
-	[Triggers:MSB_Default_Triggers_MaxRange]
-	[Triggers:MSB_Default_Trigger_MSBAliveCheck]
+	[Triggers:MSB_Common_Triggers_MaxRange]
+	[Triggers:MSB_Common_Trigger_MSBAliveCheck]
 	
 	
 	[Triggers:MSB_Common_Triggers_SendScore]
@@ -75,7 +75,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Dynamic_CommonTriggersGroup</SubtypeId>
+          <SubtypeId>MSB_DynamicCommon_TriggersGroup</SubtypeId>
       </Id>
       <Description>
 
@@ -116,8 +116,8 @@
 	[Triggers:MSB_Common_Trigger_DamageByNeutral]
 	[Triggers:MSB_Common_Trigger_DamageByFriendly]
 
-	[Triggers:MSB_Default_Triggers_MaxRange]
-	[Triggers:MSB_Default_Trigger_MSBAliveCheck]
+	[Triggers:MSB_Common_Triggers_MaxRange]
+	[Triggers:MSB_Common_Trigger_MSBAliveCheck]
 	
 	
 	[Triggers:MSB_Common_Triggers_SendScore]

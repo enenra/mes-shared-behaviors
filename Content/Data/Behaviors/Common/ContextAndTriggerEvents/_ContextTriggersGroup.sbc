@@ -1,6 +1,26 @@
 <?xml version="1.0"?>
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
+  	<!-- Only for dynamic -->
+
+<!--
+[Triggers:MSB_Context_ManualTrigger_DynamicNoLongerInBattle]
+[Triggers:MSB_Context_ManualTrigger_InitDynamicBattle]
+
+[Triggers:MSB_Context_Trigger_ReceiveBaseStrike]
+[Triggers:MSB_Context_Trigger_TargetIsEnemeyStaticBase]
+[Triggers:MSB_Context_Trigger_EnemeyStaticBaseInTheArea]
+[Triggers:MSB_Context_Trigger_EnemeyStaticBaseInTheArea_Fail]
+
+[Triggers:MSB_Context_Trigger_ReceiveDefendMe_FirstTime]
+[Triggers:MSB_Context_Trigger_DefendMe_NoLongerReceiving]
+[Triggers:MSB_Context_Trigger_ReceiveDefendMe_ResetCooldown]
+-->
+
+
+
+<!--	
+use the commonn trigger group, or make your own triggergroup in your own mod.
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -26,24 +46,8 @@
       
     </EntityComponent>
 	
-	<!-- Only for dynamic -->
-
-<!--	
-
-[Triggers:MSB_Context_ManualTrigger_DynamicNoLongerInBattle]
-[Triggers:MSB_Context_ManualTrigger_InitDynamicBattle]
-
-[Triggers:MSB_Context_Trigger_ReceiveBaseStrike]
-[Triggers:MSB_Context_Trigger_TargetIsEnemeyStaticBase]
-[Triggers:MSB_Context_Trigger_EnemeyStaticBaseInTheArea]
-[Triggers:MSB_Context_Trigger_EnemeyStaticBaseInTheArea_Fail]
-
-[Triggers:MSB_Context_Trigger_ReceiveDefendMe_FirstTime]
-[Triggers:MSB_Context_Trigger_DefendMe_NoLongerReceiving]
-[Triggers:MSB_Context_Trigger_ReceiveDefendMe_ResetCooldown]
 
 
--->
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -97,7 +101,7 @@
       </Description>
       
     </EntityComponent>
-	
+-->	
 	
 	
   </EntityComponents>

@@ -4,15 +4,15 @@
 
 <!-- 
 
-[Triggers:MSB_Default_Triggers_MaxRange]
-[Triggers:MSB_Default_Trigger_MSBAliveCheck]
+[Triggers:MSB_Common_Triggers_MaxRange]
+[Triggers:MSB_Common_Trigger_MSBAliveCheck]
 
 -->
 
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Default_Triggers_MaxRange</SubtypeId>
+          <SubtypeId>MSB_Common_Triggers_MaxRange</SubtypeId>
       </Id>
       <Description>
 
@@ -24,7 +24,7 @@
 	[MaxCooldownMs:600000]
 
 
-	  [Actions:MSB_All_Action_MaxRange]	  
+	  [Actions:MSB_Common_Action_MaxRange]	  
       </Description>
       
     </EntityComponent>	
@@ -32,7 +32,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_All_Action_MaxRange</SubtypeId>
+          <SubtypeId>MSB_Common_Action_MaxRange</SubtypeId>
       </Id>
       <Description>
 
@@ -50,7 +50,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Default_Trigger_MSBAliveCheck</SubtypeId>
+        <SubtypeId>MSB_Common_Trigger_MSBAliveCheck</SubtypeId>
       </Id>
       <Description>
 
