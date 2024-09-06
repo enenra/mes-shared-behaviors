@@ -8,19 +8,19 @@ from bs4 import BeautifulSoup
 
 
 SPREADSHEETS = {
-    'Autopilot': ['1wb4ar82IzcofB7UOXgYEwL2NCnCJINZJwdNL8tqZFqw', 'Rival AI Autopilot', 'Encounters'],
-    'Behavior': ['15nN5NMh0ivqrrG9U6tim4sqW8dcKwvBBvM_peIXn5yc', 'Rival AI Behavior', 'Encounters'],
-    'Chat': ['1D_DgYZQPQT22zH-mBNHSuX4cLQti6FmzTol7dZxKuPM', 'Rival AI Chat', 'Encounters'],
-    'Command': ['1EZFc7ibb-ydU1wsSGNfuIIJk_dc2pL7khkFqS-UUFPc', 'Rival AI Command', 'Encounters'],
-    'Trigger': ['1YYjm9Y0HpRuZet7RWw_DOT7DHtBBw4czOJ6-K7415cc', 'Rival AI Trigger', 'Encounters'],
-    'TriggerGroup': ['1Yw4pItiEtsliY997-DWA7nZp0XmI483Rhh174jDYpiw', 'Rival AI TriggerGroup', 'Encounters']
+    'Autopilot': ['1wb4ar82IzcofB7UOXgYEwL2NCnCJINZJwdNL8tqZFqw', ['0'], 'Rival AI Autopilot', 'Encounters'],
+    'Behavior': ['15nN5NMh0ivqrrG9U6tim4sqW8dcKwvBBvM_peIXn5yc', ['0'], 'Rival AI Behavior', 'Encounters'],
+    'Chat': ['1D_DgYZQPQT22zH-mBNHSuX4cLQti6FmzTol7dZxKuPM', ['0'], 'Rival AI Chat', 'Encounters'],
+    'Command': ['1EZFc7ibb-ydU1wsSGNfuIIJk_dc2pL7khkFqS-UUFPc', ['0'], 'Rival AI Command', 'Encounters'],
+    'Trigger': ['1YYjm9Y0HpRuZet7RWw_DOT7DHtBBw4czOJ6-K7415cc', ['0'], 'Rival AI Trigger', 'Encounters'],
+    'TriggerGroup': ['1Yw4pItiEtsliY997-DWA7nZp0XmI483Rhh174jDYpiw', ['0'], 'Rival AI TriggerGroup', 'Encounters']
 }
 
 OUTPUT_DIR = os.path.join(os.getcwd(), 'Content', 'Data')
 
 
-def scrape_spreadsheet(spreadsheet) -> list:
-    spreadsheet_url = 'https://docs.google.com/spreadsheets/d/' + spreadsheet[0] + '/gviz/tq?tqx=out:html&tq&gid=1'
+def scrape_spreadsheet(spreadsheet, grid) -> list:
+    spreadsheet_url = 'https://docs.google.com/spreadsheets/d/' + spreadsheet[0] + '/gviz/tq?tqx=out:html&tq&gid=' + grid
 
     html = requests.get(spreadsheet_url).text
     soup = BeautifulSoup(html, 'lxml')
@@ -166,7 +166,7 @@ def write_ec_sbc(filetype, rows):
 
             desc = ET.SubElement(ec, 'Description')
 
-            params = create_mes_parameter(SPREADSHEETS[filetype][1])
+            params = create_mes_parameter(SPREADSHEETS[filetype][2])
             for k, v in e.items():
                 if k in ['Reference', '#','Name']:
                     continue
@@ -183,20 +183,22 @@ def write_ec_sbc(filetype, rows):
         xml_formatted = fix_indents(xml_formatted)
         xml_formatted = xml_formatted.replace('<?xml version="1.0" ?>', f'<?xml version="1.0"?>\n\n<!-- Created from GSheet export on {datetime.now()} -->\n')
 
-        path = os.path.join(OUTPUT_DIR, SPREADSHEETS[filetype][2], et)
+        path = os.path.join(OUTPUT_DIR, SPREADSHEETS[filetype][3], et)
         os.makedirs(path, exist_ok=True)
-        target_file = os.path.join(path, filetype + '_' + et + '.sbc')
+        target_file = os.path.join(path, 'MSB_' + filetype + '_' + et + '.sbc')
         exported_xml = open(target_file, "w")
         exported_xml.write(xml_formatted)
 
 
 def main():
 
-    #SPREADSHEETS = {'Command': ['1EZFc7ibb-ydU1wsSGNfuIIJk_dc2pL7khkFqS-UUFPc', 'Rival AI Command', 'Encounters']}
+    SPREADSHEETS = {'Condition': ['1bdBapnrTcWX9HCxr75W0_db3sMRuE0Ws_9QyA23ew9A', ['0', '1403879885', '253248836', '504907006'], 'Rival AI Condition', 'Encounters']}
 
     results = {}
     for key, val in SPREADSHEETS.items():
-        results = scrape_spreadsheet(val)
+        results = []
+        for grid in val[1]:
+            results.append(scrape_spreadsheet(val, grid))
         write_ec_sbc(key, results)
 
 
