@@ -11,6 +11,8 @@
 
 	[RivalAI TriggerGroup]
       
+[Triggers:MSB_Static_Triggers_Unload_ResetCooldown]
+[Triggers:MSB_Static_Triggers_Unload]
 
 	
       </Description>

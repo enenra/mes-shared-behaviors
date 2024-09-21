@@ -41,7 +41,7 @@
       [RivalAI Action]
       
 	[ResetCooldownTimeOfTriggers:true]
-	[ResetTriggerCooldownNames:MSB-SpaceStation-Triggers-Unload]
+	[ResetTriggerCooldownNames:MSB_SpaceStation_Triggers_Unload]
 
 
       </Description>

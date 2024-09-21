@@ -4,8 +4,8 @@
 
 <!--
 
-[Triggers:MSB-Static-Triggers-Unload-ResetCooldown]
-[Triggers:MSB-Static-Triggers-Unload]
+[Triggers:MSB_Static_Triggers_Unload_ResetCooldown]
+[Triggers:MSB_Static_Triggers_Unload]
 
 -->
 
@@ -41,7 +41,7 @@
       [RivalAI Action]
       
 	[ResetCooldownTimeOfTriggers:true]
-	[ResetTriggerCooldownNames:MSB-Static-Triggers-Unload]
+	[ResetTriggerCooldownNames:MSB_Static_Triggers_Unload]
 
 
       </Description>
