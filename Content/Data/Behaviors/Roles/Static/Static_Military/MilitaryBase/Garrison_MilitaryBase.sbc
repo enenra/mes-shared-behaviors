@@ -1,0 +1,95 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+<!-- 
+--> 
+  
+  <!-- SpawnMilitaryBase -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_DefenseSystem_Trigger_Garrison_SpawnMilitaryBase</SubtypeId>
+      </Id>
+      <Description>
+	[RivalAI Trigger]
+	[UseTrigger:false]
+	[Tags:SpawnGarrison]
+	[Type:Timer]	
+	[StartsReady:true]	
+
+	[MinCooldownMs:300]
+	[MaxCooldownMs:301]
+	[Conditions:MSB_DefenseSystem_Condition_Garrison_SpawnMilitaryBase]
+	[MaxActions:-1]
+	[Actions:MSB_DefenseSystem_Action_Garrison_SpawnMilitaryBase]
+	
+      </Description>
+    </EntityComponent>  
+  
+      <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_DefenseSystem_Condition_Garrison_SpawnMilitaryBase</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Condition]
+	[UseConditions:true]
+	[MatchAnyCondition:false]
+ 
+	
+	[CheckIfSpawnGroupExist:true]
+	[ExistingSpawnGroupName:{Faction}_SpawnGroup_Garrison_{MilitaryBase}]
+      </Description>
+    </EntityComponent>	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_DefenseSystem_Action_Garrison_SpawnMilitaryBase</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+	
+	[PlayDialogueCue:true]
+	[DialogueCueId:LaunchGarrison]
+
+	[SpawnEncounter:true]
+	[Spawner:MSB_DefenseSystem_Spawner_Garrison_SpawnMilitaryBase]
+	[ForceSameFactionOwnership:true]
+	
+	[DisableTriggers:true]
+	[DisableTriggerTags:SpawnGarrison]
+	
+	
+      </Description>
+    </EntityComponent>  
+  
+  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_DefenseSystem_Spawner_Garrison_SpawnMilitaryBase</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Spawn]
+	[UseSpawn:true]
+
+	[StartsReady:true]
+	[SpawningType:CustomSpawn]
+
+	[MaxSpawns:-1]
+	[SpawnGroups:{Faction}_SpawnGroup_Garrison_{MilitaryBase}]
+	
+	[UseRelativeSpawnPosition:false]
+	[MinDistance:250]
+	[MaxDistance:2500]
+	[MinAltitude:600]
+	[MaxAltitude:1400]
+	[IgnoreSafetyChecks:true]
+      </Description>
+    </EntityComponent> 
+	
+  </EntityComponents>
+</Definitions>

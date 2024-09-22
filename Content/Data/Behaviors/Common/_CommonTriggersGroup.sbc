@@ -67,7 +67,11 @@
 		
 	[Triggers:MSB_Common_Trigger_DebugMentionRetreat]	
 		
-		
+	[Triggers:MSB_DefenseSystem_Trigger_Garrison]
+	[Triggers:MSB_DefenseSystem_Trigger_Garrison_SpawnCustomVariablesName] 
+	[Triggers:MSB_DefenseSystem_Trigger_Garrison_SpawnSpawnGroupName] 
+	[Triggers:MSB_DefenseSystem_Trigger_Garrison_SpawnDefault]
+	[Triggers:MSB_DefenseSystem_Trigger_Garrison_AutoDisable]		
       </Description>
       
     </EntityComponent>
