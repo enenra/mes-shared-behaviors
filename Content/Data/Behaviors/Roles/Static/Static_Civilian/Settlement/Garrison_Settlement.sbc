@@ -4,11 +4,11 @@
 <!-- 
 --> 
   
-  <!-- SpawnRestrictedOutpost -->
+  <!-- SpawnSettlement -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_DefenseSystem_Trigger_Garrison_SpawnRestrictedOutpost</SubtypeId>
+          <SubtypeId>MSB_DefenseSystem_Trigger_Garrison_SpawnSettlement</SubtypeId>
       </Id>
       <Description>
 	[RivalAI Trigger]
@@ -19,9 +19,9 @@
 
 	[MinCooldownMs:3000]
 	[MaxCooldownMs:3001]
-	[Conditions:MSB_DefenseSystem_Condition_Garrison_SpawnRestrictedOutpost]
+	[Conditions:MSB_DefenseSystem_Condition_Garrison_SpawnSettlement]
 	[MaxActions:-1]
-	[Actions:MSB_DefenseSystem_Action_Garrison_SpawnRestrictedOutpost]
+	[Actions:MSB_DefenseSystem_Action_Garrison_SpawnSettlement]
 	
       </Description>
     </EntityComponent>  
@@ -29,7 +29,7 @@
       <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_DefenseSystem_Condition_Garrison_SpawnRestrictedOutpost</SubtypeId>
+          <SubtypeId>MSB_DefenseSystem_Condition_Garrison_SpawnSettlement</SubtypeId>
       </Id>
       <Description>
 
@@ -39,14 +39,14 @@
  
 	
 	[CheckIfSpawnGroupExist:true]
-	[ExistingSpawnGroupName:{Faction}_SpawnGroup_Garrison_{RestrictedOutpost}]
+	[ExistingSpawnGroupName:{Faction}_SpawnGroup_Garrison_{Settlement}]
       </Description>
     </EntityComponent>	
 	
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_DefenseSystem_Action_Garrison_SpawnRestrictedOutpost</SubtypeId>
+          <SubtypeId>MSB_DefenseSystem_Action_Garrison_SpawnSettlement</SubtypeId>
       </Id>
       <Description>
 
@@ -56,7 +56,7 @@
 	[DialogueCueId:LaunchGarrison]
 
 	[SpawnEncounter:true]
-	[Spawner:MSB_DefenseSystem_Spawner_Garrison_SpawnRestrictedOutpost]
+	[Spawner:MSB_DefenseSystem_Spawner_Garrison_SpawnSettlement]
 	[ForceSameFactionOwnership:true]
 	
 	[DisableTriggers:true]
@@ -69,7 +69,7 @@
   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_DefenseSystem_Spawner_Garrison_SpawnRestrictedOutpost</SubtypeId>
+          <SubtypeId>MSB_DefenseSystem_Spawner_Garrison_SpawnSettlement</SubtypeId>
       </Id>
       <Description>
 
@@ -80,7 +80,7 @@
 	[SpawningType:CustomSpawn]
 
 	[MaxSpawns:-1]
-	[SpawnGroups:{Faction}_SpawnGroup_Garrison_RestrictedOutpost]
+	[SpawnGroups:{Faction}_SpawnGroup_Garrison_Settlement]
 	
 	[UseRelativeSpawnPosition:false]
 	[MinDistance:250]

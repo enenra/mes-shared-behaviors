@@ -227,8 +227,8 @@ Static_GreetingFriendly
 	
 	[UsePlayerConditionProfile:true]
 	[PlayerConditionProfileIds:PlayerCondition-ExcludedPlayerNear]
-	[MinPlayerReputation:-500]
-	[MaxPlayerReputation:500]
+	[MinPlayerReputation:501]
+	[MaxPlayerReputation:1500]
 	
 	
 	[UseTrigger:true]
