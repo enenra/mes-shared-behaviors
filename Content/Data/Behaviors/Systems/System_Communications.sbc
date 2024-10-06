@@ -11,7 +11,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>GFA_TriggerGroup_CommsSystem</SubtypeId>
+        <SubtypeId>MSB_TriggerGroup_CommsSystem</SubtypeId>
       </Id>
       <Description>
         [RivalAI TriggerGroup]
