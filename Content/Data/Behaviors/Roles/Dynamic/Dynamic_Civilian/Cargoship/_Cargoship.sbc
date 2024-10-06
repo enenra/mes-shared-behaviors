@@ -19,7 +19,7 @@
         [AutopilotData:MSB_Cargoship_Autopilot]
         [SecondaryAutopilotData:MSB_Cargoship_Autopilot_B]
 
-        [TriggerGroups:MSB_Dynamic_CommonTriggersGroup]
+        [TriggerGroups:MSB_Dynamic_CommonTriggerGroup]
         [TriggerGroups:MSB_Cargoship_TriggerGroup]
       </Description>
     </EntityComponent>
