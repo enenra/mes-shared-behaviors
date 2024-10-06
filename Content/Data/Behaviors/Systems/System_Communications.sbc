@@ -4,14 +4,14 @@
 
     <!--
 
-    Alert System
+    Communications System (succcessor to alerts)
 
     -->
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>GFA_TriggerGroup_AlertSystem</SubtypeId>
+        <SubtypeId>GFA_TriggerGroup_CommsSystem</SubtypeId>
       </Id>
       <Description>
         [RivalAI TriggerGroup]
