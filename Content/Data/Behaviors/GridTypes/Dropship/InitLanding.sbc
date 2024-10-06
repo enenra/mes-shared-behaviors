@@ -2,183 +2,150 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 
-	<!--
-	
-	
-	[AutopilotData:MSB-Dropship-Autopilot-1]
-	[SecondaryAutopilotData:MSB-Dropship-Autopilot-2]	
-	
-	
+    <!--
+    [AutopilotData:MSB-Dropship-Autopilot-1]
+    [SecondaryAutopilotData:MSB-Dropship-Autopilot-2]
 
-	[Triggers:MSB-Dropship-Trigger-MoveToLanding]
-	[Triggers:MSB-Dropship-Trigger-StartLanding]	
-	
-	[Triggers:MSB-Dropship-Trigger-ArrivedAtLandingSite]	
+    [Triggers:MSB-Dropship-Trigger-MoveToLanding]
+    [Triggers:MSB-Dropship-Trigger-StartLanding]
 
-	[Triggers:MSB-Dropship-Trigger-LeaveLandingSite]	
-	
-	-->
-	
-	
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    [Triggers:MSB-Dropship-Trigger-ArrivedAtLandingSite]
+
+    [Triggers:MSB-Dropship-Trigger-LeaveLandingSite]
+    -->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Dropship_Trigger_MoveToLanding</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Dropship_Trigger_MoveToLanding</SubtypeId>
       </Id>
       <Description>
+        [RivalAI Trigger]
 
-      [RivalAI Trigger]
-	  [Type:TargetNear]
-	  [UseTrigger:true]
-	  [TargetDistance:800]
-	[Conditions:MSB_Dropship_Condition_MoveToLanding]
-	  [MaxActions:1]
-	  [Actions:MSB_Dropship_Action_MoveToLanding]
+        [Type:TargetNear]
+        [UseTrigger:true]
+
+        [TargetDistance:800]
+
+        [Conditions:MSB_Dropship_Condition_MoveToLanding]
+
+        [MaxActions:1]
+        [Actions:MSB_Dropship_Action_MoveToLanding]
       </Description>
     </EntityComponent>
 
+    <!--
+    [ChangeBehaviorSubclass:true]
+    [NewBehaviorSubclass:CargoShip]
 
-<!--
-	[ChangeBehaviorSubclass:true]  
-	[NewBehaviorSubclass:CargoShip]
-	
+    [AddWaypoints:true]
+    [WaypointsToAdd:MSB-Dropship-Waypoint-LandingSite]
+	  -->
 
-	[AddWaypoints:true]
-	[WaypointsToAdd:MSB-Dropship-Waypoint-LandingSite]
-
-	-->
-	
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_Dropship_Condition_MoveToLanding</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI Condition]
 
         [UseConditions:true]
 
         [IsTargetStatic:true]
-		
-		[CheckAllLoadedModIDs:true]
-[AnyModIDsToCheck:2596208372]
 
-		
-      </Description>
-
-    </EntityComponent>	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Dropship_Action_MoveToLanding</SubtypeId>
-      </Id>
-      <Description>
-
-	[RivalAI Action]
-
-
-
-	[ChangeAutopilotProfile:true]
-	[AutopilotProfile:Secondary]	
-      </Description>
-      
-    </EntityComponent>		
-	
-	
-	
-	
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Dropship_Trigger_StartLanding</SubtypeId>
-      </Id>
-      <Description>
-
-      [RivalAI Trigger]
-	  [Type:TargetNear]
-	  [UseTrigger:true]
-	  [TargetDistance:400]
-	  [MaxActions:1]
-	  [Actions:MSB_Dropship_Action_StartLanding]
+        [CheckAllLoadedModIDs:true]
+        [AnyModIDsToCheck:2596208372]
       </Description>
     </EntityComponent>
 
-
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Dropship_Action_StartLanding</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Dropship_Action_MoveToLanding</SubtypeId>
       </Id>
       <Description>
+        [RivalAI Action]
 
-	[RivalAI Action]
-
-		[ChangeAutopilotProfile:true]
-	[AutopilotProfile:Tertiary]  
+        [ChangeAutopilotProfile:true]
+        [AutopilotProfile:Secondary]
       </Description>
-      
-    </EntityComponent>		
-	
-	
-	
-	 <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Dropship_Waypoint_LandingSite</SubtypeId>
-      </Id>
-      <Description>
-
-      [RivalAI Waypoint]
-      
-      [Waypoint:RelativeRandom]
-      [RelativeEntity:Target]
-
-      [MinDistance:20]
-      [MaxDistance:100]
-      [MinAltitude:1999]
-      [MaxAltitude:2000]
-      
-      </Description>
-      
     </EntityComponent>
-	
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Dropship_Trigger_ArrivedAtLandingSite</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Dropship_Trigger_StartLanding</SubtypeId>
       </Id>
       <Description>
+        [RivalAI Trigger]
 
-      [RivalAI Trigger]
-	  [Type:Timer]
-	  [UseTrigger:true]
-	[StartsReady:true]
-		[Conditions:MSB_Dropship_Condition_ArrivedAtLandingSite]
+        [Type:TargetNear]
+        [UseTrigger:true]
 
-		
-	  [MaxActions:1]
-	  [Actions:MSB_Dropship_Action_ArrivedAtLandingSite]
+        [TargetDistance:400]
+
+        [MaxActions:1]
+        [Actions:MSB_Dropship_Action_StartLanding]
       </Description>
-    </EntityComponent>		
-	
-	
-	    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Dropship_Action_StartLanding</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+		    [ChangeAutopilotProfile:true]
+	      [AutopilotProfile:Tertiary]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Dropship_Waypoint_LandingSite</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Waypoint]
+
+        [Waypoint:RelativeRandom]
+        [RelativeEntity:Target]
+
+        [MinDistance:20]
+        [MaxDistance:100]
+        [MinAltitude:1999]
+        [MaxAltitude:2000]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Dropship_Trigger_ArrivedAtLandingSite</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Conditions:MSB_Dropship_Condition_ArrivedAtLandingSite]
+
+        [MaxActions:1]
+        [Actions:MSB_Dropship_Action_ArrivedAtLandingSite]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_Dropship_Condition_ArrivedAtLandingSite</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI Condition]
 
         [UseConditions:true]
@@ -188,54 +155,39 @@
 
         [CheckGridSpeed:true]
         [MaxGridSpeed:15]
-
       </Description>
-
     </EntityComponent>
-	
-	
-	
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_Dropship_Action_ArrivedAtLandingSite</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI Action]
 
         [EnableTriggers:true]
         [EnableTriggerNames:MSB_Dropship_Trigger_LeaveLandingSite]
 
-
         [ResetCooldownTimeOfTriggers:true]
-        [ResetTriggerCooldownNames:MSB-Dropship-Trigger-LeaveLandingSite]
-		
-		
+        [ResetTriggerCooldownNames:MSB_Dropship_Trigger_LeaveLandingSite]
+
         [ChangeBehaviorSubclass:true]
         [NewBehaviorSubclass:Passive]
 
-		[SetBooleansTrue:SpawnEncounters]
-		
-		
-		[DebugMessage:Deploying troops]
-      </Description>
+        [SetBooleansTrue:SpawnEncounters]
 
-    </EntityComponent>	
-	
-	
-	
-	
-	
-	<!-- Oi -->
-	
+        [DebugMessage:Deploying troops]
+      </Description>
+    </EntityComponent>
+
+    <!-- Oi -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_Dropship_Trigger_LeaveLandingSite</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI Trigger]
 
         [UseTrigger:false]
@@ -249,9 +201,7 @@
 
         [MaxActions:1]
         [Actions:MSB_Dropship_Action_LeaveLandingSite]
-
       </Description>
-
     </EntityComponent>
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -260,7 +210,6 @@
         <SubtypeId>MSB_Dropship_Condition_LeaveLandingSite</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI Condition]
 
         [UseConditions:true]
@@ -270,9 +219,7 @@
 
         [CheckGridSpeed:true]
         [MaxGridSpeed:10]
-
       </Description>
-
     </EntityComponent>
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -281,28 +228,15 @@
         <SubtypeId>MSB_Dropship_Action_LeaveLandingSite</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI Action]
-
 
         [ChangeBehaviorSubclass:true]
         [NewBehaviorSubclass:Horsefly]
 
-
-	[ChangeAutopilotProfile:true]
-	[AutopilotProfile:Primary]	
-
-
-		
-
+        [ChangeAutopilotProfile:true]
+        [AutopilotProfile:Primary]
       </Description>
-
     </EntityComponent>
 
-
-
-	
-	
-	
   </EntityComponents>
 </Definitions>
