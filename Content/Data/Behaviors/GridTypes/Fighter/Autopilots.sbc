@@ -5,7 +5,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Drone_Autopilot_Strike</SubtypeId>
+        <SubtypeId>MSB_Fighter_Autopilot_Strike</SubtypeId>
       </Id>
       <Description>
         [RivalAI Autopilot]
@@ -44,7 +44,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Drone_Autopilot_Fighter</SubtypeId>
+        <SubtypeId>MSB_Fighter_Autopilot_Fighter</SubtypeId>
       </Id>
       <Description>
         [RivalAI Autopilot]
@@ -77,7 +77,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Drone_Autopilot_Fighter_LowAltitude</SubtypeId>
+        <SubtypeId>MSB_Fighter_Autopilot_Fighter_LowAltitude</SubtypeId>
       </Id>
       <Description>
         [RivalAI Autopilot]
@@ -102,62 +102,6 @@
         [EngageDistancePlanet:50]
         [DisengageDistanceSpace:100]
         [DisengageDistancePlanet:100]
-      </Description>
-    </EntityComponent>
-
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>FAF_EscortAutopilot</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Autopilot]
-
-        [DisableInertiaDampeners:false]
-        [SlowDownOnWaypointApproach:true]
-        [FlyLevelWithGravity:false]
-        [MinimumPlanetAltitude:75]
-        [IdealPlanetAltitude:150]
-        [WaypointTolerance:5]
-        [UseVelocityCollisionEvasion:true]
-        [WaypointWaitTimeTrigger:20]
-
-        [IdealMinSpeed:12]
-        [IdealMaxSpeed:100]
-        [MaxSpeedTolerance:3]
-
-        [LimitRotationSpeed:true]
-        [MaxRotationMagnitude:0.75]
-
-        [EscortSpeedMatchMinDistance:5]
-      </Description>
-    </EntityComponent>
-
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>FAF_EscortAutopilot_B</SubtypeId>
-      </Id>
-      <Description>
-	      [RivalAI Autopilot]
-
-        [DisableInertiaDampeners:false]
-        [SlowDownOnWaypointApproach:true]
-        [ExtraSlowDownDistance:100]
-        [FlyLevelWithGravity:false]
-
-        [IdealMinSpeed:33]
-        [IdealMaxSpeed:100]
-
-        [EngageDistanceSpace:500]
-        [EngageDistancePlanet:600]
-        [DisengageDistanceSpace:800]
-        [DisengageDistancePlanet:800]
-
-        [AllowStrafing:true]
-        [StrafeMinDurationMs:1000]
-        [StrafeMaxDurationMs:1500]
-        [StrafeSpeedCutOff:45]
       </Description>
     </EntityComponent>
 
