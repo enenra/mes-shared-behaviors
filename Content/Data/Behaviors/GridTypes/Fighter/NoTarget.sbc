@@ -7,7 +7,7 @@
     [Triggers:MSB_Fighter_Trigger_LostTarget]
 
 
-    10s no Target? + TaskLeaderisNotReady -> Go into Patrol Mode && ResetCooldown
+    10s no Target? + TaskLeaderIsNotReady -> Go into Patrol Mode && ResetCooldown
     [Triggers:MSB_Fighter_Trigger_SwitchtoPatrol]
 
 
@@ -70,7 +70,7 @@
         [MinCooldownMs:10000]
         [MinCooldownMs:10001]
 
-        [Conditions:MSB_Fighter_Condition_TaskLeaderisNotReady]
+        [Conditions:MSB_Fighter_Condition_TaskLeaderIsNotReady]
 
         [UseTrigger:false]
         [StartsReady:false]
@@ -83,7 +83,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Fighter_Condition_TaskLeaderisNotReady</SubtypeId>
+        <SubtypeId>MSB_Fighter_Condition_TaskLeaderIsNotReady</SubtypeId>
       </Id>
       <Description>
         [RivalAI Condition]
