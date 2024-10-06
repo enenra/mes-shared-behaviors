@@ -192,7 +192,7 @@
         [MinCooldownMs:5000]
         [MaxCooldownMs:5001]
 
-        [Conditions:FAC-Context-Condition-NormalNeutral]
+        [Conditions:MSB_Context_Condition_NormalNeutral]
 
         [Actions:MSB_Cargoship_Action_PlayerTooClose]
       </Description>
