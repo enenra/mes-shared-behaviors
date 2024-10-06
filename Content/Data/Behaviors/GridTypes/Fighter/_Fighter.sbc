@@ -5,6 +5,20 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Fighter_TriggerGroup</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI TriggerGroup]
+
+        [Triggers:MSB_Fighter_Trigger_InitFight]
+      </Description>
+    </EntityComponent>
+
+
+    <!-- Autopilot -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_Fighter_Autopilot_Strike</SubtypeId>
       </Id>
       <Description>
@@ -102,6 +116,47 @@
         [EngageDistancePlanet:50]
         [DisengageDistanceSpace:100]
         [DisengageDistancePlanet:100]
+      </Description>
+    </EntityComponent>
+
+
+    <!-- Triggers -->
+    <!-- InitFight - Switch BehaviorSubclass at beginning of fight. -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Fighter_Trigger_InitFight</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+		    [Tags:MSB_GridType_InitFight]
+
+        [UseTrigger:false]
+        [Type:Timer]
+
+        [MinCooldownMs:1500]
+        [MaxCooldownMs:1501]
+        [StartsReady:false]
+
+        [MaxActions:1]
+        [Actions:MSB_Fighter_Action_InitFight]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Fighter_Action_InitFight</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ChangeBehaviorSubclass:true]
+        [NewBehaviorSubclass:Fighter]
+
+        [ChangeAutopilotProfile:true]
+        [AutopilotProfile:Secondary]
       </Description>
     </EntityComponent>
 
