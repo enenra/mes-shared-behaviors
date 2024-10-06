@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
-  
+
   <!-- RequestEscortSlot
-  
-  
-  
+
+
+
 [Triggers:MSB_Subordinate_Trigger_RequestEscortSlot]
 
 [Triggers:MSB_Subordinate_Trigger_SwitchToEscort]
@@ -36,7 +36,7 @@
       </Description>
 
     </EntityComponent>
-	
+
 	    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -48,14 +48,14 @@
 
 		[ChangeBehaviorSubclass:true]
 		[NewBehaviorSubclass:Escort]
-		
+
         [DisableTriggers:true]
-        [DisableTriggerNames:MSB_Subordinate_Trigger_SwitchToEscort]		
+        [DisableTriggerNames:MSB_Subordinate_Trigger_SwitchToEscort]
       </Description>
 
-    </EntityComponent>	
-	
-	
+    </EntityComponent>
+
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -92,8 +92,8 @@
         [DisableTriggerNames:MSB_Subordinate_Trigger_RequestEscortSlot]
 
       </Description>
-    </EntityComponent>	
-	
+    </EntityComponent>
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -107,19 +107,19 @@
 	[IgnoreAntennaRequirement:true]
 	[IgnoreReceiverAntennaRequirement:true]
 	[Radius:5000]
-    [RequestEscortSlot:true]	
+    [RequestEscortSlot:true]
 
       </Description>
-    </EntityComponent>	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+    </EntityComponent>
+
+
+
+
+
+
+
+
+
 <!--==========================
 
 
@@ -170,7 +170,7 @@
 
         [EnableTriggers:true]
         [EnableTriggerNames:MSB_Subordinate_Trigger_NoTargetSwitchEscort]
-		
+
 
       </Description>
 
@@ -182,28 +182,28 @@
           <TypeId>Inventory</TypeId>
           <SubtypeId>MSB_Subordinate_Chat_AggressionSwitchEscort</SubtypeId>
       </Id>
-	  
+
       <Description>
 
       [RivalAI Chat]
-      
+
       [UseChat:false]
       [StartsReady:true]
       [Chance:100]
       [MaxChats:1]
       [BroadcastRandomly:true]
-      
+
       [Author:{Faction} Drone]
       [Color:Green]
-      
+
       [ChatMessages:{Faction} Going alone!]
       [ChatAudio:ArcHudGPSNotification1]
       [BroadcastChatType:Chat]
-      
+
 
       </Description>
-      
-    </EntityComponent> 
+
+    </EntityComponent>
 
 
 
@@ -211,7 +211,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Subordinate_Trigger_TaskLeaderisNotReady</SubtypeId>
+        <SubtypeId>MSB_Subordinate_Trigger_TaskLeaderIsNotReady</SubtypeId>
       </Id>
       <Description>
 
@@ -219,11 +219,11 @@
 
         [UseTrigger:true]
         [Type:CommandReceived]
-		[CommandReceiveCode:TaskLeaderisNotReady]
+		[CommandReceiveCode:TaskLeaderIsNotReady]
         [StartsReady:true]
-		
+
         [MaxActions:-1]
-        [Actions:MSB_Subordinate_Action_TaskLeaderisNotReady]
+        [Actions:MSB_Subordinate_Action_TaskLeaderIsNotReady]
 
       </Description>
 
@@ -234,7 +234,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Subordinate_Action_TaskLeaderisNotReady</SubtypeId>
+        <SubtypeId>MSB_Subordinate_Action_TaskLeaderIsNotReady</SubtypeId>
       </Id>
       <Description>
 
@@ -261,7 +261,7 @@
         [Type:CommandReceived]
 		[CommandReceiveCode:TaskLeaderisReady]
         [StartsReady:true]
-		
+
         [MaxActions:-1]
         [Actions:MSB_Subordinate_Action_TaskLeaderisReady]
 
@@ -284,9 +284,9 @@
       </Description>
 
     </EntityComponent>
-	
 
-	
+
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -301,17 +301,17 @@
 	[TargetDistance:2000]
 	[StartsReady:true]
 	[Conditions:MSB_Subordinate_Condition_TaskLeaderisReady]
-	  
+
 	[MinCooldownMs:6000]
-	[MaxCooldownMs:9000]		
-		
+	[MaxCooldownMs:9000]
+
 
 	[MaxActions:-1]
 	[Actions:MSB_Subordinate_Action_PassiveSwitchPatrol]
 
       </Description>
 
-    </EntityComponent>	
+    </EntityComponent>
 
 
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -321,16 +321,16 @@
       </Id>
       <Description>
       [RivalAI Condition]
-      
+
 	[UseConditions:true]
 	[MatchAnyCondition:true]
 	[CheckTrueBooleans:true]
 	[TrueBooleans:TaskLeaderisReady]
-	  
-	  
-	  
+
+
+
       </Description>
-      
+
     </EntityComponent>
 
 
@@ -358,36 +358,36 @@
 
       </Description>
 
-    </EntityComponent>		
-	
-	
+    </EntityComponent>
+
+
   	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
           <SubtypeId>MSB_Subordinate_Chat_PassiveSwitchPatrol</SubtypeId>
       </Id>
-	  
+
       <Description>
 
       [RivalAI Chat]
-      
+
       [UseChat:false]
       [StartsReady:true]
       [Chance:100]
       [MaxChats:1]
       [BroadcastRandomly:true]
-      
+
       [Author:DEBUG {Antenna}]
       [Color:Green]
-      
+
       [ChatMessages:PassiveSwitchPatrol]
       [ChatAudio:ArcHudGPSNotification2]
       [BroadcastChatType:Chat]
-      
+
 
       </Description>
-      
-    </EntityComponent> 
+
+    </EntityComponent>
 
 
 

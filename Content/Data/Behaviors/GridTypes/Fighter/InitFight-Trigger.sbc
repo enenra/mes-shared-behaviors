@@ -2,12 +2,6 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 
-<!-- 
-
-
-
-
--->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -15,9 +9,9 @@
       </Id>
       <Description>
         [RivalAI Trigger]
-		
-		[Tags:GridType_InitFight]
-		
+
+		    [Tags:MSB_GridType_InitFight]
+
         [UseTrigger:false]
         [Type:Timer]
 
@@ -27,34 +21,24 @@
 
         [MaxActions:1]
         [Actions:MSB_Fighter_Action_InitFight]
-
       </Description>
-
     </EntityComponent>
 
-
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Fighter_Action_InitFight</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Fighter_Action_InitFight</SubtypeId>
       </Id>
       <Description>
+        [RivalAI Action]
 
-	[RivalAI Action]
-	[ChangeBehaviorSubclass:true]  
-	[NewBehaviorSubclass:Fighter]
+        [ChangeBehaviorSubclass:true]
+        [NewBehaviorSubclass:Fighter]
 
-	[ChangeAutopilotProfile:true]
-	[AutopilotProfile:Secondary]	
-
+        [ChangeAutopilotProfile:true]
+        [AutopilotProfile:Secondary]
       </Description>
-      
     </EntityComponent>
 
-
-	
-	
-	
-	
   </EntityComponents>
 </Definitions>

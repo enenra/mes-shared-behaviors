@@ -2,280 +2,227 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 
-
-<!--
-LostTarget -> ResetCooldown Of NextRigger
-[Triggers:MSB-Drone-Trigger-LostTarget]
-
+    <!--
+    LostTarget -> ResetCooldown Of NextRigger
+    [Triggers:MSB_Fighter_Trigger_LostTarget]
 
 
-10s no Target? + TaskLeaderisNotReady -> Go into Patrol Mode && ResetCooldown
-[Triggers:MSB-Drone-Trigger-SwitchtoPatrol]
+    10s no Target? + TaskLeaderIsNotReady -> Go into Patrol Mode && ResetCooldown
+    [Triggers:MSB_Fighter_Trigger_SwitchToPatrol]
 
 
-3 min still no Target -> Retreat 
-[Triggers:MSB-Drone-Trigger-Retreat]
-	
-	
-	
-	
-HasTarget -> Reset it	
-[Triggers:MSB-Drone-Trigger-HasTarget]	
-	
+    3 min still no Target -> Retreat
+    [Triggers:MSB_Fighter_Trigger_Retreat]
 
-	
--->	
-	
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+
+    HasTarget -> Reset it
+    [Triggers:MSB_Fighter_Trigger_HasTarget]
+    -->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Drone_Trigger_LostTarget</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Fighter_Trigger_LostTarget</SubtypeId>
       </Id>
       <Description>
+        [RivalAI Trigger]
 
-      [RivalAI Trigger]
-      [Type:LostTarget]
-	  [UseTrigger:true]
-	  [StartsReady:true]
+        [Type:LostTarget]
+        [UseTrigger:true]
+        [StartsReady:true]
 
-	  [MaxActions:-1]
-	  [Actions:MSB_Drone_Action_LostTarget]
-	  
+        [MaxActions:-1]
+        [Actions:MSB_Fighter_Action_LostTarget]
       </Description>
-      
     </EntityComponent>
 
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Drone_Action_LostTarget</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Fighter_Action_LostTarget</SubtypeId>
       </Id>
       <Description>
+        [RivalAI Action]
 
-	[RivalAI Action]
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_Fighter_Trigger_SwitchToPatrol]
+        [EnableTriggerNames:MSB_Fighter_Trigger_HasTarget]
 
-	[EnableTriggers:true]
-	[EnableTriggerNames:MSB_Drone_Trigger_SwitchtoPatrol]
-	[EnableTriggerNames:MSB_Drone_Trigger_HasTarget]	
-	
-	
-	[ResetCooldownTimeOfTriggers:true]
-	[ResetTriggerCooldownNames:MSB-Drone-Trigger-SwitchtoPatrol]	
-	
-	
-	
-	[DisableTriggers:true]
-	[DisableTriggerNames:MSB_Drone_Trigger_LostTarget]			
-	[DisableTriggerNames:MSB_Drone_Trigger_Retreat]		
-	</Description>
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB_Figher_Trigger_SwitchToPatrol]
 
-    </EntityComponent>	
-
-
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Drone_Trigger_SwitchtoPatrol</SubtypeId>
-      </Id>
-      <Description>
-
-	[RivalAI Trigger]
-	[Type:NoTarget]
-	[MinCooldownMs:10000]	  
-	[MinCooldownMs:10001]	
-	[Conditions:MSB_Drone_Condition_TaskLeaderisNotReady]
-	[UseTrigger:false]
-	[StartsReady:false]
-	[MaxActions:-1]
-	[Actions:MSB_Drone_Action_SwitchtoPatrol]
-	  
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_Fighter_Trigger_LostTarget]
+        [DisableTriggerNames:MSB_Fighter_Trigger_Retreat]
       </Description>
-      
     </EntityComponent>
 
-	
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-	<Id>
-	  <TypeId>Inventory</TypeId>
-	  <SubtypeId>MSB_Drone_Condition_TaskLeaderisNotReady</SubtypeId>
-	</Id>
-	<Description>
-	[RivalAI Condition]
-
-	[UseFailCondition:true]
-	[UseConditions:true]
-	[CheckTrueBooleans:true]
-	[TrueBooleans:TaskLeaderisReady]
-
-	</Description>
-	</EntityComponent>
-
-
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Drone_Action_SwitchtoPatrol</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Fighter_Trigger_SwitchToPatrol</SubtypeId>
       </Id>
       <Description>
+        [RivalAI Trigger]
 
-	[RivalAI Action]
+        [Type:NoTarget]
 
-	[DisableTriggers:true]
-	[DisableTriggerNames:MSB_Drone_Trigger_SwitchtoPatrol]
+        [MinCooldownMs:10000]
+        [MinCooldownMs:10001]
 
-	[ChangeBehaviorSubclass:true]  
-	[NewBehaviorSubclass:Patrol]
+        [Conditions:MSB_Fighter_Condition_TaskLeaderIsNotReady]
 
-	[UseChatBroadcast:true]
-	[ChatData:MSB_Drone_Chat_SwitchtoPatrol]
+        [UseTrigger:false]
+        [StartsReady:false]
 
-
-
-
-	[DisableTriggers:true]
-	[DisableTriggerNames:MSB_Drone_Trigger_SwitchtoPatrol]			
-	[DisableTriggerNames:MSB_Drone_Trigger_LostTarget]	
-
-	[EnableTriggers:true]
-	[EnableTriggerNames:MSB_Drone_Trigger_HasTarget]	
-	[EnableTriggerNames:MSB_Drone_Trigger_Retreat]		
-
-	[ResetCooldownTimeOfTriggers:true]
-	[ResetTriggerCooldownNames:MSB-Drone-Trigger-Retreat]
-
+        [MaxActions:-1]
+        [Actions:MSB_Fighter_Action_SwitchToPatrol]
       </Description>
-      
     </EntityComponent>
 
-
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Drone_Chat_SwitchtoPatrol</SubtypeId>
-      </Id>
-	  
-      <Description>
-
-      [RivalAI Chat]
-      
-      [UseChat:true]
-      [StartsReady:true]
-      [Chance:100]
-      [MaxChats:1]
-      [BroadcastRandomly:true]
-      
-      [Author:{AntennaName}]
-      [Color:Red]
-      
-      [ChatMessages:No Targets, switching to Patrol]
-      [ChatAudio:]
-      [BroadcastChatType:Chat]
-      
-
-      </Description>
-      
-    </EntityComponent>	
-
-
-
-<!-- Retreat-->
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Drone_Trigger_Retreat</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Fighter_Condition_TaskLeaderIsNotReady</SubtypeId>
       </Id>
       <Description>
+        [RivalAI Condition]
 
-	[RivalAI Trigger]
-	[Type:NoTarget]
-	[MinCooldownMs:180000]	  
-	[MinCooldownMs:180001]	  
-	[UseTrigger:false]
-	[StartsReady:false]
-	[MaxActions:-1]
-	[Actions:MSB_Drone_Action_Retreat]
-	  
+        [UseFailCondition:true]
+        [UseConditions:true]
+
+        [CheckTrueBooleans:true]
+        [TrueBooleans:TaskLeaderisReady]
       </Description>
-      
     </EntityComponent>
 
-
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Drone_Action_Retreat</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Fighter_Action_SwitchToPatrol</SubtypeId>
       </Id>
       <Description>
+        [RivalAI Action]
 
-	[RivalAI Action]
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_Fighter_Trigger_SwitchToPatrol]
 
-	[Retreat:true]
+        [ChangeBehaviorSubclass:true]
+        [NewBehaviorSubclass:Patrol]
 
+        [UseChatBroadcast:true]
+        [ChatData:MSB_Fighter_Chat_SwitchToPatrol]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_Fighter_Trigger_SwitchToPatrol]
+        [DisableTriggerNames:MSB_Fighter_Trigger_LostTarget]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_Fighter_Trigger_HasTarget]
+        [EnableTriggerNames:MSB_Fighter_Trigger_Retreat]
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB_Figher_Trigger_Retreat]
       </Description>
-      
-    </EntityComponent>
-		
-
-	
-<!-- HasTarget Reset-->
-
-	
-	
-	
-
-
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Drone_Trigger_HasTarget</SubtypeId>
-      </Id>
-      <Description>
-
-      [RivalAI Trigger]
-	  [UseTrigger:false]	  
-      [Type:HasTarget]
-
-	  [StartsReady:true]
-
-	  [MaxActions:-1]
-	  [Actions:MSB_Drone_Action_HasTarget]
-	  
-      </Description>
-      
     </EntityComponent>
 
-
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Drone_Action_HasTarget</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Fighter_Chat_SwitchToPatrol</SubtypeId>
       </Id>
       <Description>
+        [RivalAI Chat]
 
-	[RivalAI Action]
-	[ChangeBehaviorSubclass:true]  
-	[NewBehaviorSubclass:Fighter]
+        [UseChat:true]
+        [StartsReady:true]
+        [Chance:100]
+        [MaxChats:1]
+        [BroadcastRandomly:true]
 
-	
-	[EnableTriggers:true]
-	[EnableTriggerNames:MSB_Drone_Trigger_LostTarget]
-	
-	[DisableTriggers:true]
-	[DisableTriggerNames:MSB_Drone_Trigger_HasTarget]	
-	[DisableTriggerNames:MSB_Drone_Trigger_SwitchtoPatrol]		
-	[DisableTriggerNames:MSB_Drone_Trigger_Retreat]		
-	
-	
+        [Author:{AntennaName}]
+        [Color:Red]
+
+        [ChatMessages:No Targets, switching to Patrol]
+        [ChatAudio:]
+        [BroadcastChatType:Chat]
       </Description>
-      
-    </EntityComponent>		
+    </EntityComponent>
+
+    <!-- Retreat-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Fighter_Trigger_Retreat</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:NoTarget]
+
+        [MinCooldownMs:180000]
+        [MinCooldownMs:180001]
+
+        [UseTrigger:false]
+        [StartsReady:false]
+
+        [MaxActions:-1]
+        [Actions:MSB_Fighter_Action_Retreat]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Fighter_Action_Retreat</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [Retreat:true]
+      </Description>
+    </EntityComponent>
+
+    <!-- HasTarget Reset-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Fighter_Trigger_HasTarget</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [UseTrigger:false]
+        [Type:HasTarget]
+
+        [StartsReady:true]
+
+        [MaxActions:-1]
+        [Actions:MSB_Fighter_Action_HasTarget]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Fighter_Action_HasTarget</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ChangeBehaviorSubclass:true]
+        [NewBehaviorSubclass:Fighter]
 
 
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_Fighter_Trigger_LostTarget]
 
-	
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_Fighter_Trigger_HasTarget]
+        [DisableTriggerNames:MSB_Fighter_Trigger_SwitchToPatrol]
+        [DisableTriggerNames:MSB_Fighter_Trigger_Retreat]
+      </Description>
+    </EntityComponent>
 
-
-	
-	
   </EntityComponents>
 </Definitions>

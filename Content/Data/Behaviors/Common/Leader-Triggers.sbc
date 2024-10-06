@@ -3,10 +3,10 @@
   <EntityComponents>
 
   <!-- RequestEscortSlot
-  
+
 [Triggers:MSB_Leader_Trigger_AnnouncePresence]
-  
-[Triggers:MSB_Leader_Trigger_ProcessEscortRequest]		
+
+[Triggers:MSB_Leader_Trigger_ProcessEscortRequest]
 
 
   -->
@@ -18,10 +18,10 @@
       <Description>
         [RivalAI Trigger]
 		[Tags:Leader]
-		
+
         [UseTrigger:false]
         [Type:Timer]
-		
+
         [MinCooldownMs:6000]
         [MaxCooldownMs:8001]
         [StartsReady:false]
@@ -40,11 +40,11 @@
       [RivalAI Action]
 
 	[UseChatBroadcast:true]
-	[ChatData:MSB_Leader_Chat_AnnouncePresence]		
+	[ChatData:MSB_Leader_Chat_AnnouncePresence]
 
 	[DisableTriggers:true]
 	[DisableTriggerNames:MSB_Leader_Trigger_AnnouncePresence]
-	
+
 	[BroadcastCommandProfiles:true]
 	[CommandProfileIds:MSB_Leader_Command_AnnouncePresence]
       </Description>
@@ -61,43 +61,43 @@
 	[RivalAI Command]
 
 	[CommandCode:NewLeader]
-	
+
 	[MatchSenderReceiverOwners:true]
 	[SingleRecipient:false]
 	[IgnoreAntennaRequirement:true]
 	[IgnoreReceiverAntennaRequirement:true]
 
 	[Radius:2500]
-	
+
 	</Description>
     </EntityComponent>
-	
+
 
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
           <SubtypeId>MSB_Leader_Chat_AnnouncePresence</SubtypeId>
       </Id>
-	  
+
       <Description>
 
       [RivalAI Chat]
-      
+
       [UseChat:true]
       [StartsReady:true]
       [Chance:100]
       [MaxChats:1]
       [BroadcastRandomly:true]
-      
+
       [Author:{AntennaName}]
       [Color:Green]
-      
+
       [ChatMessages:I am the new leader]
       [ChatAudio:ArcHudGPSNotification2]
       [BroadcastChatType:Chat]
-     
+
       </Description>
-    </EntityComponent>	
+    </EntityComponent>
 
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -109,7 +109,7 @@
 
         [RivalAI Trigger]
 		[Tags:Leader]
-		
+
         [UseTrigger:false]
         [Type:CommandReceived]
         [CommandReceiveCode:SubordinateRequest]
@@ -134,7 +134,7 @@
 
       [AssignEscortFromCommand:true]
       [UseChatBroadcast:true]
-      [ChatData:MSB_Leader_Chat_Escort]		
+      [ChatData:MSB_Leader_Chat_Escort]
 
       </Description>
 
@@ -145,28 +145,28 @@
           <TypeId>Inventory</TypeId>
           <SubtypeId>MSB_Leader_Chat_Escort</SubtypeId>
       </Id>
-	  
+
       <Description>
 
       [RivalAI Chat]
-      
+
       [UseChat:true]
       [StartsReady:true]
       [Chance:100]
       [MaxChats:1]
       [BroadcastRandomly:true]
-      
+
       [Author:{AntennaName}]
       [Color:Green]
-      
+
       [ChatMessages:This is {AntennaName}. Accepted escort request]
       [ChatAudio:ArcHudGPSNotification2]
       [BroadcastChatType:Chat]
-      
+
 
       </Description>
-      
-    </EntityComponent>	
+
+    </EntityComponent>
 
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -177,10 +177,10 @@
       <Description>
         [RivalAI Trigger]
 		[Tags:Leader]
-		
+
         [UseTrigger:false]
         [Type:Compromised]
-		
+
 
         [StartsReady:true]
 
@@ -199,13 +199,13 @@
 
 	[BroadcastCommandProfiles:true]
 	[CommandProfileIds:MSB_Leader_Command_LeaderDead]
-	
+
 
       </Description>
     </EntityComponent>
-	
-	
-	
+
+
+
 	    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -216,25 +216,25 @@
 	[RivalAI Command]
 
 	[CommandCode:LeaderDead]
-	
+
 	[MatchSenderReceiverOwners:true]
 	[SingleRecipient:false]
 	[IgnoreAntennaRequirement:true]
 	[IgnoreReceiverAntennaRequirement:true]
 
 	[Radius:2500]
-	
+
 	</Description>
     </EntityComponent>
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
 <!--==========================
 
 
@@ -256,11 +256,11 @@
 	  [MinCooldownMs:450000]
 	  [MaxCooldownMs:600000]
 
-	
-	  [Actions:MSB_Leader_Action_TargetNear1500]	
-	  
+
+	  [Actions:MSB_Leader_Action_TargetNear1500]
+
       </Description>
-      
+
     </EntityComponent>
 
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -271,7 +271,7 @@
       <Description>
 
     [RivalAI Action]
-  
+
 	[BroadcastCommandProfiles:true]
 	[CommandProfileIds:MSB_Leader_Command_LooseFighters]
 
@@ -282,44 +282,44 @@
 
 
       </Description>
-      
+
     </EntityComponent>
-	
-	
+
+
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
           <SubtypeId>MSB_Leader_Chat_TargetNear1500</SubtypeId>
       </Id>
-	  
+
       <Description>
 
       [RivalAI Chat]
-      
+
       [UseChat:false]
       [StartsReady:true]
       [Chance:100]
       [MaxChats:1]
       [BroadcastRandomly:true]
-      
+
       [Author:{AntennaName}]
       [Color:Green]
-      
+
       [ChatMessages:Fighters Engage!]
       [ChatAudio:ArcHudGPSNotification2]
       [BroadcastChatType:Chat]
-      
+
 
       </Description>
-      
-    </EntityComponent>	
-	
-	
-	
-	
-	
 
-	
+    </EntityComponent>
+
+
+
+
+
+
+
 
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -335,9 +335,9 @@
 
 	  [MaxActions:-1]
 	  [Actions:MSB_Leader_Action_HasTarget]
-	  
+
       </Description>
-      
+
     </EntityComponent>
 
 
@@ -349,31 +349,31 @@
       <Description>
 
 	[RivalAI Action]
-	[ChangeBehaviorSubclass:true]  
+	[ChangeBehaviorSubclass:true]
 	[NewBehaviorSubclass:Horsefly]
 
 	[ChangeAutopilotProfile:true]
-	[AutopilotProfile:Secondary]	
+	[AutopilotProfile:Secondary]
 
 	[UseChatBroadcast:true]
 	[ChatData:MSB_Leader_Chat_HasTarget]
-	
+
 	[EnableTriggers:true]
 	[EnableTriggerNames:MSB_Leader_Trigger_NoTarget]
-	
+
 	[DisableTriggers:true]
-	[DisableTriggerNames:MSB_Leader_Trigger_HasTarget]	
-	
+	[DisableTriggerNames:MSB_Leader_Trigger_HasTarget]
+
 	[SwitchToReceivedTarget:true]
 
-	
-	[SetBooleansFalse:LeaderHasnoTarget]	
+
+	[SetBooleansFalse:LeaderHasnoTarget]
 
 	[BroadcastCommandProfiles:true]
 	[CommandProfileIds:MSB_Leader_Command_HasTarget]
-		
+
       </Description>
-      
+
     </EntityComponent>
 
 
@@ -382,30 +382,30 @@
           <TypeId>Inventory</TypeId>
           <SubtypeId>MSB_Leader_Chat_HasTarget</SubtypeId>
       </Id>
-	  
+
       <Description>
 
       [RivalAI Chat]
-      
+
       [UseChat:false]
       [StartsReady:true]
       [Chance:100]
       [MaxChats:1]
       [BroadcastRandomly:true]
-      
+
       [Author:{AntennaName}]
       [Color:Red]
-      
+
       [ChatMessages:I have a target, switching behavoir]
       [ChatAudio:ArcHudGPSNotification2]
       [BroadcastChatType:Chat]
-      
+
 
       </Description>
-      
+
     </EntityComponent>
-	
-	
+
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -415,7 +415,7 @@
 
 	[RivalAI Command]
 
-	[CommandCode:TaskLeaderisNotReady]
+	[CommandCode:TaskLeaderIsNotReady]
 	[MatchSenderReceiverOwners:true]
 	[IgnoreAntennaRequirement:true]
 	[IgnoreReceiverAntennaRequirement:true]
@@ -423,8 +423,8 @@
 
       </Description>
 
-    </EntityComponent>		
-	
+    </EntityComponent>
+
 
 
 
@@ -443,12 +443,12 @@
 	  [StartsReady:true]
 	  [MaxActions:-1]
 	  [Actions:MSB_Leader_Action_NoTarget]
-	  
+
       </Description>
-      
+
     </EntityComponent>
-	
-	
+
+
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -465,24 +465,24 @@
 
 	[EnableTriggers:true]
 	[EnableTriggerNames:MSB_Leader_Trigger_SwitchtoCargo]
-	
+
 	[ResetCooldownTimeOfTriggers:true]
-	[ResetTriggerCooldownNames:MSB_Leader_Trigger_SwitchtoCargo]	
-	
-	
+	[ResetTriggerCooldownNames:MSB_Leader_Trigger_SwitchtoCargo]
+
+
 	[EnableTriggers:true]
 	[EnableTriggerNames:MSB_Leader_Trigger_HasTarget]
 	[DisableTriggers:true]
-	[DisableTriggerNames:MSB_Leader_Trigger_NoTarget]		
+	[DisableTriggerNames:MSB_Leader_Trigger_NoTarget]
 
       </Description>
-      
-    </EntityComponent>	
-	
-	
-	
-	
-	
+
+    </EntityComponent>
+
+
+
+
+
 
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -496,16 +496,16 @@
 	[UseTrigger:false]
 	[StartsReady:false]
 	[Conditions:MSB_Leader_Condition_NoTarget]
-	  
+
 	[MinCooldownMs:6000]
 	[MaxCooldownMs:9000]
-	  
+
 	[Actions:MSB_Leader_Action_SwitchtoCargo]
-	  
+
       </Description>
-      
+
     </EntityComponent>
-	
+
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -513,16 +513,16 @@
       </Id>
       <Description>
       [RivalAI Condition]
-      
+
 	[UseConditions:true]
 	[MatchAnyCondition:true]
 	[CheckTrueBooleans:true]
 	[TrueBooleans:LeaderHasnoTarget]
-	  
-	  
-	  
+
+
+
       </Description>
-      
+
     </EntityComponent>
 
 
@@ -538,20 +538,20 @@
 	[DisableTriggers:true]
 	[DisableTriggerNames:MSB_Leader_Trigger_SwitchtoCargo]
 
-	[ChangeBehaviorSubclass:true]  
+	[ChangeBehaviorSubclass:true]
 	[NewBehaviorSubclass:CargoShip]
 
 	[ChangeAutopilotProfile:true]
-	[AutopilotProfile:Primary]	
+	[AutopilotProfile:Primary]
 
 	[UseChatBroadcast:true]
 	[ChatData:MSB_Leader_Chat_SwitchtoCargo]
 
 	[BroadcastCommandProfiles:true]
     [CommandProfileIds:MSB_Leader_Command_SwitchtoCargo]
-		
+
       </Description>
-      
+
     </EntityComponent>
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -573,38 +573,38 @@
 
     </EntityComponent>
 
-	
+
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
           <SubtypeId>MSB_Leader_Chat_SwitchtoCargo</SubtypeId>
       </Id>
-	  
+
       <Description>
 
       [RivalAI Chat]
-      
+
       [UseChat:false]
       [StartsReady:true]
       [Chance:100]
       [MaxChats:1]
       [BroadcastRandomly:true]
-      
+
       [Author:{AntennaName}]
       [Color:Red]
-      
+
       [ChatMessages:No Targets, switching to cargoship]
       [ChatAudio:ArcHudGPSNotification2]
       [BroadcastChatType:Chat]
-      
+
 
       </Description>
-      
-    </EntityComponent>	
 
-===========================-->	
+    </EntityComponent>
 
-	
-	
+===========================-->
+
+
+
   </EntityComponents>
 </Definitions>

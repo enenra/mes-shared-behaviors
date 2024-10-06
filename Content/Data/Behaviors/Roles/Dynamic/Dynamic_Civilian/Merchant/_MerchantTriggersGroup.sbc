@@ -5,12 +5,12 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_MerchantTriggersGroup</SubtypeId>
+          <SubtypeId>MSB_MerchantTriggerGroup</SubtypeId>
       </Id>
       <Description>
 
 	[RivalAI TriggerGroup]
-      
+
 [Triggers:MSB_Merchant_Trigger_MerchantAreaTimeout]
 [Triggers:MSB_Merchant_Trigger_RulesOfAcquisition]
 [Triggers:MSB_Merchant_Trigger_ResumeCourse]
@@ -20,15 +20,15 @@
 [Triggers:MSB_Merchant_Trigger_StartLanding]
 [Triggers:MSB_Merchant_Trigger_ArrivedAtLandingSite]
 
-	
+
       </Description>
-      
+
     </EntityComponent>
-	
 
 
-	
-	
-	
+
+
+
+
   </EntityComponents>
 </Definitions>

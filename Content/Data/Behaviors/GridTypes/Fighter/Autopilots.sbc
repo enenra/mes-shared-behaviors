@@ -1,14 +1,13 @@
 <?xml version="1.0"?>
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
 
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Drone_Autopilot_Strike</SubtypeId>
+        <SubtypeId>MSB_Fighter_Autopilot_Strike</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI Autopilot]
 
         [DisableInertiaDampeners:false]
@@ -17,7 +16,7 @@
         [WaypointTolerance:50]
         [IdealMinSpeed:12]
         [IdealMaxSpeed:100]
-        [MaxSpeedTolerance:3]        
+        [MaxSpeedTolerance:3]
         [SlowDownOnWaypointApproach:true]
         [ExtraSlowDownDistance:150]
 
@@ -31,7 +30,6 @@
         [ReverseOffsetDistAltAboveHeight:true]
         [ReverseOffsetHeight:1300]
 
-
         [UseProjectileLeadPrediction:true]
 
         [MinimumPlanetAltitude:150]
@@ -40,24 +38,20 @@
         [UseVelocityCollisionEvasion:false]
         [LimitRotationSpeed:true]
         [MaxRotationMagnitude:1.5]
-
       </Description>
+    </EntityComponent>
 
-    </EntityComponent>	
-	
-	
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Drone_Autopilot_Fighter</SubtypeId>
+        <SubtypeId>MSB_Fighter_Autopilot_Fighter</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI Autopilot]
 
 		    [IdealPlanetAltitude:450]
 		    [MinimumPlanetAltitude:250]
-		
+
         [DisableInertiaDampeners:false]
         [FlyLevelWithGravity:false]
         [WaypointTolerance:40]
@@ -77,28 +71,22 @@
         [StrafeMinimumTargetDistance:250]
         [StrafeSpeedCutOff:50]
         [StrafeDistanceCutOff:100]
-
       </Description>
+    </EntityComponent>
 
-    </EntityComponent>		
-	
-	
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Drone_Autopilot_Fighter_LowAltitude</SubtypeId>
+        <SubtypeId>MSB_Fighter_Autopilot_Fighter_LowAltitude</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI Autopilot]
 
 		    [IdealPlanetAltitude:50]
 		    [MinimumPlanetAltitude:5]
-		
 
-		[TryToLevelWithTarget:true]
-		
-		
+		    [TryToLevelWithTarget:true]
+
         [DisableInertiaDampeners:false]
         [FlyLevelWithGravity:false]
         [WaypointTolerance:40]
@@ -110,95 +98,12 @@
 
         [AllowStrafing:false]
 
-
         [EngageDistanceSpace:50]
         [EngageDistancePlanet:50]
         [DisengageDistanceSpace:100]
         [DisengageDistancePlanet:100]
-		
-		
-
       </Description>
+    </EntityComponent>
 
-    </EntityComponent>			
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>FAF_EscortAutopilot</SubtypeId>
-      </Id>
-      <Description>
-
-	[RivalAI Autopilot]
-
-	[DisableInertiaDampeners:false]
-	[SlowDownOnWaypointApproach:true]
-	[FlyLevelWithGravity:false]
-	[MinimumPlanetAltitude:75]
-	[IdealPlanetAltitude:150]
-	[WaypointTolerance:5]
-	[UseVelocityCollisionEvasion:true]
-	[WaypointWaitTimeTrigger:20]
-
-	[IdealMinSpeed:12]
-	[IdealMaxSpeed:100]
-	[MaxSpeedTolerance:3]
-
-	[LimitRotationSpeed:true]
-	[MaxRotationMagnitude:0.75]
-
-	[EscortSpeedMatchMinDistance:5]
-      </Description>
-
-    </EntityComponent>	
-	
-   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>FAF_EscortAutopilot_B</SubtypeId>
-      </Id>
-      <Description>
-
-	[RivalAI Autopilot]
-
-        [DisableInertiaDampeners:false]
-        [SlowDownOnWaypointApproach:true]
-        [ExtraSlowDownDistance:100]
-        [FlyLevelWithGravity:false]
-
-        [IdealMinSpeed:33]
-        [IdealMaxSpeed:100]
-
-        [EngageDistanceSpace:500]
-        [EngageDistancePlanet:600]
-        [DisengageDistanceSpace:800]
-        [DisengageDistancePlanet:800]
-
-        [AllowStrafing:true]
-        [StrafeMinDurationMs:1000]
-        [StrafeMaxDurationMs:1500]
-        [StrafeSpeedCutOff:45]
-
-      </Description>
-
-    </EntityComponent>	
-
-
-	
   </EntityComponents>
 </Definitions>

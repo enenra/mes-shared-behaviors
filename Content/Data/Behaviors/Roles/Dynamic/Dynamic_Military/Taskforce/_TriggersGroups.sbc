@@ -1,11 +1,11 @@
 <?xml version="1.0"?>
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
-  
-	
-	
-	
-	
+
+
+
+
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -15,19 +15,19 @@
 
 	[RivalAI TriggerGroup]
 
-	[Triggers:MSB_OffensiveEscortDrone_Trigger_RequestEscortSlot]		
-	[Triggers:MSB_OffensiveEscortDrone_Trigger_AggressionSwitchEscort]	
-	
-	[Triggers:MSB_OffensiveEscortDrone_Trigger_TaskLeaderisNotReady]		
-	[Triggers:MSB_OffensiveEscortDrone_Trigger_TaskLeaderisReady]		
+	[Triggers:MSB_OffensiveEscortDrone_Trigger_RequestEscortSlot]
+	[Triggers:MSB_OffensiveEscortDrone_Trigger_AggressionSwitchEscort]
+
+	[Triggers:MSB_OffensiveEscortDrone_Trigger_TaskLeaderIsNotReady]
+	[Triggers:MSB_OffensiveEscortDrone_Trigger_TaskLeaderisReady]
 	[Triggers:MSB_OffensiveEscortDrone_Trigger_NoTargetSwitchEscort]
 
 
-	
+
       </Description>
-    </EntityComponent> 	
-	
-	
+    </EntityComponent>
+
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -37,19 +37,19 @@
 
 	[RivalAI TriggerGroup]
 
-	[Triggers:MSB_OffensiveTaskLeader_Trigger_ProcessEscortRequest]		
-	[Triggers:MSB_OffensiveTaskLeader_Trigger_TargetNear1500]	
-	
-	[Triggers:MSB_OffensiveTaskLeader_Trigger_HasTarget]	
-	[Triggers:MSB_OffensiveTaskLeader_Trigger_NoTarget]	
+	[Triggers:MSB_OffensiveTaskLeader_Trigger_ProcessEscortRequest]
+	[Triggers:MSB_OffensiveTaskLeader_Trigger_TargetNear1500]
+
+	[Triggers:MSB_OffensiveTaskLeader_Trigger_HasTarget]
+	[Triggers:MSB_OffensiveTaskLeader_Trigger_NoTarget]
 	[Triggers:MSB_OffensiveTaskLeader_Trigger_SwitchtoCargo]
-	
-	
+
+
       </Description>
-    </EntityComponent> 		
-	
-	
-	
+    </EntityComponent>
+
+
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -59,24 +59,24 @@
 
 	[RivalAI TriggerGroup]
 
-	[Triggers:MSB_OffensiveTaskLeader_Trigger_ProcessEscortRequest]		
-	[Triggers:MSB_OffensiveTaskLeader_Trigger_TargetNear1500]	
-	
-	[Triggers:MSB_OffensiveTaskLeader_Trigger_HasTarget_Hunter]	
-	[Triggers:MSB_OffensiveTaskLeader_Trigger_NoTarget_Hunter]	
+	[Triggers:MSB_OffensiveTaskLeader_Trigger_ProcessEscortRequest]
+	[Triggers:MSB_OffensiveTaskLeader_Trigger_TargetNear1500]
+
+	[Triggers:MSB_OffensiveTaskLeader_Trigger_HasTarget_Hunter]
+	[Triggers:MSB_OffensiveTaskLeader_Trigger_NoTarget_Hunter]
 	[Triggers:MSB_OffensiveTaskLeader_Trigger_SwitchtoCargo_Hunter]
-	
-	
+
+
       </Description>
-    </EntityComponent> 		
-	
-	
-	
-	
-	
-	
-	
-	
-	
+    </EntityComponent>
+
+
+
+
+
+
+
+
+
   </EntityComponents>
 </Definitions>

@@ -1,4 +1,4 @@
-Dynamic_Civillian_TriggersGroup:
+Dynamic_Civillian_TriggerGroup:
 
 
 -going to civillian station.  DialogueCue: DynamicCivillian_PathDeviation
@@ -21,6 +21,5 @@ Will land randomly. DialogueCue: NomadMovingToSurface
 Stop when player (neutral and above) is close. DialogueCue: NomadPlayerClose
 
 Salvager:
-Goes to salvage. Get angry if player gets close if in salvage mode. DialogueCue: SalvagerHasScrapPlayerClose 
+Goes to salvage. Get angry if player gets close if in salvage mode. DialogueCue: SalvagerHasScrapPlayerClose
 Stop when player (neutral and above) is close. SalvagerPlayerClose
-
