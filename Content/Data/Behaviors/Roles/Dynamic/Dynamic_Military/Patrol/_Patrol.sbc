@@ -6,6 +6,10 @@
     This is a sample patrol behavior.
     The ship will fly to random places within a set radius around the point of origin, then despawn after 10-15min.
     If it finds a player, it will engage it. If the player puts a certain amount of distance between them and the encounter, the encounter will go back to patrol after a set amount of time.
+
+    TODO:
+    * Timer after which the patrol is over, start despawn.
+    * Replace remaining FAC- references.
     -->
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
