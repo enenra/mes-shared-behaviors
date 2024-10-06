@@ -2,7 +2,7 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 
-<!-- 
+<!--
 
 
 CargoShip (Neutral)
@@ -17,9 +17,9 @@ HorseFly (Neutral)
       </Id>
       <Description>
         [RivalAI Trigger]
-		
-		[Tags:GridType_InitFight]
-		
+
+		[Tags:MSB_GridType_InitFight]
+
         [UseTrigger:false]
         [Type:Timer]
 
@@ -43,30 +43,30 @@ HorseFly (Neutral)
       <Description>
 
 	[RivalAI Action]
-	[ChangeBehaviorSubclass:true]  
+	[ChangeBehaviorSubclass:true]
 	[NewBehaviorSubclass:Horsefly]
 
 	[ChangeAutopilotProfile:true]
-	[AutopilotProfile:Secondary]	
+	[AutopilotProfile:Secondary]
 
 
 
 
       </Description>
-      
+
     </EntityComponent>
 
 
 
-	
-	
-	
-	
 
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
   </EntityComponents>
 </Definitions>

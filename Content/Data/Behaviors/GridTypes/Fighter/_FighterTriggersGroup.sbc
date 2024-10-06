@@ -4,24 +4,15 @@
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Fighter_TriggersGroup</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Fighter_TriggerGroup</SubtypeId>
       </Id>
       <Description>
+        [RivalAI TriggerGroup]
 
-	[RivalAI TriggerGroup]
-      
-
-	[Triggers:MSB_Fighter_Trigger_InitFight]
-	
+        [Triggers:MSB_Fighter_Trigger_InitFight]
       </Description>
-      
     </EntityComponent>
-	
 
-
-	
-	
-	
   </EntityComponents>
 </Definitions>
