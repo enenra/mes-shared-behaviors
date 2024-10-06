@@ -1,0 +1,89 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_FixedStatic_TriggerGroup</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI TriggerGroup]
+
+        [Triggers:MSB_Static_Trigger_Unload_ResetCooldown]
+        [Triggers:MSB_Static_Trigger_Unload]
+      </Description>
+    </EntityComponent>
+
+    <!-- Triggers -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Static_Trigger_Unload_ResetCooldown</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:PlayerNear]
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [TargetDistance:20000]
+
+        [MinCooldownMs:3000]
+        [MaxCooldownMs:3100]
+
+        [Actions:MSB_Static_Action_Unload_ResetCooldown]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Static_Action_Unload_ResetCooldown</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB_Static_Trigger_Unload]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Static_Trigger_Unload</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:PlayerFar]
+        [UseTrigger:true]
+        [StartsReady:false]
+
+        [TargetDistance:20000]
+
+        [MinCooldownMs:9000]
+        [MaxCooldownMs:9001]
+
+        [MaxActions:1]
+        [Actions:MSB_Static_Action_Unload]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Static_Action_Unload</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ResetThisStaticEncounter:true]
+        [ForceDespawn:true]
+      </Description>
+    </EntityComponent>
+
+  </EntityComponents>
+</Definitions>
