@@ -8,7 +8,7 @@
 
 
     10s no Target? + TaskLeaderIsNotReady -> Go into Patrol Mode && ResetCooldown
-    [Triggers:MSB_Fighter_Trigger_SwitchtoPatrol]
+    [Triggers:MSB_Fighter_Trigger_SwitchToPatrol]
 
 
     3 min still no Target -> Retreat
@@ -45,11 +45,11 @@
         [RivalAI Action]
 
         [EnableTriggers:true]
-        [EnableTriggerNames:MSB_Fighter_Trigger_SwitchtoPatrol]
+        [EnableTriggerNames:MSB_Fighter_Trigger_SwitchToPatrol]
         [EnableTriggerNames:MSB_Fighter_Trigger_HasTarget]
 
         [ResetCooldownTimeOfTriggers:true]
-        [ResetTriggerCooldownNames:MSB_Figher_Trigger_SwitchtoPatrol]
+        [ResetTriggerCooldownNames:MSB_Figher_Trigger_SwitchToPatrol]
 
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_Fighter_Trigger_LostTarget]
@@ -60,7 +60,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Fighter_Trigger_SwitchtoPatrol</SubtypeId>
+        <SubtypeId>MSB_Fighter_Trigger_SwitchToPatrol</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -76,7 +76,7 @@
         [StartsReady:false]
 
         [MaxActions:-1]
-        [Actions:MSB_Fighter_Action_SwitchtoPatrol]
+        [Actions:MSB_Fighter_Action_SwitchToPatrol]
       </Description>
     </EntityComponent>
 
@@ -98,22 +98,22 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Fighter_Action_SwitchtoPatrol</SubtypeId>
+        <SubtypeId>MSB_Fighter_Action_SwitchToPatrol</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
 
         [DisableTriggers:true]
-        [DisableTriggerNames:MSB_Fighter_Trigger_SwitchtoPatrol]
+        [DisableTriggerNames:MSB_Fighter_Trigger_SwitchToPatrol]
 
         [ChangeBehaviorSubclass:true]
         [NewBehaviorSubclass:Patrol]
 
         [UseChatBroadcast:true]
-        [ChatData:MSB_Fighter_Chat_SwitchtoPatrol]
+        [ChatData:MSB_Fighter_Chat_SwitchToPatrol]
 
         [DisableTriggers:true]
-        [DisableTriggerNames:MSB_Fighter_Trigger_SwitchtoPatrol]
+        [DisableTriggerNames:MSB_Fighter_Trigger_SwitchToPatrol]
         [DisableTriggerNames:MSB_Fighter_Trigger_LostTarget]
 
         [EnableTriggers:true]
@@ -128,7 +128,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Fighter_Chat_SwitchtoPatrol</SubtypeId>
+        <SubtypeId>MSB_Fighter_Chat_SwitchToPatrol</SubtypeId>
       </Id>
       <Description>
         [RivalAI Chat]
@@ -218,7 +218,7 @@
 
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_Fighter_Trigger_HasTarget]
-        [DisableTriggerNames:MSB_Fighter_Trigger_SwitchtoPatrol]
+        [DisableTriggerNames:MSB_Fighter_Trigger_SwitchToPatrol]
         [DisableTriggerNames:MSB_Fighter_Trigger_Retreat]
       </Description>
     </EntityComponent>
