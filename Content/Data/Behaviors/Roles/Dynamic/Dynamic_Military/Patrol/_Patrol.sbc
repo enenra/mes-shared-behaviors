@@ -21,7 +21,7 @@
         [AutopilotData:MSB_Patrol_Autopilot]
         [SecondaryAutopilotData:RAI-Generic-Autopilot-Fighter]
 
-        [TriggerGroups:MSB_Dynamic_CommonTriggersGroup]
+        [TriggerGroups:MSB_Dynamic_CommonTriggerGroup]
         [TriggerGroups:MSB_Patrol_TriggerGroup]
       </Description>
     </EntityComponent>

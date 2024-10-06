@@ -5,12 +5,12 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Outpost_TriggersGroup</SubtypeId>
+          <SubtypeId>MSB_Outpost_TriggerGroup</SubtypeId>
       </Id>
       <Description>
 
 	[RivalAI TriggerGroup]
-      
+
 	[Triggers:MSB_Static_Triggers_EnablePlayerNearDialogue]
 	[Triggers:MSB_Static_Triggers_DisablePlayerNearDialogue]
 	[Triggers:MSB_Static_Triggers_PlayerFar]
@@ -20,13 +20,13 @@
 	[Triggers:MSB_DefenseSystem_Trigger_Garrison_SpawnOutpost]
 
       </Description>
-      
+
     </EntityComponent>
-	
 
 
-	
-	
-	
+
+
+
+
   </EntityComponents>
 </Definitions>

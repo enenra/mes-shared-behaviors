@@ -5,24 +5,24 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_FixedStatic_TriggersGroup</SubtypeId>
+          <SubtypeId>MSB_FixedStatic_TriggerGroup</SubtypeId>
       </Id>
       <Description>
 
 	[RivalAI TriggerGroup]
-      
+
 [Triggers:MSB_Static_Triggers_Unload_ResetCooldown]
 [Triggers:MSB_Static_Triggers_Unload]
 
-	
+
       </Description>
-      
+
     </EntityComponent>
-	
 
 
-	
-	
-	
+
+
+
+
   </EntityComponents>
 </Definitions>
