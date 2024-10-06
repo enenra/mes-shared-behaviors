@@ -11,7 +11,14 @@
 
 	[RivalAI TriggerGroup]
       
+	[Triggers:MSB_Dropship_Trigger_MoveToLanding]
+	[Triggers:MSB_Dropship_Trigger_StartLanding]	
+	
+	[Triggers:MSB_Dropship_Trigger_ArrivedAtLandingSite]	
 
+	[Triggers:MSB_Dropship_Trigger_LeaveLandingSite]	
+	
+	[Triggers:MSB_Dropship_Trigger_InitFight]	
 	
       </Description>
       

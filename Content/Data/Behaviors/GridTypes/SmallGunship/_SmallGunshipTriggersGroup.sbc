@@ -11,7 +11,7 @@
 
 	[RivalAI TriggerGroup]
       
-
+	[Triggers:MSB_SmallGunship_Trigger_InitFight]
 	
       </Description>
       

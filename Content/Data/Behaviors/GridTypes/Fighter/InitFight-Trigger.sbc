@@ -5,15 +5,13 @@
 <!-- 
 
 
-CargoShip (Neutral)
-HorseFly (Neutral)
 
 
 -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_LargeGunship_Trigger_InitFight</SubtypeId>
+        <SubtypeId>MSB_Fighter_Trigger_InitFight</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -28,7 +26,7 @@ HorseFly (Neutral)
         [StartsReady:false]
 
         [MaxActions:1]
-        [Actions:MSB_LargeGunship_Action_InitFight]
+        [Actions:MSB_Fighter_Action_InitFight]
 
       </Description>
 
@@ -38,32 +36,22 @@ HorseFly (Neutral)
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_LargeGunship_Action_InitFight</SubtypeId>
+          <SubtypeId>MSB_Fighter_Action_InitFight</SubtypeId>
       </Id>
       <Description>
 
 	[RivalAI Action]
 	[ChangeBehaviorSubclass:true]  
-	[NewBehaviorSubclass:Horsefly]
+	[NewBehaviorSubclass:Fighter]
 
 	[ChangeAutopilotProfile:true]
 	[AutopilotProfile:Secondary]	
-
-
-
 
       </Description>
       
     </EntityComponent>
 
 
-
-	
-	
-	
-	
-
-	
 	
 	
 	

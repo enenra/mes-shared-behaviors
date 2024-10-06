@@ -12,6 +12,7 @@
 	[RivalAI TriggerGroup]
       
 
+	[Triggers:MSB_Fighter_Trigger_InitFight]
 	
       </Description>
       
