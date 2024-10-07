@@ -2,14 +2,19 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 
-<!--
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_SmallGunship_TriggerGroup</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI TriggerGroup]
 
+        [Triggers:MSB_SmallGunship_Trigger_InitFight]
+      </Description>
+    </EntityComponent>
 
-CargoShip (Neutral)
-HorseFly (Neutral)
-
-
--->
+    <!-- InitFight -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -18,7 +23,7 @@ HorseFly (Neutral)
       <Description>
         [RivalAI Trigger]
 
-		[Tags:MSB_GridType_InitFight]
+		    [Tags:MSB_GridType_InitFight]
 
         [UseTrigger:false]
         [Type:Timer]
@@ -29,43 +34,24 @@ HorseFly (Neutral)
 
         [MaxActions:1]
         [Actions:MSB_SmallGunship_Action_InitFight]
-
       </Description>
-
     </EntityComponent>
 
-
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_SmallGunship_Action_InitFight</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_SmallGunship_Action_InitFight</SubtypeId>
       </Id>
       <Description>
+        [RivalAI Action]
 
-	[RivalAI Action]
-	[ChangeBehaviorSubclass:true]
-	[NewBehaviorSubclass:Horsefly]
+        [ChangeBehaviorSubclass:true]
+        [NewBehaviorSubclass:Horsefly]
 
-	[ChangeAutopilotProfile:true]
-	[AutopilotProfile:Secondary]
-
-
-
+        [ChangeAutopilotProfile:true]
+        [AutopilotProfile:Secondary]
       </Description>
-
     </EntityComponent>
-
-
-
-
-
-
-
-
-
-
-
-
 
   </EntityComponents>
 </Definitions>
