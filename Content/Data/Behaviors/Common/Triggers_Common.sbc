@@ -2,50 +2,42 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 
-<!-- 
+    <!--
+    [Triggers:MSB_Common_Triggers_MaxRange]
+    [Triggers:MSB_Common_Trigger_MSBAliveCheck]
+    -->
 
-[Triggers:MSB_Common_Triggers_MaxRange]
-[Triggers:MSB_Common_Trigger_MSBAliveCheck]
-
--->
-
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Common_Triggers_MaxRange</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Common_Triggers_MaxRange</SubtypeId>
       </Id>
       <Description>
+        [RivalAI Trigger]
 
-	[RivalAI Trigger]
-	[Type:Session]
-	[UseTrigger:true]
-	[StartsReady:true]
-	[MinCooldownMs:450000]
-	[MaxCooldownMs:600000]
+        [Type:Session]
 
+        [UseTrigger:true]
+        [StartsReady:true]
 
-	  [Actions:MSB_Common_Action_MaxRange]	  
+        [MinCooldownMs:450000]
+        [MaxCooldownMs:600000]
+
+        [Actions:MSB_Common_Action_MaxRange]
       </Description>
-      
-    </EntityComponent>	
-	
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Common_Action_MaxRange</SubtypeId>
-      </Id>
-      <Description>
-
-      [RivalAI Action]
-      
-		[SetWeaponsToMaxRange:true]
-
-      </Description>
-      
     </EntityComponent>
-	
 
-	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Common_Action_MaxRange</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [SetWeaponsToMaxRange:true]
+      </Description>
+    </EntityComponent>
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -53,38 +45,31 @@
         <SubtypeId>MSB_Common_Trigger_MSBAliveCheck</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI Trigger]
 
         [UseTrigger:true]
+        [StartsReady:true]
+
         [Type:CommandReceived]
         [CommandReceiveCode:{Faction}AliveCheck]
 
-        [StartsReady:true]
         [MaxActions:-1]
         [Actions:MSB_Common_Action_MSBAliveCheck]
       </Description>
-
     </EntityComponent>
 
-	
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_Common_Action_MSBAliveCheck</SubtypeId>
       </Id>
       <Description>
+        [RivalAI Action]
 
-	[RivalAI Action]
-
-[ResetCooldownTimeOfEvents:true]
-[ResetEventCooldownTags:{Faction}AliveCheck]
-
+        [ResetCooldownTimeOfEvents:true]
+        [ResetEventCooldownTags:{Faction}AliveCheck]
       </Description>
+    </EntityComponent>
 
-    </EntityComponent>	
-	
-	
-	
   </EntityComponents>
 </Definitions>
