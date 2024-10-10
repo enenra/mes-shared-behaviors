@@ -5,12 +5,12 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_LargeGunship_TriggerGroup</SubtypeId>
+        <SubtypeId>MSB_Gunship_TriggerGroup</SubtypeId>
       </Id>
       <Description>
         [RivalAI TriggerGroup]
 
-        [Triggers:MSB_LargeGunship_Trigger_InitFight]
+        [Triggers:MSB_Gunship_Trigger_InitFight]
       </Description>
     </EntityComponent>
 
@@ -18,7 +18,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_LargeGunship_Trigger_InitFight</SubtypeId>
+        <SubtypeId>MSB_Gunship_Trigger_InitFight</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -33,14 +33,14 @@
         [StartsReady:false]
 
         [MaxActions:1]
-        [Actions:MSB_LargeGunship_Action_InitFight]
+        [Actions:MSB_Gunship_Action_InitFight]
       </Description>
     </EntityComponent>
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_LargeGunship_Action_InitFight</SubtypeId>
+        <SubtypeId>MSB_Gunship_Action_InitFight</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
