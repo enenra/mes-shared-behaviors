@@ -105,7 +105,7 @@
       <Description>
         [RivalAI Trigger]
 
-        [Tags:MSB_GridType_InitFight]
+        [Tags:MSB_CombatType_InitFight]
 
         [UseTrigger:false]
         [Type:Timer]

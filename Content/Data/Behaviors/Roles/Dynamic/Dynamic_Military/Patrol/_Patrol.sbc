@@ -139,7 +139,7 @@
         [ChangeAutopilotSpeed:true]
         [NewAutopilotSpeed:-1]
 
-        [ManuallyActivatedTriggerTags:MSB_GridType_InitFight]
+        [ManuallyActivatedTriggerTags:MSB_CombatType_InitFight]
 
         [EnableTriggers:true]
         [EnableTriggerNames:MSB_Patrol_Trigger_HasTarget]
