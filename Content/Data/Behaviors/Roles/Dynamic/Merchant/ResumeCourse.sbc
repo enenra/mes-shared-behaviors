@@ -8,7 +8,6 @@
         <SubtypeId>MSB_Merchant_Trigger_ResumeCourse</SubtypeId>
       </Id>
       <Description>
-
         [MES AI Trigger]
 
         [UseTrigger:false]
@@ -24,9 +23,7 @@
 
         [MaxActions:-1]
         [Actions:MSB_Merchant_Action_ResumeCourse]
-
       </Description>
-
     </EntityComponent>
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -35,13 +32,10 @@
         <SubtypeId>MSB_Merchant_Action_ResumeCourse</SubtypeId>
       </Id>
       <Description>
-
         [MES AI Action]
 
         [EnableAutopilot:true]
-
       </Description>
-
     </EntityComponent>
 
   </EntityComponents>

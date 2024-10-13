@@ -8,7 +8,6 @@
         <SubtypeId>MSB_Merchant_Trigger_MerchantAreaTimeout</SubtypeId>
       </Id>
       <Description>
-
         [MES AI Trigger]
 
         [UseTrigger:true]
@@ -20,9 +19,7 @@
 
         [MaxActions:1]
         [Actions:MSB_Merchant_Action_MerchantAreaTimeout]
-
       </Description>
-
     </EntityComponent>
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -31,7 +28,6 @@
         <SubtypeId>MSB_Merchant_Action_MerchantAreaTimeout</SubtypeId>
       </Id>
       <Description>
-
         [MES AI Action]
 
         [EnableAutopilot:true]
@@ -39,9 +35,7 @@
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_Merchant_Trigger_ResumeCourse]
         [DisableTriggerNames:MSB_Merchant_Trigger_StopForPlayer]
-
       </Description>
-
     </EntityComponent>
 
   </EntityComponents>

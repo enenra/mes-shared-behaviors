@@ -8,7 +8,6 @@
         <SubtypeId>MSB_Merchant_Trigger_StopForPlayer</SubtypeId>
       </Id>
       <Description>
-
         [MES AI Trigger]
 
         [UseTrigger:true]
@@ -25,9 +24,7 @@
 
         [MaxActions:-1]
         [Actions:MSB_Merchant_Action_StopForPlayer]
-
       </Description>
-
     </EntityComponent>
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -36,18 +33,15 @@
         <SubtypeId>MSB_Merchant_Action_StopForPlayer</SubtypeId>
       </Id>
       <Description>
-
         [MES AI Action]
-        
+
         [DisableAutopilot:true]
         [StopAllRotation:true]
         [StopAllThrust:true]
 
-		[ClearAllWaypoints:true]
-
+        [ClearAllWaypoints:true]
       </Description>
-
     </EntityComponent>
-    
+
   </EntityComponents>
 </Definitions>
