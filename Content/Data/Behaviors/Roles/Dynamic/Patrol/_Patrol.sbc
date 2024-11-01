@@ -8,8 +8,9 @@
     If it finds a player, it will engage it. If the player puts a certain amount of distance between them and the encounter, the encounter will go back to patrol after a set amount of time.
 
     TODO:
-    * Timer after which the patrol is over, start despawn.
+    * Timer after which the patrol is over, start despawn and send out MSB_TriggerEvent_Despawn.
     * Replace remaining FAC- references.
+    * Add switch for plane-like flying via bool.
     -->
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -23,9 +24,10 @@
 
         [TargetData:MSB_TargetProfile_ShortRange]
         [AutopilotData:MSB_Patrol_Autopilot]
-        [SecondaryAutopilotData:RAI-Generic-Autopilot-Fighter]
+        [SecondaryAutopilotData:MSB_Fighter_Autopilot_Fighter]
 
         [TriggerGroups:MSB_Dynamic_CommonTriggerGroup]
+        [TriggerGroups:MSB_Fighter_TriggerGroup]
         [TriggerGroups:MSB_Patrol_TriggerGroup]
       </Description>
     </EntityComponent>
