@@ -10,6 +10,7 @@
     TODO:
     * Timer after which the patrol is over, start despawn and send out MSB_TriggerEvent_Despawn.
     * Add switch for plane-like flying via bool.
+    * Add reactions to commsystem alerts
     -->
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
