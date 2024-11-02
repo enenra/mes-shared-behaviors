@@ -9,7 +9,6 @@
 
     TODO:
     * Timer after which the patrol is over, start despawn and send out MSB_TriggerEvent_Despawn.
-    * Replace remaining FAC- references.
     * Add switch for plane-like flying via bool.
     -->
 
@@ -107,8 +106,7 @@
         [Triggers:MSB_Patrol_Trigger_NoTarget]
         [Triggers:MSB_Patrol_Trigger_SwitchToPatrol]
 
-        [Triggers:FAC-Patrol-Trigger-RedAlert]
-        [Triggers:FAC-Patrol-Trigger-Compromised]
+        [Triggers:MSB_TriggerGroup_CommSystem]
       </Description>
     </EntityComponent>
 

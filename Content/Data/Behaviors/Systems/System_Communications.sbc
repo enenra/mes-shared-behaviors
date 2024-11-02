@@ -23,16 +23,16 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_TriggerGroup_CommsSystem</SubtypeId>
+        <SubtypeId>MSB_TriggerGroup_CommSystem</SubtypeId>
       </Id>
       <Description>
         [RivalAI TriggerGroup]
 
-        [Triggers:MSB_CommsSystem_Trigger_AllGood]
-        [Triggers:MSB_CommsSystem_Trigger_YellowAlert]
-        [Triggers:MSB_CommsSystem_Trigger_RedAlert]
-        [Triggers:MSB_CommsSystem_Trigger_SOS]
-        [Triggers:MSB_CommsSystem_Trigger_Compromised]
+        [Triggers:MSB_CommSystem_Trigger_AllGood]
+        [Triggers:MSB_CommSystem_Trigger_YellowAlert]
+        [Triggers:MSB_CommSystem_Trigger_RedAlert]
+        [Triggers:MSB_CommSystem_Trigger_SOS]
+        [Triggers:MSB_CommSystem_Trigger_Compromised]
       </Description>
     </EntityComponent>
 
@@ -40,7 +40,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_CommsSystem_Trigger_AllGood</SubtypeId>
+        <SubtypeId>MSB_CommSystem_Trigger_AllGood</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -54,16 +54,16 @@
         [MinCooldownMs:9000]
         [MaxCooldownMs:9001]
 
-        [Conditions:MSB_CommsSystem_Condition_AllGood]
+        [Conditions:MSB_CommSystem_Condition_AllGood]
 
         [MaxActions:-1]
-        [Actions:MSB_CommsSystem_Action_AllGood]
+        [Actions:MSB_CommSystem_Action_AllGood]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_CommsSystem_Condition_AllGood</SubtypeId>
+        <SubtypeId>MSB_CommSystem_Condition_AllGood</SubtypeId>
       </Id>
       <Description>
         [RivalAI Condition]
@@ -78,20 +78,20 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_CommsSystem_Action_AllGood</SubtypeId>
+        <SubtypeId>MSB_CommSystem_Action_AllGood</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
 
         [BroadcastCommandProfiles:true]
 
-        [CommandProfileIds:MSB_CommsSystem_Command_AllGood]
+        [CommandProfileIds:MSB_CommSystem_Command_AllGood]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_CommsSystem_Command_AllGood</SubtypeId>
+        <SubtypeId>MSB_CommSystem_Command_AllGood</SubtypeId>
       </Id>
       <Description>
         [RivalAI Command]
@@ -109,7 +109,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_CommsSystem_Trigger_YellowAlert</SubtypeId>
+        <SubtypeId>MSB_CommSystem_Trigger_YellowAlert</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -123,16 +123,16 @@
         [MinCooldownMs:9000]
         [MaxCooldownMs:9001]
 
-        [Conditions:MSB_CommsSystem_Condition_YellowAlert]
+        [Conditions:MSB_CommSystem_Condition_YellowAlert]
 
         [MaxActions:-1]
-        [Actions:MSB_CommsSystem_Action_YellowAlert]
+        [Actions:MSB_CommSystem_Action_YellowAlert]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_CommsSystem_Condition_YellowAlert</SubtypeId>
+        <SubtypeId>MSB_CommSystem_Condition_YellowAlert</SubtypeId>
       </Id>
       <Description>
         [RivalAI Condition]
@@ -147,20 +147,20 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_CommsSystem_Action_YellowAlert</SubtypeId>
+        <SubtypeId>MSB_CommSystem_Action_YellowAlert</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
 
         [BroadcastCommandProfiles:true]
 
-        [CommandProfileIds:MSB_CommsSystem_Command_YellowAlert]
+        [CommandProfileIds:MSB_CommSystem_Command_YellowAlert]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_CommsSystem_Command_YellowAlert</SubtypeId>
+        <SubtypeId>MSB_CommSystem_Command_YellowAlert</SubtypeId>
       </Id>
       <Description>
         [RivalAI Command]
@@ -178,7 +178,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_CommsSystem_Trigger_RedAlert</SubtypeId>
+        <SubtypeId>MSB_CommSystem_Trigger_RedAlert</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -192,16 +192,16 @@
         [MinCooldownMs:9000]
         [MaxCooldownMs:9001]
 
-        [Conditions:MSB_CommsSystem_Condition_RedAlert]
+        [Conditions:MSB_CommSystem_Condition_RedAlert]
 
         [MaxActions:-1]
-        [Actions:MSB_CommsSystem_Action_RedAlert]
+        [Actions:MSB_CommSystem_Action_RedAlert]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_CommsSystem_Condition_RedAlert</SubtypeId>
+        <SubtypeId>MSB_CommSystem_Condition_RedAlert</SubtypeId>
       </Id>
       <Description>
         [RivalAI Condition]
@@ -216,20 +216,20 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_CommsSystem_Action_RedAlert</SubtypeId>
+        <SubtypeId>MSB_CommSystem_Action_RedAlert</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
 
         [BroadcastCommandProfiles:true]
 
-        [CommandProfileIds:MSB_CommsSystem_Command_RedAlert]
+        [CommandProfileIds:MSB_CommSystem_Command_RedAlert]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_CommsSystem_Command_RedAlert</SubtypeId>
+        <SubtypeId>MSB_CommSystem_Command_RedAlert</SubtypeId>
       </Id>
       <Description>
         [RivalAI Command]
@@ -248,7 +248,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_CommsSystem_Trigger_Compromised</SubtypeId>
+        <SubtypeId>MSB_CommSystem_Trigger_Compromised</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -258,26 +258,26 @@
 
 
         [MaxActions:-1]
-        [Actions:MSB_CommsSystem_Action_Compromised]
+        [Actions:MSB_CommSystem_Action_Compromised]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_CommsSystem_Action_Compromised</SubtypeId>
+        <SubtypeId>MSB_CommSystem_Action_Compromised</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
 
         [BroadcastCommandProfiles:true]
 
-        [CommandProfileIds:MSB_CommsSystem_Command_Compromised]
+        [CommandProfileIds:MSB_CommSystem_Command_Compromised]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_CommsSystem_Command_Compromised</SubtypeId>
+        <SubtypeId>MSB_CommSystem_Command_Compromised</SubtypeId>
       </Id>
       <Description>
         [RivalAI Command]
