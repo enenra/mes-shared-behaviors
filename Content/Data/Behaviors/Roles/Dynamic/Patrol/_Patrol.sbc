@@ -9,7 +9,6 @@
 
     TODO:
     * Timer after which the patrol is over, start despawn and send out MSB_TriggerEvent_Despawn.
-    * Add switch for plane-like flying via bool.
     * Add reactions to commsystem alerts
     -->
 
@@ -23,8 +22,10 @@
         [BehaviorName:Patrol]
 
         [TargetData:MSB_TargetProfile_ShortRange]
+
         [AutopilotData:MSB_Patrol_Autopilot]
         [SecondaryAutopilotData:MSB_Fighter_Autopilot_Fighter]
+        [TertiaryAutopilotData:MSB_Fighter_Autopilot_Fighter_LowAltitude]
 
         [TriggerGroups:MSB_Dynamic_CommonTriggerGroup]
         [TriggerGroups:MSB_Fighter_TriggerGroup]
