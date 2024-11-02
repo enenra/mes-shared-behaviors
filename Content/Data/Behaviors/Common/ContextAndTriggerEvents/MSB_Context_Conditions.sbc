@@ -2,7 +2,6 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 
-
     <!--
     There are 3 Settings (bools): SettingNormal, SettingHighAlert, SettingBattle
     There are 2 options for target (bools): NoTarget, HasTarget
@@ -31,25 +30,22 @@
     MSB_Context_Condition_BattleNeutral
     MSB_Context_Condition_BattleFriendly
 
-    MSB_Context_Condition_AttackedbyNPC
-    MSB_Context_Condition_AttackedbyPlayer
+    Damage:
+      MSB_Context_Condition_AttackedbyNPC
+      MSB_Context_Condition_AttackedbyPlayer
 
-
-    MSB_Context_Condition_AttackedbyPlayer
-    MSB_Context_Condition_DamagerIsNPC
-    MSB_Context_Condition_PlayerHelpedNPC
-
+      MSB_Context_Condition_DamagerIsNPC
+      MSB_Context_Condition_PlayerHelpedNPC
 
     Target:
-    MSB_Context_Condition_HasTarget
-    MSB_Context_Condition_NoTarget
+      MSB_Context_Condition_HasTarget
+      MSB_Context_Condition_NoTarget
 
-    MSB_Context_Condition_TargetLight
-    MSB_Context_Condition_TargetMedium
-    MSB_Context_Condition_TargetMediumOrGreater
-    MSB_Context_Condition_TargetHard
-    MSB_Context_Condition_TargetVeryHard
-
+      MSB_Context_Condition_TargetLight
+      MSB_Context_Condition_TargetMedium
+      MSB_Context_Condition_TargetMediumOrGreater
+      MSB_Context_Condition_TargetHard
+      MSB_Context_Condition_TargetVeryHard
 
     NormalNeutral
     Plaernear
