@@ -5,6 +5,18 @@
     <!--
 
     Communications System (succcessor to alerts)
+      * Commands are sent out when certain conditions are met.
+      * Roles can hook into these commands and respond to them.
+
+    Contents:
+    * AllGood: Battle has ended / enemy has left.
+    * YellowAlert: Enemy is near.
+    * RedAlert: Battle has started.
+    * SOS: Requesting backup.
+    * Compromised: Encounter disabled.
+
+    TODO:
+      * Implement SOS (specifically the triggers for when to run it)
 
     -->
 
@@ -16,8 +28,266 @@
       <Description>
         [RivalAI TriggerGroup]
 
-        [Triggers:]
-        [Triggers:]
+        [Triggers:MSB_CommsSystem_Trigger_AllGood]
+        [Triggers:MSB_CommsSystem_Trigger_YellowAlert]
+        [Triggers:MSB_CommsSystem_Trigger_RedAlert]
+        [Triggers:MSB_CommsSystem_Trigger_SOS]
+        [Triggers:MSB_CommsSystem_Trigger_Compromised]
+      </Description>
+    </EntityComponent>
+
+    <!-- AllGood -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CommsSystem_Trigger_AllGood</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+
+        [MinCooldownMs:9000]
+        [MaxCooldownMs:9001]
+
+        [Conditions:MSB_CommsSystem_Condition_AllGood]
+
+        [MaxActions:-1]
+        [Actions:MSB_CommsSystem_Action_AllGood]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CommsSystem_Condition_AllGood</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [CheckTrueBooleans:true]
+        [TrueBooleans:SettingNormal]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CommsSystem_Action_AllGood</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [BroadcastCommandProfiles:true]
+
+        [CommandProfileIds:MSB_CommsSystem_Command_AllGood]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CommsSystem_Command_AllGood</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Command]
+
+        [CommandCode:{Faction}_AllGood]
+
+        [MatchSenderReceiverOwners:true]
+        [SendTargetEntityId:true]
+
+        [CommandDelayTicks:180]
+      </Description>
+    </EntityComponent>
+
+    <!-- YellowAlert -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CommsSystem_Trigger_YellowAlert</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+
+        [MinCooldownMs:9000]
+        [MaxCooldownMs:9001]
+
+        [Conditions:MSB_CommsSystem_Condition_YellowAlert]
+
+        [MaxActions:-1]
+        [Actions:MSB_CommsSystem_Action_YellowAlert]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CommsSystem_Condition_YellowAlert</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [CheckTrueBooleans:true]
+        [TrueBooleans:SettingHighAlert]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CommsSystem_Action_YellowAlert</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [BroadcastCommandProfiles:true]
+
+        [CommandProfileIds:MSB_CommsSystem_Command_YellowAlert]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CommsSystem_Command_YellowAlert</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Command]
+
+        [CommandCode:{Faction}_YellowAlert]
+
+        [MatchSenderReceiverOwners:true]
+        [SendTargetEntityId:true]
+
+        [CommandDelayTicks:180]
+      </Description>
+    </EntityComponent>
+
+    <!-- RedAlert -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CommsSystem_Trigger_RedAlert</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+
+        [MinCooldownMs:9000]
+        [MaxCooldownMs:9001]
+
+        [Conditions:MSB_CommsSystem_Condition_RedAlert]
+
+        [MaxActions:-1]
+        [Actions:MSB_CommsSystem_Action_RedAlert]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CommsSystem_Condition_RedAlert</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [CheckTrueBooleans:true]
+        [TrueBooleans:SettingBattle]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CommsSystem_Action_RedAlert</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [BroadcastCommandProfiles:true]
+
+        [CommandProfileIds:MSB_CommsSystem_Command_RedAlert]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CommsSystem_Command_RedAlert</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Command]
+
+        [CommandCode:{Faction}_RedAlert]
+
+        [MatchSenderReceiverOwners:true]
+        [SendTargetEntityId:true]
+
+        [CommandDelayTicks:180]
+      </Description>
+    </EntityComponent>
+
+
+    <!-- Compromised -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CommsSystem_Trigger_Compromised</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:Compromised]
+
+
+        [MaxActions:-1]
+        [Actions:MSB_CommsSystem_Action_Compromised]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CommsSystem_Action_Compromised</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [BroadcastCommandProfiles:true]
+
+        [CommandProfileIds:MSB_CommsSystem_Command_Compromised]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CommsSystem_Command_Compromised</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Command]
+
+        [CommandCode:{Faction}_Compromised]
+
+        [MatchSenderReceiverOwners:true]
+        [SendTargetEntityId:true]
+
+        [CommandDelayTicks:180]
       </Description>
     </EntityComponent>
 

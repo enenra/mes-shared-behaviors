@@ -74,20 +74,20 @@ HasNoTarget
 	[UseConditions:true]
 	[MatchAnyCondition:false]
 	[CheckTrueBooleans:true]
-	
+
 	[TrueBooleans:SettingNormal]
 	[TrueBooleans:PlayerNear]
-	[NoTarget:true]	
-	
+	[NoTarget:true]
+
 [CheckPlayerReputation:true]
 [MaxPlayerReputationDistanceCheck:4500]
 [AllPlayersReputationMustMatch:true]
 [CheckReputationwithFaction:{self}]
 [MinPlayerReputation:-500]
-[MaxPlayerReputation:500]	
+[MaxPlayerReputation:500]
       </Description>
-      
-    </EntityComponent>	
+
+    </EntityComponent>
 
 
 
@@ -113,7 +113,7 @@ HasNoTarget
 
         [CompareCommandGridValue:true]
         [CompareCommandGridValueMode:Less]
-        
+
       </Description>
 
     </EntityComponent>
@@ -126,13 +126,13 @@ HasNoTarget
 
 <!--Settings -->
 
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
 <!--Player -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -154,9 +154,9 @@ HasNoTarget
 [MaxPlayerReputation:-499]
 
       </Description>
-      
+
     </EntityComponent>
-	
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -168,7 +168,7 @@ HasNoTarget
 	[UseConditions:true]
 	[MatchAnyCondition:false]
 	[CheckTrueBooleans:true]
-	
+
 [CheckPlayerReputation:true]
 [MaxPlayerReputationDistanceCheck:4500]
 [AllPlayersReputationMustMatch:true]
@@ -178,7 +178,7 @@ HasNoTarget
 [MaxPlayerReputation:500]
 
       </Description>
-      
+
     </EntityComponent>
 
 
@@ -193,7 +193,7 @@ HasNoTarget
 	[UseConditions:true]
 	[MatchAnyCondition:false]
 	[CheckTrueBooleans:true]
-	
+
 [CheckPlayerReputation:true]
 [MaxPlayerReputationDistanceCheck:4500]
 [AllPlayersReputationMustMatch:true]
@@ -203,7 +203,7 @@ HasNoTarget
 [MaxPlayerReputation:1500]
 
       </Description>
-      
+
     </EntityComponent>
 
 
@@ -234,7 +234,7 @@ HasNoTarget
 	[UseConditions:true]
 	[MatchAnyCondition:false]
 	[CheckTrueBooleans:true]
-	
+
 	[TrueBooleans:SettingNormal]
 
 
@@ -248,9 +248,9 @@ HasNoTarget
 [MaxPlayerReputation:-499]
 
       </Description>
-      
+
     </EntityComponent>
-	
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -262,7 +262,7 @@ HasNoTarget
 	[UseConditions:true]
 	[MatchAnyCondition:false]
 	[CheckTrueBooleans:true]
-	
+
 	[TrueBooleans:SettingNormal]
 
 [CheckPlayerReputation:true]
@@ -273,7 +273,7 @@ HasNoTarget
 [MaxPlayerReputation:500]
 
       </Description>
-      
+
     </EntityComponent>
 
 
@@ -288,7 +288,7 @@ HasNoTarget
 	[UseConditions:true]
 	[MatchAnyCondition:false]
 	[CheckTrueBooleans:true]
-	
+
 	[TrueBooleans:SettingNormal]
 
 
@@ -302,7 +302,7 @@ HasNoTarget
 [MaxPlayerReputation:1500]
 
       </Description>
-      
+
     </EntityComponent>
 
 
@@ -319,7 +319,7 @@ HasNoTarget
 	[UseConditions:true]
 	[MatchAnyCondition:false]
 	[CheckTrueBooleans:true]
-	
+
 	[TrueBooleans:SettingBattle]
 [CheckPlayerReputation:true]
 [MaxPlayerReputationDistanceCheck:4500]
@@ -330,9 +330,9 @@ HasNoTarget
 [MaxPlayerReputation:-499]
 
       </Description>
-      
+
     </EntityComponent>
-	
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -344,7 +344,7 @@ HasNoTarget
 	[UseConditions:true]
 	[MatchAnyCondition:false]
 	[CheckTrueBooleans:true]
-	
+
 	[TrueBooleans:SettingBattle]
 [CheckPlayerReputation:true]
 [MaxPlayerReputationDistanceCheck:4500]
@@ -354,7 +354,7 @@ HasNoTarget
 [MaxPlayerReputation:500]
 
       </Description>
-      
+
     </EntityComponent>
 
 
@@ -369,7 +369,7 @@ HasNoTarget
 	[UseConditions:true]
 	[MatchAnyCondition:false]
 	[CheckTrueBooleans:true]
-	
+
 	[TrueBooleans:SettingBattle]
 [CheckPlayerReputation:true]
 [MaxPlayerReputationDistanceCheck:4500]
@@ -380,15 +380,15 @@ HasNoTarget
 [MaxPlayerReputation:1500]
 
       </Description>
-      
-    </EntityComponent>	
-	
-	
-	
-	
-	
-	
-	
+
+    </EntityComponent>
+
+
+
+
+
+
+
 	<!--============== DAMAGE ============= -->
 
 
@@ -403,15 +403,15 @@ HasNoTarget
 	[UseConditions:true]
 	[MatchAnyCondition:false]
 	[CheckTrueBooleans:true]
-	
+
 
 	[IsAttackerHostile:true]
 
       </Description>
-      
+
     </EntityComponent>
 
-	
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -423,20 +423,20 @@ HasNoTarget
 	[UseConditions:true]
 	[MatchAnyCondition:false]
 	[CheckTrueBooleans:true]
-	
+
 
 	[IsAttackerHostile:true]
 	[CheckIfDamagerIsPlayer:true]
 
       </Description>
-      
+
     </EntityComponent>
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -448,12 +448,12 @@ HasNoTarget
 	[UseConditions:true]
 	[MatchAnyCondition:false]
 	[CheckTrueBooleans:true]
-	
+
 
 	[IsAttackerNeutral:true]
 	[CheckIfDamagerIsPlayer:true]
       </Description>
-      
+
     </EntityComponent>
 
 
@@ -469,10 +469,10 @@ HasNoTarget
 	[MatchAnyCondition:false]
 	[CheckTrueBooleans:true]
 
-	[IsAttackerFriendly:true] 
+	[IsAttackerFriendly:true]
 	[CheckIfDamagerIsPlayer:true]
       </Description>
-      
+
     </EntityComponent>
 
 
@@ -491,14 +491,14 @@ HasNoTarget
 
 	[CheckTrueBooleans:true]
 	[TrueBooleans:SettingNormal]
-	
-	
+
+
 	[CheckIfDamagerIsNpc:true]
       </Description>
-      
-    </EntityComponent>	
 
-	
+    </EntityComponent>
+
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -523,13 +523,13 @@ HasNoTarget
 
 
 	[TrueBooleans:SettingNormal]
-	[CheckIfDamagerIsPlayer:true]	
+	[CheckIfDamagerIsPlayer:true]
       </Description>
-      
-    </EntityComponent>		
-	
+
+    </EntityComponent>
+
 	<!--============= NPC INVOLVED ============ -->
-	
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -543,15 +543,15 @@ HasNoTarget
 
 	[CheckIfDamagerIsNpc:true]
       </Description>
-      
-    </EntityComponent>		
+
+    </EntityComponent>
 
 
 
-	
-	
+
+
 	<!--PlayerInvloded + NPC -->
-	
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -570,10 +570,10 @@ HasNoTarget
 
 
       </Description>
-      
-    </EntityComponent>			
-	
-	
+
+    </EntityComponent>
+
+
 
 <!--
 TTTTTTTTTTTarget
@@ -590,13 +590,13 @@ TTTTTTTTTTTarget
 	[UseConditions:true]
 	[MatchAnyCondition:false]
 	[CheckTrueBooleans:true]
-	
-	
+
+
 	[HasTarget:true]
 
       </Description>
-      
-    </EntityComponent>	
+
+    </EntityComponent>
 
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -609,15 +609,15 @@ TTTTTTTTTTTarget
 	[RivalAI Condition]
 	[UseConditions:true]
 	[UseFailCondition:true]
-	
+
 	[MatchAnyCondition:false]
 	[CheckTrueBooleans:true]
-	
+
 	[NoTarget:true]
 
       </Description>
-      
-    </EntityComponent>	
+
+    </EntityComponent>
 
 
 
@@ -634,20 +634,20 @@ TTTTTTTTTTTarget
 	[UseConditions:true]
 	[MatchAnyCondition:false]
 	[CheckTrueBooleans:true]
-	
+
 	[HasTarget:true]
 
 	[CheckThreatScore:true]
 	[CheckThreatScoreMinimum:50]
 	[CheckThreatScoreMaximum:500]
-	{CheckThreatScoreIncludeOtherNpcOwners:true]	
+	{CheckThreatScoreIncludeOtherNpcOwners:true]
 	[CheckThreatScoreRadius:3000]
 	[CheckThreatScoreFromTargetPosition:true]
 	[CheckThreatScoreGridConfiguration:All]
-	
+
       </Description>
-      
-    </EntityComponent>	
+
+    </EntityComponent>
 
 
 
@@ -662,19 +662,19 @@ TTTTTTTTTTTarget
 	[UseConditions:true]
 	[MatchAnyCondition:false]
 	[CheckTrueBooleans:true]
-	
+
 	[HasTarget:true]
 
 	[CheckThreatScore:true]
 	[CheckThreatScoreMinimum:501]
 	[CheckThreatScoreMaximum:1000]
-	{CheckThreatScoreIncludeOtherNpcOwners:true]	
+	[CheckThreatScoreIncludeOtherNpcOwners:true]
 	[CheckThreatScoreRadius:3000]
 	[CheckThreatScoreFromTargetPosition:true]
 	[CheckThreatScoreGridConfiguration:All]
-	
+
       </Description>
-    </EntityComponent>	
+    </EntityComponent>
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -687,19 +687,19 @@ TTTTTTTTTTTarget
 	[UseConditions:true]
 	[MatchAnyCondition:false]
 	[CheckTrueBooleans:true]
-	
+
 	[HasTarget:true]
 
 	[CompareThreatScore:true]
 	[CompareThreatScoreValue:501]
-	
+
 	[CompareThreatScoreMode:GreaterOrEqual]
 	[CompareThreatScoreRadius:3000]
 	[CompareThreatScoreIncludeOtherNpcOwners:true]
 	[CompareThreatScoreGridConfiguration:All]
-	[CompareThreatScoreFromTargetPosition:true]	
+	[CompareThreatScoreFromTargetPosition:true]
       </Description>
-    </EntityComponent>	
+    </EntityComponent>
 
 
 
@@ -715,19 +715,19 @@ TTTTTTTTTTTarget
 	[UseConditions:true]
 	[MatchAnyCondition:false]
 	[CheckTrueBooleans:true]
-	
+
 	[HasTarget:true]
 
 	[CheckThreatScore:true]
 	[CheckThreatScoreMinimum:1001]
 	[CheckThreatScoreMaximum:1500]
-	{CheckThreatScoreIncludeOtherNpcOwners:true]	
+	{CheckThreatScoreIncludeOtherNpcOwners:true]
 	[CheckThreatScoreRadius:3000]
 	[CheckThreatScoreFromTargetPosition:true]
 	[CheckThreatScoreGridConfiguration:All]
-	
+
       </Description>
-    </EntityComponent>	
+    </EntityComponent>
 
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -741,21 +741,21 @@ TTTTTTTTTTTarget
 	[UseConditions:true]
 	[MatchAnyCondition:false]
 	[CheckTrueBooleans:true]
-	
+
 	[HasTarget:true]
 
 	[CheckThreatScore:true]
 	[CheckThreatScoreMinimum:1501]
 	[CheckThreatScoreMaximum:99999999999999]
-	{CheckThreatScoreIncludeOtherNpcOwners:true]	
+	{CheckThreatScoreIncludeOtherNpcOwners:true]
 	[CheckThreatScoreRadius:3000]
 	[CheckThreatScoreFromTargetPosition:true]
 	[CheckThreatScoreGridConfiguration:All]
-	
+
       </Description>
-    </EntityComponent>	
-		
-	
-	
+    </EntityComponent>
+
+
+
   </EntityComponents>
 </Definitions>
