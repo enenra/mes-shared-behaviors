@@ -137,6 +137,8 @@
       <Description>
         [RivalAI Action]
 
+        [DebugMessage:PatrolArea - HasTarget]
+
         [ChangeAutopilotSpeed:true]
         [NewAutopilotSpeed:-1]
 
@@ -199,6 +201,8 @@
       <Description>
         [RivalAI Action]
 
+        [DebugMessage:PatrolArea - NoTarget]
+
         [SetBooleansTrue:MSB_NoTarget]
 
         [DisableTriggers:true]
@@ -242,6 +246,8 @@
       </Id>
       <Description>
         [RivalAI Action]
+
+        [DebugMessage:PatrolArea - SwitchToPatrol]
 
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_PatrolArea_Trigger_SwitchToPatrol]

@@ -3,7 +3,8 @@
   <EntityComponents>
 
     <!--
-
+    TODO:
+      * Prevent this from triggering when not actually in a fight
     -->
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -55,7 +56,7 @@
       <Description>
         [RivalAI Action]
 
-		    [DebugMessage:TargetUnderGround]
+        [DebugMessage:Fighter - TargetUnderGround]
 
         [OverwriteAutopilotProfile:true]
         [OverwriteAutopilotMode:Secondary]

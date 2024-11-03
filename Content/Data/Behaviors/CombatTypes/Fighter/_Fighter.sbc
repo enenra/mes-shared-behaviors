@@ -156,6 +156,8 @@
       <Description>
         [RivalAI Action]
 
+        [DebugMessage:Fighter - InitFight]
+
         [ChangeBehaviorSubclass:true]
         [NewBehaviorSubclass:Fighter]
 
