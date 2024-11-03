@@ -57,8 +57,9 @@
 
 		    [DebugMessage:TargetUnderGround]
 
-        [ChangeAutopilotProfile:true]
-        [AutopilotProfile:Tertiary]
+        [OverwriteAutopilotProfile:true]
+        [OverwriteAutopilotMode:Secondary]
+        [OverwriteAutopilotId:MSB_Fighter_Autopilot_Fighter_LowAltitude]
 
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_Fighter_Trigger_TargetUnderGround]
@@ -120,8 +121,9 @@
 
         [DebugMessage:ResetAutopilot]
 
-        [ChangeAutopilotProfile:true]
-        [AutopilotProfile:Primary]
+        [OverwriteAutopilotProfile:true]
+        [OverwriteAutopilotMode:Secondary]
+        [OverwriteAutopilotId:MSB_Fighter_Autopilot_Fighter]
 
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_Fighter_Trigger_ResetAutopilot]

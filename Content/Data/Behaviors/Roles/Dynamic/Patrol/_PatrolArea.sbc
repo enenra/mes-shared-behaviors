@@ -25,7 +25,6 @@
 
         [AutopilotData:MSB_PatrolArea_Autopilot]
         [SecondaryAutopilotData:MSB_Fighter_Autopilot_Fighter]
-        [TertiaryAutopilotData:MSB_Fighter_Autopilot_Fighter_LowAltitude]
 
         [TriggerGroups:MSB_Dynamic_CommonTriggerGroup]
         [TriggerGroups:MSB_Fighter_TriggerGroup]
