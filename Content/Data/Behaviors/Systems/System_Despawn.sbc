@@ -139,7 +139,7 @@
       <Description>
         [RivalAI Command]
 
-        [CommandCode:MSB_Despawn_{Faction}_Request_ClosestFactionStatic]
+        [CommandCode:MSB_Despawn_Request_ClosestFactionStatic]
 
         [MatchSenderReceiverOwners:true]
         [SendTargetEntityId:true]
@@ -170,7 +170,7 @@
         [MinCooldownMs:600000]
         [MaxCooldownMs:600001]
 
-        [CommandReceiveCode:MSB_Despawn_{Faction}_Response_ClosestFactionStatic]
+        [CommandReceiveCode:MSB_Despawn_Response_ClosestFactionStatic]
 
         [MaxActions:-1]
         [Actions:MSB_Despawn_Action_Receive_ClosestFactionStatic]
