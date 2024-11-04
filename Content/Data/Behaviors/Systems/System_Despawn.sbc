@@ -11,8 +11,7 @@
       * MSB_Despawn_FlyToHomebase: Flies back to encounter this encounter spawned from.
 
     TODO:
-      * Hook in the despawn stuff to patrol.
-      * Also properly cancel the despawn action when timer should be paused.
+      * Implement fallback when no command response is received.
       * when "retreating" instead switch to cargoship, since that can have a destination to fly to.
       * when no player is near, set retreat:true in any case
     -->
@@ -197,6 +196,8 @@
         [AutopilotProfile:Tertiary]
       </Description>
     </EntityComponent>
+
+    <!-- TODO: Implement fallback despawn logic if no response is received. -->
 
     <!-- Reset Despawn behavior is bool is no longer true. -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
