@@ -125,12 +125,33 @@
         [DebugMessage:Despawn - Request_ClosestFactionStatic]
 
         [BroadcastCommandProfiles:true]
-        [CommandProfileIds:MSB_Despawn_{Faction}_Request_ClosestFactionStatic]
+        [CommandProfileIds:MSB_Despawn_Command_Request_ClosestFactionStatic]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Despawn]
       </Description>
     </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Despawn_Command_Request_ClosestFactionStatic</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Command]
+
+        [CommandCode:MSB_Despawn_{Faction}_Request_ClosestFactionStatic]
+
+        [MatchSenderReceiverOwners:true]
+        [SendTargetEntityId:true]
+        [SingleRecipient:true]
+
+        [IgnoreAntennaRequirement:true]
+        [Radius:50000]
+
+        [CommandDelayTicks:180]
+      </Description>
+    </EntityComponent>
+
 
     <!-- Receive closest faction static grid -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
