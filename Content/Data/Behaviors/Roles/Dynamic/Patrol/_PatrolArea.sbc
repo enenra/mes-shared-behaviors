@@ -236,8 +236,8 @@
 
         [Conditions:MSB_PatrolArea_Condition_NoTarget]
 
-        [MinCooldownMs:6000]
-        [MaxCooldownMs:9000]
+        [MinCooldownMs:60000]
+        [MaxCooldownMs:90000]
 
         [Actions:MSB_PatrolArea_Action_SwitchToPatrol]
       </Description>
