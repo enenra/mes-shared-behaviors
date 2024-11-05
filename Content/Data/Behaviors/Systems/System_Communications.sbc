@@ -23,7 +23,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_TriggerGroup_CommSystem</SubtypeId>
+        <SubtypeId>MSB_CommSystem_TriggerGroup</SubtypeId>
       </Id>
       <Description>
         [RivalAI TriggerGroup]
@@ -243,6 +243,7 @@
       </Description>
     </EntityComponent>
 
+    <!-- SOS -->
 
     <!-- Compromised -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">

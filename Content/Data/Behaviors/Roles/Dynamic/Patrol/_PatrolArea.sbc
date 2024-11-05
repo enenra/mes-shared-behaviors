@@ -8,7 +8,6 @@
     If it finds a player, it will engage it. If the player puts a certain amount of distance between them and the encounter, the encounter will go back to patrol after a set amount of time.
 
     TODO:
-    * Timer after which the patrol is over, start despawn and send out MSB_TriggerEvent_Despawn.
     * Add reactions to commsystem alerts
     -->
 
@@ -19,6 +18,7 @@
       </Id>
       <Description>
         [RivalAI Behavior]
+
         [BehaviorName:Patrol]
 
         [TargetData:MSB_TargetProfile_ShortRange]
@@ -29,6 +29,7 @@
         [TriggerGroups:MSB_Dynamic_CommonTriggerGroup]
         [TriggerGroups:MSB_Fighter_TriggerGroup]
         [TriggerGroups:MSB_PatrolArea_TriggerGroup]
+        [TriggerGroups:MSB_CommSystem_TriggerGroup]
       </Description>
     </EntityComponent>
 
@@ -107,7 +108,7 @@
         [Triggers:MSB_PatrolArea_Trigger_NoTarget]
         [Triggers:MSB_PatrolArea_Trigger_SwitchToPatrol]
 
-        [Triggers:MSB_TriggerGroup_CommSystem]
+        [Triggers:MSB_PatrolArea_Trigger_Despawn]
       </Description>
     </EntityComponent>
 
@@ -150,11 +151,13 @@
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_PatrolArea_Trigger_HasTarget]
         [DisableTriggerNames:MSB_PatrolArea_Trigger_SwitchToPatrol]
+        [DisableTriggerNames:MSB_PatrolArea_Trigger_Despawn]
 
         [ResetCooldownTimeOfTriggers:true]
         [ResetTriggerCooldownNames:MSB_PatrolArea_Trigger_SwitchToPatrol]
 
         [SetBooleansFalse:MSB_NoTarget]
+        [SetBooleansFalse:MSB_Despawn_Simple]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_HasTarget]
@@ -257,6 +260,41 @@
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_SwitchToPatrol]
+        [ManuallyActivatedTriggerTags:MSB_PatrolArea_Trigger_Despawn]
+      </Description>
+    </EntityComponent>
+
+    <!-- Despawn -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_PatrolArea_Trigger_Despawn</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [MinCooldownMs:600000]
+        [MaxCooldownMs:900000]
+
+        [Actions:MSB_PatrolArea_Action_Despawn]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_PatrolArea_Action_Despawn</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:PatrolArea - Despawn]
+
+        [SetBooleansTrue:MSB_Despawn_Simple]
       </Description>
     </EntityComponent>
 
