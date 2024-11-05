@@ -1,0 +1,595 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <!--
+    There are 3 Settings (bools): SettingNormal, SettingHighAlert, SettingBattle
+
+    MSB_Context_Condition_ReadyforNormal
+
+    Settings:
+    MSB_Context_Condition_Normal
+    MSB_Context_Condition_SettingNormal
+    MSB_Context_Condition_SettingHighAlert
+    MSB_Context_Condition_SettingBattle
+    MSB_Context_Condition_SettingHighAlertOrBattle
+    MSB_Context_Condition_SettingNormalOrHighAlert
+    MSB_Context_Condition_SettingNormalOrHighAlert_HostileDamage
+
+    Triggers:
+    MSB_Context_Trigger_Start (Timer on Start)
+    MSB_Context_Trigger_NormaltoHighAlert (TargetNear)
+    MSB_Context_Trigger_Damage (Damage_> SettingBattle)
+
+    MSB_Context_Trigger_EnemiesApproaching (TargetNear -> SettingBattle)
+
+    MSB_Context_Trigger_NoTarget_ReadyforNormal 
+    MSB_Context_Trigger_StayHostile
+    MSB_Context_Trigger_Hostile_to_Normal
+    -->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Condition_ReadyforNormal</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+        [CheckTrueBooleans:true]
+
+        [TrueBooleans:ReadyforNormal]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Condition_Normal</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+        [CheckTrueBooleans:true]
+
+        [TrueBooleans:SettingNormal]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Condition_SettingNormal</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+        [CheckTrueBooleans:true]
+
+        [TrueBooleans:SettingNormal]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Condition_SettingHighAlert</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+        [CheckTrueBooleans:true]
+
+        [TrueBooleans:SettingHighAlert]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Condition_SettingBattle</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+        [CheckTrueBooleans:true]
+
+        [TrueBooleans:SettingBattle]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Condition_SettingHighAlertOrBattle</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:true]
+        [CheckTrueBooleans:true]
+
+        [AllowAnyTrueBoolean:true]
+        [TrueBooleans:SettingHighAlert]
+        [TrueBooleans:SettingBattle]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Condition_SettingNormalOrHighAlert</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:true]
+        [CheckTrueBooleans:true]
+
+        [AllowAnyTrueBoolean:true]
+        [TrueBooleans:SettingNormal]
+        [TrueBooleans:SettingHighAlert]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Condition_SettingNormalOrHighAlert_HostileDamage</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+        [CheckTrueBooleans:true]
+
+        [AllowAnyTrueBoolean:true]
+        [TrueBooleans:SettingNormal]
+        [TrueBooleans:SettingHighAlert]
+
+        [IsAttackerHostile:true]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Condition_SettingNormalOrHighAlert_EnemiesApproaching</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+        [CheckTrueBooleans:true]
+
+        [AllowAnyTrueBoolean:true]
+        [TrueBooleans:SettingNormal]
+        [TrueBooleans:SettingHighAlert]
+
+        [CheckThreatScore:true]
+        [CheckThreatScoreMinimum:50]
+        [CheckThreatScoreMaximum:-1]
+
+        [CheckThreatScoreIncludeOtherNpcOwners:true]
+        [CheckThreatScoreRadius:2500]
+        [CheckThreatScoreFromTargetPosition:false]
+        [CheckThreatScoreGridConfiguration:Dynamic]
+      </Description>
+    </EntityComponent>
+
+
+    <!--Start Triggers-->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Trigger_Start</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+        [UseTrigger:true]
+        [StartsReady:false]
+
+        [MinCooldownMs:1000]
+        [MaxCooldownMs:1001]
+
+        [MaxActions:1]
+        [Actions:MSB_Context_Action_InitNormal]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Action_InitNormal</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [UseChatBroadcast:true]
+        [ChatData:MSB_Context_Chat_InitNormal]
+
+        [SetBooleansTrue:SettingNormal]
+        [SetBooleansFalse:SettingHighAlert]
+        [SetBooleansFalse:SettingBattle]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerNames:MSB_Context_ManualTrigger_DynamicNoLongerInBattle]
+        [ForceManualTriggerActivation:true]
+
+        [SetBooleansFalse:ReadyforNormal]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Action_InitHighAlert</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [UseChatBroadcast:true]
+        [ChatData:MSB_Context_Chat_InitHighAlert]
+
+        [SetBooleansFalse:SettingNormal]
+        [SetBooleansTrue:SettingHighAlert]
+        [SetBooleansFalse:SettingBattle]
+        [SetBooleansFalse:ReadyforNormal]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerNames:MSB_Context_ManualTrigger_DynamicNoLongerInBattle]
+        [ForceManualTriggerActivation:true]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Action_InitBattle</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [UseChatBroadcast:true]
+        [ChatData:MSB_Context_Chat_InitBattle]
+
+        [SetBooleansFalse:SettingNormal]
+        [SetBooleansFalse:SettingHighAlert]
+        [SetBooleansTrue:SettingBattle]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerNames:MSB_Context_ManualTrigger_InitDynamicBattle]
+        [ForceManualTriggerActivation:true]
+
+        [SetBooleansFalse:ReadyforNormal]
+      </Description>
+    </EntityComponent>
+
+
+    <!--NormaltoHighAlert -->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Trigger_NormaltoHighAlert</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:TargetNear]
+        [TargetDistance:4500]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+        [Conditions:MSB_Context_Condition_SettingNormal]
+
+        [MinCooldownMs:20000]
+        [MaxCooldownMs:20001]
+
+        [MaxActions:-1]
+        [Actions:MSB_Context_Action_InitHighAlert]
+      </Description>
+    </EntityComponent>
+
+
+    <!--Normal/HighAlert
+    to Battle
+
+    TargetNear 1500 (But not player, and at least 50 threatscore)
+
+    MSB_Context_Trigger_Damage (MSB_Context_Condition_SettingNormalOrHighAlert_HostileDamage)
+    -->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Trigger_EnemiesApproaching</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:TargetNear]
+        [TargetDistance:1500]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+        [Conditions:MSB_Context_Condition_SettingNormalOrHighAlert_EnemiesApproaching]
+
+        [MinCooldownMs:20000]
+        [MaxCooldownMs:20001]
+
+        [MaxActions:-1]
+        [Actions:MSB_Context_Action_InitBattle]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Trigger_Damage</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Damage]
+        [DamageTypes:Any]
+
+        [ExcludedDamageTypes:Environment]
+        [ExcludedDamageTypes:Deformation]
+        [ExcludedDamageTypes:Fire]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+        [Conditions:MSB_Context_Condition_SettingNormalOrHighAlert_HostileDamage]
+
+        [MinCooldownMs:20000]
+        [MaxCooldownMs:20001]
+
+        [MaxActions:-1]
+        [Actions:MSB_Context_Action_InitBattle]
+      </Description>
+    </EntityComponent>
+
+
+    <!--Battle/HighAler
+    to Normal -->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Trigger_NoTarget_ReadyforNormal</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:NoTarget]
+        [UseTrigger:true]
+        [StartsReady:false]
+
+        [MinCooldownMs:30000]
+        [MaxCooldownMs:30001]
+
+        [Conditions:MSB_Context_Condition_SettingHighAlertOrBattle]
+
+        [Actions:MSB_Context_Action_NoTarget_ReadyforNormal]
+      </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Action_NoTarget_ReadyforNormal</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [UseChatBroadcast:true]
+        [ChatData:MSB_Context_Chat_NoTarget_ReadyforNormal]
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB_Context_Trigger_Hostile_to_Normal]
+
+        [SetBooleansTrue:ReadyforNormal]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Trigger_StayHostile</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:HasTarget]
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [MinCooldownMs:1000]
+        [MaxCooldownMs:1001]
+
+        [Conditions:MSB_Context_Condition_ReadyforNormal]
+
+        [Actions:MSB_Context_Action_StayHostile]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Trigger_Hostile_to_Normal</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+        [UseTrigger:true]
+        [StartsReady:false]
+
+        [MinCooldownMs:20000]
+        [MaxCooldownMs:20001]
+
+        [Conditions:MSB_Context_Condition_ReadyforNormal]
+
+        [Actions:MSB_Context_Action_InitNormal]
+      </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Action_StayHostile</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [SetBooleansFalse:ReadyforNormal]
+
+        [UseChatBroadcast:true]
+        [ChatData:MSB_Context_Chat_StayHostile]
+      </Description>
+    </EntityComponent>
+
+
+    <!--
+    
+    ============DEBUG CHAT =============
+    
+    -->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Chat_InitNormal</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Chat]
+
+        [UseChat:false]
+        [StartsReady:true]
+        [Chance:100]
+        [MaxChats:-1]
+        [BroadcastRandomly:true]
+
+        [Author:Debug {GridName}]
+        [Color:{PlayerRelation}]
+
+        [ChatMessages:InitNormal]
+        [ChatAudio:ArcHudGPSNotification1]
+        [BroadcastChatType:Chat]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Chat_InitHighAlert</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Chat]
+
+        [UseChat:false]
+        [StartsReady:true]
+        [Chance:100]
+        [MaxChats:-1]
+        [BroadcastRandomly:true]
+
+        [Author:Debug {GridName}]
+        [Color:{PlayerRelation}]
+
+        [ChatMessages:InitHighAlert]
+        [ChatAudio:ArcHudGPSNotification1]
+        [BroadcastChatType:Chat]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Chat_InitBattle</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Chat]
+
+        [UseChat:true]
+        [StartsReady:true]
+        [Chance:100]
+        [MaxChats:-1]
+        [BroadcastRandomly:true]
+
+        [Author:Debug {GridName}]
+        [Color:{PlayerRelation}]
+
+        [ChatMessages:InitBattle]
+        [ChatAudio:ArcHudGPSNotification1]
+        [BroadcastChatType:Chat]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Chat_NoTarget_ReadyforNormal</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Chat]
+
+        [UseChat:false]
+        [StartsReady:true]
+        [Chance:100]
+        [MaxChats:-1]
+        [BroadcastRandomly:true]
+
+        [Author:{GridName}]
+        [Color:{PlayerRelation}]
+
+        [ChatMessages:I see no targets. ReadyforNormal]
+        [ChatAudio:ArcHudGPSNotification1]
+        [BroadcastChatType:Chat]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Chat_StayHostile</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Chat]
+
+        [UseChat:false]
+        [StartsReady:true]
+        [Chance:100]
+        [MaxChats:-1]
+        [BroadcastRandomly:true]
+
+        [Author:{GridName}]
+        [Color:{PlayerRelation}]
+
+        [ChatMessages:Nevermind I see a target. Staying Hostile]
+        [ChatAudio:ArcHudGPSNotification1]
+        [BroadcastChatType:Chat]
+      </Description>
+    </EntityComponent>
+
+  </EntityComponents>
+</Definitions>
