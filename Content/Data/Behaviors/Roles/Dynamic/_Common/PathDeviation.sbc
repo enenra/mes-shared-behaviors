@@ -3,7 +3,8 @@
   <EntityComponents>
 
     <!--
-    Civillian settlements should send the command with code CivilianPathDeviation and a waypoint profile.
+    Civillian settlements should send the command with code CivilianPathDeviation and a waypoint
+    profile.
     
     This will make the civillian ship go visit that station.	
     -->
@@ -16,7 +17,7 @@
         [RivalAI Trigger]
 
         [Type:CommandReceived]
-		
+
         [CommandReceiveCode:CivilianPathDeviation]
 
         [UseTrigger:true]

@@ -2,7 +2,7 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 
-  <!--
+    <!--
   [Triggers:MSB_DynamicCivilian_Trigger_Falling]
   -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -22,7 +22,7 @@
         [MaxCooldownMs:4000]
 
         [Conditions:MSB_DynamicCivilian_Condition_Falling]
-        
+
         [MaxActions:1]
         [Actions:MSB_DynamicCivilian_Action_Falling]
       </Description>
@@ -63,6 +63,6 @@
         [TerminateBehavior:true]
       </Description>
     </EntityComponent>
-    
+
   </EntityComponents>
 </Definitions>
