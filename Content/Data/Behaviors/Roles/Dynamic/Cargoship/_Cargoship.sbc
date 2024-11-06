@@ -14,13 +14,16 @@
       </Id>
       <Description>
         [RivalAI Behavior]
+        
         [BehaviorName:Cargoship]
 
         [AutopilotData:MSB_Cargoship_Autopilot]
-        [SecondaryAutopilotData:MSB_Cargoship_Autopilot_B]
+        [SecondaryAutopilotData:MSB_Freighter_Autopilot]
 
         [TriggerGroups:MSB_Dynamic_CommonTriggerGroup]
+        [TriggerGroups:MSB_Freighter_TriggerGroup]
         [TriggerGroups:MSB_Cargoship_TriggerGroup]
+        [TriggerGroups:MSB_CommSystem_TriggerGroup]
       </Description>
     </EntityComponent>
 
@@ -130,8 +133,9 @@
       <Description>
         [RivalAI Action]
 
-        [ChangeAutopilotProfile:true]
-        [AutopilotProfile:Primary]
+        [OverwriteAutopilotProfile:true]
+        [OverwriteAutopilotMode:Primary]
+        [OverwriteAutopilotId:MSB_Cargoship_Autopilot]
 
         [ChangeAutopilotSpeed:true]
         [NewAutopilotSpeed:-1]
@@ -169,8 +173,9 @@
       <Description>
         [RivalAI Action]
 
-        [ChangeAutopilotProfile:true]
-        [AutopilotProfile:Primary]
+        [OverwriteAutopilotProfile:true]
+        [OverwriteAutopilotMode:Primary]
+        [OverwriteAutopilotId:MSB_Cargoship_Autopilot]
       </Description>
     </EntityComponent>
 
