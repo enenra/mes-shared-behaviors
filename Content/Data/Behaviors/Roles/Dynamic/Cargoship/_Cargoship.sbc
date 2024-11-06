@@ -133,6 +133,8 @@
       <Description>
         [RivalAI Action]
 
+        [DebugMessage:Cargoship - ReturnToSpeed]
+
         [OverwriteAutopilotProfile:true]
         [OverwriteAutopilotMode:Primary]
         [OverwriteAutopilotId:MSB_Cargoship_Autopilot]
@@ -173,6 +175,8 @@
       <Description>
         [RivalAI Action]
 
+        [DebugMessage:Cargoship - ReturnToDespawn]
+
         [OverwriteAutopilotProfile:true]
         [OverwriteAutopilotMode:Primary]
         [OverwriteAutopilotId:MSB_Cargoship_Autopilot]
@@ -209,6 +213,8 @@
       </Id>
       <Description>
         [RivalAI Action]
+
+        [DebugMessage:Cargoship - PlayerTooClose]
 
         [ChangeReputationWithPlayers:true]
         [ReputationChangeFactions:{Self}]
