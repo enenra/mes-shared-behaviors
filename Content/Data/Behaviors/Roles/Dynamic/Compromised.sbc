@@ -8,18 +8,16 @@
         <SubtypeId>MSB_Dynamic_Trigger_Compromised</SubtypeId>
       </Id>
       <Description>
-
         [MES AI Trigger]
 
-        [UseTrigger:true]
         [Type:Compromised]
 
+        [UseTrigger:true]
         [StartsReady:true]
+
         [MaxActions:1]
         [Actions:MSB_Dynamic_Action_Compromised]
-
       </Description>
-
     </EntityComponent>
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -28,7 +26,6 @@
         <SubtypeId>MSB_Dynamic_Action_Compromised</SubtypeId>
       </Id>
       <Description>
-
         [MES AI Action]
 
         [ToggleBlocksOfType:true]
@@ -38,9 +35,7 @@
 
         [BlockTypesToToggle:MyObjectBuilder_Parachute/SmParachute]
         [BlockTypeToggles:On]
-
       </Description>
-
     </EntityComponent>
 
   </EntityComponents>
