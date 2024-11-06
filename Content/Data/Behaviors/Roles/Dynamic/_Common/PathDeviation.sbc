@@ -2,36 +2,32 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 
-
-	<!--
-	Civillian settlements should send the command with code CivilianPathDeviation and a waypoint profile.
-	
-	This will make the civillian ship go visit that station.
-	
-	-->
-
-
+    <!--
+    Civillian settlements should send the command with code CivilianPathDeviation and a waypoint
+    profile.
+    
+    This will make the civillian ship go visit that station.	
+    -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_DynamicCivilian_Trigger_PathDeviation</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI Trigger]
 
-        [UseTrigger:true]
-		[Conditions:MSB_Context_Condition_SettingNormal]
-		
         [Type:CommandReceived]
+
         [CommandReceiveCode:CivilianPathDeviation]
 
+        [UseTrigger:true]
         [StartsReady:true]
+
+        [Conditions:MSB_Context_Condition_SettingNormal]
+
         [MaxActions:1]
         [Actions:MSB_DynamicCivilian_Action_PathDeviation]
-
       </Description>
-
     </EntityComponent>
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -42,20 +38,21 @@
       <Description>
         [RivalAI Action]
 
-		[PlayDialogueCue:true]
-		[DialogueCueId:DynamicCivillian_PathDeviation]
-
+        [PlayDialogueCue:true]
+        [DialogueCueId:DynamicCivillian_PathDeviation]
 
         [AddWaypointFromCommand:true]
+
         [ChangeAutopilotProfile:true]
         [AutopilotProfile:Secondary]
+
         [ToggleBlocksOfType:true]
+
         [BlockTypesToToggle:MyObjectBuilder_Parachute/LgParachute]
         [BlockTypeToggles:Off]
 
         [BlockTypesToToggle:MyObjectBuilder_Parachute/SmParachute]
         [BlockTypeToggles:Off]
-
       </Description>
     </EntityComponent>
 

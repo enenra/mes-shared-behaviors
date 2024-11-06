@@ -1,34 +1,31 @@
 ﻿<?xml version="1.0"?>
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
-<!--
 
-[Triggers:MSB_CargoShip_Trigger_CargoCompromised]
-
-
--->
-
+    <!--
+    [Triggers:MSB_CargoShip_Trigger_CargoCompromised]
+    -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_CargoShip_Trigger_CargoCompromised</SubtypeId>
       </Id>
       <Description>
-
         [MES AI Trigger]
 
-        [UseTrigger:true]
         [Type:Timer]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
         [MinCooldownMs:3000]
         [MaxCooldownMs:3001]
+
         [Conditions:MSB_CargoShip_Condition_CargoCompromised]
 
-        [StartsReady:true]
         [MaxActions:1]
         [Actions:MSB_CargoShip_Action_CargoCompromised]
-
       </Description>
-
     </EntityComponent>
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -37,14 +34,11 @@
         <SubtypeId>MSB_CargoShip_Condition_CargoCompromised</SubtypeId>
       </Id>
       <Description>
-
         [MES AI Condition]
 
         [UseRequiredFunctionalBlocks:true]
         [RequiredNoneFunctionalBlockNames:Cargo Container]
-
       </Description>
-
     </EntityComponent>
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -53,21 +47,19 @@
         <SubtypeId>MSB_CargoShip_Action_CargoCompromised</SubtypeId>
       </Id>
       <Description>
-
         [MES AI Action]
 
-		[PlayDialogueCue:true]
-		[DialogueCueId:Cargoship_CargoCompromised]
-		
+        [DebugMessage:Cargoship - CargoCompromised]
+
+        [PlayDialogueCue:true]
+        [DialogueCueId:Cargoship_CargoCompromised]
+
         [ChangeAutopilotSpeed:true]
         [NewAutopilotSpeed:100]
 
         [Retreat:true]
-
       </Description>
     </EntityComponent>
 
-
-    
   </EntityComponents>
 </Definitions>
