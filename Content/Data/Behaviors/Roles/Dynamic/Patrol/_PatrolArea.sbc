@@ -157,7 +157,7 @@
         [ResetTriggerCooldownNames:MSB_PatrolArea_Trigger_SwitchToPatrol]
 
         [SetBooleansFalse:MSB_NoTarget]
-        [SetBooleansFalse:MSB_Despawn_Simple]
+        [SetBooleansFalse:MSB_Despawn]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_HasTarget]
@@ -294,7 +294,7 @@
 
         [DebugMessage:PatrolArea - Despawn]
 
-        [SetBooleansTrue:MSB_Despawn_Simple]
+        [SetBooleansTrue:MSB_Despawn]
       </Description>
     </EntityComponent>
 

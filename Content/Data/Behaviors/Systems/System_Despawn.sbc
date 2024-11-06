@@ -29,7 +29,8 @@
         [MatchAnyCondition:true]
 
         [CheckTrueBooleans:true]
-        [TrueBooleans:MSB_Despawn_Simple]
+        [TrueBooleans:MSB_Despawn]
+        [TrueBooleans:MSB_Despawn_Use_Simple]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -86,6 +87,7 @@
         [MatchAnyCondition:true]
 
         [CheckTrueBooleans:true]
+        [TrueBooleans:MSB_Despawn]
         [TrueBooleans:MSB_Despawn_FlyToClosestFactionStatic]
       </Description>
     </EntityComponent>
@@ -151,7 +153,6 @@
       </Description>
     </EntityComponent>
 
-
     <!-- Receive closest faction static grid -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -203,7 +204,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Despawn_Condition_ClosestFactionStatic_Reset</SubtypeId>
+        <SubtypeId>MSB_Despawn_Condition_Reset</SubtypeId>
       </Id>
       <Description>
         [RivalAI Condition]
@@ -212,13 +213,13 @@
         [MatchAnyCondition:true]
 
         [CheckTrueBooleans:false]
-        [TrueBooleans:MSB_Despawn_FlyToClosestFactionStatic]
+        [FalseBooleans:MSB_Despawn]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Despawn_Trigger_ClosestFactionStatic_Reset</SubtypeId>
+        <SubtypeId>MSB_Despawn_Trigger_Reset</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -228,15 +229,15 @@
         [UseTrigger:false]
         [StartsReady:false]
 
-        [Conditions:MSB_Despawn_Condition_ClosestFactionStatic_Reset]
+        [Conditions:MSB_Despawn_Condition_Reset]
 
-        [Actions:MSB_Despawn_Action_ClosestFactionStatic_Reset]
+        [Actions:MSB_Despawn_Action_Reset]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Despawn_Action_ClosestFactionStatic_Reset</SubtypeId>
+        <SubtypeId>MSB_Despawn_Action_Reset</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
