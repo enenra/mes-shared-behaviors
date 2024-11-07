@@ -266,7 +266,11 @@
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_SwitchToPatrol]
-        [ManuallyActivatedTriggerTags:MSB_PatrolArea_Trigger_Despawn]
+		
+		[ResetCooldownTimeOfTriggers:true]
+		[ResetTriggerCooldownNames:MSB_PatrolArea_Trigger_Despawn]
+		[EnableTriggers:true]
+		[EnableTriggerNames:MSB_PatrolArea_Trigger_Despawn]
       </Description>
     </EntityComponent>
 
