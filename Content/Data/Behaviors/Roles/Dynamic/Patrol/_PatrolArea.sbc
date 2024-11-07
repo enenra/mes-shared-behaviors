@@ -26,6 +26,10 @@
         [AutopilotData:MSB_PatrolArea_Autopilot]
         [SecondaryAutopilotData:MSB_Fighter_Autopilot_Fighter]
 
+        [UsePlayerDistanceTimer:true]
+        [PlayerDistanceTrigger:50000]
+        [PlayerDistanceTimerTrigger:30000]
+
         [SetBooleansTrue:MSB_Despawn_Use_Simple]
 
         [TriggerGroups:MSB_Dynamic_CommonTriggerGroup]
