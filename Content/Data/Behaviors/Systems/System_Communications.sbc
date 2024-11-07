@@ -45,34 +45,11 @@
       <Description>
         [RivalAI Trigger]
 
-        [Type:Timer]
-
-        [UseTrigger:true]
-        [StartsReady:true]
-
-
-        [MinCooldownMs:9000]
-        [MaxCooldownMs:9001]
-
-        [Conditions:MSB_CommSystem_Condition_AllGood]
+        [Type:Manual]
+        [Tags:MSB_TriggerEvent_NoLongerInBattle]
 
         [MaxActions:-1]
         [Actions:MSB_CommSystem_Action_AllGood]
-      </Description>
-    </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_CommSystem_Condition_AllGood</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Condition]
-
-        [UseConditions:true]
-        [MatchAnyCondition:false]
-
-        [CheckTrueBooleans:true]
-        [TrueBooleans:SettingNormal]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -106,6 +83,7 @@
     </EntityComponent>
 
     <!-- YellowAlert -->
+    <!-- TODO: Implement MSB_TriggerEvent_EnemyClose -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -114,34 +92,11 @@
       <Description>
         [RivalAI Trigger]
 
-        [Type:Timer]
-
-        [UseTrigger:true]
-        [StartsReady:true]
-
-
-        [MinCooldownMs:9000]
-        [MaxCooldownMs:9001]
-
-        [Conditions:MSB_CommSystem_Condition_YellowAlert]
+        [Type:Manual]
+        [Tags:MSB_TriggerEvent_EnemyClose]
 
         [MaxActions:-1]
         [Actions:MSB_CommSystem_Action_YellowAlert]
-      </Description>
-    </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_CommSystem_Condition_YellowAlert</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Condition]
-
-        [UseConditions:true]
-        [MatchAnyCondition:false]
-
-        [CheckTrueBooleans:true]
-        [TrueBooleans:SettingHighAlert]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -183,34 +138,11 @@
       <Description>
         [RivalAI Trigger]
 
-        [Type:Timer]
-
-        [UseTrigger:true]
-        [StartsReady:true]
-
-
-        [MinCooldownMs:9000]
-        [MaxCooldownMs:9001]
-
-        [Conditions:MSB_CommSystem_Condition_RedAlert]
+        [Type:Manual]
+        [Tags:MSB_TriggerEvent_InitDynamicBattle]
 
         [MaxActions:-1]
         [Actions:MSB_CommSystem_Action_RedAlert]
-      </Description>
-    </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_CommSystem_Condition_RedAlert</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Condition]
-
-        [UseConditions:true]
-        [MatchAnyCondition:false]
-
-        [CheckTrueBooleans:true]
-        [TrueBooleans:SettingBattle]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -256,7 +188,6 @@
 
         [UseTrigger:true]
         [StartsReady:true]
-
 
         [MinCooldownMs:9000]
         [MaxCooldownMs:9001]
