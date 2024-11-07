@@ -244,6 +244,74 @@
     </EntityComponent>
 
     <!-- SOS -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CommSystem_Trigger_SOS</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+
+        [MinCooldownMs:9000]
+        [MaxCooldownMs:9001]
+
+        [Conditions:MSB_CommSystem_Condition_SOS]
+
+        [MaxActions:-1]
+        [Actions:MSB_CommSystem_Action_SOS]
+      </Description>
+    </EntityComponent>
+    <!-- TODO: Figure out proper conditions for this. -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CommSystem_Condition_SOS</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [CheckTrueBooleans:true]
+        [TrueBooleans:SettingBattle]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CommSystem_Action_SOS</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [BroadcastCommandProfiles:true]
+
+        [CommandProfileIds:MSB_CommSystem_Command_SOS]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CommSystem_Command_SOS</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Command]
+
+        [CommandCode:{Faction}_SOS]
+
+        [MatchSenderReceiverOwners:true]
+        [SendTargetEntityId:true]
+
+        [CommandDelayTicks:180]
+      </Description>
+    </EntityComponent>
 
     <!-- Compromised -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -256,7 +324,6 @@
 
         [UseTrigger:true]
         [Type:Compromised]
-
 
         [MaxActions:-1]
         [Actions:MSB_CommSystem_Action_Compromised]

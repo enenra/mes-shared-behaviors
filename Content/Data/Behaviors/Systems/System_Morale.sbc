@@ -14,6 +14,10 @@
     * Assign starting morale value via CustomCounter.
     * Assign the morale system's trigger group to the behavior.
 
+    TODO:
+    * Finish this.
+    * Morale damage when sending SOS and not getting response / morale bonus when getting one.
+
     -->
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
