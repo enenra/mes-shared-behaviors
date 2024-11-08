@@ -20,10 +20,27 @@
         [AutopilotData:MSB_Cargoship_Autopilot]
         [SecondaryAutopilotData:MSB_Freighter_Autopilot]
 
+        [UsePlayerDistanceTimer:true]
+        [PlayerDistanceTrigger:50000]
+        [PlayerDistanceTimerTrigger:30000]
+
+        [Trigger:MSB_Cargoship_Action_SetDespawnType_Sample]
+
         [TriggerGroups:MSB_Dynamic_CommonTriggerGroup]
         [TriggerGroups:MSB_Freighter_TriggerGroup]
         [TriggerGroups:MSB_Cargoship_TriggerGroup]
         [TriggerGroups:MSB_CommSystem_TriggerGroup]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Cargoship_Action_SetDespawnType_Sample</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [SetBooleansTrue:MSB_Despawn_Use_Simple]
       </Description>
     </EntityComponent>
 
