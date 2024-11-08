@@ -46,6 +46,8 @@
       <Description>
         [RivalAI Action]
 
+        [DebugMessage:PatrolArea - SetDespawnType]
+
         [SetBooleansTrue:MSB_Despawn_Use_Simple]
       </Description>
     </EntityComponent>

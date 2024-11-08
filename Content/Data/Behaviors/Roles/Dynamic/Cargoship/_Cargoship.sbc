@@ -40,6 +40,8 @@
       <Description>
         [RivalAI Action]
 
+        [DebugMessage:Cargoship - SetDespawnType]
+
         [SetBooleansTrue:MSB_Despawn_Use_Simple]
       </Description>
     </EntityComponent>
