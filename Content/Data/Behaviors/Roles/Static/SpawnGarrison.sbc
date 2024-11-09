@@ -77,8 +77,8 @@ ex: MSB_DefenseSystem_Trigger_Garrison_SpawnMilitaryBase 3001
 	[Type:Timer]	
 	[StartsReady:false]	
 
-	[MinCooldownMs:100]
-	[MaxCooldownMs:101]
+	[MinCooldownMs:1000]
+	[MaxCooldownMs:1001]
 	[Conditions:MSB_DefenseSystem_Condition_Garrison_SpawnCustomVariablesName]
 	[MaxActions:-1]
 	[Actions:MSB_DefenseSystem_Action_Garrison_SpawnCustomVariablesName]
@@ -169,8 +169,8 @@ ex: MSB_DefenseSystem_Trigger_Garrison_SpawnMilitaryBase 3001
 	[Type:Timer]	
 	[StartsReady:false]	
 
-	[MinCooldownMs:200]
-	[MaxCooldownMs:201]
+	[MinCooldownMs:2000]
+	[MaxCooldownMs:2001]
 	[Conditions:MSB_DefenseSystem_Condition_Garrison_SpawnSpawnGroupName]
 	[MaxActions:-1]
 	[Actions:MSB_DefenseSystem_Action_Garrison_SpawnSpawnGroupName]
@@ -260,8 +260,8 @@ ex: MSB_DefenseSystem_Trigger_Garrison_SpawnMilitaryBase 3001
 	[Type:Timer]	
 	[StartsReady:false]	
 
-	[MinCooldownMs:500]
-	[MaxCooldownMs:501]
+	[MinCooldownMs:5000]
+	[MaxCooldownMs:5001]
 	[Conditions:MSB_DefenseSystem_Condition_Garrison_SpawnDefault]
 	[MaxActions:-1]
 	[Actions:MSB_DefenseSystem_Action_Garrison_SpawnDefault]
