@@ -160,8 +160,6 @@ NPCDamge ->
 	[StartsReady:true]
 	[Conditions:MSB_ContextDamage_Condition_Hostile_NPCDamage]
 
-	[MinCooldownMs:1000]
-	[MaxCooldownMs:1001]
 	[MaxActions:-1]
 
 	[Actions:MSB_ContextDamage_Action_IncreaseCountPlayerDamage]	
@@ -184,8 +182,6 @@ NPCDamge ->
 	[StartsReady:true]
 	[Conditions:MSB_ContextDamage_Condition_Hostile_PlayerDamage]
 
-	[MinCooldownMs:1000]
-	[MaxCooldownMs:1001]
 	[MaxActions:-1]
 
 	[Actions:MSB_ContextDamage_Action_IncreaseCountPlayerDamage]	
@@ -208,8 +204,7 @@ NPCDamge ->
 	[StartsReady:true]
 	[Conditions:MSB_ContextDamage_Condition_Neutral_PlayerDamage]
 
-	[MinCooldownMs:1000]
-	[MaxCooldownMs:1001]
+
 	[MaxActions:-1]
 
 	[Actions:MSB_ContextDamage_Action_IncreaseCountPlayerDamage]	
@@ -492,7 +487,7 @@ Mmh we will need to evaluate if the cooldown makes sense.
 	[UseTrigger:false]
 	
 	[Type:HealthPercentage]
-	[PercentageOfHealthRemaining:20]
+	[PercentageOfHealthRemaining:80]
 	[UseFailCondition:true]	
 	
 	[MinCooldownMs:4800]
@@ -581,10 +576,10 @@ Mmh we will need to evaluate if the cooldown makes sense.
 	
 	[Type:Timer]
 	
-	[Condition:MSB_ContextUnderFire_Condition_CheckSufficientUpwardThrust]
+	[Conditions:MSB_ContextUnderFire_Condition_CheckSufficientUpwardThrust]
 
-	[MinCooldownMs:4100]
-	[MaxCooldownMs:4101]	
+	[MinCooldownMs:1000]
+	[MaxCooldownMs:1001]	
 	[MaxActions:1]
 
 	[Actions:MSB_ContextUnderFire_Action_UnderFireGoingDown]
@@ -606,7 +601,7 @@ Mmh we will need to evaluate if the cooldown makes sense.
 	[UseFailCondition:true]
 
 	[CheckSufficientUpwardThrust:true]
-	
+
       </Description>
       
     </EntityComponent>	

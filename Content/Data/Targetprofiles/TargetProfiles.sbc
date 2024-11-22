@@ -29,7 +29,7 @@ MSB_Default_Target
         [MatchAllFilters:Owner]
         [MatchAllFilters:Relation]
         [MatchAllFilters:Powered]
-		[MatchAllFilters:Faction]
+
 
         [MatchAnyFilters:Broadcasting]
         [MatchAnyFilters:MovementScore]
