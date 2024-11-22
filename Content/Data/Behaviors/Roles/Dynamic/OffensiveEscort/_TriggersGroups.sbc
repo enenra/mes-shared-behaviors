@@ -9,7 +9,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_OffensiveEscortSystem_Drone_TriggerGroup</SubtypeId>
+          <SubtypeId>MSB_OffensiveEscort_TriggerGroup</SubtypeId>
       </Id>
       <Description>
 
