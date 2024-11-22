@@ -5,13 +5,13 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_TaskForce_TriggerGroup</SubtypeId>
+          <SubtypeId>MSB_ConvoyLeader_TriggerGroup</SubtypeId>
       </Id>
       <Description>
 
 	[RivalAI TriggerGroup]
 
-
+	[Triggers:MSB_ConvoyLeader_Trigger_ProcessEscortRequest]		
 
       </Description>
 

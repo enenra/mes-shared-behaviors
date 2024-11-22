@@ -5,12 +5,12 @@
   <!-- RequestEscortSlot
 
 
-	[Triggers:MSB-OffensiveTaskLeader-Trigger-ProcessEscortRequest]
-	[Triggers:MSB-OffensiveTaskLeader-Trigger-TargetNear1500]
+	[Triggers:MSB-TaskForceLeader-Trigger-ProcessEscortRequest]
+	[Triggers:MSB-TaskForceLeader-Trigger-TargetNear1500]
 
-	[Triggers:MSB-OffensiveTaskLeader-Trigger-HasTarget]
-	[Triggers:MSB-OffensiveTaskLeader-Trigger-NoTarget]
-	[Triggers:MSB-OffensiveTaskLeader-Trigger-SwitchtoCargo]
+	[Triggers:MSB-TaskForceLeader-Trigger-HasTarget]
+	[Triggers:MSB-TaskForceLeader-Trigger-NoTarget]
+	[Triggers:MSB-TaskForceLeader-Trigger-SwitchtoCargo]
 
 
 
@@ -21,7 +21,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_OffensiveTaskLeader_Trigger_ProcessEscortRequest</SubtypeId>
+        <SubtypeId>MSB_TaskForceLeader_Trigger_ProcessEscortRequest</SubtypeId>
       </Id>
       <Description>
 
@@ -29,11 +29,11 @@
 
         [UseTrigger:true]
         [Type:CommandReceived]
-        [CommandReceiveCode:OffensiveEscortDroneRequest]
+        [CommandReceiveCode:OffensiveEscortRequest]
 
         [StartsReady:true]
         [MaxActions:-1]
-        [Actions:MSB_OffensiveTaskLeader_Action_ProcessEscortRequest]
+        [Actions:MSB_TaskForceLeader_Action_ProcessEscortRequest]
 
       </Description>
 
@@ -43,7 +43,7 @@
    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_OffensiveTaskLeader_Action_ProcessEscortRequest</SubtypeId>
+        <SubtypeId>MSB_TaskForceLeader_Action_ProcessEscortRequest</SubtypeId>
       </Id>
       <Description>
 
@@ -51,7 +51,7 @@
 
       [AssignEscortFromCommand:true]
       [UseChatBroadcast:true]
-      [ChatData:MSB_OffensiveTaskLeader_Chat_Escort]
+      [ChatData:MSB_TaskForceLeader_Chat_Escort]
 
       </Description>
 
@@ -60,14 +60,14 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_OffensiveTaskLeader_Chat_Escort</SubtypeId>
+          <SubtypeId>MSB_TaskForceLeader_Chat_Escort</SubtypeId>
       </Id>
 
       <Description>
 
       [RivalAI Chat]
 
-      [UseChat:false]
+      [UseChat:true]
       [StartsReady:true]
       [Chance:100]
       [MaxChats:1]
@@ -95,7 +95,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_OffensiveTaskLeader_Trigger_TargetNear1500</SubtypeId>
+          <SubtypeId>MSB_TaskForceLeader_Trigger_TargetNear1500</SubtypeId>
       </Id>
       <Description>
 
@@ -108,7 +108,7 @@
 	  [MaxCooldownMs:600000]
 
 
-	  [Actions:MSB_OffensiveTaskLeader_Action_TargetNear1500]
+	  [Actions:MSB_TaskForceLeader_Action_TargetNear1500]
 
       </Description>
 
@@ -117,17 +117,17 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_OffensiveTaskLeader_Action_TargetNear1500</SubtypeId>
+          <SubtypeId>MSB_TaskForceLeader_Action_TargetNear1500</SubtypeId>
       </Id>
       <Description>
 
     [RivalAI Action]
 
 	[BroadcastCommandProfiles:true]
-	[CommandProfileIds:MSB-OffensiveTaskLeader-Command-LooseFighters]
+	[CommandProfileIds:MSB_TaskForceLeader_Command_LooseFighters]
 
 	[UseChatBroadcast:true]
-	[ChatData:MSB_OffensiveTaskLeader_Chat_TargetNear1500]
+	[ChatData:MSB_TaskForceLeader_Chat_TargetNear1500]
 
 
 
@@ -140,7 +140,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_OffensiveTaskLeader_Chat_TargetNear1500</SubtypeId>
+          <SubtypeId>MSB_TaskForceLeader_Chat_TargetNear1500</SubtypeId>
       </Id>
 
       <Description>
@@ -182,7 +182,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_OffensiveTaskLeader_Trigger_HasTarget</SubtypeId>
+          <SubtypeId>MSB_TaskForceLeader_Trigger_HasTarget</SubtypeId>
       </Id>
       <Description>
 
@@ -192,7 +192,7 @@
 	  [StartsReady:true]
 
 	  [MaxActions:-1]
-	  [Actions:MSB_OffensiveTaskLeader_Action_HasTarget]
+	  [Actions:MSB_TaskForceLeader_Action_HasTarget]
 
       </Description>
 
@@ -202,7 +202,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_OffensiveTaskLeader_Action_HasTarget</SubtypeId>
+          <SubtypeId>MSB_TaskForceLeader_Action_HasTarget</SubtypeId>
       </Id>
       <Description>
 
@@ -214,21 +214,21 @@
 	[AutopilotProfile:Secondary]
 
 	[UseChatBroadcast:true]
-	[ChatData:MSB_OffensiveTaskLeader_Chat_HasTarget]
+	[ChatData:MSB_TaskForceLeader_Chat_HasTarget]
 
 	[EnableTriggers:true]
-	[EnableTriggerNames:MSB_OffensiveTaskLeader_Trigger_NoTarget]
+	[EnableTriggerNames:MSB_TaskForceLeader_Trigger_NoTarget]
 
 	[DisableTriggers:true]
-	[DisableTriggerNames:MSB_OffensiveTaskLeader_Trigger_HasTarget]
+	[DisableTriggerNames:MSB_TaskForceLeader_Trigger_HasTarget]
 
 	[SwitchToReceivedTarget:true]
 
 
-	[SetBooleansFalse:OffensiveTaskLeaderHasnoTarget]
+	[SetBooleansFalse:TaskForceLeaderHasnoTarget]
 
 	[BroadcastCommandProfiles:true]
-	[CommandProfileIds:MSB-OffensiveTaskLeader-Command-HasTarget]
+	[CommandProfileIds:MSB_TaskForceLeader_Command_HasTarget]
 
       </Description>
 
@@ -238,7 +238,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_OffensiveTaskLeader_Chat_HasTarget</SubtypeId>
+          <SubtypeId>MSB_TaskForceLeader_Chat_HasTarget</SubtypeId>
       </Id>
 
       <Description>
@@ -267,7 +267,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_OffensiveTaskLeader_Command_HasTarget</SubtypeId>
+        <SubtypeId>MSB_TaskForceLeader_Command_HasTarget</SubtypeId>
       </Id>
       <Description>
 
@@ -297,7 +297,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_OffensiveTaskLeader_Trigger_NoTarget</SubtypeId>
+          <SubtypeId>MSB_TaskForceLeader_Trigger_NoTarget</SubtypeId>
       </Id>
       <Description>
 
@@ -306,7 +306,7 @@
 	  [UseTrigger:false]
 	  [StartsReady:true]
 	  [MaxActions:-1]
-	  [Actions:MSB_OffensiveTaskLeader_Action_NoTarget]
+	  [Actions:MSB_TaskForceLeader_Action_NoTarget]
 
       </Description>
 
@@ -316,28 +316,28 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_OffensiveTaskLeader_Action_NoTarget</SubtypeId>
+          <SubtypeId>MSB_TaskForceLeader_Action_NoTarget</SubtypeId>
       </Id>
       <Description>
 
 	[RivalAI Action]
-	[SetBooleansTrue:OffensiveTaskLeaderHasnoTarget]
+	[SetBooleansTrue:TaskForceLeaderHasnoTarget]
 
 	[DisableTriggers:true]
-	[DisableTriggerNames:MSB_OffensiveTaskLeader_Trigger_NoTarget]
+	[DisableTriggerNames:MSB_TaskForceLeader_Trigger_NoTarget]
 
 
 	[EnableTriggers:true]
-	[EnableTriggerNames:MSB_OffensiveTaskLeader_Trigger_SwitchtoCargo]
+	[EnableTriggerNames:MSB_TaskForceLeader_Trigger_SwitchtoCargo]
 
 	[ResetCooldownTimeOfTriggers:true]
-	[ResetTriggerCooldownNames:MSB-OffensiveTaskLeader-Trigger-SwitchtoCargo]
+	[ResetTriggerCooldownNames:MSB-TaskForceLeader-Trigger-SwitchtoCargo]
 
 
 	[EnableTriggers:true]
-	[EnableTriggerNames:MSB_OffensiveTaskLeader_Trigger_HasTarget]
+	[EnableTriggerNames:MSB_TaskForceLeader_Trigger_HasTarget]
 	[DisableTriggers:true]
-	[DisableTriggerNames:MSB_OffensiveTaskLeader_Trigger_NoTarget]
+	[DisableTriggerNames:MSB_TaskForceLeader_Trigger_NoTarget]
 
       </Description>
 
@@ -358,7 +358,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_OffensiveTaskLeader_Trigger_SwitchtoCargo</SubtypeId>
+          <SubtypeId>MSB_TaskForceLeader_Trigger_SwitchtoCargo</SubtypeId>
       </Id>
       <Description>
 
@@ -366,12 +366,12 @@
 	[Type:Timer]
 	[UseTrigger:false]
 	[StartsReady:false]
-	[Conditions:MSB_OffensiveTaskLeader_Condition_NoTarget]
+	[Conditions:MSB_TaskForceLeader_Condition_NoTarget]
 
 	[MinCooldownMs:6000]
 	[MaxCooldownMs:9000]
 
-	[Actions:MSB_OffensiveTaskLeader_Action_SwitchtoCargo]
+	[Actions:MSB_TaskForceLeader_Action_SwitchtoCargo]
 
       </Description>
 
@@ -380,7 +380,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_OffensiveTaskLeader_Condition_NoTarget</SubtypeId>
+          <SubtypeId>MSB_TaskForceLeader_Condition_NoTarget</SubtypeId>
       </Id>
       <Description>
       [RivalAI Condition]
@@ -388,7 +388,7 @@
 	[UseConditions:true]
 	[MatchAnyCondition:true]
 	[CheckTrueBooleans:true]
-	[TrueBooleans:OffensiveTaskLeaderHasnoTarget]
+	[TrueBooleans:TaskForceLeaderHasnoTarget]
 
 
 
@@ -400,14 +400,14 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_OffensiveTaskLeader_Action_SwitchtoCargo</SubtypeId>
+          <SubtypeId>MSB_TaskForceLeader_Action_SwitchtoCargo</SubtypeId>
       </Id>
       <Description>
 
 	[RivalAI Action]
 
 	[DisableTriggers:true]
-	[DisableTriggerNames:MSB_OffensiveTaskLeader_Trigger_SwitchtoCargo]
+	[DisableTriggerNames:MSB_TaskForceLeader_Trigger_SwitchtoCargo]
 
 	[ChangeBehaviorSubclass:true]
 	[NewBehaviorSubclass:CargoShip]
@@ -416,10 +416,10 @@
 	[AutopilotProfile:Primary]
 
 	[UseChatBroadcast:true]
-	[ChatData:MSB_OffensiveTaskLeader_Chat_SwitchtoCargo]
+	[ChatData:MSB_TaskForceLeader_Chat_SwitchtoCargo]
 
 	[BroadcastCommandProfiles:true]
-    [CommandProfileIds:MSB-OffensiveTaskLeader-Command-SwitchtoCargo]
+    [CommandProfileIds:MSB_TaskForceLeader_Command_SwitchtoCargo]
 
       </Description>
 
@@ -428,7 +428,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_OffensiveTaskLeader_Command_SwitchtoCargo</SubtypeId>
+        <SubtypeId>MSB_TaskForceLeader_Command_SwitchtoCargo</SubtypeId>
       </Id>
       <Description>
 
@@ -448,7 +448,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_OffensiveTaskLeader_Chat_SwitchtoCargo</SubtypeId>
+          <SubtypeId>MSB_TaskForceLeader_Chat_SwitchtoCargo</SubtypeId>
       </Id>
 
       <Description>
@@ -473,182 +473,6 @@
 
     </EntityComponent>
 
-<!-- Hunter-->
-
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_OffensiveTaskLeader_Trigger_NoTarget_Hunter</SubtypeId>
-      </Id>
-      <Description>
-
-      [RivalAI Trigger]
-      [Type:NoTarget]
-	  [UseTrigger:false]
-	  [StartsReady:true]
-	  [MaxActions:-1]
-	  [Actions:MSB_OffensiveTaskLeader_Action_NoTarget_Hunter]
-
-      </Description>
-
-    </EntityComponent>
-
-
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_OffensiveTaskLeader_Action_NoTarget</SubtypeId>
-      </Id>
-      <Description>
-
-	[RivalAI Action]
-	[SetBooleansTrue:OffensiveTaskLeaderHasnoTarget]
-
-	[DisableTriggers:true]
-	[DisableTriggerNames:MSB_OffensiveTaskLeader_Trigger_NoTarget_Hunter]
-
-
-	[EnableTriggers:true]
-	[EnableTriggerNames:MSB_OffensiveTaskLeader_Trigger_SwitchtoCargo_Hunter]
-
-	[ResetCooldownTimeOfTriggers:true]
-	[ResetTriggerCooldownNames:MSB-OffensiveTaskLeader-Trigger-SwitchtoCargo-Hunter]
-
-
-	[EnableTriggers:true]
-	[EnableTriggerNames:MSB_OffensiveTaskLeader_Trigger_HasTarget_Hunter]
-	[DisableTriggers:true]
-	[DisableTriggerNames:MSB_OffensiveTaskLeader_Trigger_NoTarget_Hunter]
-
-      </Description>
-
-    </EntityComponent>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_OffensiveTaskLeader_Trigger_HasTarget_Hunter</SubtypeId>
-      </Id>
-      <Description>
-
-      [RivalAI Trigger]
-      [Type:HasTarget]
-	  [UseTrigger:true]
-	  [StartsReady:true]
-
-	  [MaxActions:-1]
-	  [Actions:MSB_OffensiveTaskLeader_Action_HasTarget_Hunter]
-
-      </Description>
-
-    </EntityComponent>
-
-
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_OffensiveTaskLeader_Action_HasTarget_Hunter</SubtypeId>
-      </Id>
-      <Description>
-
-	[RivalAI Action]
-	[ChangeBehaviorSubclass:true]
-	[NewBehaviorSubclass:Hunter]
-
-	[ChangeAutopilotProfile:true]
-	[AutopilotProfile:Secondary]
-
-
-	[UseChatBroadcast:true]
-	[ChatData:MSB_OffensiveTaskLeader_Chat_HasTarget]
-
-	[EnableTriggers:true]
-	[EnableTriggerNames:MSB_OffensiveTaskLeader_Trigger_NoTarget_Hunter]
-
-	[DisableTriggers:true]
-	[DisableTriggerNames:MSB_OffensiveTaskLeader_Trigger_HasTarget_Hunter]
-
-	[SwitchToReceivedTarget:true]
-
-
-	[SetBooleansFalse:OffensiveTaskLeaderHasnoTarget]
-
-	[BroadcastCommandProfiles:true]
-	[CommandProfileIds:MSB-OffensiveTaskLeader-Command-HasTarget]
-
-      </Description>
-
-    </EntityComponent>
-
-
-
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_OffensiveTaskLeader_Trigger_SwitchtoCargo_Hunter</SubtypeId>
-      </Id>
-      <Description>
-
-	[RivalAI Trigger]
-	[Type:Timer]
-	[UseTrigger:false]
-	[StartsReady:false]
-	[Conditions:MSB_OffensiveTaskLeader_Condition_NoTarget]
-
-	[MinCooldownMs:6000]
-	[MaxCooldownMs:9000]
-
-	[Actions:MSB_OffensiveTaskLeader_Action_SwitchtoCargo_Hunter]
-
-      </Description>
-
-    </EntityComponent>
-
-
-
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_OffensiveTaskLeader_Action_SwitchtoCargo_Hunter</SubtypeId>
-      </Id>
-      <Description>
-
-	[RivalAI Action]
-
-	[DisableTriggers:true]
-	[DisableTriggerNames:MSB_OffensiveTaskLeader_Trigger_SwitchtoCargo_Hunter]
-
-	[ChangeBehaviorSubclass:true]
-	[NewBehaviorSubclass:Hunter]
-
-	[ChangeAutopilotProfile:true]
-	[AutopilotProfile:Primary]
-
-	[UseChatBroadcast:true]
-	[ChatData:MSB_OffensiveTaskLeader_Chat_SwitchtoCargo]
-
-	[BroadcastCommandProfiles:true]
-    [CommandProfileIds:MSB-OffensiveTaskLeader-Command-SwitchtoCargo]
-
-      </Description>
-
-    </EntityComponent>
 
 
 

@@ -3,101 +3,15 @@
   <EntityComponents>
 
   <!-- RequestEscortSlot
-
-[Triggers:MSB_Leader_Trigger_AnnouncePresence]
-
+  
+  
+  
 [Triggers:MSB_Leader_Trigger_ProcessEscortRequest]
 
 
-  -->
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Leader_Trigger_AnnouncePresence</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Trigger]
-		[Tags:Leader]
-
-        [UseTrigger:false]
-        [Type:Timer]
-
-        [MinCooldownMs:6000]
-        [MaxCooldownMs:8001]
-        [StartsReady:false]
-
-        [MaxActions:-1]
-        [Actions:MSB_Leader_Action_AnnouncePresence]
-      </Description>
-    </EntityComponent>
-
-   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Leader_Action_AnnouncePresence</SubtypeId>
-      </Id>
-      <Description>
-      [RivalAI Action]
-
-	[UseChatBroadcast:true]
-	[ChatData:MSB_Leader_Chat_AnnouncePresence]
-
-	[DisableTriggers:true]
-	[DisableTriggerNames:MSB_Leader_Trigger_AnnouncePresence]
-
-	[BroadcastCommandProfiles:true]
-	[CommandProfileIds:MSB_Leader_Command_AnnouncePresence]
-      </Description>
-    </EntityComponent>
 
 
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Leader_Command_AnnouncePresence</SubtypeId>
-      </Id>
-      <Description>
-
-	[RivalAI Command]
-
-	[CommandCode:NewLeader]
-
-	[MatchSenderReceiverOwners:true]
-	[SingleRecipient:false]
-	[IgnoreAntennaRequirement:true]
-	[IgnoreReceiverAntennaRequirement:true]
-
-	[Radius:2500]
-
-	</Description>
-    </EntityComponent>
-
-
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Leader_Chat_AnnouncePresence</SubtypeId>
-      </Id>
-
-      <Description>
-
-      [RivalAI Chat]
-
-      [UseChat:true]
-      [StartsReady:true]
-      [Chance:100]
-      [MaxChats:1]
-      [BroadcastRandomly:true]
-
-      [Author:{AntennaName}]
-      [Color:Green]
-
-      [ChatMessages:I am the new leader]
-      [ChatAudio:ArcHudGPSNotification2]
-      [BroadcastChatType:Chat]
-
-      </Description>
-    </EntityComponent>
+ -->
 
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -106,11 +20,10 @@
         <SubtypeId>MSB_Leader_Trigger_ProcessEscortRequest</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI Trigger]
 		[Tags:Leader]
 
-        [UseTrigger:false]
+        [UseTrigger:true]
         [Type:CommandReceived]
         [CommandReceiveCode:SubordinateRequest]
 
@@ -167,6 +80,84 @@
       </Description>
 
     </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_Leader_Trigger_HasTarget</SubtypeId>
+      </Id>
+      <Description>
+
+      [RivalAI Trigger]
+      [Type:HasTarget]
+	  [UseTrigger:true]
+	  [StartsReady:true]
+
+	  [MaxActions:-1]
+	  [Actions:MSB_Leader_Action_HasTarget]
+
+      </Description>
+
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_Leader_Action_HasTarget</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Action]
+
+	[UseChatBroadcast:true]
+	[ChatData:MSB_Leader_Chat_HasTarget]
+
+	[EnableTriggers:true]
+	[EnableTriggerNames:MSB_Leader_Trigger_NoTarget]
+
+	[DisableTriggers:true]
+	[DisableTriggerNames:MSB_Leader_Trigger_HasTarget]
+
+	[SwitchToReceivedTarget:true]
+
+	[SetBooleansFalse:LeaderHasnoTarget]
+
+	[BroadcastCommandProfiles:true]
+	[CommandProfileIds:MSB_Leader_Command_HasTarget]
+
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Leader_Command_HasTarget</SubtypeId>
+      </Id>
+      <Description>
+
+	[RivalAI Command]
+
+	[CommandCode:TaskLeaderIsNotReady]
+	[MatchSenderReceiverOwners:true]
+	[IgnoreAntennaRequirement:true]
+	[IgnoreReceiverAntennaRequirement:true]
+	[Radius:5000]
+
+      </Description>
+    </EntityComponent>
+
+
+
+
+
+
+
+
+
+
+
 
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">

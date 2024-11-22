@@ -1,0 +1,250 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+ 
+ 
+ <!--
+MSB_DefensiveEscort_Trigger_RequestEscortSlot
+ 
+MSB_DefensiveEscort_Trigger_TargetfarSwitchEscort
+ 
+ 
+ MSB-DefensiveEscort-Trigger-TargetfarSwitchEscort
+ 
+ -->
+ 
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DefensiveEscort_Trigger_RequestEscortSlot</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:Timer]
+
+        [MinCooldownMs:1000]
+        [MaxCooldownMs:1001]
+        [StartsReady:false]
+
+        [MaxActions:-1]
+        [Actions:MSB_DefensiveEscort_Action_RequestEscortSlot]
+
+      </Description>
+
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DefensiveEscort_Action_RequestEscortSlot</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [BroadcastCommandProfiles:true]
+        [CommandProfileIds:MSB_DefensiveEscort_Command_RequestEscortSlot]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_DefensiveEscort_Trigger_RequestEscortSlot]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DefensiveEscort_Command_RequestEscortSlot</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Command]
+
+        [CommandCode:DefensiveEscortRequest]
+        [MatchSenderReceiverOwners:true]
+        [RequestEscortSlot:true]
+      </Description>
+    </EntityComponent>
+	
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DefensiveEscort_Trigger_AggressionSwitchEscort</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:TargetNear]
+
+        [TargetDistance:1500]
+
+        [StartsReady:true]
+        [MaxActions:-1]
+        [Actions:MSB_DefensiveEscort_Action_AggressionSwitchEscort]
+
+      </Description>
+
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DefensiveEscort_Action_AggressionSwitchEscort</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:DefensiveEscort - AggressionSwitchEscort]
+		
+		
+        [UseChatBroadcast:true]
+        [ChatData:MSB_DefensiveEscort_Chat_AggressionSwitchEscort]
+
+		[ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_CombatType_InitFight]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_DefensiveEscort_Trigger_AggressionSwitchEscort]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_DefensiveEscort_Trigger_TargetfarSwitchEscort]
+      </Description>
+    </EntityComponent>
+
+
+ 
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_DefensiveEscort_Chat_AggressionSwitchEscort</SubtypeId>
+      </Id>
+	  
+      <Description>
+
+      [RivalAI Chat]
+      
+      [UseChat:true]
+      [StartsReady:true]
+      [Chance:100]
+      [MaxChats:4]
+      [BroadcastRandomly:true]
+      
+      [Author:{AntennaName}]
+      [Color:Red]
+      
+      [ChatMessages:Deviating from escort]
+      [ChatAudio:ArcHudGPSNotification2]
+      [BroadcastChatType:Chat]
+      
+
+      </Description>
+      
+    </EntityComponent>	
+	
+	
+
+
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DefensiveEscort_Trigger_TargetfarSwitchEscort</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:false]
+        [Type:TargetFar]
+
+        [TargetDistance:2000]
+
+        [StartsReady:true]
+        [MaxActions:-1]
+        [Actions:MSB_DefensiveEscort_Action_PassiveSwitchPatrol]
+
+      </Description>
+
+    </EntityComponent>	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DefensiveEscort_Action_PassiveSwitchPatrol</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [UseChatBroadcast:true]
+        [ChatData:MSB_DefensiveEscort_Chat_PassiveSwitchPatrol]
+
+        [ChangeBehaviorSubclass:true]
+        [NewBehaviorSubclass:Escort]
+
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_DefensiveEscort_Trigger_TargetfarSwitchEscort]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_DefensiveEscort_Trigger_AggressionSwitchEscort]
+      </Description>
+    </EntityComponent>		
+	
+
+
+     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DefensiveEscort_Chat_PassiveSwitchPatrol</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Chat]
+
+        [UseChat:true]
+        [StartsReady:true]
+        [MaxChats:4]
+        [BroadcastRandomly:true]
+        [Author:{AntennaName}]
+        [Color:Red]
+
+        [ChatMessages:Disengaging from combat]
+        [ChatAudio:ArcHudGPSNotification1]
+        [BroadcastChatType:Chat]
+
+      </Description>
+    </EntityComponent>
+ 
+
+
+	
+	
+	
+	
+  </EntityComponents>
+</Definitions>

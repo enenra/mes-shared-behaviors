@@ -44,22 +44,7 @@
         [Triggers:MSB_Common_Triggers_MaxRange]
         [Triggers:MSB_Common_Trigger_MSBAliveCheck]
 
-        [Triggers:MSB_Common_Triggers_SendScore]
-        [Triggers:MSB_Common_Trigger_AddScoreToTotalScore]
-        [Triggers:MSB_Common_Trigger_LeaderDead]
-        [Triggers:MSB_Common_Trigger_IsNotStrongest]
-        [Triggers:MSB_Common_Trigger_OtherIsLeader]
-        [Triggers:MSB_Common_Trigger_MakeLeader]
-        [Triggers:MSB_Common_Trigger_MakeSubordinate]
 
-        [Triggers:MSB_Leader_Trigger_AnnouncePresence]
-        [Triggers:MSB_Leader_Trigger_ProcessEscortRequest]
-        [Triggers:MSB_Leader_Trigger_LeaderDead]
-
-        [Triggers:MSB_Subordinate_Trigger_RequestEscortSlot]
-        [Triggers:MSB_Subordinate_Trigger_SwitchToEscort]
-
-        [Triggers:MSB_Common_Trigger_DebugMentionRetreat]
 
         [Triggers:MSB_DefenseSystem_Trigger_Garrison]
         [Triggers:MSB_DefenseSystem_Trigger_Garrison_SpawnCustomVariablesName]
@@ -113,21 +98,6 @@
 
         [Triggers:MSB_Common_Triggers_MaxRange]
         [Triggers:MSB_Common_Trigger_MSBAliveCheck]
-
-        [Triggers:MSB_Common_Triggers_SendScore]
-        [Triggers:MSB_Common_Trigger_AddScoreToTotalScore]
-        [Triggers:MSB_Common_Trigger_LeaderDead]
-        [Triggers:MSB_Common_Trigger_IsNotStrongest]
-        [Triggers:MSB_Common_Trigger_OtherIsLeader]
-        [Triggers:MSB_Common_Trigger_MakeLeader]
-        [Triggers:MSB_Common_Trigger_MakeSubordinate]
-
-        [Triggers:MSB_Leader_Trigger_AnnouncePresence]
-        [Triggers:MSB_Leader_Trigger_ProcessEscortRequest]
-        [Triggers:MSB_Leader_Trigger_LeaderDead]
-
-        [Triggers:MSB_Subordinate_Trigger_RequestEscortSlot]
-        [Triggers:MSB_Subordinate_Trigger_SwitchToEscort]
 
         [Triggers:MSB_Common_Trigger_DebugMentionRetreat]
 

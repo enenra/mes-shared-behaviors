@@ -2,10 +2,13 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 
+
+
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_DefensiveEscortSystem_Drone_TriggerGroup</SubtypeId>
+          <SubtypeId>MSB_DefensiveEscortSystem_TriggerGroup</SubtypeId>
       </Id>
       <Description>
 
@@ -18,22 +21,6 @@
       </Description>
     </EntityComponent> 	
 	
-	
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_DefensiveEscortSystem_TaskLeader_TriggerGroup</SubtypeId>
-      </Id>
-      <Description>
-
-	[RivalAI TriggerGroup]
-
-	[Triggers:MSB_DefensiveTaskLeader_Trigger_ProcessEscortRequest]		
-
-	
-	
-      </Description>
-    </EntityComponent> 		
 	
 	
 	

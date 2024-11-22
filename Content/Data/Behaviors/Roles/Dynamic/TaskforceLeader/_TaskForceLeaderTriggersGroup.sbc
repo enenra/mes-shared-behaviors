@@ -5,17 +5,24 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Convoy_TriggerGroup</SubtypeId>
+          <SubtypeId>MSB_TaskForceLeader_TriggerGroup</SubtypeId>
       </Id>
       <Description>
 
 	[RivalAI TriggerGroup]
 
+	[Triggers:MSB_TaskForceLeader_Trigger_ProcessEscortRequest]
+	[Triggers:MSB_TaskForceLeader_Trigger_TargetNear1500]
 
+	[Triggers:MSB_TaskForceLeader_Trigger_HasTarget]
+	[Triggers:MSB_TaskForceLeader_Trigger_NoTarget]
+	[Triggers:MSB_TaskForceLeader_Trigger_SwitchtoCargo]
 
       </Description>
 
     </EntityComponent>
+
+
 
 
 
