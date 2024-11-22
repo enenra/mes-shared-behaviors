@@ -59,7 +59,7 @@
         [RivalAI Action]
 
         [BroadcastCommandProfiles:true]
-        [CommandProfileIds:MSB-OffensiveEscort-Command-RequestEscortSlot]
+        [CommandProfileIds:MSB_OffensiveEscort_Command_RequestEscortSlot]
 
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_OffensiveEscort_Trigger_RequestEscortSlot]
