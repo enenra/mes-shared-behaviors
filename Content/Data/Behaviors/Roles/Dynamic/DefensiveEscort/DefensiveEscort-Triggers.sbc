@@ -1,18 +1,18 @@
 <?xml version="1.0"?>
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
- 
- 
+
+
  <!--
 MSB_DefensiveEscort_Trigger_RequestEscortSlot
- 
+
 MSB_DefensiveEscort_Trigger_TargetfarSwitchEscort
- 
- 
+
+
  MSB-DefensiveEscort-Trigger-TargetfarSwitchEscort
- 
+
  -->
- 
+
    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -67,8 +67,8 @@ MSB_DefensiveEscort_Trigger_TargetfarSwitchEscort
         [RequestEscortSlot:true]
       </Description>
     </EntityComponent>
-	
-	
+
+
 
 
 
@@ -118,12 +118,12 @@ MSB_DefensiveEscort_Trigger_TargetfarSwitchEscort
         [RivalAI Action]
 
         [DebugMessage:DefensiveEscort - AggressionSwitchEscort]
-		
-		
+
+
         [UseChatBroadcast:true]
         [ChatData:MSB_DefensiveEscort_Chat_AggressionSwitchEscort]
 
-		[ManuallyActivateTrigger:true]
+        [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_CombatType_InitFight]
 
         [DisableTriggers:true]
@@ -135,36 +135,36 @@ MSB_DefensiveEscort_Trigger_TargetfarSwitchEscort
     </EntityComponent>
 
 
- 
+
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
           <SubtypeId>MSB_DefensiveEscort_Chat_AggressionSwitchEscort</SubtypeId>
       </Id>
-	  
+
       <Description>
 
-      [RivalAI Chat]
-      
-      [UseChat:true]
-      [StartsReady:true]
-      [Chance:100]
-      [MaxChats:4]
-      [BroadcastRandomly:true]
-      
-      [Author:{AntennaName}]
-      [Color:Red]
-      
-      [ChatMessages:Deviating from escort]
-      [ChatAudio:ArcHudGPSNotification2]
-      [BroadcastChatType:Chat]
-      
+        [RivalAI Chat]
+
+        [UseChat:true]
+        [StartsReady:true]
+        [Chance:100]
+        [MaxChats:4]
+        [BroadcastRandomly:true]
+
+        [Author:{AntennaName}]
+        [Color:Red]
+
+        [ChatMessages:Deviating from escort]
+        [ChatAudio:ArcHudGPSNotification2]
+        [BroadcastChatType:Chat]
+
 
       </Description>
-      
-    </EntityComponent>	
-	
-	
+
+    </EntityComponent>
+
+
 
 
 
@@ -190,8 +190,8 @@ MSB_DefensiveEscort_Trigger_TargetfarSwitchEscort
 
       </Description>
 
-    </EntityComponent>	
-	
+    </EntityComponent>
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -213,8 +213,8 @@ MSB_DefensiveEscort_Trigger_TargetfarSwitchEscort
         [EnableTriggers:true]
         [EnableTriggerNames:MSB_DefensiveEscort_Trigger_AggressionSwitchEscort]
       </Description>
-    </EntityComponent>		
-	
+    </EntityComponent>
+
 
 
      <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -239,12 +239,12 @@ MSB_DefensiveEscort_Trigger_TargetfarSwitchEscort
 
       </Description>
     </EntityComponent>
- 
 
 
-	
-	
-	
-	
+
+
+
+
+
   </EntityComponents>
 </Definitions>

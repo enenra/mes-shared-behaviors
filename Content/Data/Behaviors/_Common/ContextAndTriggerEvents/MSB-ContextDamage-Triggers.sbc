@@ -2,7 +2,7 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 
-<!--================= 
+<!--=================
 The Commands:
 {FactionTag}Destroyed
 EnemyDestroyed
@@ -20,29 +20,29 @@ _ MSB_TriggerEvent_UnderFireGoingDown (Done)
 
 
 
-[Triggers:MSB_ContextDamage_Trigger_Hostile_NPCDamage]
+        [Triggers:MSB_ContextDamage_Trigger_Hostile_NPCDamage]
 
-[Triggers:MSB_ContextDamage_Trigger_Hostile_PlayerDamage]
-[Triggers:MSB_ContextDamage_Trigger_Neutral_PlayerDamage]
-[Triggers:MSB_ContextDamage_Trigger_Friendly_PlayerDamage]
+        [Triggers:MSB_ContextDamage_Trigger_Hostile_PlayerDamage]
+        [Triggers:MSB_ContextDamage_Trigger_Neutral_PlayerDamage]
+        [Triggers:MSB_ContextDamage_Trigger_Friendly_PlayerDamage]
 
 
-[Triggers:MSB_ContextDamage_Trigger_NoLongerUnderFire]
+        [Triggers:MSB_ContextDamage_Trigger_NoLongerUnderFire]
 
-[Triggers:MSB_ContextDamage_TriggerEvent_UnderFire]
-[Triggers:MSB_ContextUnderFire_TriggerEvent_UnderFireHealthLow]
-[Triggers:MSB_ContextUnderFire_TriggerEvent_UnderFireLostWeapons]
-[Triggers:MSB_ContextUnderFire_TriggerEvent_UnderFireGoingDown]
+        [Triggers:MSB_ContextDamage_TriggerEvent_UnderFire]
+        [Triggers:MSB_ContextUnderFire_TriggerEvent_UnderFireHealthLow]
+        [Triggers:MSB_ContextUnderFire_TriggerEvent_UnderFireLostWeapons]
+        [Triggers:MSB_ContextUnderFire_TriggerEvent_UnderFireGoingDown]
 
-[Triggers:MSB_ContextDamage_Trigger_Compromised_PlayerNotHelped]
-[Triggers:MSB_ContextDamage_Trigger_Compromised_PlayerMadeFinalShot]
-[Triggers:MSB_ContextDamage_Trigger_Compromised_PlayerHelped]
+        [Triggers:MSB_ContextDamage_Trigger_Compromised_PlayerNotHelped]
+        [Triggers:MSB_ContextDamage_Trigger_Compromised_PlayerMadeFinalShot]
+        [Triggers:MSB_ContextDamage_Trigger_Compromised_PlayerHelped]
 
 
 ==================-->
 
 	<!-- ============== Start DAMAGE  Conditions ============= -->
-	
+
 <!--
 Okay this is some complicated mess.
 
@@ -52,7 +52,7 @@ The attacker is hostile, neutral, or Friendly
 
 
 Hostile:
-PlayerDamage -> increase CountPlayerDamage, DialogueCue  and Action_DamageUnderFire, 
+PlayerDamage -> increase CountPlayerDamage, DialogueCue  and Action_DamageUnderFire,
 NPCDamge -> Action_DamageUnderFire
 
 Neutral:
@@ -65,25 +65,25 @@ NPCDamge ->
 
 
 
--->	
+-->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
           <SubtypeId>MSB_ContextDamage_Condition_Hostile_PlayerDamage</SubtypeId>
       </Id>
       <Description>
-	[RivalAI Condition]
-	[UseConditions:true]
-	[MatchAnyCondition:false]
-	[CheckTrueBooleans:true]
-	
+        [RivalAI Condition]
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+        [CheckTrueBooleans:true]
 
-	[IsAttackerHostile:true]
-	[CheckIfDamagerIsPlayer:true]
+
+        [IsAttackerHostile:true]
+        [CheckIfDamagerIsPlayer:true]
 
       </Description>
     </EntityComponent>
-	
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -91,16 +91,16 @@ NPCDamge ->
       </Id>
       <Description>
 
-	[RivalAI Condition]
-	[UseConditions:true]
-	[MatchAnyCondition:false]
-	[CheckTrueBooleans:true]
-	
+        [RivalAI Condition]
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+        [CheckTrueBooleans:true]
 
-	[IsAttackerNeutral:true]
-	[CheckIfDamagerIsPlayer:true]
+
+        [IsAttackerNeutral:true]
+        [CheckIfDamagerIsPlayer:true]
       </Description>
-      
+
     </EntityComponent>
 
 
@@ -111,15 +111,15 @@ NPCDamge ->
       </Id>
       <Description>
 
-	[RivalAI Condition]
-	[UseConditions:true]
-	[MatchAnyCondition:false]
-	[CheckTrueBooleans:true]
+        [RivalAI Condition]
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+        [CheckTrueBooleans:true]
 
-	[IsAttackerFriendly:true] 
-	[CheckIfDamagerIsPlayer:true]
+        [IsAttackerFriendly:true]
+        [CheckIfDamagerIsPlayer:true]
       </Description>
-      
+
     </EntityComponent>
 
 
@@ -130,42 +130,42 @@ NPCDamge ->
       </Id>
       <Description>
 
-	[RivalAI Condition]
-	[UseConditions:true]
-	[MatchAnyCondition:false]
-	[CheckTrueBooleans:true]
-	
+        [RivalAI Condition]
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+        [CheckTrueBooleans:true]
 
-	[IsAttackerHostile:true]
-	[CheckIfDamagerIsNpc:true]
+
+        [IsAttackerHostile:true]
+        [CheckIfDamagerIsNpc:true]
 
       </Description>
-      
-    </EntityComponent>
-	
 
-	<!-- ============== End DAMAGE Conditions ============= -->	
-	
+    </EntityComponent>
+
+
+	<!-- ============== End DAMAGE Conditions ============= -->
+
 		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
           <SubtypeId>MSB_ContextDamage_Trigger_Hostile_NPCDamage</SubtypeId>
       </Id>
       <Description>
-	[RivalAI Trigger]
-	[Type:Damage]
-	[DamageTypes:Any]
+        [RivalAI Trigger]
+        [Type:Damage]
+        [DamageTypes:Any]
 
-	[UseTrigger:true]
-	[StartsReady:true]
-	[Conditions:MSB_ContextDamage_Condition_Hostile_NPCDamage]
+        [UseTrigger:true]
+        [StartsReady:true]
+        [Conditions:MSB_ContextDamage_Condition_Hostile_NPCDamage]
 
-	[MaxActions:-1]
+        [MaxActions:-1]
 
-	[Actions:MSB_ContextDamage_Action_IncreaseCountPlayerDamage]	
-	[Actions:MSB_ContextDamage_Action_IncreaseUnderFireCount]	
+        [Actions:MSB_ContextDamage_Action_IncreaseCountPlayerDamage]
+        [Actions:MSB_ContextDamage_Action_IncreaseUnderFireCount]
       </Description>
-    </EntityComponent>	
+    </EntityComponent>
 
 
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -174,20 +174,20 @@ NPCDamge ->
           <SubtypeId>MSB_ContextDamage_Trigger_Hostile_PlayerDamage</SubtypeId>
       </Id>
       <Description>
-	[RivalAI Trigger]
-	[Type:Damage]
-	[DamageTypes:Any]
+        [RivalAI Trigger]
+        [Type:Damage]
+        [DamageTypes:Any]
 
-	[UseTrigger:true]
-	[StartsReady:true]
-	[Conditions:MSB_ContextDamage_Condition_Hostile_PlayerDamage]
+        [UseTrigger:true]
+        [StartsReady:true]
+        [Conditions:MSB_ContextDamage_Condition_Hostile_PlayerDamage]
 
-	[MaxActions:-1]
+        [MaxActions:-1]
 
-	[Actions:MSB_ContextDamage_Action_IncreaseCountPlayerDamage]	
-	[Actions:MSB_ContextDamage_Action_IncreaseUnderFireCount]	
+        [Actions:MSB_ContextDamage_Action_IncreaseCountPlayerDamage]
+        [Actions:MSB_ContextDamage_Action_IncreaseUnderFireCount]
       </Description>
-    </EntityComponent>	
+    </EntityComponent>
 
 
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -196,23 +196,23 @@ NPCDamge ->
           <SubtypeId>MSB_ContextDamage_Trigger_Neutral_PlayerDamage</SubtypeId>
       </Id>
       <Description>
-	[RivalAI Trigger]
-	[Type:Damage]
-	[DamageTypes:Any]
+        [RivalAI Trigger]
+        [Type:Damage]
+        [DamageTypes:Any]
 
-	[UseTrigger:true]
-	[StartsReady:true]
-	[Conditions:MSB_ContextDamage_Condition_Neutral_PlayerDamage]
+        [UseTrigger:true]
+        [StartsReady:true]
+        [Conditions:MSB_ContextDamage_Condition_Neutral_PlayerDamage]
 
 
-	[MaxActions:-1]
+        [MaxActions:-1]
 
-	[Actions:MSB_ContextDamage_Action_IncreaseCountPlayerDamage]	
-	[Actions:MSB_ContextDamage_Action_IncreaseUnderFireCount]	
-	[Actions:MSB_ContextDamage_Action_DamageByNeutral]	
+        [Actions:MSB_ContextDamage_Action_IncreaseCountPlayerDamage]
+        [Actions:MSB_ContextDamage_Action_IncreaseUnderFireCount]
+        [Actions:MSB_ContextDamage_Action_DamageByNeutral]
 
       </Description>
-    </EntityComponent>	
+    </EntityComponent>
 
 
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -221,22 +221,22 @@ NPCDamge ->
           <SubtypeId>MSB_ContextDamage_Trigger_Friendly_PlayerDamage</SubtypeId>
       </Id>
       <Description>
-	[RivalAI Trigger]
-	[Type:Damage]
-	[DamageTypes:Any]
+        [RivalAI Trigger]
+        [Type:Damage]
+        [DamageTypes:Any]
 
-	[UseTrigger:true]
-	[StartsReady:true]
-	[Conditions:MSB_ContextDamage_Condition_Friendly_PlayerDamage]
+        [UseTrigger:true]
+        [StartsReady:true]
+        [Conditions:MSB_ContextDamage_Condition_Friendly_PlayerDamage]
 
-	[MinCooldownMs:1000]
-	[MaxCooldownMs:1001]
-	[MaxActions:-1]
+        [MinCooldownMs:1000]
+        [MaxCooldownMs:1001]
+        [MaxActions:-1]
 
-	[Actions:MSB_ContextDamage_Action_DamageByFriendly]	
-	
+        [Actions:MSB_ContextDamage_Action_DamageByFriendly]
+
       </Description>
-    </EntityComponent>	
+    </EntityComponent>
 
 
 
@@ -248,48 +248,48 @@ NPCDamge ->
           <SubtypeId>MSB_ContextDamage_Action_DamageByFriendly</SubtypeId>
       </Id>
       <Description>
-	[RivalAI Action]
-	
-	[ManuallyActivateTrigger:true]
-	[ManuallyActivatedTriggerTags:MSB_TriggerEvent_DamageByFriendly]
-	[ForceManualTriggerActivation:false]
+        [RivalAI Action]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_DamageByFriendly]
+        [ForceManualTriggerActivation:false]
       </Description>
     </EntityComponent>
-	
+
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
           <SubtypeId>MSB_ContextDamage_Action_DamageByNeutral</SubtypeId>
       </Id>
       <Description>
-	[RivalAI Action]
-	
-	[ManuallyActivateTrigger:true]
-	[ManuallyActivatedTriggerTags:MSB_TriggerEvent_DamageByNeutral]
-	[ForceManualTriggerActivation:false]
+        [RivalAI Action]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_DamageByNeutral]
+        [ForceManualTriggerActivation:false]
       </Description>
-    </EntityComponent>	
-	
-	
-	
+    </EntityComponent>
+
+
+
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
           <SubtypeId>MSB_ContextDamage_Action_IncreaseCountPlayerDamage</SubtypeId>
       </Id>
       <Description>
-	[RivalAI Action]
-	
-	[IncreaseCounters:CountPlayerDamage]
+        [RivalAI Action]
+
+        [IncreaseCounters:CountPlayerDamage]
       </Description>
-    </EntityComponent>	
-	
-	
+    </EntityComponent>
+
+
 
 <!-- UnderFire -->
 
 <!--
-I disabled this because: MSB_ContextDamage_Trigger_Hostile_PlayerDamage 
+I disabled this because: MSB_ContextDamage_Trigger_Hostile_PlayerDamage
 and MSB_ContextDamage_Trigger_Hostile_PlayerDamage
 
 does this action.
@@ -307,24 +307,24 @@ Mmh we will need to evaluate if the cooldown makes sense.
       </Id>
       <Description>
 
-	[RivalAI Trigger]
-	[Type:Damage]
-	[DamageTypes:Any]
+        [RivalAI Trigger]
+        [Type:Damage]
+        [DamageTypes:Any]
 
-	[UseTrigger:true]
-	[StartsReady:true]
-	[Conditions:MSB_ContextDamage_Condition_Hostile_Damage]
+        [UseTrigger:true]
+        [StartsReady:true]
+        [Conditions:MSB_ContextDamage_Condition_Hostile_Damage]
 
-	[MinCooldownMs:100]
-	[MaxCooldownMs:101]
-	[MaxActions:-1]
+        [MinCooldownMs:100]
+        [MaxCooldownMs:101]
+        [MaxActions:-1]
 
 
-	[Actions:MSB_ContextDamage_Action_IncreaseUnderFireCount]	
-	  
+        [Actions:MSB_ContextDamage_Action_IncreaseUnderFireCount]
+
       </Description>
-      
-    </EntityComponent>	
+
+    </EntityComponent>
 -->
 
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -334,15 +334,15 @@ Mmh we will need to evaluate if the cooldown makes sense.
       </Id>
       <Description>
 
-	[RivalAI Action]
+        [RivalAI Action]
 
-	[IncreaseCounters:UnderFireCount]
-	
-	[ResetCooldownTimeOfTriggers:true]
-	
-	[ResetTriggerCooldownNames:MSB_ContextDamage_Trigger_NoLongerUnderFire]
+        [IncreaseCounters:UnderFireCount]
+
+        [ResetCooldownTimeOfTriggers:true]
+
+        [ResetTriggerCooldownNames:MSB_ContextDamage_Trigger_NoLongerUnderFire]
       </Description>
-      
+
     </EntityComponent>
 
 
@@ -355,15 +355,15 @@ Mmh we will need to evaluate if the cooldown makes sense.
       </Id>
       <Description>
 
-	[RivalAI Trigger]
-	[Type:Timer]
-	[UseTrigger:true]
+        [RivalAI Trigger]
+        [Type:Timer]
+        [UseTrigger:true]
 
-	[MinCooldownMs:4000]
-	[MaxCooldownMs:4001]	
-	[MaxActions:-1]
+        [MinCooldownMs:4000]
+        [MaxCooldownMs:4001]
+        [MaxActions:-1]
 
-	[Actions:MSB_ContextDamage_Action_NoLongerUnderFire]
+        [Actions:MSB_ContextDamage_Action_NoLongerUnderFire]
 
       </Description>
     </EntityComponent>
@@ -375,17 +375,17 @@ Mmh we will need to evaluate if the cooldown makes sense.
       </Id>
       <Description>
 
-	[RivalAI Action]
+        [RivalAI Action]
 
-	[ResetCounters:UnderFireCount]
-	
-	[SetBooleansFalse:UnderFire]
-	
-	[DisableTriggers:true]
-	[DisableTriggerTags:ContextUnderFire]	
-	
+        [ResetCounters:UnderFireCount]
+
+        [SetBooleansFalse:UnderFire]
+
+        [DisableTriggers:true]
+        [DisableTriggerTags:ContextUnderFire]
+
       </Description>
-      
+
     </EntityComponent>
 
 
@@ -396,23 +396,23 @@ Mmh we will need to evaluate if the cooldown makes sense.
       </Id>
       <Description>
 
-	[RivalAI Condition]
-	[UseConditions:true]
-	[MatchAnyCondition:false]
+        [RivalAI Condition]
+        [UseConditions:true]
+        [MatchAnyCondition:false]
 
-	[CheckCustomCounters:true]
-	[CustomCounters:UnderFireCount]
-	[CustomCountersTargets:11]
-	[CounterCompareTypes:GreaterOrEqual]
+        [CheckCustomCounters:true]
+        [CustomCounters:UnderFireCount]
+        [CustomCountersTargets:11]
+        [CounterCompareTypes:GreaterOrEqual]
 
 
-	[CheckFalseBooleans:true]
-	[FalseBooleans:UnderFire]
-	
+        [CheckFalseBooleans:true]
+        [FalseBooleans:UnderFire]
+
       </Description>
-      
+
     </EntityComponent>
-	
+
 
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -421,16 +421,16 @@ Mmh we will need to evaluate if the cooldown makes sense.
       </Id>
       <Description>
 
-	[RivalAI Trigger]
-	[Type:Timer]
-	[UseTrigger:true]
-	[Conditions:MSB_ContextDamage_Condition_UnderFireReady]
-	[MinCooldownMs:100]
-	[MaxCooldownMs:101]	
-	[MaxActions:-1]
+        [RivalAI Trigger]
+        [Type:Timer]
+        [UseTrigger:true]
+        [Conditions:MSB_ContextDamage_Condition_UnderFireReady]
+        [MinCooldownMs:100]
+        [MaxCooldownMs:101]
+        [MaxActions:-1]
 
 
-	[Actions:MSB_ContextDamage_Action_UnderFire]
+        [Actions:MSB_ContextDamage_Action_UnderFire]
 
       </Description>
     </EntityComponent>
@@ -443,24 +443,24 @@ Mmh we will need to evaluate if the cooldown makes sense.
           <SubtypeId>MSB_ContextDamage_Action_UnderFire</SubtypeId>
       </Id>
       <Description>
-	[RivalAI Action]
-	[DebugMessage:TriggerEvent UnderFire] 
+        [RivalAI Action]
+        [DebugMessage:TriggerEvent UnderFire]
 
-	[SetBooleansTrue:UnderFire]
-	
-	[ResetCooldownTimeOfTriggers:true]
-	[ResetTriggerCooldownTags:ContextUnderFire]	
-	[ResetTriggerCooldownNames:MSB_ContextDamage_Trigger_NoLongerUnderFire]
-	
+        [SetBooleansTrue:UnderFire]
 
-	[EnableTriggers:true]
-	[EnableTriggerTags:ContextUnderFire]
-	
-	
-	[ManuallyActivateTrigger:true]
-	[ManuallyActivatedTriggerTags:MSB_TriggerEvent_UnderFire]
-	[ForceManualTriggerActivation:false]
-	
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownTags:ContextUnderFire]
+        [ResetTriggerCooldownNames:MSB_ContextDamage_Trigger_NoLongerUnderFire]
+
+
+        [EnableTriggers:true]
+        [EnableTriggerTags:ContextUnderFire]
+
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_UnderFire]
+        [ForceManualTriggerActivation:false]
+
       </Description>
     </EntityComponent>
 
@@ -482,19 +482,19 @@ Mmh we will need to evaluate if the cooldown makes sense.
       </Id>
       <Description>
 
-	[RivalAI Trigger]
-	[Tags:ContextUnderFire]
-	[UseTrigger:false]
-	
-	[Type:HealthPercentage]
-	[PercentageOfHealthRemaining:80]
-	[UseFailCondition:true]	
-	
-	[MinCooldownMs:4800]
-	[MaxCooldownMs:4801]	
-	[MaxActions:1]
+        [RivalAI Trigger]
+        [Tags:ContextUnderFire]
+        [UseTrigger:false]
 
-	[Actions:MSB_ContextUnderFire_Action_UnderFireHealthLow]
+        [Type:HealthPercentage]
+        [PercentageOfHealthRemaining:80]
+        [UseFailCondition:true]
+
+        [MinCooldownMs:4800]
+        [MaxCooldownMs:4801]
+        [MaxActions:1]
+
+        [Actions:MSB_ContextUnderFire_Action_UnderFireHealthLow]
       </Description>
     </EntityComponent>
 
@@ -505,20 +505,20 @@ Mmh we will need to evaluate if the cooldown makes sense.
       </Id>
       <Description>
 
-	[RivalAI Action]
+        [RivalAI Action]
 
-	[DebugMessage:TriggerEvent UnderFireHealthLow] 
-	
-	[ManuallyActivateTrigger:true]
-	[ManuallyActivatedTriggerTags:MSB_TriggerEvent_UnderFireHealthLow]
-	[ForceManualTriggerActivation:false]
+        [DebugMessage:TriggerEvent UnderFireHealthLow]
 
-	[ResetCooldownTimeOfTriggers:true]
-	[ResetTriggerCooldownTags:ContextUnderFire]	
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_UnderFireHealthLow]
+        [ForceManualTriggerActivation:false]
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownTags:ContextUnderFire]
       </Description>
     </EntityComponent>
-	
-	
+
+
 
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -527,17 +527,17 @@ Mmh we will need to evaluate if the cooldown makes sense.
       </Id>
       <Description>
 
-	[RivalAI Trigger]
-	[Tags:ContextUnderFire]
-	[UseTrigger:false]
-	
-	[Type:NoWeapon]
+        [RivalAI Trigger]
+        [Tags:ContextUnderFire]
+        [UseTrigger:false]
 
-	[MinCooldownMs:1000]
-	[MaxCooldownMs:1001]
-	[MaxActions:1]
+        [Type:NoWeapon]
 
-	[Actions:MSB_ContextUnderFire_Action_UnderFireLostWeapons]
+        [MinCooldownMs:1000]
+        [MaxCooldownMs:1001]
+        [MaxActions:1]
+
+        [Actions:MSB_ContextUnderFire_Action_UnderFireLostWeapons]
       </Description>
     </EntityComponent>
 
@@ -549,20 +549,20 @@ Mmh we will need to evaluate if the cooldown makes sense.
       </Id>
       <Description>
 
-	[RivalAI Action]
+        [RivalAI Action]
 
-	[DebugMessage:TriggerEvent UnderFireLostWeapons] 
-	
-	[ManuallyActivateTrigger:true]
-	[ManuallyActivatedTriggerTags:MSB_TriggerEvent_UnderFireLostWeapons]
-	[ForceManualTriggerActivation:false]
+        [DebugMessage:TriggerEvent UnderFireLostWeapons]
 
-	[ResetCooldownTimeOfTriggers:true]
-	[ResetTriggerCooldownTags:ContextUnderFire]	
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_UnderFireLostWeapons]
+        [ForceManualTriggerActivation:false]
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownTags:ContextUnderFire]
       </Description>
-    </EntityComponent>	
-	
-	
+    </EntityComponent>
+
+
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -570,19 +570,19 @@ Mmh we will need to evaluate if the cooldown makes sense.
       </Id>
       <Description>
 
-	[RivalAI Trigger]
-	[Tags:ContextUnderFire]
-	[UseTrigger:false]
-	
-	[Type:Timer]
-	
-	[Conditions:MSB_ContextUnderFire_Condition_CheckSufficientUpwardThrust]
+        [RivalAI Trigger]
+        [Tags:ContextUnderFire]
+        [UseTrigger:false]
 
-	[MinCooldownMs:1000]
-	[MaxCooldownMs:1001]	
-	[MaxActions:1]
+        [Type:Timer]
 
-	[Actions:MSB_ContextUnderFire_Action_UnderFireGoingDown]
+        [Conditions:MSB_ContextUnderFire_Condition_CheckSufficientUpwardThrust]
+
+        [MinCooldownMs:1000]
+        [MaxCooldownMs:1001]
+        [MaxActions:1]
+
+        [Actions:MSB_ContextUnderFire_Action_UnderFireGoingDown]
       </Description>
     </EntityComponent>
 
@@ -594,17 +594,17 @@ Mmh we will need to evaluate if the cooldown makes sense.
       </Id>
       <Description>
 
-	[RivalAI Condition]
-	[UseConditions:true]
-	[MatchAnyCondition:false]
+        [RivalAI Condition]
+        [UseConditions:true]
+        [MatchAnyCondition:false]
 
-	[UseFailCondition:true]
+        [UseFailCondition:true]
 
-	[CheckSufficientUpwardThrust:true]
+        [CheckSufficientUpwardThrust:true]
 
       </Description>
-      
-    </EntityComponent>	
+
+    </EntityComponent>
 
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -613,24 +613,24 @@ Mmh we will need to evaluate if the cooldown makes sense.
       </Id>
       <Description>
 
-	[RivalAI Action]
+        [RivalAI Action]
 
-	[DebugMessage:TriggerEvent UnderFireGoingDown] 
-	
-	[ManuallyActivateTrigger:true]
-	[ManuallyActivatedTriggerTags:MSB_TriggerEvent_UnderFireGoingDown]
-	[ForceManualTriggerActivation:false]
+        [DebugMessage:TriggerEvent UnderFireGoingDown]
 
-	[ResetCooldownTimeOfTriggers:true]
-	[ResetTriggerCooldownTags:ContextUnderFire]	
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_UnderFireGoingDown]
+        [ForceManualTriggerActivation:false]
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownTags:ContextUnderFire]
       </Description>
-    </EntityComponent>		
-	
+    </EntityComponent>
+
 
 
 <!-- Compromised -->
 
-	
+
 
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -639,20 +639,20 @@ Mmh we will need to evaluate if the cooldown makes sense.
       </Id>
       <Description>
 
-	[RivalAI Trigger]
-	[Type:Damage]
-	[DamageTypes:Any]
+        [RivalAI Trigger]
+        [Type:Damage]
+        [DamageTypes:Any]
 
 
-	[UseTrigger:true]
-	[StartsReady:true]
-	[Conditions:MSB_ContextDamage_Condition_PlayerHelpedNPC]
-	[MaxActions:1]	
-	
-	
-	[Actions:MSB_ContextDamage_Action_PlayerHelpedNPC]	
+        [UseTrigger:true]
+        [StartsReady:true]
+        [Conditions:MSB_ContextDamage_Condition_PlayerHelpedNPC]
+        [MaxActions:1]
+
+
+        [Actions:MSB_ContextDamage_Action_PlayerHelpedNPC]
       </Description>
-      
+
     </EntityComponent>
 
 
@@ -663,30 +663,30 @@ Mmh we will need to evaluate if the cooldown makes sense.
       </Id>
       <Description>
 
-	[RivalAI Action]
-	[EnableTriggers:true]
-	[EnableTriggerNames:MSB_ContextDamage_Trigger_Compromised_PlayerHelped]
-	[EnableTriggerNames:MSB_ContextDamage_Trigger_Compromised_PlayerMadeFinalShot]
-	
-	
-	[DisableTriggers:true]
-	[DisableTriggerNames:MSB_ContextDamage_Trigger_Compromised_PlayerNotHelped]
+        [RivalAI Action]
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_ContextDamage_Trigger_Compromised_PlayerHelped]
+        [EnableTriggerNames:MSB_ContextDamage_Trigger_Compromised_PlayerMadeFinalShot]
+
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_ContextDamage_Trigger_Compromised_PlayerNotHelped]
 
 
 
 
       </Description>
-      
+
     </EntityComponent>
-	
-	
+
+
 	<!--
 
 	PlayerHelped
-	PlayerMadeFinalShot 
-	
+	PlayerMadeFinalShot
+
 	-->
-	
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -694,18 +694,18 @@ Mmh we will need to evaluate if the cooldown makes sense.
       </Id>
       <Description>
 
-	[RivalAI Condition]
-	[UseConditions:true]
-	[MatchAnyCondition:false]
+        [RivalAI Condition]
+        [UseConditions:true]
+        [MatchAnyCondition:false]
 
-	[CheckTrueBooleans:true]
-	[TrueBooleans:UnderFire]
-	
-	[CheckIfDamagerIsPlayer:true]
+        [CheckTrueBooleans:true]
+        [TrueBooleans:UnderFire]
+
+        [CheckIfDamagerIsPlayer:true]
       </Description>
-    </EntityComponent>		
-	
-	
+    </EntityComponent>
+
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -713,36 +713,36 @@ Mmh we will need to evaluate if the cooldown makes sense.
       </Id>
       <Description>
 
-	[RivalAI Condition]
-	[UseConditions:true]
-	[UseFailCondition:true]
-	[MatchAnyCondition:false]
+        [RivalAI Condition]
+        [UseConditions:true]
+        [UseFailCondition:true]
+        [MatchAnyCondition:false]
 
-	[CheckTrueBooleans:true]
-	[TrueBooleans:UnderFire]
-	
-	[CheckIfDamagerIsPlayer:true]
+        [CheckTrueBooleans:true]
+        [TrueBooleans:UnderFire]
+
+        [CheckIfDamagerIsPlayer:true]
       </Description>
-    </EntityComponent>			
-	
-	
+    </EntityComponent>
+
+
 	<!-- PlayerHelped -->
-	
+
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
           <SubtypeId>MSB_ContextDamage_Trigger_Compromised_PlayerHelped</SubtypeId>
       </Id>
       <Description>
-	[RivalAI Trigger]
-	[Type:Compromised]
-	[Conditions:MSB_ContextDamage_Condition_PlayerMadeFinalShot_Fail]
-	[UseTrigger:false]
-	[StartsReady:true]
-	[MaxActions:1]	
-	
-	
-	[Actions:MSB_ContextDamage_Action_Compromised_PlayerHelped]	
+        [RivalAI Trigger]
+        [Type:Compromised]
+        [Conditions:MSB_ContextDamage_Condition_PlayerMadeFinalShot_Fail]
+        [UseTrigger:false]
+        [StartsReady:true]
+        [MaxActions:1]
+
+
+        [Actions:MSB_ContextDamage_Action_Compromised_PlayerHelped]
       </Description>
     </EntityComponent>
 
@@ -753,15 +753,15 @@ Mmh we will need to evaluate if the cooldown makes sense.
           <SubtypeId>MSB_ContextDamage_Action_Compromised_PlayerHelped</SubtypeId>
       </Id>
       <Description>
-	[RivalAI Action]
+        [RivalAI Action]
 
-	[UseChatBroadcast:true]
-	[ChatData:MSB_Common_Chat_PlayerHelpedNPC]
-	
-	
-	[BroadcastCommandProfiles:true]
-	[CommandProfileIds:MSB_ContextDamage_Command_PlayerHelped_Faction]
-	[CommandProfileIds:MSB_ContextDamage_Command_PlayerHelped_Enemy]	
+        [UseChatBroadcast:true]
+        [ChatData:MSB_Common_Chat_PlayerHelpedNPC]
+
+
+        [BroadcastCommandProfiles:true]
+        [CommandProfileIds:MSB_ContextDamage_Command_PlayerHelped_Faction]
+        [CommandProfileIds:MSB_ContextDamage_Command_PlayerHelped_Enemy]
       </Description>
     </EntityComponent>
 
@@ -773,20 +773,20 @@ Mmh we will need to evaluate if the cooldown makes sense.
       </Id>
       <Description>
 
-	[RivalAI Command]
+        [RivalAI Command]
 
-	[CommandDelayTicks:50]
-	[CommandCode:MSB_{FactionTag}DestroyedwithPlayerHelp]
-	[MatchSenderReceiverOwners:false]
-	[SingleRecipient:true]
-	[IgnoreAntennaRequirement:true]
-	[IgnoreReceiverAntennaRequirement:true]
-	[Radius:2000]
-	
+        [CommandDelayTicks:50]
+        [CommandCode:MSB_{FactionTag}DestroyedwithPlayerHelp]
+        [MatchSenderReceiverOwners:false]
+        [SingleRecipient:true]
+        [IgnoreAntennaRequirement:true]
+        [IgnoreReceiverAntennaRequirement:true]
+        [Radius:2000]
+
 	</Description>
     </EntityComponent>
-	
-	
+
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -794,24 +794,24 @@ Mmh we will need to evaluate if the cooldown makes sense.
       </Id>
       <Description>
 
-	[RivalAI Command]
+        [RivalAI Command]
 
-	[CommandDelayTicks:120]
-	[CommandCode:MSB_EnemyDestroyedwithPlayerHelp]
-	[MatchSenderReceiverOwners:false]
-	
-	[CheckRelationSenderReceiver:true]
-	[Relation:Enemy]
-	
-	
-	[SingleRecipient:true]
-	[IgnoreAntennaRequirement:true]
-	[IgnoreReceiverAntennaRequirement:true]
-	[Radius:2000]
+        [CommandDelayTicks:120]
+        [CommandCode:MSB_EnemyDestroyedwithPlayerHelp]
+        [MatchSenderReceiverOwners:false]
+
+        [CheckRelationSenderReceiver:true]
+        [Relation:Enemy]
+
+
+        [SingleRecipient:true]
+        [IgnoreAntennaRequirement:true]
+        [IgnoreReceiverAntennaRequirement:true]
+        [Radius:2000]
 		</Description>
     </EntityComponent>
-		
-	
+
+
 <!-- PlayerMadeFinalShot -->
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -819,15 +819,15 @@ Mmh we will need to evaluate if the cooldown makes sense.
           <SubtypeId>MSB_ContextDamage_Trigger_Compromised_PlayerMadeFinalShot</SubtypeId>
       </Id>
       <Description>
-	[RivalAI Trigger]
-	[Type:Compromised]
-	[Conditions:MSB_ContextDamage_Condition_PlayerMadeFinalShot]
-	[UseTrigger:false]
-	[StartsReady:true]
-	[MaxActions:1]	
-	
-	
-	[Actions:MSB_ContextDamage_Action_Compromised_PlayerMadeFinalShot]	
+        [RivalAI Trigger]
+        [Type:Compromised]
+        [Conditions:MSB_ContextDamage_Condition_PlayerMadeFinalShot]
+        [UseTrigger:false]
+        [StartsReady:true]
+        [MaxActions:1]
+
+
+        [Actions:MSB_ContextDamage_Action_Compromised_PlayerMadeFinalShot]
       </Description>
     </EntityComponent>
 
@@ -838,15 +838,15 @@ Mmh we will need to evaluate if the cooldown makes sense.
           <SubtypeId>MSB_ContextDamage_Action_Compromised_PlayerMadeFinalShot</SubtypeId>
       </Id>
       <Description>
-	[RivalAI Action]
+        [RivalAI Action]
 
-	[UseChatBroadcast:true]
-	[ChatData:MSB_Common_Chat_PlayerHelpedNPC]
-	
-	
-	[BroadcastCommandProfiles:true]
-	[CommandProfileIds:MSB_ContextDamage_Command_PlayerMadeFinalShot_Faction]
-	[CommandProfileIds:MSB_ContextDamage_Command_PlayerMadeFinalShot_Enemy]	
+        [UseChatBroadcast:true]
+        [ChatData:MSB_Common_Chat_PlayerHelpedNPC]
+
+
+        [BroadcastCommandProfiles:true]
+        [CommandProfileIds:MSB_ContextDamage_Command_PlayerMadeFinalShot_Faction]
+        [CommandProfileIds:MSB_ContextDamage_Command_PlayerMadeFinalShot_Enemy]
       </Description>
     </EntityComponent>
 
@@ -858,21 +858,21 @@ Mmh we will need to evaluate if the cooldown makes sense.
       </Id>
       <Description>
 
-	[RivalAI Command]
+        [RivalAI Command]
 
-	[CommandDelayTicks:50]
-	
-	[CommandCode:MSB_{FactionTag}DestroyedwithPlayerMadeFinalShot]
-	[MatchSenderReceiverOwners:false]
-	[SingleRecipient:true]
-	[IgnoreAntennaRequirement:true]
-	[IgnoreReceiverAntennaRequirement:true]
-	[Radius:2000]
-	
+        [CommandDelayTicks:50]
+
+        [CommandCode:MSB_{FactionTag}DestroyedwithPlayerMadeFinalShot]
+        [MatchSenderReceiverOwners:false]
+        [SingleRecipient:true]
+        [IgnoreAntennaRequirement:true]
+        [IgnoreReceiverAntennaRequirement:true]
+        [Radius:2000]
+
 	</Description>
     </EntityComponent>
-	
-	
+
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -880,21 +880,21 @@ Mmh we will need to evaluate if the cooldown makes sense.
       </Id>
       <Description>
 
-	[RivalAI Command]
+        [RivalAI Command]
 
 
-	[CommandDelayTicks:120]
-	[CommandCode:MSB_EnemyDestroyedwithPlayerMadeFinalShot]
-	[MatchSenderReceiverOwners:false]
-	
-	[CheckRelationSenderReceiver:true]
-	[Relation:Enemy]
-	
-	
-	[SingleRecipient:true]
-	[IgnoreAntennaRequirement:true]
-	[IgnoreReceiverAntennaRequirement:true]
-	[Radius:2000]
+        [CommandDelayTicks:120]
+        [CommandCode:MSB_EnemyDestroyedwithPlayerMadeFinalShot]
+        [MatchSenderReceiverOwners:false]
+
+        [CheckRelationSenderReceiver:true]
+        [Relation:Enemy]
+
+
+        [SingleRecipient:true]
+        [IgnoreAntennaRequirement:true]
+        [IgnoreReceiverAntennaRequirement:true]
+        [Radius:2000]
 		</Description>
     </EntityComponent>
 
@@ -911,16 +911,16 @@ Mmh we will need to evaluate if the cooldown makes sense.
       </Id>
       <Description>
 
-	[RivalAI Trigger]
-	[Type:Compromised]
-	[UseTrigger:true]
-	[StartsReady:true]
-	[MaxActions:1]	
-	
-	
-	[Actions:MSB_ContextDamage_Action_Compromised_PlayerNotHelped]	
+        [RivalAI Trigger]
+        [Type:Compromised]
+        [UseTrigger:true]
+        [StartsReady:true]
+        [MaxActions:1]
+
+
+        [Actions:MSB_ContextDamage_Action_Compromised_PlayerNotHelped]
       </Description>
-      
+
     </EntityComponent>
 
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -930,11 +930,11 @@ Mmh we will need to evaluate if the cooldown makes sense.
       </Id>
       <Description>
 
-	[RivalAI Action]
+        [RivalAI Action]
 
-	[BroadcastCommandProfiles:true]
-	[CommandProfileIds:MSB_ContextDamage_Command_PlayerNotHelped_Faction]
-	[CommandProfileIds:MSB_ContextDamage_Command_PlayerNotHelped_Enemy]	
+        [BroadcastCommandProfiles:true]
+        [CommandProfileIds:MSB_ContextDamage_Command_PlayerNotHelped_Faction]
+        [CommandProfileIds:MSB_ContextDamage_Command_PlayerNotHelped_Enemy]
       </Description>
     </EntityComponent>
 
@@ -946,20 +946,20 @@ Mmh we will need to evaluate if the cooldown makes sense.
       </Id>
       <Description>
 
-	[RivalAI Command]
+        [RivalAI Command]
 
-	[CommandDelayTicks:50]
-	[CommandCode:MSB_{FactionTag}Destroyed]
-	[MatchSenderReceiverOwners:false]
-	[SingleRecipient:true]
-	[IgnoreAntennaRequirement:true]
-	[IgnoreReceiverAntennaRequirement:true]
-	[Radius:2000]
-	
+        [CommandDelayTicks:50]
+        [CommandCode:MSB_{FactionTag}Destroyed]
+        [MatchSenderReceiverOwners:false]
+        [SingleRecipient:true]
+        [IgnoreAntennaRequirement:true]
+        [IgnoreReceiverAntennaRequirement:true]
+        [Radius:2000]
+
 	</Description>
     </EntityComponent>
-	
-	
+
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -967,20 +967,20 @@ Mmh we will need to evaluate if the cooldown makes sense.
       </Id>
       <Description>
 
-	[RivalAI Command]
+        [RivalAI Command]
 
-	[CommandDelayTicks:120]
-	[CommandCode:MSB_EnemyDestroyed]
-	[MatchSenderReceiverOwners:false]
-	
-	[CheckRelationSenderReceiver:true]
-	[Relation:Enemy]
-	
-	
-	[SingleRecipient:true]
-	[IgnoreAntennaRequirement:true]
-	[IgnoreReceiverAntennaRequirement:true]
-	[Radius:2000]
+        [CommandDelayTicks:120]
+        [CommandCode:MSB_EnemyDestroyed]
+        [MatchSenderReceiverOwners:false]
+
+        [CheckRelationSenderReceiver:true]
+        [Relation:Enemy]
+
+
+        [SingleRecipient:true]
+        [IgnoreAntennaRequirement:true]
+        [IgnoreReceiverAntennaRequirement:true]
+        [Radius:2000]
 		</Description>
     </EntityComponent>
 
@@ -989,7 +989,7 @@ Mmh we will need to evaluate if the cooldown makes sense.
 
 
 
-	
-	
+
+
   </EntityComponents>
 </Definitions>

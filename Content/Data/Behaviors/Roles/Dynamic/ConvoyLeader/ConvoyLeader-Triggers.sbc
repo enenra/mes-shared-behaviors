@@ -25,7 +25,7 @@
       </Description>
 
     </EntityComponent>
-	
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -33,50 +33,50 @@
       </Id>
       <Description>
 
-      [RivalAI Action]
+        [RivalAI Action]
 
-      [AssignEscortFromCommand:true]
-      [UseChatBroadcast:true]
-      [ChatData:MSB_ConvoyLeader_Chat_Escort]		
+        [AssignEscortFromCommand:true]
+        [UseChatBroadcast:true]
+        [ChatData:MSB_ConvoyLeader_Chat_Escort]
 
       </Description>
 
-    </EntityComponent>		
-	
-	
+    </EntityComponent>
+
+
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
           <SubtypeId>MSB_ConvoyLeader_Chat_Escort</SubtypeId>
       </Id>
-	  
+
       <Description>
 
-      [RivalAI Chat]
-      
-      [UseChat:true]
-      [StartsReady:true]
-      [Chance:100]
-      [MaxChats:1]
-      [BroadcastRandomly:true]
-      
-      [Author:{AntennaName}]
-      [Color:Red]
-      
-      [ChatMessages:This is {AntennaName}. Accepted escort request]
-      [ChatAudio:ArcHudGPSNotification2]
-      [BroadcastChatType:Chat]
-      
+        [RivalAI Chat]
+
+        [UseChat:true]
+        [StartsReady:true]
+        [Chance:100]
+        [MaxChats:1]
+        [BroadcastRandomly:true]
+
+        [Author:{AntennaName}]
+        [Color:Red]
+
+        [ChatMessages:This is {AntennaName}. Accepted escort request]
+        [ChatAudio:ArcHudGPSNotification2]
+        [BroadcastChatType:Chat]
+
 
       </Description>
-      
-    </EntityComponent>		
-		
-	
-	
-	
-	
-	
+
+    </EntityComponent>
+
+
+
+
+
+
 
   </EntityComponents>
 </Definitions>

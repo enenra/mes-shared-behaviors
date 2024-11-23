@@ -6,20 +6,20 @@
 
 
 
-[Triggers:MSB-OffensiveEscort-Trigger-RequestEscortSlot]
+        [Triggers:MSB-OffensiveEscort-Trigger-RequestEscortSlot]
 
-[Triggers:MSB-OffensiveEscort-Trigger-AggressionSwitchEscort]
+        [Triggers:MSB-OffensiveEscort-Trigger-AggressionSwitchEscort]
 
-[Triggers:MSB-OffensiveEscort-Trigger-TaskLeaderIsNotReady
+        [Triggers:MSB-OffensiveEscort-Trigger-TaskLeaderIsNotReady
 
-[Triggers:MSB-OffensiveEscort-Trigger-TaskLeaderisReady
+        [Triggers:MSB-OffensiveEscort-Trigger-TaskLeaderisReady
 
-[Triggers:MSB-OffensiveEscort-Trigger-NoTargetSwitchEscort
-
-
+        [Triggers:MSB-OffensiveEscort-Trigger-NoTargetSwitchEscort
 
 
-[Triggers:
+
+
+        [Triggers:
 
 
 
@@ -75,14 +75,14 @@
       </Id>
       <Description>
 
-    [RivalAI Command]
+        [RivalAI Command]
 
-	[CommandCode:OffensiveEscortRequest]
-	[MatchSenderReceiverOwners:true]
-	[IgnoreAntennaRequirement:true]
-	[IgnoreReceiverAntennaRequirement:true]
-	[Radius:5000]
-    [RequestEscortSlot:true]
+        [CommandCode:OffensiveEscortRequest]
+        [MatchSenderReceiverOwners:true]
+        [IgnoreAntennaRequirement:true]
+        [IgnoreReceiverAntennaRequirement:true]
+        [Radius:5000]
+        [RequestEscortSlot:true]
 
       </Description>
 
@@ -131,7 +131,7 @@
         [UseChatBroadcast:true]
         [ChatData:MSB_OffensiveEscort_Chat_AggressionSwitchEscort]
 
-		[ManuallyActivateTrigger:true]
+        [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_CombatType_InitFight]
 
         [DisableTriggers:true]
@@ -154,20 +154,20 @@
 
       <Description>
 
-      [RivalAI Chat]
+        [RivalAI Chat]
 
-      [UseChat:false]
-      [StartsReady:true]
-      [Chance:100]
-      [MaxChats:1]
-      [BroadcastRandomly:true]
+        [UseChat:false]
+        [StartsReady:true]
+        [Chance:100]
+        [MaxChats:1]
+        [BroadcastRandomly:true]
 
-      [Author:{Faction} Drone]
-      [Color:Green]
+        [Author:{Faction} Drone]
+        [Color:Green]
 
-      [ChatMessages:{Faction} Going alone!]
-      [ChatAudio:ArcHudGPSNotification1]
-      [BroadcastChatType:Chat]
+        [ChatMessages:{Faction} Going alone!]
+        [ChatAudio:ArcHudGPSNotification1]
+        [BroadcastChatType:Chat]
 
 
       </Description>
@@ -192,7 +192,7 @@
 
         [UseTrigger:true]
         [Type:CommandReceived]
-		[CommandReceiveCode:TaskLeaderIsNotReady]
+        [CommandReceiveCode:TaskLeaderIsNotReady]
         [StartsReady:true]
 
         [MaxActions:-1]
@@ -213,7 +213,7 @@
 
         [RivalAI Action]
 
-	[SetBooleansFalse:TaskLeaderisReady]
+        [SetBooleansFalse:TaskLeaderisReady]
 
       </Description>
 
@@ -238,7 +238,7 @@
 
         [UseTrigger:true]
         [Type:CommandReceived]
-		[CommandReceiveCode:TaskLeaderisReady]
+        [CommandReceiveCode:TaskLeaderisReady]
         [StartsReady:true]
 
         [MaxActions:-1]
@@ -258,7 +258,7 @@
 
         [RivalAI Action]
 
-	[SetBooleansTrue:TaskLeaderisReady]
+        [SetBooleansTrue:TaskLeaderisReady]
 
       </Description>
 
@@ -278,20 +278,20 @@
       </Id>
       <Description>
 
-	[RivalAI Trigger]
+        [RivalAI Trigger]
 
-	[UseTrigger:false]
-	[Type:NoTarget]
-	[TargetDistance:2000]
-	[StartsReady:true]
-	[Conditions:MSB_OffensiveEscort_Condition_TaskLeaderisReady]
+        [UseTrigger:false]
+        [Type:NoTarget]
+        [TargetDistance:2000]
+        [StartsReady:true]
+        [Conditions:MSB_OffensiveEscort_Condition_TaskLeaderisReady]
 
-	[MinCooldownMs:6000]
-	[MaxCooldownMs:9000]
+        [MinCooldownMs:6000]
+        [MaxCooldownMs:9000]
 
 
-	[MaxActions:-1]
-	[Actions:MSB_OffensiveEscort_Action_PassiveSwitchPatrol]
+        [MaxActions:-1]
+        [Actions:MSB_OffensiveEscort_Action_PassiveSwitchPatrol]
 
       </Description>
 
@@ -304,12 +304,12 @@
           <SubtypeId>MSB_OffensiveEscort_Condition_TaskLeaderisReady</SubtypeId>
       </Id>
       <Description>
-      [RivalAI Condition]
+        [RivalAI Condition]
 
-	[UseConditions:true]
-	[MatchAnyCondition:true]
-	[CheckTrueBooleans:true]
-	[TrueBooleans:TaskLeaderisReady]
+        [UseConditions:true]
+        [MatchAnyCondition:true]
+        [CheckTrueBooleans:true]
+        [TrueBooleans:TaskLeaderisReady]
 
 
 
@@ -353,20 +353,20 @@
 
       <Description>
 
-      [RivalAI Chat]
+        [RivalAI Chat]
 
-      [UseChat:false]
-      [StartsReady:true]
-      [Chance:100]
-      [MaxChats:1]
-      [BroadcastRandomly:true]
+        [UseChat:false]
+        [StartsReady:true]
+        [Chance:100]
+        [MaxChats:1]
+        [BroadcastRandomly:true]
 
-      [Author:DEBUG {Antenna}]
-      [Color:Green]
+        [Author:DEBUG {Antenna}]
+        [Color:Green]
 
-      [ChatMessages:PassiveSwitchPatrol]
-      [ChatAudio:ArcHudGPSNotification2]
-      [BroadcastChatType:Chat]
+        [ChatMessages:PassiveSwitchPatrol]
+        [ChatAudio:ArcHudGPSNotification2]
+        [BroadcastChatType:Chat]
 
 
       </Description>

@@ -3,15 +3,15 @@
   <EntityComponents>
 
     <!--
-    [AutopilotData:MSB-Dropship-Autopilot-1]
-    [SecondaryAutopilotData:MSB-Dropship-Autopilot-2]
+        [AutopilotData:MSB-Dropship-Autopilot-1]
+        [SecondaryAutopilotData:MSB-Dropship-Autopilot-2]
 
-    [Triggers:MSB-Dropship-Trigger-MoveToLanding]
-    [Triggers:MSB-Dropship-Trigger-StartLanding]
+        [Triggers:MSB-Dropship-Trigger-MoveToLanding]
+        [Triggers:MSB-Dropship-Trigger-StartLanding]
 
-    [Triggers:MSB-Dropship-Trigger-ArrivedAtLandingSite]
+        [Triggers:MSB-Dropship-Trigger-ArrivedAtLandingSite]
 
-    [Triggers:MSB-Dropship-Trigger-LeaveLandingSite]
+        [Triggers:MSB-Dropship-Trigger-LeaveLandingSite]
     -->
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -35,11 +35,11 @@
     </EntityComponent>
 
     <!--
-    [ChangeBehaviorSubclass:true]
-    [NewBehaviorSubclass:CargoShip]
+        [ChangeBehaviorSubclass:true]
+        [NewBehaviorSubclass:CargoShip]
 
-    [AddWaypoints:true]
-    [WaypointsToAdd:MSB-Dropship-Waypoint-LandingSite]
+        [AddWaypoints:true]
+        [WaypointsToAdd:MSB-Dropship-Waypoint-LandingSite]
 	  -->
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -98,8 +98,8 @@
       <Description>
         [RivalAI Action]
 
-		    [ChangeAutopilotProfile:true]
-	      [AutopilotProfile:Tertiary]
+        [ChangeAutopilotProfile:true]
+        [AutopilotProfile:Tertiary]
       </Description>
     </EntityComponent>
 

@@ -2,10 +2,10 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
     <!--
-    [Triggers:MSB_Context_Trigger_PlayerNear]
-    [Triggers:MSB_Context_Trigger_PlayerFar]
-    
-    Do not remove, these booleans are used in 
+        [Triggers:MSB_Context_Trigger_PlayerNear]
+        [Triggers:MSB_Context_Trigger_PlayerFar]
+
+    Do not remove, these booleans are used in
     MSB_Context_Condition_NormalNeutralPlayerNearNoTarget
     -->
 

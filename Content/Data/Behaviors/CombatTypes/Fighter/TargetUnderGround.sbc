@@ -21,7 +21,7 @@
         [MinCooldownMs:5000]
         [MaxCooldownMs:5001]
 
-		    [Conditions:MSB_Fighter_Condition_TargetUnderGround]
+        [Conditions:MSB_Fighter_Condition_TargetUnderGround]
 
         [StartsReady:true]
         [MaxActions:-1]
@@ -85,7 +85,7 @@
         [MinCooldownMs:600]
         [MaxCooldownMs:601]
 
-		    [Conditions:MSB_Fighter_Condition_TargetAboveGround]
+        [Conditions:MSB_Fighter_Condition_TargetAboveGround]
 
         [StartsReady:true]
         [MaxActions:-1]
@@ -102,7 +102,7 @@
 
         [RivalAI Condition]
 
-		    [UseFailCondition:true]
+        [UseFailCondition:true]
 
         [UseConditions:true]
         [IsTargetStatic:true]
@@ -129,7 +129,7 @@
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_Fighter_Trigger_ResetAutopilot]
 
-		    [EnableTriggers:true]
+        [EnableTriggers:true]
         [EnableTriggerNames:MSB_Fighter_Trigger_TargetUnderGround]
       </Description>
     </EntityComponent>

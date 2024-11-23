@@ -6,10 +6,10 @@
 
     -MSB_TriggerEvent_TargetGettingAway (Done)
 
-    [Triggers:MSB_ContextTarget_TriggerEvent_TargetGettingAway]
-    [Triggers:MSB_ContextTarget_Trigger_TargetHasBeenClose]
-    [Triggers:MSB_ContextTarget_Trigger_LostTarget]
-    [Triggers:MSB_ContextTarget_Trigger_SwitchTarget]
+        [Triggers:MSB_ContextTarget_TriggerEvent_TargetGettingAway]
+        [Triggers:MSB_ContextTarget_Trigger_TargetHasBeenClose]
+        [Triggers:MSB_ContextTarget_Trigger_LostTarget]
+        [Triggers:MSB_ContextTarget_Trigger_SwitchTarget]
     -->
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">

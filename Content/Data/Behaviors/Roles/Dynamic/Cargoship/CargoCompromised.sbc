@@ -3,7 +3,7 @@
   <EntityComponents>
 
     <!--
-    [Triggers:MSB_CargoShip_Trigger_CargoCompromised]
+        [Triggers:MSB_CargoShip_Trigger_CargoCompromised]
     -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>

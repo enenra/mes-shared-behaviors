@@ -2,7 +2,7 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 
-	
+
    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -22,8 +22,8 @@
         [MaxSpeedTolerance:5]
       </Description>
 
-    </EntityComponent>	
-	
+    </EntityComponent>
+
 	   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -32,7 +32,7 @@
       <Description>
 
         [RivalAI Autopilot]
-		
+
         [DisableInertiaDampeners:false]
         [SlowDownOnWaypointApproach:true]
         [FlyLevelWithGravity:true]
@@ -41,8 +41,8 @@
         [WaypointTolerance:30]
 
 
-		
-		
+
+
         [OffsetSpaceMinDistFromTarget:150]
         [OffsetSpaceMaxDistFromTarget:300]
         [OffsetPlanetMinDistFromTarget:150]
@@ -52,12 +52,12 @@
 
       </Description>
 
-    </EntityComponent>	
-	
-	
-	
-	
-	
-	
+    </EntityComponent>
+
+
+
+
+
+
   </EntityComponents>
 </Definitions>

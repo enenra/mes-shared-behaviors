@@ -3,9 +3,9 @@
   <EntityComponents>
 
     <!--
-    [Triggers:MSB_Common_Triggers_MaxRange]
-    [Triggers:MSB_Common_Trigger_MSBAliveCheck]
-    [Triggers:MSB_Common_Triggers_Compromised]		
+        [Triggers:MSB_Common_Triggers_MaxRange]
+        [Triggers:MSB_Common_Trigger_MSBAliveCheck]
+        [Triggers:MSB_Common_Triggers_Compromised]
     -->
 
 
@@ -32,21 +32,21 @@
       </Id>
       <Description>
         [RivalAI Action]
-		
+
         [DisableAutopilot:false]
-		[StopAllThrust:true]
-		[ChangeInertiaDampeners:true]
-		[InertiaDampenersEnable:false]
+        [StopAllThrust:true]
+        [ChangeInertiaDampeners:true]
+        [InertiaDampenersEnable:false]
 
 
-		
+
       </Description>
     </EntityComponent>
-	
-	
-	
-	
-	
+
+
+
+
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>

@@ -20,17 +20,17 @@
     MSB_Context_ManualTrigger_DynamicNoLongerInBattle
     MSB_Context_ManualTrigger_InitDynamicBattle
 
-    [Triggers:MSB_Context_ManualTrigger_DynamicNoLongerInBattle]
-    [Triggers:MSB_Context_ManualTrigger_InitDynamicBattle]
+        [Triggers:MSB_Context_ManualTrigger_DynamicNoLongerInBattle]
+        [Triggers:MSB_Context_ManualTrigger_InitDynamicBattle]
 
-    [Triggers:MSB_Context_Trigger_ReceiveBaseStrike]
-    [Triggers:MSB_Context_Trigger_TargetIsEnemeyStaticBase]
-    [Triggers:MSB_Context_Trigger_EnemeyStaticBaseInTheArea]
-    [Triggers:MSB_Context_Trigger_EnemeyStaticBaseInTheArea_Fail]
+        [Triggers:MSB_Context_Trigger_ReceiveBaseStrike]
+        [Triggers:MSB_Context_Trigger_TargetIsEnemeyStaticBase]
+        [Triggers:MSB_Context_Trigger_EnemeyStaticBaseInTheArea]
+        [Triggers:MSB_Context_Trigger_EnemeyStaticBaseInTheArea_Fail]
 
-    [Triggers:MSB_Context_Trigger_ReceiveDefendMe_FirstTime]
-    [Triggers:MSB_Context_Trigger_DefendMe_NoLongerReceiving]
-    [Triggers:MSB_Context_Trigger_ReceiveDefendMe_ResetCooldown]
+        [Triggers:MSB_Context_Trigger_ReceiveDefendMe_FirstTime]
+        [Triggers:MSB_Context_Trigger_DefendMe_NoLongerReceiving]
+        [Triggers:MSB_Context_Trigger_ReceiveDefendMe_ResetCooldown]
     -->
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">

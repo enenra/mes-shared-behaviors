@@ -5,12 +5,12 @@
   <!-- RequestEscortSlot
 
 
-	[Triggers:MSB-TaskForceLeader-Trigger-ProcessEscortRequest]
-	[Triggers:MSB-TaskForceLeader-Trigger-TargetNear1500]
+        [Triggers:MSB-TaskForceLeader-Trigger-ProcessEscortRequest]
+        [Triggers:MSB-TaskForceLeader-Trigger-TargetNear1500]
 
-	[Triggers:MSB-TaskForceLeader-Trigger-HasTarget]
-	[Triggers:MSB-TaskForceLeader-Trigger-NoTarget]
-	[Triggers:MSB-TaskForceLeader-Trigger-SwitchtoCargo]
+        [Triggers:MSB-TaskForceLeader-Trigger-HasTarget]
+        [Triggers:MSB-TaskForceLeader-Trigger-NoTarget]
+        [Triggers:MSB-TaskForceLeader-Trigger-SwitchtoCargo]
 
 
 
@@ -47,11 +47,11 @@
       </Id>
       <Description>
 
-      [RivalAI Action]
+        [RivalAI Action]
 
-      [AssignEscortFromCommand:true]
-      [UseChatBroadcast:true]
-      [ChatData:MSB_TaskForceLeader_Chat_Escort]
+        [AssignEscortFromCommand:true]
+        [UseChatBroadcast:true]
+        [ChatData:MSB_TaskForceLeader_Chat_Escort]
 
       </Description>
 
@@ -65,20 +65,20 @@
 
       <Description>
 
-      [RivalAI Chat]
+        [RivalAI Chat]
 
-      [UseChat:true]
-      [StartsReady:true]
-      [Chance:100]
-      [MaxChats:1]
-      [BroadcastRandomly:true]
+        [UseChat:true]
+        [StartsReady:true]
+        [Chance:100]
+        [MaxChats:1]
+        [BroadcastRandomly:true]
 
-      [Author:{AntennaName}]
-      [Color:Green]
+        [Author:{AntennaName}]
+        [Color:Green]
 
-      [ChatMessages:This is {AntennaName}. Accepted escort request]
-      [ChatAudio:ArcHudGPSNotification2]
-      [BroadcastChatType:Chat]
+        [ChatMessages:This is {AntennaName}. Accepted escort request]
+        [ChatAudio:ArcHudGPSNotification2]
+        [BroadcastChatType:Chat]
 
 
       </Description>
@@ -99,16 +99,16 @@
       </Id>
       <Description>
 
-      [RivalAI Trigger]
-      [Type:TargetNear]
-	  [UseTrigger:true]
-	  [StartsReady:true]
-	  [TargetDistance:1500]
-	  [MinCooldownMs:450000]
-	  [MaxCooldownMs:600000]
+        [RivalAI Trigger]
+        [Type:TargetNear]
+        [UseTrigger:true]
+        [StartsReady:true]
+        [TargetDistance:1500]
+        [MinCooldownMs:450000]
+        [MaxCooldownMs:600000]
 
 
-	  [Actions:MSB_TaskForceLeader_Action_TargetNear1500]
+        [Actions:MSB_TaskForceLeader_Action_TargetNear1500]
 
       </Description>
 
@@ -121,13 +121,13 @@
       </Id>
       <Description>
 
-    [RivalAI Action]
+        [RivalAI Action]
 
-	[BroadcastCommandProfiles:true]
-	[CommandProfileIds:MSB_TaskForceLeader_Command_LooseFighters]
+        [BroadcastCommandProfiles:true]
+        [CommandProfileIds:MSB_TaskForceLeader_Command_LooseFighters]
 
-	[UseChatBroadcast:true]
-	[ChatData:MSB_TaskForceLeader_Chat_TargetNear1500]
+        [UseChatBroadcast:true]
+        [ChatData:MSB_TaskForceLeader_Chat_TargetNear1500]
 
 
 
@@ -145,20 +145,20 @@
 
       <Description>
 
-      [RivalAI Chat]
+        [RivalAI Chat]
 
-      [UseChat:false]
-      [StartsReady:true]
-      [Chance:100]
-      [MaxChats:1]
-      [BroadcastRandomly:true]
+        [UseChat:false]
+        [StartsReady:true]
+        [Chance:100]
+        [MaxChats:1]
+        [BroadcastRandomly:true]
 
-      [Author:{AntennaName}]
-      [Color:Green]
+        [Author:{AntennaName}]
+        [Color:Green]
 
-      [ChatMessages:Fighters Engage!]
-      [ChatAudio:ArcHudGPSNotification2]
-      [BroadcastChatType:Chat]
+        [ChatMessages:Fighters Engage!]
+        [ChatAudio:ArcHudGPSNotification2]
+        [BroadcastChatType:Chat]
 
 
       </Description>
@@ -186,13 +186,13 @@
       </Id>
       <Description>
 
-      [RivalAI Trigger]
-      [Type:HasTarget]
-	  [UseTrigger:true]
-	  [StartsReady:true]
+        [RivalAI Trigger]
+        [Type:HasTarget]
+        [UseTrigger:true]
+        [StartsReady:true]
 
-	  [MaxActions:-1]
-	  [Actions:MSB_TaskForceLeader_Action_HasTarget]
+        [MaxActions:-1]
+        [Actions:MSB_TaskForceLeader_Action_HasTarget]
 
       </Description>
 
@@ -206,29 +206,29 @@
       </Id>
       <Description>
 
-	[RivalAI Action]
-	[ChangeBehaviorSubclass:true]
-	[NewBehaviorSubclass:Horsefly]
+        [RivalAI Action]
+        [ChangeBehaviorSubclass:true]
+        [NewBehaviorSubclass:Horsefly]
 
-	[ChangeAutopilotProfile:true]
-	[AutopilotProfile:Secondary]
+        [ChangeAutopilotProfile:true]
+        [AutopilotProfile:Secondary]
 
-	[UseChatBroadcast:true]
-	[ChatData:MSB_TaskForceLeader_Chat_HasTarget]
+        [UseChatBroadcast:true]
+        [ChatData:MSB_TaskForceLeader_Chat_HasTarget]
 
-	[EnableTriggers:true]
-	[EnableTriggerNames:MSB_TaskForceLeader_Trigger_NoTarget]
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_TaskForceLeader_Trigger_NoTarget]
 
-	[DisableTriggers:true]
-	[DisableTriggerNames:MSB_TaskForceLeader_Trigger_HasTarget]
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_TaskForceLeader_Trigger_HasTarget]
 
-	[SwitchToReceivedTarget:true]
+        [SwitchToReceivedTarget:true]
 
 
-	[SetBooleansFalse:TaskForceLeaderHasnoTarget]
+        [SetBooleansFalse:TaskForceLeaderHasnoTarget]
 
-	[BroadcastCommandProfiles:true]
-	[CommandProfileIds:MSB_TaskForceLeader_Command_HasTarget]
+        [BroadcastCommandProfiles:true]
+        [CommandProfileIds:MSB_TaskForceLeader_Command_HasTarget]
 
       </Description>
 
@@ -243,20 +243,20 @@
 
       <Description>
 
-      [RivalAI Chat]
+        [RivalAI Chat]
 
-      [UseChat:false]
-      [StartsReady:true]
-      [Chance:100]
-      [MaxChats:1]
-      [BroadcastRandomly:true]
+        [UseChat:false]
+        [StartsReady:true]
+        [Chance:100]
+        [MaxChats:1]
+        [BroadcastRandomly:true]
 
-      [Author:{AntennaName}]
-      [Color:Red]
+        [Author:{AntennaName}]
+        [Color:Red]
 
-      [ChatMessages:I have a target, switching behavoir]
-      [ChatAudio:ArcHudGPSNotification2]
-      [BroadcastChatType:Chat]
+        [ChatMessages:I have a target, switching behavoir]
+        [ChatAudio:ArcHudGPSNotification2]
+        [BroadcastChatType:Chat]
 
 
       </Description>
@@ -271,13 +271,13 @@
       </Id>
       <Description>
 
-	[RivalAI Command]
+        [RivalAI Command]
 
-	[CommandCode:TaskLeaderIsNotReady]
-	[MatchSenderReceiverOwners:true]
-	[IgnoreAntennaRequirement:true]
-	[IgnoreReceiverAntennaRequirement:true]
-	[Radius:5000]
+        [CommandCode:TaskLeaderIsNotReady]
+        [MatchSenderReceiverOwners:true]
+        [IgnoreAntennaRequirement:true]
+        [IgnoreReceiverAntennaRequirement:true]
+        [Radius:5000]
 
       </Description>
 
@@ -301,12 +301,12 @@
       </Id>
       <Description>
 
-      [RivalAI Trigger]
-      [Type:NoTarget]
-	  [UseTrigger:false]
-	  [StartsReady:true]
-	  [MaxActions:-1]
-	  [Actions:MSB_TaskForceLeader_Action_NoTarget]
+        [RivalAI Trigger]
+        [Type:NoTarget]
+        [UseTrigger:false]
+        [StartsReady:true]
+        [MaxActions:-1]
+        [Actions:MSB_TaskForceLeader_Action_NoTarget]
 
       </Description>
 
@@ -320,24 +320,24 @@
       </Id>
       <Description>
 
-	[RivalAI Action]
-	[SetBooleansTrue:TaskForceLeaderHasnoTarget]
+        [RivalAI Action]
+        [SetBooleansTrue:TaskForceLeaderHasnoTarget]
 
-	[DisableTriggers:true]
-	[DisableTriggerNames:MSB_TaskForceLeader_Trigger_NoTarget]
-
-
-	[EnableTriggers:true]
-	[EnableTriggerNames:MSB_TaskForceLeader_Trigger_SwitchtoCargo]
-
-	[ResetCooldownTimeOfTriggers:true]
-	[ResetTriggerCooldownNames:MSB-TaskForceLeader-Trigger-SwitchtoCargo]
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_TaskForceLeader_Trigger_NoTarget]
 
 
-	[EnableTriggers:true]
-	[EnableTriggerNames:MSB_TaskForceLeader_Trigger_HasTarget]
-	[DisableTriggers:true]
-	[DisableTriggerNames:MSB_TaskForceLeader_Trigger_NoTarget]
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_TaskForceLeader_Trigger_SwitchtoCargo]
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB-TaskForceLeader-Trigger-SwitchtoCargo]
+
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_TaskForceLeader_Trigger_HasTarget]
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_TaskForceLeader_Trigger_NoTarget]
 
       </Description>
 
@@ -362,16 +362,16 @@
       </Id>
       <Description>
 
-	[RivalAI Trigger]
-	[Type:Timer]
-	[UseTrigger:false]
-	[StartsReady:false]
-	[Conditions:MSB_TaskForceLeader_Condition_NoTarget]
+        [RivalAI Trigger]
+        [Type:Timer]
+        [UseTrigger:false]
+        [StartsReady:false]
+        [Conditions:MSB_TaskForceLeader_Condition_NoTarget]
 
-	[MinCooldownMs:6000]
-	[MaxCooldownMs:9000]
+        [MinCooldownMs:6000]
+        [MaxCooldownMs:9000]
 
-	[Actions:MSB_TaskForceLeader_Action_SwitchtoCargo]
+        [Actions:MSB_TaskForceLeader_Action_SwitchtoCargo]
 
       </Description>
 
@@ -383,12 +383,12 @@
           <SubtypeId>MSB_TaskForceLeader_Condition_NoTarget</SubtypeId>
       </Id>
       <Description>
-      [RivalAI Condition]
+        [RivalAI Condition]
 
-	[UseConditions:true]
-	[MatchAnyCondition:true]
-	[CheckTrueBooleans:true]
-	[TrueBooleans:TaskForceLeaderHasnoTarget]
+        [UseConditions:true]
+        [MatchAnyCondition:true]
+        [CheckTrueBooleans:true]
+        [TrueBooleans:TaskForceLeaderHasnoTarget]
 
 
 
@@ -404,22 +404,22 @@
       </Id>
       <Description>
 
-	[RivalAI Action]
+        [RivalAI Action]
 
-	[DisableTriggers:true]
-	[DisableTriggerNames:MSB_TaskForceLeader_Trigger_SwitchtoCargo]
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_TaskForceLeader_Trigger_SwitchtoCargo]
 
-	[ChangeBehaviorSubclass:true]
-	[NewBehaviorSubclass:CargoShip]
+        [ChangeBehaviorSubclass:true]
+        [NewBehaviorSubclass:CargoShip]
 
-	[ChangeAutopilotProfile:true]
-	[AutopilotProfile:Primary]
+        [ChangeAutopilotProfile:true]
+        [AutopilotProfile:Primary]
 
-	[UseChatBroadcast:true]
-	[ChatData:MSB_TaskForceLeader_Chat_SwitchtoCargo]
+        [UseChatBroadcast:true]
+        [ChatData:MSB_TaskForceLeader_Chat_SwitchtoCargo]
 
-	[BroadcastCommandProfiles:true]
-    [CommandProfileIds:MSB_TaskForceLeader_Command_SwitchtoCargo]
+        [BroadcastCommandProfiles:true]
+        [CommandProfileIds:MSB_TaskForceLeader_Command_SwitchtoCargo]
 
       </Description>
 
@@ -432,13 +432,13 @@
       </Id>
       <Description>
 
-	[RivalAI Command]
+        [RivalAI Command]
 
-	[CommandCode:TaskLeaderisReady]
-	[MatchSenderReceiverOwners:true]
-	[IgnoreAntennaRequirement:true]
-	[IgnoreReceiverAntennaRequirement:true]
-	[Radius:5000]
+        [CommandCode:TaskLeaderisReady]
+        [MatchSenderReceiverOwners:true]
+        [IgnoreAntennaRequirement:true]
+        [IgnoreReceiverAntennaRequirement:true]
+        [Radius:5000]
 
       </Description>
 
@@ -453,20 +453,20 @@
 
       <Description>
 
-      [RivalAI Chat]
+        [RivalAI Chat]
 
-      [UseChat:false]
-      [StartsReady:true]
-      [Chance:100]
-      [MaxChats:1]
-      [BroadcastRandomly:true]
+        [UseChat:false]
+        [StartsReady:true]
+        [Chance:100]
+        [MaxChats:1]
+        [BroadcastRandomly:true]
 
-      [Author:{AntennaName}]
-      [Color:Red]
+        [Author:{AntennaName}]
+        [Color:Red]
 
-      [ChatMessages:No Targets, switching to cargoship]
-      [ChatAudio:ArcHudGPSNotification2]
-      [BroadcastChatType:Chat]
+        [ChatMessages:No Targets, switching to cargoship]
+        [ChatAudio:ArcHudGPSNotification2]
+        [BroadcastChatType:Chat]
 
 
       </Description>

@@ -67,8 +67,8 @@
       <Description>
         [RivalAI Autopilot]
 
-		    [IdealPlanetAltitude:450]
-		    [MinimumPlanetAltitude:250]
+        [IdealPlanetAltitude:450]
+        [MinimumPlanetAltitude:250]
 
         [DisableInertiaDampeners:false]
         [FlyLevelWithGravity:false]
@@ -100,10 +100,10 @@
       <Description>
         [RivalAI Autopilot]
 
-		    [IdealPlanetAltitude:50]
-		    [MinimumPlanetAltitude:5]
+        [IdealPlanetAltitude:50]
+        [MinimumPlanetAltitude:5]
 
-		    [TryToLevelWithTarget:true]
+        [TryToLevelWithTarget:true]
 
         [DisableInertiaDampeners:false]
         [FlyLevelWithGravity:false]
@@ -134,7 +134,7 @@
       <Description>
         [RivalAI Trigger]
 
-		    [Tags:MSB_CombatType_InitFight]
+        [Tags:MSB_CombatType_InitFight]
 
         [UseTrigger:false]
         [Type:Timer]

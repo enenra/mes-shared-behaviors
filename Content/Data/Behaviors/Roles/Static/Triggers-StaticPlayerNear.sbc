@@ -17,20 +17,20 @@ Static_GreetingFriendly
 
 
 
-[Triggers:MSB_Static_Triggers_EnablePlayerNearDialogue]
-[Triggers:MSB_Static_Triggers_DisablePlayerNearDialogue]
-[Triggers:MSB_Static_Triggers_PlayerFar]
+        [Triggers:MSB_Static_Triggers_EnablePlayerNearDialogue]
+        [Triggers:MSB_Static_Triggers_DisablePlayerNearDialogue]
+        [Triggers:MSB_Static_Triggers_PlayerFar]
 
-[Triggers:MSB_Static_Triggers_GreetingNeutral]
-[Triggers:MSB_Static_Triggers_GreetingFriendly]
+        [Triggers:MSB_Static_Triggers_GreetingNeutral]
+        [Triggers:MSB_Static_Triggers_GreetingFriendly]
 
-[Triggers:MSB_Static_Triggers_PlayerNear3000_WarningEnteringRestricted]
-[Triggers:MSB_Static_Triggers_PlayerNear2500_WarningInRestricted]	  
-[Triggers:MSB_Static_Triggers_PlayerNear2500_WarningInRestricted_ReputationLoss]	
+        [Triggers:MSB_Static_Triggers_PlayerNear3000_WarningEnteringRestricted]
+        [Triggers:MSB_Static_Triggers_PlayerNear2500_WarningInRestricted]
+        [Triggers:MSB_Static_Triggers_PlayerNear2500_WarningInRestricted_ReputationLoss]
 
-[Triggers:MSB_Static_Triggers_PlayerNear2000_WarningEnteringRestricted]
-[Triggers:MSB_Static_Triggers_PlayerNear1500_WarningInRestricted]	  
-[Triggers:MSB_Static_Triggers_PlayerNear1500_WarningInRestricted_ReputationLoss]	
+        [Triggers:MSB_Static_Triggers_PlayerNear2000_WarningEnteringRestricted]
+        [Triggers:MSB_Static_Triggers_PlayerNear1500_WarningInRestricted]
+        [Triggers:MSB_Static_Triggers_PlayerNear1500_WarningInRestricted_ReputationLoss]
 
 
 -->
@@ -42,21 +42,21 @@ Static_GreetingFriendly
       </Id>
       <Description>
 
-	[RivalAI Trigger]
-	[Type:PlayerNear]
-	[TargetDistance:5000]
-	[MinCooldownMs:10000]
-	[MaxCooldownMs:10001]
+        [RivalAI Trigger]
+        [Type:PlayerNear]
+        [TargetDistance:5000]
+        [MinCooldownMs:10000]
+        [MaxCooldownMs:10001]
 
-	[UseTrigger:true]
-	[StartsReady:true]
-	  	 
-	[Actions:MSB_Static_Action_EnablePlayerNearDialogue]
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Actions:MSB_Static_Action_EnablePlayerNearDialogue]
 
       </Description>
-      
+
     </EntityComponent>
-	
+
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -64,16 +64,16 @@ Static_GreetingFriendly
       </Id>
       <Description>
 
-      [RivalAI Action]
-        
-	[EnableTriggers:true]
-	[EnableTriggerNames:MSB_Static_Triggers_GreetingNeutral]
-	[EnableTriggerNames:MSB_Static_Triggers_GreetingFriendly]	
-	[EnableTriggerNames:MSB_Static_Triggers_PlayerFar]	
+        [RivalAI Action]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_Static_Triggers_GreetingNeutral]
+        [EnableTriggerNames:MSB_Static_Triggers_GreetingFriendly]
+        [EnableTriggerNames:MSB_Static_Triggers_PlayerFar]
 
       </Description>
-      
-    </EntityComponent>		
+
+    </EntityComponent>
 
 .
 
@@ -85,23 +85,23 @@ Static_GreetingFriendly
       </Id>
       <Description>
 
-	[RivalAI Trigger]
-	[Type:PlayerNear]
-	[TargetDistance:5000]
-	[MinCooldownMs:10000]
-	[MaxCooldownMs:10001]
+        [RivalAI Trigger]
+        [Type:PlayerNear]
+        [TargetDistance:5000]
+        [MinCooldownMs:10000]
+        [MaxCooldownMs:10001]
 
-	[UseTrigger:true]
-	[StartsReady:true]
-	  	 
-	[UseFailCondition:true]
+        [UseTrigger:true]
+        [StartsReady:true]
 
-	[Actions:MSB_Static_Action_DisablePlayerNearDialogue]
+        [UseFailCondition:true]
+
+        [Actions:MSB_Static_Action_DisablePlayerNearDialogue]
 
       </Description>
-      
-    </EntityComponent>	
-	
+
+    </EntityComponent>
+
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -109,17 +109,17 @@ Static_GreetingFriendly
       </Id>
       <Description>
 
-	[RivalAI Action]
-	[DisableTriggers:true]
-	
-	[DisableTriggerNames:MSB_Static_Triggers_GreetingNeutral]
-	[DisableTriggerNames:MSB_Static_Triggers_GreetingFriendly]
+        [RivalAI Action]
+        [DisableTriggers:true]
 
-	[DisableTriggerNames:MSB_Static_Triggers_PlayerFar]
+        [DisableTriggerNames:MSB_Static_Triggers_GreetingNeutral]
+        [DisableTriggerNames:MSB_Static_Triggers_GreetingFriendly]
+
+        [DisableTriggerNames:MSB_Static_Triggers_PlayerFar]
 
       </Description>
-      
-    </EntityComponent>	
+
+    </EntityComponent>
 
 
 	<!-- The unsubscribe one -->
@@ -130,22 +130,22 @@ Static_GreetingFriendly
       </Id>
       <Description>
 
-	[RivalAI Trigger]
-	[Type:PlayerFar]
-	[TargetDistance:3500]
-	[UsePlayerCondition:true]
-	[PlayerConditionIds:PlayerCondition-IncludedPlayerNear]
-	
-	[UseTrigger:true]
-	[StartsReady:true]
+        [RivalAI Trigger]
+        [Type:PlayerFar]
+        [TargetDistance:3500]
+        [UsePlayerCondition:true]
+        [PlayerConditionIds:PlayerCondition-IncludedPlayerNear]
 
-	  
-	[Actions:MSB_Static_Action_PlayerFar]	  
+        [UseTrigger:true]
+        [StartsReady:true]
+
+
+        [Actions:MSB_Static_Action_PlayerFar]
       </Description>
-      
+
     </EntityComponent>
-	
-	
+
+
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -153,15 +153,15 @@ Static_GreetingFriendly
       </Id>
       <Description>
 
-      [RivalAI Action]
-        
-	[RemoveTagsFromPlayers:true]
-	[RemoveTags:PlayerNear]
-	[RemoveTagsIncludeSavedPlayerIdentity:true]
-	[RemovePlayerIdentity:true]
+        [RivalAI Action]
+
+        [RemoveTagsFromPlayers:true]
+        [RemoveTags:PlayerNear]
+        [RemoveTagsIncludeSavedPlayerIdentity:true]
+        [RemovePlayerIdentity:true]
       </Description>
-      
-    </EntityComponent>	
+
+    </EntityComponent>
 
 
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -171,23 +171,23 @@ Static_GreetingFriendly
       </Id>
       <Description>
 
-	[RivalAI Trigger]
-	[Type:PlayerNear]
-	[TargetDistance:2500]
-	
-	[Conditions:MSB_Context_Condition_SettingNormal]	
-	[UsePlayerConditionProfile:true]
-	[PlayerConditionProfileIds:PlayerCondition-ExcludedPlayerNear]
-	[MinPlayerReputation:-500]
-	[MaxPlayerReputation:500]
-	
-	
-	[UseTrigger:true]
-	[StartsReady:true]
-	  
-	[Actions:MSB_Static_Action_GreetingNeutral]	  
+        [RivalAI Trigger]
+        [Type:PlayerNear]
+        [TargetDistance:2500]
+
+        [Conditions:MSB_Context_Condition_SettingNormal]
+        [UsePlayerConditionProfile:true]
+        [PlayerConditionProfileIds:PlayerCondition-ExcludedPlayerNear]
+        [MinPlayerReputation:-500]
+        [MaxPlayerReputation:500]
+
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Actions:MSB_Static_Action_GreetingNeutral]
       </Description>
-      
+
     </EntityComponent>
 
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -197,19 +197,19 @@ Static_GreetingFriendly
       </Id>
       <Description>
 
-      [RivalAI Action]
-        
-	[PlayDialogueCue:true]
-	[DialogueCueId:Static_GreetingNeutral]
+        [RivalAI Action]
+
+        [PlayDialogueCue:true]
+        [DialogueCueId:Static_GreetingNeutral]
 
 
-	[AddTagsToPlayers:true]
-	[AddTags:PlayerNear]
-	[AddTagsIncludeSavedPlayerIdentity:true]
+        [AddTagsToPlayers:true]
+        [AddTags:PlayerNear]
+        [AddTagsIncludeSavedPlayerIdentity:true]
 
       </Description>
-      
-    </EntityComponent>	
+
+    </EntityComponent>
 
 
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -219,24 +219,24 @@ Static_GreetingFriendly
       </Id>
       <Description>
 
-	[RivalAI Trigger]
-	[Type:PlayerNear]
-	[TargetDistance:2500]
-	
-	[Conditions:MSB_Context_Condition_SettingNormal]	
-	
-	[UsePlayerConditionProfile:true]
-	[PlayerConditionProfileIds:PlayerCondition-ExcludedPlayerNear]
-	[MinPlayerReputation:501]
-	[MaxPlayerReputation:1500]
-	
-	
-	[UseTrigger:true]
-	[StartsReady:true]
-	  
-	[Actions:MSB_Static_Action_GreetingFriendly]	  
+        [RivalAI Trigger]
+        [Type:PlayerNear]
+        [TargetDistance:2500]
+
+        [Conditions:MSB_Context_Condition_SettingNormal]
+
+        [UsePlayerConditionProfile:true]
+        [PlayerConditionProfileIds:PlayerCondition-ExcludedPlayerNear]
+        [MinPlayerReputation:501]
+        [MaxPlayerReputation:1500]
+
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Actions:MSB_Static_Action_GreetingFriendly]
       </Description>
-      
+
     </EntityComponent>
 
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -246,19 +246,19 @@ Static_GreetingFriendly
       </Id>
       <Description>
 
-      [RivalAI Action]
-        
-	[PlayDialogueCue:true]
-	[DialogueCueId:Static_GreetingFriendly]
+        [RivalAI Action]
+
+        [PlayDialogueCue:true]
+        [DialogueCueId:Static_GreetingFriendly]
 
 
-	[AddTagsToPlayers:true]
-	[AddTags:PlayerNear]
-	[AddTagsIncludeSavedPlayerIdentity:true]
+        [AddTagsToPlayers:true]
+        [AddTags:PlayerNear]
+        [AddTagsIncludeSavedPlayerIdentity:true]
 
       </Description>
-      
-    </EntityComponent>	
+
+    </EntityComponent>
 
 
 
@@ -272,23 +272,23 @@ Static_GreetingFriendly
       </Id>
       <Description>
 
-	[RivalAI Trigger]
-	[Type:PlayerNear]
-	[TargetDistance:3000]	
-	
-	[MinCooldownMs:450000]
-	[MaxCooldownMs:600000]
-	[Conditions:MSB_Context_Condition_NormalNeutral]
+        [RivalAI Trigger]
+        [Type:PlayerNear]
+        [TargetDistance:3000]
 
-	
-	[UseTrigger:true]
-	[StartsReady:true]
+        [MinCooldownMs:450000]
+        [MaxCooldownMs:600000]
+        [Conditions:MSB_Context_Condition_NormalNeutral]
 
 
-	  [Actions:MSB_Static_Action_PlayerNear3000_WarningEnteringRestricted]	  
+        [UseTrigger:true]
+        [StartsReady:true]
+
+
+        [Actions:MSB_Static_Action_PlayerNear3000_WarningEnteringRestricted]
       </Description>
-      
-    </EntityComponent>	
+
+    </EntityComponent>
 
 
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -298,23 +298,23 @@ Static_GreetingFriendly
       </Id>
       <Description>
 
-	[RivalAI Trigger]
-	[Type:PlayerNear]
-	[TargetDistance:2500]
-	[MinCooldownMs:450000]
-	[MaxCooldownMs:600000]
-	[Conditions:MSB_Context_Condition_NormalNeutral]
+        [RivalAI Trigger]
+        [Type:PlayerNear]
+        [TargetDistance:2500]
+        [MinCooldownMs:450000]
+        [MaxCooldownMs:600000]
+        [Conditions:MSB_Context_Condition_NormalNeutral]
 
 
 
-	[UseTrigger:true]
-	[StartsReady:true]
-	
+        [UseTrigger:true]
+        [StartsReady:true]
 
-	  [Actions:MSB_Static_Action_PlayerNear2500_WarningInRestricted]	  
+
+        [Actions:MSB_Static_Action_PlayerNear2500_WarningInRestricted]
       </Description>
-      
-    </EntityComponent>	
+
+    </EntityComponent>
 
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -323,18 +323,18 @@ Static_GreetingFriendly
       </Id>
       <Description>
 
-	[RivalAI Trigger]
-	[Type:PlayerNear]
-	[UseTrigger:true]
-	[StartsReady:true]
-	[TargetDistance:2500]
-	[MinCooldownMs:5000]
-	[MaxCooldownMs:5001]
-	[Conditions:MSB_Context_Condition_NormalNeutral]
-	[Actions:MSB_Static_Action_PlayerNear2500_WarningInRestricted_ReputationLoss]	  
+        [RivalAI Trigger]
+        [Type:PlayerNear]
+        [UseTrigger:true]
+        [StartsReady:true]
+        [TargetDistance:2500]
+        [MinCooldownMs:5000]
+        [MaxCooldownMs:5001]
+        [Conditions:MSB_Context_Condition_NormalNeutral]
+        [Actions:MSB_Static_Action_PlayerNear2500_WarningInRestricted_ReputationLoss]
       </Description>
-      
-    </EntityComponent>	
+
+    </EntityComponent>
 
 
 
@@ -346,20 +346,20 @@ Static_GreetingFriendly
       </Id>
       <Description>
 
-	[RivalAI Trigger]
-	[Type:PlayerNear]
-	[UseTrigger:true]
-	[StartsReady:true]
-	[TargetDistance:2000]
-	[MinCooldownMs:450000]
-	[MaxCooldownMs:600000]
-	[Conditions:MSB_Context_Condition_NormalNeutral]
+        [RivalAI Trigger]
+        [Type:PlayerNear]
+        [UseTrigger:true]
+        [StartsReady:true]
+        [TargetDistance:2000]
+        [MinCooldownMs:450000]
+        [MaxCooldownMs:600000]
+        [Conditions:MSB_Context_Condition_NormalNeutral]
 
 
-	  [Actions:MSB_Static_Action_PlayerNear3000_WarningEnteringRestricted]	  
+        [Actions:MSB_Static_Action_PlayerNear3000_WarningEnteringRestricted]
       </Description>
-      
-    </EntityComponent>	
+
+    </EntityComponent>
 
 
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -369,19 +369,19 @@ Static_GreetingFriendly
       </Id>
       <Description>
 
-	[RivalAI Trigger]
-	[Type:PlayerNear]
-	[UseTrigger:true]
-	[StartsReady:true]
-	[TargetDistance:1500]
-	[MinCooldownMs:450000]
-	[MaxCooldownMs:600000]
-	[Conditions:MSB_Context_Condition_NormalNeutral]
+        [RivalAI Trigger]
+        [Type:PlayerNear]
+        [UseTrigger:true]
+        [StartsReady:true]
+        [TargetDistance:1500]
+        [MinCooldownMs:450000]
+        [MaxCooldownMs:600000]
+        [Conditions:MSB_Context_Condition_NormalNeutral]
 
-	  [Actions:MSB_Static_Action_PlayerNear2500_WarningInRestricted]	  
+        [Actions:MSB_Static_Action_PlayerNear2500_WarningInRestricted]
       </Description>
-      
-    </EntityComponent>	
+
+    </EntityComponent>
 
 
 
@@ -392,25 +392,25 @@ Static_GreetingFriendly
       </Id>
       <Description>
 
-	[RivalAI Trigger]
-	[Type:PlayerNear]
-	[UseTrigger:true]
-	[StartsReady:true]
-	[TargetDistance:1500]
-	[MinCooldownMs:5000]
-	[MaxCooldownMs:5001]
-	[Conditions:MSB_Context_Condition_NormalNeutral]
-	[Actions:MSB_Static_Action_PlayerNear2500_WarningInRestricted_ReputationLoss]	  
+        [RivalAI Trigger]
+        [Type:PlayerNear]
+        [UseTrigger:true]
+        [StartsReady:true]
+        [TargetDistance:1500]
+        [MinCooldownMs:5000]
+        [MaxCooldownMs:5001]
+        [Conditions:MSB_Context_Condition_NormalNeutral]
+        [Actions:MSB_Static_Action_PlayerNear2500_WarningInRestricted_ReputationLoss]
       </Description>
-      
-    </EntityComponent>	
 
-	
-	
-	
-	
-	
-	
+    </EntityComponent>
+
+
+
+
+
+
+
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -418,14 +418,14 @@ Static_GreetingFriendly
       </Id>
       <Description>
 
-      [RivalAI Action]
-      
-	[PlayDialogueCue:true]
-	[DialogueCueId:Static_WarningEnteringRestricted]
-	  
+        [RivalAI Action]
+
+        [PlayDialogueCue:true]
+        [DialogueCueId:Static_WarningEnteringRestricted]
+
 
       </Description>
-      
+
     </EntityComponent>
 
 
@@ -437,12 +437,12 @@ Static_GreetingFriendly
       </Id>
       <Description>
 
-      [RivalAI Action]
+        [RivalAI Action]
 
-	[PlayDialogueCue:true]
-	[DialogueCueId:Static_WarningInRestricted]
+        [PlayDialogueCue:true]
+        [DialogueCueId:Static_WarningInRestricted]
       </Description>
-      
+
     </EntityComponent>
 
 
@@ -453,28 +453,28 @@ Static_GreetingFriendly
       </Id>
       <Description>
 
-	[RivalAI Action]
-      
-	  
-	  
-	[ChangeReputationWithPlayers:true]
-	[ReputationChangeRadius:2800]
-	[ReputationChangeFactions:{Self}]
-	[ReputationChangeAmount:-10]
-	[ReputationChangesForAllRadiusPlayerFactionMembers:true]
+        [RivalAI Action]
+
+
+
+        [ChangeReputationWithPlayers:true]
+        [ReputationChangeRadius:2800]
+        [ReputationChangeFactions:{Self}]
+        [ReputationChangeAmount:-10]
+        [ReputationChangesForAllRadiusPlayerFactionMembers:true]
       </Description>
-      
-    </EntityComponent>	
-	
-	
+
+    </EntityComponent>
 
 
-	
-	
-	
-	
-	
-	
-	
+
+
+
+
+
+
+
+
+
   </EntityComponents>
 </Definitions>

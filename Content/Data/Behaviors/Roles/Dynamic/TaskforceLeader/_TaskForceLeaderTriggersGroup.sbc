@@ -9,14 +9,14 @@
       </Id>
       <Description>
 
-	[RivalAI TriggerGroup]
+        [RivalAI TriggerGroup]
 
-	[Triggers:MSB_TaskForceLeader_Trigger_ProcessEscortRequest]
-	[Triggers:MSB_TaskForceLeader_Trigger_TargetNear1500]
+        [Triggers:MSB_TaskForceLeader_Trigger_ProcessEscortRequest]
+        [Triggers:MSB_TaskForceLeader_Trigger_TargetNear1500]
 
-	[Triggers:MSB_TaskForceLeader_Trigger_HasTarget]
-	[Triggers:MSB_TaskForceLeader_Trigger_NoTarget]
-	[Triggers:MSB_TaskForceLeader_Trigger_SwitchtoCargo]
+        [Triggers:MSB_TaskForceLeader_Trigger_HasTarget]
+        [Triggers:MSB_TaskForceLeader_Trigger_NoTarget]
+        [Triggers:MSB_TaskForceLeader_Trigger_SwitchtoCargo]
 
       </Description>
 

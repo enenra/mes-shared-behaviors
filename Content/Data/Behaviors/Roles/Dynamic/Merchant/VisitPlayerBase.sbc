@@ -36,7 +36,7 @@
         [MinCooldownMs:5000]
         [MaxCooldownMs:5001]
 
-		    [ConditionCheckResetsTimer:true]
+        [ConditionCheckResetsTimer:true]
         [Conditions:MSB_Merchant_Condition_VisitPlayerBase]
 
         [StartsReady:false]
@@ -180,7 +180,7 @@
         [StopAllRotation:true]
         [StopAllThrust:true]
 
-		    [DebugMessage:Arrived ready to trade]
+        [DebugMessage:Arrived ready to trade]
       </Description>
     </EntityComponent>
 

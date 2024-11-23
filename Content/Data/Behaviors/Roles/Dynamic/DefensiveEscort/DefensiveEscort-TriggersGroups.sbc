@@ -12,27 +12,27 @@
       </Id>
       <Description>
 
-	[RivalAI TriggerGroup]
+        [RivalAI TriggerGroup]
 
-	[Triggers:MSB_DefensiveEscortDrone_Trigger_RequestEscortSlot]		
-	[Triggers:MSB_DefensiveEscortDrone_Trigger_AggressionSwitchEscort]	
-	[Triggers:MSB_DefensiveEscortDrone_Trigger_TargetfarSwitchEscort]	
-	
+        [Triggers:MSB_DefensiveEscortDrone_Trigger_RequestEscortSlot]
+        [Triggers:MSB_DefensiveEscortDrone_Trigger_AggressionSwitchEscort]
+        [Triggers:MSB_DefensiveEscortDrone_Trigger_TargetfarSwitchEscort]
+
       </Description>
-    </EntityComponent> 	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+    </EntityComponent>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
   </EntityComponents>
 </Definitions>

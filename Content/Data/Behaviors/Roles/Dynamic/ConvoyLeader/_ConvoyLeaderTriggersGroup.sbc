@@ -9,9 +9,9 @@
       </Id>
       <Description>
 
-	[RivalAI TriggerGroup]
+        [RivalAI TriggerGroup]
 
-	[Triggers:MSB_ConvoyLeader_Trigger_ProcessEscortRequest]		
+        [Triggers:MSB_ConvoyLeader_Trigger_ProcessEscortRequest]
 
       </Description>
 

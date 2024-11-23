@@ -3,7 +3,7 @@
   <EntityComponents>
 
     <!--
-  [Triggers:MSB_DynamicCivilian_Trigger_Falling]
+        [Triggers:MSB_DynamicCivilian_Trigger_Falling]
   -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>

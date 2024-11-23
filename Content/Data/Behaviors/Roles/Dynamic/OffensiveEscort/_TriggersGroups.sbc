@@ -13,14 +13,14 @@
       </Id>
       <Description>
 
-	[RivalAI TriggerGroup]
+        [RivalAI TriggerGroup]
 
-	[Triggers:MSB_OffensiveEscort_Trigger_RequestEscortSlot]
-	[Triggers:MSB_OffensiveEscort_Trigger_AggressionSwitchEscort]
+        [Triggers:MSB_OffensiveEscort_Trigger_RequestEscortSlot]
+        [Triggers:MSB_OffensiveEscort_Trigger_AggressionSwitchEscort]
 
-	[Triggers:MSB_OffensiveEscort_Trigger_TaskLeaderIsNotReady]
-	[Triggers:MSB_OffensiveEscort_Trigger_TaskLeaderisReady]
-	[Triggers:MSB_OffensiveEscort_Trigger_NoTargetSwitchEscort]
+        [Triggers:MSB_OffensiveEscort_Trigger_TaskLeaderIsNotReady]
+        [Triggers:MSB_OffensiveEscort_Trigger_TaskLeaderisReady]
+        [Triggers:MSB_OffensiveEscort_Trigger_NoTargetSwitchEscort]
 
 
 
@@ -28,7 +28,7 @@
     </EntityComponent>
 
 
-   
+
 
 
 
