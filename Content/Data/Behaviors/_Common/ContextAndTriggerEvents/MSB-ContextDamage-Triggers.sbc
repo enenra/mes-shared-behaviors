@@ -562,11 +562,16 @@ Mmh we will need to evaluate if the cooldown makes sense.
       </Description>
     </EntityComponent>
 
+<!--
+MSB_ContextUnderFire_TriggerEvent_UnderFireGoingDown_LowAltitude
+MSB_ContextUnderFire_TriggerEvent_UnderFireGoingDown_HighAltitude
 
+
+-->
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextUnderFire_TriggerEvent_UnderFireGoingDown</SubtypeId>
+          <SubtypeId>MSB_ContextUnderFire_TriggerEvent_UnderFireGoingDown_LowAltitude</SubtypeId>
       </Id>
       <Description>
 
@@ -576,7 +581,7 @@ Mmh we will need to evaluate if the cooldown makes sense.
 
         [Type:Timer]
 
-        [Conditions:MSB_ContextUnderFire_Condition_CheckSufficientUpwardThrust]
+        [Conditions:MSB_ContextUnderFire_Condition_CheckSufficientUpwardThrust_LowAltitude]
 
         [MinCooldownMs:1000]
         [MaxCooldownMs:1001]
@@ -586,26 +591,87 @@ Mmh we will need to evaluate if the cooldown makes sense.
       </Description>
     </EntityComponent>
 
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextUnderFire_Condition_CheckSufficientUpwardThrust</SubtypeId>
+          <SubtypeId>MSB_ContextUnderFire_Condition_CheckSufficientUpwardThrust_LowAltitude</SubtypeId>
       </Id>
       <Description>
 
         [RivalAI Condition]
         [UseConditions:true]
-        [MatchAnyCondition:false]
+        [MatchAnyCondition:true]
 
         [UseFailCondition:true]
 
         [CheckSufficientUpwardThrust:true]
 
+		[AltitudeCheck:true]
+		[MinAltitude:501]
+		[MaxAltitude:999999999]
       </Description>
 
     </EntityComponent>
 
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_ContextUnderFire_TriggerEvent_UnderFireGoingDown_HighAltitude</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+        [Tags:ContextUnderFire]
+        [UseTrigger:false]
+
+        [Type:Timer]
+
+        [Conditions:MSB_ContextUnderFire_Condition_CheckSufficientUpwardThrust_HighAltitude]
+
+        [MinCooldownMs:1000]
+        [MaxCooldownMs:1001]
+        [MaxActions:1]
+
+        [Actions:MSB_ContextUnderFire_Action_UnderFireGoingDown]
+		
+		[ToggleWithTriggerProfile:MSB_ContextUnderFireGoingDown_Trigger_BeforeHighSpeedImpact]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_ContextUnderFire_Condition_CheckSufficientUpwardThrust_HighAltitude</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+        [UseConditions:true]
+        [MatchAnyCondition:true]
+		
+		
+        [UseFailCondition:true]
+		
+        [CheckSufficientUpwardThrust:true]
+
+		[AltitudeCheck:true]
+		[MinAltitude:0]
+		[MaxAltitude:500]
+      </Description>
+    </EntityComponent>
+
+
+<!--
+I have noticed in some cases 50% of its weight gets blown of meaning that they can survive it. So to fix this I will force it to crash.
+
+
+[DisableAutopilot:false]
+[StopAllThrust:true]
+[ChangeInertiaDampeners:true]
+[InertiaDampenersEnable:false]
+[RandomGyroRotation:true]
+-->
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -623,8 +689,91 @@ Mmh we will need to evaluate if the cooldown makes sense.
 
         [ResetCooldownTimeOfTriggers:true]
         [ResetTriggerCooldownTags:ContextUnderFire]
+		
+		[DisableAutopilot:true]
+		[StopAllThrust:true]
+		[ChangeInertiaDampeners:true]
+		[InertiaDampenersEnable:false]
+		[RandomGyroRotation:true]		
+
+		
+		
+		
+        [SetBooleansFalse:UnderFire]
+        [DisableTriggers:true]
+        [DisableTriggerTags:ContextUnderFire]		
+	
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_ContextDamage_TriggerEvent_UnderFire]
+		
       </Description>
     </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_ContextUnderFireGoingDown_Trigger_BeforeHighSpeedImpact</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+        [Type:Timer]
+
+        [UseTrigger:false]
+        [StartsReady:true]
+        [Conditions:MSB_ContextUnderFireGoingDown_Condition_BeforeHighSpeedImpact]
+		
+		
+        [MaxActions:1]
+
+        [Actions:MSB_ContextUnderFireGoingDown_Action_BeforeHighSpeedImpact]
+      </Description>
+
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_ContextUnderFireGoingDown_Condition_BeforeHighSpeedImpact</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+		
+		[AltitudeCheck:true]
+		[MinAltitude:5]
+		[MaxAltitude:200]
+		
+		[CheckGridVerticalSpeed:true]
+		[MinGridVerticalSpeed:80]
+		[MaxGridVerticalSpeed:-1]
+		
+      </Description>
+    </EntityComponent>
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_ContextUnderFireGoingDown_Action_BeforeHighSpeedImpact</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [DebugMessage:BeforeHighSpeedImpact aaaaaaaaaaaaaaaaahhhhhh]
+
+      </Description>
+    </EntityComponent>
+	
+	
+	
+
+
 
 
 

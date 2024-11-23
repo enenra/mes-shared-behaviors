@@ -4,24 +4,20 @@
 
   <!-- RequestEscortSlot
 
+        [Triggers:MSB_OffensiveEscort_Trigger_RequestEscortSlot]
 
+        [Triggers:MSB_OffensiveEscort_Trigger_TargetClose]
+        [Triggers:MSB_OffensiveEscort_Trigger_TargetInfront]
+		
+		
+		
+        [Triggers:MSB_OffensiveEscort_Trigger_LinkUpWithleader]
 
-        [Triggers:MSB-OffensiveEscort-Trigger-RequestEscortSlot]
+        [Triggers:MSB_OffensiveEscort_Trigger_TaskLeaderIsNotReady]
 
-        [Triggers:MSB-OffensiveEscort-Trigger-AggressionSwitchEscort]
+        [Triggers:MSB_OffensiveEscort_Trigger_TaskLeaderisReady]
 
-        [Triggers:MSB-OffensiveEscort-Trigger-TaskLeaderIsNotReady
-
-        [Triggers:MSB-OffensiveEscort-Trigger-TaskLeaderisReady
-
-        [Triggers:MSB-OffensiveEscort-Trigger-NoTargetSwitchEscort
-
-
-
-
-        [Triggers:
-
-
+        [Triggers:MSB_OffensiveEscort_Trigger_NoTargetSwitchEscort]
 
 
   -->
@@ -91,6 +87,16 @@
 <!--==========================
 
 
+trigger A:
+init fight if target is close 400m.
+
+trigger B:
+init fight if target is close 800m but right in front of the fighter
+
+
+after 8 seconds it will try to link up with its leader again.
+
+4 sec cooldown trigger A and B will be ready
 
 
 ===========================-->
@@ -99,7 +105,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_OffensiveEscort_Trigger_AggressionSwitchEscort</SubtypeId>
+        <SubtypeId>MSB_OffensiveEscort_Trigger_TargetClose</SubtypeId>
       </Id>
       <Description>
 
@@ -108,15 +114,75 @@
         [UseTrigger:true]
         [Type:TargetNear]
 
-        [TargetDistance:1500]
+        [MinCooldownMs:5000]
+        [MaxCooldownMs:5001]
+        [StartsReady:false]		
+		
+        [TargetDistance:400]
 
-        [StartsReady:true]
+
         [MaxActions:-1]
         [Actions:MSB_OffensiveEscort_Action_AggressionSwitchEscort]
 
       </Description>
 
     </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_OffensiveEscort_Trigger_TargetInfront</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:TargetNear]
+
+        [MinCooldownMs:5000]
+        [MaxCooldownMs:5001]
+        [StartsReady:false]		
+		[Conditions:MSB_OffensiveEscort_Condition_TargetInfront]
+		
+        [TargetDistance:600]
+
+
+        [MaxActions:-1]
+        [Actions:MSB_OffensiveEscort_Action_AggressionSwitchEscort]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_OffensiveEscort_Condition_TargetInfront</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+        [CheckTrueBooleans:true]
+
+        [HasTarget:true]
+
+		[CheckTargetDistance:true]
+		[MinTargetDistance:800]
+		[MaxTargetDistance:1500]
+
+
+		[CheckTargetAngleFromForward:true]
+		[MinTargetAngle:-60]
+		[MaxTargetAngle:60]
+		
+      </Description>
+    </EntityComponent>
+
+
 
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -135,12 +201,19 @@
         [ManuallyActivatedTriggerTags:MSB_CombatType_InitFight]
 
         [DisableTriggers:true]
-        [DisableTriggerNames:MSB_OffensiveEscort_Trigger_AggressionSwitchEscort]
+        [DisableTriggerNames:MSB_OffensiveEscort_Trigger_TargetInfront]
+        [DisableTriggerNames:MSB_OffensiveEscort_Trigger_TargetClose]
+
 
         [EnableTriggers:true]
         [EnableTriggerNames:MSB_OffensiveEscort_Trigger_NoTargetSwitchEscort]
+        [EnableTriggerNames:MSB_OffensiveEscort_Trigger_LinkUpWithleader]
 
 
+		[ResetCooldownTimeOfTriggers:true]
+		[ResetTriggerCooldownNames:MSB_OffensiveEscort_Trigger_LinkUpWithleader]
+		
+		
       </Description>
 
     </EntityComponent>
@@ -156,13 +229,13 @@
 
         [RivalAI Chat]
 
-        [UseChat:false]
+        [UseChat:true]
         [StartsReady:true]
         [Chance:100]
         [MaxChats:1]
         [BroadcastRandomly:true]
 
-        [Author:{Faction} Drone]
+        [Author:{GridName}]
         [Color:Green]
 
         [ChatMessages:{Faction} Going alone!]
@@ -173,6 +246,80 @@
       </Description>
 
     </EntityComponent>
+
+
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_OffensiveEscort_Trigger_LinkUpWithleader</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:false]
+        [Type:Timer]
+        [StartsReady:false]
+
+        [MinCooldownMs:14000]
+        [MaxCooldownMs:16000]
+
+
+        [MaxActions:-1]
+        [Actions:MSB_OffensiveEscort_Action_LinkUpWithleader]
+
+      </Description>
+
+    </EntityComponent>
+
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_OffensiveEscort_Action_LinkUpWithleader</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [UseChatBroadcast:true]
+        [ChatData:MSB_OffensiveEscort_Chat_PassiveSwitchPatrol]
+
+
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_CombatType_CloseFight]
+		
+		
+        [ChangeBehaviorSubclass:true]
+        [NewBehaviorSubclass:Escort]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_OffensiveEscort_Trigger_NoTargetSwitchEscort]
+        [DisableTriggerNames:MSB_OffensiveEscort_Trigger_LinkUpWithleader]
+		
+		
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_OffensiveEscort_Trigger_TargetClose]
+        [EnableTriggerNames:MSB_OffensiveEscort_Trigger_TargetInfront]
+
+		[ResetCooldownTimeOfTriggers:true]
+		[ResetTriggerCooldownNames:MSB_OffensiveEscort_Trigger_TargetClose]
+		[ResetTriggerCooldownNames:MSB_OffensiveEscort_Trigger_TargetInfront]
+		
+		
+      </Description>
+
+    </EntityComponent>
+
+
+
+
 
 <!--==========================
 
@@ -322,7 +469,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_OffensiveEscort_Action_PassiveSwitchPatrol</SubtypeId>
+        <SubtypeId>MSB_OffensiveEscort_Action_SwitchPatrol</SubtypeId>
       </Id>
       <Description>
 
@@ -340,6 +487,11 @@
         [EnableTriggers:true]
         [EnableTriggerNames:MSB_OffensiveEscort_Trigger_AggressionSwitchEscort]
 
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_CombatType_CloseFight]
+		
+		
       </Description>
 
     </EntityComponent>

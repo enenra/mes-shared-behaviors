@@ -15,6 +15,11 @@
         [RivalAI TriggerGroup]
 
         [Triggers:MSB_Fighter_Trigger_InitFight]
+		[Triggers:MSB_Fighter_Triggers_PlayerClose]		
+        [Triggers:MSB_Fighter_Triggers_Compromised]
+		
+		
+		
       </Description>
     </EntityComponent>
 
@@ -136,14 +141,12 @@
 
         [Tags:MSB_CombatType_InitFight]
 
-        [UseTrigger:false]
-        [Type:Timer]
-
-        [MinCooldownMs:1500]
-        [MaxCooldownMs:1501]
+        [UseTrigger:true]
+        [Type:Manual]
+		
         [StartsReady:false]
 
-        [MaxActions:1]
+        [MaxActions:-1]
         [Actions:MSB_Fighter_Action_InitFight]
       </Description>
     </EntityComponent>
@@ -163,8 +166,60 @@
 
         [ChangeAutopilotProfile:true]
         [AutopilotProfile:Secondary]
+		
+
+		
       </Description>
     </EntityComponent>
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Fighter_Trigger_CloseFight</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Tags:MSB_CombatType_CloseFight]
+
+        [UseTrigger:true]
+        [Type:Manual]
+		
+        [StartsReady:false]
+
+        [MaxActions:-1]
+        [Actions:MSB_Fighter_Trigger_CloseFight]
+      </Description>
+    </EntityComponent>
+
+
+<!-- I assume we will have CombatMode specific triggers. 
+
+
+So we disable triggers with this tag on close
+[Tags:MSB_CombatType_Fight]
+ -->
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Fighter_Trigger_CloseFight</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:Fighter - CloseFight]
+
+
+		
+      </Description>
+    </EntityComponent>	
+	
+	
+	
+	
 
   </EntityComponents>
 </Definitions>

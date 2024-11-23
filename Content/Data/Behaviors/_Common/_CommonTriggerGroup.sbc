@@ -87,7 +87,16 @@
         [Triggers:MSB_ContextDamage_TriggerEvent_UnderFire]
         [Triggers:MSB_ContextUnderFire_TriggerEvent_UnderFireHealthLow]
         [Triggers:MSB_ContextUnderFire_TriggerEvent_UnderFireLostWeapons]
-        [Triggers:MSB_ContextUnderFire_TriggerEvent_UnderFireGoingDown]
+        [Triggers:MSB_ContextUnderFire_TriggerEvent_UnderFireGoingDown_LowAltitude]
+        [Triggers:MSB_ContextUnderFire_TriggerEvent_UnderFireGoingDown_HighAltitude]		
+		
+
+		
+		
+		[Triggers:MSB_ContextUnderFireGoingDown_Trigger_BeforeHighSpeedImpact]	
+		
+		
+		
         [Triggers:MSB_ContextDamage_Trigger_Compromised_PlayerNotHelped]
         [Triggers:MSB_ContextDamage_Trigger_Compromised_PlayerMadeFinalShot]
         [Triggers:MSB_ContextDamage_Trigger_Compromised_PlayerHelped]

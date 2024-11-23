@@ -33,11 +33,13 @@
       <Description>
         [RivalAI Action]
 
+
+
         [DisableAutopilot:false]
         [StopAllThrust:true]
         [ChangeInertiaDampeners:true]
         [InertiaDampenersEnable:false]
-
+		[StopAllRotation:true]
 
 
       </Description>
