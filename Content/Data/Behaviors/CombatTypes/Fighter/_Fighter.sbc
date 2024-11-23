@@ -14,9 +14,14 @@
       <Description>
         [RivalAI TriggerGroup]
 
-        [Triggers:MSB_Fighter_Trigger_InitFight]
-		[Triggers:MSB_Fighter_Triggers_PlayerClose]		
-        [Triggers:MSB_Fighter_Triggers_Compromised]
+        [Triggers:MSB_Fighter_Trigger_PlayerClose]		
+        [Triggers:MSB_Fighter_Trigger_Compromised_PlayerFar]
+		
+		
+		
+        [Triggers:MSB_Fighter_Trigger_BeforeHighSpeedImpact]		
+        [Triggers:MSB_Fighter_Trigger_Compromised_BeforeHighSpeedImpact]
+        [Triggers:MSB_Fighter_Trigger_AfterHighSpeedImpact]
 		
 		
 		

@@ -162,7 +162,6 @@ NPCDamge ->
 
         [MaxActions:-1]
 
-        [Actions:MSB_ContextDamage_Action_IncreaseCountPlayerDamage]
         [Actions:MSB_ContextDamage_Action_IncreaseUnderFireCount]
       </Description>
     </EntityComponent>
@@ -767,6 +766,13 @@ I have noticed in some cases 50% of its weight gets blown of meaning that they c
 
         [DebugMessage:BeforeHighSpeedImpact aaaaaaaaaaaaaaaaahhhhhh]
 
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_BeforeHighSpeedImpact]
+        [ForceManualTriggerActivation:false]
+		
+		
+		
       </Description>
     </EntityComponent>
 	
@@ -805,10 +811,41 @@ I have noticed in some cases 50% of its weight gets blown of meaning that they c
     </EntityComponent>
 
 
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_ContextDamage_Condition_PlayerHelpedNPC</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Condition]
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [CheckCustomCounters:true]
+        [CustomCounters:CountPlayerDamage]
+        [CustomCountersTargets:30]
+        [CounterCompareTypes:GreaterOrEqual]
+
+
+        [CheckFalseBooleans:true]
+        [FalseBooleans:UnderFire]
+
+      </Description>
+
+    </EntityComponent>
+
+
+
+
+
+
+
+
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Common_Action_PlayerHelpedNPC</SubtypeId>
+          <SubtypeId>MSB_ContextDamage_Action_PlayerHelpedNPC</SubtypeId>
       </Id>
       <Description>
 
@@ -904,10 +941,6 @@ I have noticed in some cases 50% of its weight gets blown of meaning that they c
       <Description>
         [RivalAI Action]
 
-        [UseChatBroadcast:true]
-        [ChatData:MSB_Common_Chat_PlayerHelpedNPC]
-
-
         [BroadcastCommandProfiles:true]
         [CommandProfileIds:MSB_ContextDamage_Command_PlayerHelped_Faction]
         [CommandProfileIds:MSB_ContextDamage_Command_PlayerHelped_Enemy]
@@ -988,10 +1021,6 @@ I have noticed in some cases 50% of its weight gets blown of meaning that they c
       </Id>
       <Description>
         [RivalAI Action]
-
-        [UseChatBroadcast:true]
-        [ChatData:MSB_Common_Chat_PlayerHelpedNPC]
-
 
         [BroadcastCommandProfiles:true]
         [CommandProfileIds:MSB_ContextDamage_Command_PlayerMadeFinalShot_Faction]

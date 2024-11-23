@@ -388,6 +388,36 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Condition_EnemeyStaticBaseInTheArea_Fail</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:true]
+        [UseFailCondition:true]
+
+
+        [CheckTrueBooleans:true]
+
+        [TrueBooleans:SettingBattle]
+
+        [CheckThreatScore:true]
+        [CheckThreatScoreMinimum:50]
+        [CheckThreatScoreMaximum:-1]
+
+        [CheckThreatScoreIncludeOtherNpcOwners:true]
+        [CheckThreatScoreRadius:3000]
+        [CheckThreatScoreFromTargetPosition:true]
+        [CheckThreatScoreGridConfiguration:Static]
+      </Description>
+    </EntityComponent>
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_Context_Trigger_EnemeyStaticBaseInTheArea_Fail</SubtypeId>
       </Id>
       <Description>

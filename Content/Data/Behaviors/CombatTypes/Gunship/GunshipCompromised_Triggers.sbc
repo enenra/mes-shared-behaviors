@@ -3,25 +3,25 @@
   <EntityComponents>
 
     <!--
-If Player distance > 5000:
+If Player distance > 6500:
 compromised -> Despawn;
 
 
-        [Triggers:MSB_Fighter_Triggers_PlayerClose]		
-        [Triggers:MSB_Fighter_Triggers_Compromised]
+        [Triggers:MSB_Gunship_Triggers_PlayerClose]		
+        [Triggers:MSB_Gunship_Triggers_Compromised]
     -->
 
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Fighter_Triggers_PlayerClose</SubtypeId>
+        <SubtypeId>MSB_Gunship_Triggers_PlayerClose</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
 
         [Type:PlayerNear]
-		[TargetDistance:2000]
+		[TargetDistance:6500]
 		
 		
 		[MinCooldownMs:5000]
@@ -31,10 +31,10 @@ compromised -> Despawn;
 		
         [UseTrigger:true]
         [StartsReady:true]
-        [Actions:MSB_Fighter_Action_PlayerClose]
+        [Actions:MSB_Gunship_Action_PlayerClose]
 		
 		[UseElseActions:true]	
-		[ElseActions:MSB_Fighter_Action_PlayerFar]
+		[ElseActions:MSB_Gunship_Action_PlayerFar]
       </Description>
     </EntityComponent>
 
@@ -42,15 +42,15 @@ compromised -> Despawn;
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Fighter_Action_PlayerClose</SubtypeId>
+        <SubtypeId>MSB_Gunship_Action_PlayerClose</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
 
-		
+
 		[DisableTriggers:true]
-		[DisableTriggerNames:MSB_Fighter_Triggers_Compromised]
-		
+		[DisableTriggerNames:MSB_Gunship_Triggers_Compromised]
+
 
       </Description>
     </EntityComponent>
@@ -58,16 +58,13 @@ compromised -> Despawn;
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Fighter_Action_PlayerFar</SubtypeId>
+        <SubtypeId>MSB_Gunship_Action_PlayerFar</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
-
 
 		[EnableTriggers:true]
-		[EnableTriggerNames:MSB_Fighter_Triggers_Compromised]
-		
-
+		[EnableTriggerNames:MSB_Gunship_Triggers_Compromised]
 
       </Description>
     </EntityComponent>
@@ -77,7 +74,7 @@ compromised -> Despawn;
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Fighter_Triggers_Compromised</SubtypeId>
+        <SubtypeId>MSB_Gunship_Triggers_Compromised</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -85,25 +82,21 @@ compromised -> Despawn;
 
         [UseTrigger:true]
         [StartsReady:true]
-        [Actions:MSB_Fighter_Action_Compromised]
+        [Actions:MSB_Gunship_Action_Compromised]
       </Description>
     </EntityComponent>
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Fighter_Action_Compromised</SubtypeId>
+        <SubtypeId>MSB_Gunship_Action_Compromised</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
 
         [DebugMessage:Compromised despawn]
 		
-		
-		[GenerateExplosion:true]
-		[ExplosionRange:50]
-		[ExplosionDamage:1]
-		[ExplosionIgnoresVoxels:true]
+	
 		[ForceDespawn:true]
 
       </Description>
