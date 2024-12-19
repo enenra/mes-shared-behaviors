@@ -566,6 +566,12 @@ MSB_ContextUnderFire_TriggerEvent_UnderFireGoingDown_LowAltitude
 MSB_ContextUnderFire_TriggerEvent_UnderFireGoingDown_HighAltitude
 
 
+I added these 2 because at low altitude it doesn't make sense for the NPC to scream. Because it is likely not going to impact at high speed.
+
+
+
+
+
 -->
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -604,7 +610,8 @@ MSB_ContextUnderFire_TriggerEvent_UnderFireGoingDown_HighAltitude
         [UseFailCondition:true]
 
         [CheckSufficientUpwardThrust:true]
-
+		[SufficientUpwardThrustTolerance:-0.3]
+		
 		[AltitudeCheck:true]
 		[MinAltitude:501]
 		[MaxAltitude:999999999]
@@ -653,7 +660,7 @@ MSB_ContextUnderFire_TriggerEvent_UnderFireGoingDown_HighAltitude
         [UseFailCondition:true]
 		
         [CheckSufficientUpwardThrust:true]
-
+		[SufficientUpwardThrustTolerance:-0.3]
 		[AltitudeCheck:true]
 		[MinAltitude:0]
 		[MaxAltitude:500]
