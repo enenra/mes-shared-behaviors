@@ -30,7 +30,7 @@
 
         [CheckTrueBooleans:true]
         [TrueBooleans:MSB_Despawn]
-        [TrueBooleans:MSB_Despawn_Use_Simple]
+        [TrueBooleans:MSB_Despawn_Simple]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
