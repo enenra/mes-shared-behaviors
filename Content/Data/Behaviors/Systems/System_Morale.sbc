@@ -19,6 +19,21 @@
     * Morale damage when sending SOS and not getting response / morale bonus when getting one.
 
     -->
+	
+	<!--
+
+
+[Triggers:MSB_MoraleSystem_Trigger_CombatDecay]
+[Triggers:MSB_MoraleSystem_Trigger_UnderFireHealthLow]
+[Triggers:MSB_MoraleSystem_Trigger_NoWeapon]
+[Triggers:MSB_MoraleSystem_Trigger_LeaderDead]
+
+
+[Triggers:MSB_MoraleSystem_Trigger_ShipDisabled]
+[Triggers:MSB_MoraleSystem_Trigger_Flee]
+	
+	-->
+	
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -35,10 +50,13 @@
 
     <!-- Decay in Combat -->
     <!-- Current cooldowns result in battle ending after 15min if morale is 100 to start with and nothing else decreases it. -->
+	
+	
+	<!-- Currently it uses UnderFire instead of SettingBattle -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Condition_MoraleSystem_CombatDecay</SubtypeId>
+        <SubtypeId>MSB_MoraleSystem_Condition_CombatDecay</SubtypeId>
       </Id>
       <Description>
         [RivalAI Condition]
@@ -47,34 +65,36 @@
         [MatchAnyCondition:true]
 
         [CheckTrueBooleans:true]
-        [TrueBooleans:SettingBattle]
+        [TrueBooleans:UnderFire]
       </Description>
     </EntityComponent>
+	
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Trigger_MoraleSystem_CombatDecay</SubtypeId>
+        <SubtypeId>MSB_MoraleSystem_Trigger_CombatDecay</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
 
         [Type:Timer]
 
-        [UseTrigger:false]
+        [UseTrigger:true]
         [StartsReady:false]
 
-        [Conditions:MSB_Condition_MoraleSystem_CombatDecay]
+        [Conditions:MSB_MoraleSystem_Condition_CombatDecay]
 
-        [MinCooldownMs:9000]
-        [MaxCooldownMs:9001]
+        [MinCooldownMs:4000]
+        [MaxCooldownMs:4001]
 
+		[MaxActions:-1]
         [Actions:MSB_Action_MoraleSystem_CombatDecay]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Action_MoraleSystem_CombatDecay</SubtypeId>
+        <SubtypeId>MSB_MoraleSystem_Action_CombatDecay</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
@@ -86,11 +106,175 @@
       </Description>
     </EntityComponent>
 
-    <!-- Fleeing battle when morale is zero. -->
+<!-- Health Low -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Condition_MoraleSystem_Flee</SubtypeId>
+        <SubtypeId>MSB_MoraleSystem_Trigger_UnderFireHealthLow</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+        [Tags:MSB_TriggerEvent_UnderFireHealthLow]
+        [Type:Manual]
+        [UseTrigger:true]
+        [StartsReady:true]
+        [MaxActions:1]
+		
+		
+        [Actions:MSB_MoraleSystem_Action_UnderFireHealthLow]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_MoraleSystem_Action_UnderFireHealthLow</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DecreaseCounters:Morale]
+		[DecreaseCountersAmount:50]
+		
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_MoraleChange]
+
+      </Description>
+    </EntityComponent>
+
+
+	<!-- No weapon -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_MoraleSystem_Trigger_NoWeapon</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+        [Type:NoWeapon]
+        [UseTrigger:true]
+        [StartsReady:true]
+        [MaxActions:1]
+		
+		
+        [Actions:MSB_MoraleSystem_Action_NoWeapon]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_MoraleSystem_Action_NoWeapon</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DecreaseCounters:Morale]
+		[DecreaseCountersAmount:80]
+		
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_MoraleChange]
+
+      </Description>
+    </EntityComponent>
+
+
+	<!-- LeaderDead -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_MoraleSystem_Trigger_LeaderDead</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:CommandReceived]
+        [CommandReceiveCode:LeaderDead]
+        [StartsReady:true]
+
+        [MaxActions:1]
+        [Actions:MSB_MoraleSystem_Action_LeaderDead]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_MoraleSystem_Action_LeaderDead</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DecreaseCounters:Morale]
+		[DecreaseCountersAmount:50]
+		
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_MoraleChange]
+
+      </Description>
+    </EntityComponent>
+
+
+
+
+
+
+    <!-- 
+
+If the ship is disabled, nothing should come out of this system.
+
+
+
+	-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_MoraleSystem_Trigger_ShipDisabled</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+        [Tags:MSB_TriggerEvent_Disabled]
+        [Type:Manual]
+        [UseTrigger:true]
+        [StartsReady:true]
+        [MaxActions:1]
+		
+		
+        [Actions:MSB_MoraleSystem_Action_ShipDisabled]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_MoraleSystem_Action_ShipDisabled</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+		[DisableTriggers:true]
+		[DisableTriggerTags:MoraleSystem]
+		
+
+      </Description>
+    </EntityComponent>
+	
+	
+	
+	
+	
+	
+	
+	
+	<!-- Flee -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_MoraleSystem_Condition_Flee</SubtypeId>
       </Id>
       <Description>
         [RivalAI Condition]
@@ -100,34 +284,44 @@
 
         [CheckCustomCounters:true]
         [CustomCounters:Morale]
-        [CustomCountersTargets:0]
+        [CustomCountersTargets:-100]
         [CounterCompareTypes:LessOrEqual]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Trigger_MoraleSystem_Flee</SubtypeId>
+        <SubtypeId>MSB_MoraleSystem_Trigger_Flee</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
-
+		[Tags:MoraleSystem]
+		
+        [UseTrigger:true]
+        [StartsReady:false]
+		
+		
         [Type:Manual]
         [Tags:MSB_TriggerEvent_MoraleChange]
 
         [Conditions:MSB_Condition_MoraleSystem_Flee]
 
-        [Actions:MSB_Action_MoraleSystem_Flee]
+
+		[MaxActions:1]
+        [Actions:MSB_MoraleSystem_Action_Flee]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Action_MoraleSystem_Flee</SubtypeId>
+        <SubtypeId>MSB_MoraleSystem_Action_Flee</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
-
+        [DebugMessage:Lost all morale. Fleeing now]
+		
+		
+		
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Flee]
 

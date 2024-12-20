@@ -174,12 +174,20 @@
 
         [UseConditions:true]
         [MatchAnyCondition:false]
+		
+		
         [CheckTrueBooleans:true]
-
         [AllowAnyTrueBoolean:true]
         [TrueBooleans:SettingNormal]
         [TrueBooleans:SettingHighAlert]
 
+
+
+      </Description>
+    </EntityComponent>
+
+
+<!--
         [CheckThreatScore:true]
         [CheckThreatScoreMinimum:50]
         [CheckThreatScoreMaximum:-1]
@@ -188,9 +196,10 @@
         [CheckThreatScoreRadius:2500]
         [CheckThreatScoreFromTargetPosition:false]
         [CheckThreatScoreGridConfiguration:Dynamic]
-      </Description>
-    </EntityComponent>
+		
+		Not sure this worked
 
+-->
 
     <!--Start Triggers-->
 
@@ -256,6 +265,13 @@
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerNames:MSB_TriggerEvent_NoLongerInBattle]
         [ForceManualTriggerActivation:true]
+		
+		
+		[ResetCooldownTimeOfTriggers:true]
+		[ResetTriggerCooldownNames:MSB_Context_Trigger_NoTarget_ReadyforNormal]
+		
+		
+		
       </Description>
     </EntityComponent>
 
@@ -278,6 +294,14 @@
         [ManuallyActivatedTriggerNames:MSB_TriggerEvent_InitDynamicBattle]
         [ForceManualTriggerActivation:true]
 
+		[ResetCooldownTimeOfTriggers:true]
+		[ResetTriggerCooldownNames:MSB_Context_Trigger_NoTarget_ReadyforNormal]
+		
+
+
+		[RefreshTarget:true]
+				
+				
         [SetBooleansFalse:ReadyforNormal]
       </Description>
     </EntityComponent>
@@ -326,7 +350,7 @@
         [RivalAI Trigger]
 
         [Type:TargetNear]
-        [TargetDistance:1500]
+        [TargetDistance:600]
 
         [UseTrigger:true]
         [StartsReady:true]
@@ -484,7 +508,7 @@
       <Description>
         [RivalAI Chat]
 
-        [UseChat:false]
+        [UseChat:true]
         [StartsReady:true]
         [Chance:100]
         [MaxChats:-1]
@@ -507,7 +531,7 @@
       <Description>
         [RivalAI Chat]
 
-        [UseChat:false]
+        [UseChat:true]
         [StartsReady:true]
         [Chance:100]
         [MaxChats:-1]
@@ -553,7 +577,7 @@
       <Description>
         [RivalAI Chat]
 
-        [UseChat:false]
+        [UseChat:true]
         [StartsReady:true]
         [Chance:100]
         [MaxChats:-1]
@@ -576,7 +600,7 @@
       <Description>
         [RivalAI Chat]
 
-        [UseChat:false]
+        [UseChat:true]
         [StartsReady:true]
         [Chance:100]
         [MaxChats:-1]

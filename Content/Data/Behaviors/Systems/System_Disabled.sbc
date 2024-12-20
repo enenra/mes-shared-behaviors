@@ -1,0 +1,103 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <!--
+
+	If a ship is falling from the sky, or it has surrended 
+	
+	it should not say hey: I lost all morale, trying to flee now.
+	
+	So it needs to communicate with MoraleSystem.
+	
+	
+	
+	[ManuallyActivateTrigger:true]
+	[ManuallyActivatedTriggerTags:MSB_TriggerEvent_Disabled]
+	[ForceManualTriggerActivation:false]
+
+    To use:
+      * 
+
+    TODO:
+	  * Going Down equivalent in space.
+	  
+	  
+    -->
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_DisabledSystem_Trigger_GoingDown</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+        [UseTrigger:true]
+
+        [Type:Timer]
+
+        [Conditions:MSB_DisabledSystem_Condition_CheckSufficientUpwardThrust]
+
+        [MinCooldownMs:1000]
+        [MaxCooldownMs:1001]
+        [MaxActions:1]
+
+        [Actions:MSB_DisabledSystem_Action_GoingDown]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_DisabledSystem_Condition_CheckSufficientUpwardThrust</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Condition]
+        [UseConditions:true]
+        [MatchAnyCondition:true]
+
+        [UseFailCondition:true]
+
+        [CheckSufficientUpwardThrust:true]
+		[SufficientUpwardThrustTolerance:-0.3]
+		
+
+      </Description>
+
+    </EntityComponent>
+	
+
+
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DisabledSystem_Action_GoingDown</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Disabled]
+        [ForceManualTriggerActivation:false]
+		
+		
+
+		
+		
+      </Description>
+    </EntityComponent>
+	
+	
+	
+
+	
+	
+	
+
+  </EntityComponents>
+</Definitions>

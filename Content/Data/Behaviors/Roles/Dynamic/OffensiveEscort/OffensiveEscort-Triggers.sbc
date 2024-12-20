@@ -11,13 +11,18 @@
 		
 		
 		
+        [Triggers:MSB_OffensiveEscort_Trigger_LeaderDead]
         [Triggers:MSB_OffensiveEscort_Trigger_LinkUpWithleader]
-
-        [Triggers:MSB_OffensiveEscort_Trigger_TaskLeaderIsNotReady]
-
-        [Triggers:MSB_OffensiveEscort_Trigger_TaskLeaderisReady]
-
         [Triggers:MSB_OffensiveEscort_Trigger_NoTargetSwitchEscort]
+        [Triggers:MSB_OffensiveEscort_Trigger_NoTargetSwitchEscort_LeaderInactive]
+
+
+
+
+
+
+
+
 
 
   -->
@@ -146,7 +151,7 @@ after 8 seconds it will try to link up with its leader again.
         [StartsReady:false]		
 		[Conditions:MSB_OffensiveEscort_Condition_TargetInfront]
 		
-        [TargetDistance:600]
+        [TargetDistance:800]
 
 
         [MaxActions:-1]
@@ -176,7 +181,7 @@ after 8 seconds it will try to link up with its leader again.
 
 
 		[CheckTargetAngleFromForward:true]
-		[MinTargetAngle:-60]
+		[MinTargetAngle:0]
 		[MaxTargetAngle:60]
 		
       </Description>
@@ -194,8 +199,11 @@ after 8 seconds it will try to link up with its leader again.
 
         [RivalAI Action]
 
-        [UseChatBroadcast:true]
-        [ChatData:MSB_OffensiveEscort_Chat_AggressionSwitchEscort]
+
+		[DebugMessage:AggressionSwitchEscort]
+		
+		
+		
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_CombatType_InitFight]
@@ -219,37 +227,97 @@ after 8 seconds it will try to link up with its leader again.
     </EntityComponent>
 
 
-  	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_OffensiveEscort_Chat_AggressionSwitchEscort</SubtypeId>
-      </Id>
 
+
+
+<!-- 
+
+        [Triggers:MSB_OffensiveEscort_Trigger_LeaderDead]
+        [Triggers:MSB_OffensiveEscort_Trigger_LinkUpWithleader]
+        [Triggers:MSB_OffensiveEscort_Trigger_NoTargetSwitchEscort]
+        [Triggers:MSB_OffensiveEscort_Trigger_NoTargetSwitchEscort_LeaderInactive]
+
+-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_OffensiveEscort_Trigger_LeaderDead</SubtypeId>
+      </Id>
       <Description>
 
-        [RivalAI Chat]
+        [RivalAI Trigger]
 
-        [UseChat:true]
+        [UseTrigger:true]
+        [Type:CommandReceived]
+        [CommandReceiveCode:LeaderDead]
         [StartsReady:true]
-        [Chance:100]
-        [MaxChats:1]
-        [BroadcastRandomly:true]
 
-        [Author:{GridName}]
-        [Color:Green]
-
-        [ChatMessages:{Faction} Going alone!]
-        [ChatAudio:ArcHudGPSNotification1]
-        [BroadcastChatType:Chat]
-
+        [MaxActions:1]
+        [Actions:MSB_OffensiveEscort_Action_LeaderDead]
 
       </Description>
 
     </EntityComponent>
 
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_OffensiveEscort_Action_LeaderDead</SubtypeId>
+      </Id>
+      <Description>
 
+        [RivalAI Action]
 
+        [SetBooleansTrue:LeaderInactive]
 
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_CombatType_InitFight]
+		
+		
+      </Description>
+
+    </EntityComponent>
+	
+	
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_OffensiveEscort_Condition_LeaderActive</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:true]
+        [CheckFalseBooleans:true]
+        [FalseBooleans:LeaderInactive]
+
+      </Description>
+
+    </EntityComponent>
+	
+	
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_OffensiveEscort_Condition_LeaderInactive</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:true]
+        [CheckTrueBooleans:true]
+        [TrueBooleans:LeaderInactive]
+
+      </Description>
+
+    </EntityComponent>
+	
+	
+	
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -257,13 +325,12 @@ after 8 seconds it will try to link up with its leader again.
         <SubtypeId>MSB_OffensiveEscort_Trigger_LinkUpWithleader</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI Trigger]
 
         [UseTrigger:false]
         [Type:Timer]
         [StartsReady:false]
-
+        [Conditions:MSB_OffensiveEscort_Condition_LinkUpWithleader]
         [MinCooldownMs:14000]
         [MaxCooldownMs:16000]
 
@@ -276,6 +343,43 @@ after 8 seconds it will try to link up with its leader again.
     </EntityComponent>
 
 
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_OffensiveEscort_Condition_LinkUpWithleader</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+		
+		
+        [CheckFalseBooleans:true]
+        [FalseBooleans:LeaderInactive]
+
+
+		[CheckTargetDistance:false]
+		[MinTargetDistance:1200]
+		[MaxTargetDistance:-1]
+		
+		
+        [HasTarget:true]
+
+
+		[CheckIfTargetIsChasing:true]
+		[MinTargetChaseAngle:0]
+		[MaxTargetChaseAngle:80]		
+		
+		
+		
+		
+		
+      </Description>
+
+    </EntityComponent>
+	
+	
 
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -287,8 +391,7 @@ after 8 seconds it will try to link up with its leader again.
 
         [RivalAI Action]
 
-        [UseChatBroadcast:true]
-        [ChatData:MSB_OffensiveEscort_Chat_PassiveSwitchPatrol]
+        [DebugMessage:LinkUpWithleader]
 
 
 
@@ -319,105 +422,6 @@ after 8 seconds it will try to link up with its leader again.
 
 
 
-
-
-<!--==========================
-
-
-
-
-===========================-->
-
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_OffensiveEscort_Trigger_TaskLeaderIsNotReady</SubtypeId>
-      </Id>
-      <Description>
-
-        [RivalAI Trigger]
-
-        [UseTrigger:true]
-        [Type:CommandReceived]
-        [CommandReceiveCode:TaskLeaderIsNotReady]
-        [StartsReady:true]
-
-        [MaxActions:-1]
-        [Actions:MSB_OffensiveEscort_Action_TaskLeaderIsNotReady]
-
-      </Description>
-
-    </EntityComponent>
-
-
-
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_OffensiveEscort_Action_TaskLeaderIsNotReady</SubtypeId>
-      </Id>
-      <Description>
-
-        [RivalAI Action]
-
-        [SetBooleansFalse:TaskLeaderisReady]
-
-      </Description>
-
-    </EntityComponent>
-
-<!--==========================
-
-
-
-
-===========================-->
-
-
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_OffensiveEscort_Trigger_TaskLeaderisReady</SubtypeId>
-      </Id>
-      <Description>
-
-        [RivalAI Trigger]
-
-        [UseTrigger:true]
-        [Type:CommandReceived]
-        [CommandReceiveCode:TaskLeaderisReady]
-        [StartsReady:true]
-
-        [MaxActions:-1]
-        [Actions:MSB_OffensiveEscort_Action_TaskLeaderisReady]
-
-      </Description>
-
-    </EntityComponent>
-
-
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_OffensiveEscort_Action_TaskLeaderisReady</SubtypeId>
-      </Id>
-      <Description>
-
-        [RivalAI Action]
-
-        [SetBooleansTrue:TaskLeaderisReady]
-
-      </Description>
-
-    </EntityComponent>
-
-<!--==========================
-
-
-
-
-===========================-->
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -431,52 +435,31 @@ after 8 seconds it will try to link up with its leader again.
         [Type:NoTarget]
         [TargetDistance:2000]
         [StartsReady:true]
-        [Conditions:MSB_OffensiveEscort_Condition_TaskLeaderisReady]
+        [Conditions:MSB_OffensiveEscort_Condition_LeaderActive]
 
         [MinCooldownMs:6000]
         [MaxCooldownMs:9000]
 
 
         [MaxActions:-1]
-        [Actions:MSB_OffensiveEscort_Action_SwitchPatrol]
+        [Actions:MSB_OffensiveEscort_Action_SwitchEscort]
 
+		
+		
       </Description>
 
     </EntityComponent>
-
-
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_OffensiveEscort_Condition_TaskLeaderisReady</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Condition]
-
-        [UseConditions:true]
-        [MatchAnyCondition:true]
-        [CheckTrueBooleans:true]
-        [TrueBooleans:TaskLeaderisReady]
-
-
-
-      </Description>
-
-    </EntityComponent>
-
-
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_OffensiveEscort_Action_SwitchPatrol</SubtypeId>
+        <SubtypeId>MSB_OffensiveEscort_Action_SwitchEscort</SubtypeId>
       </Id>
       <Description>
 
         [RivalAI Action]
 
-        [UseChatBroadcast:true]
-        [ChatData:MSB_OffensiveEscort_Chat_PassiveSwitchPatrol]
+        [DebugMessage:No Target, Switch to Escort, grouping up with leader]
 
         [ChangeBehaviorSubclass:true]
         [NewBehaviorSubclass:Escort]
@@ -491,39 +474,73 @@ after 8 seconds it will try to link up with its leader again.
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_CombatType_CloseFight]
 		
-		
       </Description>
-
     </EntityComponent>
 
 
-  	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_OffensiveEscort_Chat_PassiveSwitchPatrol</SubtypeId>
-      </Id>
 
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_OffensiveEscort_Trigger_NoTarget_LeaderInactive</SubtypeId>
+      </Id>
       <Description>
 
-        [RivalAI Chat]
+        [RivalAI Trigger]
 
-        [UseChat:false]
+        [UseTrigger:false]
+        [Type:NoTarget]
+        [TargetDistance:2000]
         [StartsReady:true]
-        [Chance:100]
-        [MaxChats:1]
-        [BroadcastRandomly:true]
+        [Conditions:MSB_OffensiveEscort_Condition_LeaderInactive]
 
-        [Author:DEBUG {Antenna}]
-        [Color:Green]
+        [MinCooldownMs:6000]
+        [MaxCooldownMs:9000]
 
-        [ChatMessages:PassiveSwitchPatrol]
-        [ChatAudio:ArcHudGPSNotification2]
-        [BroadcastChatType:Chat]
 
+        [MaxActions:-1]
+        [Actions:MSB_OffensiveEscort_Action_SwitchPatrol_LeaderInactive]
 
       </Description>
 
     </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_OffensiveEscort_Action_SwitchPatrol_LeaderInactive</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+	
+
+		
+		
+	    
+		[DebugMessage:No Target, my leader is inactive. I am going away]
+		[Retreat:true]
+
+	
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_CombatType_CloseFight]
+		
+      </Description>
+    </EntityComponent>
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 

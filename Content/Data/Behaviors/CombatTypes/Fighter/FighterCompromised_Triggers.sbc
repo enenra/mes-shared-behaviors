@@ -175,12 +175,20 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:AfterHighSpeedImpact TerminateBehavior somehow survived]
+        [DebugMessage:AfterHighSpeedImpact somehow survived, TerminateBehavior nonetheless]
 
-        [TerminateBehavior:true]
+
         [DisableAutopilot:true]
         [StopAllThrust:true]
         [StopAllRotation:true]
+
+
+		[ManuallyActivateTrigger:true]
+		[ManuallyActivatedTriggerTags:MSB_TriggerEvent_Terminate]
+		[ForceManualTriggerActivation:false]
+
+
+
 
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_Fighter_Trigger_Compromised_BeforeHighSpeedImpact]

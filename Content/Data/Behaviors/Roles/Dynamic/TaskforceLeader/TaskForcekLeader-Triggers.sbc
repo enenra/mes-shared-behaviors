@@ -5,12 +5,15 @@
   <!-- RequestEscortSlot
 
 
-        [Triggers:MSB-TaskForceLeader-Trigger-ProcessEscortRequest]
-        [Triggers:MSB-TaskForceLeader-Trigger-TargetNear1500]
+        [Triggers:MSB_TaskForceLeader_Trigger_ProcessEscortRequest]
+        [Triggers:MSB_TaskForceLeader_Trigger_TargetNear1500]
 
-        [Triggers:MSB-TaskForceLeader-Trigger-HasTarget]
-        [Triggers:MSB-TaskForceLeader-Trigger-NoTarget]
-        [Triggers:MSB-TaskForceLeader-Trigger-SwitchtoCargo]
+        [Triggers:MSB_TaskForceLeader_Trigger_HasTarget]
+        [Triggers:MSB_TaskForceLeader_Trigger_NoTarget]
+        [Triggers:MSB_TaskForceLeader_Trigger_SwitchtoCargo]
+		
+		
+        [Triggers:MSB_TaskForceLeader_Trigger_Compromised]
 
 
 
@@ -85,6 +88,71 @@
 
     </EntityComponent>
 
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_TaskForceLeader_Trigger_Compromised</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+		[Tags:MSB_TriggerEvent_Compromised]
+        [Type:Compromised]
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [MaxActions:1]
+        [Actions:MSB_TaskForceLeader_Action_Compromised]
+
+      </Description>
+
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_TaskForceLeader_Action_Compromised</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [BroadcastCommandProfiles:true]
+        [CommandProfileIds:MSB_TaskForceLeader_Command_Compromised]
+
+      </Description>
+
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_TaskForceLeader_Command_Compromised</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Command]
+
+        [CommandCode:LeaderDead]
+        [MatchSenderReceiverOwners:true]
+        [IgnoreAntennaRequirement:true]
+        [IgnoreReceiverAntennaRequirement:true]
+        [Radius:7500]
+
+      </Description>
+
+    </EntityComponent>
+
+
+
+
+
+
+
+
+
 <!--==========================
 
 
@@ -123,47 +191,12 @@
 
         [RivalAI Action]
 
-        [BroadcastCommandProfiles:true]
-        [CommandProfileIds:MSB_TaskForceLeader_Command_LooseFighters]
-
-        [UseChatBroadcast:true]
-        [ChatData:MSB_TaskForceLeader_Chat_TargetNear1500]
-
-
-
 
       </Description>
 
     </EntityComponent>
 
 
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_TaskForceLeader_Chat_TargetNear1500</SubtypeId>
-      </Id>
-
-      <Description>
-
-        [RivalAI Chat]
-
-        [UseChat:false]
-        [StartsReady:true]
-        [Chance:100]
-        [MaxChats:1]
-        [BroadcastRandomly:true]
-
-        [Author:{AntennaName}]
-        [Color:Green]
-
-        [ChatMessages:Fighters Engage!]
-        [ChatAudio:ArcHudGPSNotification2]
-        [BroadcastChatType:Chat]
-
-
-      </Description>
-
-    </EntityComponent>
 
 
 
@@ -207,12 +240,13 @@
       <Description>
 
         [RivalAI Action]
-        [ChangeBehaviorSubclass:true]
-        [NewBehaviorSubclass:Horsefly]
-
-        [ChangeAutopilotProfile:true]
-        [AutopilotProfile:Secondary]
-
+		
+		
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_CombatType_InitFight]
+		
+		
+		
         [UseChatBroadcast:true]
         [ChatData:MSB_TaskForceLeader_Chat_HasTarget]
 
@@ -264,24 +298,6 @@
     </EntityComponent>
 
 
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_TaskForceLeader_Command_HasTarget</SubtypeId>
-      </Id>
-      <Description>
-
-        [RivalAI Command]
-
-        [CommandCode:TaskLeaderIsNotReady]
-        [MatchSenderReceiverOwners:true]
-        [IgnoreAntennaRequirement:true]
-        [IgnoreReceiverAntennaRequirement:true]
-        [Radius:5000]
-
-      </Description>
-
-    </EntityComponent>
 
 <!--==========================
 
