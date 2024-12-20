@@ -122,76 +122,7 @@ compromised -> Despawn;
 	
 	
 	
-	    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Fighter_Trigger_AfterHighSpeedImpact</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Trigger]
-        [Type:Timer]
-		
-        [UseTrigger:false]
-		
-		[Conditions:MSB_Fighter_Condition_AfterHighSpeedImpact]
-				
-				
-        [StartsReady:true]
-        [Actions:MSB_Fighter_Action_AfterHighSpeedImpact]
-      </Description>
-    </EntityComponent>
 
-
-	
-	
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Fighter_Condition_AfterHighSpeedImpact</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Condition]
-        [UseConditions:true]
-        [MatchAnyCondition:true]
-	
-
-		[AltitudeCheck:true]
-		[MinAltitude:-1]
-		[MaxAltitude:10]
-		
-
-		
-		[CheckGridVerticalSpeed:true]
-
-		[MaxGridVerticalSpeed:15]
-		
-      </Description>
-    </EntityComponent>	
-	
-	
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Fighter_Action_AfterHighSpeedImpact</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Action]
-
-        [DebugMessage:AfterHighSpeedImpact TerminateBehavior]
-
-		[GenerateExplosion:true]
-		[ExplosionRange:50]
-		[ExplosionDamage:20]
-		[ExplosionIgnoresVoxels:true]
-		
-		
-		
-		[ForceDespawn:true]
-		[DisableTriggers:true]
-		[DisableTriggerNames:MSB_Fighter_Trigger_Compromised_BeforeHighSpeedImpact]
-
-      </Description>
-    </EntityComponent>
 	
 
 	
