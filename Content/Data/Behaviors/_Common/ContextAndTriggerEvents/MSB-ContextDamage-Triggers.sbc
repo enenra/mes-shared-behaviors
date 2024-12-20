@@ -568,11 +568,13 @@ MSB_ContextUnderFire_TriggerEvent_UnderFireGoingDown_HighAltitude
 
 I added these 2 because at low altitude it doesn't make sense for the NPC to scream. Because it is likely not going to impact at high speed.
 
-
-
-
-
 -->
+
+
+
+<!-- _LowAltitude -->
+
+
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -592,7 +594,7 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
         [MaxCooldownMs:1001]
         [MaxActions:1]
 
-        [Actions:MSB_ContextUnderFire_Action_UnderFireGoingDown]
+        [Actions:MSB_ContextUnderFire_Action_UnderFireGoingDown_LowAltitude]
       </Description>
     </EntityComponent>
 
@@ -620,7 +622,43 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
     </EntityComponent>
 
 
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_ContextUnderFire_Action_UnderFireGoingDown_LowAltitude</SubtypeId>
+      </Id>
+      <Description>
 
+        [RivalAI Action]
+
+        [DebugMessage:TriggerEvent UnderFireGoingDown]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_UnderFireGoingDown]
+		[ManuallyActivatedTriggerTags:MSB_TriggerEvent_UnderFireGoingDown_LowAltitude]
+        [ForceManualTriggerActivation:false]
+
+
+
+
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownTags:ContextUnderFire]
+		
+
+        [SetBooleansFalse:UnderFire]
+        [DisableTriggers:true]
+        [DisableTriggerTags:ContextUnderFire]		
+	
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_ContextDamage_TriggerEvent_UnderFire]
+		
+      </Description>
+    </EntityComponent>
+
+
+
+<!-- _HighAltitude -->
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -640,9 +678,9 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
         [MaxCooldownMs:1001]
         [MaxActions:1]
 
-        [Actions:MSB_ContextUnderFire_Action_UnderFireGoingDown]
+        [Actions:MSB_ContextUnderFire_Action_UnderFireGoingDown_HighAltitude]
 		
-		[ToggleWithTriggerProfile:MSB_ContextUnderFireGoingDown_Trigger_BeforeHighSpeedImpact]
+
       </Description>
     </EntityComponent>
 
@@ -668,43 +706,27 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
     </EntityComponent>
 
 
-<!--
-I have noticed in some cases 50% of its weight gets blown of meaning that they can survive it. So to fix this I will force it to crash.
 
-
-[DisableAutopilot:false]
-[StopAllThrust:true]
-[ChangeInertiaDampeners:true]
-[InertiaDampenersEnable:false]
-[RandomGyroRotation:true]
--->
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextUnderFire_Action_UnderFireGoingDown</SubtypeId>
+          <SubtypeId>MSB_ContextUnderFire_Action_UnderFireGoingDown_HighAltitude</SubtypeId>
       </Id>
       <Description>
 
         [RivalAI Action]
 
-        [DebugMessage:TriggerEvent UnderFireGoingDown]
+        [DebugMessage:TriggerEvent UnderFireGoingDown HighAlittude]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_UnderFireGoingDown]
+		[ManuallyActivatedTriggerTags:MSB_TriggerEvent_UnderFireGoingDown_HighAltitude]
         [ForceManualTriggerActivation:false]
 
         [ResetCooldownTimeOfTriggers:true]
         [ResetTriggerCooldownTags:ContextUnderFire]
 		
-		[DisableAutopilot:true]
-		[StopAllThrust:true]
-		[ChangeInertiaDampeners:true]
-		[InertiaDampenersEnable:false]
-		[RandomGyroRotation:true]		
-
-		
-		
-		
+	
         [SetBooleansFalse:UnderFire]
         [DisableTriggers:true]
         [DisableTriggerTags:ContextUnderFire]		
@@ -716,72 +738,7 @@ I have noticed in some cases 50% of its weight gets blown of meaning that they c
     </EntityComponent>
 
 
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextUnderFireGoingDown_Trigger_BeforeHighSpeedImpact</SubtypeId>
-      </Id>
-      <Description>
 
-        [RivalAI Trigger]
-        [Type:Timer]
-
-        [UseTrigger:false]
-        [StartsReady:true]
-        [Conditions:MSB_ContextUnderFireGoingDown_Condition_BeforeHighSpeedImpact]
-		
-		
-        [MaxActions:1]
-
-        [Actions:MSB_ContextUnderFireGoingDown_Action_BeforeHighSpeedImpact]
-      </Description>
-
-    </EntityComponent>
-
-
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextUnderFireGoingDown_Condition_BeforeHighSpeedImpact</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Condition]
-        [UseConditions:true]
-        [MatchAnyCondition:false]
-		
-		[AltitudeCheck:true]
-		[MinAltitude:5]
-		[MaxAltitude:200]
-		
-		[CheckGridVerticalSpeed:true]
-		[MinGridVerticalSpeed:80]
-		[MaxGridVerticalSpeed:-1]
-		
-      </Description>
-    </EntityComponent>
-
-
-
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextUnderFireGoingDown_Action_BeforeHighSpeedImpact</SubtypeId>
-      </Id>
-      <Description>
-
-        [RivalAI Action]
-
-        [DebugMessage:BeforeHighSpeedImpact aaaaaaaaaaaaaaaaahhhhhh]
-
-
-        [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_BeforeHighSpeedImpact]
-        [ForceManualTriggerActivation:false]
-		
-		
-		
-      </Description>
-    </EntityComponent>
 	
 	
 	
