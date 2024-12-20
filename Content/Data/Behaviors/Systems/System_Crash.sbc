@@ -4,14 +4,18 @@
 
     <!--
 
+    (Cinematic) Crash System
+    * Makes dynamic grids in atmosphere crash more cinematically after they've been disabled. It turns off thrusters, and makes the grid spin until impact.
 
-      Dynamic:
-        *
+    To use:
+      * Assign the crash system's trigger to the behavior you want it to be used in.
+      * Assign MSB_DynamicCommon_TriggerGroup to the behavior you want it to be used in.
 
-      TODO:
-        *
+    TODO:
+      *
     -->
 
+    <!-- LowAltitude -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -45,6 +49,7 @@
       </Description>
     </EntityComponent>
 
+    <!-- HighAltitude -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -91,6 +96,7 @@
       </Description>
     </EntityComponent>
 
+    <!-- BeforeHighSpeedImpact -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -129,7 +135,6 @@
         [MaxGridVerticalSpeed:-1]
       </Description>
     </EntityComponent>
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
