@@ -18,6 +18,8 @@
         [Triggers:MSB_TaskForceLeader_Trigger_NoTarget]
         [Triggers:MSB_TaskForceLeader_Trigger_SwitchtoCargo]
 
+        [Triggers:MSB_TaskForceLeader_Trigger_Compromised]
+		
       </Description>
 
     </EntityComponent>

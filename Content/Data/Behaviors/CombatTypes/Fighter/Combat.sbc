@@ -1,0 +1,72 @@
+﻿<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <!--
+    TODO:
+      * Prevent this from triggering when not actually in a fight
+    -->
+
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Fighter_Trigger_DamageByHostile</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Tags:MSB_TriggerEvent_UnderFire]
+
+        [Type:Manual]
+        [MinCooldownMs:4000]
+        [MaxCooldownMs:4001]
+        [UseTrigger:true]
+        [StartsReady:false]
+
+
+        [Actions:MSB_Fighter_Action_DamageByHostile]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Fighter_Condition_DamageByHostile</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+
+      </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Fighter_Action_DamageByHostile</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:SwitchTargetToDamager]
+		
+		[SwitchTargetToDamager:true]
+		
+
+      </Description>
+    </EntityComponent>
+
+
+	
+	
+	
+	
+	
+	
+
+  </EntityComponents>
+</Definitions>

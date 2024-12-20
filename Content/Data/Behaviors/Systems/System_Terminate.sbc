@@ -1,0 +1,112 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <!--
+
+    [TerminateBehavior:true] stops the whole behavior including any further trigger. It is usefull, but we probably first want to run some compromised triggers.
+	
+	So instead of [TerminateBehavior:true] use 
+	
+	[ManuallyActivateTrigger:true]
+	[ManuallyActivatedTriggerTags:MSB_TriggerEvent_Terminate]
+	[ForceManualTriggerActivation:false]
+
+    To use:
+      * 
+
+    TODO:
+      *
+	  
+	  
+	  
+	  [Triggers:MSB_TerminateSystem_Trigger_Start]
+	  [Triggers:MSB_TerminateSystem_Trigger_Terminate]
+    -->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_TerminateSystem_Trigger_Start</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Tags:MSB_TriggerEvent_Terminate]
+
+        [Type:Manual]
+        [UseTrigger:true]
+        [StartsReady:true]
+		[MaxActions:1]
+        [Actions:MSB_TerminateSystem_Action_Start]
+      </Description>
+    </EntityComponent>
+
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_TerminateSystem_Action_Start</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Compromised]
+        [ForceManualTriggerActivation:false]
+		
+		
+		[EnableTriggers:true]
+		[EnableTriggerNames:MSB_TerminateSystem_Trigger_Terminate]
+		
+		[ResetCooldownTimeOfTriggers:true]
+		[ResetTriggerCooldownNames:MSB_TerminateSystem_Trigger_Terminate]
+		
+		
+      </Description>
+    </EntityComponent>
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_TerminateSystem_Trigger_Terminate</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Tags:MSB_TerminateSystem]
+
+        [Type:Timer]
+        [UseTrigger:false]
+        [StartsReady:false]
+
+        [MinCooldownMs:800]
+        [MaxCooldownMs:801]
+		[MaxActions:1]
+        [Actions:MSB_TerminateSystem_Action_Terminate]
+      </Description>
+    </EntityComponent>
+
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_TerminateSystem_Action_Terminate</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+
+		[TerminateBehavior:true]
+		
+		
+		
+      </Description>
+    </EntityComponent>
+	
+	
+	
+
+  </EntityComponents>
+</Definitions>

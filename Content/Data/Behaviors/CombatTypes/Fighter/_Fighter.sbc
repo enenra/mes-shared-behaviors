@@ -15,6 +15,8 @@
         [RivalAI TriggerGroup]
 
         [Triggers:MSB_Fighter_Trigger_PlayerClose]		
+        [Triggers:MSB_Fighter_Trigger_InitFight]		
+        [Triggers:MSB_Fighter_Trigger_CloseFight]		
         [Triggers:MSB_Fighter_Trigger_Compromised_PlayerFar]
 		
 		
@@ -23,6 +25,7 @@
         [Triggers:MSB_Fighter_Trigger_Compromised_BeforeHighSpeedImpact]
         [Triggers:MSB_Fighter_Trigger_AfterHighSpeedImpact]
 		
+		[Triggers:MSB_Fighter_Trigger_DamageByHostile]
 		
 		
       </Description>
@@ -173,6 +176,8 @@
         [AutopilotProfile:Secondary]
 		
 
+		[RefreshTarget:true]
+
 		
       </Description>
     </EntityComponent>
@@ -217,13 +222,15 @@ So we disable triggers with this tag on close
 
         [DebugMessage:Fighter - CloseFight]
 
-
-		
       </Description>
     </EntityComponent>	
 	
 	
 	
+	
+	<!--
+			[SwitchTargetToDamager:true]
+			-->
 	
 
   </EntityComponents>
