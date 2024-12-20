@@ -107,7 +107,7 @@ I have noticed in some cases 50% of its weight gets blown of meaning that they c
 		
 		
 		[EnableTriggers:true]
-        [EnableTriggerNames:MSB_ContextDamage_TriggerEvent_UnderFire]
+        [EnableTriggerNames:MSB_CrashSystem_Trigger_BeforeHighSpeedImpact]
 		
 		
       </Description>
