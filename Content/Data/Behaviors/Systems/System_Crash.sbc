@@ -5,194 +5,146 @@
     <!--
 
 
-    Dynamic:
-      * 
+      Dynamic:
+        *
 
-    TODO:
-      * 
+      TODO:
+        *
     -->
 
-
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_ChrashSystem_Trigger_UnderFireGoingDown_LowAltitude</SubtypeId>
+        <SubtypeId>MSB_CrashSystem_Trigger_UnderFireGoingDown_LowAltitude</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
+
         [Tags:MSB_TriggerEvent_UnderFireGoingDown_HighAltitude]
 
         [Type:Manual]
         [UseTrigger:true]
         [StartsReady:true]
 
-        [Actions:MSB_ChrashSystem_Action_UnderFireGoingDown_HighAltitude]
+        [Actions:MSB_CrashSystem_Action_UnderFireGoingDown_HighAltitude]
       </Description>
     </EntityComponent>
-
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_ChrashSystem_Action_UnderFireGoingDown_LowAltitude</SubtypeId>
+        <SubtypeId>MSB_CrashSystem_Action_UnderFireGoingDown_LowAltitude</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
 
-		[DisableAutopilot:true]
-		[StopAllThrust:true]
-		[ChangeInertiaDampeners:true]
-		[InertiaDampenersEnable:false]
-		[RandomGyroRotation:true]	
-		
+        [DisableAutopilot:true]
+        [StopAllThrust:true]
+        [ChangeInertiaDampeners:true]
+        [InertiaDampenersEnable:false]
+        [RandomGyroRotation:true]
       </Description>
     </EntityComponent>
-	
-	
-
-
-
-
-
-
-
-
-
-
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_ChrashSystem_Trigger_UnderFireGoingDown_HighAltitude</SubtypeId>
+        <SubtypeId>MSB_CrashSystem_Trigger_UnderFireGoingDown_HighAltitude</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
-        [Tags:MSB_TriggerEvent_UnderFireGoingDown_HighAltitude]
 
         [Type:Manual]
+
+        [Tags:MSB_TriggerEvent_UnderFireGoingDown_HighAltitude]
+
         [UseTrigger:true]
         [StartsReady:true]
 
-        [Actions:MSB_ChrashSystem_Action_UnderFireGoingDown_HighAltitude]
+        [Actions:MSB_CrashSystem_Action_UnderFireGoingDown_HighAltitude]
       </Description>
     </EntityComponent>
+    <!--
+      I have noticed in some cases 50% of its weight gets blown of meaning that they can survive it. So to fix this I will force it to crash.
 
-
-<!--
-I have noticed in some cases 50% of its weight gets blown of meaning that they can survive it. So to fix this I will force it to crash.
-
-
-[DisableAutopilot:false]
-[StopAllThrust:true]
-[ChangeInertiaDampeners:true]
-[InertiaDampenersEnable:false]
-[RandomGyroRotation:true]
--->
-
-
+        [DisableAutopilot:false]
+        [StopAllThrust:true]
+        [ChangeInertiaDampeners:true]
+        [InertiaDampenersEnable:false]
+        [RandomGyroRotation:true]
+    -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_ChrashSystem_Action_UnderFireGoingDown_HighAltitude</SubtypeId>
+        <SubtypeId>MSB_CrashSystem_Action_UnderFireGoingDown_HighAltitude</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
 
-		[DisableAutopilot:true]
-		[StopAllThrust:true]
-		[ChangeInertiaDampeners:true]
-		[InertiaDampenersEnable:false]
-		[RandomGyroRotation:true]	
-		
-		
-		[EnableTriggers:true]
+        [DisableAutopilot:true]
+        [StopAllThrust:true]
+        [ChangeInertiaDampeners:true]
+        [InertiaDampenersEnable:false]
+        [RandomGyroRotation:true]
+
+        [EnableTriggers:true]
         [EnableTriggerNames:MSB_CrashSystem_Trigger_BeforeHighSpeedImpact]
-		
-		
       </Description>
     </EntityComponent>
 
-
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_CrashSystem_Trigger_BeforeHighSpeedImpact</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CrashSystem_Trigger_BeforeHighSpeedImpact</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI Trigger]
+
         [Type:Timer]
 
         [UseTrigger:false]
         [StartsReady:true]
         [Conditions:MSB_CrashSystem_Condition_BeforeHighSpeedImpact]
-		
-		
-        [MaxActions:1]
 
+        [MaxActions:1]
         [Actions:MSB_CrashSystem_Action_BeforeHighSpeedImpact]
       </Description>
-
     </EntityComponent>
-
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_CrashSystem_Condition_BeforeHighSpeedImpact</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CrashSystem_Condition_BeforeHighSpeedImpact</SubtypeId>
       </Id>
       <Description>
         [RivalAI Condition]
+
         [UseConditions:true]
         [MatchAnyCondition:false]
-		
-		[AltitudeCheck:true]
-		[MinAltitude:5]
-		[MaxAltitude:200]
-		
-		[CheckGridVerticalSpeed:true]
-		[MinGridVerticalSpeed:80]
-		[MaxGridVerticalSpeed:-1]
-		
+
+        [AltitudeCheck:true]
+        [MinAltitude:5]
+        [MaxAltitude:200]
+
+        [CheckGridVerticalSpeed:true]
+        [MinGridVerticalSpeed:80]
+        [MaxGridVerticalSpeed:-1]
       </Description>
     </EntityComponent>
 
-
-
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_CrashSystem_Action_BeforeHighSpeedImpact</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CrashSystem_Action_BeforeHighSpeedImpact</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI Action]
 
         [DebugMessage:BeforeHighSpeedImpact aaaaaaaaaaaaaaaaahhhhhh]
 
-
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_BeforeHighSpeedImpact]
         [ForceManualTriggerActivation:false]
-		
-		
-		
       </Description>
     </EntityComponent>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   </EntityComponents>
 </Definitions>
