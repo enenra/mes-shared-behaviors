@@ -187,14 +187,13 @@
 
         [DebugMessage:Despawn - FlyToClosestFactionStatic]
 
-        [AddWaypointFromCommand:true]
-
-        [OverwriteAutopilotProfile:true]
-        [OverwriteAutopilotMode:Tertiary]
-        [OverwriteAutopilotId:]
-
         [ChangeAutopilotProfile:true]
         [AutopilotProfile:Tertiary]
+
+        [ChangeBehaviorSubclass:true]
+        [NewBehaviorSubclass:Cargoship]
+
+        [AddWaypointFromCommand:true]
       </Description>
     </EntityComponent>
 
