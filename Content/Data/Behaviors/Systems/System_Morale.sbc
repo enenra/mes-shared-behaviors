@@ -41,8 +41,14 @@
       <Description>
         [RivalAI TriggerGroup]
 
-        [Triggers:MSB_Trigger_MoraleSystem_CombatDecay]
-        [Triggers:MSB_Trigger_MoraleSystem_Flee]
+        [Triggers:MSB_MoraleSystem_Trigger_CombatDecay]
+
+        [Triggers:MSB_MoraleSystem_Trigger_UnderFireHealthLow]
+        [Triggers:MSB_MoraleSystem_Trigger_NoWeapon]
+        [Triggers:MSB_MoraleSystem_Trigger_LeaderDead]
+
+        [Triggers:MSB_MoraleSystem_Trigger_ShipDisabled]
+        [Triggers:MSB_MoraleSystem_Trigger_Flee]
       </Description>
     </EntityComponent>
 
