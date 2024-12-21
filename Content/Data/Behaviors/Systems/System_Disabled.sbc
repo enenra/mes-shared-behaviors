@@ -58,7 +58,7 @@
 
         [RivalAI Condition]
         [UseConditions:true]
-        [MatchAnyCondition:true]
+        [MatchAnyCondition:false]
 
         [UseFailCondition:true]
 
@@ -80,14 +80,14 @@
       </Id>
       <Description>
         [RivalAI Action]
-
+		[DebugMessage:MSB_DisabledSystem_Action_GoingDown]
+			
+			
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Disabled]
         [ForceManualTriggerActivation:false]
 		
-		
 
-		
 		
       </Description>
     </EntityComponent>

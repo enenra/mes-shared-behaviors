@@ -33,6 +33,7 @@
 		[Triggers:MSB_Fighter_Trigger_LowAltitudeFighting_Reset_TargetFar]
 		[Triggers:MSB_Fighter_Trigger_StartingAttackRun]
 		[Triggers:MSB_Fighter_Trigger_EndingAttackRun]
+		[Triggers:MSB_Fighter_Trigger_EnemyOnTail]
 
 
 	  
