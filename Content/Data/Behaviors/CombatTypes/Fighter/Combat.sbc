@@ -5,9 +5,18 @@
     <!--
     TODO:
       * Prevent this from triggering when not actually in a fight
+	  
+	  
+	  
+	  
+[Triggers:MSB_Fighter_Trigger_LowAltitudeFighting]
+[Triggers:MSB_Fighter_Trigger_LowAltitudeFighting_Reset_ChangedTarget]
+[Triggers:MSB_Fighter_Trigger_LowAltitudeFighting_Reset_TargetFar]
+
+
+[Triggers:MSB_Fighter_Trigger_StartingAttackRun]
+[Triggers:MSB_Fighter_Trigger_EndingAttackRun]
     -->
-
-
 
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -25,7 +34,7 @@
         [MaxCooldownMs:4001]
         [UseTrigger:true]
         [StartsReady:false]
-
+		[MaxActions:1]
 
         [Actions:MSB_Fighter_Action_DamageByHostile]
       </Description>
@@ -34,33 +43,235 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Fighter_Condition_DamageByHostile</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Condition]
-
-
-      </Description>
-    </EntityComponent>
-
-
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_Fighter_Action_DamageByHostile</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
-
-        [DebugMessage:SwitchTargetToDamager]
-		
+	
 		[SwitchTargetToDamager:true]
-		
-
       </Description>
     </EntityComponent>
 
 
+
+
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+            <Id>
+                <TypeId>Inventory</TypeId>
+                <SubtypeId>MSB_Fighter_Trigger_LowAltitudeFighting</SubtypeId>
+            </Id>
+            <Description>
+			
+			[RivalAI Trigger]
+			
+			[UseTrigger:true]
+			[Type:TargetNear]
+			[TargetDistance:1200]
+			
+			[Conditions:MSB_Fighter_Condition_LowAltitudeFighting]
+			
+			[StartsReady:true]
+			[MaxActions:-1]
+			[Actions:MSB_Fighter_Action_LowAltitudeFighting]
+			
+			</Description>
+        </EntityComponent>
+
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+            <Id>
+                <TypeId>Inventory</TypeId>
+                <SubtypeId>MSB_Fighter_Condition_LowAltitudeFighting</SubtypeId>
+            </Id>
+            <Description>
+			
+			[RivalAI Condition]
+			
+			[UseConditions:true]
+			[TargetAltitudeCheck:true]
+			[MinTargetAltitude:-1]
+			[MaxTargetAltitude:50]
+			
+			</Description>
+        </EntityComponent>
+
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+            <Id>
+                <TypeId>Inventory</TypeId>
+                <SubtypeId>MSB_Fighter_Action_LowAltitudeFighting</SubtypeId>
+            </Id>
+            <Description>
+			
+			[RivalAI Action]
+        [DebugMessage:Target is at a very low altitude, slowing down...]
+
+			[DisableTriggers:true]
+			[DisableTriggerNames:MSB_Fighter_Trigger_LowAltitudeFighting]
+
+			[EnableTriggers:true]
+			[EnableTriggerTags:LowAltitudeFighting]
+
+			[ChangeAutopilotSpeed:true]
+			[NewAutopilotSpeed:30]
+			</Description>
+        </EntityComponent>
+
+
+
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+            <Id>
+                <TypeId>Inventory</TypeId>
+                <SubtypeId>MSB_Fighter_Trigger_LowAltitudeFighting_Reset_ChangedTarget</SubtypeId>
+            </Id>
+            <Description>
+			[RivalAI Trigger]
+			[Tags:LowAltitudeFighting]
+			[UseTrigger:false]
+			[Type:ChangedTarget]
+			
+			[StartsReady:true]
+			
+			[MaxActions:-1]
+			[Actions:MSB_Fighter_Action_LowAltitudeFighting_Reset]	
+			</Description>
+        </EntityComponent>
+
+
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+            <Id>
+                <TypeId>Inventory</TypeId>
+                <SubtypeId>MSB_Fighter_Trigger_LowAltitudeFighting_Reset_TargetFar</SubtypeId>
+            </Id>
+            <Description>
+			[RivalAI Trigger]
+			[Tags:LowAltitudeFighting]
+			[UseTrigger:false]
+			[Type:TargetFar]
+			[TargetDistance:1800]	
+			[StartsReady:true]
+			
+			[MaxActions:-1]
+			[Actions:MSB_Fighter_Action_LowAltitudeFighting_Reset]	
+			</Description>
+        </EntityComponent>
+		
+		
+
+
+
+
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+            <Id>
+                <TypeId>Inventory</TypeId>
+                <SubtypeId>MSB_Fighter_Action_LowAltitudeFighting_Reset</SubtypeId>
+            </Id>
+            <Description>
+			
+			[RivalAI Action]
+
+			[DebugMessage:Max speed]
+			[DisableTriggers:true]
+			[DisableTriggerTags:LowAltitudeFighting]
+
+			[EnableTriggers:true]
+			[EnableTriggerNames:MSB_Fighter_Trigger_LowAltitudeFighting]
+			
+			[ChangeAutopilotSpeed:true]
+			[NewAutopilotSpeed:300]
+
+
+			</Description>
+        </EntityComponent>
+
+
+
+
+
+
+
+
+	
+			<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+            <Id>
+                <TypeId>Inventory</TypeId>
+                <SubtypeId>MSB_Fighter_Trigger_StartingAttackRun</SubtypeId>
+            </Id>
+            <Description>
+			
+			[RivalAI Trigger]
+			
+			[UseTrigger:true]
+			[Type:BehaviorTriggerB]
+			
+			[StartsReady:true]
+			
+			[MaxActions:-1]
+			[Actions:MSB_Fighter_Action_LowAltitudeFighting_StartingAttackRun]
+			
+			</Description>
+        </EntityComponent>
+
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+            <Id>
+                <TypeId>Inventory</TypeId>
+                <SubtypeId>MSB_Fighter_Action_LowAltitudeFighting_StartingAttackRun</SubtypeId>
+            </Id>
+            <Description>
+			
+			[RivalAI Action]
+
+			[DebugMessage:StartingAttackRun]
+
+
+			[ChangeAutopilotProfile:true]
+			[AutopilotProfile:Tertiary]
+
+
+
+
+			</Description>
+        </EntityComponent>
+	
+	
+	
+			<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+            <Id>
+                <TypeId>Inventory</TypeId>
+                <SubtypeId>MSB_Fighter_Trigger_EndingAttackRun</SubtypeId>
+            </Id>
+            <Description>
+			
+			[RivalAI Trigger]
+			
+			[UseTrigger:true]
+			[Type:BehaviorTriggerA]
+			
+			[StartsReady:true]
+			
+			[MaxActions:-1]
+			[Actions:MSB_Fighter_Action_EndingAttackRun]
+			
+			</Description>
+        </EntityComponent>
+
+		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+            <Id>
+                <TypeId>Inventory</TypeId>
+                <SubtypeId>MSB_Fighter_Action_EndingAttackRun</SubtypeId>
+            </Id>
+            <Description>
+			
+			[RivalAI Action]
+
+			[DebugMessage:EndingAttackRun]
+			
+			
+			[ChangeAutopilotProfile:true]
+			[AutopilotProfile:Secondary]
+
+			</Description>
+        </EntityComponent>	
+	
+	
 	
 	
 	

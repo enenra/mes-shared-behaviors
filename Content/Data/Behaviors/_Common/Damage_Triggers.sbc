@@ -28,7 +28,7 @@
       </Id>
       <Description>
         [RivalAI Trigger]
-        [Tags:MSB_TriggerEvent_UnderFireGoingDown]
+        [Tags:MSB_TriggerEvent_UnderFireGoingDown_HighAltitude]
 
         [Type:Manual]
         [UseTrigger:true]
@@ -45,9 +45,6 @@
       </Id>
       <Description>
         [RivalAI Action]
-
-        [PlayDialogueCue:true]
-        [DialogueCueId:Common_UnderFireGoingDown]
 
       </Description>
     </EntityComponent>

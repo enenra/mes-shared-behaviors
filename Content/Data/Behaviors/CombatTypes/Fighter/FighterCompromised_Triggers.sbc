@@ -92,6 +92,15 @@
       </Description>
     </EntityComponent>
 
+
+
+
+
+
+
+
+
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -109,6 +118,7 @@
         [Actions:MSB_Fighter_Action_BeforeHighSpeedImpact]
       </Description>
     </EntityComponent>
+	
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -126,6 +136,43 @@
       </Description>
     </EntityComponent>
 
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Fighter_Trigger_Compromised_BeforeHighSpeedImpact</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Compromised]
+
+        [UseTrigger:false]
+        [StartsReady:true]
+
+        [Actions:MSB_Fighter_Action_Compromised_BeforeHighSpeedImpact]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Fighter_Action_Compromised_BeforeHighSpeedImpact</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:BeforeHighSpeedImpact despawn explosion]
+
+        [GenerateExplosion:true]
+        [ExplosionRange:50]
+        [ExplosionDamage:20]
+        [ExplosionIgnoresVoxels:true]
+
+        [ForceDespawn:true]
+      </Description>
+    </EntityComponent>
+	
+	
+	
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -177,7 +224,6 @@
 
         [DebugMessage:AfterHighSpeedImpact somehow survived, TerminateBehavior nonetheless]
 
-
         [DisableAutopilot:true]
         [StopAllThrust:true]
         [StopAllRotation:true]
@@ -193,42 +239,14 @@
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_Fighter_Trigger_Compromised_BeforeHighSpeedImpact]
       </Description>
-    </EntityComponent>
-
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Fighter_Trigger_Compromised_BeforeHighSpeedImpact</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Trigger]
-
-        [Type:Compromised]
-
-        [UseTrigger:false]
-        [StartsReady:true]
-
-        [Actions:MSB_Fighter_Action_Compromised_BeforeHighSpeedImpact]
-      </Description>
-    </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Fighter_Action_Compromised_BeforeHighSpeedImpact</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Action]
-
-        [DebugMessage:BeforeHighSpeedImpact despawn explosion]
-
-        [GenerateExplosion:true]
-        [ExplosionRange:50]
-        [ExplosionDamage:20]
-        [ExplosionIgnoresVoxels:true]
-
-        [ForceDespawn:true]
-      </Description>
-    </EntityComponent>
+    </EntityComponent>	
+	
+	
+	
+	
+	
+	
+	
 
   </EntityComponents>
 </Definitions>

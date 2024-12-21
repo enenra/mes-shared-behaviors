@@ -100,7 +100,7 @@
         [RivalAI Action]
 
         [DecreaseCounters:Morale]
-
+		[DecreaseCountersAmount:5]
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_MoraleChange]
       </Description>

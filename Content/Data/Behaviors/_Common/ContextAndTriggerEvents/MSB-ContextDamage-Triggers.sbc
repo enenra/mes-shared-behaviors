@@ -443,7 +443,7 @@ Mmh we will need to evaluate if the cooldown makes sense.
       </Id>
       <Description>
         [RivalAI Action]
-        [DebugMessage:TriggerEvent UnderFire]
+
 
         [SetBooleansTrue:UnderFire]
 
@@ -607,16 +607,15 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
 
         [RivalAI Condition]
         [UseConditions:true]
-        [MatchAnyCondition:true]
+        [MatchAnyCondition:false]
 
-        [UseFailCondition:true]
 
-        [CheckSufficientUpwardThrust:true]
-		[SufficientUpwardThrustTolerance:-0.3]
+        [CheckInSufficientUpwardThrust:true]
+		[InSufficientUpwardThrustTolerance:-0.3]
 		
 		[AltitudeCheck:true]
-		[MinAltitude:501]
-		[MaxAltitude:999999999]
+		[MinAltitude:0]
+		[MaxAltitude:450]
       </Description>
 
     </EntityComponent>
@@ -692,16 +691,16 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
       <Description>
         [RivalAI Condition]
         [UseConditions:true]
-        [MatchAnyCondition:true]
+        [MatchAnyCondition:false]
+
+		
+        [CheckInSufficientUpwardThrust:true]
+		[InSufficientUpwardThrustTolerance:-0.3]
 		
 		
-        [UseFailCondition:true]
-		
-        [CheckSufficientUpwardThrust:true]
-		[SufficientUpwardThrustTolerance:-0.3]
 		[AltitudeCheck:true]
-		[MinAltitude:0]
-		[MaxAltitude:500]
+		[MinAltitude:451]
+		[MaxAltitude:-1]
       </Description>
     </EntityComponent>
 
