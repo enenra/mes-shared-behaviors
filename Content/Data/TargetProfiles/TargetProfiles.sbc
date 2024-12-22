@@ -48,9 +48,83 @@ MSB_Default_Target
         [GetTargetBy:ClosestDistance]
 
       </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Default_Target_LowRange</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Target]
+
+        [UseCustomTargeting:true]
+        [Target:PlayerAndGrid]
+
+        [MaxDistance:3500]
+
+        [TimeUntilTargetAcquisition:10]
+        [TimeUntilNextEvaluation:3]
+
+        [MatchAllFilters:OutsideOfSafezone]
+        [MatchAllFilters:Owner]
+        [MatchAllFilters:Relation]
+        [MatchAllFilters:Powered]
+
+        [MatchAnyFilters:Broadcasting]
+        [MatchAnyFilters:MovementScore]
+        [MatchAnyFilters:LineOfSight]
+
+        [NonBroadcastVisualRange:2000]
+        [MinMovementScore:1000]
+        [MaxMovementDetectableDistance:2500]
+        [MaxLineOfSight:1750]
+
+        [Owners:Player]
+        [Owners:NPC]
+        [Relations:Enemy]
+
+        [GetTargetBy:ClosestDistance]
+
+      </Description>
 
     </EntityComponent>
-	
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Default_Target_ShortRange</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Target]
+
+        [UseCustomTargeting:true]
+        [Target:PlayerAndGrid]
+
+        [MaxDistance:1500]
+        [MaxExistingTargetDistance:3500]
+
+        [MatchAllFilters:OutsideOfSafezone]
+        [MatchAllFilters:Owner]
+        [MatchAllFilters:Relation]
+        [MatchAllFilters:Powered]
+
+
+        [Owners:Player]
+        [Owners:NPC]
+        [Relations:Enemy]
+        [GetTargetBy:ClosestDistance]
+
+      </Description>
+
+    </EntityComponent>
+
+
+
 	
 <!--
 	
