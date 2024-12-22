@@ -14,30 +14,27 @@
       <Description>
         [RivalAI TriggerGroup]
 
-        [Triggers:MSB_Fighter_Trigger_PlayerClose]		
-        [Triggers:MSB_Fighter_Trigger_InitFight]		
-        [Triggers:MSB_Fighter_Trigger_CloseFight]		
+        [Triggers:MSB_Fighter_Trigger_PlayerClose]
+        [Triggers:MSB_Fighter_Trigger_InitFight]
+        [Triggers:MSB_Fighter_Trigger_CloseFight]
         [Triggers:MSB_Fighter_Trigger_Compromised_PlayerFar]
-		
-		
-		
-        [Triggers:MSB_Fighter_Trigger_BeforeHighSpeedImpact]		
+
+        [Triggers:MSB_Fighter_Trigger_BeforeHighSpeedImpact]
         [Triggers:MSB_Fighter_Trigger_Compromised_BeforeHighSpeedImpact]
         [Triggers:MSB_Fighter_Trigger_AfterHighSpeedImpact]
-		
+
 		[Triggers:MSB_Fighter_Trigger_DamageByHostile]
-		
-		
+
+
 		[Triggers:MSB_Fighter_Trigger_LowAltitudeFighting]
 		[Triggers:MSB_Fighter_Trigger_LowAltitudeFighting_Reset_ChangedTarget]
 		[Triggers:MSB_Fighter_Trigger_LowAltitudeFighting_Reset_TargetFar]
 		[Triggers:MSB_Fighter_Trigger_StartingAttackRun]
 		[Triggers:MSB_Fighter_Trigger_EndingAttackRun]
-		[Triggers:MSB_Fighter_Trigger_EnemyOnTail]
+    [Triggers:MSB_Fighter_Trigger_EnemyOnTail]
 
 
-	  
-		
+
       </Description>
     </EntityComponent>
 
@@ -161,7 +158,7 @@
 
         [UseTrigger:true]
         [Type:Manual]
-		
+
         [StartsReady:false]
 
         [MaxActions:-1]
@@ -184,15 +181,12 @@
 
         [ChangeAutopilotProfile:true]
         [AutopilotProfile:Secondary]
-		
 
-		[RefreshTarget:true]
-
-		
+        [RefreshTarget:true]
       </Description>
     </EntityComponent>
-	
-	
+
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -205,7 +199,7 @@
 
         [UseTrigger:true]
         [Type:Manual]
-		
+
         [StartsReady:false]
 
         [MaxActions:-1]
@@ -214,11 +208,11 @@
     </EntityComponent>
 
 
-<!-- I assume we will have CombatMode specific triggers. 
+    <!-- I assume we will have CombatMode specific triggers.
 
 
 So we disable triggers with this tag on close
-[Tags:MSB_CombatType_Fight]
+        [Tags:MSB_CombatType_Fight]
  -->
 
 
@@ -233,15 +227,15 @@ So we disable triggers with this tag on close
         [DebugMessage:Fighter - CloseFight]
 
       </Description>
-    </EntityComponent>	
-	
-	
-	
-	
-	<!--
-			[SwitchTargetToDamager:true]
+    </EntityComponent>
+
+
+
+
+    <!--
+        [SwitchTargetToDamager:true]
 			-->
-	
+
 
   </EntityComponents>
 </Definitions>

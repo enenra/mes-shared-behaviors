@@ -3,112 +3,99 @@
   <EntityComponents>
 
 
-   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_Fighter_Autopilot</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI Autopilot]
 
-		[DisableInertiaDampeners:true]
-		[FlyLevelWithGravity:false]
-		[LevelWithGravityWhenIdle:false]
-		[UseVelocityCollisionEvasion:true]
-		
-		[SlowDownOnWaypointApproach:true]
-		[ExtraSlowDownDistance:100]
-		[WaypointTolerance:150]
-		
-		[IdealMinSpeed:55]
-		[IdealMaxSpeed:100]
-		[MaxSpeedTolerance:5]
-		
-		[MinimumPlanetAltitude:100]
-		[AltitudeTolerance:20]
-		
-		[LimitRotationSpeed:true]            
-		[MaxRotationMagnitude:1]
-		[AngleAllowedForForwardThrust:35]
-		
-		[AllowStrafing:true]
-		[StrafeMinDurationMs:3000]
-		[StrafeMaxDurationMs:6000]
-		
-		[UseProjectileLeadPrediction:true]
-		[StrikeBeginPlanetAttackRunDistance:600]
-		[StrikeBreakawayDistance:100]
-		[StrikeEngageUseSafePlanetPathing:true]
-		[StrikeEngageUseCollisionEvasion:true]
-		
-		[CollisionEvasionWaypointCalculatedAwayFromEntity:true]
-		
-		[OffsetPlanetMinDistFromTarget:800]
-		[OffsetPlanetMaxDistFromTarget:1200]
-		[OffsetPlanetMinTargetAltitude:450]
-		[OffsetPlanetMaxTargetAltitude:700]
+        [DisableInertiaDampeners:true]
+        [FlyLevelWithGravity:false]
+        [LevelWithGravityWhenIdle:false]
+        [UseVelocityCollisionEvasion:true]
+
+        [SlowDownOnWaypointApproach:true]
+        [ExtraSlowDownDistance:100]
+        [WaypointTolerance:150]
+
+        [IdealMinSpeed:55]
+        [IdealMaxSpeed:100]
+        [MaxSpeedTolerance:5]
+
+        [MinimumPlanetAltitude:100]
+        [AltitudeTolerance:20]
+
+        [LimitRotationSpeed:true]
+        [MaxRotationMagnitude:1]
+        [AngleAllowedForForwardThrust:35]
+
+        [AllowStrafing:true]
+        [StrafeMinDurationMs:3000]
+        [StrafeMaxDurationMs:6000]
+
+        [UseProjectileLeadPrediction:true]
+        [StrikeBeginPlanetAttackRunDistance:600]
+        [StrikeBreakawayDistance:100]
+        [StrikeEngageUseSafePlanetPathing:true]
+        [StrikeEngageUseCollisionEvasion:true]
+
+        [CollisionEvasionWaypointCalculatedAwayFromEntity:true]
+
+        [OffsetPlanetMinDistFromTarget:800]
+        [OffsetPlanetMaxDistFromTarget:1200]
+        [OffsetPlanetMinTargetAltitude:450]
+        [OffsetPlanetMaxTargetAltitude:700]
       </Description>
     </EntityComponent>
-	
-	
-	
-   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_Fighter_Autopilot_NoSafety</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI Autopilot]
 
-		[DisableInertiaDampeners:true]
-		[FlyLevelWithGravity:false]
-		[LevelWithGravityWhenIdle:false]
-		[UseVelocityCollisionEvasion:false]
-		
-		[SlowDownOnWaypointApproach:true]
-		[ExtraSlowDownDistance:100]
-		[WaypointTolerance:150]
-		
-		[IdealMinSpeed:55]
-		[IdealMaxSpeed:80]
-		[MaxSpeedTolerance:5]
-		
-		[MinimumPlanetAltitude:50]
-		[AltitudeTolerance:20]
-		
-		[LimitRotationSpeed:false]            
-		[MaxRotationMagnitude:1]
-		[AngleAllowedForForwardThrust:180]
-		
-		[AllowStrafing:true]
-		[StrafeMinDurationMs:3000]
-		[StrafeMaxDurationMs:6000]
-		
-		[UseProjectileLeadPrediction:true]
-		[StrikeBeginPlanetAttackRunDistance:600]
-		[StrikeBreakawayDistance:100]
-		[StrikeEngageUseSafePlanetPathing:true]
-		[StrikeEngageUseCollisionEvasion:true]
-		
-		[CollisionEvasionWaypointCalculatedAwayFromEntity:true]
-		
-		[OffsetPlanetMinDistFromTarget:800]
-		[OffsetPlanetMaxDistFromTarget:1200]
-		[OffsetPlanetMinTargetAltitude:450]
-		[OffsetPlanetMaxTargetAltitude:700]
+        [DisableInertiaDampeners:true]
+        [FlyLevelWithGravity:false]
+        [LevelWithGravityWhenIdle:false]
+        [UseVelocityCollisionEvasion:false]
+
+        [SlowDownOnWaypointApproach:true]
+        [ExtraSlowDownDistance:100]
+        [WaypointTolerance:150]
+
+        [IdealMinSpeed:55]
+        [IdealMaxSpeed:80]
+        [MaxSpeedTolerance:5]
+
+        [MinimumPlanetAltitude:50]
+        [AltitudeTolerance:20]
+
+        [LimitRotationSpeed:false]
+        [MaxRotationMagnitude:1]
+        [AngleAllowedForForwardThrust:180]
+
+        [AllowStrafing:true]
+        [StrafeMinDurationMs:3000]
+        [StrafeMaxDurationMs:6000]
+
+        [UseProjectileLeadPrediction:true]
+        [StrikeBeginPlanetAttackRunDistance:600]
+        [StrikeBreakawayDistance:100]
+        [StrikeEngageUseSafePlanetPathing:true]
+        [StrikeEngageUseCollisionEvasion:true]
+
+        [CollisionEvasionWaypointCalculatedAwayFromEntity:true]
+
+        [OffsetPlanetMinDistFromTarget:800]
+        [OffsetPlanetMaxDistFromTarget:1200]
+        [OffsetPlanetMinTargetAltitude:450]
+        [OffsetPlanetMaxTargetAltitude:700]
       </Description>
-    </EntityComponent>	
-	
-	
-	
-
-
-
-
-
-
+    </EntityComponent>
 
   </EntityComponents>
 </Definitions>
