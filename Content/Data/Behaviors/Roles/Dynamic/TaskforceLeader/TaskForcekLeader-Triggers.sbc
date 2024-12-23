@@ -6,6 +6,7 @@
 
 
         [Triggers:MSB_TaskForceLeader_Trigger_ProcessEscortRequest]
+        [Triggers:MSB_TaskForceLeader_Trigger_Init]
         [Triggers:MSB_TaskForceLeader_Trigger_TargetNear1500]
 
         [Triggers:MSB_TaskForceLeader_Trigger_HasTarget]
@@ -15,10 +16,61 @@
 		
         [Triggers:MSB_TaskForceLeader_Trigger_Compromised]
 
-
-
-
   -->
+
+
+<!--
+Start
+
+
+
+-->
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_TaskForceLeader_Trigger_Init</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:Timer]
+		[MinCooldownMs:1000]
+		[MaxCooldownMs:1001]
+        [StartsReady:false]
+        [MaxActions:1]
+        [Actions:MSB_TaskForceLeader_Action_Init]
+
+      </Description>
+    </EntityComponent>
+
+
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_TaskForceLeader_Action_Init</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [AppendAntennaHudText:true]
+		[AntennaHudTextSuffix: (Leader)]
+
+
+      </Description>
+
+    </EntityComponent>
+
+
+
+
+
+
+
 
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">

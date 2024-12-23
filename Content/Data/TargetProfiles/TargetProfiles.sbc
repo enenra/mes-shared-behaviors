@@ -106,7 +106,7 @@ MSB_Default_Target
         [Target:PlayerAndGrid]
 
         [MaxDistance:1500]
-        [MaxExistingTargetDistance:3500]
+        [MaxExistingTargetDistance:2000]
 
         [MatchAllFilters:OutsideOfSafezone]
         [MatchAllFilters:Owner]

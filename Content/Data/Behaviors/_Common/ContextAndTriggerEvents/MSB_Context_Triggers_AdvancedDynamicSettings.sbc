@@ -3,6 +3,16 @@
   <EntityComponents>
 
     <!--
+	
+	This stuff is not worth it.
+	
+	
+	
+	
+	
+	
+	
+	
     There are 3 Settings (bools):
     SettingBattleDefend
     SettingBattleHunt
@@ -33,6 +43,7 @@
         [Triggers:MSB_Context_Trigger_ReceiveDefendMe_ResetCooldown]
     -->
 
+<!--
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -99,8 +110,6 @@
       </Description>
     </EntityComponent>
 
-
-    <!-- Triggers -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -267,13 +276,12 @@
       </Description>
     </EntityComponent>
 
-    <!--
     MSB_Context_Trigger_ReceiveBaseStrike
     MSB_Context_Trigger_TargetIsEnemeyStaticBase
     MSB_Context_Trigger_EnemeyStaticBaseInTheArea
 
     MSB_Context_Trigger_EnemeyStaticBaseInTheArea_Fail
-    -->
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -284,7 +292,7 @@
 
         [Type:CommandReceived]
 
-        [UseTrigger:true]
+        [UseTrigger:false]
         [StartsReady:true]
 
         [Conditions:MSB_Context_Condition_SettingBattle]
@@ -307,7 +315,7 @@
 
         [Type:ChangedTarget]
 
-        [UseTrigger:true]
+        [UseTrigger:false]
         [StartsReady:false]
 
         [MinCooldownMs:1000]
@@ -346,7 +354,7 @@
 
         [Type:Timer]
 
-        [UseTrigger:true]
+        [UseTrigger:false]
         [StartsReady:false]
 
         [MinCooldownMs:20000]
@@ -440,13 +448,12 @@
     </EntityComponent>
 
 
-    <!--
-    Defend me
+
 
     MSB_Context_Trigger_ReceiveDefendMe_FirstTime
     MSB_Context_Trigger_ReceiveDefendMe_ResetCooldown
     MSB_Context_Trigger_DefendMe_NoLongerReceiving
-    -->
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -470,7 +477,7 @@
       </Description>
     </EntityComponent>
 
-    <!-- Always on -->
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -528,7 +535,6 @@
     </EntityComponent>
 
 
-    <!-- ============DEBUG CHAT =============	-->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -569,7 +575,7 @@
         [Author:{AntennaName}]
         [Color:{PlayerRelation}]
 
-        [ChatMessages:InitBattleHunt]
+        [ChatMessages:InitBattleBaseStrike]
         [ChatAudio:ArcHudGPSNotification1]
         [BroadcastChatType:Chat]
       </Description>
@@ -592,11 +598,13 @@
         [Author:{AntennaName}]
         [Color:{PlayerRelation}]
 
-        [ChatMessages:InitBattleHunt]
+        [ChatMessages:InitBattleDefend]
         [ChatAudio:ArcHudGPSNotification1]
         [BroadcastChatType:Chat]
       </Description>
     </EntityComponent>
+-->
+
 
   </EntityComponents>
 </Definitions>

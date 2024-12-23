@@ -240,8 +240,11 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:BeforeSlowSpeedImpact uuuuughhh]
-
+        [PlayDialogueCue:true]
+        [DialogueCueId:CrashSystem_BeforeSlowSpeedImpact]
+		
+		
+		
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_BeforeSlowSpeedImpact]
         [ForceManualTriggerActivation:false]
@@ -301,7 +304,11 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:BeforeHighSpeedImpact aaaaaaaaaaaaaaaaahhhhhh]
+
+
+        [PlayDialogueCue:true]
+        [DialogueCueId:CrashSystem_BeforeHighSpeedImpact]
+
 
 
 

@@ -1,0 +1,60 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_StaticCommon_TriggerGroup</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI TriggerGroup]
+
+        [Triggers:MSB_Context_Trigger_Start]
+        [Triggers:MSB_Context_Trigger_NormaltoHighAlert]
+        [Triggers:MSB_Context_Trigger_Damage]
+        [Triggers:MSB_Context_Trigger_NoTarget_ReadyforNormal]
+        [Triggers:MSB_Context_Trigger_StayHostile]
+		[Triggers:MSB_Context_Trigger_EnemiesApproaching]
+        [Triggers:MSB_Context_Trigger_Hostile_to_Normal]
+
+        [Triggers:MSB_Context_Trigger_PlayerNear]
+        [Triggers:MSB_Context_Trigger_PlayerFar]
+
+        [Triggers:MSB_ContextDamage_Trigger_Hostile_NPCDamage]
+        [Triggers:MSB_ContextDamage_Trigger_Hostile_PlayerDamage]
+        [Triggers:MSB_ContextDamage_Trigger_Neutral_PlayerDamage]
+        [Triggers:MSB_ContextDamage_Trigger_Friendly_PlayerDamage]
+        [Triggers:MSB_ContextDamage_Trigger_NoLongerUnderFire]
+        [Triggers:MSB_ContextDamage_TriggerEvent_UnderFire]
+        [Triggers:MSB_ContextUnderFire_TriggerEvent_UnderFireHealthLow]
+        [Triggers:MSB_ContextUnderFire_TriggerEvent_UnderFireLostWeapons]
+        [Triggers:MSB_ContextDamage_Trigger_Compromised_PlayerNotHelped]
+        [Triggers:MSB_ContextDamage_Trigger_Compromised_PlayerMadeFinalShot]
+        [Triggers:MSB_ContextDamage_Trigger_Compromised_PlayerHelped]
+
+        [Triggers:MSB_ContextTarget_TriggerEvent_TargetGettingAway]
+        [Triggers:MSB_ContextTarget_Trigger_TargetHasBeenClose]
+        [Triggers:MSB_ContextTarget_Trigger_LostTarget]
+        [Triggers:MSB_ContextTarget_Trigger_SwitchTarget]
+
+        [Triggers:MSB_Common_Trigger_DamageByNeutral]
+        [Triggers:MSB_Common_Trigger_DamageByNeutral_Cue]
+        [Triggers:MSB_Common_Trigger_DamageByFriendly]
+        [Triggers:MSB_Common_Trigger_DamageByFriendly_Cue]
+        [Triggers:MSB_Common_Triggers_MaxRange]
+        [Triggers:MSB_Common_Trigger_MSBAliveCheck]
+
+
+        [Triggers:MSB_DefenseSystem_Trigger_Garrison]
+        [Triggers:MSB_DefenseSystem_Trigger_Garrison_SpawnCustomVariablesName]
+        [Triggers:MSB_DefenseSystem_Trigger_Garrison_SpawnSpawnGroupName]
+        [Triggers:MSB_DefenseSystem_Trigger_Garrison_SpawnDefault]
+        [Triggers:MSB_DefenseSystem_Trigger_Garrison_AutoDisable]
+      </Description>
+
+    </EntityComponent>
+
+ 
+  </EntityComponents>
+</Definitions>

@@ -239,7 +239,7 @@
         [SetBooleansFalse:SettingBattle]
 
         [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerNames:MSB_TriggerEvent_NoLongerInBattle]
+        [ManuallyActivatedTriggerNames:MSB_TriggerEvent_InitNormal]
         [ForceManualTriggerActivation:true]
 
         [SetBooleansFalse:ReadyforNormal]
@@ -263,7 +263,7 @@
         [SetBooleansFalse:ReadyforNormal]
 
         [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerNames:MSB_TriggerEvent_NoLongerInBattle]
+        [ManuallyActivatedTriggerNames:MSB_TriggerEvent_InitHighAlert]
         [ForceManualTriggerActivation:true]
 		
 		
@@ -291,7 +291,7 @@
         [SetBooleansTrue:SettingBattle]
 
         [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerNames:MSB_TriggerEvent_InitDynamicBattle]
+        [ManuallyActivatedTriggerNames:MSB_TriggerEvent_InitBattle]
         [ForceManualTriggerActivation:true]
 
 		[ResetCooldownTimeOfTriggers:true]

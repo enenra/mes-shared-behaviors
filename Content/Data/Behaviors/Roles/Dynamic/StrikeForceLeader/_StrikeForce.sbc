@@ -10,8 +10,51 @@
       <Description>
         [RivalAI TriggerGroup]
 
+		[Triggers:MSB_StrikeForceLeader_Trigger_Init]
       </Description>
     </EntityComponent>
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_StrikeForceLeader_Trigger_Init</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:Timer]
+		[MinCooldownMs:1000]
+		[MaxCooldownMs:1001]
+        [StartsReady:false]
+        [MaxActions:1]
+        [Actions:MSB_StrikeForceLeader_Action_Init]
+
+      </Description>
+    </EntityComponent>
+
+
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_StrikeForceLeader_Action_Init</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [AppendAntennaHudText:true]
+		[AntennaHudTextSuffix: (Leader)]
+
+
+      </Description>
+
+    </EntityComponent>
+
+
 
   </EntityComponents>
 </Definitions>

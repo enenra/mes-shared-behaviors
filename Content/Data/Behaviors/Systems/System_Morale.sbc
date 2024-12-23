@@ -28,7 +28,8 @@
     [Triggers:MSB_MoraleSystem_Trigger_LeaderDead]
 
     [Triggers:MSB_MoraleSystem_Trigger_ShipDisabled]
-    [Triggers:MSB_MoraleSystem_Trigger_Flee]
+
+
 
 	  -->
 
@@ -92,7 +93,7 @@
         [MaxCooldownMs:4001]
 
 		    [MaxActions:-1]
-        [Actions:MSB_Action_MoraleSystem_CombatDecay]
+        [Actions:MSB_MoraleSystem_Action_CombatDecay]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -252,11 +253,11 @@
     </EntityComponent>
 
 
-    <!-- Flee -->
+    <!-- Morale -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_MoraleSystem_Condition_Flee</SubtypeId>
+        <SubtypeId>MSB_MoraleSystem_Condition_VeryLowMorale</SubtypeId>
       </Id>
       <Description>
         [RivalAI Condition]
@@ -270,10 +271,32 @@
         [CounterCompareTypes:LessOrEqual]
       </Description>
     </EntityComponent>
+
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_MoraleSystem_Trigger_Flee</SubtypeId>
+        <SubtypeId>MSB_MoraleSystem_Condition_LowMorale</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:true]
+
+        [CheckCustomCounters:true]
+        [CustomCounters:Morale]
+        [CustomCountersTargets:-50]
+        [CounterCompareTypes:LessOrEqual]
+      </Description>
+    </EntityComponent>
+
+
+    <!-- Verylow morale -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_MoraleSystem_Trigger_VeryLowMorale</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -283,33 +306,83 @@
         [UseTrigger:true]
         [StartsReady:false]
 
-		    [Tags:MoraleSystem]
+        [Tags:MoraleSystem]
         [Tags:MSB_TriggerEvent_MoraleChange]
 
-        [Conditions:MSB_Condition_MoraleSystem_Flee]
+        [Conditions:MSB_MoraleSystem_Condition_VeryLowMorale]
 
-		    [MaxActions:1]
-        [Actions:MSB_MoraleSystem_Action_Flee]
+        [MaxActions:1]
+        [Actions:MSB_MoraleSystem_Action_VeryLowMorale]
       </Description>
     </EntityComponent>
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_MoraleSystem_Action_Flee</SubtypeId>
+        <SubtypeId>MSB_MoraleSystem_Action_VeryLowMorale</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
-        [DebugMessage:Lost all morale. Fleeing now]
+        [DebugMessage:Very Low Morale]
 
-        [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Flee]
+        [ChangeTargetProfile:true]
+        [NewTargetProfileId:MSB_Default_Target_ShortRange]
+		[RefreshTarget:true]
 
-        [DisableTriggers:true]
-        [DisableTriggerNames:MSB_Trigger_MoraleSystem_Flee]
-
-        [Retreat:true]
       </Description>
     </EntityComponent>
+
+
+    <!-- Low morale -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_MoraleSystem_Trigger_LowMorale</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Manual]
+
+        [UseTrigger:true]
+        [StartsReady:false]
+
+        [Tags:MoraleSystem]
+        [Tags:MSB_TriggerEvent_MoraleChange]
+
+        [Conditions:MSB_MoraleSystem_Condition_LowMorale]
+
+        [MaxActions:1]
+        [Actions:MSB_MoraleSystem_Action_LowMorale]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_MoraleSystem_Action_LowMorale</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:Low Morale]
+
+        [ChangeTargetProfile:true]
+        [NewTargetProfileId:MSB_Default_Target_LowRange]
+		[RefreshTarget:true]
+		
+		
+      </Description>
+    </EntityComponent>
+
+
+
+
+
+
+
+
+
 
     <!-- Attempting to ram when morale is high but grid is heavily damaged. -->
 

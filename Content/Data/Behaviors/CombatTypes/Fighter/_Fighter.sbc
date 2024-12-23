@@ -28,6 +28,7 @@
 
 		[Triggers:MSB_Fighter_Trigger_LowAltitudeFighting]
 		[Triggers:MSB_Fighter_Trigger_LowAltitudeFighting_Reset_ChangedTarget]
+		[Triggers:MSB_Fighter_Trigger_LowAltitudeFighting_Reset_HighAltitude]
 		[Triggers:MSB_Fighter_Trigger_LowAltitudeFighting_Reset_TargetFar]
 		[Triggers:MSB_Fighter_Trigger_StartingAttackRun]
 		[Triggers:MSB_Fighter_Trigger_EndingAttackRun]
@@ -173,8 +174,6 @@
       </Id>
       <Description>
         [RivalAI Action]
-
-        [DebugMessage:Fighter - InitFight]
 
         [ChangeBehaviorSubclass:true]
         [NewBehaviorSubclass:Strike]

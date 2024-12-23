@@ -3,9 +3,25 @@
   <EntityComponents>
 
     <!--
+	
+	These triggers apply to both Dynamic and Static
+	
+	
+	
         [Triggers:MSB_Common_Triggers_MaxRange]
         [Triggers:MSB_Common_Trigger_MSBAliveCheck]
         [Triggers:MSB_Common_Triggers_Compromised]
+		
+		
+
+		[Triggers:MSB_Common_Trigger_UnderFireHealthLow]
+		[Triggers:MSB_Common_Trigger_DamageByNeutral]
+		[Triggers:MSB_Common_Trigger_DamageByNeutral_Cue]
+		[Triggers:MSB_Common_Trigger_DamageByFriendly]
+		[Triggers:MSB_Common_Trigger_DamageByFriendly_Cue]
+		
+		
+		
     -->
 
 
@@ -16,7 +32,7 @@
       </Id>
       <Description>
         [RivalAI Trigger]
-
+		[Tags:MSB_TriggerEvent_Compromised]
         [Type:Compromised]
 
         [UseTrigger:true]
@@ -33,14 +49,11 @@
       <Description>
         [RivalAI Action]
 
-
-
         [DisableAutopilot:false]
         [StopAllThrust:true]
         [ChangeInertiaDampeners:true]
         [InertiaDampenersEnable:false]
 		[StopAllRotation:true]
-
 
       </Description>
     </EntityComponent>
@@ -112,6 +125,189 @@
         [ResetEventCooldownTags:{Faction}AliveCheck]
       </Description>
     </EntityComponent>
+	
+	
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Common_Trigger_UnderFireHealthLow</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+        [Tags:MSB_TriggerEvent_UnderFireHealthLow]
+
+        [Type:Manual]
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Actions:MSB_Common_Action_UnderFireHealthLow]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Common_Action_UnderFireHealthLow</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [PlayDialogueCue:true]
+        [DialogueCueId:Common_UnderFireHealthLow]
+
+      </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Common_Trigger_DamageByNeutral</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+        [Tags:MSB_TriggerEvent_DamageByNeutral]
+
+        [Type:Manual]
+        [MinCooldownMs:200]
+        [MaxCooldownMs:201]
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Actions:MSB_Common_Action_DamageByNeutral]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Common_Action_DamageByNeutral</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ChangeReputationWithPlayers:true]
+        [ReputationChangeRadius:2000]
+        [ReputationChangeFactions:{Self}]
+        [ReputationChangeAmount:-50]
+        [ReputationChangesForAllRadiusPlayerFactionMembers:true]
+
+
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Common_Trigger_DamageByNeutral_Cue</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+        [Tags:MSB_TriggerEvent_DamageByNeutral]
+
+        [Type:Manual]
+        [MinCooldownMs:20000]
+        [MaxCooldownMs:20001]
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Actions:MSB_Common_Action_DamageByNeutral_Cue]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Common_Action_DamageByNeutral_Cue</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [PlayDialogueCue:true]
+        [DialogueCueId:Common_DamageByNeutral]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Common_Trigger_DamageByFriendly</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+        [Tags:MSB_TriggerEvent_DamageByFriendly]
+
+        [Type:Manual]
+        [MinCooldownMs:200]
+        [MaxCooldownMs:201]
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Actions:MSB_Common_Action_DamageByFriendly]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Common_Action_DamageByFriendly</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ChangeReputationWithPlayers:true]
+        [ReputationChangeRadius:2000]
+        [ReputationChangeFactions:{Self}]
+        [ReputationChangeAmount:-10]
+        [ReputationChangesForAllRadiusPlayerFactionMembers:true]
+      </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Common_Trigger_DamageByFriendly_Cue</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+        [Tags:MSB_TriggerEvent_DamageByFriendly]
+
+        [Type:Manual]
+        [MinCooldownMs:20000]
+        [MaxCooldownMs:20001]
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Actions:MSB_Common_Action_DamageByFriendly_Cue]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Common_Action_DamageByFriendly_Cue</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [PlayDialogueCue:true]
+        [DialogueCueId:Common_DamageByFriendly]
+      </Description>
+    </EntityComponent>	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+
+	
 
   </EntityComponents>
 </Definitions>

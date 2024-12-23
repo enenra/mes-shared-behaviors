@@ -11,6 +11,9 @@
 
         [RivalAI TriggerGroup]
 
+        [Triggers:MSB_TaskForceLeader_Trigger_Init]
+		
+		
         [Triggers:MSB_TaskForceLeader_Trigger_ProcessEscortRequest]
         [Triggers:MSB_TaskForceLeader_Trigger_TargetNear1500]
 
