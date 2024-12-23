@@ -4,25 +4,25 @@
 
     <!--
 
-	If a ship is falling from the sky, or it has surrended 
-	
+	If a ship is falling from the sky, or it has surrended
+
 	it should not say hey: I lost all morale, trying to flee now.
-	
+
 	So it needs to communicate with MoraleSystem.
-	
-	
-	
-	[ManuallyActivateTrigger:true]
-	[ManuallyActivatedTriggerTags:MSB_TriggerEvent_Disabled]
-	[ForceManualTriggerActivation:false]
+
+
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Disabled]
+        [ForceManualTriggerActivation:false]
 
     To use:
-      * 
+      *
 
     TODO:
 	  * Going Down equivalent in space.
-	  
-	  
+
+
     -->
 
 
@@ -63,16 +63,16 @@
         [UseFailCondition:true]
 
         [CheckSufficientUpwardThrust:true]
-		[SufficientUpwardThrustTolerance:-0.3]
-		
+        [SufficientUpwardThrustTolerance:-0.3]
+
 
       </Description>
 
     </EntityComponent>
-	
 
 
-	
+
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -80,24 +80,24 @@
       </Id>
       <Description>
         [RivalAI Action]
-		[DebugMessage:MSB_DisabledSystem_Action_GoingDown]
-			
-			
+        [DebugMessage:MSB_DisabledSystem_Action_GoingDown]
+
+
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Disabled]
         [ForceManualTriggerActivation:false]
-		
 
-		
+
+
       </Description>
     </EntityComponent>
-	
-	
-	
 
-	
-	
-	
+
+
+
+
+
+
 
   </EntityComponents>
 </Definitions>

@@ -19,9 +19,9 @@
 
         [Triggers:MSB_OffensiveEscort_Trigger_TargetClose]
         [Triggers:MSB_OffensiveEscort_Trigger_TargetInfront]
-		
-		
-		
+
+
+
         [Triggers:MSB_OffensiveEscort_Trigger_LeaderDead]
         [Triggers:MSB_OffensiveEscort_Trigger_LinkUpWithleader]
         [Triggers:MSB_OffensiveEscort_Trigger_NoTargetSwitchEscort]

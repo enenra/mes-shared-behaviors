@@ -22,12 +22,12 @@
 
     <!--
 
-    [Triggers:MSB_MoraleSystem_Trigger_CombatDecay]
-    [Triggers:MSB_MoraleSystem_Trigger_UnderFireHealthLow]
-    [Triggers:MSB_MoraleSystem_Trigger_NoWeapon]
-    [Triggers:MSB_MoraleSystem_Trigger_LeaderDead]
+        [Triggers:MSB_MoraleSystem_Trigger_CombatDecay]
+        [Triggers:MSB_MoraleSystem_Trigger_UnderFireHealthLow]
+        [Triggers:MSB_MoraleSystem_Trigger_NoWeapon]
+        [Triggers:MSB_MoraleSystem_Trigger_LeaderDead]
 
-    [Triggers:MSB_MoraleSystem_Trigger_ShipDisabled]
+        [Triggers:MSB_MoraleSystem_Trigger_ShipDisabled]
 
 
 
@@ -92,7 +92,7 @@
         [MinCooldownMs:4000]
         [MaxCooldownMs:4001]
 
-		    [MaxActions:-1]
+        [MaxActions:-1]
         [Actions:MSB_MoraleSystem_Action_CombatDecay]
       </Description>
     </EntityComponent>
@@ -105,7 +105,7 @@
         [RivalAI Action]
 
         [DecreaseCounters:Morale]
-		    [DecreaseCountersAmount:5]
+        [DecreaseCountersAmount:5]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_MoraleChange]
@@ -141,7 +141,7 @@
         [RivalAI Action]
 
         [DecreaseCounters:Morale]
-		    [DecreaseCountersAmount:50]
+        [DecreaseCountersAmount:50]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_MoraleChange]
@@ -176,7 +176,7 @@
         [RivalAI Action]
 
         [DecreaseCounters:Morale]
-		    [DecreaseCountersAmount:80]
+        [DecreaseCountersAmount:80]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_MoraleChange]
@@ -211,7 +211,7 @@
         [RivalAI Action]
 
         [DecreaseCounters:Morale]
-		    [DecreaseCountersAmount:50]
+        [DecreaseCountersAmount:50]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_MoraleChange]
@@ -247,8 +247,8 @@
       <Description>
         [RivalAI Action]
 
-		    [DisableTriggers:true]
-		    [DisableTriggerTags:MoraleSystem]
+        [DisableTriggers:true]
+        [DisableTriggerTags:MoraleSystem]
       </Description>
     </EntityComponent>
 
@@ -327,7 +327,7 @@
 
         [ChangeTargetProfile:true]
         [NewTargetProfileId:MSB_Default_Target_ShortRange]
-		[RefreshTarget:true]
+        [RefreshTarget:true]
 
       </Description>
     </EntityComponent>
@@ -369,9 +369,9 @@
 
         [ChangeTargetProfile:true]
         [NewTargetProfileId:MSB_Default_Target_LowRange]
-		[RefreshTarget:true]
-		
-		
+        [RefreshTarget:true]
+
+
       </Description>
     </EntityComponent>
 

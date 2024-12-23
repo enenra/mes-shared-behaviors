@@ -8,9 +8,9 @@
 
         [Triggers:MSB_OffensiveEscort_Trigger_TargetClose]
         [Triggers:MSB_OffensiveEscort_Trigger_TargetInfront]
-		
-		
-		
+
+
+
         [Triggers:MSB_OffensiveEscort_Trigger_LeaderDead]
         [Triggers:MSB_OffensiveEscort_Trigger_LinkUpWithleader]
         [Triggers:MSB_OffensiveEscort_Trigger_NoTargetSwitchEscort]
@@ -121,8 +121,8 @@ after 8 seconds it will try to link up with its leader again.
 
         [MinCooldownMs:5000]
         [MaxCooldownMs:5001]
-        [StartsReady:false]		
-		
+        [StartsReady:false]
+
         [TargetDistance:800]
 
 
@@ -148,9 +148,9 @@ after 8 seconds it will try to link up with its leader again.
 
         [MinCooldownMs:5000]
         [MaxCooldownMs:5001]
-        [StartsReady:false]		
-		[Conditions:MSB_OffensiveEscort_Condition_TargetInfront]
-		
+        [StartsReady:false]
+        [Conditions:MSB_OffensiveEscort_Condition_TargetInfront]
+
         [TargetDistance:1200]
 
 
@@ -175,15 +175,15 @@ after 8 seconds it will try to link up with its leader again.
 
         [HasTarget:true]
 
-		[CheckTargetDistance:true]
-		[MinTargetDistance:800]
-		[MaxTargetDistance:1500]
+        [CheckTargetDistance:true]
+        [MinTargetDistance:800]
+        [MaxTargetDistance:1500]
 
 
-		[CheckTargetAngleFromForward:true]
-		[MinTargetAngle:0]
-		[MaxTargetAngle:60]
-		
+        [CheckTargetAngleFromForward:true]
+        [MinTargetAngle:0]
+        [MaxTargetAngle:60]
+
       </Description>
     </EntityComponent>
 
@@ -201,8 +201,8 @@ after 8 seconds it will try to link up with its leader again.
 
 
 
-		
-		
+
+
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_CombatType_InitFight]
@@ -217,10 +217,10 @@ after 8 seconds it will try to link up with its leader again.
         [EnableTriggerNames:MSB_OffensiveEscort_Trigger_LinkUpWithleader]
 
 
-		[ResetCooldownTimeOfTriggers:true]
-		[ResetTriggerCooldownNames:MSB_OffensiveEscort_Trigger_LinkUpWithleader]
-		
-		
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB_OffensiveEscort_Trigger_LinkUpWithleader]
+
+
       </Description>
 
     </EntityComponent>
@@ -229,7 +229,7 @@ after 8 seconds it will try to link up with its leader again.
 
 
 
-<!-- 
+<!--
 
         [Triggers:MSB_OffensiveEscort_Trigger_LeaderDead]
         [Triggers:MSB_OffensiveEscort_Trigger_LinkUpWithleader]
@@ -271,15 +271,15 @@ after 8 seconds it will try to link up with its leader again.
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_CombatType_InitFight]
-		
-		
+
+
       </Description>
 
     </EntityComponent>
-	
-	
-	
-	
+
+
+
+
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -296,8 +296,8 @@ after 8 seconds it will try to link up with its leader again.
       </Description>
 
     </EntityComponent>
-	
-	
+
+
 		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -314,9 +314,9 @@ after 8 seconds it will try to link up with its leader again.
       </Description>
 
     </EntityComponent>
-	
-	
-	
+
+
+
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -352,33 +352,33 @@ after 8 seconds it will try to link up with its leader again.
 
         [UseConditions:true]
         [MatchAnyCondition:false]
-		
-		
+
+
         [CheckFalseBooleans:true]
         [FalseBooleans:LeaderInactive]
 
 
-		[CheckTargetDistance:true]
-		[MinTargetDistance:2500]
-		[MaxTargetDistance:-1]
-		
-		
+        [CheckTargetDistance:true]
+        [MinTargetDistance:2500]
+        [MaxTargetDistance:-1]
+
+
         [HasTarget:true]
 
 
-		[CheckIfTargetIsChasing:true]
-		[MinTargetChaseAngle:0]
-		[MaxTargetChaseAngle:80]		
-		
-		
-		
-		
-		
+        [CheckIfTargetIsChasing:true]
+        [MinTargetChaseAngle:0]
+        [MaxTargetChaseAngle:80]
+
+
+
+
+
       </Description>
 
     </EntityComponent>
-	
-	
+
+
 
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -396,25 +396,25 @@ after 8 seconds it will try to link up with its leader again.
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_CombatType_CloseFight]
-		
-		
+
+
         [ChangeBehaviorSubclass:true]
         [NewBehaviorSubclass:Escort]
 
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_OffensiveEscort_Trigger_NoTargetSwitchEscort]
         [DisableTriggerNames:MSB_OffensiveEscort_Trigger_LinkUpWithleader]
-		
-		
+
+
         [EnableTriggers:true]
         [EnableTriggerNames:MSB_OffensiveEscort_Trigger_TargetClose]
         [EnableTriggerNames:MSB_OffensiveEscort_Trigger_TargetInfront]
 
-		[ResetCooldownTimeOfTriggers:true]
-		[ResetTriggerCooldownNames:MSB_OffensiveEscort_Trigger_TargetClose]
-		[ResetTriggerCooldownNames:MSB_OffensiveEscort_Trigger_TargetInfront]
-		
-		
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB_OffensiveEscort_Trigger_TargetClose]
+        [ResetTriggerCooldownNames:MSB_OffensiveEscort_Trigger_TargetInfront]
+
+
       </Description>
 
     </EntityComponent>
@@ -443,8 +443,8 @@ after 8 seconds it will try to link up with its leader again.
         [MaxActions:-1]
         [Actions:MSB_OffensiveEscort_Action_SwitchEscort]
 
-		
-		
+
+
       </Description>
 
     </EntityComponent>
@@ -472,7 +472,7 @@ after 8 seconds it will try to link up with its leader again.
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_CombatType_CloseFight]
-		
+
       </Description>
     </EntityComponent>
 
@@ -514,18 +514,18 @@ after 8 seconds it will try to link up with its leader again.
       <Description>
 
         [RivalAI Action]
-	
 
-		
-		
-	    
-		[DebugMessage:No Target, my leader is inactive. I am going away]
-		[Retreat:true]
 
-	
+
+
+
+        [DebugMessage:No Target, my leader is inactive. I am going away]
+        [Retreat:true]
+
+
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_CombatType_CloseFight]
-		
+
       </Description>
     </EntityComponent>
 

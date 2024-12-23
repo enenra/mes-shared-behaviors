@@ -11,12 +11,12 @@
         [RivalAI TriggerGroup]
 
         [Triggers:MSB_Gunship_Trigger_InitFight]
-		
-		
-		[Triggers:MSB_Gunship_Triggers_PlayerClose]		
-		[Triggers:MSB_Gunship_Triggers_Compromised]
-		
-		
+
+
+        [Triggers:MSB_Gunship_Triggers_PlayerClose]
+        [Triggers:MSB_Gunship_Triggers_Compromised]
+
+
       </Description>
     </EntityComponent>
 

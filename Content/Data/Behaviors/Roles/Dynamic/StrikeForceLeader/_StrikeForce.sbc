@@ -10,7 +10,7 @@
       <Description>
         [RivalAI TriggerGroup]
 
-		[Triggers:MSB_StrikeForceLeader_Trigger_Init]
+        [Triggers:MSB_StrikeForceLeader_Trigger_Init]
       </Description>
     </EntityComponent>
 
@@ -27,8 +27,8 @@
 
         [UseTrigger:true]
         [Type:Timer]
-		[MinCooldownMs:1000]
-		[MaxCooldownMs:1001]
+        [MinCooldownMs:1000]
+        [MaxCooldownMs:1001]
         [StartsReady:false]
         [MaxActions:1]
         [Actions:MSB_StrikeForceLeader_Action_Init]
@@ -47,7 +47,7 @@
         [RivalAI Action]
 
         [AppendAntennaHudText:true]
-		[AntennaHudTextSuffix: (Leader)]
+        [AntennaHudTextSuffix: (Leader)]
 
 
       </Description>

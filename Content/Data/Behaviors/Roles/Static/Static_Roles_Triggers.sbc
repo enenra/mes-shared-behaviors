@@ -14,23 +14,23 @@
 
 
 	Group: Neutral Player Welcome
-      [Triggers:MSB_Static_Triggers_EnablePlayerNearDialogue]
-      [Triggers:MSB_Static_Triggers_DisablePlayerNearDialogue]
-      [Triggers:MSB_Static_Triggers_PlayerFar]
-      [Triggers:MSB_Static_Triggers_GreetingNeutral]
-      [Triggers:MSB_Static_Triggers_GreetingFriendly]
+        [Triggers:MSB_Static_Triggers_EnablePlayerNearDialogue]
+        [Triggers:MSB_Static_Triggers_DisablePlayerNearDialogue]
+        [Triggers:MSB_Static_Triggers_PlayerFar]
+        [Triggers:MSB_Static_Triggers_GreetingNeutral]
+        [Triggers:MSB_Static_Triggers_GreetingFriendly]
 
 
 
 
 	Group: Neutral Player not welcome
-      [Triggers:MSB_Static_Triggers_PlayerNear3000_WarningEnteringRestricted]
-      [Triggers:MSB_Static_Triggers_PlayerNear2500_WarningInRestricted]
-      [Triggers:MSB_Static_Triggers_PlayerNear2500_WarningInRestricted_ReputationLoss]
+        [Triggers:MSB_Static_Triggers_PlayerNear3000_WarningEnteringRestricted]
+        [Triggers:MSB_Static_Triggers_PlayerNear2500_WarningInRestricted]
+        [Triggers:MSB_Static_Triggers_PlayerNear2500_WarningInRestricted_ReputationLoss]
 
-      [Triggers:MSB_Static_Triggers_PlayerNear2000_WarningEnteringRestricted]
-      [Triggers:MSB_Static_Triggers_PlayerNear1500_WarningInRestricted]
-      [Triggers:MSB_Static_Triggers_PlayerNear1500_WarningInRestricted_ReputationLoss]
+        [Triggers:MSB_Static_Triggers_PlayerNear2000_WarningEnteringRestricted]
+        [Triggers:MSB_Static_Triggers_PlayerNear1500_WarningInRestricted]
+        [Triggers:MSB_Static_Triggers_PlayerNear1500_WarningInRestricted_ReputationLoss]
     -->
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">

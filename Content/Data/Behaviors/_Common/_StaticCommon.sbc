@@ -15,7 +15,7 @@
         [Triggers:MSB_Context_Trigger_Damage]
         [Triggers:MSB_Context_Trigger_NoTarget_ReadyforNormal]
         [Triggers:MSB_Context_Trigger_StayHostile]
-		[Triggers:MSB_Context_Trigger_EnemiesApproaching]
+        [Triggers:MSB_Context_Trigger_EnemiesApproaching]
         [Triggers:MSB_Context_Trigger_Hostile_to_Normal]
 
         [Triggers:MSB_Context_Trigger_PlayerNear]
@@ -55,6 +55,6 @@
 
     </EntityComponent>
 
- 
+
   </EntityComponents>
 </Definitions>

@@ -13,7 +13,7 @@
         [Triggers:MSB_Context_Trigger_Start]
         [Triggers:MSB_Context_Trigger_NormaltoHighAlert]
         [Triggers:MSB_Context_Trigger_Damage]
-		[Triggers:MSB_Context_Trigger_EnemiesApproaching]
+        [Triggers:MSB_Context_Trigger_EnemiesApproaching]
         [Triggers:MSB_Context_Trigger_NoTarget_ReadyforNormal]
         [Triggers:MSB_Context_Trigger_StayHostile]
         [Triggers:MSB_Context_Trigger_Hostile_to_Normal]
@@ -31,12 +31,12 @@
         [Triggers:MSB_ContextUnderFire_TriggerEvent_UnderFireHealthLow]
         [Triggers:MSB_ContextUnderFire_TriggerEvent_UnderFireLostWeapons]
         [Triggers:MSB_ContextUnderFire_TriggerEvent_UnderFireGoingDown_LowAltitude]
-        [Triggers:MSB_ContextUnderFire_TriggerEvent_UnderFireGoingDown_HighAltitude]		
-	
-		[Triggers:MSB_ContextUnderFireGoingDown_Trigger_BeforeHighSpeedImpact]	
-		
-		
-		
+        [Triggers:MSB_ContextUnderFire_TriggerEvent_UnderFireGoingDown_HighAltitude]
+
+        [Triggers:MSB_ContextUnderFireGoingDown_Trigger_BeforeHighSpeedImpact]
+
+
+
         [Triggers:MSB_ContextDamage_Trigger_Compromised_PlayerNotHelped]
         [Triggers:MSB_ContextDamage_Trigger_Compromised_PlayerMadeFinalShot]
         [Triggers:MSB_ContextDamage_Trigger_Compromised_PlayerHelped]
@@ -54,25 +54,25 @@
         [Triggers:MSB_Common_Trigger_UnderFireHealthLow]
         [Triggers:MSB_Common_Triggers_Compromised]
 
-		[Triggers:MSB_CrashSystem_Trigger_GoingDown]
-		[Triggers:MSB_CrashSystem_Trigger_UnderFireGoingDown_LowAltitude]
-		[Triggers:MSB_CrashSystem_Trigger_UnderFireGoingDown_HighAltitude]	  
-		[Triggers:MSB_CrashSystem_Trigger_BeforeSlowSpeedImpact]	  
-		[Triggers:MSB_CrashSystem_Trigger_BeforeHighSpeedImpact]
-		
-		
-		[Triggers:MSB_DisabledSystem_Trigger_GoingDown]
-		
-		[Triggers:MSB_MoraleSystem_Trigger_CombatDecay]
-		[Triggers:MSB_MoraleSystem_Trigger_UnderFireHealthLow]
-		[Triggers:MSB_MoraleSystem_Trigger_NoWeapon]
-		[Triggers:MSB_MoraleSystem_Trigger_LeaderDead]
-		[Triggers:MSB_MoraleSystem_Trigger_ShipDisabled]		
+        [Triggers:MSB_CrashSystem_Trigger_GoingDown]
+        [Triggers:MSB_CrashSystem_Trigger_UnderFireGoingDown_LowAltitude]
+        [Triggers:MSB_CrashSystem_Trigger_UnderFireGoingDown_HighAltitude]
+        [Triggers:MSB_CrashSystem_Trigger_BeforeSlowSpeedImpact]
+        [Triggers:MSB_CrashSystem_Trigger_BeforeHighSpeedImpact]
+
+
+        [Triggers:MSB_DisabledSystem_Trigger_GoingDown]
+
+        [Triggers:MSB_MoraleSystem_Trigger_CombatDecay]
+        [Triggers:MSB_MoraleSystem_Trigger_UnderFireHealthLow]
+        [Triggers:MSB_MoraleSystem_Trigger_NoWeapon]
+        [Triggers:MSB_MoraleSystem_Trigger_LeaderDead]
+        [Triggers:MSB_MoraleSystem_Trigger_ShipDisabled]
         [Triggers:MSB_MoraleSystem_Trigger_VeryLowMorale]
         [Triggers:MSB_MoraleSystem_Trigger_LowMorale]
 
-		[Triggers:MSB_TerminateSystem_Trigger_Start]
-		[Triggers:MSB_TerminateSystem_Trigger_Terminate]
+        [Triggers:MSB_TerminateSystem_Trigger_Start]
+        [Triggers:MSB_TerminateSystem_Trigger_Terminate]
 
 
 

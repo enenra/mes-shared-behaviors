@@ -7,7 +7,7 @@ If Player distance > 6500:
 compromised -> Despawn;
 
 
-        [Triggers:MSB_Gunship_Triggers_PlayerClose]		
+        [Triggers:MSB_Gunship_Triggers_PlayerClose]
         [Triggers:MSB_Gunship_Triggers_Compromised]
     -->
 
@@ -21,20 +21,20 @@ compromised -> Despawn;
         [RivalAI Trigger]
 
         [Type:PlayerNear]
-		[TargetDistance:6500]
-		
-		
-		[MinCooldownMs:5000]
-		[MaxCooldownMs:5001]
-		
-		
-		
+        [TargetDistance:6500]
+
+
+        [MinCooldownMs:5000]
+        [MaxCooldownMs:5001]
+
+
+
         [UseTrigger:true]
         [StartsReady:true]
         [Actions:MSB_Gunship_Action_PlayerClose]
-		
-		[UseElseActions:true]	
-		[ElseActions:MSB_Gunship_Action_PlayerFar]
+
+        [UseElseActions:true]
+        [ElseActions:MSB_Gunship_Action_PlayerFar]
       </Description>
     </EntityComponent>
 
@@ -48,8 +48,8 @@ compromised -> Despawn;
         [RivalAI Action]
 
 
-		[DisableTriggers:true]
-		[DisableTriggerNames:MSB_Gunship_Triggers_Compromised]
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_Gunship_Triggers_Compromised]
 
 
       </Description>
@@ -63,8 +63,8 @@ compromised -> Despawn;
       <Description>
         [RivalAI Action]
 
-		[EnableTriggers:true]
-		[EnableTriggerNames:MSB_Gunship_Triggers_Compromised]
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_Gunship_Triggers_Compromised]
 
       </Description>
     </EntityComponent>
@@ -95,9 +95,9 @@ compromised -> Despawn;
         [RivalAI Action]
 
         [DebugMessage:Compromised despawn]
-		
-	
-		[ForceDespawn:true]
+
+
+        [ForceDespawn:true]
 
       </Description>
     </EntityComponent>

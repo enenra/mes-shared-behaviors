@@ -13,13 +13,13 @@
 
     TODO:
       *
-	  
-[Triggers:MSB_CrashSystem_Trigger_GoingDown]
-[Triggers:MSB_CrashSystem_Trigger_UnderFireGoingDown_LowAltitude]
-[Triggers:MSB_CrashSystem_Trigger_UnderFireGoingDown_HighAltitude	  
-[Triggers:MSB_CrashSystem_Trigger_BeforeSlowSpeedImpact]	  
-[Triggers:MSB_CrashSystem_Trigger_BeforeHighSpeedImpact]
-	  
+
+        [Triggers:MSB_CrashSystem_Trigger_GoingDown]
+        [Triggers:MSB_CrashSystem_Trigger_UnderFireGoingDown_LowAltitude]
+        [Triggers:MSB_CrashSystem_Trigger_UnderFireGoingDown_HighAltitude
+        [Triggers:MSB_CrashSystem_Trigger_BeforeSlowSpeedImpact]
+        [Triggers:MSB_CrashSystem_Trigger_BeforeHighSpeedImpact]
+
     -->
 
     <!-- LowAltitude -->
@@ -36,13 +36,13 @@
         [Type:Manual]
         [UseTrigger:true]
         [StartsReady:true]
-		[MaxActions:1]
-		
-		[DisableNamedTriggerOnSuccess:MSB_CrashSystem_Trigger_UnderFireGoingDown_HighAltitude]
-		[DisableNamedTriggerOnSuccess:MSB_CrashSystem_Trigger_UnderFireGoingDown_LowAltitude]		
+        [MaxActions:1]
+
+        [DisableNamedTriggerOnSuccess:MSB_CrashSystem_Trigger_UnderFireGoingDown_HighAltitude]
+        [DisableNamedTriggerOnSuccess:MSB_CrashSystem_Trigger_UnderFireGoingDown_LowAltitude]
 
 
-		
+
         [Actions:MSB_CrashSystem_Action_GoingDown]
       </Description>
     </EntityComponent>
@@ -59,12 +59,12 @@
         [ChangeInertiaDampeners:true]
         [InertiaDampenersEnable:false]
         [RandomGyroRotation:true]
-		
-		
+
+
         [EnableTriggers:true]
         [EnableTriggerNames:MSB_CrashSystem_Trigger_BeforeHighSpeedImpact]
-        [EnableTriggerNames:MSB_CrashSystem_Trigger_BeforeSlowSpeedImpact]		
-		
+        [EnableTriggerNames:MSB_CrashSystem_Trigger_BeforeSlowSpeedImpact]
+
       </Description>
     </EntityComponent>
 
@@ -97,11 +97,11 @@
         [Type:Manual]
         [UseTrigger:true]
         [StartsReady:true]
-		[MaxActions:1]
-		[DisableNamedTriggerOnSuccess:MSB_CrashSystem_Trigger_UnderFireGoingDown_HighAltitude]
-		[DisableNamedTriggerOnSuccess:MSB_CrashSystem_Trigger_GoingDown]			
-		
-		
+        [MaxActions:1]
+        [DisableNamedTriggerOnSuccess:MSB_CrashSystem_Trigger_UnderFireGoingDown_HighAltitude]
+        [DisableNamedTriggerOnSuccess:MSB_CrashSystem_Trigger_GoingDown]
+
+
         [Actions:MSB_CrashSystem_Action_UnderFireGoingDown_LowAltitude]
       </Description>
     </EntityComponent>
@@ -118,12 +118,12 @@
         [ChangeInertiaDampeners:true]
         [InertiaDampenersEnable:false]
         [RandomGyroRotation:true]
-		
-		
+
+
         [EnableTriggers:true]
         [EnableTriggerNames:MSB_CrashSystem_Trigger_BeforeHighSpeedImpact]
-        [EnableTriggerNames:MSB_CrashSystem_Trigger_BeforeSlowSpeedImpact]		
-		
+        [EnableTriggerNames:MSB_CrashSystem_Trigger_BeforeSlowSpeedImpact]
+
       </Description>
     </EntityComponent>
 
@@ -142,11 +142,11 @@
 
         [UseTrigger:true]
         [StartsReady:true]
-		[MaxActions:1]
-		[DisableNamedTriggerOnSuccess:MSB_CrashSystem_Trigger_UnderFireGoingDown_LowAltitude]
-		[DisableNamedTriggerOnSuccess:MSB_CrashSystem_Trigger_GoingDown]				
-		
-		
+        [MaxActions:1]
+        [DisableNamedTriggerOnSuccess:MSB_CrashSystem_Trigger_UnderFireGoingDown_LowAltitude]
+        [DisableNamedTriggerOnSuccess:MSB_CrashSystem_Trigger_GoingDown]
+
+
         [Actions:MSB_CrashSystem_Action_UnderFireGoingDown_HighAltitude]
       </Description>
     </EntityComponent>
@@ -204,14 +204,14 @@
 
         [MaxActions:1]
         [Actions:MSB_CrashSystem_Action_BeforeSlowSpeedImpact]
-		
-		
-		[DisableNamedTriggerOnSuccess:MSB_CrashSystem_Trigger_BeforeHighSpeedImpact]
-		
+
+
+        [DisableNamedTriggerOnSuccess:MSB_CrashSystem_Trigger_BeforeHighSpeedImpact]
+
       </Description>
     </EntityComponent>
-	
-	
+
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -242,9 +242,9 @@
 
         [PlayDialogueCue:true]
         [DialogueCueId:CrashSystem_BeforeSlowSpeedImpact]
-		
-		
-		
+
+
+
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_BeforeSlowSpeedImpact]
         [ForceManualTriggerActivation:false]
@@ -272,8 +272,8 @@
 
         [MaxActions:1]
         [Actions:MSB_CrashSystem_Action_BeforeHighSpeedImpact]
-		
-		[DisableNamedTriggerOnSuccess:MSB_CrashSystem_Trigger_BeforeSlowSpeedImpact]
+
+        [DisableNamedTriggerOnSuccess:MSB_CrashSystem_Trigger_BeforeSlowSpeedImpact]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">

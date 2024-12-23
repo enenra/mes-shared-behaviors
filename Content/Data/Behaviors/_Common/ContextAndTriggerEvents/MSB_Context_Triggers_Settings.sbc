@@ -174,8 +174,8 @@
 
         [UseConditions:true]
         [MatchAnyCondition:false]
-		
-		
+
+
         [CheckTrueBooleans:true]
         [AllowAnyTrueBoolean:true]
         [TrueBooleans:SettingNormal]
@@ -196,7 +196,7 @@
         [CheckThreatScoreRadius:2500]
         [CheckThreatScoreFromTargetPosition:false]
         [CheckThreatScoreGridConfiguration:Dynamic]
-		
+
 		Not sure this worked
 
 -->
@@ -265,13 +265,13 @@
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerNames:MSB_TriggerEvent_InitHighAlert]
         [ForceManualTriggerActivation:true]
-		
-		
-		[ResetCooldownTimeOfTriggers:true]
-		[ResetTriggerCooldownNames:MSB_Context_Trigger_NoTarget_ReadyforNormal]
-		
-		
-		
+
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB_Context_Trigger_NoTarget_ReadyforNormal]
+
+
+
       </Description>
     </EntityComponent>
 
@@ -294,14 +294,14 @@
         [ManuallyActivatedTriggerNames:MSB_TriggerEvent_InitBattle]
         [ForceManualTriggerActivation:true]
 
-		[ResetCooldownTimeOfTriggers:true]
-		[ResetTriggerCooldownNames:MSB_Context_Trigger_NoTarget_ReadyforNormal]
-		
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB_Context_Trigger_NoTarget_ReadyforNormal]
 
 
-		[RefreshTarget:true]
-				
-				
+
+        [RefreshTarget:true]
+
+
         [SetBooleansFalse:ReadyforNormal]
       </Description>
     </EntityComponent>

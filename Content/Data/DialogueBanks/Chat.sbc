@@ -10,29 +10,29 @@
           <TypeId>Inventory</TypeId>
           <SubtypeId>MSB_DialogueBank_Chat</SubtypeId>
       </Id>
-	  
+
       <Description>
 
-      [RivalAI Chat]
-      
-	[UseChat:true]
-	[StartsReady:true]
-	[Chance:100]
-	[MaxChats:-1]
-	[BroadcastRandomly:false]
+        [RivalAI Chat]
 
-	[Author:{AntennaName}]
-	[Color:{PlayerRelation}]
+        [UseChat:true]
+        [StartsReady:true]
+        [Chance:100]
+        [MaxChats:-1]
+        [BroadcastRandomly:false]
 
-	[BroadcastChatType:Chat]
-	
-	[ChatMessages:FromXML FILE]
+        [Author:{AntennaName}]
+        [Color:{PlayerRelation}]
 
-	[ChatAudio:FromXML FILE]
+        [BroadcastChatType:Chat]
+
+        [ChatMessages:FromXML FILE]
+
+        [ChatAudio:FromXML FILE]
 
       </Description>
-      
-    </EntityComponent>	
+
+    </EntityComponent>
 
 
 

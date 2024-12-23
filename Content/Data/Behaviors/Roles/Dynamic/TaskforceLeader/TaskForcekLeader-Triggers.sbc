@@ -12,8 +12,8 @@
         [Triggers:MSB_TaskForceLeader_Trigger_HasTarget]
         [Triggers:MSB_TaskForceLeader_Trigger_NoTarget]
         [Triggers:MSB_TaskForceLeader_Trigger_SwitchtoCargo]
-		
-		
+
+
         [Triggers:MSB_TaskForceLeader_Trigger_Compromised]
 
   -->
@@ -38,8 +38,8 @@ Start
 
         [UseTrigger:true]
         [Type:Timer]
-		[MinCooldownMs:1000]
-		[MaxCooldownMs:1001]
+        [MinCooldownMs:1000]
+        [MaxCooldownMs:1001]
         [StartsReady:false]
         [MaxActions:1]
         [Actions:MSB_TaskForceLeader_Action_Init]
@@ -58,7 +58,7 @@ Start
         [RivalAI Action]
 
         [AppendAntennaHudText:true]
-		[AntennaHudTextSuffix: (Leader)]
+        [AntennaHudTextSuffix: (Leader)]
 
 
       </Description>
@@ -149,7 +149,7 @@ Start
       <Description>
 
         [RivalAI Trigger]
-		[Tags:MSB_TriggerEvent_Compromised]
+        [Tags:MSB_TriggerEvent_Compromised]
         [Type:Compromised]
         [UseTrigger:true]
         [StartsReady:true]
@@ -292,13 +292,13 @@ Start
       <Description>
 
         [RivalAI Action]
-		
-		
+
+
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_CombatType_InitFight]
-		
-		
-		
+
+
+
         [UseChatBroadcast:true]
         [ChatData:MSB_TaskForceLeader_Chat_HasTarget]
 

@@ -611,11 +611,11 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
 
 
         [CheckInSufficientUpwardThrust:true]
-		[InSufficientUpwardThrustTolerance:-0.3]
-		
-		[AltitudeCheck:true]
-		[MinAltitude:0]
-		[MaxAltitude:450]
+        [InSufficientUpwardThrustTolerance:-0.3]
+
+        [AltitudeCheck:true]
+        [MinAltitude:0]
+        [MaxAltitude:450]
       </Description>
 
     </EntityComponent>
@@ -634,7 +634,7 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_UnderFireGoingDown]
-		[ManuallyActivatedTriggerTags:MSB_TriggerEvent_UnderFireGoingDown_LowAltitude]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_UnderFireGoingDown_LowAltitude]
         [ForceManualTriggerActivation:false]
 
 
@@ -643,15 +643,15 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
 
         [ResetCooldownTimeOfTriggers:true]
         [ResetTriggerCooldownTags:ContextUnderFire]
-		
+
 
         [SetBooleansFalse:UnderFire]
         [DisableTriggers:true]
-        [DisableTriggerTags:ContextUnderFire]		
-	
+        [DisableTriggerTags:ContextUnderFire]
+
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_ContextDamage_TriggerEvent_UnderFire]
-		
+
       </Description>
     </EntityComponent>
 
@@ -678,7 +678,7 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
         [MaxActions:1]
 
         [Actions:MSB_ContextUnderFire_Action_UnderFireGoingDown_HighAltitude]
-		
+
 
       </Description>
     </EntityComponent>
@@ -693,14 +693,14 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
         [UseConditions:true]
         [MatchAnyCondition:false]
 
-		
+
         [CheckInSufficientUpwardThrust:true]
-		[InSufficientUpwardThrustTolerance:-0.3]
-		
-		
-		[AltitudeCheck:true]
-		[MinAltitude:451]
-		[MaxAltitude:-1]
+        [InSufficientUpwardThrustTolerance:-0.3]
+
+
+        [AltitudeCheck:true]
+        [MinAltitude:451]
+        [MaxAltitude:-1]
       </Description>
     </EntityComponent>
 
@@ -719,28 +719,28 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_UnderFireGoingDown]
-		[ManuallyActivatedTriggerTags:MSB_TriggerEvent_UnderFireGoingDown_HighAltitude]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_UnderFireGoingDown_HighAltitude]
         [ForceManualTriggerActivation:false]
 
         [ResetCooldownTimeOfTriggers:true]
         [ResetTriggerCooldownTags:ContextUnderFire]
-		
-	
+
+
         [SetBooleansFalse:UnderFire]
         [DisableTriggers:true]
-        [DisableTriggerTags:ContextUnderFire]		
-	
+        [DisableTriggerTags:ContextUnderFire]
+
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_ContextDamage_TriggerEvent_UnderFire]
-		
+
       </Description>
     </EntityComponent>
 
 
 
-	
-	
-	
+
+
+
 
 
 

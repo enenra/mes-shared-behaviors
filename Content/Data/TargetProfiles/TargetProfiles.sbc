@@ -4,7 +4,7 @@
 
 
 <!--
-Do not remove 
+Do not remove
 MSB_Default_Target
 -CptArhtur
 -->
@@ -125,9 +125,9 @@ MSB_Default_Target
 
 
 
-	
+
 <!--
-	
+
   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -171,7 +171,7 @@ MSB_Default_Target
       </Description>
 
     </EntityComponent>
-		
+
 
 
 
@@ -298,6 +298,6 @@ MSB_Default_Target
 
     </EntityComponent>
 	-->
-	
+
   </EntityComponents>
 </Definitions>
