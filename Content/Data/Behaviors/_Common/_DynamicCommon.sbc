@@ -42,10 +42,12 @@
         [Triggers:MSB_ContextDamage_Trigger_Compromised_PlayerHelped]
 
         [Triggers:MSB_ContextTarget_TriggerEvent_TargetGettingAway]
-
         [Triggers:MSB_ContextTarget_Trigger_TargetHasBeenClose]
         [Triggers:MSB_ContextTarget_Trigger_LostTarget]
         [Triggers:MSB_ContextTarget_Trigger_SwitchTarget]
+		[Triggers:MSB_ContextTarget_TriggerEvent_ApproachingTarget]
+		[Triggers:MSB_ContextTarget_TriggerEvent_TargetIsApproaching]
+
 
         [Triggers:MSB_Common_Trigger_DamageByNeutral]
         [Triggers:MSB_Common_Trigger_DamageByNeutral_Cue]
@@ -73,6 +75,10 @@
 
         [Triggers:MSB_TerminateSystem_Trigger_Start]
         [Triggers:MSB_TerminateSystem_Trigger_Terminate]
+		
+		
+		
+        [Triggers:MSB_PKLSystem_Trigger_InPKL]
 
 
 

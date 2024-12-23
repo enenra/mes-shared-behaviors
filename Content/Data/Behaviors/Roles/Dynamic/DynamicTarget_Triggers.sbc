@@ -1,0 +1,513 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+  
+  
+  
+  
+  	<!---
+	
+	MSB_TriggerEvent_ApproachingTarget
+    MSB_TriggerEvent_TargetIsApproaching 
+	
+	
+	
+	
+	these triggers are used in most roles.
+	
+	There are not used in escort for example.
+	
+	
+	[Triggers:MSB_DynamicTarget_Trigger_TargetAcquiredFirstTime]
+	
+	
+	
+	
+	[Triggers:MSB_DynamicTarget_Trigger_TargetAcquiredClosing_CancelTargetClose]
+	[Triggers:MSB_DynamicTarget_Trigger_TargetAcquiredClosing_Cancel]	
+	[Triggers:MSB_DynamicTarget_Trigger_TargetAcquiredClosing_ApproachingTargetEasy]
+	[Triggers:MSB_DynamicTarget_Trigger_TargetAcquiredClosing_ApproachingTargetHard]
+	[Triggers:MSB_DynamicTarget_Trigger_TargetAcquiredClosing_ApproachingTarget]
+	[Triggers:MSB_DynamicTarget_Trigger_TargetAcquiredClosing_AutoDisable]
+
+	
+	-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Trigger_TargetAcquiredFirstTime</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:AcquiredTarget]
+        [UseTrigger:true]
+        [StartsReady:true]
+		[Conditions:MSB_DynamicTarget_Condition_TargetAcquiredFirstTime]
+        [MaxActions:1]
+        [Actions:MSB_DynamicTarget_Action_TargetAcquiredFirstTime]
+      </Description>
+    </EntityComponent>	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Condition_TargetAcquiredFirstTime</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+		[CheckFalseBooleans:true]
+		[FalseBooleans:UnderFire]
+		[FalseBooleans:SettingBattle]
+	
+		[CheckTargetDistance:true]
+		[MinTargetDistance:1500]
+		[MaxTargetDistance:-1]
+
+      </Description>
+    </EntityComponent>	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Action_TargetAcquiredFirstTime</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [EnableTriggers:true]
+        [EnableTriggerIds:MSB_DynamicTarget_Trigger_TargetAcquiredClosing]
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownIds:MSB_DynamicTarget_Trigger_TargetAcquiredClosing]
+		
+	    [PlayDialogueCue:true]
+        [DialogueCueId:DynamicTarget_TargetAcquiredFirstTime]	
+		
+      </Description>
+    </EntityComponent>	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Trigger_TargetAcquiredClosing</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:TargetNear]
+		[TargetDistance:3100]
+		
+        [UseTrigger:false]
+        [StartsReady:false]
+
+        [MinCooldownMs:4000]
+        [MaxCooldownMs:4001]
+
+        [MaxActions:1]
+        [Actions:MSB_DynamicTarget_Action_TargetAcquiredClosing]
+      </Description>
+    </EntityComponent>
+
+
+	
+	    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Condition_TargetAcquiredClosing</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+		[UseFailCondition:true]
+
+		[BehaviorModeCheck:true]
+		[CurrentBehaviorMode:ApproachTarget]
+      </Description>
+    </EntityComponent>
+
+	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Action_TargetAcquiredClosing</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+		[EnableTriggers:true]
+		[EnableTriggerTags:TargetAcquiredClosing]
+
+		[ResetCooldownTimeOfTriggers:true]
+		[ResetTriggerCooldownTags:TargetAcquiredClosing]
+      </Description>
+    </EntityComponent>
+
+
+   <!-- Cancel -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Trigger_TargetAcquiredClosing_CancelTargetClose</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:TargetNear]
+		[TargetDistance:1499]
+		
+        [UseTrigger:false]
+        [StartsReady:false]
+        [Tags:TargetAcquiredClosing]
+
+        [MinCooldownMs:1000]
+        [MaxCooldownMs:1001]
+
+        [MaxActions:1]
+        [Actions:MSB_DynamicTarget_Action_TargetAcquiredClosing_CancelTargetClose]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Action_TargetAcquiredClosing_CancelTargetClose</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DisableTriggers:true]
+        [DisableTriggerTags:TargetAcquiredClosing]
+      </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Trigger_TargetAcquiredClosing_Cancel</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+        [MinCooldownMs:3000]
+        [MaxCooldownMs:3001]
+		
+        [UseTrigger:false]
+        [StartsReady:false]
+        [Tags:TargetAcquiredClosing]
+		
+		[Conditions:MSB_DynamicTarget_Condition_TargetAcquiredClosing_Cancel]
+
+
+        [MaxActions:1]
+        [Actions:MSB_DynamicTarget_Action_TargetAcquiredClosing_Cancel]
+      </Description>
+    </EntityComponent>
+	
+	
+	
+	    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Condition_TargetAcquiredClosing_Cancel</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+		[UseFailCondition:true]
+
+		[BehaviorModeCheck:true]
+		[CurrentBehaviorMode:ApproachTarget]
+      </Description>
+    </EntityComponent>
+	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Action_TargetAcquiredClosing_Cancel</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DisableTriggers:true]
+        [DisableTriggerTags:TargetAcquiredClosing]
+      </Description>
+    </EntityComponent>
+	
+	<!-- TargetAcquiredClosing_ApproachingTargetEasy -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Trigger_TargetAcquiredClosing_ApproachingTargetEasy</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+        [Type:Timer]
+
+        [UseTrigger:false]
+        [StartsReady:false]
+
+        [Tags:TargetAcquiredClosing]
+
+        [MinCooldownMs:5000]
+        [MaxCooldownMs:5001]
+
+        [Conditions:MSB_DynamicTarget_Condition_TargetAcquiredClosing_ApproachingTargetEasy]
+		[ConditionCheckResetsTimer:true]
+		
+		
+        [MaxActions:1]
+        [Actions:MSB_DynamicTarget_Action_TargetAcquiredClosing_ApproachingTargetEasy]
+      </Description>
+    </EntityComponent>
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Condition_TargetAcquiredClosing_ApproachingTargetEasy</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [HasTarget:true]
+		
+		[CheckTargetDistance:true]
+		[MinTargetDistance:1500]
+		[MaxTargetDistance:4500]
+		
+        [CheckFalseBooleans:true]
+		[FalseBooleans:UnderFire]
+		
+        [CheckThreatScore:true]
+        [CheckThreatScoreMinimum:-1]
+        [CheckThreatScoreMaximum:150]
+        [CheckThreatScoreIncludeOtherNpcOwners:true]
+        [CheckThreatScoreRadius:3000]
+        [CheckThreatScoreFromTargetPosition:true]
+        [CheckThreatScoreGridConfiguration:All]
+      </Description>
+    </EntityComponent>
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Action_TargetAcquiredClosing_ApproachingTargetEasy</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [PlayDialogueCue:true]
+        [DialogueCueId:DynamicTarget_ApproachingTargetEasy]
+
+        [DisableTriggers:true]
+        [DisableTriggerTags:TargetAcquiredClosing]
+      </Description>
+    </EntityComponent>	
+	
+	
+	<!-- TargetAcquiredClosing_ApproachingTargetHard -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Trigger_TargetAcquiredClosing_ApproachingTargetHard</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+        [Type:Timer]
+
+        [UseTrigger:false]
+        [StartsReady:false]
+
+        [Tags:TargetAcquiredClosing]
+
+        [MinCooldownMs:6000]
+        [MaxCooldownMs:6001]
+
+        [Conditions:MSB_DynamicTarget_Condition_TargetAcquiredClosing_ApproachingTargetHard]
+		[ConditionCheckResetsTimer:true]
+		
+		
+        [MaxActions:-1]
+        [Actions:MSB_DynamicTarget_Action_TargetAcquiredClosing_ApproachingTargetHard]
+      </Description>
+    </EntityComponent>
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Condition_TargetAcquiredClosing_ApproachingTargetHard</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [HasTarget:true]
+		
+		[CheckTargetDistance:true]
+		[MinTargetDistance:1500]
+		[MaxTargetDistance:4500]
+		
+        [CheckFalseBooleans:true]
+		[FalseBooleans:UnderFire]
+		
+        [CheckThreatScore:true]
+        [CheckThreatScoreMinimum:1500]
+        [CheckThreatScoreMaximum:-1]
+        [CheckThreatScoreIncludeOtherNpcOwners:true]
+        [CheckThreatScoreRadius:800]
+        [CheckThreatScoreFromTargetPosition:true]
+        [CheckThreatScoreGridConfiguration:All]
+      </Description>
+    </EntityComponent>
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Action_TargetAcquiredClosing_ApproachingTargetHard</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [PlayDialogueCue:true]
+        [DialogueCueId:DynamicTarget_ApproachingTargetHard]
+
+        [DisableTriggers:true]
+        [DisableTriggerTags:TargetAcquiredClosing]
+      </Description>
+    </EntityComponent>		
+	  
+  
+  
+ 	<!-- TargetAcquiredClosing_ApproachingTarget -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Trigger_TargetAcquiredClosing_ApproachingTarget</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+        [Type:Timer]
+
+        [UseTrigger:false]
+        [StartsReady:false]
+
+        [Tags:TargetAcquiredClosing]
+
+        [MinCooldownMs:7000]
+        [MaxCooldownMs:7001]
+
+        [Conditions:MSB_DynamicTarget_Condition_TargetAcquiredClosing_ApproachingTarget]
+		[ConditionCheckResetsTimer:true]
+		
+		
+        [MaxActions:-1]
+        [Actions:MSB_DynamicTarget_Action_TargetAcquiredClosing_ApproachingTarget]
+      </Description>
+    </EntityComponent>
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Condition_TargetAcquiredClosing_ApproachingTarget</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [HasTarget:true]
+		
+		[CheckTargetDistance:true]
+		[MinTargetDistance:1500]
+		[MaxTargetDistance:4500]
+		
+        [CheckFalseBooleans:true]
+		[FalseBooleans:UnderFire]
+		
+
+      </Description>
+    </EntityComponent>
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Action_TargetAcquiredClosing_ApproachingTarget</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [PlayDialogueCue:true]
+        [DialogueCueId:DynamicTarget_ApproachingTarget]
+
+        [DisableTriggers:true]
+        [DisableTriggerTags:TargetAcquiredClosing]
+      </Description>
+    </EntityComponent>	 
+  
+  
+  
+  
+  <!-- Time out -->
+      <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Trigger_TargetAcquiredClosing_AutoDisable</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [MinCooldownMs:10000]
+        [MaxCooldownMs:10001]
+
+        [UseTrigger:false]
+        [StartsReady:false]
+        [Tags:TargetAcquiredClosing]
+
+        [MaxActions:1]
+        [Actions:MSB_DynamicTarget_Action_TargetAcquiredClosing_AutoDisable]
+      </Description>
+    </EntityComponent>
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Action_TargetAcquiredClosing_AutoDisable</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+		
+        [DisableTriggers:true]
+        [DisableTriggerTags:TargetAcquiredClosing]
+      </Description>
+    </EntityComponent>
+ 
+  
+
+
+  </EntityComponents>
+</Definitions>

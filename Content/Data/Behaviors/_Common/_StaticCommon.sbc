@@ -37,7 +37,12 @@
         [Triggers:MSB_ContextTarget_Trigger_TargetHasBeenClose]
         [Triggers:MSB_ContextTarget_Trigger_LostTarget]
         [Triggers:MSB_ContextTarget_Trigger_SwitchTarget]
-
+		[Triggers:MSB_ContextTarget_TriggerEvent_ApproachingTarget]
+		[Triggers:MSB_ContextTarget_TriggerEvent_TargetIsApproaching]
+		
+		
+		
+		
         [Triggers:MSB_Common_Trigger_DamageByNeutral]
         [Triggers:MSB_Common_Trigger_DamageByNeutral_Cue]
         [Triggers:MSB_Common_Trigger_DamageByFriendly]

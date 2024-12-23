@@ -4,13 +4,178 @@
     <!--
     This file handles the TriggerEvent:
 
+    -MSB_TriggerEvent_ApproachingTarget
+    -MSB_TriggerEvent_TargetIsApproaching 
+	
+	
+[Triggers:MSB_ContextTarget_TriggerEvent_ApproachingTarget]
+[Triggers:MSB_ContextTarget_TriggerEvent_TargetIsApproaching]
+
+
     -MSB_TriggerEvent_TargetGettingAway (Done)
+
+
 
         [Triggers:MSB_ContextTarget_TriggerEvent_TargetGettingAway]
         [Triggers:MSB_ContextTarget_Trigger_TargetHasBeenClose]
         [Triggers:MSB_ContextTarget_Trigger_LostTarget]
         [Triggers:MSB_ContextTarget_Trigger_SwitchTarget]
     -->
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextTarget_TriggerEvent_ApproachingTarget</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+        [UseTrigger:true]
+        [StartsReady:false]
+
+        [MinCooldownMs:1000]
+        [MaxCooldownMs:1001]
+		[ConditionCheckResetsTimer:true]
+		
+        [Conditions:MSB_ContextTarget_Condition_ApproachingTarget]
+
+        [MaxActions:-1]
+        [Actions:MSB_ContextTarget_Action_TriggerEvent_ApproachingTarget]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextTarget_Condition_ApproachingTarget</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+		
+		[BehaviorModeCheck:true]
+		[CurrentBehaviorMode:ApproachTarget]
+		
+		[CheckTargetDistance:true]
+		[MinTargetDistance:1500]
+		[MaxTargetDistance:4500]
+		
+		
+        [CheckTargetAngleFromForward:true]
+        [MinTargetAngle:0]
+        [MaxTargetAngle:75]
+
+        [CheckGridSpeed:true]
+        [MinGridSpeed:20]
+	
+	
+      </Description>
+    </EntityComponent>
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextTarget_Action_TriggerEvent_ApproachingTarget</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_ApproachingTarget]
+        [ForceManualTriggerActivation:false]
+
+      </Description>
+    </EntityComponent>	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextTarget_TriggerEvent_TargetIsApproaching</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:true]
+        [StartsReady:false]
+
+        [MinCooldownMs:1000]
+        [MaxCooldownMs:1001]
+		[ConditionCheckResetsTimer:true]
+		
+        [Conditions:MSB_ContextTarget_Condition_TargetIsApproaching]
+
+        [MaxActions:-1]
+        [Actions:MSB_ContextTarget_Action_TriggerEvent_TargetIsApproaching]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextTarget_Condition_TargetIsApproaching</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+		
+		[BehaviorModeCheck:true]
+		[CurrentBehaviorMode:ApproachWaypoint]
+		[CurrentBehaviorMode:WaitAtWaypoint]
+		[CurrentBehaviorMode:Idle]
+		[CurrentBehaviorMode:Passive]
+		
+
+		[CheckTargetDistance:true]
+		[MinTargetDistance:1500]
+		[MaxTargetDistance:4500]
+
+        [CheckIfTargetIsChasing:true]
+        [MinTargetChaseAngle:0]
+        [MaxTargetChaseAngle:75]
+
+        [CheckTargetSpeed:true]
+        [MinTargetSpeed:20]
+	
+      </Description>
+    </EntityComponent>
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextTarget_Action_TriggerEvent_TargetIsApproaching</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_TargetIsApproaching]
+        [ForceManualTriggerActivation:false]
+
+      </Description>
+    </EntityComponent>		
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>

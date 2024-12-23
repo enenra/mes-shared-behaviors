@@ -10,6 +10,14 @@
       <Description>
         [RivalAI TriggerGroup]
 
+		[Triggers:MSB_DynamicTarget_Trigger_TargetAcquiredFirstTime]
+		[Triggers:MSB_DynamicTarget_Trigger_TargetAcquiredFirstTime_CancelTargetClose]
+		[Triggers:MSB_DynamicTarget_Trigger_TargetAcquiredFirstTime_Cancel]	
+		[Triggers:MSB_DynamicTarget_Trigger_TargetAcquiredFirstTime_ApproachingTargetEasy]
+		[Triggers:MSB_DynamicTarget_Trigger_TargetAcquiredFirstTime_ApproachingTargetHard]
+		[Triggers:MSB_DynamicTarget_Trigger_TargetAcquiredFirstTime_ApproachingTarget]
+		[Triggers:MSB_DynamicTarget_Trigger_TargetAcquiredFirstTime_AutoDisable]
+
       </Description>
     </EntityComponent>
 

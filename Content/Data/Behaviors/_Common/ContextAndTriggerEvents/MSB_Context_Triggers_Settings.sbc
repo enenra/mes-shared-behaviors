@@ -240,7 +240,7 @@
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerNames:MSB_TriggerEvent_InitNormal]
-        [ForceManualTriggerActivation:true]
+        [ForceManualTriggerActivation:false]
 
         [SetBooleansFalse:ReadyforNormal]
       </Description>
@@ -264,7 +264,7 @@
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerNames:MSB_TriggerEvent_InitHighAlert]
-        [ForceManualTriggerActivation:true]
+        [ForceManualTriggerActivation:false]
 
 
         [ResetCooldownTimeOfTriggers:true]
@@ -292,7 +292,7 @@
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerNames:MSB_TriggerEvent_InitBattle]
-        [ForceManualTriggerActivation:true]
+        [ForceManualTriggerActivation:false]
 
         [ResetCooldownTimeOfTriggers:true]
         [ResetTriggerCooldownNames:MSB_Context_Trigger_NoTarget_ReadyforNormal]
