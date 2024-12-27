@@ -55,6 +55,12 @@
         [Triggers:MSB_Common_Trigger_DamageByFriendly_Cue]
         [Triggers:MSB_Common_Trigger_UnderFireHealthLow]
         [Triggers:MSB_Common_Triggers_Compromised]
+		
+		
+        [Triggers:MSB_Common_Trigger_CombatToRole]
+        [Triggers:MSB_Common_Trigger_RoleToCombat]
+		
+		
 
         [Triggers:MSB_CrashSystem_Trigger_GoingDown]
         [Triggers:MSB_CrashSystem_Trigger_UnderFireGoingDown_LowAltitude]

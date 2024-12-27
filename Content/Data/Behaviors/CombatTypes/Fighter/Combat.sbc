@@ -102,7 +102,7 @@
         [EnableTriggerTags:LowAltitudeFighting]
 
         [ChangeAutopilotSpeed:true]
-        [NewAutopilotSpeed:30]
+        [NewAutopilotSpeed:45]
       </Description>
     </EntityComponent>
 

@@ -84,7 +84,7 @@
 
         [UseProjectileLeadPrediction:true]
         [StrikeBeginPlanetAttackRunDistance:600]
-        [StrikeBreakawayDistance:100]
+        [StrikeBreakawayDistance:50]
         [StrikeEngageUseSafePlanetPathing:true]
         [StrikeEngageUseCollisionEvasion:true]
 

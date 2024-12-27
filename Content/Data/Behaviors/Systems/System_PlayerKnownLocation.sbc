@@ -46,7 +46,6 @@ MSB_PKLSystem_Trigger_InPKL
       </Id>
       <Description>
         [RivalAI Action]
-		[DebugMessage:InPKL]
 		[SetBooleansTrue:InPKL]
       </Description>
     </EntityComponent>
@@ -61,8 +60,7 @@ MSB_PKLSystem_Trigger_InPKL
         [RivalAI Action]
 
 		[SetBooleansFalse:InPKL]
-		
-		[DebugMessage:NotPKL]
+
 		
       </Description>
     </EntityComponent>

@@ -105,7 +105,7 @@
 
         [UseTrigger:true]
         [StartsReady:true]
-
+		[MaxActions:1]
         [Actions:MSB_Fighter_Action_BeforeHighSpeedImpact]
       </Description>
     </EntityComponent>
@@ -138,7 +138,7 @@
 
         [UseTrigger:false]
         [StartsReady:true]
-
+		[MaxActions:1]
         [Actions:MSB_Fighter_Action_Compromised_BeforeHighSpeedImpact]
       </Description>
     </EntityComponent>
@@ -179,6 +179,7 @@
         [Conditions:MSB_Fighter_Condition_AfterHighSpeedImpact]
 
         [StartsReady:false]
+		[MaxActions:1]
         [Actions:MSB_Fighter_Action_AfterHighSpeedImpact]
       </Description>
     </EntityComponent>

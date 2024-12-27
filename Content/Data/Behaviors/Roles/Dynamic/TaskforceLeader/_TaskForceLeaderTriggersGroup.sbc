@@ -11,25 +11,16 @@
 
         [RivalAI TriggerGroup]
 
-        [Triggers:MSB_TaskForceLeader_Trigger_Init]
-
-
+        [Triggers:MSB_TaskForceLeader_Trigger_OnStart]
+        [Triggers:MSB_TaskForceLeader_Trigger_InitRole]
+        [Triggers:MSB_TaskForceLeader_Trigger_CloseRole]
         [Triggers:MSB_TaskForceLeader_Trigger_ProcessEscortRequest]
-        [Triggers:MSB_TaskForceLeader_Trigger_TargetNear1500]
-
-        [Triggers:MSB_TaskForceLeader_Trigger_HasTarget]
-        [Triggers:MSB_TaskForceLeader_Trigger_NoTarget]
-        [Triggers:MSB_TaskForceLeader_Trigger_SwitchtoCargo]
-
         [Triggers:MSB_TaskForceLeader_Trigger_Compromised]
+        [Triggers:MSB_TaskForceLeader_Trigger_HasTarget1500]
 
-		[Triggers:MSB_DynamicTarget_Trigger_TargetAcquiredFirstTime]
-		[Triggers:MSB_DynamicTarget_Trigger_TargetAcquiredFirstTime_CancelTargetClose]
-		[Triggers:MSB_DynamicTarget_Trigger_TargetAcquiredFirstTime_Cancel]	
-		[Triggers:MSB_DynamicTarget_Trigger_TargetAcquiredFirstTime_ApproachingTargetEasy]
-		[Triggers:MSB_DynamicTarget_Trigger_TargetAcquiredFirstTime_ApproachingTargetHard]
-		[Triggers:MSB_DynamicTarget_Trigger_TargetAcquiredFirstTime_ApproachingTarget]
-		[Triggers:MSB_DynamicTarget_Trigger_TargetAcquiredFirstTime_AutoDisable]
+
+
+
 
 
 

@@ -3,6 +3,16 @@
   <EntityComponents>
 
     <!--
+	
+MSB_TriggerEvent_InitNormal	
+MSB_TriggerEvent_InitHighAlert	
+MSB_TriggerEvent_InitBattle	
+	
+MSB_TriggerEvent_HostileToNormal	
+	
+	
+	
+	
     There are 3 Settings (bools): SettingNormal, SettingHighAlert, SettingBattle
 
     MSB_Context_Condition_ReadyforNormal
@@ -474,8 +484,30 @@
         [Conditions:MSB_Context_Condition_ReadyforNormal]
 
         [Actions:MSB_Context_Action_InitNormal]
+        [Actions:MSB_Context_Action_HostileToNormal]
       </Description>
     </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Action_HostileToNormal</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerNames:MSB_TriggerEvent_HostileToNormal]
+        [ForceManualTriggerActivation:false]
+
+      </Description>
+    </EntityComponent>
+
+
+
+
 
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">

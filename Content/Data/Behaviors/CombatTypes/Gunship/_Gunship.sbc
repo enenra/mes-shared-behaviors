@@ -11,6 +11,7 @@
         [RivalAI TriggerGroup]
 
         [Triggers:MSB_Gunship_Trigger_InitFight]
+        [Triggers:MSB_Gunship_Trigger_CloseFight]
 
 
         [Triggers:MSB_Gunship_Triggers_PlayerClose]
@@ -31,14 +32,12 @@
 
         [Tags:MSB_CombatType_InitFight]
 
-        [UseTrigger:false]
-        [Type:Timer]
+        [UseTrigger:true]
+        [Type:Manual]
 
-        [MinCooldownMs:1500]
-        [MaxCooldownMs:1501]
-        [StartsReady:false]
+        [StartsReady:true]
 
-        [MaxActions:1]
+        [MaxActions:-1]
         [Actions:MSB_Gunship_Action_InitFight]
       </Description>
     </EntityComponent>
@@ -58,6 +57,48 @@
         [AutopilotProfile:Secondary]
       </Description>
     </EntityComponent>
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Gunship_Trigger_CloseFight</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Tags:MSB_CombatType_CloseFight]
+
+        [UseTrigger:true]
+        [Type:Manual]
+
+        [StartsReady:false]
+
+        [MaxActions:-1]
+        [Actions:MSB_Gunship_Action_CloseFight]
+      </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Gunship_Action_CloseFight</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:Fighter - CloseFight]
+
+      </Description>
+    </EntityComponent>	
+	
+	
+	
+	
+	
+	
+	
 
   </EntityComponents>
 </Definitions>

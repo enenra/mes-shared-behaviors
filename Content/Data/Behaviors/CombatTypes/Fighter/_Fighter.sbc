@@ -202,7 +202,7 @@
         [StartsReady:false]
 
         [MaxActions:-1]
-        [Actions:MSB_Fighter_Trigger_CloseFight]
+        [Actions:MSB_Fighter_Action_CloseFight]
       </Description>
     </EntityComponent>
 
@@ -218,7 +218,7 @@ So we disable triggers with this tag on close
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Fighter_Trigger_CloseFight</SubtypeId>
+        <SubtypeId>MSB_Fighter_Action_CloseFight</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
