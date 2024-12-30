@@ -31,6 +31,7 @@
         [MinCooldownMs:60000]
         [MaxCooldownMs:60001]
 
+        [ConditionCheckResetsTimer:true]
         [Conditions:MSB_Environment_Condition_IsOnDarkSide]
 
         [MaxActions:-1]
@@ -81,6 +82,7 @@
         [MinCooldownMs:60000]
         [MaxCooldownMs:60001]
 
+        [ConditionCheckResetsTimer:true]
         [Conditions:MSB_Environment_Condition_IsOnLightSide]
 
         [MaxActions:-1]
@@ -196,6 +198,39 @@
 
         [TriggerTimerBlocks:true]
         [TimerBlockNames:Timer - BadWeather]
+      </Description>
+    </EntityComponent>
+
+    <!-- GoodWeather -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Environment_Trigger_GoodWeather</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Weather]
+
+        [WeatherTypes:Clear]
+
+        [UseTrigger:true]
+        [StartsReady:false]
+
+        [MaxActions:-1]
+        [Actions:MSB_Environment_Action_GoodWeather]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Environment_Action_GoodWeather</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [TriggerTimerBlocks:true]
+        [TimerBlockNames:Timer - GoodWeather]
       </Description>
     </EntityComponent>
 
