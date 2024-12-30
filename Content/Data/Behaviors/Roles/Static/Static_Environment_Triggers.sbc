@@ -9,6 +9,7 @@
 
     MSB_Environment_Trigger_VeryBadWeather: Triggers "Timer - VeryBadWeather" if a heavy storm appears.
     MSB_Environment_Trigger_BadWeather: Triggers "Timer - BadWeather" if bad weather appears.
+    MSB_Environment_Trigger_GoodWeather: Triggers "Timer - GoodWeather" if weather is clear.
 
     MSB_Environment_Trigger_PlayerNear1000: Triggers "Timer - PlayerNear" when player is within 1km.
     MSB_Environment_Trigger_PlayerFar5000: Triggers "Timer - PlayerFar" when player is within 5km.
