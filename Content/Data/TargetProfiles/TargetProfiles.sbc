@@ -5,13 +5,13 @@
 
 <!--
 Do not remove
-MSB_Default_Target
+MSB_Default_TargetProfile
 -CptArhtur
 -->
   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Default_Target</SubtypeId>
+        <SubtypeId>MSB_Default_TargetProfile</SubtypeId>
       </Id>
       <Description>
 
@@ -54,7 +54,7 @@ MSB_Default_Target
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Default_Target_LowRange</SubtypeId>
+        <SubtypeId>MSB_Default_TargetProfile_LowRange</SubtypeId>
       </Id>
       <Description>
 
@@ -96,7 +96,7 @@ MSB_Default_Target
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Default_Target_ShortRange</SubtypeId>
+        <SubtypeId>MSB_Default_TargetProfile_ShortRange</SubtypeId>
       </Id>
       <Description>
 

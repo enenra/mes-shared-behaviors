@@ -326,7 +326,7 @@
         [DebugMessage:Very Low Morale]
 
         [ChangeTargetProfile:true]
-        [NewTargetProfileId:MSB_Default_Target_ShortRange]
+        [NewTargetProfileId:MSB_Default_TargetProfile_ShortRange]
         [RefreshTarget:true]
 
       </Description>
@@ -368,7 +368,7 @@
         [DebugMessage:Low Morale]
 
         [ChangeTargetProfile:true]
-        [NewTargetProfileId:MSB_Default_Target_LowRange]
+        [NewTargetProfileId:MSB_Default_TargetProfile_LowRange]
         [RefreshTarget:true]
 
 
