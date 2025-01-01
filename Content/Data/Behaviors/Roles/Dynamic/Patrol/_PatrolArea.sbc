@@ -21,7 +21,7 @@
 
         [BehaviorName:Patrol]
 
-        [TargetData:MSB_TargetProfile_ShortRange]
+        [TargetData:MSB_TargetProfile_LowRange]
 
         [AutopilotData:MSB_PatrolArea_Autopilot]
         [SecondaryAutopilotData:MSB_Fighter_Autopilot_Fighter]
@@ -52,44 +52,6 @@
       </Description>
     </EntityComponent>
 
-    <!-- Add Target Profile, Autopilot Profile and the below TriggerGroup to your behavior to make use of the MSB patrol presets. -->
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_TargetProfile_ShortRange</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Target]
-
-        [UseCustomTargeting:true]
-        [Target:PlayerAndGrid]
-
-        [MaxDistance:5000]
-
-        [TimeUntilTargetAcquisition:10]
-        [TimeUntilNextEvaluation:3]
-
-        [MatchAllFilters:OutsideOfSafezone]
-        [MatchAllFilters:Owner]
-        [MatchAllFilters:Relation]
-        [MatchAllFilters:Powered]
-
-        [MatchAnyFilters:Broadcasting]
-        [MatchAnyFilters:MovementScore]
-        [MatchAnyFilters:LineOfSight]
-
-        [NonBroadcastVisualRange:1200]
-        [MinMovementScore:1000]
-        [MaxMovementDetectableDistance:2500]
-        [MaxLineOfSight:1200]
-
-        [Owners:Player]
-        [Owners:NPC]
-        [Relations:Enemy]
-
-        [GetTargetBy:ClosestDistance]
-      </Description>
-    </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
