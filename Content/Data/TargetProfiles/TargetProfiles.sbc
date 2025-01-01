@@ -46,6 +46,7 @@
       </Description>
     </EntityComponent>
 
+    <!-- LowRange - Normal detection range. -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -84,6 +85,7 @@
       </Description>
     </EntityComponent>
 
+    <!-- ShortRange - Used during combat. -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
