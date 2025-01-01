@@ -9,11 +9,11 @@
       * Roles can hook into these commands and respond to them.
 
     Contents:
-    * AllGood: Battle has ended / enemy has left.
-    * YellowAlert: Enemy is near.
-    * RedAlert: Battle has started.
-    * SOS: Requesting backup.
-    * Compromised: Encounter disabled.
+      * AllGood: Battle has ended / enemy has left.
+      * YellowAlert: Enemy is near.
+      * RedAlert: Battle has started.
+      * SOS: Requesting backup.
+      * Compromised: Encounter disabled.
 
     TODO:
       * Implement SOS (specifically the triggers for when to run it)
