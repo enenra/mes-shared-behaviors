@@ -2,19 +2,18 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 
+    <!--
+    Do not remove
+    MSB_TargetProfile_Default
+    -CptArhtur
+    -->
 
-<!--
-Do not remove
-MSB_Default_TargetProfile
--CptArhtur
--->
-  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Default_TargetProfile</SubtypeId>
+        <SubtypeId>MSB_TargetProfile_Default</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI Target]
 
         [UseCustomTargeting:true]
@@ -30,7 +29,6 @@ MSB_Default_TargetProfile
         [MatchAllFilters:Relation]
         [MatchAllFilters:Powered]
 
-
         [MatchAnyFilters:Broadcasting]
         [MatchAnyFilters:MovementScore]
         [MatchAnyFilters:LineOfSight]
@@ -40,24 +38,20 @@ MSB_Default_TargetProfile
         [MaxMovementDetectableDistance:5000]
         [MaxLineOfSight:3000]
 
-
         [Owners:Player]
         [Owners:NPC]
         [Relations:Enemy]
 
         [GetTargetBy:ClosestDistance]
-
       </Description>
     </EntityComponent>
-
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Default_TargetProfile_LowRange</SubtypeId>
+        <SubtypeId>MSB_TargetProfile_LowRange</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI Target]
 
         [UseCustomTargeting:true]
@@ -87,19 +81,15 @@ MSB_Default_TargetProfile
         [Relations:Enemy]
 
         [GetTargetBy:ClosestDistance]
-
       </Description>
-
     </EntityComponent>
-
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Default_TargetProfile_ShortRange</SubtypeId>
+        <SubtypeId>MSB_TargetProfile_ShortRange</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI Target]
 
         [UseCustomTargeting:true]
@@ -118,15 +108,10 @@ MSB_Default_TargetProfile
         [Owners:NPC]
         [Relations:Enemy]
         [GetTargetBy:ClosestDistance]
-
       </Description>
-
     </EntityComponent>
 
-
-
-
-<!--
+    <!--
 
   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
