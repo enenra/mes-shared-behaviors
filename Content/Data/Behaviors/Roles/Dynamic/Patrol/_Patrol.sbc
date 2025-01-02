@@ -57,9 +57,7 @@
       <Description>
         [RivalAI TriggerGroup]
 
-        [Triggers:MSB_Patrol_Trigger_InitRole]
-        [Triggers:MSB_Patrol_Trigger_CloseRole]
-
+        [Triggers:MSB_Patrol_Trigger_SwitchToRole]
         [Triggers:MSB_Patrol_Trigger_HasTarget]
       </Description>
     </EntityComponent>
@@ -68,7 +66,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Patrol_Trigger_InitRole</SubtypeId>
+        <SubtypeId>MSB_Patrol_Trigger_SwitchToRole</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -81,13 +79,13 @@
         [StartsReady:false]
 
         [MaxActions:-1]
-        [Actions:MSB_Patrol_Action_InitRole]
+        [Actions:MSB_Patrol_Action_SwitchToRole]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Patrol_Action_InitRole</SubtypeId>
+        <SubtypeId>MSB_Patrol_Action_SwitchToRole</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
