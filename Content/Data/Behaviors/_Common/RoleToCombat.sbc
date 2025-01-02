@@ -18,7 +18,7 @@ MSB_Common_Trigger_RoleToCombat
         [RivalAI Action]
 
         [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:MSB_CombatType_InitFight]
+        [ManuallyActivatedTriggerTags:MSB_CombatType_InitCombatType]
         [ManuallyActivatedTriggerTags:MSB_CombatType_CloseRole]
 
         [DisableTriggers:true]

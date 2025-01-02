@@ -124,7 +124,7 @@ MSB_DefensiveEscort_Trigger_TargetfarSwitchEscort
         [ChatData:MSB_DefensiveEscort_Chat_AggressionSwitchEscort]
 
         [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:MSB_CombatType_InitFight]
+        [ManuallyActivatedTriggerTags:MSB_CombatType_InitCombatType]
 
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_DefensiveEscort_Trigger_AggressionSwitchEscort]

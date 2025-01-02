@@ -28,7 +28,7 @@
       <Description>
         [RivalAI Trigger]
 
-        [Tags:MSB_CombatType_InitFight]
+        [Tags:MSB_CombatType_InitCombatType]
 
         [UseTrigger:false]
         [Type:Timer]
