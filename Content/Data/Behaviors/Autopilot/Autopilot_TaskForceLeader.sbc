@@ -2,10 +2,7 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 
-
-
-
-	    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_TaskforceLeader_AutoPilot</SubtypeId>
@@ -26,21 +23,8 @@
 
         [LimitRotationSpeed:true]
         [MaxRotationMagnitude:0.6]
-
       </Description>
-
     </EntityComponent>
-
-
-
-
-
-
-
-
-
-
-
 
   </EntityComponents>
 </Definitions>

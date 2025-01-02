@@ -2,16 +2,12 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 
-
-
-
-	    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_OffensiveEscort_AutoPilot</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI Autopilot]
 
         [DisableInertiaDampeners:false]
@@ -31,22 +27,8 @@
         [MaxRotationMagnitude:0.75]
 
         [EscortSpeedMatchMinDistance:5]
-
-
       </Description>
-
     </EntityComponent>
-
-
-
-
-
-
-
-
-
-
-
 
   </EntityComponents>
 </Definitions>

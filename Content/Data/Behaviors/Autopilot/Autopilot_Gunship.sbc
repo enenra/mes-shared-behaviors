@@ -2,14 +2,12 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 
-
    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_Gunship_Autopilot</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI Autopilot]
 
         [DisableInertiaDampeners:false]
@@ -21,7 +19,6 @@
         [IdealMaxSpeed:50]
         [MaxSpeedTolerance:5]
       </Description>
-
     </EntityComponent>
 
 	   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -30,7 +27,6 @@
         <SubtypeId>MSB_Gunship_Autopilot_Combat</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI Autopilot]
 
         [DisableInertiaDampeners:false]
@@ -40,24 +36,14 @@
         [IdealPlanetAltitude:500]
         [WaypointTolerance:30]
 
-
-
-
         [OffsetSpaceMinDistFromTarget:150]
         [OffsetSpaceMaxDistFromTarget:300]
         [OffsetPlanetMinDistFromTarget:150]
         [OffsetPlanetMaxDistFromTarget:300]
         [OffsetPlanetMinTargetAltitude:-200]
         [OffsetPlanetMaxTargetAltitude:200]
-
       </Description>
-
     </EntityComponent>
-
-
-
-
-
 
   </EntityComponents>
 </Definitions>

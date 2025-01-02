@@ -52,35 +52,6 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Patrol_Autopilot</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Autopilot]
-
-        [DisableInertiaDampeners:false]
-        [SlowDownOnWaypointApproach:true]
-        [FlyLevelWithGravity:true]
-
-        [MinimumPlanetAltitude:250]
-        [IdealPlanetAltitude:500]
-
-        [IdealMinSpeed:50]
-        [IdealMaxSpeed:75]
-
-        [WaypointTolerance:50]
-        [WaypointWaitTimeTrigger:120]
-
-        [MinAngleForLeveledDescent:135]
-        [MaxAngleForLeveledAscent:90]
-
-        [UseVelocityCollisionEvasion:false]
-        [LimitRotationSpeed:true]
-        [MaxRotationMagnitude:0.2]
-      </Description>
-    </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_Patrol_TriggerGroup</SubtypeId>
       </Id>
       <Description>

@@ -55,31 +55,6 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_PatrolArea_Autopilot</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Autopilot]
-
-        [DisableInertiaDampeners:false]
-        [SlowDownOnWaypointApproach:true]
-
-        [FlyLevelWithGravity:true]
-        [MinimumPlanetAltitude:200]
-        [IdealPlanetAltitude:300]
-
-        [WaypointTolerance:30]
-
-        [OffsetSpaceMinDistFromTarget:3000]
-        [OffsetSpaceMaxDistFromTarget:7500]
-        [OffsetPlanetMinDistFromTarget:2000]
-        [OffsetPlanetMaxDistFromTarget:4500]
-        [OffsetPlanetMinTargetAltitude:500]
-        [OffsetPlanetMaxTargetAltitude:1500]
-      </Description>
-    </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_PatrolArea_TriggerGroup</SubtypeId>
       </Id>
       <Description>
