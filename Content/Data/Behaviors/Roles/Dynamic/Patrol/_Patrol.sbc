@@ -5,6 +5,10 @@
     <!--
     This is a sample Patrol behavior.
     This ship can be set up to spawn on planets or in space, and will simply fly in a straight line for a set amount of time, after which it will move to despawn.
+
+    TODO:
+      * hook custom despawn logic into when the encounter reaches the cargoship target point.
+      * add commsystem reactions
     -->
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -102,7 +106,7 @@
       </Description>
     </EntityComponent>
 
-    <!-- HasTarget - Encounter has detected a valid target and engages. -->
+    <!-- HasTarget - Encounter has detected a valid target -> Switch to CombatType -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
