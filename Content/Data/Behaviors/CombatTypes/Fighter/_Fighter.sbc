@@ -17,6 +17,9 @@
         [Triggers:MSB_Fighter_Trigger_InitCombatType]
         [Triggers:MSB_Fighter_Trigger_CloseFight]
 
+        [Triggers:MSB_Fighter_Trigger_NoTarget]
+        [Triggers:MSB_Fighter_Trigger_SwitchToRole]
+
         [Triggers:MSB_Fighter_Trigger_PlayerClose]
         [Triggers:MSB_Fighter_Trigger_Compromised_PlayerFar]
 
@@ -26,7 +29,6 @@
 
         [Triggers:MSB_Fighter_Trigger_DamageByHostile]
 
-
         [Triggers:MSB_Fighter_Trigger_LowAltitudeFighting]
         [Triggers:MSB_Fighter_Trigger_LowAltitudeFighting_Reset_ChangedTarget]
         [Triggers:MSB_Fighter_Trigger_LowAltitudeFighting_Reset_HighAltitude]
@@ -34,14 +36,9 @@
         [Triggers:MSB_Fighter_Trigger_StartingAttackRun]
         [Triggers:MSB_Fighter_Trigger_EndingAttackRun]
         [Triggers:MSB_Fighter_Trigger_EnemyOnTail]
-
-
-
       </Description>
     </EntityComponent>
 
-
-    <!-- Triggers -->
     <!-- InitFight - Switch BehaviorSubclass at beginning of fight. -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -51,7 +48,7 @@
       <Description>
         [RivalAI Trigger]
 
-        [Tags:MSB_CombatType_InitCombatType]
+        [Tags:MSB_CombatType_SwitchToCombatType]
 
         [UseTrigger:true]
         [Type:Manual]
@@ -71,6 +68,8 @@
       <Description>
         [RivalAI Action]
 
+        [DebugMessage:Fighter - SwitchToCombatType]
+
         [ChangeBehaviorSubclass:true]
         [NewBehaviorSubclass:Strike]
 
@@ -81,50 +80,101 @@
       </Description>
     </EntityComponent>
 
-
+    <!-- NoTarget - No targets in range, if none enter range within a certain amount of time -> SwitchToRole -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Fighter_Trigger_CloseFight</SubtypeId>
+        <SubtypeId>MSB_Fighter_Trigger_NoTarget</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
 
-        [Tags:MSB_CombatType_CloseCombatType]
+        [Type:NoTarget]
 
-        [UseTrigger:true]
-        [Type:Manual]
+        [UseTrigger:false]
+        [StartsReady:true]
 
-        [StartsReady:false]
-
-        [MaxActions:-1]
-        [Actions:MSB_Fighter_Action_CloseFight]
+        [Actions:MSB_Fighter_Action_NoTarget]
       </Description>
     </EntityComponent>
-
-
-    <!-- I assume we will have CombatMode specific triggers.
-
-
-So we disable triggers with this tag on close
-        [Tags:MSB_CombatType_Fight]
- -->
-
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Fighter_Action_CloseFight</SubtypeId>
+        <SubtypeId>MSB_Fighter_Action_NoTarget</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Fighter - CloseFight]
+        [DebugMessage:Patrol - NoTarget]
 
+        [SetBooleansTrue:MSB_NoTarget]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_Fighter_Trigger_NoTarget]
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB_Fighter_Trigger_SwitchToRole]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_Fighter_Trigger_SwitchToRole]
       </Description>
     </EntityComponent>
 
+    <!-- SwitchToRole -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Fighter_Trigger_SwitchToRole</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
 
+        [Type:Timer]
+
+        [UseTrigger:false]
+        [StartsReady:false]
+
+        [Conditions:MSB_Fighter_Condition_SwitchToRole]
+
+        [MinCooldownMs:60000]
+        [MaxCooldownMs:90000]
+
+        [Actions:MSB_Fighter_Action_SwitchToRole]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Fighter_Condition_SwitchToRole</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:true]
+
+        [CheckTrueBooleans:true]
+        [TrueBooleans:MSB_NoTarget]
+      </Description>
+    </EntityComponent>
+    <!-- TODO: Disable all other relevant Triggers here. -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Fighter_Action_SwitchToRole</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:Patrol - SwitchToRole]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_Fighter_Trigger_SwitchToRole]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_Role_SwitchToRole]
+      </Description>
+    </EntityComponent>
 
 
     <!--
