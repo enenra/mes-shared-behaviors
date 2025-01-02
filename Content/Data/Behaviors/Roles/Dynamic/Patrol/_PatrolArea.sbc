@@ -60,15 +60,53 @@
       <Description>
         [RivalAI TriggerGroup]
 
+        [Triggers:MSB_PatrolArea_Trigger_SwitchToRole]
         [Triggers:MSB_PatrolArea_Trigger_HasTarget]
-        [Triggers:MSB_PatrolArea_Trigger_NoTarget]
-        [Triggers:MSB_PatrolArea_Trigger_SwitchToPatrol]
-
         [Triggers:MSB_PatrolArea_Trigger_Despawn]
       </Description>
     </EntityComponent>
 
-    <!-- HasTarget - Encounter has detected a valid target and engages. -->
+    <!-- SwitchToRole -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_PatrolArea_Trigger_SwitchToRole</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Tags:MSB_Role_SwitchToRole]
+
+        [UseTrigger:true]
+        [Type:Manual]
+
+        [StartsReady:false]
+
+        [MaxActions:-1]
+        [Actions:MSB_PatrolArea_Action_SwitchToRole]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_PatrolArea_Action_SwitchToRole</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:Patrol - SwitchToRole]
+
+        [ChangeBehaviorSubclass:true]
+        [NewBehaviorSubclass:Cargoship]
+
+        [ChangeAutopilotProfile:true]
+        [AutopilotProfile:Primary]
+
+        [RefreshTarget:true]
+      </Description>
+    </EntityComponent>
+
+    <!-- HasTarget - Encounter has detected a valid target -> Switch to CombatType -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -94,133 +132,16 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:PatrolArea - HasTarget]
-
-        [ChangeAutopilotSpeed:true]
-        [NewAutopilotSpeed:-1]
-
-        [ManuallyActivatedTriggerTags:MSB_CombatType_InitCombatType]
+        [DebugMessage:Patrol - HasTarget]
 
         [EnableTriggers:true]
         [EnableTriggerNames:MSB_PatrolArea_Trigger_HasTarget]
-
-        [DisableTriggers:true]
-        [DisableTriggerNames:MSB_PatrolArea_Trigger_HasTarget]
-        [DisableTriggerNames:MSB_PatrolArea_Trigger_SwitchToPatrol]
-        [DisableTriggerNames:MSB_PatrolArea_Trigger_Despawn]
-
-        [ResetCooldownTimeOfTriggers:true]
-        [ResetTriggerCooldownNames:MSB_PatrolArea_Trigger_SwitchToPatrol]
 
         [SetBooleansFalse:MSB_NoTarget]
         [SetBooleansFalse:MSB_Despawn]
 
         [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_HasTarget]
-      </Description>
-    </EntityComponent>
-
-    <!-- NoTarget - No targets in range, if none enter range within a certain amount of time -> SwitchToPatrol -->
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_PatrolArea_Condition_NoTarget</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Condition]
-
-        [UseConditions:true]
-        [MatchAnyCondition:true]
-
-        [CheckTrueBooleans:true]
-        [TrueBooleans:MSB_NoTarget]
-      </Description>
-    </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_PatrolArea_Trigger_NoTarget</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Trigger]
-
-        [Type:NoTarget]
-
-        [UseTrigger:false]
-        [StartsReady:true]
-
-        [Actions:MSB_PatrolArea_Action_NoTarget]
-      </Description>
-    </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_PatrolArea_Action_NoTarget</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Action]
-
-        [DebugMessage:PatrolArea - NoTarget]
-
-        [SetBooleansTrue:MSB_NoTarget]
-
-        [DisableTriggers:true]
-        [DisableTriggerNames:MSB_PatrolArea_Trigger_NoTarget]
-
-        [ResetCooldownTimeOfTriggers:true]
-        [ResetTriggerCooldownNames:MSB_PatrolArea_Trigger_SwitchToPatrol]
-
-        [EnableTriggers:true]
-        [EnableTriggerNames:MSB_PatrolArea_Trigger_HasTarget]
-        [EnableTriggerNames:MSB_PatrolArea_Trigger_SwitchToPatrol]
-      </Description>
-    </EntityComponent>
-
-    <!-- SwitchToPatrol - If encounter has not found a target for a while, go back to patrolling. -->
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_PatrolArea_Trigger_SwitchToPatrol</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Trigger]
-
-        [Type:Timer]
-
-        [UseTrigger:false]
-        [StartsReady:false]
-
-        [Conditions:MSB_PatrolArea_Condition_NoTarget]
-
-        [MinCooldownMs:60000]
-        [MaxCooldownMs:90000]
-
-        [Actions:MSB_PatrolArea_Action_SwitchToPatrol]
-      </Description>
-    </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_PatrolArea_Action_SwitchToPatrol</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Action]
-
-        [DebugMessage:PatrolArea - SwitchToPatrol]
-
-        [DisableTriggers:true]
-        [DisableTriggerNames:MSB_PatrolArea_Trigger_SwitchToPatrol]
-
-        [ChangeBehaviorSubclass:true]
-        [NewBehaviorSubclass:Patrol]
-
-        [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_SwitchToPatrol]
-
-        [ResetCooldownTimeOfTriggers:true]
-        [ResetTriggerCooldownNames:MSB_PatrolArea_Trigger_Despawn]
-        [EnableTriggers:true]
-        [EnableTriggerNames:MSB_PatrolArea_Trigger_Despawn]
+        [ManuallyActivatedTriggerTags:MSB_CombatType_SwitchToCombatType]
       </Description>
     </EntityComponent>
 
