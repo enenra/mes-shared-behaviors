@@ -14,9 +14,10 @@
       <Description>
         [RivalAI TriggerGroup]
 
-        [Triggers:MSB_Fighter_Trigger_PlayerClose]
-        [Triggers:MSB_Fighter_Trigger_InitFight]
+        [Triggers:MSB_Fighter_Trigger_InitCombatType]
         [Triggers:MSB_Fighter_Trigger_CloseFight]
+
+        [Triggers:MSB_Fighter_Trigger_PlayerClose]
         [Triggers:MSB_Fighter_Trigger_Compromised_PlayerFar]
 
         [Triggers:MSB_Fighter_Trigger_BeforeHighSpeedImpact]
@@ -45,7 +46,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Fighter_Trigger_InitFight</SubtypeId>
+        <SubtypeId>MSB_Fighter_Trigger_InitCombatType</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -58,14 +59,14 @@
         [StartsReady:false]
 
         [MaxActions:-1]
-        [Actions:MSB_Fighter_Action_InitFight]
+        [Actions:MSB_Fighter_Action_InitCombatType]
       </Description>
     </EntityComponent>
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Fighter_Action_InitFight</SubtypeId>
+        <SubtypeId>MSB_Fighter_Action_InitCombatType</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]

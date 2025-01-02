@@ -15,7 +15,7 @@
 
         [Triggers:MSB_Dropship_Trigger_ArrivedAtLandingSite]
         [Triggers:MSB_Dropship_Trigger_LeaveLandingSite]
-        [Triggers:MSB_Dropship_Trigger_InitFight]
+        [Triggers:MSB_Dropship_Trigger_InitCombatType]
       </Description>
     </EntityComponent>
 
@@ -23,7 +23,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Dropship_Trigger_InitFight</SubtypeId>
+        <SubtypeId>MSB_Dropship_Trigger_InitCombatType</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -38,14 +38,14 @@
         [StartsReady:false]
 
         [MaxActions:1]
-        [Actions:MSB_Dropship_Action_InitFight]
+        [Actions:MSB_Dropship_Action_InitCombatType]
       </Description>
     </EntityComponent>
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Dropship_Action_InitFight</SubtypeId>
+        <SubtypeId>MSB_Dropship_Action_InitCombatType</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]

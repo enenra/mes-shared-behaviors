@@ -10,7 +10,7 @@
       <Description>
         [RivalAI TriggerGroup]
 
-        [Triggers:MSB_Gunship_Trigger_InitFight]
+        [Triggers:MSB_Gunship_Trigger_InitCombatType]
         [Triggers:MSB_Gunship_Trigger_CloseFight]
 
 
@@ -25,7 +25,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Gunship_Trigger_InitFight</SubtypeId>
+        <SubtypeId>MSB_Gunship_Trigger_InitCombatType</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -38,14 +38,14 @@
         [StartsReady:true]
 
         [MaxActions:-1]
-        [Actions:MSB_Gunship_Action_InitFight]
+        [Actions:MSB_Gunship_Action_InitCombatType]
       </Description>
     </EntityComponent>
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Gunship_Action_InitFight</SubtypeId>
+        <SubtypeId>MSB_Gunship_Action_InitCombatType</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
@@ -57,8 +57,8 @@
         [AutopilotProfile:Secondary]
       </Description>
     </EntityComponent>
-	
-	
+
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -91,14 +91,14 @@
         [DebugMessage:Fighter - CloseFight]
 
       </Description>
-    </EntityComponent>	
-	
-	
-	
-	
-	
-	
-	
+    </EntityComponent>
+
+
+
+
+
+
+
 
   </EntityComponents>
 </Definitions>
