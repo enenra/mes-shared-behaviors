@@ -7,7 +7,6 @@
     This ship can be set up to spawn on planets or in space, and will simply fly in a straight line for a set amount of time, after which it will move to despawn.
 
     TODO:
-      * hook custom despawn logic into when the encounter reaches the cargoship target point.
       * add commsystem reactions
     -->
 
@@ -63,6 +62,8 @@
 
         [Triggers:MSB_Patrol_Trigger_SwitchToRole]
         [Triggers:MSB_Patrol_Trigger_HasTarget]
+
+        [Trigger:MSB_Patrol_Trigger_Despawn]
       </Description>
     </EntityComponent>
 
@@ -142,6 +143,39 @@
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_CombatType_SwitchToCombatType]
+      </Description>
+    </EntityComponent>
+
+    <!-- Despawn - When the encounter gets to within 5km of the built-in despawn point, this is run instead. -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Patrol_Trigger_Despawn</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:DespawnNear]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [TargetDistance:5000]
+
+        [Actions:MSB_Patrol_Action_Despawn]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Patrol_Action_Despawn</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:Patrol - Despawn]
+
+        [SetBooleansTrue:MSB_Despawn]
       </Description>
     </EntityComponent>
 
