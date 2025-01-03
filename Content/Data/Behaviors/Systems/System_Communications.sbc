@@ -179,6 +179,21 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CommSystem_Trigger_SOS_Direct</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Manual]
+        [Tags:MSB_TriggerEvent_SendSOS]
+
+        [MaxActions:-1]
+        [Actions:MSB_CommSystem_Action_SOS]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_CommSystem_Trigger_SOS</SubtypeId>
       </Id>
       <Description>
