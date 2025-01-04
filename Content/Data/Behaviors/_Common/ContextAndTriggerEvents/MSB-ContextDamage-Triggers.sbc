@@ -925,7 +925,7 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
         [MatchSenderReceiverOwners:false]
         [SingleRecipient:true]
         [IgnoreAntennaRequirement:true]
-        [IgnoreReceiverAntennaRequirement:true]
+        [IgnoreReceiverAntennaRequirement:false]
         [Radius:2000]
 
 	</Description>
@@ -951,7 +951,7 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
 
         [SingleRecipient:true]
         [IgnoreAntennaRequirement:true]
-        [IgnoreReceiverAntennaRequirement:true]
+        [IgnoreReceiverAntennaRequirement:false]
         [Radius:2000]
 		</Description>
     </EntityComponent>
@@ -1007,7 +1007,7 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
         [MatchSenderReceiverOwners:false]
         [SingleRecipient:true]
         [IgnoreAntennaRequirement:true]
-        [IgnoreReceiverAntennaRequirement:true]
+        [IgnoreReceiverAntennaRequirement:false]
         [Radius:2000]
 
 	</Description>
@@ -1034,7 +1034,7 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
 
         [SingleRecipient:true]
         [IgnoreAntennaRequirement:true]
-        [IgnoreReceiverAntennaRequirement:true]
+        [IgnoreReceiverAntennaRequirement:false]
         [Radius:2000]
 		</Description>
     </EntityComponent>
@@ -1094,7 +1094,7 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
         [MatchSenderReceiverOwners:false]
         [SingleRecipient:true]
         [IgnoreAntennaRequirement:true]
-        [IgnoreReceiverAntennaRequirement:true]
+        [IgnoreReceiverAntennaRequirement:false]
         [Radius:2000]
 
 	</Description>
@@ -1120,7 +1120,7 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
 
         [SingleRecipient:true]
         [IgnoreAntennaRequirement:true]
-        [IgnoreReceiverAntennaRequirement:true]
+        [IgnoreReceiverAntennaRequirement:false]
         [Radius:2000]
 		</Description>
     </EntityComponent>
