@@ -102,8 +102,9 @@
 
         [UseConditions:true]
         [MatchAnyCondition:true]
+        [UseFailCondition:true]
 
-        [IsOnDarkSide:false]
+        [IsOnDarkSide:true]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
