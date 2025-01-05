@@ -374,8 +374,6 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:EnvironmentSystem - Dusty]
-
         [RecolorGrid:true]
         [RecolorSubGrids:true]
 
@@ -436,8 +434,6 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:EnvironmentSystem - Mossy]
-
         [RecolorGrid:true]
         [RecolorSubGrids:true]
 
@@ -497,8 +493,6 @@
       </Id>
       <Description>
         [RivalAI Action]
-
-        [DebugMessage:EnvironmentSystem - Frozen]
 
         [RecolorGrid:true]
         [RecolorSubGrids:true]
@@ -570,8 +564,6 @@
       </Id>
       <Description>
         [RivalAI Action]
-
-        [DebugMessage:EnvironmentSystem - FallBack]
 
         [RecolorGrid:true]
         [RecolorSubGrids:true]
