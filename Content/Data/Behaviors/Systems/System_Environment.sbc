@@ -1,0 +1,593 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+    <!--
+    These triggers can be picked and chosen from to trigger timer blocks on encounters when the respective conditions are met.
+
+    MSB_EnvironmentSystem_Trigger_IsOnDarkSide: Triggers "Timer - IsOnDarkSide" if night falls.
+    MSB_EnvironmentSystem_Trigger_IsOnLightSide: Triggers "Timer - IsOnLightSide" if day breaks.
+
+    MSB_EnvironmentSystem_Trigger_VeryBadWeather: Triggers "Timer - VeryBadWeather" if a heavy storm appears.
+    MSB_EnvironmentSystem_Trigger_BadWeather: Triggers "Timer - BadWeather" if bad weather appears.
+    MSB_EnvironmentSystem_Trigger_GoodWeather: Triggers "Timer - GoodWeather" if weather is clear.
+
+    MSB_EnvironmentSystem_Trigger_PlayerNear1000: Triggers "Timer - PlayerNear" when player is within 1km.
+    MSB_EnvironmentSystem_Trigger_PlayerFar5000: Triggers "Timer - PlayerFar" when player is within 5km.
+
+    MSB_EnvironmentSystem_TriggerGroup_SkinReplacement: This will switch dusty / mossy / frozen skinned blocks to whichever is fitting for the surrounding voxels where the encounter spawned. Rusty skin is the fallback.
+    -->
+
+    <!-- IsOnDarkSide -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_EnvironmentSystem_Trigger_IsOnDarkSide</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:true]
+        [StartsReady:false]
+
+        [MinCooldownMs:60000]
+        [MaxCooldownMs:60001]
+
+        [ConditionCheckResetsTimer:true]
+        [Conditions:MSB_EnvironmentSystem_Condition_IsOnDarkSide]
+
+        [MaxActions:-1]
+        [Actions:MSB_EnvironmentSystem_Action_IsOnDarkSide]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_EnvironmentSystem_Condition_IsOnDarkSide</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:true]
+
+        [IsOnDarkSide:true]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_EnvironmentSystem_Action_IsOnDarkSide</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [TriggerTimerBlocks:true]
+        [TimerBlockNames:Timer - IsOnDarkSide]
+      </Description>
+    </EntityComponent>
+
+    <!-- IsOnLightSide -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_EnvironmentSystem_Trigger_IsOnLightSide</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:true]
+        [StartsReady:false]
+
+        [MinCooldownMs:60000]
+        [MaxCooldownMs:60001]
+
+        [ConditionCheckResetsTimer:true]
+        [Conditions:MSB_EnvironmentSystem_Condition_IsOnLightSide]
+
+        [MaxActions:-1]
+        [Actions:MSB_EnvironmentSystem_Action_IsOnLightSide]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_EnvironmentSystem_Condition_IsOnLightSide</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:true]
+
+        [IsOnDarkSide:false]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_EnvironmentSystem_Action_IsOnLightSide</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [TriggerTimerBlocks:true]
+        [TimerBlockNames:Timer - IsOnLightSide]
+      </Description>
+    </EntityComponent>
+
+    <!-- VeryBadWeather -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_EnvironmentSystem_Trigger_VeryBadWeather</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Weather]
+
+        [WeatherTypes:SnowHeavy]
+        [WeatherTypes:MarsStormHeavy]
+        [WeatherTypes:SandStormHeavy]
+        [WeatherTypes:ElectricStorm]
+        [WeatherTypes:ThunderstormHeavy]
+        [WeatherTypes:AlienThunderstormHeavy]
+
+        [UseTrigger:true]
+        [StartsReady:false]
+
+        [MaxActions:-1]
+        [Actions:MSB_EnvironmentSystem_Action_VeryBadWeather]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_EnvironmentSystem_Action_VeryBadWeather</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [TriggerTimerBlocks:true]
+        [TimerBlockNames:Timer - VeryBadWeather]
+      </Description>
+    </EntityComponent>
+
+    <!-- BadWeather -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_EnvironmentSystem_Trigger_BadWeather</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Weather]
+
+        [WeatherTypes:SnowLight]
+        [WeatherTypes:MarsSnow]
+        [WeatherTypes:FogLight]
+        [WeatherTypes:FogHeavy]
+        [WeatherTypes:AlienFogLight]
+        [WeatherTypes:AlienFogHeavy]
+        [WeatherTypes:MarsStormLight]
+        [WeatherTypes:RainLight]
+        [WeatherTypes:RainHeavy]
+        [WeatherTypes:AlienRainLight]
+        [WeatherTypes:AlienRainHeavy]
+        [WeatherTypes:SandStormLight]
+        [WeatherTypes:ThunderstormLight]
+        [WeatherTypes:AlienThunderstormLight]
+        [WeatherTypes:Dust]
+
+        [UseTrigger:true]
+        [StartsReady:false]
+
+        [MaxActions:-1]
+        [Actions:MSB_EnvironmentSystem_Action_BadWeather]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_EnvironmentSystem_Action_BadWeather</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [TriggerTimerBlocks:true]
+        [TimerBlockNames:Timer - BadWeather]
+      </Description>
+    </EntityComponent>
+
+    <!-- GoodWeather -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_EnvironmentSystem_Trigger_GoodWeather</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Weather]
+
+        [WeatherTypes:Clear]
+
+        [UseTrigger:true]
+        [StartsReady:false]
+
+        [MaxActions:-1]
+        [Actions:MSB_EnvironmentSystem_Action_GoodWeather]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_EnvironmentSystem_Action_GoodWeather</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [TriggerTimerBlocks:true]
+        [TimerBlockNames:Timer - GoodWeather]
+      </Description>
+    </EntityComponent>
+
+    <!-- PlayerNear1000-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_EnvironmentSystem_Trigger_PlayerNear1000</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:PlayerNear]
+
+        [TargetDistance:1000]
+
+        [UseTrigger:true]
+        [StartsReady:false]
+
+        [MinCooldownMs:10000]
+        [MaxCooldownMs:10001]
+
+        [MaxActions:-1]
+        [Actions:MSB_EnvironmentSystem_Action_PlayerNear1000]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_EnvironmentSystem_Action_PlayerNear1000</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [TriggerTimerBlocks:true]
+        [TimerBlockNames:Timer - PlayerNear]
+      </Description>
+    </EntityComponent>
+
+    <!-- PlayerFar5000-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_EnvironmentSystem_Trigger_PlayerFar5000</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:PlayerNear]
+
+        [TargetDistance:5000]
+
+        [UseTrigger:true]
+        [StartsReady:false]
+
+        [MinCooldownMs:10000]
+        [MaxCooldownMs:10001]
+
+        [MaxActions:-1]
+        [Actions:MSB_EnvironmentSystem_Action_PlayerFar5000]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_EnvironmentSystem_Action_PlayerFar5000</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [TriggerTimerBlocks:true]
+        [TimerBlockNames:Timer - PlayerFar]
+      </Description>
+    </EntityComponent>
+
+    <!-- SkinReplacement -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_EnvironmentSystem_TriggerGroup_SkinReplacement</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI TriggerGroup]
+
+        [Triggers:MSB_EnvironmentSystem_Trigger_Dusty]
+        [Triggers:MSB_EnvironmentSystem_Trigger_Mossy]
+        [Triggers:MSB_EnvironmentSystem_Trigger_Frozen]
+        [Triggers:MSB_EnvironmentSystem_Trigger_FallBack]
+      </Description>
+    </EntityComponent>
+
+    <!-- Dusty -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_EnvironmentSystem_Trigger_Dusty</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Conditions:MSB_EnvironmentSystem_Condition_Dusty]
+
+        [MaxActions:1]
+        [Actions:MSB_EnvironmentSystem_Action_Dusty]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_EnvironmentSystem_Condition_Dusty</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:true]
+
+        [MatchTerrainType:true]
+        [TerrainTypeWhitelistNames:Sand]
+        [TerrainTypeWhitelistNames:Rock]
+        [TerrainTypeWhitelistNames:GrassDry]
+        [TerrainTypeWhitelistNames:OrangeAlienGrass]
+        [TerrainTypeWhitelistNames:AlienYellowGrass]
+        [TerrainTypeWhitelistNames:SoilDry]
+        [TerrainTypeWhitelistNames:Soil]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_EnvironmentSystem_Action_Dusty</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:EnvironmentSystem - Dusty]
+
+        [RecolorGrid:true]
+        [RecolorSubGrids:true]
+
+        [OldBlockSkins:Frozen_Armor]
+        [OldBlockSkins:Mossy_Armor]
+
+        [NewBlockSkins:Dust_Armor]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_EnvironmentSystem_Trigger_Mossy]
+        [DisableTriggerNames:MSB_EnvironmentSystem_Trigger_Frozen]
+        [DisableTriggerNames:MSB_EnvironmentSystem_Trigger_FallBack]
+      </Description>
+    </EntityComponent>
+
+    <!-- Mossy -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_EnvironmentSystem_Trigger_Mossy</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Conditions:MSB_EnvironmentSystem_Condition_Mossy]
+
+        [MaxActions:1]
+        [Actions:MSB_EnvironmentSystem_Action_Mossy]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_EnvironmentSystem_Condition_Mossy</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:true]
+
+        [MatchTerrainType:true]
+        [TerrainTypeWhitelistNames:Grass]
+        [TerrainTypeWhitelistNames:Grass bare]
+        [TerrainTypeWhitelistNames:AlienGreenGrass]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_EnvironmentSystem_Action_Mossy</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:EnvironmentSystem - Mossy]
+
+        [RecolorGrid:true]
+        [RecolorSubGrids:true]
+
+        [OldBlockSkins:Dust_Armor]
+        [OldBlockSkins:Frozen_Armor]
+
+        [NewBlockSkins:Mossy_Armor]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_EnvironmentSystem_Trigger_Dusty]
+        [DisableTriggerNames:MSB_EnvironmentSystem_Trigger_Frozen]
+        [DisableTriggerNames:MSB_EnvironmentSystem_Trigger_FallBack]
+      </Description>
+    </EntityComponent>
+
+    <!-- Frozen -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_EnvironmentSystem_Trigger_Frozen</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Conditions:MSB_EnvironmentSystem_Condition_Frozen]
+
+        [MaxActions:1]
+        [Actions:MSB_EnvironmentSystem_Action_Frozen]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_EnvironmentSystem_Condition_Frozen</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:true]
+
+        [MatchTerrainType:true]
+        [TerrainTypeWhitelistNames:Snow]
+        [TerrainTypeWhitelistNames:Ice]
+        [TerrainTypeWhitelistNames:MoonSoil]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_EnvironmentSystem_Action_Frozen</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:EnvironmentSystem - Frozen]
+
+        [RecolorGrid:true]
+        [RecolorSubGrids:true]
+
+        [OldBlockSkins:Dust_Armor]
+        [OldBlockSkins:Mossy_Armor]
+
+        [NewBlockSkins:Frozen_Armor]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_EnvironmentSystem_Trigger_Dusty]
+        [DisableTriggerNames:MSB_EnvironmentSystem_Trigger_Mossy]
+        [DisableTriggerNames:MSB_EnvironmentSystem_Trigger_FallBack]
+      </Description>
+    </EntityComponent>
+
+    <!-- FallBack -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_EnvironmentSystem_Trigger_FallBack</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Conditions:MSB_EnvironmentSystem_Condition_FallBack]
+
+        [MaxActions:1]
+        [Actions:MSB_EnvironmentSystem_Action_FallBack]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_EnvironmentSystem_Condition_FallBack</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:true]
+
+        [MatchTerrainType:true]
+        [TerrainTypeBlacklistNames:Sand]
+        [TerrainTypeBlacklistNames:Rock]
+        [TerrainTypeBlacklistNames:MarsSoil]
+        [TerrainTypeBlacklistNames:MoonSoil]
+        [TerrainTypeBlacklistNames:GrassDry]
+        [TerrainTypeBlacklistNames:OrangeAlienGrass]
+        [TerrainTypeBlacklistNames:AlienYellowGrass]
+        [TerrainTypeBlacklistNames:SoilDry]
+        [TerrainTypeBlacklistNames:Soil]
+        [TerrainTypeBlacklistNames:Grass]
+        [TerrainTypeBlacklistNames:Grass bare]
+        [TerrainTypeBlacklistNames:AlienGreenGrass]
+        [TerrainTypeBlacklistNames:Snow]
+        [TerrainTypeBlacklistNames:Ice]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_EnvironmentSystem_Action_FallBack</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:EnvironmentSystem - FallBack]
+
+        [RecolorGrid:true]
+        [RecolorSubGrids:true]
+
+        [OldBlockSkins:Frozen_Armor]
+        [OldBlockSkins:Dust_Armor]
+        [OldBlockSkins:Mossy_Armor]
+
+        [NewBlockSkins:Rusty_Armor]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_EnvironmentSystem_Trigger_Dusty]
+        [DisableTriggerNames:MSB_EnvironmentSystem_Trigger_Mossy]
+        [DisableTriggerNames:MSB_EnvironmentSystem_Trigger_Frozen]
+      </Description>
+    </EntityComponent>
+
+  </EntityComponents>
+</Definitions>
