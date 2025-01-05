@@ -15,7 +15,7 @@
       <Description>
         [RivalAI Behavior]
 
-        [BehaviorName:Cargoship]
+        [BehaviorName:CargoShip]
 
         [AutopilotData:MSB_Cargoship_Autopilot]
         [SecondaryAutopilotData:MSB_Freighter_Autopilot]
