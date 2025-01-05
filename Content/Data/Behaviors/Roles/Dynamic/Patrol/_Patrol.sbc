@@ -31,7 +31,7 @@
 
         [Trigger:MSB_Patrol_Action_SetDespawnType_Sample]
 
-        [TriggerGroups:MSB_Dynamic_CommonTriggerGroup]
+        [TriggerGroups:MSB_DynamicCommon_TriggerGroup]
         [TriggerGroups:MSB_Fighter_TriggerGroup]
         [TriggerGroups:MSB_Patrol_TriggerGroup]
         [TriggerGroups:MSB_CommSystem_TriggerGroup]

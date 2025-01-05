@@ -26,7 +26,7 @@
 
         [Trigger:MSB_Cargoship_Action_SetDespawnType_Sample]
 
-        [TriggerGroups:MSB_Dynamic_CommonTriggerGroup]
+        [TriggerGroups:MSB_DynamicCommon_TriggerGroup]
         [TriggerGroups:MSB_Freighter_TriggerGroup]
         [TriggerGroups:MSB_Cargoship_TriggerGroup]
         [TriggerGroups:MSB_CommSystem_TriggerGroup]
