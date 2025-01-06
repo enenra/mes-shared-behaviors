@@ -103,6 +103,9 @@
         [AutopilotProfile:Primary]
 
         [RefreshTarget:true]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_SwitchToPatrol]
       </Description>
     </EntityComponent>
 
@@ -142,6 +145,7 @@
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_CombatType_SwitchToCombatType]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_HasTarget]
       </Description>
     </EntityComponent>
 
