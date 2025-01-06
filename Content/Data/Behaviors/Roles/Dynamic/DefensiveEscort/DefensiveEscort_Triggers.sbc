@@ -2,8 +2,7 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 
-
- <!--
+    <!--
 MSB_DefensiveEscort_Trigger_RequestEscortSlot
 
 MSB_DefensiveEscort_Trigger_TargetfarSwitchEscort
@@ -13,27 +12,25 @@ MSB_DefensiveEscort_Trigger_TargetfarSwitchEscort
 
  -->
 
-   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_DefensiveEscort_Trigger_RequestEscortSlot</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI Trigger]
 
-        [UseTrigger:true]
         [Type:Timer]
+
+        [UseTrigger:true]
+        [StartsReady:false]
 
         [MinCooldownMs:1000]
         [MaxCooldownMs:1001]
-        [StartsReady:false]
 
         [MaxActions:-1]
         [Actions:MSB_DefensiveEscort_Action_RequestEscortSlot]
-
       </Description>
-
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -41,7 +38,6 @@ MSB_DefensiveEscort_Trigger_TargetfarSwitchEscort
         <SubtypeId>MSB_DefensiveEscort_Action_RequestEscortSlot</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI Action]
 
         [BroadcastCommandProfiles:true]
@@ -49,11 +45,8 @@ MSB_DefensiveEscort_Trigger_TargetfarSwitchEscort
 
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_DefensiveEscort_Trigger_RequestEscortSlot]
-
       </Description>
-
     </EntityComponent>
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -63,28 +56,11 @@ MSB_DefensiveEscort_Trigger_TargetfarSwitchEscort
         [RivalAI Command]
 
         [CommandCode:DefensiveEscortRequest]
+
         [MatchSenderReceiverOwners:true]
         [RequestEscortSlot:true]
       </Description>
     </EntityComponent>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -92,22 +68,19 @@ MSB_DefensiveEscort_Trigger_TargetfarSwitchEscort
         <SubtypeId>MSB_DefensiveEscort_Trigger_AggressionSwitchEscort</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI Trigger]
 
-        [UseTrigger:true]
         [Type:TargetNear]
+
+        [UseTrigger:true]
+        [StartsReady:true]
 
         [TargetDistance:1500]
 
-        [StartsReady:true]
         [MaxActions:-1]
         [Actions:MSB_DefensiveEscort_Action_AggressionSwitchEscort]
-
       </Description>
-
     </EntityComponent>
-
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -118,7 +91,6 @@ MSB_DefensiveEscort_Trigger_TargetfarSwitchEscort
         [RivalAI Action]
 
         [DebugMessage:DefensiveEscort - AggressionSwitchEscort]
-
 
         [UseChatBroadcast:true]
         [ChatData:MSB_DefensiveEscort_Chat_AggressionSwitchEscort]
@@ -134,16 +106,12 @@ MSB_DefensiveEscort_Trigger_TargetfarSwitchEscort
       </Description>
     </EntityComponent>
 
-
-
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_DefensiveEscort_Chat_AggressionSwitchEscort</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DefensiveEscort_Chat_AggressionSwitchEscort</SubtypeId>
       </Id>
-
       <Description>
-
         [RivalAI Chat]
 
         [UseChat:true]
@@ -158,17 +126,8 @@ MSB_DefensiveEscort_Trigger_TargetfarSwitchEscort
         [ChatMessages:Deviating from escort]
         [ChatAudio:ArcHudGPSNotification2]
         [BroadcastChatType:Chat]
-
-
       </Description>
-
     </EntityComponent>
-
-
-
-
-
-
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -176,20 +135,18 @@ MSB_DefensiveEscort_Trigger_TargetfarSwitchEscort
         <SubtypeId>MSB_DefensiveEscort_Trigger_TargetfarSwitchEscort</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI Trigger]
 
-        [UseTrigger:false]
         [Type:TargetFar]
+
+        [UseTrigger:false]
+        [StartsReady:true]
 
         [TargetDistance:2000]
 
-        [StartsReady:true]
         [MaxActions:-1]
         [Actions:MSB_DefensiveEscort_Action_PassiveSwitchPatrol]
-
       </Description>
-
     </EntityComponent>
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -206,7 +163,6 @@ MSB_DefensiveEscort_Trigger_TargetfarSwitchEscort
         [ChangeBehaviorSubclass:true]
         [NewBehaviorSubclass:Escort]
 
-
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_DefensiveEscort_Trigger_TargetfarSwitchEscort]
 
@@ -215,15 +171,12 @@ MSB_DefensiveEscort_Trigger_TargetfarSwitchEscort
       </Description>
     </EntityComponent>
 
-
-
-     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_DefensiveEscort_Chat_PassiveSwitchPatrol</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI Chat]
 
         [UseChat:true]
@@ -236,15 +189,8 @@ MSB_DefensiveEscort_Trigger_TargetfarSwitchEscort
         [ChatMessages:Disengaging from combat]
         [ChatAudio:ArcHudGPSNotification1]
         [BroadcastChatType:Chat]
-
       </Description>
     </EntityComponent>
-
-
-
-
-
-
 
   </EntityComponents>
 </Definitions>

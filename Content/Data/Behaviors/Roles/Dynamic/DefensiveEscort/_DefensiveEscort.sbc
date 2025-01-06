@@ -2,37 +2,19 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 
-
-
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_DefensiveEscort_TriggerGroup</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DefensiveEscort_TriggerGroup</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI TriggerGroup]
 
         [Triggers:MSB_DefensiveEscortDrone_Trigger_RequestEscortSlot]
         [Triggers:MSB_DefensiveEscortDrone_Trigger_AggressionSwitchEscort]
         [Triggers:MSB_DefensiveEscortDrone_Trigger_TargetfarSwitchEscort]
-
       </Description>
     </EntityComponent>
-
-
-
-
-
-
-
-
-
-
-
-
-
 
   </EntityComponents>
 </Definitions>
