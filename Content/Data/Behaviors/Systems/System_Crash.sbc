@@ -19,6 +19,7 @@
         [Triggers:MSB_CrashSystem_Trigger_UnderFireGoingDown_HighAltitude
         [Triggers:MSB_CrashSystem_Trigger_BeforeSlowSpeedImpact]
         [Triggers:MSB_CrashSystem_Trigger_BeforeHighSpeedImpact]
+        [Triggers:MSB_CrashSystem_Trigger_AfterHighSpeedImpact]
 
     -->
 
@@ -143,10 +144,7 @@
         [UseTrigger:true]
         [StartsReady:true]
         [MaxActions:1]
-        [DisableNamedTriggerOnSuccess:MSB_CrashSystem_Trigger_UnderFireGoingDown_LowAltitude]
-        [DisableNamedTriggerOnSuccess:MSB_CrashSystem_Trigger_GoingDown]
-
-
+		
         [Actions:MSB_CrashSystem_Action_UnderFireGoingDown_HighAltitude]
       </Description>
     </EntityComponent>
@@ -183,11 +181,21 @@
         [EnableTriggers:true]
         [EnableTriggerNames:MSB_CrashSystem_Trigger_BeforeHighSpeedImpact]
         [EnableTriggerNames:MSB_CrashSystem_Trigger_BeforeSlowSpeedImpact]
+		
+		[DisableTriggers:true]
+		[DisableTriggerNames:MSB_CrashSystem_Trigger_UnderFireGoingDown_LowAltitude]
+		[DisableTriggerNames:MSB_CrashSystem_Trigger_GoingDown]
+		
+		
       </Description>
     </EntityComponent>
 
 
-    <!-- BeforeHighSpeedImpact -->
+    <!-- 
+BeforeHighSpeedImpact
+BeforeSlowSpeedImpact
+
+	-->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -226,6 +234,8 @@
         [AltitudeCheck:true]
         [MinAltitude:5]
         [MaxAltitude:50]
+		[AltitudeCheckIgnoreWater:false]
+
 
         [CheckGridVerticalSpeed:true]
         [MinGridVerticalSpeed:-1]
@@ -251,11 +261,6 @@
       </Description>
     </EntityComponent>
 
-
-
-
-
-    <!-- BeforeHighSpeedImpact -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -290,6 +295,8 @@
         [AltitudeCheck:true]
         [MinAltitude:5]
         [MaxAltitude:200]
+		[AltitudeCheckIgnoreWater:false]
+
 
         [CheckGridVerticalSpeed:true]
         [MinGridVerticalSpeed:50]
@@ -304,21 +311,84 @@
       <Description>
         [RivalAI Action]
 
-
-
         [PlayDialogueCue:true]
         [DialogueCueId:CrashSystem_BeforeHighSpeedImpact]
-
-
-
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_BeforeHighSpeedImpact]
         [ForceManualTriggerActivation:false]
+		
+		[EnableTriggerNames:MSB_CrashSystem_Trigger_AfterHighSpeedImpact]
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB_CrashSystem_Trigger_AfterHighSpeedImpact]
+		
+		
       </Description>
     </EntityComponent>
 
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CrashSystem_Trigger_AfterHighSpeedImpact</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
 
+        [Type:Timer]
+
+        [MinCooldownMs:1000]
+        [MaxCooldownMs:1001]
+
+        [UseTrigger:false]
+
+        [Conditions:MSB_CrashSystem_Condition_AfterHighSpeedImpact]
+
+        [StartsReady:false]
+		[MaxActions:1]
+        [Actions:MSB_CrashSystem_Action_AfterHighSpeedImpact]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CrashSystem_Condition_AfterHighSpeedImpact</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:true]
+
+        [AltitudeCheck:true]
+        [MinAltitude:-1]
+        [MaxAltitude:15]
+		[AltitudeCheckIgnoreWater:false]
+		
+        [CheckGridVerticalSpeed:true]
+
+        [MaxGridVerticalSpeed:15]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CrashSystem_Action_AfterHighSpeedImpact</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:AfterHighSpeedImpact somehow survived, TerminateBehavior nonetheless]
+
+        [DisableAutopilot:true]
+        [StopAllThrust:true]
+        [StopAllRotation:true]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Terminate]
+        [ForceManualTriggerActivation:false]
+
+      </Description>
+    </EntityComponent>
 
 
 

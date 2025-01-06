@@ -67,7 +67,7 @@
         [Triggers:MSB_CrashSystem_Trigger_UnderFireGoingDown_HighAltitude]
         [Triggers:MSB_CrashSystem_Trigger_BeforeSlowSpeedImpact]
         [Triggers:MSB_CrashSystem_Trigger_BeforeHighSpeedImpact]
-
+		[Triggers:MSB_CrashSystem_Trigger_AfterHighSpeedImpact]
 
         [Triggers:MSB_DisabledSystem_Trigger_GoingDown]
 

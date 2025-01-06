@@ -3,9 +3,15 @@
   <EntityComponents>
 
     <!--
+	
+	Not in use for now...
+	
+	
+	
+	
+	
     TODO:
       * Prevent this from triggering when not actually in a fight
-    -->
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -70,7 +76,7 @@
       </Description>
     </EntityComponent>
 
-    <!-- Reset -->
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -133,6 +139,9 @@
         [EnableTriggerNames:MSB_Fighter_Trigger_TargetUnderGround]
       </Description>
     </EntityComponent>
+
+-->
+
 
   </EntityComponents>
 </Definitions>

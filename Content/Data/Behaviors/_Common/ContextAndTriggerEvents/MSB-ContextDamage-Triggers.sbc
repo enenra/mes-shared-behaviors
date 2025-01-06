@@ -614,8 +614,12 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
         [InSufficientUpwardThrustTolerance:-0.3]
 
         [AltitudeCheck:true]
-        [MinAltitude:0]
+        [MinAltitude:15]
         [MaxAltitude:450]
+		
+		[AltitudeCheckIgnoreWater:false]
+		
+		
       </Description>
 
     </EntityComponent>
@@ -701,6 +705,8 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
         [AltitudeCheck:true]
         [MinAltitude:451]
         [MaxAltitude:-1]
+		[AltitudeCheckIgnoreWater:false]
+		
       </Description>
     </EntityComponent>
 

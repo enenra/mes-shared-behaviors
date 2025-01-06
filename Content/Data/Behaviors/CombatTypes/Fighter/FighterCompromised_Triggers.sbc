@@ -197,12 +197,14 @@
         [AltitudeCheck:true]
         [MinAltitude:-1]
         [MaxAltitude:15]
-
+		[AltitudeCheckIgnoreWater:false]
         [CheckGridVerticalSpeed:true]
 
         [MaxGridVerticalSpeed:15]
       </Description>
     </EntityComponent>
+	
+	
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -210,16 +212,6 @@
       </Id>
       <Description>
         [RivalAI Action]
-
-        [DebugMessage:AfterHighSpeedImpact somehow survived, TerminateBehavior nonetheless]
-
-        [DisableAutopilot:true]
-        [StopAllThrust:true]
-        [StopAllRotation:true]
-
-        [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Terminate]
-        [ForceManualTriggerActivation:false]
 
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_Fighter_Trigger_Compromised_BeforeHighSpeedImpact]
