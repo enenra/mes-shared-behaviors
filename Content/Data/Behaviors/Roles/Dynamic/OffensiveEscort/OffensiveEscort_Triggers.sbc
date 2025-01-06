@@ -7,7 +7,7 @@
         [Triggers:MSB_OffensiveEscort_Trigger_RequestEscortSlot]
 
         [Triggers:MSB_OffensiveEscort_Trigger_TargetClose]
-        [Triggers:MSB_OffensiveEscort_Trigger_TargetInfront]
+        [Triggers:MSB_OffensiveEscort_Trigger_TargetInFront]
 
         [Triggers:MSB_OffensiveEscort_Trigger_LeaderDead]
         [Triggers:MSB_OffensiveEscort_Trigger_LinkUpWithLeader]
@@ -106,7 +106,7 @@ after 8 seconds it will try to link up with its leader again.
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_OffensiveEscort_Trigger_TargetInfront</SubtypeId>
+        <SubtypeId>MSB_OffensiveEscort_Trigger_TargetInFront</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -117,7 +117,7 @@ after 8 seconds it will try to link up with its leader again.
         [MinCooldownMs:5000]
         [MaxCooldownMs:5001]
         [StartsReady:false]
-        [Conditions:MSB_OffensiveEscort_Condition_TargetInfront]
+        [Conditions:MSB_OffensiveEscort_Condition_TargetInFront]
 
         [TargetDistance:1200]
 
@@ -129,7 +129,7 @@ after 8 seconds it will try to link up with its leader again.
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_OffensiveEscort_Condition_TargetInfront</SubtypeId>
+        <SubtypeId>MSB_OffensiveEscort_Condition_TargetInFront</SubtypeId>
       </Id>
       <Description>
         [RivalAI Condition]
@@ -162,7 +162,7 @@ after 8 seconds it will try to link up with its leader again.
         [ManuallyActivatedTriggerTags:MSB_CombatType_InitCombatType]
 
         [DisableTriggers:true]
-        [DisableTriggerNames:MSB_OffensiveEscort_Trigger_TargetInfront]
+        [DisableTriggerNames:MSB_OffensiveEscort_Trigger_TargetInFront]
         [DisableTriggerNames:MSB_OffensiveEscort_Trigger_TargetClose]
 
         [EnableTriggers:true]
@@ -171,6 +171,9 @@ after 8 seconds it will try to link up with its leader again.
 
         [ResetCooldownTimeOfTriggers:true]
         [ResetTriggerCooldownNames:MSB_OffensiveEscort_Trigger_LinkUpWithLeader]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_AggressionSwitchEscort]
       </Description>
     </EntityComponent>
 
@@ -206,6 +209,7 @@ after 8 seconds it will try to link up with its leader again.
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_CombatType_InitCombatType]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_LeaderDead]
       </Description>
     </EntityComponent>
 
@@ -310,11 +314,14 @@ after 8 seconds it will try to link up with its leader again.
 
         [EnableTriggers:true]
         [EnableTriggerNames:MSB_OffensiveEscort_Trigger_TargetClose]
-        [EnableTriggerNames:MSB_OffensiveEscort_Trigger_TargetInfront]
+        [EnableTriggerNames:MSB_OffensiveEscort_Trigger_TargetInFront]
 
         [ResetCooldownTimeOfTriggers:true]
         [ResetTriggerCooldownNames:MSB_OffensiveEscort_Trigger_TargetClose]
-        [ResetTriggerCooldownNames:MSB_OffensiveEscort_Trigger_TargetInfront]
+        [ResetTriggerCooldownNames:MSB_OffensiveEscort_Trigger_TargetInFront]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_LinkUpWithLeader]
       </Description>
     </EntityComponent>
 
@@ -363,6 +370,7 @@ after 8 seconds it will try to link up with its leader again.
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_CombatType_CloseCombatType]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_SwitchToEscort]
       </Description>
     </EntityComponent>
 
