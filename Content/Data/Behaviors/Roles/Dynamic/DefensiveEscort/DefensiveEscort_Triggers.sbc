@@ -92,9 +92,6 @@ MSB_DefensiveEscort_Trigger_TargetfarSwitchEscort
 
         [DebugMessage:DefensiveEscort - AggressionSwitchEscort]
 
-        [UseChatBroadcast:true]
-        [ChatData:MSB_DefensiveEscort_Chat_AggressionSwitchEscort]
-
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_CombatType_InitCombatType]
 
@@ -103,29 +100,9 @@ MSB_DefensiveEscort_Trigger_TargetfarSwitchEscort
 
         [EnableTriggers:true]
         [EnableTriggerNames:MSB_DefensiveEscort_Trigger_TargetfarSwitchEscort]
-      </Description>
-    </EntityComponent>
 
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DefensiveEscort_Chat_AggressionSwitchEscort</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Chat]
-
-        [UseChat:true]
-        [StartsReady:true]
-        [Chance:100]
-        [MaxChats:4]
-        [BroadcastRandomly:true]
-
-        [Author:{AntennaName}]
-        [Color:Red]
-
-        [ChatMessages:Deviating from escort]
-        [ChatAudio:ArcHudGPSNotification2]
-        [BroadcastChatType:Chat]
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_AggressionSwitchEscort]
       </Description>
     </EntityComponent>
 
@@ -157,8 +134,7 @@ MSB_DefensiveEscort_Trigger_TargetfarSwitchEscort
       <Description>
         [RivalAI Action]
 
-        [UseChatBroadcast:true]
-        [ChatData:MSB_DefensiveEscort_Chat_PassiveSwitchPatrol]
+        [DebugMessage:DefensiveEscort - PassiveSwitchPatrol]
 
         [ChangeBehaviorSubclass:true]
         [NewBehaviorSubclass:Escort]
@@ -168,27 +144,9 @@ MSB_DefensiveEscort_Trigger_TargetfarSwitchEscort
 
         [EnableTriggers:true]
         [EnableTriggerNames:MSB_DefensiveEscort_Trigger_AggressionSwitchEscort]
-      </Description>
-    </EntityComponent>
 
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DefensiveEscort_Chat_PassiveSwitchPatrol</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Chat]
-
-        [UseChat:true]
-        [StartsReady:true]
-        [MaxChats:4]
-        [BroadcastRandomly:true]
-        [Author:{AntennaName}]
-        [Color:Red]
-
-        [ChatMessages:Disengaging from combat]
-        [ChatAudio:ArcHudGPSNotification1]
-        [BroadcastChatType:Chat]
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_PassiveSwitchPatrol]
       </Description>
     </EntityComponent>
 
