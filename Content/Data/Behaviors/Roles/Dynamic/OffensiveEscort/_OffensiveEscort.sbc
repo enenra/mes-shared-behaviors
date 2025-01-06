@@ -2,17 +2,12 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 
-
-
-
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_OffensiveEscort_TriggerGroup</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_OffensiveEscort_TriggerGroup</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI TriggerGroup]
 
         [Triggers:MSB_OffensiveEscort_Trigger_RequestEscortSlot]
@@ -20,28 +15,12 @@
         [Triggers:MSB_OffensiveEscort_Trigger_TargetClose]
         [Triggers:MSB_OffensiveEscort_Trigger_TargetInfront]
 
-
-
         [Triggers:MSB_OffensiveEscort_Trigger_LeaderDead]
         [Triggers:MSB_OffensiveEscort_Trigger_LinkUpWithleader]
         [Triggers:MSB_OffensiveEscort_Trigger_NoTargetSwitchEscort]
         [Triggers:MSB_OffensiveEscort_Trigger_NoTargetSwitchEscort_LeaderInactive]
-
-
-
       </Description>
     </EntityComponent>
-
-
-
-
-
-
-
-
-
-
-
 
   </EntityComponents>
 </Definitions>
