@@ -12,15 +12,8 @@
 
         [Triggers:MSB_Gunship_Trigger_InitCombatType]
         [Triggers:MSB_Gunship_Trigger_CloseFight]
-
-
-        [Triggers:MSB_Gunship_Triggers_PlayerClose]
-        [Triggers:MSB_Gunship_Triggers_Compromised]
-
-
       </Description>
     </EntityComponent>
-
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -58,7 +51,6 @@
       </Description>
     </EntityComponent>
 
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -79,7 +71,6 @@
       </Description>
     </EntityComponent>
 
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -89,16 +80,8 @@
         [RivalAI Action]
 
         [DebugMessage:Fighter - CloseFight]
-
       </Description>
     </EntityComponent>
-
-
-
-
-
-
-
 
   </EntityComponents>
 </Definitions>
