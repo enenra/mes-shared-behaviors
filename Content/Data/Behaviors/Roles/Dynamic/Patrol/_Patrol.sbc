@@ -63,7 +63,7 @@
         [Triggers:MSB_Patrol_Trigger_SwitchToRole]
         [Triggers:MSB_Patrol_Trigger_HasTarget]
 
-        [Trigger:MSB_Patrol_Trigger_Despawn]
+        [Triggers:MSB_Patrol_Trigger_Despawn]
       </Description>
     </EntityComponent>
 
