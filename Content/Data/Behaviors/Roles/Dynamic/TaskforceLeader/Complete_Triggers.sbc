@@ -117,8 +117,8 @@
       <Description>
         [RivalAI Action]
 
-        [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_ApproachingPlayerTarget]
+        [PlayDialogueCue:true]
+        [PlayDialogueCue:MSB_TaskforceLeader_ApproachingPlayerTarget]
 
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_TaskforceLeader_Trigger_ApproachingTarget_Player]
