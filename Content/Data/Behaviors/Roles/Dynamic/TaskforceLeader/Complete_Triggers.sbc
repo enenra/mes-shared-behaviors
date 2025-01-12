@@ -6,59 +6,50 @@
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_TaskForceLeader_TriggerGroup_Complete</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_TaskForceLeader_TriggerGroup_Complete</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI TriggerGroup]
 
+        [Triggers:MSB_TaskForceLeader_Trigger_HasTarget3000]
+        [Triggers:MSB_TaskforceLeader_Trigger_ApproachingTarget_Player]
 
-	[Triggers:MSB_TaskForceLeader_Trigger_HasTarget3000]
-	[Triggers:MSB_TaskforceLeader_Trigger_ApproachingTarget_Player]
-	
-	
-	[Triggers:MSB_TaskForceLeader_Trigger_OnStart]
-	[Triggers:MSB_TaskForceLeader_Trigger_InitRole]
-	[Triggers:MSB_TaskForceLeader_Trigger_CloseRole]
-	[Triggers:MSB_TaskForceLeader_Trigger_ProcessEscortRequest]
-	[Triggers:MSB_TaskForceLeader_Trigger_Compromised]
-
+        [Triggers:MSB_TaskForceLeader_Trigger_OnStart]
+        [Triggers:MSB_TaskForceLeader_Trigger_InitRole]
+        [Triggers:MSB_TaskForceLeader_Trigger_CloseRole]
+        [Triggers:MSB_TaskForceLeader_Trigger_ProcessEscortRequest]
+        [Triggers:MSB_TaskForceLeader_Trigger_Compromised]
       </Description>
     </EntityComponent>
-	
-	
-	<!--
-	
-	[Triggers:MSB_TaskForceLeader_Trigger_HasTarget3000]
-	[Triggers:MSB_TaskforceLeader_Trigger_ApproachingTarget_Player]
-	
-	
-	-->
 
+    <!--
+      [Triggers:MSB_TaskForceLeader_Trigger_HasTarget3000]
+      [Triggers:MSB_TaskforceLeader_Trigger_ApproachingTarget_Player]
+	  -->
 
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_TaskForceLeader_Trigger_HasTarget3000</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_TaskForceLeader_Trigger_HasTarget3000</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI Trigger]
-		[Tags:MSB_RoleToCombat_Trigger]		
+
         [Type:HasTarget]
+
+		    [Tags:MSB_RoleToCombat_Trigger]
+
         [UseTrigger:true]
         [StartsReady:true]
-		
-		[Conditions:MSB_TaskForceLeader_Condition_HasTarget3000]
+
+		    [Conditions:MSB_TaskForceLeader_Condition_HasTarget3000]
 
         [MaxActions:-1]
         [Actions:MSB_Common_Action_RoleToCombat]
-		[ActionExecution:All]
+		    [ActionExecution:All]
       </Description>
     </EntityComponent>
-
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -71,40 +62,38 @@
         [MatchAnyCondition:false]
 
         [HasTarget:true]
-	
-		[CheckTargetDistance:true]
-		[MaxTargetDistance:3000]
-			
+
+        [CheckTargetDistance:true]
+        [MaxTargetDistance:3000]
       </Description>
     </EntityComponent>
 
-
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition"> 
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_TaskforceLeader_Trigger_ApproachingTarget_Player</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_TaskforceLeader_Trigger_ApproachingTarget_Player</SubtypeId>
       </Id>
       <Description>
+        [RivalAI Trigger]
 
-		[RivalAI Trigger]
-		[Type:Manual]
-	  
-	    [Tags:MSB_TriggerEvent_InitialApproachingTarget_Easy]
-	    [Tags:MSB_TriggerEvent_InitialApproachingTarget_Hard]
-	    [Tags:MSB_TriggerEvent_InitialApproachingTarget_Other]
+        [Type:Manual]
 
-		[Conditions:MSB_TaskforceLeader_Condition_ApproachingTarget_Player]
-	  
-	    [UseTrigger:true]
-	    [StartsReady:true]
-	    [MinCooldownMs:120000]
-	    [MaxCooldownMs:180000]
-	    [ActionExecution:Random]
-	    [Actions:MSB_TaskforceLeader_Action_ApproachingTarget_Player]
-	  
+        [Tags:MSB_TriggerEvent_InitialApproachingTarget_Easy]
+        [Tags:MSB_TriggerEvent_InitialApproachingTarget_Hard]
+        [Tags:MSB_TriggerEvent_InitialApproachingTarget_Other]
+
+        [Conditions:MSB_TaskforceLeader_Condition_ApproachingTarget_Player]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [MinCooldownMs:120000]
+        [MaxCooldownMs:180000]
+
+        [ActionExecution:Random]
+        [Actions:MSB_TaskforceLeader_Action_ApproachingTarget_Player]
       </Description>
     </EntityComponent>
-	
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -116,36 +105,25 @@
         [UseConditions:true]
         [MatchAnyCondition:false]
 
-		[CheckIfTargetIsPlayerOwned:true]
-		[CheckIfTargetIsNpcOwned:false]
-
-      </Description>
-    </EntityComponent>	
-	
-	
-	  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition"> 
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_TaskforceLeader_Action_ApproachingTarget_Player</SubtypeId>
-      </Id>
-      <Description>
-
-        [RivalAI Action]
-		
-		[PlayDialogueCue:true]
-		[PlayDialogueCue:MSB_TaskforceLeader_ApproachingPlayerTarget]
-		
-		
-		[DisableTriggers:true]
-		[DisableTriggerNames:MSB_TaskforceLeader_Trigger_ApproachingTarget_Player]
-
+        [CheckIfTargetIsPlayerOwned:true]
+        [CheckIfTargetIsNpcOwned:false]
       </Description>
     </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_TaskforceLeader_Action_ApproachingTarget_Player</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
 
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_ApproachingPlayerTarget]
 
-
-
-
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_TaskforceLeader_Trigger_ApproachingTarget_Player]
+      </Description>
+    </EntityComponent>
 
   </EntityComponents>
 </Definitions>
