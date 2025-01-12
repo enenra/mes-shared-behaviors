@@ -15,6 +15,7 @@
 
 
 	[Triggers:MSB_TaskForceLeader_Trigger_HasTarget3000]
+	[Triggers:MSB_TaskforceLeader_Trigger_ApproachingTarget_Player]
 	
 	
 	[Triggers:MSB_TaskForceLeader_Trigger_OnStart]
@@ -30,6 +31,7 @@
 	<!--
 	
 	[Triggers:MSB_TaskForceLeader_Trigger_HasTarget3000]
+	[Triggers:MSB_TaskforceLeader_Trigger_ApproachingTarget_Player]
 	
 	
 	-->
@@ -51,7 +53,6 @@
 		[Conditions:MSB_TaskForceLeader_Condition_HasTarget3000]
 
         [MaxActions:-1]
-        [Actions:MSB_TaskForceLeader_Action_HasTarget3000]
         [Actions:MSB_Common_Action_RoleToCombat]
 		[ActionExecution:All]
       </Description>
@@ -78,20 +79,71 @@
     </EntityComponent>
 
 
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition"> 
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_TaskForceLeader_Action_HasTarget3000</SubtypeId>
+          <SubtypeId>MSB_TaskforceLeader_Trigger_ApproachingTarget_Player</SubtypeId>
       </Id>
       <Description>
-        [RivalAI Action]
 
-		[PlayDialogueCue:true]
-		[PlayDialogueCue:MSB_TaskForceLeader_InterceptTarget]
-		
-		
+		[RivalAI Trigger]
+		[Type:Manual]
+	  
+	    [Tags:MSB_TriggerEvent_InitialApproachingTarget_Easy]
+	    [Tags:MSB_TriggerEvent_InitialApproachingTarget_Hard]
+	    [Tags:MSB_TriggerEvent_InitialApproachingTarget_Other]
+
+		[Conditions:MSB_TaskforceLeader_Condition_ApproachingTarget_Player]
+	  
+	    [UseTrigger:true]
+	    [StartsReady:true]
+	    [MinCooldownMs:120000]
+	    [MaxCooldownMs:180000]
+	    [ActionExecution:Random]
+	    [Actions:MSB_TaskforceLeader_Action_ApproachingTarget_Player]
+	  
       </Description>
     </EntityComponent>
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_TaskforceLeader_Condition_ApproachingTarget_Player</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+		[CheckIfTargetIsPlayerOwned:true]
+		[CheckIfTargetIsNpcOwned:false]
+
+      </Description>
+    </EntityComponent>	
+	
+	
+	  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition"> 
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_TaskforceLeader_Action_ApproachingTarget_Player</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+		
+		[PlayDialogueCue:true]
+		[PlayDialogueCue:MSB_TaskforceLeader_ApproachingPlayerTarget]
+		
+		
+		[DisableTriggers:true]
+		[DisableTriggerNames:MSB_TaskforceLeader_Trigger_ApproachingTarget_Player]
+
+      </Description>
+    </EntityComponent>
+
+
+
 
 
 
