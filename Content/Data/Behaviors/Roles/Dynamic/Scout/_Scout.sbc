@@ -10,16 +10,104 @@
       <Description>
         [RivalAI TriggerGroup]
 
-
-		[Triggers:MSB_DynamicTarget_Trigger_TargetAcquiredFirstTime]
-		[Triggers:MSB_DynamicTarget_Trigger_TargetAcquiredFirstTime_CancelTargetClose]
-		[Triggers:MSB_DynamicTarget_Trigger_TargetAcquiredFirstTime_Cancel]	
-		[Triggers:MSB_DynamicTarget_Trigger_TargetAcquiredFirstTime_ApproachingTargetEasy]
-		[Triggers:MSB_DynamicTarget_Trigger_TargetAcquiredFirstTime_ApproachingTargetHard]
-		[Triggers:MSB_DynamicTarget_Trigger_TargetAcquiredFirstTime_ApproachingTarget]
-		[Triggers:MSB_DynamicTarget_Trigger_TargetAcquiredFirstTime_AutoDisable]
+		[Triggers:MSB_Scout_Trigger_InitRole]
+		[Triggers:MSB_Scout_Trigger_CloseRole]
       </Description>
     </EntityComponent>
+	
+	
+
+<!--
+
+[Triggers:MSB_Scout_Trigger_InitRole]
+[Triggers:MSB_Scout_Trigger_CloseRole]
+
+
+-->
+
+
+
+
+<!-- Start Required stuff -->
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_Scout_Trigger_InitRole</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+        [Tags:MSB_Role_InitRole]
+
+        [UseTrigger:true]
+        [Type:Manual]
+
+        [StartsReady:false]
+
+        [MaxActions:-1]
+        [Actions:MSB_Scout_Action_InitRole]
+      </Description>
+
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_Scout_Action_InitRole</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ChangeBehaviorSubclass:true]
+        [NewBehaviorSubclass:CargoShip]
+
+        [ChangeAutopilotProfile:true]
+        [AutopilotProfile:Primary]
+      </Description>
+    </EntityComponent>
+
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Scout_Trigger_CloseRole</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Tags:MSB_Role_CloseRole]
+
+        [UseTrigger:true]
+        [Type:Manual]
+
+        [StartsReady:false]
+
+        [MaxActions:-1]
+        [Actions:MSB_Scout_Action_CloseRole]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Scout_Action_CloseRole</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+      </Description>
+    </EntityComponent>
+<!-- End Required stuff -->	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
   </EntityComponents>
 </Definitions>

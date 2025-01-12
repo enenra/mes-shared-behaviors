@@ -10,16 +10,23 @@
       <Description>
         [RivalAI TriggerGroup]
 
-        [Triggers:MSB_Dropship_Trigger_MoveToLanding]
-        [Triggers:MSB_Dropship_Trigger_StartLanding]
+		[Triggers:MSB_Dropship_Trigger_InitCombatType]
+		[Triggers:MSB_Dropship_Trigger_CloseCombatType]
 
-        [Triggers:MSB_Dropship_Trigger_ArrivedAtLandingSite]
-        [Triggers:MSB_Dropship_Trigger_LeaveLandingSite]
-        [Triggers:MSB_Dropship_Trigger_InitCombatType]
+
+
       </Description>
     </EntityComponent>
 
-    <!-- InitFight -->
+
+<!--
+[Triggers:MSB_Dropship_Trigger_InitCombatType]
+[Triggers:MSB_Dropship_Trigger_CloseCombatType]
+
+
+
+-->
+<!-- Start Required stuff -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -30,14 +37,12 @@
 
         [Tags:MSB_CombatType_InitCombatType]
 
-        [UseTrigger:false]
-        [Type:Timer]
+        [UseTrigger:true]
+        [Type:Manual]
 
-        [MinCooldownMs:1500]
-        [MaxCooldownMs:1501]
-        [StartsReady:false]
+        [StartsReady:true]
 
-        [MaxActions:1]
+        [MaxActions:-1]
         [Actions:MSB_Dropship_Action_InitCombatType]
       </Description>
     </EntityComponent>
@@ -57,6 +62,49 @@
         [AutopilotProfile:Secondary]
       </Description>
     </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Dropship_Trigger_CloseCombatType</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Tags:MSB_CombatType_CloseCombatType]
+
+        [UseTrigger:true]
+        [Type:Manual]
+
+        [StartsReady:false]
+
+        [MaxActions:-1]
+        [Actions:MSB_Dropship_Action_CloseCombatType]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Dropship_Action_CloseCombatType</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+
+      </Description>
+    </EntityComponent>
+<!-- End Required stuff -->
+	
+	
+	
+	
+	
+	
+	
+	
+	
+	
 
   </EntityComponents>
 </Definitions>

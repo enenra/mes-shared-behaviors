@@ -6,12 +6,14 @@
         [AutopilotData:MSB-Dropship-Autopilot-1]
         [SecondaryAutopilotData:MSB-Dropship-Autopilot-2]
 
-        [Triggers:MSB-Dropship-Trigger-MoveToLanding]
-        [Triggers:MSB-Dropship-Trigger-StartLanding]
+        [Triggers:MSB_Dropship_Trigger_MoveToLanding]
+        [Triggers:MSB_Dropship_Trigger_StartLanding]
 
-        [Triggers:MSB-Dropship-Trigger-ArrivedAtLandingSite]
-
-        [Triggers:MSB-Dropship-Trigger-LeaveLandingSite]
+        [Triggers:MSB_Dropship_Trigger_ArrivedAtLandingSite]
+        [Triggers:MSB_Dropship_Trigger_LeaveLandingSite]
+		
+		
+		Not in use atm.
     -->
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">

@@ -11,13 +11,14 @@
         [RivalAI TriggerGroup]
 
         [Triggers:MSB_Freighter_Trigger_InitCombatType]
-        [Triggers:MSB_Freighter_Trigger_CloseFight]
+        [Triggers:MSB_Freighter_Trigger_CloseCombatType]
 
 
       </Description>
     </EntityComponent>
 
 
+<!-- Start Required stuff -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -47,18 +48,17 @@
         [RivalAI Action]
 
         [ChangeBehaviorSubclass:true]
-        [NewBehaviorSubclass:Cargoship]
+        [NewBehaviorSubclass:Horsefly]
 
         [ChangeAutopilotProfile:true]
         [AutopilotProfile:Secondary]
       </Description>
     </EntityComponent>
 
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Freighter_Trigger_CloseFight</SubtypeId>
+        <SubtypeId>MSB_Freighter_Trigger_CloseCombatType</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -71,23 +71,23 @@
         [StartsReady:false]
 
         [MaxActions:-1]
-        [Actions:MSB_Freighter_Action_CloseFight]
+        [Actions:MSB_Freighter_Action_CloseCombatType]
       </Description>
     </EntityComponent>
-
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Freighter_Action_CloseFight</SubtypeId>
+        <SubtypeId>MSB_Freighter_Action_CloseCombatType</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Freighter - CloseFight]
 
       </Description>
     </EntityComponent>
+<!-- End Required stuff -->
+
 
 
 

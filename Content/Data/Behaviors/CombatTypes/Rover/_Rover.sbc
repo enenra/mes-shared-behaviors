@@ -9,9 +9,91 @@
       </Id>
       <Description>
         [RivalAI TriggerGroup]
+		
+		[Triggers:MSB_Rover_Trigger_InitCombatType]
+		[Triggers:MSB_Rover_Trigger_CloseCombatType]
+      </Description>
+    </EntityComponent>
+
+
+<!--
+
+[Triggers:MSB_Rover_Trigger_InitCombatType]
+[Triggers:MSB_Rover_Trigger_CloseCombatType]
+
+-->
+
+
+
+<!-- Start Required stuff -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Rover_Trigger_InitCombatType</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Tags:MSB_CombatType_InitCombatType]
+
+        [UseTrigger:true]
+        [Type:Manual]
+
+        [StartsReady:true]
+
+        [MaxActions:-1]
+        [Actions:MSB_Rover_Action_InitCombatType]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Rover_Action_InitCombatType</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ChangeBehaviorSubclass:true]
+        [NewBehaviorSubclass:Horsefly]
+
+        [ChangeAutopilotProfile:true]
+        [AutopilotProfile:Secondary]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Rover_Trigger_CloseCombatType</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Tags:MSB_CombatType_CloseCombatType]
+
+        [UseTrigger:true]
+        [Type:Manual]
+
+        [StartsReady:false]
+
+        [MaxActions:-1]
+        [Actions:MSB_Rover_Action_CloseCombatType]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Rover_Action_CloseCombatType</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
 
       </Description>
     </EntityComponent>
+<!-- End Required stuff -->
 
   </EntityComponents>
 </Definitions>

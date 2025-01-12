@@ -39,7 +39,16 @@
       </Description>
     </EntityComponent>
 
-    <!-- InitFight - Switch BehaviorSubclass at beginning of fight. -->
+<!--
+
+[Triggers:MSB_Fighter_Trigger_InitCombatType]
+[Triggers:MSB_Fighter_Trigger_CloseCombatType]
+
+-->
+
+
+
+<!-- Start Required stuff -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -48,12 +57,12 @@
       <Description>
         [RivalAI Trigger]
 
-        [Tags:MSB_CombatType_SwitchToCombatType]
+        [Tags:MSB_CombatType_InitCombatType]
 
         [UseTrigger:true]
         [Type:Manual]
 
-        [StartsReady:false]
+        [StartsReady:true]
 
         [MaxActions:-1]
         [Actions:MSB_Fighter_Action_InitCombatType]
@@ -68,8 +77,6 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Fighter - SwitchToCombatType]
-
         [ChangeBehaviorSubclass:true]
         [NewBehaviorSubclass:Strike]
 
@@ -80,6 +87,41 @@
       </Description>
     </EntityComponent>
 
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Fighter_Trigger_CloseCombatType</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Tags:MSB_CombatType_CloseCombatType]
+
+        [UseTrigger:true]
+        [Type:Manual]
+
+        [StartsReady:false]
+
+        [MaxActions:-1]
+        [Actions:MSB_Fighter_Action_CloseCombatType]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Fighter_Action_CloseCombatType</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+      </Description>
+    </EntityComponent>
+<!-- End Required stuff -->
+
+
+
+ 
     <!-- NoTarget - No targets in range, if none enter range within a certain amount of time -> SwitchToRole -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -88,6 +130,8 @@
       </Id>
       <Description>
         [RivalAI Trigger]
+
+		[Tags:MSB_CombatToRole_Trigger]
 
         [Type:NoTarget]
 
@@ -130,7 +174,7 @@
         [RivalAI Trigger]
 
         [Type:Timer]
-
+		[Tags:MSB_CombatToRole_Trigger]
         [UseTrigger:false]
         [StartsReady:false]
 
@@ -139,7 +183,7 @@
         [MinCooldownMs:60000]
         [MaxCooldownMs:90000]
 
-        [Actions:MSB_Fighter_Action_SwitchToRole]
+        [Actions:MSB_Common_Trigger_CombatToRole]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -157,29 +201,9 @@
         [TrueBooleans:MSB_NoTarget]
       </Description>
     </EntityComponent>
-    <!-- TODO: Disable all other relevant Triggers here. -->
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Fighter_Action_SwitchToRole</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Action]
-
-        [DebugMessage:Patrol - SwitchToRole]
-
-        [DisableTriggers:true]
-        [DisableTriggerNames:MSB_Fighter_Trigger_SwitchToRole]
-
-        [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:MSB_Role_SwitchToRole]
-      </Description>
-    </EntityComponent>
+	
 
 
-    <!--
-        [SwitchTargetToDamager:true]
-			-->
 
 
   </EntityComponents>

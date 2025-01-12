@@ -8,6 +8,18 @@
     -MSB_TriggerEvent_TargetIsApproaching 
 	
 	
+	
+	-MSB_TriggerEvent_InitialTargetIsApproaching_Easy
+	-MSB_TriggerEvent_InitialTargetIsApproaching_Hard
+	-MSB_TriggerEvent_InitialTargetIsApproaching_Other
+	
+	-MSB_TriggerEvent_InitialApproachingTarget_Easy
+	-MSB_TriggerEvent_InitialApproachingTarget_Hard
+	-MSB_TriggerEvent_InitialTargetIsApproaching_Other	
+	
+	
+	
+	
 [Triggers:MSB_ContextTarget_TriggerEvent_ApproachingTarget]
 [Triggers:MSB_ContextTarget_TriggerEvent_TargetIsApproaching]
 
@@ -61,7 +73,7 @@
 		[CurrentBehaviorMode:ApproachTarget]
 		
 		[CheckTargetDistance:true]
-		[MinTargetDistance:1500]
+		[MinTargetDistance:800]
 		[MaxTargetDistance:4500]
 		
 		
@@ -137,15 +149,16 @@
 		
 
 		[CheckTargetDistance:true]
-		[MinTargetDistance:1500]
+		[MinTargetDistance:800]
 		[MaxTargetDistance:4500]
 
         [CheckIfTargetIsChasing:true]
-        [MinTargetChaseAngle:0]
-        [MaxTargetChaseAngle:75]
 
-        [CheckTargetSpeed:true]
-        [MinTargetSpeed:20]
+        [MaxTargetChaseAngle:80]
+
+		[CheckTargetChaseSpeed:true]
+		[MinTargetChaseSpeed:25]
+		[MaxTargetChaseSpeed:-1]
 	
       </Description>
     </EntityComponent>

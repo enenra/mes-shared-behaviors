@@ -1,0 +1,992 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+  
+  
+  
+  
+  	<!---
+		
+	these triggers are used in most roles.
+	
+	There are not used in escort for example.
+	
+	
+	[Triggers:MSB_DynamicTarget_Trigger_TargetAcquiredFirstTime]
+	
+	[Triggers:MSB_DynamicTarget_Trigger_InitialApproachingTarget_Start]
+	[Triggers:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Start]
+
+
+	[Triggers:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_CancelTargetClose]
+	[Triggers:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Cancel]	
+	[Triggers:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Easy]
+	[Triggers:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Hard]
+	[Triggers:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Other]
+	[Triggers:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_AutoDisable]
+	
+	
+	
+	[Triggers:MSB_DynamicTarget_Trigger_InitialApproachingTarget_CancelTargetClose]
+	[Triggers:MSB_DynamicTarget_Trigger_InitialApproachingTarget_Cancel]	
+	[Triggers:MSB_DynamicTarget_Trigger_InitialApproachingTarget_Easy]
+	[Triggers:MSB_DynamicTarget_Trigger_InitialApproachingTarget_Hard]
+	[Triggers:MSB_DynamicTarget_Trigger_InitialApproachingTarget_Other]
+	[Triggers:MSB_DynamicTarget_Trigger_InitialApproachingTarget_AutoDisable]
+
+	
+
+	-MSB_TriggerEvent_InitialTargetIsApproaching_Easy
+	-MSB_TriggerEvent_InitialTargetIsApproaching_Hard
+	-MSB_TriggerEvent_InitialTargetIsApproaching_Other
+	
+	-MSB_TriggerEvent_InitialApproachingTarget_Easy
+	-MSB_TriggerEvent_InitialApproachingTarget_Hard
+	-MSB_TriggerEvent_InitialTargetIsApproaching_Other	
+	
+	-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Trigger_TargetAcquiredFirstTime</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:TargetNear]
+		[TargetDistance:5000]
+        [UseTrigger:true]
+        [StartsReady:true]
+		[Conditions:MSB_DynamicTarget_Condition_TargetAcquiredFirstTime]
+        [MaxActions:1]
+        [Actions:MSB_DynamicTarget_Action_TargetAcquiredFirstTime]
+      </Description>
+    </EntityComponent>	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Condition_TargetAcquiredFirstTime</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+		[CheckFalseBooleans:true]
+		[FalseBooleans:UnderFire]
+		[FalseBooleans:SettingBattle]
+	
+		[CheckTargetDistance:false]
+		[MinTargetDistance:800]
+		[MaxTargetDistance:-1]
+
+      </Description>
+    </EntityComponent>	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Action_TargetAcquiredFirstTime</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [EnableTriggers:true]
+        [EnableTriggerIds:MSB_DynamicTarget_Trigger_InitialApproachingTarget_Start]
+        [EnableTriggerIds:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Start]
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownIds:MSB_DynamicTarget_Trigger_InitialApproachingTarget_Start]
+        [ResetTriggerCooldownIds:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Start]
+		
+		
+
+		[ManuallyActivateTrigger:true]
+		[ManuallyActivatedTriggerTags:MSB_TriggerEvent_TargetAcquiredFirstTime]
+		[ForceManualTriggerActivation:false]
+		
+
+      </Description>
+    </EntityComponent>	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Trigger_InitialApproachingTarget_Start</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:TargetNear]
+		[TargetDistance:2100]
+		
+        [UseTrigger:false]
+        [StartsReady:false]
+
+        [Conditions:MSB_DynamicTarget_Condition_InitialApproachingTarget_Start]
+		[ConditionCheckResetsTimer:true]
+		
+        [MinCooldownMs:1000]
+        [MaxCooldownMs:4001]
+
+        [MaxActions:1]
+        [Actions:MSB_DynamicTarget_Action_InitialApproachingTarget_Start]
+      </Description>
+    </EntityComponent>
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Condition_InitialApproachingTarget_Start</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+		[BehaviorModeCheck:true]
+		[CurrentBehaviorMode:ApproachTarget]
+      </Description>
+    </EntityComponent>
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Action_InitialApproachingTarget_Start</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+		[EnableTriggers:true]
+		[EnableTriggerTags:InitialApproachingTarget]
+		[ResetCooldownTimeOfTriggers:true]
+		[ResetTriggerCooldownTags:InitialApproachingTarget]
+		
+		
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_DynamicTarget_Trigger_InitialApproachingTarget_Start]
+        [DisableTriggerNames:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Start]
+      </Description>
+    </EntityComponent>
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Start</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:TargetNear]
+		[TargetDistance:2100]
+		
+        [UseTrigger:false]
+        [StartsReady:false]
+		
+        [Conditions:MSB_DynamicTarget_Condition_InitialTargetIsApproaching_Start]
+		[ConditionCheckResetsTimer:true]
+        [MinCooldownMs:1000]
+        [MaxCooldownMs:4001]
+
+        [MaxActions:1]
+        [Actions:MSB_DynamicTarget_Action_InitialTargetIsApproaching_Start]
+      </Description>
+    </EntityComponent>
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Condition_InitialTargetIsApproaching_Start</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+		[BehaviorModeCheck:true]
+		[CurrentBehaviorMode:ApproachWaypoint]
+		[CurrentBehaviorMode:WaitAtWaypoint]
+		[CurrentBehaviorMode:Init]
+		
+		[CheckIfTargetIsChasing:true]
+		[MaxTargetChaseAngle:85]
+		
+		[CheckTargetChaseSpeed:true]
+		[MinTargetChaseSpeed:25]
+		[MaxTargetChaseSpeed:-1]
+		
+		
+      </Description>
+    </EntityComponent>
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Action_InitialTargetIsApproaching_Start</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+		[EnableTriggers:true]
+		[EnableTriggerTags:InitialTargetIsApproaching]
+		[ResetCooldownTimeOfTriggers:true]
+		[ResetTriggerCooldownTags:InitialTargetIsApproaching]
+		
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_DynamicTarget_Trigger_InitialApproachingTarget_Start]
+        [DisableTriggerNames:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Start]
+
+
+      </Description>
+    </EntityComponent>
+	
+	
+
+
+   <!--
+   InitialTargetIsApproaching Triggers  
+   -->
+   
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_CancelTargetClose</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:TargetNear]
+		[TargetDistance:800]
+		
+        [UseTrigger:false]
+        [StartsReady:false]
+        [Tags:InitialTargetIsApproaching]
+
+        [MinCooldownMs:400]
+        [MaxCooldownMs:401]
+
+        [MaxActions:1]
+        [Actions:MSB_DynamicTarget_Action_InitialTargetIsApproaching_CancelTargetClose]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Action_InitialTargetIsApproaching_CancelTargetClose</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DisableTriggers:true]
+        [DisableTriggerTags:InitialTargetIsApproaching]
+      </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Cancel</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+        [MinCooldownMs:1000]
+        [MaxCooldownMs:1001]
+		
+        [UseTrigger:false]
+        [StartsReady:false]
+        [Tags:InitialTargetIsApproaching]
+		
+		[Conditions:MSB_DynamicTarget_Condition_InitialTargetIsApproaching_Cancel]
+
+
+        [MaxActions:1]
+        [Actions:MSB_DynamicTarget_Action_InitialTargetIsApproaching_Cancel]
+      </Description>
+    </EntityComponent>
+	
+	
+	    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Condition_InitialTargetIsApproaching_Cancel</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+		[BehaviorModeCheck:true]
+		[CurrentBehaviorMode:ApproachTarget]
+		[CurrentBehaviorMode:Retreat]
+		[CurrentBehaviorMode:EngageTarget]
+
+      </Description>
+    </EntityComponent>
+	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Action_InitialTargetIsApproaching_Cancel</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DisableTriggers:true]
+        [DisableTriggerTags:InitialTargetIsApproaching]
+		
+		[EnableTriggers:true]
+		[EnableTriggerTags:InitialApproachingTarget]
+		[ResetCooldownTimeOfTriggers:true]
+		[ResetTriggerCooldownTags:InitialApproachingTarget]	
+		
+      </Description>
+    </EntityComponent>
+	
+	<!-- InitialTargetIsApproaching_Easy -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Easy</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+        [Type:Timer]
+
+        [UseTrigger:false]
+        [StartsReady:false]
+
+        [Tags:InitialTargetIsApproaching]
+
+        [MinCooldownMs:2000]
+        [MaxCooldownMs:2001]
+
+        [Conditions:MSB_DynamicTarget_Condition_InitialTargetIsApproaching_Easy]
+		[ConditionCheckResetsTimer:true]
+		
+		
+        [MaxActions:1]
+        [Actions:MSB_DynamicTarget_Action_InitialTargetIsApproaching_Easy]
+      </Description>
+    </EntityComponent>
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Condition_InitialTargetIsApproaching_Easy</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [HasTarget:true]
+		
+		[CheckTargetDistance:true]
+		[MinTargetDistance:800]
+		[MaxTargetDistance:4500]
+		
+        [CheckFalseBooleans:true]
+		[FalseBooleans:UnderFire]
+		
+        [CheckThreatScore:true]
+        [CheckThreatScoreMinimum:-1]
+        [CheckThreatScoreMaximum:150]
+        [CheckThreatScoreIncludeOtherNpcOwners:true]
+        [CheckThreatScoreRadius:3000]
+        [CheckThreatScoreFromTargetPosition:true]
+        [CheckThreatScoreGridConfiguration:All]
+      </Description>
+    </EntityComponent>
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Action_InitialTargetIsApproaching_Easy</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitialTargetIsApproaching_Easy]
+        [ForceManualTriggerActivation:false]
+		
+        [DisableTriggers:true]
+        [DisableTriggerTags:InitialTargetIsApproaching]
+      </Description>
+    </EntityComponent>	
+	
+	
+	<!-- InitialTargetIsApproaching_Hard -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Hard</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+        [Type:Timer]
+
+        [UseTrigger:false]
+        [StartsReady:false]
+
+        [Tags:InitialTargetIsApproaching]
+
+        [MinCooldownMs:3000]
+        [MaxCooldownMs:3001]
+
+        [Conditions:MSB_DynamicTarget_Condition_InitialTargetIsApproaching_Hard]
+		[ConditionCheckResetsTimer:true]
+		
+		
+        [MaxActions:-1]
+        [Actions:MSB_DynamicTarget_Action_InitialTargetIsApproaching_Hard]
+      </Description>
+    </EntityComponent>
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Condition_InitialTargetIsApproaching_Hard</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [HasTarget:true]
+		
+		[CheckTargetDistance:true]
+		[MinTargetDistance:800]
+		[MaxTargetDistance:4500]
+		
+        [CheckFalseBooleans:true]
+		[FalseBooleans:UnderFire]
+		
+        [CheckThreatScore:true]
+        [CheckThreatScoreMinimum:1500]
+        [CheckThreatScoreMaximum:-1]
+        [CheckThreatScoreIncludeOtherNpcOwners:true]
+        [CheckThreatScoreRadius:800]
+        [CheckThreatScoreFromTargetPosition:true]
+        [CheckThreatScoreGridConfiguration:All]
+      </Description>
+    </EntityComponent>
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Action_InitialTargetIsApproaching_Hard</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitialTargetIsApproaching_Hard]
+        [ForceManualTriggerActivation:false]
+		
+
+        [DisableTriggers:true]
+        [DisableTriggerTags:InitialTargetIsApproaching]
+      </Description>
+    </EntityComponent>		
+	  
+  
+  
+ 	<!-- InitialTargetIsApproaching_InitialTargetIsApproaching -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Other</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+        [Type:Timer]
+
+        [UseTrigger:false]
+        [StartsReady:false]
+
+        [Tags:InitialTargetIsApproaching]
+
+        [MinCooldownMs:4000]
+        [MaxCooldownMs:4001]
+
+        [Conditions:MSB_DynamicTarget_Condition_InitialTargetIsApproaching_Other]
+		[ConditionCheckResetsTimer:false]
+		
+		
+        [MaxActions:-1]
+        [Actions:MSB_DynamicTarget_Action_InitialTargetIsApproaching_Other]
+      </Description>
+    </EntityComponent>
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Condition_InitialTargetIsApproaching_Other</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [HasTarget:true]
+		
+		[CheckTargetDistance:true]
+		[MinTargetDistance:800]
+		[MaxTargetDistance:4500]
+		
+        [CheckFalseBooleans:true]
+		[FalseBooleans:UnderFire]
+		
+
+      </Description>
+    </EntityComponent>
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Action_InitialTargetIsApproaching_Other</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitialTargetIsApproaching_Other]
+        [ForceManualTriggerActivation:false]
+
+
+        [DisableTriggers:true]
+        [DisableTriggerTags:InitialTargetIsApproaching]
+      </Description>
+    </EntityComponent>	 
+  
+  
+  
+  
+  <!-- Time out -->
+      <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_AutoDisable</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [MinCooldownMs:10000]
+        [MaxCooldownMs:10001]
+
+        [UseTrigger:false]
+        [StartsReady:false]
+        [Tags:InitialTargetIsApproaching]
+
+        [MaxActions:1]
+        [Actions:MSB_DynamicTarget_Action_InitialTargetIsApproaching_AutoDisable]
+      </Description>
+    </EntityComponent>
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Action_InitialTargetIsApproaching_AutoDisable</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+		
+        [DisableTriggers:true]
+        [DisableTriggerTags:InitialTargetIsApproaching]
+      </Description>
+    </EntityComponent>
+
+
+
+
+
+   <!--
+   InitialApproachingTarget Triggers  
+   -->
+   
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Trigger_InitialApproachingTarget_CancelTargetClose</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:TargetNear]
+		[TargetDistance:800]
+		
+        [UseTrigger:false]
+        [StartsReady:false]
+        [Tags:InitialApproachingTarget]
+
+        [MinCooldownMs:400]
+        [MaxCooldownMs:401]
+
+        [MaxActions:1]
+        [Actions:MSB_DynamicTarget_Action_InitialApproachingTarget_CancelTargetClose]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Action_InitialApproachingTarget_CancelTargetClose</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DisableTriggers:true]
+        [DisableTriggerTags:InitialApproachingTarget]
+      </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Trigger_InitialApproachingTarget_Cancel</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+        [MinCooldownMs:1000]
+        [MaxCooldownMs:1001]
+		
+        [UseTrigger:false]
+        [StartsReady:false]
+        [Tags:InitialApproachingTarget]
+		
+		[Conditions:MSB_DynamicTarget_Condition_InitialApproachingTarget_Cancel]
+
+
+        [MaxActions:1]
+        [Actions:MSB_DynamicTarget_Action_InitialApproachingTarget_Cancel]
+      </Description>
+    </EntityComponent>
+	
+	
+	    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Condition_InitialApproachingTarget_Cancel</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+		[UseFailCondition:true]
+
+		[BehaviorModeCheck:true]
+		[CurrentBehaviorMode:ApproachTarget]
+      </Description>
+    </EntityComponent>
+	
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Action_InitialApproachingTarget_Cancel</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DisableTriggers:true]
+        [DisableTriggerTags:InitialApproachingTarget]
+      </Description>
+    </EntityComponent>
+	
+	<!-- InitialApproachingTarget_Easy -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Trigger_InitialApproachingTarget_Easy</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+        [Type:Timer]
+
+        [UseTrigger:false]
+        [StartsReady:false]
+
+        [Tags:InitialApproachingTarget]
+
+        [MinCooldownMs:2000]
+        [MaxCooldownMs:2001]
+
+        [Conditions:MSB_DynamicTarget_Condition_InitialApproachingTarget_Easy]
+		[ConditionCheckResetsTimer:true]
+		
+		
+        [MaxActions:1]
+        [Actions:MSB_DynamicTarget_Action_InitialApproachingTarget_Easy]
+      </Description>
+    </EntityComponent>
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Condition_InitialApproachingTarget_Easy</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [HasTarget:true]
+		
+		[CheckTargetDistance:true]
+		[MinTargetDistance:800]
+		[MaxTargetDistance:4500]
+		
+        [CheckFalseBooleans:true]
+		[FalseBooleans:UnderFire]
+		
+        [CheckThreatScore:true]
+        [CheckThreatScoreMinimum:-1]
+        [CheckThreatScoreMaximum:150]
+        [CheckThreatScoreIncludeOtherNpcOwners:true]
+        [CheckThreatScoreRadius:3000]
+        [CheckThreatScoreFromTargetPosition:true]
+        [CheckThreatScoreGridConfiguration:All]
+      </Description>
+    </EntityComponent>
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Action_InitialApproachingTarget_Easy</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitialApproachingTarget_Easy]
+        [ForceManualTriggerActivation:false]
+
+
+        [DisableTriggers:true]
+        [DisableTriggerTags:InitialApproachingTarget]
+      </Description>
+    </EntityComponent>	
+	
+	
+	<!-- InitialApproachingTarget_Hard -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Trigger_InitialApproachingTarget_Hard</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+        [Type:Timer]
+
+        [UseTrigger:false]
+        [StartsReady:false]
+
+        [Tags:InitialApproachingTarget]
+
+        [MinCooldownMs:3000]
+        [MaxCooldownMs:3001]
+
+        [Conditions:MSB_DynamicTarget_Condition_InitialApproachingTarget_Hard]
+		[ConditionCheckResetsTimer:true]
+		
+		
+        [MaxActions:-1]
+        [Actions:MSB_DynamicTarget_Action_InitialApproachingTarget_Hard]
+      </Description>
+    </EntityComponent>
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Condition_InitialApproachingTarget_Hard</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [HasTarget:true]
+		
+		[CheckTargetDistance:true]
+		[MinTargetDistance:800]
+		[MaxTargetDistance:4500]
+		
+        [CheckFalseBooleans:true]
+		[FalseBooleans:UnderFire]
+		
+        [CheckThreatScore:true]
+        [CheckThreatScoreMinimum:1500]
+        [CheckThreatScoreMaximum:-1]
+        [CheckThreatScoreIncludeOtherNpcOwners:true]
+        [CheckThreatScoreRadius:800]
+        [CheckThreatScoreFromTargetPosition:true]
+        [CheckThreatScoreGridConfiguration:All]
+      </Description>
+    </EntityComponent>
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Action_InitialApproachingTarget_Hard</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitialApproachingTarget_Hard]
+        [ForceManualTriggerActivation:false]
+
+
+        [DisableTriggers:true]
+        [DisableTriggerTags:InitialApproachingTarget]
+      </Description>
+    </EntityComponent>		
+	  
+  
+  
+ 	<!-- InitialApproachingTarget_InitialApproachingTarget -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Trigger_InitialApproachingTarget_Other</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+        [Type:Timer]
+
+        [UseTrigger:false]
+        [StartsReady:false]
+
+        [Tags:InitialApproachingTarget]
+
+        [MinCooldownMs:4000]
+        [MaxCooldownMs:4001]
+
+        [Conditions:MSB_DynamicTarget_Condition_InitialApproachingTarget_Other]
+		[ConditionCheckResetsTimer:false]
+		
+		
+        [MaxActions:-1]
+        [Actions:MSB_DynamicTarget_Action_InitialApproachingTarget_Other]
+      </Description>
+    </EntityComponent>
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Condition_InitialApproachingTarget_Other</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [HasTarget:true]
+		
+		[CheckTargetDistance:true]
+		[MinTargetDistance:800]
+		[MaxTargetDistance:4500]
+		
+        [CheckFalseBooleans:true]
+		[FalseBooleans:UnderFire]
+		
+
+      </Description>
+    </EntityComponent>
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Action_InitialApproachingTarget_Other</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitialApproachingTarget_Other]
+        [ForceManualTriggerActivation:false]
+
+
+        [DisableTriggers:true]
+        [DisableTriggerTags:InitialApproachingTarget]
+      </Description>
+    </EntityComponent>	 
+  
+  
+  
+  
+  <!-- Time out -->
+      <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Trigger_InitialApproachingTarget_AutoDisable</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [MinCooldownMs:10000]
+        [MaxCooldownMs:10001]
+
+        [UseTrigger:false]
+        [StartsReady:false]
+        [Tags:InitialApproachingTarget]
+
+        [MaxActions:1]
+        [Actions:MSB_DynamicTarget_Action_InitialApproachingTarget_AutoDisable]
+      </Description>
+    </EntityComponent>
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicTarget_Action_InitialApproachingTarget_AutoDisable</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+		
+        [DisableTriggers:true]
+        [DisableTriggerTags:InitialApproachingTarget]
+      </Description>
+    </EntityComponent>
+ 
+  
+
+
+  </EntityComponents>
+</Definitions>

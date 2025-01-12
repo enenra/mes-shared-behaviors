@@ -1,0 +1,107 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+<!--
+If trigger has [Actions:MSB_Common_Trigger_RoleToCombat]:
+	add the tag [Tags:MSB_RoleToCombat_Triggers]
+
+If trigger has [Actions:MSB_Common_Trigger_CombatToRole]:
+	add the tag [Tags:MSB_CombatToRole_Trigger]
+ 
+-->
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_Common_Action_RoleToCombat</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_CombatType_InitCombatType]
+        [ManuallyActivatedTriggerTags:MSB_Role_CloseRole]
+
+        [DisableTriggers:true]
+        [DisableTriggerTags:MSB_RoleToCombat_Trigger]
+	
+        [EnableTriggers:true]
+        [EnableTriggerTags:MSB_CombatToRole_Triggers]
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB_CombatToRole_Triggers]	
+      </Description>
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_Common_Trigger_RoleToCombat</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+        [Tags:MSB_TriggerEvent_InitBattle]
+        [Type:Manual]
+        [MinCooldownMs:200]
+        [MaxCooldownMs:201]
+        [UseTrigger:true]
+        [StartsReady:false]
+
+
+        [Actions:MSB_Common_Action_RoleToCombat]
+      </Description>
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_Common_Action_CombatToRole</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_Role_InitRole]
+		[ManuallyActivatedTriggerTags:MSB_CombatType_CloseCombatType]
+		
+		
+        [DisableTriggers:true]
+        [DisableTriggerTags:MSB_CombatToRole_Trigger]
+	
+        [EnableTriggers:true]
+        [EnableTriggerTags:MSB_RoleToCombat_Triggers]
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB_RoleToCombat_Triggers]	
+      </Description>
+    </EntityComponent>
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_Common_Trigger_CombatToRole</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+        [Tags:MSB_TriggerEvent_HostileToNormal]
+        [Type:Manual]
+        [MinCooldownMs:200]
+        [MaxCooldownMs:201]
+        [UseTrigger:true]
+        [StartsReady:false]
+
+
+        [Actions:MSB_Common_Action_CombatToRole]
+      </Description>
+    </EntityComponent>
+
+
+
+
+  </EntityComponents>
+</Definitions>

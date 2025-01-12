@@ -2,17 +2,33 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_StikeForceLeader_TriggerGroup</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI TriggerGroup]
+
+	[Triggers:MSB_StikeForceLeader_Trigger_OnStart]
+	[Triggers:MSB_StikeForceLeader_Trigger_InitRole]
+	[Triggers:MSB_StikeForceLeader_Trigger_CloseRole]
+	[Triggers:MSB_StikeForceLeader_Trigger_ProcessEscortRequest]
+	[Triggers:MSB_StikeForceLeader_Trigger_Compromised]
+
+      </Description>
+    </EntityComponent>
+
+
   <!-- RequestEscortSlot
 
-
-
 		
-        [Triggers:MSB_TaskForceLeader_Trigger_OnStart]
-        [Triggers:MSB_TaskForceLeader_Trigger_InitRole]
-        [Triggers:MSB_TaskForceLeader_Trigger_CloseRole]
-        [Triggers:MSB_TaskForceLeader_Trigger_ProcessEscortRequest]
-        [Triggers:MSB_TaskForceLeader_Trigger_Compromised]
-        [Triggers:MSB_TaskForceLeader_Trigger_HasTarget1500]
+        [Triggers:MSB_StikeForceLeader_Trigger_OnStart]
+        [Triggers:MSB_StikeForceLeader_Trigger_InitRole]
+        [Triggers:MSB_StikeForceLeader_Trigger_CloseRole]
+        [Triggers:MSB_StikeForceLeader_Trigger_ProcessEscortRequest]
+        [Triggers:MSB_StikeForceLeader_Trigger_Compromised]
 
   -->
 
@@ -22,7 +38,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_TaskForceLeader_Trigger_InitRole</SubtypeId>
+          <SubtypeId>MSB_StikeForceLeader_Trigger_InitRole</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -34,7 +50,7 @@
         [StartsReady:false]
 
         [MaxActions:-1]
-        [Actions:MSB_TaskForceLeader_Action_InitRole]
+        [Actions:MSB_StikeForceLeader_Action_InitRole]
       </Description>
 
     </EntityComponent>
@@ -42,7 +58,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_TaskForceLeader_Action_InitRole</SubtypeId>
+          <SubtypeId>MSB_StikeForceLeader_Action_InitRole</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
@@ -58,7 +74,7 @@
    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_TaskForceLeader_Trigger_CloseRole</SubtypeId>
+        <SubtypeId>MSB_StikeForceLeader_Trigger_CloseRole</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -71,14 +87,14 @@
         [StartsReady:false]
 
         [MaxActions:-1]
-        [Actions:MSB_Fighter_Trigger_CloseRole]
+        [Actions:MSB_StikeForceLeader_Action_CloseRole]
       </Description>
     </EntityComponent>
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_TaskForceLeader_Trigger_CloseRole</SubtypeId>
+        <SubtypeId>MSB_StikeForceLeader_Action_CloseRole</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
@@ -92,7 +108,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_TaskForceLeader_Trigger_OnStart</SubtypeId>
+        <SubtypeId>MSB_StikeForceLeader_Trigger_OnStart</SubtypeId>
       </Id>
       <Description>
 
@@ -104,7 +120,7 @@
         [MaxCooldownMs:1001]
         [StartsReady:false]
         [MaxActions:1]
-        [Actions:MSB_TaskForceLeader_Action_Init]
+        [Actions:MSB_StikeForceLeader_Action_Init]
 
       </Description>
     </EntityComponent>
@@ -113,7 +129,7 @@
    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_TaskForceLeader_Action_Init</SubtypeId>
+        <SubtypeId>MSB_StikeForceLeader_Action_Init</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
@@ -127,7 +143,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_TaskForceLeader_Trigger_ProcessEscortRequest</SubtypeId>
+        <SubtypeId>MSB_StikeForceLeader_Trigger_ProcessEscortRequest</SubtypeId>
       </Id>
       <Description>
 
@@ -139,7 +155,7 @@
 
         [StartsReady:true]
         [MaxActions:-1]
-        [Actions:MSB_TaskForceLeader_Action_ProcessEscortRequest]
+        [Actions:MSB_StikeForceLeader_Action_ProcessEscortRequest]
 
       </Description>
     </EntityComponent>
@@ -148,7 +164,7 @@
    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_TaskForceLeader_Action_ProcessEscortRequest</SubtypeId>
+        <SubtypeId>MSB_StikeForceLeader_Action_ProcessEscortRequest</SubtypeId>
       </Id>
       <Description>
 
@@ -156,7 +172,7 @@
 
         [AssignEscortFromCommand:true]
         [UseChatBroadcast:true]
-        [ChatData:MSB_TaskForceLeader_Chat_Escort]
+        [ChatData:MSB_StikeForceLeader_Chat_Escort]
 
       </Description>
     </EntityComponent>
@@ -164,7 +180,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_TaskForceLeader_Chat_Escort</SubtypeId>
+          <SubtypeId>MSB_StikeForceLeader_Chat_Escort</SubtypeId>
       </Id>
       <Description>
 
@@ -189,7 +205,7 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_TaskForceLeader_Trigger_Compromised</SubtypeId>
+          <SubtypeId>MSB_StikeForceLeader_Trigger_Compromised</SubtypeId>
       </Id>
       <Description>
 
@@ -200,7 +216,7 @@
         [StartsReady:true]
 
         [MaxActions:1]
-        [Actions:MSB_TaskForceLeader_Action_Compromised]
+        [Actions:MSB_StikeForceLeader_Action_Compromised]
 
       </Description>
     </EntityComponent>
@@ -208,13 +224,13 @@
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_TaskForceLeader_Action_Compromised</SubtypeId>
+          <SubtypeId>MSB_StikeForceLeader_Action_Compromised</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
 
         [BroadcastCommandProfiles:true]
-        [CommandProfileIds:MSB_TaskForceLeader_Command_Compromised]
+        [CommandProfileIds:MSB_StikeForceLeader_Command_Compromised]
 
       </Description>
     </EntityComponent>
@@ -222,7 +238,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_TaskForceLeader_Command_Compromised</SubtypeId>
+        <SubtypeId>MSB_StikeForceLeader_Command_Compromised</SubtypeId>
       </Id>
       <Description>
         [RivalAI Command]
@@ -235,70 +251,6 @@
 
       </Description>
     </EntityComponent>
-
-
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_TaskForceLeader_Trigger_HasTarget1500</SubtypeId>
-      </Id>
-      <Description>
-
-        [RivalAI Trigger]
-		[Tags:RoleToCombat_Trigger]		
-        [Type:HasTarget]
-        [UseTrigger:true]
-        [StartsReady:true]
-		
-		[Conditions:MSB_TaskForceLeader_Condition_HasTarget1500]
-
-        [MaxActions:-1]
-        [Actions:MSB_TaskForceLeader_Action_HasTarget1500]
-        [Actions:MSB_Common_Action_RoleToCombat]
-		[ActionExecution:All]
-      </Description>
-    </EntityComponent>
-
-
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_TaskForceLeader_Condition_HasTarget1500</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Condition]
-
-        [UseConditions:true]
-        [MatchAnyCondition:false]
-
-        [HasTarget:true]
-	
-		[CheckTargetDistance:true]
-		[MaxTargetDistance:1500]
-			
-      </Description>
-    </EntityComponent>
-
-
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_TaskForceLeader_Action_HasTarget1500</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Action]
-
-		[DebugMessage:HasTarget1500]
-      </Description>
-    </EntityComponent>
-
-
-
-
-
-
-
-
 
 
 

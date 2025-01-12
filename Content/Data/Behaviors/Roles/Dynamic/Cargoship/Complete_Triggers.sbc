@@ -1,0 +1,111 @@
+﻿<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_Cargoship_TriggerGroup_Complete</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI TriggerGroup]
+
+
+	[Triggers:MSB_Cargoship_Trigger_TargetIsApproaching]
+	
+	
+        [Triggers:MSB_Cargoship_Trigger_ReturnToSpeed]
+        [Triggers:MSB_Cargoship_Trigger_ReturnToDespawn]
+
+        [Triggers:MSB_Cargoship_Trigger_PlayerTooClose]
+
+      </Description>
+    </EntityComponent>
+	
+	
+	
+    <!--
+	
+	
+        [Triggers:MSB_Cargoship_Trigger_TargetIsApproaching]
+		
+		
+		
+		
+    -->
+	
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition"> 
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_Cargoship_Trigger_TargetIsApproaching</SubtypeId>
+      </Id>
+      <Description>
+
+		[RivalAI Trigger]
+		[Type:Manuel]
+	  
+	    [Tags:MSB_TriggerEvent_InitialTargetIsApproaching_Easy]
+	    [Tags:MSB_TriggerEvent_InitialTargetIsApproaching_Hard]
+	    [Tags:MSB_TriggerEvent_InitialTargetIsApproaching_Other]
+
+		[//Conditions:MSB_Cargoship_Condition_TargetIsApproaching]
+	  
+	    [UseTrigger:true]
+	    [StartsReady:true]
+	    [MinCooldownMs:120000]
+	    [MaxCooldownMs:180000]
+	    [ActionExecution:Random]
+	    [Actions:MSB_Cargoship_Action_TargetIsApproaching]
+	  
+      </Description>
+    </EntityComponent>
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Cargoship_Condition_TargetIsApproaching</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+		[CheckIfTargetIsPlayerOwned:false]
+		[CheckIfTargetIsNpcOwned:false]
+
+      </Description>
+    </EntityComponent>	
+	
+	
+	  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition"> 
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_Cargoship_Action_TargetIsApproaching</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+		
+		[PlayDialogueCue:true]
+		[PlayDialogueCue:MSB_CargoShip_TargetIsApproaching]
+		
+		
+		[DisableTriggers:true]
+		[DisableTriggerNames:MSB_Cargoship_Trigger_TargetIsApproaching]
+
+      </Description>
+    </EntityComponent>
+	
+	
+	
+ 
+
+  </EntityComponents>
+</Definitions>

@@ -1,0 +1,99 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_TaskForceLeader_TriggerGroup_Complete</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI TriggerGroup]
+
+
+	[Triggers:MSB_TaskForceLeader_Trigger_HasTarget3000]
+	
+	
+	[Triggers:MSB_TaskForceLeader_Trigger_OnStart]
+	[Triggers:MSB_TaskForceLeader_Trigger_InitRole]
+	[Triggers:MSB_TaskForceLeader_Trigger_CloseRole]
+	[Triggers:MSB_TaskForceLeader_Trigger_ProcessEscortRequest]
+	[Triggers:MSB_TaskForceLeader_Trigger_Compromised]
+
+      </Description>
+    </EntityComponent>
+	
+	
+	<!--
+	
+	[Triggers:MSB_TaskForceLeader_Trigger_HasTarget3000]
+	
+	
+	-->
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_TaskForceLeader_Trigger_HasTarget3000</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+		[Tags:MSB_RoleToCombat_Trigger]		
+        [Type:HasTarget]
+        [UseTrigger:true]
+        [StartsReady:true]
+		
+		[Conditions:MSB_TaskForceLeader_Condition_HasTarget3000]
+
+        [MaxActions:-1]
+        [Actions:MSB_TaskForceLeader_Action_HasTarget3000]
+        [Actions:MSB_Common_Action_RoleToCombat]
+		[ActionExecution:All]
+      </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_TaskForceLeader_Condition_HasTarget3000</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [HasTarget:true]
+	
+		[CheckTargetDistance:true]
+		[MaxTargetDistance:3000]
+			
+      </Description>
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_TaskForceLeader_Action_HasTarget3000</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+		[PlayDialogueCue:true]
+		[PlayDialogueCue:MSB_TaskForceLeader_InterceptTarget]
+		
+		
+      </Description>
+    </EntityComponent>
+
+
+
+  </EntityComponents>
+</Definitions>

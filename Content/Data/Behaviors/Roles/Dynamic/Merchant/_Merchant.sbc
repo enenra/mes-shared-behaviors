@@ -10,16 +10,261 @@
       <Description>
         [RivalAI TriggerGroup]
 
+		[Triggers:MSB_Merchant_Trigger_InitRole]
+		[Triggers:MSB_Merchant_Trigger_CloseRole]
+		
+		[Triggers:MSB_Merchant_Trigger_OnStart]
+
         [Triggers:MSB_Merchant_Trigger_MerchantAreaTimeout]
         [Triggers:MSB_Merchant_Trigger_RulesOfAcquisition]
         [Triggers:MSB_Merchant_Trigger_ResumeCourse]
         [Triggers:MSB_Merchant_Trigger_StopForPlayer]
-        [Triggers:MSB_Merchant_Trigger_VisitPlayerBase]
-        [Triggers:MSB_Merchant_Trigger_ArriveAtStation]
-        [Triggers:MSB_Merchant_Trigger_StartLanding]
-        [Triggers:MSB_Merchant_Trigger_ArrivedAtLandingSite]
+		
       </Description>
     </EntityComponent>
+
+
+
+<!--
+
+[Triggers:MSB_Merchant_Trigger_InitRole]
+[Triggers:MSB_Merchant_Trigger_CloseRole]
+
+
+-->
+
+<!-- Start Required stuff -->
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_Merchant_Trigger_InitRole</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+        [Tags:MSB_Role_InitRole]
+
+        [UseTrigger:true]
+        [Type:Manual]
+
+        [StartsReady:false]
+
+        [MaxActions:-1]
+        [Actions:MSB_Merchant_Action_InitRole]
+      </Description>
+
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_Merchant_Action_InitRole</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ChangeBehaviorSubclass:true]
+        [NewBehaviorSubclass:CargoShip]
+
+        [ChangeAutopilotProfile:true]
+        [AutopilotProfile:Primary]
+      </Description>
+    </EntityComponent>
+
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Merchant_Trigger_CloseRole</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Tags:MSB_Role_CloseRole]
+
+        [UseTrigger:true]
+        [Type:Manual]
+
+        [StartsReady:false]
+
+        [MaxActions:-1]
+        [Actions:MSB_Merchant_Action_CloseRole]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Merchant_Action_CloseRole</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+      </Description>
+    </EntityComponent>
+<!-- End Required stuff -->
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Merchant_Trigger_OnStart</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:Timer]
+        [MinCooldownMs:1000]
+        [MaxCooldownMs:1001]
+        [StartsReady:false]
+        [MaxActions:1]
+        [Actions:MSB_Merchant_Action_Init]
+
+      </Description>
+    </EntityComponent>
+
+
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Merchant_Action_Init</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [AppendAntennaHudText:true]
+        [AntennaHudTextSuffix: (Merchant)]
+
+      </Description>
+    </EntityComponent>
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Merchant_Trigger_MerchantAreaTimeout</SubtypeId>
+      </Id>
+      <Description>
+        [MES AI Trigger]
+
+        [UseTrigger:true]
+        [Type:Timer]
+
+        [MinCooldownMs:1500000]
+        [MaxCooldownMs:1500001]
+        [StartsReady:false]
+
+        [MaxActions:1]
+        [Actions:MSB_Merchant_Action_MerchantAreaTimeout]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Merchant_Action_MerchantAreaTimeout</SubtypeId>
+      </Id>
+      <Description>
+        [MES AI Action]
+
+        [EnableAutopilot:true]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_Merchant_Trigger_ResumeCourse]
+        [DisableTriggerNames:MSB_Merchant_Trigger_StopForPlayer]
+      </Description>
+    </EntityComponent>
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Merchant_Trigger_ResumeCourse</SubtypeId>
+      </Id>
+      <Description>
+        [MES AI Trigger]
+
+        [UseTrigger:false]
+        [Type:PlayerFar]
+        [TargetDistance:500]
+
+        [ToggleWithTriggerProfile:MSB_Merchant_Trigger_StopForPlayer]
+        [ToggledProfileResetsCooldown:true]
+
+        [MinCooldownMs:2000]
+        [MaxCooldownMs:2001]
+        [StartsReady:false]
+
+        [MaxActions:-1]
+        [Actions:MSB_Merchant_Action_ResumeCourse]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Merchant_Action_ResumeCourse</SubtypeId>
+      </Id>
+      <Description>
+        [MES AI Action]
+
+        [EnableAutopilot:true]
+      </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Merchant_Trigger_StopForPlayer</SubtypeId>
+      </Id>
+      <Description>
+        [MES AI Trigger]
+
+        [UseTrigger:true]
+        [Type:PlayerNear]
+        [TargetDistance:399]
+        [MinPlayerReputation:-500]
+
+        [ToggleWithTriggerProfile:MSB_Merchant_Trigger_ResumeCourse]
+        [ToggledProfileResetsCooldown:true]
+
+        [MinCooldownMs:2000]
+        [MaxCooldownMs:2001]
+        [StartsReady:false]
+
+        [MaxActions:-1]
+        [Actions:MSB_Merchant_Action_StopForPlayer]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Merchant_Action_StopForPlayer</SubtypeId>
+      </Id>
+      <Description>
+        [MES AI Action]
+
+        [DisableAutopilot:true]
+        [StopAllRotation:true]
+        [StopAllThrust:true]
+
+        [ClearAllWaypoints:true]
+      </Description>
+    </EntityComponent>
+	
+	
+	
+	
+
+
+
+
+
+
+
 
   </EntityComponents>
 </Definitions>

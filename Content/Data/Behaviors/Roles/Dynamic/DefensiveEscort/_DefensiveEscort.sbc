@@ -10,11 +10,211 @@
       <Description>
         [RivalAI TriggerGroup]
 
-        [Triggers:MSB_DefensiveEscortDrone_Trigger_RequestEscortSlot]
-        [Triggers:MSB_DefensiveEscortDrone_Trigger_AggressionSwitchEscort]
-        [Triggers:MSB_DefensiveEscortDrone_Trigger_TargetfarSwitchEscort]
+        [Triggers:MSB_DefensiveEscort_Trigger_InitRole]
+        [Triggers:MSB_DefensiveEscort_Trigger_CloseRole]
+        [Triggers:MSB_DefensiveEscort_Trigger_RequestEscortSlot]
+        [Triggers:MSB_DefensiveEscort_Trigger_AggressionSwitchEscort]
+        [Triggers:MSB_DefensiveEscort_Trigger_TargetfarSwitchEscort]
       </Description>
     </EntityComponent>
+	
+	
+    <!--
+        [Triggers:MSB_DefensiveEscort_Trigger_InitRole]
+        [Triggers:MSB_DefensiveEscort_Trigger_CloseRole]
+        [Triggers:MSB_DefensiveEscort_Trigger_RequestEscortSlot]
+        [Triggers:MSB_DefensiveEscort_Trigger_AggressionSwitchEscort]
+        [Triggers:MSB_DefensiveEscort_Trigger_TargetfarSwitchEscort]
+
+ -->
+
+
+<!-- Start Required stuff -->
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_DefensiveEscort_Trigger_InitRole</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+        [Tags:MSB_Role_InitRole]
+
+        [UseTrigger:true]
+        [Type:Manual]
+
+        [StartsReady:false]
+
+        [MaxActions:-1]
+        [Actions:MSB_DefensiveEscort_Action_InitRole]
+      </Description>
+
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_DefensiveEscort_Action_InitRole</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ChangeBehaviorSubclass:true]
+        [NewBehaviorSubclass:Escort]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_DefensiveEscort_Trigger_TargetfarSwitchEscort]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_DefensiveEscort_Trigger_AggressionSwitchEscort]
+		
+
+        [ChangeAutopilotProfile:true]
+        [AutopilotProfile:Primary]
+      </Description>
+    </EntityComponent>
+
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DefensiveEscort_Trigger_CloseRole</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Tags:MSB_Role_CloseRole]
+
+        [UseTrigger:true]
+        [Type:Manual]
+
+        [StartsReady:false]
+
+        [MaxActions:-1]
+        [Actions:MSB_DefensiveEscort_Action_CloseRole]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DefensiveEscort_Action_CloseRole</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_DefensiveEscort_Trigger_AggressionSwitchEscort]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_DefensiveEscort_Trigger_TargetfarSwitchEscort]
+	
+		
+      </Description>
+    </EntityComponent>
+<!-- End Required stuff -->
+
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DefensiveEscort_Trigger_RequestEscortSlot</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:true]
+        [StartsReady:false]
+
+        [MinCooldownMs:1000]
+        [MaxCooldownMs:1001]
+
+        [MaxActions:-1]
+        [Actions:MSB_DefensiveEscort_Action_RequestEscortSlot]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DefensiveEscort_Action_RequestEscortSlot</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [BroadcastCommandProfiles:true]
+        [CommandProfileIds:MSB_DefensiveEscort_Command_RequestEscortSlot]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_DefensiveEscort_Trigger_RequestEscortSlot]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DefensiveEscort_Command_RequestEscortSlot</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Command]
+
+        [CommandCode:DefensiveEscortRequest]
+
+        [MatchSenderReceiverOwners:true]
+        [RequestEscortSlot:true]
+      </Description>
+    </EntityComponent>
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DefensiveEscort_Trigger_AggressionSwitchEscort</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:TargetNear]
+		[Tags:MSB_RoleToCombat_Triggers]
+	
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [TargetDistance:1500]
+
+        [MaxActions:-1]
+        [Actions:MSB_Common_Trigger_RoleToCombat]
+      </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DefensiveEscort_Trigger_TargetfarSwitchEscort</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+		[Tags:MSB_CombatToRole_Trigger]
+        [Type:TargetFar]
+        [UseTrigger:false]
+        [StartsReady:true]
+
+        [TargetDistance:2000]
+
+        [MaxActions:-1]
+        [Actions:MSB_Common_Trigger_CombatToRole]
+      </Description>
+    </EntityComponent>
+
+
+
+
+
+
+
 
   </EntityComponents>
 </Definitions>

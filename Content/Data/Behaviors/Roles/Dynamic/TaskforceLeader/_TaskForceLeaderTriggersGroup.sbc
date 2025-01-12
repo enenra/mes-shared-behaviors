@@ -11,22 +11,244 @@
 
         [RivalAI TriggerGroup]
 
+	[Triggers:MSB_TaskForceLeader_Trigger_OnStart]
+	[Triggers:MSB_TaskForceLeader_Trigger_InitRole]
+	[Triggers:MSB_TaskForceLeader_Trigger_CloseRole]
+	[Triggers:MSB_TaskForceLeader_Trigger_ProcessEscortRequest]
+	[Triggers:MSB_TaskForceLeader_Trigger_Compromised]
+
+      </Description>
+    </EntityComponent>
+
+  <!-- RequestEscortSlot
+
+		
         [Triggers:MSB_TaskForceLeader_Trigger_OnStart]
         [Triggers:MSB_TaskForceLeader_Trigger_InitRole]
         [Triggers:MSB_TaskForceLeader_Trigger_CloseRole]
         [Triggers:MSB_TaskForceLeader_Trigger_ProcessEscortRequest]
         [Triggers:MSB_TaskForceLeader_Trigger_Compromised]
-        [Triggers:MSB_TaskForceLeader_Trigger_HasTarget1500]
+
+  -->
 
 
 
+<!-- Start Required stuff -->
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_TaskForceLeader_Trigger_InitRole</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+        [Tags:MSB_Role_InitRole]
 
+        [UseTrigger:true]
+        [Type:Manual]
 
+        [StartsReady:false]
 
-
-
+        [MaxActions:-1]
+        [Actions:MSB_TaskForceLeader_Action_InitRole]
       </Description>
 
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_TaskForceLeader_Action_InitRole</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ChangeBehaviorSubclass:true]
+        [NewBehaviorSubclass:CargoShip]
+
+        [ChangeAutopilotProfile:true]
+        [AutopilotProfile:Primary]
+      </Description>
+    </EntityComponent>
+
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_TaskForceLeader_Trigger_CloseRole</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Tags:MSB_Role_CloseRole]
+
+        [UseTrigger:true]
+        [Type:Manual]
+
+        [StartsReady:false]
+
+        [MaxActions:-1]
+        [Actions:MSB_TaskForceLeader_Action_CloseRole]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_TaskForceLeader_Action_CloseRole</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+      </Description>
+    </EntityComponent>
+<!-- End Required stuff -->
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_TaskForceLeader_Trigger_OnStart</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:Timer]
+        [MinCooldownMs:1000]
+        [MaxCooldownMs:1001]
+        [StartsReady:false]
+        [MaxActions:1]
+        [Actions:MSB_TaskForceLeader_Action_Init]
+
+      </Description>
+    </EntityComponent>
+
+
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_TaskForceLeader_Action_Init</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [AppendAntennaHudText:true]
+        [AntennaHudTextSuffix: (Leader)]
+
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_TaskForceLeader_Trigger_ProcessEscortRequest</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:CommandReceived]
+        [CommandReceiveCode:OffensiveEscortRequest]
+
+        [StartsReady:true]
+        [MaxActions:-1]
+        [Actions:MSB_TaskForceLeader_Action_ProcessEscortRequest]
+
+      </Description>
+    </EntityComponent>
+
+
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_TaskForceLeader_Action_ProcessEscortRequest</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [AssignEscortFromCommand:true]
+        [UseChatBroadcast:true]
+        [ChatData:MSB_TaskForceLeader_Chat_Escort]
+
+      </Description>
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_TaskForceLeader_Chat_Escort</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Chat]
+
+        [UseChat:true]
+        [StartsReady:true]
+        [Chance:100]
+        [MaxChats:1]
+        [BroadcastRandomly:true]
+
+        [Author:{AntennaName}]
+        [Color:Green]
+
+        [ChatMessages:This is {AntennaName}. Accepted escort request]
+        [ChatAudio:ArcHudGPSNotification2]
+        [BroadcastChatType:Chat]
+      </Description>
+    </EntityComponent>
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_TaskForceLeader_Trigger_Compromised</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+        [Tags:MSB_TriggerEvent_Compromised]
+        [Type:Compromised]
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [MaxActions:1]
+        [Actions:MSB_TaskForceLeader_Action_Compromised]
+
+      </Description>
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_TaskForceLeader_Action_Compromised</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [BroadcastCommandProfiles:true]
+        [CommandProfileIds:MSB_TaskForceLeader_Command_Compromised]
+
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_TaskForceLeader_Command_Compromised</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Command]
+
+        [CommandCode:LeaderDead]
+        [MatchSenderReceiverOwners:true]
+        [IgnoreAntennaRequirement:true]
+        [IgnoreReceiverAntennaRequirement:true]
+        [Radius:7500]
+
+      </Description>
     </EntityComponent>
 
 
