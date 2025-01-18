@@ -40,13 +40,6 @@
 		[Triggers:MSB_ContextTarget_TriggerEvent_ApproachingTarget]
 		[Triggers:MSB_ContextTarget_TriggerEvent_TargetIsApproaching]
 		
-		
-		
-		
-        [Triggers:MSB_Common_Trigger_DamageByNeutral]
-        [Triggers:MSB_Common_Trigger_DamageByNeutral_Cue]
-        [Triggers:MSB_Common_Trigger_DamageByFriendly]
-        [Triggers:MSB_Common_Trigger_DamageByFriendly_Cue]
         [Triggers:MSB_Common_Triggers_MaxRange]
         [Triggers:MSB_Common_Trigger_MSBAliveCheck]
 
@@ -60,6 +53,31 @@
 
     </EntityComponent>
 
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_StaticCommon_TriggerGroup_Complete</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI TriggerGroup]
+
+        [Triggers:MSB_Common_Trigger_DamageByNeutral]
+        [Triggers:MSB_Common_Trigger_DamageByNeutral_Cue]
+        [Triggers:MSB_Common_Trigger_DamageByFriendly]
+        [Triggers:MSB_Common_Trigger_DamageByFriendly_Cue]
+      </Description>
+
+    </EntityComponent>
+
+
+
+
+
+
+
+		
 
   </EntityComponents>
 </Definitions>

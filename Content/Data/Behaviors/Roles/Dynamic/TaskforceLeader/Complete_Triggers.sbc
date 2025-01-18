@@ -4,24 +4,7 @@
 
 
 
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_TaskForceLeader_TriggerGroup_Complete</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI TriggerGroup]
 
-        [Triggers:MSB_TaskForceLeader_Trigger_HasTarget3000]
-        [Triggers:MSB_TaskforceLeader_Trigger_ApproachingTarget_Player]
-
-        [Triggers:MSB_TaskForceLeader_Trigger_OnStart]
-        [Triggers:MSB_TaskForceLeader_Trigger_InitRole]
-        [Triggers:MSB_TaskForceLeader_Trigger_CloseRole]
-        [Triggers:MSB_TaskForceLeader_Trigger_ProcessEscortRequest]
-        [Triggers:MSB_TaskForceLeader_Trigger_Compromised]
-      </Description>
-    </EntityComponent>
 
     <!--
       [Triggers:MSB_TaskForceLeader_Trigger_HasTarget3000]
@@ -118,7 +101,7 @@
         [RivalAI Action]
 
         [PlayDialogueCue:true]
-        [PlayDialogueCue:MSB_TaskforceLeader_ApproachingPlayerTarget]
+        [DialogueCueId:MSB_TaskforceLeader_ApproachingPlayerTarget]
 
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_TaskforceLeader_Trigger_ApproachingTarget_Player]

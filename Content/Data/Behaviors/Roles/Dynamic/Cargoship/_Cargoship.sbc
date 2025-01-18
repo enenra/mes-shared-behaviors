@@ -62,6 +62,21 @@
       </Description>
     </EntityComponent>
 
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Cargoship_TriggerGroup_Complete</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI TriggerGroup]
+
+
+      </Description>
+    </EntityComponent>
+
+
+
     <!-- ReturnToSpeed -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>

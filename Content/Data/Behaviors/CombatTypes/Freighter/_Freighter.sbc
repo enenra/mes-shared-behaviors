@@ -13,11 +13,22 @@
         [Triggers:MSB_Freighter_Trigger_InitCombatType]
         [Triggers:MSB_Freighter_Trigger_CloseCombatType]
 
-
       </Description>
     </EntityComponent>
 
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Freighter_TriggerGroup_Complete</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI TriggerGroup]
 
+
+      </Description>
+    </EntityComponent>
+	
+	
 <!-- Start Required stuff -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>

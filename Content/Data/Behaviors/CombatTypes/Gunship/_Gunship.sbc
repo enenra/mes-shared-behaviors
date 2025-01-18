@@ -15,6 +15,18 @@
       </Description>
     </EntityComponent>
 
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Gunship_TriggerGroup_Complete</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI TriggerGroup]
+
+      </Description>
+    </EntityComponent>
+
+
 
 <!-- Start Required stuff -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">

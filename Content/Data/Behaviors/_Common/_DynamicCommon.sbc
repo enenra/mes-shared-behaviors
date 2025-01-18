@@ -35,8 +35,6 @@
 
         [Triggers:MSB_ContextUnderFireGoingDown_Trigger_BeforeHighSpeedImpact]
 
-
-
         [Triggers:MSB_ContextDamage_Trigger_Compromised_PlayerNotHelped]
         [Triggers:MSB_ContextDamage_Trigger_Compromised_PlayerMadeFinalShot]
         [Triggers:MSB_ContextDamage_Trigger_Compromised_PlayerHelped]
@@ -49,11 +47,6 @@
 		[Triggers:MSB_ContextTarget_TriggerEvent_TargetIsApproaching]
 
 
-        [Triggers:MSB_Common_Trigger_DamageByNeutral]
-        [Triggers:MSB_Common_Trigger_DamageByNeutral_Cue]
-        [Triggers:MSB_Common_Trigger_DamageByFriendly]
-        [Triggers:MSB_Common_Trigger_DamageByFriendly_Cue]
-        [Triggers:MSB_Common_Trigger_UnderFireHealthLow]
         [Triggers:MSB_Common_Triggers_Compromised]
 		
 		
@@ -87,15 +80,60 @@
         [Triggers:MSB_PKLSystem_Trigger_InPKL]
 
 
+		[Triggers:MSB_DynamicTarget_Trigger_TargetAcquiredFirstTime]
+
+		[Triggers:MSB_DynamicTarget_Trigger_InitialApproachingTarget_Start]
+		[Triggers:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Start]
 
 
-        [Triggers:MSB_Common_Triggers_MaxRange]
-        [Triggers:MSB_Common_Trigger_MSBAliveCheck]
-        [Triggers:MSB_Common_Trigger_DebugMentionRetreat]
+		[Triggers:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_CancelTargetClose]
+		[Triggers:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Cancel]	
+		[Triggers:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Easy]
+		[Triggers:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Hard]
+		[Triggers:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Other]
+		[Triggers:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_AutoDisable]
+
+
+
+		[Triggers:MSB_DynamicTarget_Trigger_InitialApproachingTarget_CancelTargetClose]
+		[Triggers:MSB_DynamicTarget_Trigger_InitialApproachingTarget_Cancel]	
+		[Triggers:MSB_DynamicTarget_Trigger_InitialApproachingTarget_Easy]
+		[Triggers:MSB_DynamicTarget_Trigger_InitialApproachingTarget_Hard]
+		[Triggers:MSB_DynamicTarget_Trigger_InitialApproachingTarget_Other]
+		[Triggers:MSB_DynamicTarget_Trigger_InitialApproachingTarget_AutoDisable]
+
+
+		[Triggers:MSB_Common_Triggers_MaxRange]
+		[Triggers:MSB_Common_Trigger_MSBAliveCheck]
+		[Triggers:MSB_Common_Trigger_DebugMentionRetreat]
+      </Description>
+    </EntityComponent>
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DynamicCommon_TriggerGroup_Complete</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI TriggerGroup]
+
+        [Triggers:MSB_Common_Trigger_DamageByNeutral]
+        [Triggers:MSB_Common_Trigger_DamageByNeutral_Cue]
+        [Triggers:MSB_Common_Trigger_DamageByFriendly]
+        [Triggers:MSB_Common_Trigger_DamageByFriendly_Cue]
+        [Triggers:MSB_Common_Trigger_UnderFireHealthLow]
 
 
       </Description>
-    </EntityComponent>
+    </EntityComponent>	
+	
+	
+	
+	
+	
+	
+	
 
   </EntityComponents>
 </Definitions>

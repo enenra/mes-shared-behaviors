@@ -18,6 +18,17 @@
       </Description>
     </EntityComponent>
 
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Dropship_TriggerGroup_Complete</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI TriggerGroup]
+
+      </Description>
+    </EntityComponent>
+	
 
 <!--
 [Triggers:MSB_Dropship_Trigger_InitCombatType]
