@@ -67,7 +67,7 @@
         [RivalAI Action]
 
         [ChangeBehaviorSubclass:true]
-        [NewBehaviorSubclass:CargoShip]
+        [NewBehaviorSubclass:Patrol]
 
         [ChangeAutopilotProfile:true]
         [AutopilotProfile:Primary]
