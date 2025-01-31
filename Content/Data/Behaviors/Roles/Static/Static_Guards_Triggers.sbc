@@ -2,24 +2,24 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
     <!--
-        [Tags:SpawnGarrison]
+        [Tags:SpawnGuards]
 
-        [Triggers:MSB_DefenseSystem_Trigger_Garrison]
+        [Triggers:MSB_DefenseSystem_Trigger_Guards]
 
-        [Triggers:MSB_DefenseSystem_Trigger_Garrison_SpawnCustomVariablesName] 1001
+        [Triggers:MSB_DefenseSystem_Trigger_Guards_SpawnCustomVariablesName] 1001
 
-        [Triggers:MSB_DefenseSystem_Trigger_Garrison_SpawnSpawnGroupName] 2001
+        [Triggers:MSB_DefenseSystem_Trigger_Guards_SpawnSpawnGroupName] 2001
 
-        ex: MSB_DefenseSystem_Trigger_Garrison_SpawnMilitaryBase 3001
+        ex: MSB_DefenseSystem_Trigger_Guards_SpawnMilitaryBase 3001
 
-        [Triggers:MSB_DefenseSystem_Trigger_Garrison_SpawnDefault] 5001
-        [Triggers:MSB_DefenseSystem_Trigger_Garrison_AutoDisable] 10000
+        [Triggers:MSB_DefenseSystem_Trigger_Guards_SpawnDefault] 5001
+        [Triggers:MSB_DefenseSystem_Trigger_Guards_AutoDisable] 10000
     -->
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DefenseSystem_Trigger_Garrison</SubtypeId>
+        <SubtypeId>MSB_DefenseSystem_Trigger_Guards</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -35,22 +35,22 @@
         [Conditions:MSB_Context_Condition_SettingBattle]
 
         [MaxActions:-1]
-        [Actions:MSB_DefenseSystem_Action_Garrison]
+        [Actions:MSB_DefenseSystem_Action_Guards]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DefenseSystem_Action_Garrison</SubtypeId>
+        <SubtypeId>MSB_DefenseSystem_Action_Guards</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
 
         [EnableTriggers:true]
-        [EnableTriggerTags:SpawnGarrison]
+        [EnableTriggerTags:SpawnGuards]
 
         [ResetCooldownTimeOfTriggers:true]
-        [ResetTriggerCooldownTags:SpawnGarrison]
+        [ResetTriggerCooldownTags:SpawnGuards]
       </Description>
     </EntityComponent>
 
@@ -58,7 +58,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DefenseSystem_Trigger_Garrison_SpawnCustomVariablesName</SubtypeId>
+        <SubtypeId>MSB_DefenseSystem_Trigger_Guards_SpawnCustomVariablesName</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -68,21 +68,21 @@
         [UseTrigger:false]
         [StartsReady:false]
 
-        [Tags:SpawnGarrison]
+        [Tags:SpawnGuards]
 
         [MinCooldownMs:1000]
         [MaxCooldownMs:1001]
 
-        [Conditions:MSB_DefenseSystem_Condition_Garrison_SpawnCustomVariablesName]
+        [Conditions:MSB_DefenseSystem_Condition_Guards_SpawnCustomVariablesName]
 
         [MaxActions:-1]
-        [Actions:MSB_DefenseSystem_Action_Garrison_SpawnCustomVariablesName]
+        [Actions:MSB_DefenseSystem_Action_Guards_SpawnCustomVariablesName]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DefenseSystem_Condition_Garrison_SpawnCustomVariablesName</SubtypeId>
+        <SubtypeId>MSB_DefenseSystem_Condition_Guards_SpawnCustomVariablesName</SubtypeId>
       </Id>
       <Description>
         [RivalAI Condition]
@@ -91,32 +91,32 @@
         [MatchAnyCondition:false]
 
         [CheckIfSpawnGroupExist:true]
-        [ExistingSpawnGroupName:{Faction}_SpawnGroup_Garrison_{CustomVariablesName}]
+        [ExistingSpawnGroupName:{Faction}_SpawnGroup_Guards_{CustomVariablesName}]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DefenseSystem_Action_Garrison_SpawnCustomVariablesName</SubtypeId>
+        <SubtypeId>MSB_DefenseSystem_Action_Guards_SpawnCustomVariablesName</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
 
         [PlayDialogueCue:true]
-        [DialogueCueId:LaunchGarrison]
+        [DialogueCueId:LaunchGuards]
 
         [SpawnEncounter:true]
-        [Spawner:MSB_DefenseSystem_Spawner_Garrison_SpawnCustomVariablesName]
+        [Spawner:MSB_DefenseSystem_Spawner_Guards_SpawnCustomVariablesName]
         [ForceSameFactionOwnership:true]
 
         [DisableTriggers:true]
-        [DisableTriggerTags:SpawnGarrison]
+        [DisableTriggerTags:SpawnGuards]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DefenseSystem_Spawner_Garrison_SpawnCustomVariablesName</SubtypeId>
+        <SubtypeId>MSB_DefenseSystem_Spawner_Guards_SpawnCustomVariablesName</SubtypeId>
       </Id>
       <Description>
         [RivalAI Spawn]
@@ -134,7 +134,7 @@
         [MaxAltitude:1400]
 
         [MaxSpawns:-1]
-        [SpawnGroups:{Faction}_SpawnGroup_Garrison_{CustomVariablesName}]
+        [SpawnGroups:{Faction}_SpawnGroup_Guards_{CustomVariablesName}]
       </Description>
     </EntityComponent>
 
@@ -143,7 +143,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DefenseSystem_Trigger_Garrison_SpawnSpawnGroupName</SubtypeId>
+        <SubtypeId>MSB_DefenseSystem_Trigger_Guards_SpawnSpawnGroupName</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -153,21 +153,21 @@
         [UseTrigger:false]
         [StartsReady:false]
 
-        [Tags:SpawnGarrison]
+        [Tags:SpawnGuards]
 
         [MinCooldownMs:2000]
         [MaxCooldownMs:2001]
 
-        [Conditions:MSB_DefenseSystem_Condition_Garrison_SpawnSpawnGroupName]
+        [Conditions:MSB_DefenseSystem_Condition_Guards_SpawnSpawnGroupName]
 
         [MaxActions:-1]
-        [Actions:MSB_DefenseSystem_Action_Garrison_SpawnSpawnGroupName]
+        [Actions:MSB_DefenseSystem_Action_Guards_SpawnSpawnGroupName]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DefenseSystem_Condition_Garrison_SpawnSpawnGroupName</SubtypeId>
+        <SubtypeId>MSB_DefenseSystem_Condition_Guards_SpawnSpawnGroupName</SubtypeId>
       </Id>
       <Description>
         [RivalAI Condition]
@@ -176,32 +176,32 @@
         [MatchAnyCondition:false]
 
         [CheckIfSpawnGroupExist:true]
-        [ExistingSpawnGroupName:{Faction}_SpawnGroup_Garrison_{SpawnGroupName}]
+        [ExistingSpawnGroupName:{Faction}_SpawnGroup_Guards_{SpawnGroupName}]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DefenseSystem_Action_Garrison_SpawnSpawnGroupName</SubtypeId>
+        <SubtypeId>MSB_DefenseSystem_Action_Guards_SpawnSpawnGroupName</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
 
         [PlayDialogueCue:true]
-        [DialogueCueId:LaunchGarrison]
+        [DialogueCueId:LaunchGuards]
 
         [SpawnEncounter:true]
-        [Spawner:MSB_DefenseSystem_Spawner_Garrison_SpawnSpawnGroupName]
+        [Spawner:MSB_DefenseSystem_Spawner_Guards_SpawnSpawnGroupName]
         [ForceSameFactionOwnership:true]
 
         [DisableTriggers:true]
-        [DisableTriggerTags:SpawnGarrison]
+        [DisableTriggerTags:SpawnGuards]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DefenseSystem_Spawner_Garrison_SpawnSpawnGroupName</SubtypeId>
+        <SubtypeId>MSB_DefenseSystem_Spawner_Guards_SpawnSpawnGroupName</SubtypeId>
       </Id>
       <Description>
         [RivalAI Spawn]
@@ -218,7 +218,7 @@
         [MaxAltitude:1400]
 
         [MaxSpawns:-1]
-        [SpawnGroups:{Faction}_SpawnGroup_Garrison_{SpawnGroupName}]
+        [SpawnGroups:{Faction}_SpawnGroup_Guards_{SpawnGroupName}]
       </Description>
     </EntityComponent>
 
@@ -226,7 +226,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DefenseSystem_Trigger_Garrison_SpawnDefault</SubtypeId>
+        <SubtypeId>MSB_DefenseSystem_Trigger_Guards_SpawnDefault</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -235,21 +235,21 @@
 
         [UseTrigger:false]
         [StartsReady:false]
-        [Tags:SpawnGarrison]
+        [Tags:SpawnGuards]
 
         [MinCooldownMs:5000]
         [MaxCooldownMs:5001]
 
-        [Conditions:MSB_DefenseSystem_Condition_Garrison_SpawnDefault]
+        [Conditions:MSB_DefenseSystem_Condition_Guards_SpawnDefault]
 
         [MaxActions:-1]
-        [Actions:MSB_DefenseSystem_Action_Garrison_SpawnDefault]
+        [Actions:MSB_DefenseSystem_Action_Guards_SpawnDefault]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DefenseSystem_Condition_Garrison_SpawnDefault</SubtypeId>
+        <SubtypeId>MSB_DefenseSystem_Condition_Guards_SpawnDefault</SubtypeId>
       </Id>
       <Description>
         [RivalAI Condition]
@@ -258,32 +258,32 @@
         [MatchAnyCondition:false]
 
         [CheckIfSpawnGroupExist:true]
-        [ExistingSpawnGroupName:{Faction}_SpawnGroup_Garrison_Default]
+        [ExistingSpawnGroupName:{Faction}_SpawnGroup_Guards_Default]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DefenseSystem_Action_Garrison_SpawnDefault</SubtypeId>
+        <SubtypeId>MSB_DefenseSystem_Action_Guards_SpawnDefault</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
 
         [PlayDialogueCue:true]
-        [DialogueCueId:LaunchGarrison]
+        [DialogueCueId:LaunchGuards]
 
         [SpawnEncounter:true]
-        [Spawner:MSB_DefenseSystem_Spawner_Garrison_SpawnDefault]
+        [Spawner:MSB_DefenseSystem_Spawner_Guards_SpawnDefault]
         [ForceSameFactionOwnership:true]
 
         [DisableTriggers:true]
-        [DisableTriggerTags:SpawnGarrison]
+        [DisableTriggerTags:SpawnGuards]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DefenseSystem_Spawner_Garrison_SpawnDefault</SubtypeId>
+        <SubtypeId>MSB_DefenseSystem_Spawner_Guards_SpawnDefault</SubtypeId>
       </Id>
       <Description>
         [RivalAI Spawn]
@@ -301,7 +301,7 @@
         [MaxAltitude:1400]
 
         [MaxSpawns:-1]
-        [SpawnGroups:{Faction}_SpawnGroup_Garrison_Default]
+        [SpawnGroups:{Faction}_SpawnGroup_Guards_Default]
       </Description>
     </EntityComponent>
 
@@ -309,7 +309,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DefenseSystem_Trigger_Garrison_AutoDisable</SubtypeId>
+        <SubtypeId>MSB_DefenseSystem_Trigger_Guards_AutoDisable</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -318,27 +318,27 @@
 
         [UseTrigger:false]
         [StartsReady:false]
-        [Tags:SpawnGarrison]
+        [Tags:SpawnGuards]
 
         [MinCooldownMs:10000]
         [MaxCooldownMs:10001]
 
         [MaxActions:-1]
-        [Actions:MSB_DefenseSystem_Action_Garrison_AutoDisable]
+        [Actions:MSB_DefenseSystem_Action_Guards_AutoDisable]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DefenseSystem_Action_Garrison_AutoDisable</SubtypeId>
+        <SubtypeId>MSB_DefenseSystem_Action_Guards_AutoDisable</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:MSB: Error no garrison found]
+        [DebugMessage:MSB: Error no Guards found]
 
         [DisableTriggers:true]
-        [DisableTriggerTags:SpawnGarrison]
+        [DisableTriggerTags:SpawnGuards]
       </Description>
     </EntityComponent>
 	

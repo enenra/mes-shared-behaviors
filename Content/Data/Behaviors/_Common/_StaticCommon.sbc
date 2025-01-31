@@ -43,12 +43,14 @@
         [Triggers:MSB_Common_Triggers_MaxRange]
         [Triggers:MSB_Common_Trigger_MSBAliveCheck]
 
+[Triggers:MSB_HealthSystem_Trigger_HasAntennaForBroadcast]
 
-        [Triggers:MSB_DefenseSystem_Trigger_Garrison]
-        [Triggers:MSB_DefenseSystem_Trigger_Garrison_SpawnCustomVariablesName]
-        [Triggers:MSB_DefenseSystem_Trigger_Garrison_SpawnSpawnGroupName]
-        [Triggers:MSB_DefenseSystem_Trigger_Garrison_SpawnDefault]
-        [Triggers:MSB_DefenseSystem_Trigger_Garrison_AutoDisable]
+
+        [Triggers:MSB_DefenseSystem_Trigger_Guards]
+        [Triggers:MSB_DefenseSystem_Trigger_Guards_SpawnCustomVariablesName]
+        [Triggers:MSB_DefenseSystem_Trigger_Guards_SpawnSpawnGroupName]
+        [Triggers:MSB_DefenseSystem_Trigger_Guards_SpawnDefault]
+        [Triggers:MSB_DefenseSystem_Trigger_Guards_AutoDisable]
       </Description>
 
     </EntityComponent>
@@ -67,8 +69,13 @@
         [Triggers:MSB_Common_Trigger_DamageByNeutral_Cue]
         [Triggers:MSB_Common_Trigger_DamageByFriendly]
         [Triggers:MSB_Common_Trigger_DamageByFriendly_Cue]
-      </Description>
+		
+		
+		[Triggers:MSB_Common_Trigger_EnemyDestroyedPlayerHelped]
+		[Triggers:MSB_Common_Trigger_EnemyDestroyedPlayerMadeFinalShot]
+		[Triggers:MSB_Common_Trigger_FriendlyDestroyedPlayerMadeFinalShot]
 
+      </Description>
     </EntityComponent>
 
 

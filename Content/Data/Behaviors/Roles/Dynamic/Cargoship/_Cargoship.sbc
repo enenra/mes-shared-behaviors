@@ -40,7 +40,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Cargoship - SetDespawnType]
+        [//DebugMessage:Cargoship - SetDespawnType]
 
         [SetBooleansTrue:MSB_Despawn_Use_Simple]
       </Description>
@@ -71,7 +71,8 @@
       <Description>
         [RivalAI TriggerGroup]
 
-
+		[Triggers:MSB_Cargoship_Trigger_Surrender]
+		[Triggers:MSB_Cargoship_Trigger_TargetIsApproaching]
       </Description>
     </EntityComponent>
 
@@ -105,7 +106,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Cargoship - ReturnToSpeed]
+        [//DebugMessage:Cargoship - ReturnToSpeed]
 
         [OverwriteAutopilotProfile:true]
         [OverwriteAutopilotMode:Primary]
@@ -147,7 +148,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Cargoship - ReturnToDespawn]
+        [//DebugMessage:Cargoship - ReturnToDespawn]
 
         [OverwriteAutopilotProfile:true]
         [OverwriteAutopilotMode:Primary]
@@ -186,7 +187,6 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Cargoship - PlayerTooClose]
 
         [ChangeReputationWithPlayers:true]
         [ReputationChangeFactions:{Self}]

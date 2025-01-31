@@ -179,7 +179,7 @@
 
         [SetBooleansTrue:SpawnEncounters]
 
-        [DebugMessage:Deploying troops]
+        [//DebugMessage:Deploying troops]
       </Description>
     </EntityComponent>
 

@@ -49,7 +49,7 @@
       <Description>
         [MES AI Action]
 
-        [DebugMessage:Cargoship - CargoCompromised]
+        [//DebugMessage:Cargoship - CargoCompromised]
 
         [PlayDialogueCue:true]
         [DialogueCueId:Cargoship_CargoCompromised]

@@ -199,7 +199,7 @@
         [TargetDistance:1500]
 
         [MaxActions:-1]
-        [Actions:MSB_Common_Trigger_RoleToCombat]
+        [Actions:MSB_Common_Action_RoleToCombat]
       </Description>
     </EntityComponent>
 
@@ -219,7 +219,7 @@
         [TargetDistance:2000]
 
         [MaxActions:-1]
-        [Actions:MSB_Common_Trigger_CombatToRole]
+        [Actions:MSB_Common_Action_CombatToRole]
       </Description>
     </EntityComponent>
 

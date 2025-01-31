@@ -62,7 +62,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Fighter - TargetUnderGround]
+        [//DebugMessage:Fighter - TargetUnderGround]
 
         [OverwriteAutopilotProfile:true]
         [OverwriteAutopilotMode:Secondary]
@@ -126,7 +126,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:ResetAutopilot]
+        [//DebugMessage:ResetAutopilot]
 
         [OverwriteAutopilotProfile:true]
         [OverwriteAutopilotMode:Secondary]

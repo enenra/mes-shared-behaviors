@@ -29,7 +29,8 @@
 
         [Triggers:MSB_MoraleSystem_Trigger_ShipDisabled]
 
-
+MSB_TriggerEvent_LowMorale
+MSB_TriggerEvent_LowMorale
 
 	  -->
 
@@ -323,12 +324,14 @@
       </Id>
       <Description>
         [RivalAI Action]
-        [DebugMessage:Very Low Morale]
 
         [ChangeTargetProfile:true]
         [NewTargetProfileId:MSB_TargetProfile_ShortRange]
         [RefreshTarget:true]
-
+		
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_VeryLowMorale]
+        [ForceManualTriggerActivation:false]
       </Description>
     </EntityComponent>
 
@@ -365,13 +368,17 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Low Morale]
+
 
         [ChangeTargetProfile:true]
         [NewTargetProfileId:MSB_TargetProfile_LowRange]
         [RefreshTarget:true]
 
-
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_LowMorale]
+        [ForceManualTriggerActivation:false]
+		
+		
       </Description>
     </EntityComponent>
 

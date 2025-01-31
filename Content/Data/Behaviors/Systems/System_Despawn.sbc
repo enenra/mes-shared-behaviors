@@ -63,7 +63,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Despawn - StartDespawnSimple]
+        [//DebugMessage:Despawn - StartDespawnSimple]
 
         [Retreat:true]
 
@@ -123,7 +123,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Despawn - Request_ClosestFactionStatic]
+        [//DebugMessage:Despawn - Request_ClosestFactionStatic]
 
         [BroadcastCommandProfiles:true]
         [CommandProfileIds:MSB_Despawn_Command_Request_ClosestFactionStatic]
@@ -185,7 +185,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Despawn - FlyToClosestFactionStatic]
+        [//DebugMessage:Despawn - FlyToClosestFactionStatic]
 
         [ChangeAutopilotProfile:true]
         [AutopilotProfile:Tertiary]
@@ -241,7 +241,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Despawn - Reset]
+        [//DebugMessage:Despawn - Reset]
 
         [ChangeAutopilotProfile:true]
         [AutopilotProfile:Primary]

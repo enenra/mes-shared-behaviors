@@ -4,8 +4,12 @@
 
     <!--
     TODO:
-    * Switch logic so that MSB_SpawnDistance CustomCounter defines the load / unload distance.
+    * Switch logic so that MSB_SpawnDistance CustomCounter defines the load / unload distance. 
     * If MSB_SpawnDistance is 0, disable loading / unloading - normal random static encounter.
+	
+	-The above is possible, but maybe to complex. I made something my self that works for AaW -CptArthur
+	
+	
     -->
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">

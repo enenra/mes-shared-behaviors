@@ -454,7 +454,7 @@ after 8 seconds it will try to link up with its leader again.
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:OffensiveEscort - No Target, Switch to Escort, grouping up with leader]
+        [//DebugMessage:OffensiveEscort - No Target, Switch to Escort, grouping up with leader]
 
       </Description>
     </EntityComponent>
@@ -493,7 +493,7 @@ after 8 seconds it will try to link up with its leader again.
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:OffensiveEscort - No Target, my leader is inactive. I am going away]
+        [//DebugMessage:OffensiveEscort - No Target, my leader is inactive. I am going away]
 
         [SetBooleansTrue:MSB_Despawn]
 

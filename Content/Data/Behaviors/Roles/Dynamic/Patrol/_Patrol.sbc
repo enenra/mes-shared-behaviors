@@ -45,7 +45,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Patrol - SetDespawnType]
+        [//DebugMessage:Patrol - SetDespawnType]
 
         [SetBooleansTrue:MSB_Despawn_Use_Simple]
       </Description>
@@ -109,7 +109,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Patrol - SwitchToRole]
+        [//DebugMessage:Patrol - SwitchToRole]
 
         [ChangeBehaviorSubclass:true]
         [NewBehaviorSubclass:Cargoship]
@@ -150,7 +150,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Patrol - HasTarget]
+        [//DebugMessage:Patrol - HasTarget]
 
         [EnableTriggers:true]
         [EnableTriggerNames:MSB_Patrol_Trigger_HasTarget]
@@ -191,7 +191,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Patrol - Despawn]
+        [//DebugMessage:Patrol - Despawn]
 
         [SetBooleansTrue:MSB_Despawn]
       </Description>

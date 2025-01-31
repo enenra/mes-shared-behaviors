@@ -164,7 +164,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Patrol - NoTarget]
+        [//DebugMessage:Patrol - NoTarget]
 
         [SetBooleansTrue:MSB_NoTarget]
 
@@ -198,7 +198,7 @@
         [MinCooldownMs:60000]
         [MaxCooldownMs:90000]
 
-        [Actions:MSB_Common_Trigger_CombatToRole]
+        [Actions:MSB_Common_Action_CombatToRole]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">

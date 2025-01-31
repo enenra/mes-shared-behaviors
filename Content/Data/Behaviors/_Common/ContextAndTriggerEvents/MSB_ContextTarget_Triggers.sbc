@@ -244,7 +244,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:ShipEvent TargetGettingAway]
+        [//DebugMessage:ShipEvent TargetGettingAway]
 
         [SetBooleansFalse:TargetHasBeenClose]
 

@@ -106,7 +106,7 @@ Not in use
         [AddWaypoints:true]
         [WaypointsToAdd:MSB_Merchant_ClosestPlayerWaypointProfile]
 
-        [DebugMessage:Merchant is trying to	VisitPlayerBase]
+        [//DebugMessage:Merchant is trying to	VisitPlayerBase]
       </Description>
     </EntityComponent>
 
@@ -136,7 +136,7 @@ Not in use
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Merchant is trying to land]
+        [//DebugMessage:Merchant is trying to land]
 
         [ChangeAutopilotProfile:true]
         [AutopilotProfile:Tertiary]
@@ -194,7 +194,7 @@ Not in use
         [StopAllRotation:true]
         [StopAllThrust:true]
 
-        [DebugMessage:Arrived ready to trade]
+        [//DebugMessage:Arrived ready to trade]
       </Description>
     </EntityComponent>
 
@@ -223,7 +223,7 @@ Not in use
       <Description>
         [MES AI Action]
 
-        [DebugMessage:Arrived At PlayerBase]
+        [//DebugMessage:Arrived At PlayerBase]
       </Description>
     </EntityComponent>
 

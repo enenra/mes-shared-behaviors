@@ -185,6 +185,7 @@ NPCDamge ->
 
         [Actions:MSB_ContextDamage_Action_IncreaseCountPlayerDamage]
         [Actions:MSB_ContextDamage_Action_IncreaseUnderFireCount]
+		[Actions:MSB_ContextDamage_Action_DamageByHostile]
       </Description>
     </EntityComponent>
 
@@ -238,7 +239,19 @@ NPCDamge ->
     </EntityComponent>
 
 
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_ContextDamage_Action_DamageByHostile</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
 
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_DamageByHostile]
+        [ForceManualTriggerActivation:false]
+      </Description>
+    </EntityComponent>
 
 
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -506,7 +519,7 @@ Mmh we will need to evaluate if the cooldown makes sense.
 
         [RivalAI Action]
 
-        [DebugMessage:TriggerEvent UnderFireHealthLow]
+        [//DebugMessage:TriggerEvent UnderFireHealthLow]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_UnderFireHealthLow]
@@ -550,7 +563,7 @@ Mmh we will need to evaluate if the cooldown makes sense.
 
         [RivalAI Action]
 
-        [DebugMessage:TriggerEvent UnderFireLostWeapons]
+        [//DebugMessage:TriggerEvent UnderFireLostWeapons]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_UnderFireLostWeapons]
@@ -634,7 +647,7 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
 
         [RivalAI Action]
 
-        [DebugMessage:TriggerEvent UnderFireGoingDown]
+        [//DebugMessage:TriggerEvent UnderFireGoingDown]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_UnderFireGoingDown]
@@ -721,7 +734,7 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
 
         [RivalAI Action]
 
-        [DebugMessage:TriggerEvent UnderFireGoingDown HighAlittude]
+        [//DebugMessage:TriggerEvent UnderFireGoingDown HighAlittude]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_UnderFireGoingDown]

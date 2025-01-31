@@ -56,12 +56,14 @@
 		
 
         [Triggers:MSB_CrashSystem_Trigger_GoingDown]
-        [Triggers:MSB_CrashSystem_Trigger_UnderFireGoingDown_LowAltitude]
         [Triggers:MSB_CrashSystem_Trigger_UnderFireGoingDown_HighAltitude]
+        [Triggers:MSB_CrashSystem_Trigger_ForceCrash]
+
         [Triggers:MSB_CrashSystem_Trigger_BeforeSlowSpeedImpact]
         [Triggers:MSB_CrashSystem_Trigger_BeforeHighSpeedImpact]
-		[Triggers:MSB_CrashSystem_Trigger_AfterHighSpeedImpact]
+        [Triggers:MSB_CrashSystem_Trigger_AfterHighSpeedImpact]
 
+        [Triggers:MSB_DisabledSystem_Trigger_CooldownStart]
         [Triggers:MSB_DisabledSystem_Trigger_GoingDown]
 
         [Triggers:MSB_MoraleSystem_Trigger_CombatDecay]
@@ -75,7 +77,7 @@
         [Triggers:MSB_TerminateSystem_Trigger_Start]
         [Triggers:MSB_TerminateSystem_Trigger_Terminate]
 		
-		
+		[Triggers:MSB_HealthSystem_Trigger_HasAntennaForBroadcast]
 		
         [Triggers:MSB_PKLSystem_Trigger_InPKL]
 
@@ -123,6 +125,11 @@
         [Triggers:MSB_Common_Trigger_DamageByFriendly]
         [Triggers:MSB_Common_Trigger_DamageByFriendly_Cue]
         [Triggers:MSB_Common_Trigger_UnderFireHealthLow]
+
+        [Triggers:MSB_Common_Trigger_EnemyDestroyedPlayerHelped]
+        [Triggers:MSB_Common_Trigger_EnemyDestroyedPlayerMadeFinalShot]
+        [Triggers:MSB_Common_Trigger_FriendlyDestroyedPlayerMadeFinalShot]
+
 
 
       </Description>

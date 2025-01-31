@@ -19,6 +19,11 @@
         [Triggers:MSB_Common_Trigger_DamageByNeutral_Cue]
         [Triggers:MSB_Common_Trigger_DamageByFriendly]
         [Triggers:MSB_Common_Trigger_DamageByFriendly_Cue]
+		
+		
+        [Triggers:MSB_Common_Trigger_EnemyDestroyedPlayerHelped]
+        [Triggers:MSB_Common_Trigger_EnemyDestroyedPlayerMadeFinalShot]
+        [Triggers:MSB_Common_Trigger_FriendlyDestroyedPlayerMadeFinalShot]
 
 
 
@@ -297,12 +302,144 @@
     </EntityComponent>
 
 
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Common_Trigger_EnemyDestroyedPlayerHelped</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:CommandReceived]
+        [CommandReceiveCode:MSB_EnemyDestroyedPlayerHelped]
+        [Conditions:MSB_HealthSystem_Condition_HasAntennaForBroadcast]
+        
+        [StartsReady:true]
+		    [MinCooldownMs:20000]
+        [MaxCooldownMs:20001]
+		
+        [MaxActions:-1]
+        [Actions:MSB_Common_Action_EnemyDestroyedPlayerHelped]
+      </Description>
+
+    </EntityComponent>		
+
+	
+	
+
+	
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Common_Action_EnemyDestroyedPlayerHelped</SubtypeId>
+      </Id>
+      <Description>
+
+		[RivalAI Action]
+
+        [PlayDialogueCue:true]
+        [DialogueCueId:MSB_Common_EnemyDestroyedPlayerHelped]
+		
+        [ChangeReputationWithPlayers:true]
+        [ReputationChangeRadius:2000]
+        [ReputationChangeFactions:{Self}]
+        [ReputationChangeAmount:25]
+        [ReputationChangesForAllRadiusPlayerFactionMembers:true]
+		
+      </Description>
+    </EntityComponent>
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Common_Trigger_EnemyDestroyedPlayerMadeFinalShot</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:CommandReceived]
+        [CommandReceiveCode:MSB_EnemyDestroyedPlayerMadeFinalShot]
+		[Conditions:MSB_HealthSystem_Condition_HasAntennaForBroadcast]
+        [StartsReady:true]
+		[MinCooldownMs:20000]
+        [MaxCooldownMs:20001]
+		
+        [MaxActions:-1]
+        [Actions:MSB_Common_Action_EnemyDestroyedPlayerMadeFinalShot]
+      </Description>
+
+    </EntityComponent>		
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Common_Action_EnemyDestroyedPlayerMadeFinalShot</SubtypeId>
+      </Id>
+      <Description>
+
+		[RivalAI Action]
+
+        [PlayDialogueCue:true]
+        [DialogueCueId:MSB_Common_EnemyDestroyedPlayerMadeFinalShot]
+		
+        [ChangeReputationWithPlayers:true]
+        [ReputationChangeRadius:2000]
+        [ReputationChangeFactions:{Self}]
+        [ReputationChangeAmount:50]
+        [ReputationChangesForAllRadiusPlayerFactionMembers:true]
+		
+      </Description>
+    </EntityComponent>
 
 
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Common_Trigger_FriendlyDestroyedPlayerMadeFinalShot</SubtypeId>
+      </Id>
+      <Description>
 
+        [RivalAI Trigger]
 
+        [UseTrigger:true]
+        [Type:CommandReceived]
+        [CommandReceiveCode:MSB_{FactionTag}DestroyedPlayerMadeFinalShot]
+		[Conditions:MSB_HealthSystem_Condition_HasAntennaForBroadcast]
+        [StartsReady:true]
+		[MinCooldownMs:20000]
+        [MaxCooldownMs:20001]
+		
+        [MaxActions:-1]
+        [Actions:MSB_Common_Action_FriendlyDestroyedPlayerMadeFinalShot]
+      </Description>
 
+    </EntityComponent>		
+	
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Common_Action_FriendlyDestroyedPlayerMadeFinalShot</SubtypeId>
+      </Id>
+      <Description>
 
+		[RivalAI Action]
+
+        [PlayDialogueCue:true]
+        [DialogueCueId:MSB_Common_FriendlyDestroyedPlayerMadeFinalShot]
+		
+        [ChangeReputationWithPlayers:true]
+        [ReputationChangeRadius:2000]
+        [ReputationChangeFactions:{Self}]
+        [ReputationChangeAmount:-50]
+        [ReputationChangesForAllRadiusPlayerFactionMembers:true]
+		
+      </Description>
+    </EntityComponent>
 
 
 

@@ -15,15 +15,18 @@
       *
 
         [Triggers:MSB_CrashSystem_Trigger_GoingDown]
-        [Triggers:MSB_CrashSystem_Trigger_UnderFireGoingDown_LowAltitude]
-        [Triggers:MSB_CrashSystem_Trigger_UnderFireGoingDown_HighAltitude
+        [Triggers:MSB_CrashSystem_Trigger_ForceCrash]
+
+        [Triggers:MSB_CrashSystem_Trigger_UnderFireGoingDown_HighAltitude]
+
+
         [Triggers:MSB_CrashSystem_Trigger_BeforeSlowSpeedImpact]
         [Triggers:MSB_CrashSystem_Trigger_BeforeHighSpeedImpact]
         [Triggers:MSB_CrashSystem_Trigger_AfterHighSpeedImpact]
 
     -->
 
-    <!-- LowAltitude -->
+    <!-- Point of no return -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -33,6 +36,8 @@
         [RivalAI Trigger]
 
         [Tags:MSB_TriggerEvent_Disabled]
+        [Tags:MSB_TriggerEvent_UnderFireGoingDown_LowAltitude]
+
 
         [Type:Manual]
         [UseTrigger:true]
@@ -40,13 +45,12 @@
         [MaxActions:1]
 
         [DisableNamedTriggerOnSuccess:MSB_CrashSystem_Trigger_UnderFireGoingDown_HighAltitude]
-        [DisableNamedTriggerOnSuccess:MSB_CrashSystem_Trigger_UnderFireGoingDown_LowAltitude]
-
-
 
         [Actions:MSB_CrashSystem_Action_GoingDown]
       </Description>
     </EntityComponent>
+
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -55,75 +59,12 @@
       <Description>
         [RivalAI Action]
 
-        [DisableAutopilot:true]
-        [StopAllThrust:true]
-        [ChangeInertiaDampeners:true]
-        [InertiaDampenersEnable:false]
-        [RandomGyroRotation:true]
-
-
         [EnableTriggers:true]
-        [EnableTriggerNames:MSB_CrashSystem_Trigger_BeforeHighSpeedImpact]
-        [EnableTriggerNames:MSB_CrashSystem_Trigger_BeforeSlowSpeedImpact]
+        [EnableTriggerNames:MSB_CrashSystem_Trigger_ForceCrash]
 
-      </Description>
-    </EntityComponent>
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB_CrashSystem_Trigger_ForceCrash]
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    <!-- LowAltitude -->
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_CrashSystem_Trigger_UnderFireGoingDown_LowAltitude</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Trigger]
-
-        [Tags:MSB_TriggerEvent_UnderFireGoingDown_LowAltitude]
-
-        [Type:Manual]
-        [UseTrigger:true]
-        [StartsReady:true]
-        [MaxActions:1]
-        [DisableNamedTriggerOnSuccess:MSB_CrashSystem_Trigger_UnderFireGoingDown_HighAltitude]
-        [DisableNamedTriggerOnSuccess:MSB_CrashSystem_Trigger_GoingDown]
-
-
-        [Actions:MSB_CrashSystem_Action_UnderFireGoingDown_LowAltitude]
-      </Description>
-    </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_CrashSystem_Action_UnderFireGoingDown_LowAltitude</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Action]
-
-        [DisableAutopilot:true]
-        [StopAllThrust:true]
-        [ChangeInertiaDampeners:true]
-        [InertiaDampenersEnable:false]
-        [RandomGyroRotation:true]
-
-
-        [EnableTriggers:true]
-        [EnableTriggerNames:MSB_CrashSystem_Trigger_BeforeHighSpeedImpact]
-        [EnableTriggerNames:MSB_CrashSystem_Trigger_BeforeSlowSpeedImpact]
 
       </Description>
     </EntityComponent>
@@ -146,8 +87,61 @@
         [MaxActions:1]
 		
         [Actions:MSB_CrashSystem_Action_UnderFireGoingDown_HighAltitude]
+
+         [DisableNamedTriggerOnSuccess:MSB_CrashSystem_Trigger_GoingDown]
       </Description>
     </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CrashSystem_Action_UnderFireGoingDown_HighAltitude</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [PlayDialogueCue:true]
+        [DialogueCueId:CrashSystem_UnderFireGoingDown_HighAltitude]
+
+        [EnableTriggers:true]		
+        [EnableTriggerNames:MSB_CrashSystem_Trigger_ForceCrash]
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB_CrashSystem_Trigger_ForceCrash]
+
+      </Description>
+    </EntityComponent>
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CrashSystem_Trigger_ForceCrash</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+        [UseTrigger:false]
+        [Type:Timer]
+        [MinCooldownMs:2000]
+        [MaxCooldownMs:3001]
+
+
+
+
+        [StartsReady:false]
+        [//Conditions:MSB_CrashSystem_Condition_ForceCrash]
+
+        [MaxActions:1]
+        [Actions:MSB_CrashSystem_Action_ForceCrash]
+
+
+
+      </Description>
+    </EntityComponent>
+
+
+
     <!--
       I have noticed in some cases 50% of its weight gets blown of meaning that they can survive it. So to fix this I will force it to crash.
 
@@ -157,38 +151,36 @@
         [InertiaDampenersEnable:false]
         [RandomGyroRotation:true]
     -->
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_CrashSystem_Action_UnderFireGoingDown_HighAltitude</SubtypeId>
+        <SubtypeId>MSB_CrashSystem_Action_ForceCrash</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
 
-        [DisableAutopilot:true]
+
+        [DisableAutopilot:false]
         [StopAllThrust:true]
         [ChangeInertiaDampeners:true]
         [InertiaDampenersEnable:false]
         [RandomGyroRotation:true]
 
-
-        [PlayDialogueCue:true]
-        [DialogueCueId:CrashSystem_UnderFireGoingDown_HighAltitude]
-
-
+        [CancelWaitingAtWaypoint:true]
+        [SwitchToNextWaypoint:true]
 
 
         [EnableTriggers:true]
         [EnableTriggerNames:MSB_CrashSystem_Trigger_BeforeHighSpeedImpact]
         [EnableTriggerNames:MSB_CrashSystem_Trigger_BeforeSlowSpeedImpact]
-		
-		[DisableTriggers:true]
-		[DisableTriggerNames:MSB_CrashSystem_Trigger_UnderFireGoingDown_LowAltitude]
-		[DisableTriggerNames:MSB_CrashSystem_Trigger_GoingDown]
-		
-		
+
+
       </Description>
     </EntityComponent>
+
+
+
 
 
     <!-- 
@@ -242,6 +234,8 @@ BeforeSlowSpeedImpact
         [MaxGridVerticalSpeed:50]
       </Description>
     </EntityComponent>
+
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -318,6 +312,7 @@ BeforeSlowSpeedImpact
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_BeforeHighSpeedImpact]
         [ForceManualTriggerActivation:false]
 		
+    [EnableTriggers:true]
 		[EnableTriggerNames:MSB_CrashSystem_Trigger_AfterHighSpeedImpact]
         [ResetCooldownTimeOfTriggers:true]
         [ResetTriggerCooldownNames:MSB_CrashSystem_Trigger_AfterHighSpeedImpact]

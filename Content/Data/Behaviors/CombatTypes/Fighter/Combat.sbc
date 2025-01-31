@@ -93,7 +93,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Target is at a very low altitude, slowing down...]
+
 
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_Fighter_Trigger_LowAltitudeFighting]
@@ -194,7 +194,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Max speed]
+
 
         [DisableTriggers:true]
         [DisableTriggerTags:LowAltitudeFighting]

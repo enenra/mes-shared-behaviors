@@ -14,14 +14,14 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Garrison_TriggerGroup</SubtypeId>
+        <SubtypeId>MSB_Guard_TriggerGroup</SubtypeId>
       </Id>
       <Description>
         [RivalAI TriggerGroup]
 
-        [Triggers:MSB_Garrison_Trigger_OnStart]
-        [Triggers:MSB_Garrison_Trigger_InitRole]
-        [Triggers:MSB_Garrison_Trigger_CloseRole]
+        [Triggers:MSB_Guard_Trigger_OnStart]
+        [Triggers:MSB_Guard_Trigger_InitRole]
+        [Triggers:MSB_Guard_Trigger_CloseRole]
 
       </Description>
     </EntityComponent>
@@ -29,7 +29,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Garrison_TriggerGroup_Complete</SubtypeId>
+        <SubtypeId>MSB_Guard_TriggerGroup_Complete</SubtypeId>
       </Id>
       <Description>
         [RivalAI TriggerGroup]
@@ -43,7 +43,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Garrison_Trigger_InitRole</SubtypeId>
+        <SubtypeId>MSB_Guard_Trigger_InitRole</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -55,13 +55,13 @@
         [StartsReady:false]
 
         [MaxActions:-1]
-        [Actions:MSB_Garrison_Action_InitRole]
+        [Actions:MSB_Guard_Action_InitRole]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Garrison_Action_InitRole</SubtypeId>
+        <SubtypeId>MSB_Guard_Action_InitRole</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
@@ -77,7 +77,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Garrison_Trigger_CloseRole</SubtypeId>
+        <SubtypeId>MSB_Guard_Trigger_CloseRole</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -90,13 +90,13 @@
         [StartsReady:false]
 
         [MaxActions:-1]
-        [Actions:MSB_Garrison_Action_CloseRole]
+        [Actions:MSB_Guard_Action_CloseRole]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Garrison_Action_CloseRole</SubtypeId>
+        <SubtypeId>MSB_Guard_Action_CloseRole</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
@@ -109,7 +109,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Garrison_Trigger_OnStart</SubtypeId>
+        <SubtypeId>MSB_Guard_Trigger_OnStart</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
