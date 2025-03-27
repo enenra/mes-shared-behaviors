@@ -56,6 +56,10 @@
 
         [SetBooleansTrue:PlayerNear]
         [SetBooleansFalse:PlayerFar]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_PlayerNear]
+        [ForceManualTriggerActivation:false]
       </Description>
     </EntityComponent>
 
