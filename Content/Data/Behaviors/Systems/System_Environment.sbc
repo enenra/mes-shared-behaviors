@@ -15,6 +15,10 @@
     MSB_EnvironmentSystem_Trigger_PlayerFar5000: Triggers "Timer - PlayerFar" when player is within 5km.
 
     MSB_EnvironmentSystem_TriggerGroup_SkinReplacement: This will switch dusty / mossy / frozen skinned blocks to whichever is fitting for the surrounding voxels where the encounter spawned. Rusty skin is the fallback.
+
+    MSB_Manipulation_WearAndTear_Light: These apply block damage and change skins to default / wartorn depending on severity chosen.
+    MSB_Manipulation_WearAndTear_Medium
+    MSB_Manipulation_WearAndTear_Heavy
     -->
 
     <!-- IsOnDarkSide -->
@@ -579,6 +583,97 @@
         [DisableTriggerNames:MSB_EnvironmentSystem_Trigger_Dusty]
         [DisableTriggerNames:MSB_EnvironmentSystem_Trigger_Mossy]
         [DisableTriggerNames:MSB_EnvironmentSystem_Trigger_Frozen]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Manipulation_WearAndTear_Light</SubtypeId>
+      </Id>
+      <Description>
+        [MES Manipulation]
+
+        [SkinRandomBlocks:true]
+        [SkinRandomBlocksTextures:(null)]
+        [MinPercentageSkinRandomBlocks:5]
+        [MaxPercentageSkinRandomBlocks:25]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Manipulation_WearAndTear_Medium</SubtypeId>
+      </Id>
+      <Description>
+        [MES Manipulation]
+
+        [SkinRandomBlocks:true]
+        [SkinRandomBlocksTextures:(null)]
+        [SkinRandomBlocksTextures:Wartorn]
+        [MinPercentageSkinRandomBlocks:10]
+        [MaxPercentageSkinRandomBlocks:30]
+
+        [UseGridDereliction:true]
+        [DerelictionProfiles:MSB_Dereliction_WearAndTear_Medium]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Dereliction_WearAndTear_Medium</SubtypeId>
+      </Id>
+      <Description>
+        [MES Dereliction]
+
+        [Blocks:MyObjectBuilder_CubeBlock/(null)]
+        [MatchOnlyTypeId:true]
+
+        [Chance:15]
+
+        [UseSeparatePercentages:true]
+
+        [MinIntegrityPercentage:50]
+        [MaxIntegrityPercentage:100]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Manipulation_WearAndTear_Heavy</SubtypeId>
+      </Id>
+      <Description>
+        [MES Manipulation]
+
+        [SkinRandomBlocks:true]
+        [SkinRandomBlocksTextures:(null)]
+        [SkinRandomBlocksTextures:Wartorn]
+        [MinPercentageSkinRandomBlocks:30]
+        [MaxPercentageSkinRandomBlocks:50]
+
+        [UseGridDereliction:true]
+        [DerelictionProfiles:MSB_Dereliction_WearAndTear_Heavy]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Dereliction_WearAndTear_Heavy</SubtypeId>
+      </Id>
+      <Description>
+        [MES Dereliction]
+
+        [Blocks:MyObjectBuilder_CubeBlock/(null)]
+        [MatchOnlyTypeId:true]
+
+        [Chance:50]
+
+        [UseSeparatePercentages:true]
+
+        [MinIntegrityPercentage:10]
+        [MaxIntegrityPercentage:75]
       </Description>
     </EntityComponent>
 
