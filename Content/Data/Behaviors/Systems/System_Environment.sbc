@@ -606,6 +606,22 @@
         [MaxPercentageSkinRandomBlocks:25]
       </Description>
     </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Manipulation_WearAndTear_Light_Chance</SubtypeId>
+      </Id>
+      <Description>
+        [MES Manipulation]
+
+        [ManipulationChance:90]
+
+        [SkinRandomBlocks:true]
+        [SkinRandomBlocksTextures:(null)]
+        [MinPercentageSkinRandomBlocks:5]
+        [MaxPercentageSkinRandomBlocks:25]
+      </Description>
+    </EntityComponent>
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -614,6 +630,26 @@
       </Id>
       <Description>
         [MES Manipulation]
+
+        [SkinRandomBlocks:true]
+        [SkinRandomBlocksTextures:(null)]
+        [SkinRandomBlocksTextures:Wartorn]
+        [MinPercentageSkinRandomBlocks:10]
+        [MaxPercentageSkinRandomBlocks:30]
+
+        [UseGridDereliction:true]
+        [DerelictionProfiles:MSB_Dereliction_WearAndTear_Medium]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Manipulation_WearAndTear_Medium_Chance</SubtypeId>
+      </Id>
+      <Description>
+        [MES Manipulation]
+
+        [ManipulationChance:50]
 
         [SkinRandomBlocks:true]
         [SkinRandomBlocksTextures:(null)]
@@ -652,6 +688,26 @@
       </Id>
       <Description>
         [MES Manipulation]
+
+        [SkinRandomBlocks:true]
+        [SkinRandomBlocksTextures:(null)]
+        [SkinRandomBlocksTextures:Wartorn]
+        [MinPercentageSkinRandomBlocks:30]
+        [MaxPercentageSkinRandomBlocks:50]
+
+        [UseGridDereliction:true]
+        [DerelictionProfiles:MSB_Dereliction_WearAndTear_Heavy]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Manipulation_WearAndTear_Heavy_Chance</SubtypeId>
+      </Id>
+      <Description>
+        [MES Manipulation]
+
+        [ManipulationChance:15]
 
         [SkinRandomBlocks:true]
         [SkinRandomBlocksTextures:(null)]
