@@ -19,6 +19,11 @@
     MSB_Manipulation_WearAndTear_Light: These apply block damage and change skins to default / wartorn depending on severity chosen.
     MSB_Manipulation_WearAndTear_Medium
     MSB_Manipulation_WearAndTear_Heavy
+
+    These apply block damage, transform blocks to build stages & change skin to rusty / heavyrust depending on severity chosen.
+    MSB_Manipulation_Wrecked_Light: Only skin changes.
+    MSB_Manipulation_Wrecked_Medium: Might still fly, might not.
+    MSB_Manipulation_Wrecked_Heavy: Won't be able to fly.
     -->
 
     <!-- IsOnDarkSide -->
@@ -586,6 +591,7 @@
       </Description>
     </EntityComponent>
 
+    <!-- WearAndTear -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -674,6 +680,297 @@
 
         [MinIntegrityPercentage:10]
         [MaxIntegrityPercentage:75]
+      </Description>
+    </EntityComponent>
+
+    <!-- Wrecked -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Manipulation_Wrecked_Light</SubtypeId>
+      </Id>
+      <Description>
+        [MES Manipulation]
+
+        [SkinRandomBlocks:true]
+        [SkinRandomBlocksTextures:Rusty_Armor]
+        [MinPercentageSkinRandomBlocks:5]
+        [MaxPercentageSkinRandomBlocks:25]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Manipulation_Wrecked_Medium</SubtypeId>
+      </Id>
+      <Description>
+        [MES Manipulation]
+
+        [SkinRandomBlocks:true]
+        [SkinRandomBlocksTextures:Rusty_Armor]
+        [SkinRandomBlocksTextures:Heavy_Rust_Armor]
+        [MinPercentageSkinRandomBlocks:30]
+        [MaxPercentageSkinRandomBlocks:60]
+
+        [UseGridDereliction:true]
+        [DerelictionProfiles:MSB_Dereliction_Wrecked_Medium]
+        [DerelictionProfiles:MSB_Dereliction_Wrecked_Medium_BarelyThere]
+        [DerelictionProfiles:MSB_Dereliction_Wrecked_Medium_MostlyGone]
+        [DerelictionProfiles:MSB_Dereliction_Wrecked_Medium_Damaged]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Dereliction_Wrecked_Medium</SubtypeId>
+      </Id>
+      <Description>
+        [MES Dereliction]
+
+        [Blocks:MyObjectBuilder_CubeBlock/(null)]
+        [MatchOnlyTypeId:true]
+
+        [Chance:25]
+
+        [MinPercentage:50]
+        [MaxPercentage:100]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Dereliction_Wrecked_Medium_BarelyThere</SubtypeId>
+      </Id>
+      <Description>
+        [MES Dereliction]
+
+        [Blocks:MyObjectBuilder_UpgradeModule/DSControlTable]
+        [Blocks:MyObjectBuilder_UpgradeModule/DSControlLarge]
+        [Blocks:MyObjectBuilder_UpgradeModule/DSControlSmall]
+        [Blocks:MyObjectBuilder_UpgradeModule/NPCControlLB]
+        [Blocks:MyObjectBuilder_UpgradeModule/NPCControlSB]
+        [Blocks:MyObjectBuilder_UpgradeModule/NPCEmitterLB]
+        [Blocks:MyObjectBuilder_UpgradeModule/NPCEmitterSB]
+        [Blocks:MyObjectBuilder_OxygenGenerator/DSSupergen]
+        [Blocks:MyObjectBuilder_UpgradeModule/EmitterL]
+        [Blocks:MyObjectBuilder_UpgradeModule/EmitterS]
+        [Blocks:MyObjectBuilder_UpgradeModule/EmitterST]
+        [Blocks:MyObjectBuilder_UpgradeModule/LargeShieldModulator]
+        [Blocks:MyObjectBuilder_UpgradeModule/SmallShieldModulator]
+        [Blocks:MyObjectBuilder_UpgradeModule/LargeEnhancer]
+        [Blocks:MyObjectBuilder_UpgradeModule/SmallEnhancer]
+        [Blocks:MyObjectBuilder_UpgradeModule/EmitterLA]
+        [Blocks:MyObjectBuilder_UpgradeModule/EmitterSA]
+
+        [MatchOnlyTypeId:true]
+
+        [Chance:100]
+
+        [MinPercentage:5]
+        [MaxPercentage:25]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Dereliction_Wrecked_Medium_MostlyGone</SubtypeId>
+      </Id>
+      <Description>
+        [MES Dereliction]
+
+        [Blocks:MyObjectBuilder_JumpDrive/(null)]
+
+        [Blocks:MyObjectBuilder_Reactor/(null)]
+        [Blocks:MyObjectBuilder_HydrogenEngine/(null)]
+
+        [MatchOnlyTypeId:true]
+
+        [Chance:100]
+
+        [MinPercentage:15]
+        [MaxPercentage:50]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Dereliction_Wrecked_Medium_Damaged</SubtypeId>
+      </Id>
+      <Description>
+        [MES Dereliction]
+
+        [Blocks:MyObjectBuilder_Gyro/(null)]
+        [Blocks:MyObjectBuilder_LightingBlock/(null)]
+        [Blocks:MyObjectBuilder_Reflector/(null)]
+        [Blocks:MyObjectBuilder_GravityGenerator/(null)]
+        [Blocks:MyObjectBuilder_LandingGear/(null)]
+
+        [Blocks:MyObjectBuilder_Thrust/GFA_LG_RepulsorSmall]
+        [Blocks:MyObjectBuilder_Thrust/GFA_SG_RepulsorSmall]
+        [Blocks:MyObjectBuilder_Thrust/SmallAtmosphericHoverEngine_LargeBlock]
+        [Blocks:MyObjectBuilder_Thrust/LargeAtmosphericHoverEngine_LargeBlock]
+        [Blocks:MyObjectBuilder_Thrust/SmallAtmosphericHoverEngine_SmallBlock]
+        [Blocks:MyObjectBuilder_Thrust/LargeAtmosphericHoverEngine_SmallBlock]
+
+        [Blocks:MyObjectBuilder_Thrust/(null)]
+        [Blocks:MyObjectBuilder_OreDetector/(null)]
+        [Blocks:MyObjectBuilder_GasTank/(null)]
+        [Blocks:MyObjectBuilder_Door/(null)]
+        [Blocks:MyObjectBuilder_AirtightHangarDoor/(null)]
+        [Blocks:MyObjectBuilder_AirtightSlideDoor/(null)]
+        [Blocks:MyObjectBuilder_Conveyor/(null)]
+        [Blocks:MyObjectBuilder_ConveyorConnector/(null)]
+        [Blocks:MyObjectBuilder_ShipConnector/(null)]
+        [Blocks:MyObjectBuilder_CargoContainer/(null)]
+        [Blocks:MyObjectBuilder_AirVent/(null)]
+        [Blocks:MyObjectBuilder_CryoChamber/(null)]
+        [Blocks:MyObjectBuilder_Cockpit/(null)]
+        [Blocks:MyObjectBuilder_ConveyorSorter/(null)]
+
+        [MatchOnlyTypeId:true]
+
+        [Chance:100]
+
+        [MinPercentage:50]
+        [MaxPercentage:100]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Manipulation_Wrecked_Heavy</SubtypeId>
+      </Id>
+      <Description>
+        [MES Manipulation]
+
+        [SkinRandomBlocks:true]
+        [SkinRandomBlocksTextures:Rusty_Armor]
+        [SkinRandomBlocksTextures:Heavy_Rust_Armor]
+        [MinPercentageSkinRandomBlocks:50]
+        [MaxPercentageSkinRandomBlocks:90]
+
+        [UseGridDereliction:true]
+        [DerelictionProfiles:MSB_Dereliction_Wrecked_Heavy]
+        [DerelictionProfiles:MSB_Dereliction_Wrecked_Heavy_BarelyThere]
+        [DerelictionProfiles:MSB_Dereliction_Wrecked_Heavy_MostlyGone]
+        [DerelictionProfiles:MSB_Dereliction_Wrecked_Heavy_Damaged]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Dereliction_Wrecked_Heavy</SubtypeId>
+      </Id>
+      <Description>
+        [MES Dereliction]
+
+        [Blocks:MyObjectBuilder_CubeBlock/(null)]
+        [MatchOnlyTypeId:true]
+
+        [Chance:65]
+
+        [MinPercentage:10]
+        [MaxPercentage:75]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Dereliction_Wrecked_Heavy_BarelyThere</SubtypeId>
+      </Id>
+      <Description>
+        [MES Dereliction]
+
+        [Blocks:MyObjectBuilder_JumpDrive/(null)]
+
+        [Blocks:MyObjectBuilder_UpgradeModule/DSControlTable]
+        [Blocks:MyObjectBuilder_UpgradeModule/DSControlLarge]
+        [Blocks:MyObjectBuilder_UpgradeModule/DSControlSmall]
+        [Blocks:MyObjectBuilder_UpgradeModule/NPCControlLB]
+        [Blocks:MyObjectBuilder_UpgradeModule/NPCControlSB]
+        [Blocks:MyObjectBuilder_UpgradeModule/NPCEmitterLB]
+        [Blocks:MyObjectBuilder_UpgradeModule/NPCEmitterSB]
+        [Blocks:MyObjectBuilder_OxygenGenerator/DSSupergen]
+        [Blocks:MyObjectBuilder_UpgradeModule/EmitterL]
+        [Blocks:MyObjectBuilder_UpgradeModule/EmitterS]
+        [Blocks:MyObjectBuilder_UpgradeModule/EmitterST]
+        [Blocks:MyObjectBuilder_UpgradeModule/LargeShieldModulator]
+        [Blocks:MyObjectBuilder_UpgradeModule/SmallShieldModulator]
+        [Blocks:MyObjectBuilder_UpgradeModule/LargeEnhancer]
+        [Blocks:MyObjectBuilder_UpgradeModule/SmallEnhancer]
+        [Blocks:MyObjectBuilder_UpgradeModule/EmitterLA]
+        [Blocks:MyObjectBuilder_UpgradeModule/EmitterSA]
+
+        [MatchOnlyTypeId:true]
+
+        [Chance:100]
+
+        [MinPercentage:5]
+        [MaxPercentage:25]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Dereliction_Wrecked_Heavy_MostlyGone</SubtypeId>
+      </Id>
+      <Description>
+        [MES Dereliction]
+
+        [Blocks:MyObjectBuilder_Gyro/(null)]
+        [Blocks:MyObjectBuilder_Reactor/(null)]
+        [Blocks:MyObjectBuilder_LightingBlock/(null)]
+        [Blocks:MyObjectBuilder_Reflector/(null)]
+        [Blocks:MyObjectBuilder_HydrogenEngine/(null)]
+
+        [Blocks:MyObjectBuilder_Thrust/GFA_LG_RepulsorSmall]
+        [Blocks:MyObjectBuilder_Thrust/GFA_SG_RepulsorSmall]
+        [Blocks:MyObjectBuilder_Thrust/SmallAtmosphericHoverEngine_LargeBlock]
+        [Blocks:MyObjectBuilder_Thrust/LargeAtmosphericHoverEngine_LargeBlock]
+        [Blocks:MyObjectBuilder_Thrust/SmallAtmosphericHoverEngine_SmallBlock]
+        [Blocks:MyObjectBuilder_Thrust/LargeAtmosphericHoverEngine_SmallBlock]
+
+        [MatchOnlyTypeId:true]
+
+        [Chance:100]
+
+        [MinPercentage:15]
+        [MaxPercentage:50]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Dereliction_Wrecked_Heavy_Damaged</SubtypeId>
+      </Id>
+      <Description>
+        [MES Dereliction]
+
+        [Blocks:MyObjectBuilder_Thrust/(null)]
+        [Blocks:MyObjectBuilder_OreDetector/(null)]
+        [Blocks:MyObjectBuilder_GasTank/(null)]
+        [Blocks:MyObjectBuilder_Door/(null)]
+        [Blocks:MyObjectBuilder_AirtightHangarDoor/(null)]
+        [Blocks:MyObjectBuilder_AirtightSlideDoor/(null)]
+        [Blocks:MyObjectBuilder_Conveyor/(null)]
+        [Blocks:MyObjectBuilder_ConveyorConnector/(null)]
+        [Blocks:MyObjectBuilder_ShipConnector/(null)]
+        [Blocks:MyObjectBuilder_CargoContainer/(null)]
+        [Blocks:MyObjectBuilder_AirVent/(null)]
+        [Blocks:MyObjectBuilder_GravityGenerator/(null)]
+        [Blocks:MyObjectBuilder_CryoChamber/(null)]
+        [Blocks:MyObjectBuilder_Cockpit/(null)]
+        [Blocks:MyObjectBuilder_LandingGear/(null)]
+        [Blocks:MyObjectBuilder_ConveyorSorter/(null)]
+
+        [MatchOnlyTypeId:true]
+
+        [Chance:100]
+
+        [MinPercentage:35]
+        [MaxPercentage:100]
       </Description>
     </EntityComponent>
 
