@@ -805,6 +805,11 @@
         [Blocks:MyObjectBuilder_Reflector/(null)]
         [Blocks:MyObjectBuilder_GravityGenerator/(null)]
         [Blocks:MyObjectBuilder_LandingGear/(null)]
+        [Blocks:MyObjectBuilder_Assembler/(null)]
+        [Blocks:MyObjectBuilder_OxygenGenerator/(null)]
+        [Blocks:MyObjectBuilder_Refinery/(null)]
+        [Blocks:MyObjectBuilder_SurvivalKit/(null)]
+        [Blocks:MyObjectBuilder_MedicalRoom/(null)]
 
         [Blocks:MyObjectBuilder_Thrust/GFA_LG_RepulsorSmall]
         [Blocks:MyObjectBuilder_Thrust/GFA_SG_RepulsorSmall]
@@ -924,6 +929,11 @@
         [Blocks:MyObjectBuilder_LightingBlock/(null)]
         [Blocks:MyObjectBuilder_Reflector/(null)]
         [Blocks:MyObjectBuilder_HydrogenEngine/(null)]
+        [Blocks:MyObjectBuilder_Assembler/(null)]
+        [Blocks:MyObjectBuilder_OxygenGenerator/(null)]
+        [Blocks:MyObjectBuilder_Refinery/(null)]
+        [Blocks:MyObjectBuilder_SurvivalKit/(null)]
+        [Blocks:MyObjectBuilder_MedicalRoom/(null)]
 
         [Blocks:MyObjectBuilder_Thrust/GFA_LG_RepulsorSmall]
         [Blocks:MyObjectBuilder_Thrust/GFA_SG_RepulsorSmall]
