@@ -41,6 +41,9 @@
       <Description>
         [RivalAI Action]
 
+        [SetBooleansTrue:CombatTypeActive]
+        [SetBooleansFalse:RoleActive]
+
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_CombatType_InitCombatType]
         [ManuallyActivatedTriggerTags:MSB_Role_CloseRole]
@@ -83,6 +86,9 @@
       </Id>
       <Description>
         [RivalAI Action]
+
+        [SetBooleansTrue:RoleActive]
+        [SetBooleansFalse:CombatTypeActive]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_Role_InitRole]
