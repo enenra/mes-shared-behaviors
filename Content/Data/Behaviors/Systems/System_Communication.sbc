@@ -76,9 +76,58 @@
 
         [CommandCode:{Faction}_AllGood]
 
+        [IgnoreAntennaRequirement:true]
+        [IgnoreReceiverAntennaRequirement:true]
         [MatchSenderReceiverOwners:true]
+        [Radius:5000]
 
         [CommandDelayTicks:180]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Communication_Trigger_AllGood_Received</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:CommandReceived]
+        [CommandReceiveCode:{Faction}_AllGood]
+
+        [Conditions:MSB_System_Communication_Condition_AllGood_Received]
+
+        [Actions:MSB_System_Communication_Action_AllGood_Received]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Communication_Condition_AllGood_Received</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [CheckTrueBooleans:true]
+        [TrueBooleans:MSB_RespondingToSOS]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Communication_Action_AllGood_Received</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_AllGood_Received]
+
+        [SetBooleansFalse:MSB_RespondingToSOS]
       </Description>
     </EntityComponent>
 
@@ -246,6 +295,43 @@
 
         [SetBooleansTrue:MSB_RespondingToSOS]
 
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB_System_Communication_Trigger_SOS_Response_Timeout]
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_System_Communication_Trigger_SOS_Response_Timeout]
+      </Description>
+    </EntityComponent>
+
+    <!-- SOS Response Timeout (10min) -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Communication_Trigger_SOS_Response_Timeout</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [MinCooldownMs:600000]
+        [MaxCooldownMs:600001]
+
+        [Actions:MSB_System_Communication_Action_SOS_Response_Timeout]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Communication_Action_SOS_Response_Timeout</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_System_Communication_Trigger_SOS_Response_Timeout]
       </Description>
     </EntityComponent>
 
@@ -288,10 +374,60 @@
 
         [CommandCode:{Faction}_Compromised]
 
+        [IgnoreAntennaRequirement:true]
+        [IgnoreReceiverAntennaRequirement:true]
         [MatchSenderReceiverOwners:true]
-        [SendDamagerEntityId:true]
+        [SendDamagerEntityId:true
+
+        [Radius:2500]]
 
         [CommandDelayTicks:180]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Communication_Trigger_Compromised_Received</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:CommandReceived]
+        [CommandReceiveCode:{Faction}_Compromised]
+
+        [Conditions:MSB_System_Communication_Condition_Compromised_Received]
+
+        [Actions:MSB_System_Communication_Action_Compromised_Received]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Communication_Condition_Compromised_Received</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [CheckTrueBooleans:true]
+        [TrueBooleans:MSB_RespondingToSOS]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Communication_Action_Compromised_Received</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Compromised_Received]
+
+        [SetBooleansFalse:MSB_RespondingToSOS]
       </Description>
     </EntityComponent>
 
