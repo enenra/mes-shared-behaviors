@@ -62,6 +62,7 @@
         [BroadcastCommandProfiles:true]
 
         [CommandProfileIds:MSB_System_Communication_Command_AllGood]
+        [CommandProfileIds:MSB_System_Communication_Command_AllGood_AbortResponse]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -77,7 +78,27 @@
         [IgnoreAntennaRequirement:true]
         [IgnoreReceiverAntennaRequirement:true]
         [MatchSenderReceiverOwners:true]
-        [Radius:5000]
+        [Radius:10000]
+
+        [CommandDelayTicks:180]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Communication_Command_AllGood_AbortResponse</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Command]
+
+        [CommandCode:{Faction}_AllGood_AbortResponse]
+
+        [IgnoreAntennaRequirement:true]
+        [IgnoreReceiverAntennaRequirement:true]
+        [MatchSenderReceiverOwners:true]
+        [SendDamagerEntityId:true]
+
+        [Radius:2500]
 
         [CommandDelayTicks:180]
       </Description>
@@ -92,7 +113,7 @@
         [RivalAI Trigger]
 
         [Type:CommandReceived]
-        [CommandReceiveCode:{Faction}_AllGood]
+        [CommandReceiveCode:{Faction}_AllGood_AbortResponse]
 
         [Conditions:MSB_System_Communication_Condition_AllGood_Received]
 
