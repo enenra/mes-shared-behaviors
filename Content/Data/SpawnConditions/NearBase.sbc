@@ -1,0 +1,122 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_SpawnCondition_NearFriendlyPlayerBase</SubtypeId>
+      </Id>
+      <Description>
+	      [MES Spawn Conditions]
+
+	      [UseThreatLevelCheck:true]
+	      [ThreatLevelCheckRange:2000]
+	      [ThreatScoreGridConfiguration:Static]
+	      [ThreatScoreMinimum:300]
+	      [ThreatIncludeOtherNpcOwners:false]
+
+	      [UsePlayerFactionReputation:true]
+	      [PlayerReputationCheckRadius:4000]
+	      [MinimumReputation:-500]
+	      [MaximumReputation:1500]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_SpawnCondition_NotNearFriendlyPlayerBase</SubtypeId>
+      </Id>
+      <Description>
+	      [MES Spawn Conditions]
+
+	      [UseThreatLevelCheck:true]
+	      [ThreatLevelCheckRange:2000]
+	      [ThreatScoreGridConfiguration:Static]
+	      [ThreatScoreMaximum:300]
+	      [ThreatIncludeOtherNpcOwners:false]
+
+	      [UsePlayerFactionReputation:true]
+	      [PlayerReputationCheckRadius:4000]
+	      [MinimumReputation:-500]
+	      [MaximumReputation:1500]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_SpawnCondition_NearEnemyPlayerBase</SubtypeId>
+      </Id>
+      <Description>
+	      [MES Spawn Conditions]
+
+	      [UseThreatLevelCheck:true]
+	      [ThreatLevelCheckRange:2000]
+	      [ThreatScoreGridConfiguration:Static]
+	      [ThreatScoreMinimum:300]
+	      [ThreatIncludeOtherNpcOwners:false]
+
+	      [UsePlayerFactionReputation:true]
+	      [PlayerReputationCheckRadius:4000]
+	      [MinimumReputation:-1500]
+	      [MaximumReputation:-500]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_SpawnCondition_NotNearEnemyPlayerBase</SubtypeId>
+      </Id>
+      <Description>
+	      [MES Spawn Conditions]
+
+	      [UseThreatLevelCheck:true]
+	      [ThreatLevelCheckRange:2000]
+	      [ThreatScoreGridConfiguration:Static]
+	      [ThreatScoreMaximum:300]
+	      [ThreatIncludeOtherNpcOwners:false]
+
+	      [UsePlayerFactionReputation:true]
+	      [PlayerReputationCheckRadius:4000]
+	      [MinimumReputation:-1500]
+	      [MaximumReputation:-500]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_SpawnCondition_NearBase</SubtypeId>
+      </Id>
+      <Description>
+	      [MES Spawn Conditions]
+
+	      [UseThreatLevelCheck:true]
+	      [ThreatLevelCheckRange:2000]
+	      [ThreatScoreGridConfiguration:Static]
+	      [ThreatScoreMinimum:300]
+	      [ThreatIncludeOtherNpcOwners:true]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_SpawnCondition_NotNearBase</SubtypeId>
+      </Id>
+      <Description>
+	      [MES Spawn Conditions]
+
+	      [UseThreatLevelCheck:true]
+	      [ThreatLevelCheckRange:2000]
+	      [ThreatScoreGridConfiguration:Static]
+	      [ThreatScoreMaximum:300]
+	      [ThreatIncludeOtherNpcOwners:true]
+      </Description>
+    </EntityComponent>
+
+  </EntityComponents>
+</Definitions>
