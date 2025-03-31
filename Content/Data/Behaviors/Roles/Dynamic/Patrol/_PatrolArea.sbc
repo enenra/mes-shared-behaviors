@@ -85,9 +85,6 @@
       <Description>
         [RivalAI Trigger]
 
-        [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Patrol_BackToPatrol]
-
         [Type:Manual]
         [Tags:MSB_Role_InitRole]
 
@@ -104,6 +101,9 @@
       </Id>
       <Description>
         [RivalAI Action]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Patrol_BackToPatrol]
 
         [ChangeBehaviorSubclass:true]
         [NewBehaviorSubclass:Patrol]
