@@ -106,7 +106,7 @@
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Patrol_BackToPatrol]
 
         [ChangeBehaviorSubclass:true]
-        [NewBehaviorSubclass:Patrol]
+        [NewBehaviorSubclass:CargoShip]
 
         [ChangeAutopilotProfile:true]
         [AutopilotProfile:Primary]
