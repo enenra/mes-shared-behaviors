@@ -93,16 +93,14 @@
       <Description>
         [RivalAI Action]
 
-
+        [ChangeAutopilotSpeed:true]
+        [NewAutopilotSpeed:45]
 
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_Fighter_Trigger_LowAltitudeFighting]
 
         [EnableTriggers:true]
         [EnableTriggerTags:LowAltitudeFighting]
-
-        [ChangeAutopilotSpeed:true]
-        [NewAutopilotSpeed:45]
       </Description>
     </EntityComponent>
 
@@ -194,16 +192,14 @@
       <Description>
         [RivalAI Action]
 
-
+        [ChangeAutopilotSpeed:true]
+        [NewAutopilotSpeed:300]
 
         [DisableTriggers:true]
         [DisableTriggerTags:LowAltitudeFighting]
 
         [EnableTriggers:true]
         [EnableTriggerNames:MSB_Fighter_Trigger_LowAltitudeFighting]
-
-        [ChangeAutopilotSpeed:true]
-        [NewAutopilotSpeed:300]
       </Description>
     </EntityComponent>
 
@@ -272,7 +268,6 @@
       </Description>
     </EntityComponent>
 
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -331,7 +326,6 @@
       </Id>
       <Description>
         [RivalAI Action]
-
 
         [Ramming:true]
       </Description>
