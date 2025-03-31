@@ -14,7 +14,6 @@
         [Triggers:MSB_Gunship_Trigger_CloseCombatType]
       </Description>
     </EntityComponent>
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -26,9 +25,7 @@
       </Description>
     </EntityComponent>
 
-
-
-<!-- Start Required stuff -->
+    <!-- Start Required stuff -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -37,18 +34,15 @@
       <Description>
         [RivalAI Trigger]
 
+        [Type:Manual]
         [Tags:MSB_CombatType_InitCombatType]
 
         [UseTrigger:true]
-        [Type:Manual]
-
         [StartsReady:true]
 
-        [MaxActions:-1]
         [Actions:MSB_Gunship_Action_InitCombatType]
       </Description>
     </EntityComponent>
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -56,6 +50,9 @@
       </Id>
       <Description>
         [RivalAI Action]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Gunship_HasTarget]
 
         [ChangeBehaviorSubclass:true]
         [NewBehaviorSubclass:Horsefly]
@@ -73,18 +70,15 @@
       <Description>
         [RivalAI Trigger]
 
+        [Type:Manual]
         [Tags:MSB_CombatType_CloseCombatType]
 
         [UseTrigger:true]
-        [Type:Manual]
-
         [StartsReady:false]
 
-        [MaxActions:-1]
         [Actions:MSB_Gunship_Action_CloseCombatType]
       </Description>
     </EntityComponent>
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -93,12 +87,9 @@
       <Description>
         [RivalAI Action]
 
-
       </Description>
     </EntityComponent>
-<!-- End Required stuff -->
-
-
+    <!-- End Required stuff -->
 
   </EntityComponents>
 </Definitions>
