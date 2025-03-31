@@ -48,20 +48,20 @@
 
 
         [Triggers:MSB_Common_Triggers_Compromised]
-		
-		
+
+
         [Triggers:MSB_Common_Trigger_CombatToRole]
         [Triggers:MSB_Common_Trigger_RoleToCombat]
-		
-		
 
-        [Triggers:MSB_CrashSystem_Trigger_GoingDown]
-        [Triggers:MSB_CrashSystem_Trigger_UnderFireGoingDown_HighAltitude]
-        [Triggers:MSB_CrashSystem_Trigger_ForceCrash]
 
-        [Triggers:MSB_CrashSystem_Trigger_BeforeSlowSpeedImpact]
-        [Triggers:MSB_CrashSystem_Trigger_BeforeHighSpeedImpact]
-        [Triggers:MSB_CrashSystem_Trigger_AfterHighSpeedImpact]
+
+        [Triggers:MSB_System_Crash_Trigger_GoingDown]
+        [Triggers:MSB_System_Crash_Trigger_UnderFireGoingDown_HighAltitude]
+        [Triggers:MSB_System_Crash_Trigger_ForceCrash]
+
+        [Triggers:MSB_System_Crash_Trigger_BeforeSlowSpeedImpact]
+        [Triggers:MSB_System_Crash_Trigger_BeforeHighSpeedImpact]
+        [Triggers:MSB_System_Crash_Trigger_AfterHighSpeedImpact]
 
         [Triggers:MSB_DisabledSystem_Trigger_CooldownStart]
         [Triggers:MSB_DisabledSystem_Trigger_GoingDown]
@@ -76,9 +76,9 @@
 
         [Triggers:MSB_TerminateSystem_Trigger_Start]
         [Triggers:MSB_TerminateSystem_Trigger_Terminate]
-		
+
 		[Triggers:MSB_HealthSystem_Trigger_HasAntennaForBroadcast]
-		
+
         [Triggers:MSB_PKLSystem_Trigger_InPKL]
 
 
@@ -89,7 +89,7 @@
 
 
 		[Triggers:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_CancelTargetClose]
-		[Triggers:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Cancel]	
+		[Triggers:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Cancel]
 		[Triggers:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Easy]
 		[Triggers:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Hard]
 		[Triggers:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Other]
@@ -98,7 +98,7 @@
 
 
 		[Triggers:MSB_DynamicTarget_Trigger_InitialApproachingTarget_CancelTargetClose]
-		[Triggers:MSB_DynamicTarget_Trigger_InitialApproachingTarget_Cancel]	
+		[Triggers:MSB_DynamicTarget_Trigger_InitialApproachingTarget_Cancel]
 		[Triggers:MSB_DynamicTarget_Trigger_InitialApproachingTarget_Easy]
 		[Triggers:MSB_DynamicTarget_Trigger_InitialApproachingTarget_Hard]
 		[Triggers:MSB_DynamicTarget_Trigger_InitialApproachingTarget_Other]
@@ -110,8 +110,8 @@
 		[Triggers:MSB_Common_Trigger_DebugMentionRetreat]
       </Description>
     </EntityComponent>
-	
-	
+
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -133,14 +133,14 @@
 
 
       </Description>
-    </EntityComponent>	
-	
-	
-	
-	
-	
-	
-	
+    </EntityComponent>
+
+
+
+
+
+
+
 
   </EntityComponents>
 </Definitions>
