@@ -18,7 +18,6 @@
         [Triggers:MSB_Context_Trigger_StayHostile]
         [Triggers:MSB_Context_Trigger_Hostile_to_Normal]
 
-
         [Triggers:MSB_Context_Trigger_PlayerNear]
         [Triggers:MSB_Context_Trigger_PlayerFar]
 
@@ -43,12 +42,10 @@
         [Triggers:MSB_ContextTarget_Trigger_TargetHasBeenClose]
         [Triggers:MSB_ContextTarget_Trigger_LostTarget]
         [Triggers:MSB_ContextTarget_Trigger_SwitchTarget]
-		[Triggers:MSB_ContextTarget_TriggerEvent_ApproachingTarget]
-		[Triggers:MSB_ContextTarget_TriggerEvent_TargetIsApproaching]
-
+		    [Triggers:MSB_ContextTarget_TriggerEvent_ApproachingTarget]
+		    [Triggers:MSB_ContextTarget_TriggerEvent_TargetIsApproaching]
 
         [Triggers:MSB_Common_Triggers_Compromised]
-
 
         [Triggers:MSB_Common_Trigger_CombatToRole]
         [Triggers:MSB_Common_Trigger_RoleToCombat]
@@ -67,40 +64,34 @@
         [Triggers:MSB_TerminateSystem_Trigger_Start]
         [Triggers:MSB_TerminateSystem_Trigger_Terminate]
 
-		[Triggers:MSB_HealthSystem_Trigger_HasAntennaForBroadcast]
+		    [Triggers:MSB_HealthSystem_Trigger_HasAntennaForBroadcast]
 
         [Triggers:MSB_PKLSystem_Trigger_InPKL]
 
+        [Triggers:MSB_DynamicTarget_Trigger_TargetAcquiredFirstTime]
 
-		[Triggers:MSB_DynamicTarget_Trigger_TargetAcquiredFirstTime]
+        [Triggers:MSB_DynamicTarget_Trigger_InitialApproachingTarget_Start]
+        [Triggers:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Start]
 
-		[Triggers:MSB_DynamicTarget_Trigger_InitialApproachingTarget_Start]
-		[Triggers:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Start]
+        [Triggers:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_CancelTargetClose]
+        [Triggers:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Cancel]
+        [Triggers:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Easy]
+        [Triggers:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Hard]
+        [Triggers:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Other]
+        [Triggers:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_AutoDisable]
 
+        [Triggers:MSB_DynamicTarget_Trigger_InitialApproachingTarget_CancelTargetClose]
+        [Triggers:MSB_DynamicTarget_Trigger_InitialApproachingTarget_Cancel]
+        [Triggers:MSB_DynamicTarget_Trigger_InitialApproachingTarget_Easy]
+        [Triggers:MSB_DynamicTarget_Trigger_InitialApproachingTarget_Hard]
+        [Triggers:MSB_DynamicTarget_Trigger_InitialApproachingTarget_Other]
+        [Triggers:MSB_DynamicTarget_Trigger_InitialApproachingTarget_AutoDisable]
 
-		[Triggers:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_CancelTargetClose]
-		[Triggers:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Cancel]
-		[Triggers:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Easy]
-		[Triggers:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Hard]
-		[Triggers:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Other]
-		[Triggers:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_AutoDisable]
-
-
-
-		[Triggers:MSB_DynamicTarget_Trigger_InitialApproachingTarget_CancelTargetClose]
-		[Triggers:MSB_DynamicTarget_Trigger_InitialApproachingTarget_Cancel]
-		[Triggers:MSB_DynamicTarget_Trigger_InitialApproachingTarget_Easy]
-		[Triggers:MSB_DynamicTarget_Trigger_InitialApproachingTarget_Hard]
-		[Triggers:MSB_DynamicTarget_Trigger_InitialApproachingTarget_Other]
-		[Triggers:MSB_DynamicTarget_Trigger_InitialApproachingTarget_AutoDisable]
-
-
-		[Triggers:MSB_Common_Triggers_MaxRange]
-		[Triggers:MSB_Common_Trigger_MSBAliveCheck]
-		[Triggers:MSB_Common_Trigger_DebugMentionRetreat]
+        [Triggers:MSB_Common_Triggers_MaxRange]
+        [Triggers:MSB_Common_Trigger_MSBAliveCheck]
+        [Triggers:MSB_Common_Trigger_DebugMentionRetreat]
       </Description>
     </EntityComponent>
-
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -119,18 +110,8 @@
         [Triggers:MSB_Common_Trigger_EnemyDestroyedPlayerHelped]
         [Triggers:MSB_Common_Trigger_EnemyDestroyedPlayerMadeFinalShot]
         [Triggers:MSB_Common_Trigger_FriendlyDestroyedPlayerMadeFinalShot]
-
-
-
       </Description>
     </EntityComponent>
-
-
-
-
-
-
-
 
   </EntityComponents>
 </Definitions>
