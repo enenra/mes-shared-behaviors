@@ -55,14 +55,14 @@
       <Description>
         [RivalAI TriggerGroup]
 
+        [Triggers:MSB_Cargoship_Trigger_InitRole]
+        [Triggers:MSB_Cargoship_Trigger_CloseRole]
+
         [Triggers:MSB_Cargoship_Trigger_ReturnToSpeed]
         [Triggers:MSB_Cargoship_Trigger_ReturnToDespawn]
-
         [Triggers:MSB_Cargoship_Trigger_PlayerTooClose]
       </Description>
     </EntityComponent>
-
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -71,12 +71,74 @@
       <Description>
         [RivalAI TriggerGroup]
 
-		[Triggers:MSB_Cargoship_Trigger_Surrender]
-		[Triggers:MSB_Cargoship_Trigger_TargetIsApproaching]
+        [Triggers:MSB_Cargoship_Trigger_Surrender]
+        [Triggers:MSB_Cargoship_Trigger_TargetIsApproaching]
       </Description>
     </EntityComponent>
 
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Cargoship_Trigger_InitRole</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
 
+        [Type:Manual]
+        [Tags:MSB_Role_InitRole]
+
+        [UseTrigger:true]
+        [StartsReady:false]
+
+        [Actions:MSB_Cargoship_Action_InitRole]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Cargoship_Action_InitRole</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Cargoship_BackToCourse]
+
+        [ChangeBehaviorSubclass:true]
+        [NewBehaviorSubclass:CargoShip]
+
+        [ChangeAutopilotProfile:true]
+        [AutopilotProfile:Primary]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Cargoship_Trigger_CloseRole</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Manual]
+        [Tags:MSB_Role_CloseRole]
+
+        [UseTrigger:true]
+        [StartsReady:false]
+
+        [Actions:MSB_Cargoship_Action_CloseRole]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Cargoship_Action_CloseRole</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+      </Description>
+    </EntityComponent>
 
     <!-- ReturnToSpeed -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -87,9 +149,9 @@
       <Description>
         [RivalAI Trigger]
 
-        [UseTrigger:true]
         [Type:Timer]
 
+        [UseTrigger:true]
         [StartsReady:true]
 
         [MinCooldownMs:60000]
@@ -186,7 +248,6 @@
       </Id>
       <Description>
         [RivalAI Action]
-
 
         [ChangeReputationWithPlayers:true]
         [ReputationChangeFactions:{Self}]
