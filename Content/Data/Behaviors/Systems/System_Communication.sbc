@@ -220,7 +220,6 @@
     </EntityComponent>
 
     <!-- Receive SOS -->
-    <!-- TODO: -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -265,6 +264,7 @@
       </Description>
     </EntityComponent>
 
+    <!-- TODO: Finish dynamic response. -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -301,6 +301,8 @@
         [EnableTriggerNames:MSB_System_Communication_Trigger_SOS_Response_Timeout]
       </Description>
     </EntityComponent>
+
+    <!-- TODO: Write Static response. -->
 
     <!-- SOS Response Timeout (10min) -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
