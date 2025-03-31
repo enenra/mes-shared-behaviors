@@ -75,7 +75,7 @@
         [RivalAI Action]
 
         [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Fighter_HasTarget]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Fighter_InitCombatType]
 
         [ChangeBehaviorSubclass:true]
         [NewBehaviorSubclass:Strike]

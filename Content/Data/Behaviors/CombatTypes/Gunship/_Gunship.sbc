@@ -52,7 +52,7 @@
         [RivalAI Action]
 
         [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Gunship_HasTarget]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Gunship_InitCombatType]
 
         [ChangeBehaviorSubclass:true]
         [NewBehaviorSubclass:Horsefly]

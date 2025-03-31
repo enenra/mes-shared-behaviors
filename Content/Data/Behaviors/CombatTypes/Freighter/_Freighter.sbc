@@ -52,7 +52,7 @@
         [RivalAI Action]
 
         [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Freighter_HasTarget]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Freighter_InitCombatType]
 
         [ChangeBehaviorSubclass:true]
         [NewBehaviorSubclass:Horsefly]
