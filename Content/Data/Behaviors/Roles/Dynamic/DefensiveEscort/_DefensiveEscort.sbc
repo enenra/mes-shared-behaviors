@@ -17,8 +17,6 @@
         [Triggers:MSB_DefensiveEscort_Trigger_TargetfarSwitchEscort]
       </Description>
     </EntityComponent>
-	
-	
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -27,47 +25,39 @@
       <Description>
         [RivalAI TriggerGroup]
 
-
       </Description>
-    </EntityComponent>	
-	
-	
-	
+    </EntityComponent>
+
     <!--
         [Triggers:MSB_DefensiveEscort_Trigger_InitRole]
         [Triggers:MSB_DefensiveEscort_Trigger_CloseRole]
         [Triggers:MSB_DefensiveEscort_Trigger_RequestEscortSlot]
         [Triggers:MSB_DefensiveEscort_Trigger_AggressionSwitchEscort]
         [Triggers:MSB_DefensiveEscort_Trigger_TargetfarSwitchEscort]
+    -->
 
- -->
-
-
-<!-- Start Required stuff -->
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <!-- Start Required stuff -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_DefensiveEscort_Trigger_InitRole</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DefensiveEscort_Trigger_InitRole</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
+
+        [Type:Manual]
         [Tags:MSB_Role_InitRole]
 
         [UseTrigger:true]
-        [Type:Manual]
-
         [StartsReady:false]
 
-        [MaxActions:-1]
         [Actions:MSB_DefensiveEscort_Action_InitRole]
       </Description>
-
     </EntityComponent>
-
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_DefensiveEscort_Action_InitRole</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DefensiveEscort_Action_InitRole</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
@@ -80,14 +70,13 @@
 
         [EnableTriggers:true]
         [EnableTriggerNames:MSB_DefensiveEscort_Trigger_AggressionSwitchEscort]
-		
 
         [ChangeAutopilotProfile:true]
         [AutopilotProfile:Primary]
       </Description>
     </EntityComponent>
 
-   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_DefensiveEscort_Trigger_CloseRole</SubtypeId>
@@ -95,18 +84,15 @@
       <Description>
         [RivalAI Trigger]
 
+        [Type:Manual]
         [Tags:MSB_Role_CloseRole]
 
         [UseTrigger:true]
-        [Type:Manual]
-
         [StartsReady:false]
 
-        [MaxActions:-1]
         [Actions:MSB_DefensiveEscort_Action_CloseRole]
       </Description>
     </EntityComponent>
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -115,20 +101,14 @@
       <Description>
         [RivalAI Action]
 
-
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_DefensiveEscort_Trigger_AggressionSwitchEscort]
 
         [EnableTriggers:true]
         [EnableTriggerNames:MSB_DefensiveEscort_Trigger_TargetfarSwitchEscort]
-	
-		
       </Description>
     </EntityComponent>
-<!-- End Required stuff -->
-
-
-
+    <!-- End Required stuff -->
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -180,8 +160,6 @@
       </Description>
     </EntityComponent>
 
-
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -191,18 +169,16 @@
         [RivalAI Trigger]
 
         [Type:TargetNear]
-		[Tags:MSB_RoleToCombat_Triggers]
-	
+		    [Tags:MSB_RoleToCombat_Triggers]
+
         [UseTrigger:true]
         [StartsReady:true]
 
         [TargetDistance:1500]
 
-        [MaxActions:-1]
         [Actions:MSB_Common_Action_RoleToCombat]
       </Description>
     </EntityComponent>
-
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -211,24 +187,18 @@
       </Id>
       <Description>
         [RivalAI Trigger]
-		[Tags:MSB_CombatToRole_Trigger]
+
         [Type:TargetFar]
+		    [Tags:MSB_CombatToRole_Trigger]
+
         [UseTrigger:false]
         [StartsReady:true]
 
         [TargetDistance:2000]
 
-        [MaxActions:-1]
         [Actions:MSB_Common_Action_CombatToRole]
       </Description>
     </EntityComponent>
-
-
-
-
-
-
-
 
   </EntityComponents>
 </Definitions>
