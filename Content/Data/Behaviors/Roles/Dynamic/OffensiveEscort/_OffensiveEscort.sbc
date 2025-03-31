@@ -12,12 +12,10 @@
 
         [Triggers:MSB_OffensiveEscort_Trigger_InitRole]
         [Triggers:MSB_OffensiveEscort_Trigger_CloseRole]
-        [Triggers:MSB_OffensiveEscort_Trigger_RequestEscortSlot]
 
         [Triggers:MSB_OffensiveEscort_Trigger_TargetClose]
         [Triggers:MSB_OffensiveEscort_Trigger_TargetInFront]
 
-        [Triggers:MSB_OffensiveEscort_Trigger_LeaderDead]
         [Triggers:MSB_OffensiveEscort_Trigger_LinkUpWithLeader]
         [Triggers:MSB_OffensiveEscort_Trigger_NoTargetSwitchToEscort]
         [Triggers:MSB_OffensiveEscort_Trigger_NoTarget_LeaderInactive]
@@ -31,6 +29,8 @@
       <Description>
         [RivalAI TriggerGroup]
 
+        [Triggers:MSB_OffensiveEscort_Trigger_RequestEscortSlot]
+        [Triggers:MSB_OffensiveEscort_Trigger_LeaderDead]
       </Description>
     </EntityComponent>
 
