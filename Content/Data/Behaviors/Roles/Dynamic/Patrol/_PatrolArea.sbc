@@ -35,7 +35,7 @@
         [TriggerGroups:MSB_DynamicCommon_TriggerGroup]
         [TriggerGroups:MSB_Fighter_TriggerGroup]
         [TriggerGroups:MSB_PatrolArea_TriggerGroup]
-        [TriggerGroups:MSB_CommSystem_TriggerGroup]
+        [TriggerGroups:MSB_System_Communication_TriggerGroup]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
