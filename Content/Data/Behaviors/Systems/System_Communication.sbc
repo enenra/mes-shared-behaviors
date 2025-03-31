@@ -10,10 +10,12 @@
 
     Contents:
       * AllGood: Battle has ended / enemy has left.
-      * YellowAlert: Enemy is near.
-      * RedAlert: Battle has started.
       * SOS: Requesting backup.
       * Compromised: Encounter disabled.
+
+    Usage:
+      * Trigger MSB_TriggerEvent_SendSOS to force SOS.
+      * Listen to MSB_TriggerEvent_SOS to send dialogue.
 
     TODO:
       * Implement SOS (specifically the triggers for when to run it)
@@ -29,8 +31,6 @@
         [RivalAI TriggerGroup]
 
         [Triggers:MSB_System_Communication_Trigger_AllGood]
-        [Triggers:MSB_System_Communication_Trigger_YellowAlert]
-        [Triggers:MSB_System_Communication_Trigger_RedAlert]
         [Triggers:MSB_System_Communication_Trigger_SOS]
         [Triggers:MSB_System_Communication_Trigger_Compromised]
       </Description>
@@ -82,99 +82,6 @@
       </Description>
     </EntityComponent>
 
-    <!-- YellowAlert -->
-    <!-- TODO: Implement MSB_TriggerEvent_EnemyClose -->
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_System_Communication_Trigger_YellowAlert</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Trigger]
-
-        [Type:Manual]
-        [Tags:MSB_TriggerEvent_EnemyClose]
-
-        [MaxActions:-1]
-        [Actions:MSB_System_Communication_Action_YellowAlert]
-      </Description>
-    </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_System_Communication_Action_YellowAlert</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Action]
-
-        [BroadcastCommandProfiles:true]
-
-        [CommandProfileIds:MSB_System_Communication_Command_YellowAlert]
-      </Description>
-    </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_System_Communication_Command_YellowAlert</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Command]
-
-        [CommandCode:{Faction}_YellowAlert]
-
-        [MatchSenderReceiverOwners:true]
-        [SendTargetEntityId:true]
-
-        [CommandDelayTicks:180]
-      </Description>
-    </EntityComponent>
-
-    <!-- RedAlert -->
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_System_Communication_Trigger_RedAlert</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Trigger]
-
-        [Type:Manual]
-        [Tags:MSB_TriggerEvent_InitDynamicBattle]
-
-        [MaxActions:-1]
-        [Actions:MSB_System_Communication_Action_RedAlert]
-      </Description>
-    </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_System_Communication_Action_RedAlert</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Action]
-
-        [BroadcastCommandProfiles:true]
-
-        [CommandProfileIds:MSB_System_Communication_Command_RedAlert]
-      </Description>
-    </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_System_Communication_Command_RedAlert</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Command]
-
-        [CommandCode:{Faction}_RedAlert]
-
-        [MatchSenderReceiverOwners:true]
-        [SendTargetEntityId:true]
-
-        [CommandDelayTicks:180]
-      </Description>
-    </EntityComponent>
-
     <!-- SOS -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -213,7 +120,6 @@
         [Actions:MSB_System_Communication_Action_SOS]
       </Description>
     </EntityComponent>
-    <!-- TODO: Figure out proper conditions for this. -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -236,6 +142,9 @@
       </Id>
       <Description>
         [RivalAI Action]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_SOS]
 
         [BroadcastCommandProfiles:true]
 
