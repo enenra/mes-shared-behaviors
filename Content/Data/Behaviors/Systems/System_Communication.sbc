@@ -15,10 +15,8 @@
 
     Usage:
       * Trigger MSB_TriggerEvent_SendSOS to force SOS.
-      * Listen to MSB_TriggerEvent_SOS to send dialogue.
-
-    TODO:
-      * Implement SOS (specifically the triggers for when to run it)
+      * Define [OverrideTargetData:MSB_TargetProfile_LongRange] in behavior
+      * Reference dynamic / static
 
     -->
 
@@ -364,6 +362,7 @@
         [BroadcastCommandProfiles:true]
 
         [CommandProfileIds:MSB_System_Communication_Command_Compromised]
+        [CommandProfileIds:MSB_System_Communication_Command_Compromised_AbortResponse]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -376,12 +375,28 @@
 
         [CommandCode:{Faction}_Compromised]
 
+        [MatchSenderReceiverOwners:true]
+        [SendDamagerEntityId:true]
+
+        [CommandDelayTicks:180]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Communication_Command_Compromised_AbortResponse</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Command]
+
+        [CommandCode:{Faction}_Compromised_AbortResponse]
+
         [IgnoreAntennaRequirement:true]
         [IgnoreReceiverAntennaRequirement:true]
         [MatchSenderReceiverOwners:true]
-        [SendDamagerEntityId:true
+        [SendDamagerEntityId:true]
 
-        [Radius:2500]]
+        [Radius:2500]
 
         [CommandDelayTicks:180]
       </Description>
@@ -396,7 +411,7 @@
         [RivalAI Trigger]
 
         [Type:CommandReceived]
-        [CommandReceiveCode:{Faction}_Compromised]
+        [CommandReceiveCode:{Faction}_Compromised_AbortResponse]
 
         [Conditions:MSB_System_Communication_Condition_Compromised_Received]
 
