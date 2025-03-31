@@ -53,16 +53,6 @@
         [Triggers:MSB_Common_Trigger_CombatToRole]
         [Triggers:MSB_Common_Trigger_RoleToCombat]
 
-
-
-        [Triggers:MSB_System_Crash_Trigger_GoingDown]
-        [Triggers:MSB_System_Crash_Trigger_UnderFireGoingDown_HighAltitude]
-        [Triggers:MSB_System_Crash_Trigger_ForceCrash]
-
-        [Triggers:MSB_System_Crash_Trigger_BeforeSlowSpeedImpact]
-        [Triggers:MSB_System_Crash_Trigger_BeforeHighSpeedImpact]
-        [Triggers:MSB_System_Crash_Trigger_AfterHighSpeedImpact]
-
         [Triggers:MSB_DisabledSystem_Trigger_CooldownStart]
         [Triggers:MSB_DisabledSystem_Trigger_GoingDown]
 
