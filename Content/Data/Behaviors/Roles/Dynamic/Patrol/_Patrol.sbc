@@ -60,14 +60,12 @@
       <Description>
         [RivalAI TriggerGroup]
 
-        [Triggers:MSB_Patrol_Trigger_SwitchToRole]
-        [Triggers:MSB_Patrol_Trigger_HasTarget]
+        [Triggers:MSB_Patrol_Trigger_InitRole]
+        [Triggers:MSB_Patrol_Trigger_CloseRole]
 
         [Triggers:MSB_Patrol_Trigger_Despawn]
       </Description>
     </EntityComponent>
-
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -79,88 +77,64 @@
       </Description>
     </EntityComponent>
 
-
-
-    <!-- SwitchToRole -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Patrol_Trigger_SwitchToRole</SubtypeId>
+        <SubtypeId>MSB_Patrol_Trigger_InitRole</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
 
-        [Tags:MSB_Role_SwitchToRole]
+        [Type:Manual]
+        [Tags:MSB_Role_InitRole]
 
         [UseTrigger:true]
-        [Type:Manual]
-
         [StartsReady:false]
 
-        [MaxActions:-1]
-        [Actions:MSB_Patrol_Action_SwitchToRole]
+        [Actions:MSB_Patrol_Action_InitRole]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Patrol_Action_SwitchToRole</SubtypeId>
+        <SubtypeId>MSB_Patrol_Action_InitRole</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
 
-        [//DebugMessage:Patrol - SwitchToRole]
-
         [ChangeBehaviorSubclass:true]
-        [NewBehaviorSubclass:Cargoship]
+        [NewBehaviorSubclass:Patrol]
 
         [ChangeAutopilotProfile:true]
         [AutopilotProfile:Primary]
-
-        [RefreshTarget:true]
-
-        [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_SwitchToPatrol]
       </Description>
     </EntityComponent>
 
-    <!-- HasTarget - Encounter has detected a valid target -> Switch to CombatType -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Patrol_Trigger_HasTarget</SubtypeId>
+        <SubtypeId>MSB_Patrol_Trigger_CloseRole</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
 
-        [Type:HasTarget]
+        [Type:Manual]
+        [Tags:MSB_Role_CloseRole]
 
         [UseTrigger:true]
-        [StartsReady:true]
+        [StartsReady:false]
 
-        [MaxActions:-1]
-        [Actions:MSB_Patrol_Action_HasTarget]
+        [Actions:MSB_Patrol_Action_CloseRole]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Patrol_Action_HasTarget</SubtypeId>
+        <SubtypeId>MSB_Patrol_Action_CloseRole</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
 
-        [//DebugMessage:Patrol - HasTarget]
-
-        [EnableTriggers:true]
-        [EnableTriggerNames:MSB_Patrol_Trigger_HasTarget]
-
-        [SetBooleansFalse:MSB_NoTarget]
-        [SetBooleansFalse:MSB_Despawn]
-
-        [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:MSB_CombatType_SwitchToCombatType]
-        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_HasTarget]
       </Description>
     </EntityComponent>
 
