@@ -103,7 +103,7 @@
         [RivalAI Action]
 
         [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Patrol_BackToPatrol]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Patrol_SwitchToPatrol]
 
         [ChangeBehaviorSubclass:true]
         [NewBehaviorSubclass:CargoShip]
