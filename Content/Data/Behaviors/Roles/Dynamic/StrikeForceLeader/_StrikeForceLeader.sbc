@@ -11,6 +11,8 @@
 
         [RivalAI TriggerGroup]
 
+        [Triggers:MSB_StrikeForceLeader_Trigger_Setup]
+
 	[Triggers:MSB_StikeForceLeader_Trigger_OnStart]
 	[Triggers:MSB_StikeForceLeader_Trigger_InitRole]
 	[Triggers:MSB_StikeForceLeader_Trigger_CloseRole]
@@ -33,11 +35,41 @@
       </Description>
     </EntityComponent>
 
+    <!-- Setup -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_StrikeForceLeader_Trigger_Setup</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [MaxActions:1]
+        [Actions:MSB_StrikeForceLeader_Action_Setup]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_StrikeForceLeader_Action_Setup</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [SetBooleansTrue:MSB_Role_StrikeForceLeader]
+      </Description>
+    </EntityComponent>
+
 
 
   <!-- RequestEscortSlot
 
-		
+
         [Triggers:MSB_StikeForceLeader_Trigger_OnStart]
         [Triggers:MSB_StikeForceLeader_Trigger_InitRole]
         [Triggers:MSB_StikeForceLeader_Trigger_CloseRole]

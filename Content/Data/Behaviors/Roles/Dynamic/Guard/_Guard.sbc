@@ -5,7 +5,7 @@
 
 <!--
 		To do:
-		
+
 		* Switch to patrol if no target nearby.
 
 -->
@@ -18,6 +18,8 @@
       </Id>
       <Description>
         [RivalAI TriggerGroup]
+
+        [Triggers:MSB_Guard_Trigger_Setup]
 
         [Triggers:MSB_Guard_Trigger_OnStart]
         [Triggers:MSB_Guard_Trigger_InitRole]
@@ -34,6 +36,36 @@
       <Description>
         [RivalAI TriggerGroup]
 
+      </Description>
+    </EntityComponent>
+
+    <!-- Setup -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Guard_Trigger_Setup</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [MaxActions:1]
+        [Actions:MSB_Guard_Action_Setup]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Guard_Action_Setup</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [SetBooleansTrue:MSB_Role_Guard]
       </Description>
     </EntityComponent>
 
