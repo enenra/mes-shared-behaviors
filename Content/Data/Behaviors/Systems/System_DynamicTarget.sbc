@@ -8,24 +8,24 @@
 
       There are not used in escort for example.
 
-        [Triggers:MSB_DynamicTarget_Trigger_TargetAcquiredFirstTime]
+        [Triggers:MSB_System_DynamicTarget_Trigger_TargetAcquiredFirstTime]
 
-        [Triggers:MSB_DynamicTarget_Trigger_InitialApproachingTarget_Start]
-        [Triggers:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Start]
+        [Triggers:MSB_System_DynamicTarget_Trigger_InitialApproachingTarget_Start]
+        [Triggers:MSB_System_DynamicTarget_Trigger_InitialTargetIsApproaching_Start]
 
-        [Triggers:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_CancelTargetClose]
-        [Triggers:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Cancel]
-        [Triggers:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Easy]
-        [Triggers:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Hard]
-        [Triggers:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Other]
-        [Triggers:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_AutoDisable]
+        [Triggers:MSB_System_DynamicTarget_Trigger_InitialTargetIsApproaching_CancelTargetClose]
+        [Triggers:MSB_System_DynamicTarget_Trigger_InitialTargetIsApproaching_Cancel]
+        [Triggers:MSB_System_DynamicTarget_Trigger_InitialTargetIsApproaching_Easy]
+        [Triggers:MSB_System_DynamicTarget_Trigger_InitialTargetIsApproaching_Hard]
+        [Triggers:MSB_System_DynamicTarget_Trigger_InitialTargetIsApproaching_Other]
+        [Triggers:MSB_System_DynamicTarget_Trigger_InitialTargetIsApproaching_AutoDisable]
 
-        [Triggers:MSB_DynamicTarget_Trigger_InitialApproachingTarget_CancelTargetClose]
-        [Triggers:MSB_DynamicTarget_Trigger_InitialApproachingTarget_Cancel]
-        [Triggers:MSB_DynamicTarget_Trigger_InitialApproachingTarget_Easy]
-        [Triggers:MSB_DynamicTarget_Trigger_InitialApproachingTarget_Hard]
-        [Triggers:MSB_DynamicTarget_Trigger_InitialApproachingTarget_Other]
-        [Triggers:MSB_DynamicTarget_Trigger_InitialApproachingTarget_AutoDisable]
+        [Triggers:MSB_System_DynamicTarget_Trigger_InitialApproachingTarget_CancelTargetClose]
+        [Triggers:MSB_System_DynamicTarget_Trigger_InitialApproachingTarget_Cancel]
+        [Triggers:MSB_System_DynamicTarget_Trigger_InitialApproachingTarget_Easy]
+        [Triggers:MSB_System_DynamicTarget_Trigger_InitialApproachingTarget_Hard]
+        [Triggers:MSB_System_DynamicTarget_Trigger_InitialApproachingTarget_Other]
+        [Triggers:MSB_System_DynamicTarget_Trigger_InitialApproachingTarget_AutoDisable]
 
       -MSB_TriggerEvent_InitialTargetIsApproaching_Easy
       -MSB_TriggerEvent_InitialTargetIsApproaching_Hard
@@ -39,7 +39,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DynamicTarget_Trigger_TargetAcquiredFirstTime</SubtypeId>
+        <SubtypeId>MSB_System_DynamicTarget_Trigger_TargetAcquiredFirstTime</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -50,16 +50,16 @@
         [UseTrigger:true]
         [StartsReady:true]
 
-        [Conditions:MSB_DynamicTarget_Condition_TargetAcquiredFirstTime]
+        [Conditions:MSB_System_DynamicTarget_Condition_TargetAcquiredFirstTime]
 
         [MaxActions:1]
-        [Actions:MSB_DynamicTarget_Action_TargetAcquiredFirstTime]
+        [Actions:MSB_System_DynamicTarget_Action_TargetAcquiredFirstTime]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DynamicTarget_Condition_TargetAcquiredFirstTime</SubtypeId>
+        <SubtypeId>MSB_System_DynamicTarget_Condition_TargetAcquiredFirstTime</SubtypeId>
       </Id>
       <Description>
         [RivalAI Condition]
@@ -79,18 +79,18 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DynamicTarget_Action_TargetAcquiredFirstTime</SubtypeId>
+        <SubtypeId>MSB_System_DynamicTarget_Action_TargetAcquiredFirstTime</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
 
         [EnableTriggers:true]
-        [EnableTriggerIds:MSB_DynamicTarget_Trigger_InitialApproachingTarget_Start]
-        [EnableTriggerIds:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Start]
+        [EnableTriggerIds:MSB_System_DynamicTarget_Trigger_InitialApproachingTarget_Start]
+        [EnableTriggerIds:MSB_System_DynamicTarget_Trigger_InitialTargetIsApproaching_Start]
 
         [ResetCooldownTimeOfTriggers:true]
-        [ResetTriggerCooldownIds:MSB_DynamicTarget_Trigger_InitialApproachingTarget_Start]
-        [ResetTriggerCooldownIds:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Start]
+        [ResetTriggerCooldownIds:MSB_System_DynamicTarget_Trigger_InitialApproachingTarget_Start]
+        [ResetTriggerCooldownIds:MSB_System_DynamicTarget_Trigger_InitialTargetIsApproaching_Start]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_TargetAcquiredFirstTime]
@@ -101,7 +101,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DynamicTarget_Trigger_InitialApproachingTarget_Start</SubtypeId>
+        <SubtypeId>MSB_System_DynamicTarget_Trigger_InitialApproachingTarget_Start</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -112,20 +112,20 @@
         [UseTrigger:false]
         [StartsReady:false]
 
-        [Conditions:MSB_DynamicTarget_Condition_InitialApproachingTarget_Start]
+        [Conditions:MSB_System_DynamicTarget_Condition_InitialApproachingTarget_Start]
         [ConditionCheckResetsTimer:true]
 
         [MinCooldownMs:1000]
         [MaxCooldownMs:4001]
 
         [MaxActions:1]
-        [Actions:MSB_DynamicTarget_Action_InitialApproachingTarget_Start]
+        [Actions:MSB_System_DynamicTarget_Action_InitialApproachingTarget_Start]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DynamicTarget_Condition_InitialApproachingTarget_Start</SubtypeId>
+        <SubtypeId>MSB_System_DynamicTarget_Condition_InitialApproachingTarget_Start</SubtypeId>
       </Id>
       <Description>
         [RivalAI Condition]
@@ -140,7 +140,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DynamicTarget_Action_InitialApproachingTarget_Start</SubtypeId>
+        <SubtypeId>MSB_System_DynamicTarget_Action_InitialApproachingTarget_Start</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
@@ -152,15 +152,15 @@
         [ResetTriggerCooldownTags:InitialApproachingTarget]
 
         [DisableTriggers:true]
-        [DisableTriggerNames:MSB_DynamicTarget_Trigger_InitialApproachingTarget_Start]
-        [DisableTriggerNames:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Start]
+        [DisableTriggerNames:MSB_System_DynamicTarget_Trigger_InitialApproachingTarget_Start]
+        [DisableTriggerNames:MSB_System_DynamicTarget_Trigger_InitialTargetIsApproaching_Start]
       </Description>
     </EntityComponent>
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Start</SubtypeId>
+        <SubtypeId>MSB_System_DynamicTarget_Trigger_InitialTargetIsApproaching_Start</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -171,19 +171,19 @@
         [UseTrigger:false]
         [StartsReady:false]
 
-        [Conditions:MSB_DynamicTarget_Condition_InitialTargetIsApproaching_Start]
+        [Conditions:MSB_System_DynamicTarget_Condition_InitialTargetIsApproaching_Start]
         [ConditionCheckResetsTimer:true]
         [MinCooldownMs:1000]
         [MaxCooldownMs:4001]
 
         [MaxActions:1]
-        [Actions:MSB_DynamicTarget_Action_InitialTargetIsApproaching_Start]
+        [Actions:MSB_System_DynamicTarget_Action_InitialTargetIsApproaching_Start]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DynamicTarget_Condition_InitialTargetIsApproaching_Start</SubtypeId>
+        <SubtypeId>MSB_System_DynamicTarget_Condition_InitialTargetIsApproaching_Start</SubtypeId>
       </Id>
       <Description>
         [RivalAI Condition]
@@ -207,7 +207,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DynamicTarget_Action_InitialTargetIsApproaching_Start</SubtypeId>
+        <SubtypeId>MSB_System_DynamicTarget_Action_InitialTargetIsApproaching_Start</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
@@ -218,8 +218,8 @@
         [ResetTriggerCooldownTags:InitialTargetIsApproaching]
 
         [DisableTriggers:true]
-        [DisableTriggerNames:MSB_DynamicTarget_Trigger_InitialApproachingTarget_Start]
-        [DisableTriggerNames:MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Start]
+        [DisableTriggerNames:MSB_System_DynamicTarget_Trigger_InitialApproachingTarget_Start]
+        [DisableTriggerNames:MSB_System_DynamicTarget_Trigger_InitialTargetIsApproaching_Start]
       </Description>
     </EntityComponent>
 
@@ -229,7 +229,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_CancelTargetClose</SubtypeId>
+        <SubtypeId>MSB_System_DynamicTarget_Trigger_InitialTargetIsApproaching_CancelTargetClose</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -245,13 +245,13 @@
         [MaxCooldownMs:401]
 
         [MaxActions:1]
-        [Actions:MSB_DynamicTarget_Action_InitialTargetIsApproaching_CancelTargetClose]
+        [Actions:MSB_System_DynamicTarget_Action_InitialTargetIsApproaching_CancelTargetClose]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DynamicTarget_Action_InitialTargetIsApproaching_CancelTargetClose</SubtypeId>
+        <SubtypeId>MSB_System_DynamicTarget_Action_InitialTargetIsApproaching_CancelTargetClose</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
@@ -265,7 +265,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Cancel</SubtypeId>
+        <SubtypeId>MSB_System_DynamicTarget_Trigger_InitialTargetIsApproaching_Cancel</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -278,16 +278,16 @@
         [StartsReady:false]
         [Tags:InitialTargetIsApproaching]
 
-        [Conditions:MSB_DynamicTarget_Condition_InitialTargetIsApproaching_Cancel]
+        [Conditions:MSB_System_DynamicTarget_Condition_InitialTargetIsApproaching_Cancel]
 
         [MaxActions:1]
-        [Actions:MSB_DynamicTarget_Action_InitialTargetIsApproaching_Cancel]
+        [Actions:MSB_System_DynamicTarget_Action_InitialTargetIsApproaching_Cancel]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DynamicTarget_Condition_InitialTargetIsApproaching_Cancel</SubtypeId>
+        <SubtypeId>MSB_System_DynamicTarget_Condition_InitialTargetIsApproaching_Cancel</SubtypeId>
       </Id>
       <Description>
         [RivalAI Condition]
@@ -304,7 +304,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DynamicTarget_Action_InitialTargetIsApproaching_Cancel</SubtypeId>
+        <SubtypeId>MSB_System_DynamicTarget_Action_InitialTargetIsApproaching_Cancel</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
@@ -324,7 +324,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Easy</SubtypeId>
+        <SubtypeId>MSB_System_DynamicTarget_Trigger_InitialTargetIsApproaching_Easy</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -339,17 +339,17 @@
         [MinCooldownMs:2000]
         [MaxCooldownMs:2001]
 
-        [Conditions:MSB_DynamicTarget_Condition_InitialTargetIsApproaching_Easy]
+        [Conditions:MSB_System_DynamicTarget_Condition_InitialTargetIsApproaching_Easy]
         [ConditionCheckResetsTimer:true]
 
         [MaxActions:1]
-        [Actions:MSB_DynamicTarget_Action_InitialTargetIsApproaching_Easy]
+        [Actions:MSB_System_DynamicTarget_Action_InitialTargetIsApproaching_Easy]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DynamicTarget_Condition_InitialTargetIsApproaching_Easy</SubtypeId>
+        <SubtypeId>MSB_System_DynamicTarget_Condition_InitialTargetIsApproaching_Easy</SubtypeId>
       </Id>
       <Description>
         [RivalAI Condition]
@@ -378,7 +378,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DynamicTarget_Action_InitialTargetIsApproaching_Easy</SubtypeId>
+        <SubtypeId>MSB_System_DynamicTarget_Action_InitialTargetIsApproaching_Easy</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
@@ -396,7 +396,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Hard</SubtypeId>
+        <SubtypeId>MSB_System_DynamicTarget_Trigger_InitialTargetIsApproaching_Hard</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -411,17 +411,17 @@
         [MinCooldownMs:3000]
         [MaxCooldownMs:3001]
 
-        [Conditions:MSB_DynamicTarget_Condition_InitialTargetIsApproaching_Hard]
+        [Conditions:MSB_System_DynamicTarget_Condition_InitialTargetIsApproaching_Hard]
         [ConditionCheckResetsTimer:true]
 
         [MaxActions:-1]
-        [Actions:MSB_DynamicTarget_Action_InitialTargetIsApproaching_Hard]
+        [Actions:MSB_System_DynamicTarget_Action_InitialTargetIsApproaching_Hard]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DynamicTarget_Condition_InitialTargetIsApproaching_Hard</SubtypeId>
+        <SubtypeId>MSB_System_DynamicTarget_Condition_InitialTargetIsApproaching_Hard</SubtypeId>
       </Id>
       <Description>
         [RivalAI Condition]
@@ -450,7 +450,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DynamicTarget_Action_InitialTargetIsApproaching_Hard</SubtypeId>
+        <SubtypeId>MSB_System_DynamicTarget_Action_InitialTargetIsApproaching_Hard</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
@@ -468,7 +468,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_Other</SubtypeId>
+        <SubtypeId>MSB_System_DynamicTarget_Trigger_InitialTargetIsApproaching_Other</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -482,17 +482,17 @@
         [MinCooldownMs:4000]
         [MaxCooldownMs:4001]
 
-        [Conditions:MSB_DynamicTarget_Condition_InitialTargetIsApproaching_Other]
+        [Conditions:MSB_System_DynamicTarget_Condition_InitialTargetIsApproaching_Other]
         [ConditionCheckResetsTimer:false]
 
         [MaxActions:-1]
-        [Actions:MSB_DynamicTarget_Action_InitialTargetIsApproaching_Other]
+        [Actions:MSB_System_DynamicTarget_Action_InitialTargetIsApproaching_Other]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DynamicTarget_Condition_InitialTargetIsApproaching_Other</SubtypeId>
+        <SubtypeId>MSB_System_DynamicTarget_Condition_InitialTargetIsApproaching_Other</SubtypeId>
       </Id>
       <Description>
         [RivalAI Condition]
@@ -513,7 +513,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DynamicTarget_Action_InitialTargetIsApproaching_Other</SubtypeId>
+        <SubtypeId>MSB_System_DynamicTarget_Action_InitialTargetIsApproaching_Other</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
@@ -531,7 +531,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DynamicTarget_Trigger_InitialTargetIsApproaching_AutoDisable</SubtypeId>
+        <SubtypeId>MSB_System_DynamicTarget_Trigger_InitialTargetIsApproaching_AutoDisable</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -546,13 +546,13 @@
         [Tags:InitialTargetIsApproaching]
 
         [MaxActions:1]
-        [Actions:MSB_DynamicTarget_Action_InitialTargetIsApproaching_AutoDisable]
+        [Actions:MSB_System_DynamicTarget_Action_InitialTargetIsApproaching_AutoDisable]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DynamicTarget_Action_InitialTargetIsApproaching_AutoDisable</SubtypeId>
+        <SubtypeId>MSB_System_DynamicTarget_Action_InitialTargetIsApproaching_AutoDisable</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
@@ -568,7 +568,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DynamicTarget_Trigger_InitialApproachingTarget_CancelTargetClose</SubtypeId>
+        <SubtypeId>MSB_System_DynamicTarget_Trigger_InitialApproachingTarget_CancelTargetClose</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -584,13 +584,13 @@
         [MaxCooldownMs:401]
 
         [MaxActions:1]
-        [Actions:MSB_DynamicTarget_Action_InitialApproachingTarget_CancelTargetClose]
+        [Actions:MSB_System_DynamicTarget_Action_InitialApproachingTarget_CancelTargetClose]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DynamicTarget_Action_InitialApproachingTarget_CancelTargetClose</SubtypeId>
+        <SubtypeId>MSB_System_DynamicTarget_Action_InitialApproachingTarget_CancelTargetClose</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
@@ -604,7 +604,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DynamicTarget_Trigger_InitialApproachingTarget_Cancel</SubtypeId>
+        <SubtypeId>MSB_System_DynamicTarget_Trigger_InitialApproachingTarget_Cancel</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -618,16 +618,16 @@
         [StartsReady:false]
         [Tags:InitialApproachingTarget]
 
-        [Conditions:MSB_DynamicTarget_Condition_InitialApproachingTarget_Cancel]
+        [Conditions:MSB_System_DynamicTarget_Condition_InitialApproachingTarget_Cancel]
 
         [MaxActions:1]
-        [Actions:MSB_DynamicTarget_Action_InitialApproachingTarget_Cancel]
+        [Actions:MSB_System_DynamicTarget_Action_InitialApproachingTarget_Cancel]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DynamicTarget_Condition_InitialApproachingTarget_Cancel</SubtypeId>
+        <SubtypeId>MSB_System_DynamicTarget_Condition_InitialApproachingTarget_Cancel</SubtypeId>
       </Id>
       <Description>
         [RivalAI Condition]
@@ -643,7 +643,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DynamicTarget_Action_InitialApproachingTarget_Cancel</SubtypeId>
+        <SubtypeId>MSB_System_DynamicTarget_Action_InitialApproachingTarget_Cancel</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
@@ -657,7 +657,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DynamicTarget_Trigger_InitialApproachingTarget_Easy</SubtypeId>
+        <SubtypeId>MSB_System_DynamicTarget_Trigger_InitialApproachingTarget_Easy</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -672,17 +672,17 @@
         [MinCooldownMs:2000]
         [MaxCooldownMs:2001]
 
-        [Conditions:MSB_DynamicTarget_Condition_InitialApproachingTarget_Easy]
+        [Conditions:MSB_System_DynamicTarget_Condition_InitialApproachingTarget_Easy]
         [ConditionCheckResetsTimer:true]
 
         [MaxActions:1]
-        [Actions:MSB_DynamicTarget_Action_InitialApproachingTarget_Easy]
+        [Actions:MSB_System_DynamicTarget_Action_InitialApproachingTarget_Easy]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DynamicTarget_Condition_InitialApproachingTarget_Easy</SubtypeId>
+        <SubtypeId>MSB_System_DynamicTarget_Condition_InitialApproachingTarget_Easy</SubtypeId>
       </Id>
       <Description>
         [RivalAI Condition]
@@ -711,7 +711,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DynamicTarget_Action_InitialApproachingTarget_Easy</SubtypeId>
+        <SubtypeId>MSB_System_DynamicTarget_Action_InitialApproachingTarget_Easy</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
@@ -729,7 +729,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DynamicTarget_Trigger_InitialApproachingTarget_Hard</SubtypeId>
+        <SubtypeId>MSB_System_DynamicTarget_Trigger_InitialApproachingTarget_Hard</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -744,17 +744,17 @@
         [MinCooldownMs:3000]
         [MaxCooldownMs:3001]
 
-        [Conditions:MSB_DynamicTarget_Condition_InitialApproachingTarget_Hard]
+        [Conditions:MSB_System_DynamicTarget_Condition_InitialApproachingTarget_Hard]
         [ConditionCheckResetsTimer:true]
 
         [MaxActions:-1]
-        [Actions:MSB_DynamicTarget_Action_InitialApproachingTarget_Hard]
+        [Actions:MSB_System_DynamicTarget_Action_InitialApproachingTarget_Hard]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DynamicTarget_Condition_InitialApproachingTarget_Hard</SubtypeId>
+        <SubtypeId>MSB_System_DynamicTarget_Condition_InitialApproachingTarget_Hard</SubtypeId>
       </Id>
       <Description>
         [RivalAI Condition]
@@ -783,7 +783,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DynamicTarget_Action_InitialApproachingTarget_Hard</SubtypeId>
+        <SubtypeId>MSB_System_DynamicTarget_Action_InitialApproachingTarget_Hard</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
@@ -801,7 +801,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DynamicTarget_Trigger_InitialApproachingTarget_Other</SubtypeId>
+        <SubtypeId>MSB_System_DynamicTarget_Trigger_InitialApproachingTarget_Other</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -816,17 +816,17 @@
         [MinCooldownMs:4000]
         [MaxCooldownMs:4001]
 
-        [Conditions:MSB_DynamicTarget_Condition_InitialApproachingTarget_Other]
+        [Conditions:MSB_System_DynamicTarget_Condition_InitialApproachingTarget_Other]
         [ConditionCheckResetsTimer:false]
 
         [MaxActions:-1]
-        [Actions:MSB_DynamicTarget_Action_InitialApproachingTarget_Other]
+        [Actions:MSB_System_DynamicTarget_Action_InitialApproachingTarget_Other]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DynamicTarget_Condition_InitialApproachingTarget_Other</SubtypeId>
+        <SubtypeId>MSB_System_DynamicTarget_Condition_InitialApproachingTarget_Other</SubtypeId>
       </Id>
       <Description>
         [RivalAI Condition]
@@ -847,7 +847,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DynamicTarget_Action_InitialApproachingTarget_Other</SubtypeId>
+        <SubtypeId>MSB_System_DynamicTarget_Action_InitialApproachingTarget_Other</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
@@ -865,7 +865,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DynamicTarget_Trigger_InitialApproachingTarget_AutoDisable</SubtypeId>
+        <SubtypeId>MSB_System_DynamicTarget_Trigger_InitialApproachingTarget_AutoDisable</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -880,13 +880,13 @@
         [Tags:InitialApproachingTarget]
 
         [MaxActions:1]
-        [Actions:MSB_DynamicTarget_Action_InitialApproachingTarget_AutoDisable]
+        [Actions:MSB_System_DynamicTarget_Action_InitialApproachingTarget_AutoDisable]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DynamicTarget_Action_InitialApproachingTarget_AutoDisable</SubtypeId>
+        <SubtypeId>MSB_System_DynamicTarget_Action_InitialApproachingTarget_AutoDisable</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
