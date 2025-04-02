@@ -4,12 +4,12 @@
 
     <!--
     TODO:
-    * Switch logic so that MSB_SpawnDistance CustomCounter defines the load / unload distance. 
+    * Switch logic so that MSB_SpawnDistance CustomCounter defines the load / unload distance.
     * If MSB_SpawnDistance is 0, disable loading / unloading - normal random static encounter.
-	
+
 	-The above is possible, but maybe to complex. I made something my self that works for AaW -CptArthur
-	
-	
+
+
     -->
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -20,12 +20,14 @@
       <Description>
         [RivalAI TriggerGroup]
 
+        [Triggers:MSB_Static_Trigger_Setup]
+
 [Triggers:MSB_Static_Trigger_InitCombatType]
 [Triggers:MSB_Static_Trigger_CloseCombatType]
       </Description>
     </EntityComponent>
-	
-	
+
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -36,8 +38,38 @@
 
 
       </Description>
-    </EntityComponent>	
-	
+    </EntityComponent>
+
+    <!-- Setup -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Static_Trigger_Setup</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [MaxActions:1]
+        [Actions:MSB_Static_Action_Setup]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Static_Action_Setup</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [SetBooleansTrue:MSB_CombatType_Static]
+      </Description>
+    </EntityComponent>
+
 
 <!--
 
