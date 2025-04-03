@@ -5,7 +5,7 @@
     <!--
 
     If trigger has [Actions:MSB_Common_Trigger_RoleToCombat]:
-      add the tag [Tags:MSB_RoleToCombat_Triggers]
+      add the tag [Tags:MSB_RoleToCombat_Trigger]
 
     If trigger has [Actions:MSB_Common_Trigger_CombatToRole]:
       add the tag [Tags:MSB_CombatToRole_Trigger]
@@ -98,7 +98,7 @@
         [DisableTriggerTags:MSB_CombatToRole_Trigger]
 
         [EnableTriggers:true]
-        [EnableTriggerTags:MSB_RoleToCombat_Triggers]
+        [EnableTriggerTags:MSB_RoleToCombat_Trigger]
 
         [ResetCooldownTimeOfTriggers:true]
         [ResetTriggerCooldownNames:MSB_RoleToCombat_Triggers]

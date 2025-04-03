@@ -202,7 +202,7 @@
         [RivalAI Trigger]
 
         [Type:TargetNear]
-		    [Tags:MSB_RoleToCombat_Triggers]
+		    [Tags:MSB_RoleToCombat_Trigger]
 
         [UseTrigger:true]
         [StartsReady:true]
