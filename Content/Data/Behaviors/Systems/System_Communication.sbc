@@ -15,8 +15,8 @@
 
     Usage:
       * Trigger MSB_TriggerEvent_SendSOS to force SOS.
-      * Define [OverrideTargetData:MSB_TargetProfile_LongRange] in behavior
-      * Reference dynamic / static
+      * Define [OverrideTargetData:MSB_TargetProfile_LongRange] in behavior if you want the encounter to respond to SOS.
+      * Reference MSB_System_Communication_Trigger_RespondToSOS_Dynamic in your behavior if you want the encounter to respond to SOS.
 
     -->
 
@@ -35,7 +35,6 @@
     </EntityComponent>
 
     <!-- AllGood -->
-    <!-- TODO: Surrounding ships that have responded to SOS receiving command and returning to tasks. -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -133,6 +132,9 @@
 
         [CheckTrueBooleans:true]
         [TrueBooleans:MSB_RespondingToSOS]
+
+        [CheckFalseBooleans:true]
+        [FalseBooleans:SettingBattle]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -143,10 +145,11 @@
       <Description>
         [RivalAI Action]
 
+        [SetBooleansFalse:MSB_RespondingToSOS]
+
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_AllGood_Received]
-
-        [SetBooleansFalse:MSB_RespondingToSOS]
+        [ManuallyActivatedTriggerTags:MSB_Role_InitRole]
       </Description>
     </EntityComponent>
 
@@ -242,7 +245,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_System_Communication_Trigger_SOS_Received</SubtypeId>
+        <SubtypeId>MSB_System_Communication_Trigger_RespondToSOS_Dynamic</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -250,9 +253,12 @@
         [Type:CommandReceived]
         [CommandReceiveCode:{Faction}_SOS]
 
+        [UseTrigger:false]
+        [StartsReady:false]
+
         [Conditions:MSB_System_Communication_Condition_SOS_Received]
 
-        [Actions:MSB_System_Communication_Action_SOS_Received]
+        [Actions:MSB_System_Communication_Action_SOS_Received_Dynamic]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -273,49 +279,22 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_System_Communication_Action_SOS_Received</SubtypeId>
+        <SubtypeId>MSB_System_Communication_Action_SOS_Received_Dynamic</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
 
-        [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_SOS_Received]
-      </Description>
-    </EntityComponent>
-
-    <!-- TODO: Finish dynamic response. -->
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_System_Communication_Trigger_SOS_Respond_Dynamic</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Trigger]
-
-        [Type:Manual]
-        [Tags:MSB_TriggerEvent_SOS_Received]
-
-        [UseTrigger:false]
-        [StartsReady:false]
-
-        [Actions:MSB_System_Communication_Action_SOS_Respond_Dynamic]
-      </Description>
-    </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_System_Communication_Action_SOS_Respond_Dynamic</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Action]
+        [SwitchToReceivedTarget:true]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_SOS_Response_Dynamic]
+        [ManuallyActivatedTriggerTags:MSB_CombatType_InitCombatType]
 
         [SetBooleansTrue:MSB_RespondingToSOS]
 
         [ResetCooldownTimeOfTriggers:true]
         [ResetTriggerCooldownNames:MSB_System_Communication_Trigger_SOS_Response_Timeout]
+
         [EnableTriggers:true]
         [EnableTriggerNames:MSB_System_Communication_Trigger_SOS_Response_Timeout]
       </Description>
