@@ -17,7 +17,7 @@
 
         [UseConditions:true]
         [MatchAnyCondition:false]
-	
+
         [CheckTrueBooleans:true]
         [TrueBooleans:MSB_HasAntennaForBroadcast]
       </Description>
@@ -39,8 +39,8 @@
         [MinCooldownMs:10000]
         [MaxCooldownMs:10001]
         [ConditionCheckResetsTimer:true]
-		[Conditions:MSB_System_Health_Condition_HasAntennaForBroadcast_Expensive]
-		
+		    [Conditions:MSB_System_Health_Condition_HasAntennaForBroadcast_Expensive]
+
         [MaxActions:-1]
         [Actions:MSB_System_Health_Action_HasAntennaForBroadcast]
 
@@ -84,7 +84,7 @@
       <Description>
         [RivalAI Action]
 
-		    [SetBooleansFalse:MSB_HasAntennaForBroadcast]		
+		    [SetBooleansFalse:MSB_HasAntennaForBroadcast]
       </Description>
     </EntityComponent>
 
