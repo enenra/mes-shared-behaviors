@@ -2,22 +2,14 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 
-    <!-- From now on PlayerKnownLocation == PKL
-
-
-
-
-
-MSB_PKLSystem_Trigger_InPKL
-
-
-
-	-->
-
+    <!-- 
+      From now on PlayerKnownLocation == PKL
+      MSB_System_PKL_Trigger_InPKL
+    -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_PKLSystem_Trigger_InPKL</SubtypeId>
+        <SubtypeId>MSB_System_PKL_Trigger_InPKL</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -27,41 +19,36 @@ MSB_PKLSystem_Trigger_InPKL
         [UseTrigger:true]
         [StartsReady:false]
 		
-		[MinCooldownMs:10000]
-		[MaxCooldownMs:10001]
+        [MinCooldownMs:10000]
+        [MaxCooldownMs:10001]
 		
         [MaxActions:-1]
-        [Actions:MSB_PKLSystem_Action_InPKL]
-		[UseElseActions:true]
-		[ElseActions:MSB_PKLSystem_Action_NotPKL]
-		
-
+        [Actions:MSB_System_PKL_Action_InPKL]
+        
+        [UseElseActions:true]
+        [ElseActions:MSB_System_PKL_Action_NotPKL]
       </Description>
     </EntityComponent>
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_PKLSystem_Action_InPKL</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Action]
-		[SetBooleansTrue:InPKL]
-      </Description>
-    </EntityComponent>
-
-
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_PKLSystem_Action_NotPKL</SubtypeId>
+        <SubtypeId>MSB_System_PKL_Action_InPKL</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
 
-		[SetBooleansFalse:InPKL]
+		    [SetBooleansTrue:InPKL]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_PKL_Action_NotPKL</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
 
-		
+		    [SetBooleansFalse:InPKL]		
       </Description>
     </EntityComponent>
 
