@@ -1,0 +1,224 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <!--
+      Engagement Range System:
+        * By default, an encounter only engages in combat when a target has approached below 600m.
+        * The engagement system allows you to define the range at which the encounter will actively engage a target it detects.
+
+      To use:
+        * Add trigger corresponding to your desired engagement range to your behavior.
+          * MSB_System_EngagementRange_Trigger_1000
+          * MSB_System_EngagementRange_Trigger_2000
+          * MSB_System_EngagementRange_Trigger_3000
+          * MSB_System_EngagementRange_Trigger_4000
+          * MSB_System_EngagementRange_Trigger_5000
+    -->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_EngagementRange_Trigger_1000</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:HasTarget]
+
+		    [Tags:MSB_RoleToCombat_Trigger]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+		    [Conditions:MSB_System_EngagementRange_Condition_1000]
+
+        [Actions:MSB_System_EngagementRange_Action_InitCombatType]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_EngagementRange_Condition_1000</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [HasTarget:true]
+
+        [CheckTargetDistance:true]
+        [MaxTargetDistance:1000]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_EngagementRange_Trigger_2000</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:HasTarget]
+
+		    [Tags:MSB_RoleToCombat_Trigger]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+		    [Conditions:MSB_System_EngagementRange_Condition_2000]
+
+        [Actions:MSB_System_EngagementRange_Action_InitCombatType]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_EngagementRange_Condition_2000</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [HasTarget:true]
+
+        [CheckTargetDistance:true]
+        [MaxTargetDistance:2000]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_EngagementRange_Trigger_3000</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:HasTarget]
+
+		    [Tags:MSB_RoleToCombat_Trigger]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+		    [Conditions:MSB_System_EngagementRange_Condition_3000]
+
+        [Actions:MSB_System_EngagementRange_Action_InitCombatType]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_EngagementRange_Condition_3000</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [HasTarget:true]
+
+        [CheckTargetDistance:true]
+        [MaxTargetDistance:3000]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_EngagementRange_Trigger_4000</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:HasTarget]
+
+		    [Tags:MSB_RoleToCombat_Trigger]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+		    [Conditions:MSB_System_EngagementRange_Condition_4000]
+
+        [Actions:MSB_System_EngagementRange_Action_InitCombatType]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_EngagementRange_Condition_4000</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [HasTarget:true]
+
+        [CheckTargetDistance:true]
+        [MaxTargetDistance:4000]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_EngagementRange_Trigger_5000</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:HasTarget]
+
+		    [Tags:MSB_RoleToCombat_Trigger]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+		    [Conditions:MSB_System_EngagementRange_Condition_5000]
+
+        [Actions:MSB_System_EngagementRange_Action_InitCombatType]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_EngagementRange_Condition_5000</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [HasTarget:true]
+
+        [CheckTargetDistance:true]
+        [MaxTargetDistance:5000]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_EngagementRange_Action_InitCombatType</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_EngageTargetAtRange]
+        [ManuallyActivatedTriggerTags:MSB_CombatType_InitCombatType]
+      </Description>
+    </EntityComponent>
+
+  </EntityComponents>
+</Definitions>
