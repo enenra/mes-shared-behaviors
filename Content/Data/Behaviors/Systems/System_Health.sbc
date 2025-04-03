@@ -2,16 +2,11 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 
-    <!-- F
-
-[Conditions:MSB_HealthSystem_Condition_HasAntennaForBroadcast]
-
-
-[Triggers:MSB_HealthSystem_Trigger_HasAntennaForBroadcast]
-
-
-
-	-->
+    <!--
+      [Conditions:MSB_HealthSystem_Condition_HasAntennaForBroadcast]
+      [Triggers:MSB_HealthSystem_Trigger_HasAntennaForBroadcast]
+    -->
+    
 	 <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -22,15 +17,11 @@
 
         [UseConditions:true]
         [MatchAnyCondition:false]
-
 	
         [CheckTrueBooleans:true]
         [TrueBooleans:MSB_HasAntennaForBroadcast]
       </Description>
-    </EntityComponent>	
-
-
-
+    </EntityComponent>
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -51,12 +42,11 @@
 
         [MaxActions:-1]
         [Actions:MSB_HealthSystem_Action_HasAntennaForBroadcast]
+
         [UseElseActions:true]
         [ElseActions:MSB_HealthSystem_Action_HasNotAntennaForBroadcast]
-
       </Description>
     </EntityComponent>
-
 
 	 <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -69,10 +59,9 @@
         [UseConditions:true]
         [MatchAnyCondition:false]
 
-		[HasAntennaForBroadcast:true]
+		    [HasAntennaForBroadcast:true]
       </Description>
-    </EntityComponent>	
-
+    </EntityComponent>
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -81,10 +70,10 @@
       </Id>
       <Description>
         [RivalAI Action]
-		[SetBooleansTrue:MSB_HasAntennaForBroadcast]
+
+		    [SetBooleansTrue:MSB_HasAntennaForBroadcast]
       </Description>
     </EntityComponent>
-
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -94,23 +83,9 @@
       <Description>
         [RivalAI Action]
 
-		[SetBooleansFalse:MSB_HasAntennaForBroadcast]
-
-		
+		    [SetBooleansFalse:MSB_HasAntennaForBroadcast]		
       </Description>
     </EntityComponent>
-
-
-
-
-
-
-
-
-
-
-
-
 
   </EntityComponents>
 </Definitions>
