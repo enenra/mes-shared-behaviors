@@ -64,7 +64,7 @@
         [Triggers:MSB_TerminateSystem_Trigger_Start]
         [Triggers:MSB_TerminateSystem_Trigger_Terminate]
 
-		    [Triggers:MSB_HealthSystem_Trigger_HasAntennaForBroadcast]
+		    [Triggers:MSB_System_Health_Trigger_HasAntennaForBroadcast]
 
         [Triggers:MSB_System_PKL_Trigger_InPKL]
 

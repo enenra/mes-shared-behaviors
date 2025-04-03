@@ -3,14 +3,14 @@
   <EntityComponents>
 
     <!--
-      [Conditions:MSB_HealthSystem_Condition_HasAntennaForBroadcast]
-      [Triggers:MSB_HealthSystem_Trigger_HasAntennaForBroadcast]
+      [Conditions:MSB_System_Health_Condition_HasAntennaForBroadcast]
+      [Triggers:MSB_System_Health_Trigger_HasAntennaForBroadcast]
     -->
 
 	 <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_HealthSystem_Condition_HasAntennaForBroadcast</SubtypeId>
+        <SubtypeId>MSB_System_Health_Condition_HasAntennaForBroadcast</SubtypeId>
       </Id>
       <Description>
         [RivalAI Condition]
@@ -26,7 +26,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_HealthSystem_Trigger_HasAntennaForBroadcast</SubtypeId>
+        <SubtypeId>MSB_System_Health_Trigger_HasAntennaForBroadcast</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -41,17 +41,17 @@
         [ConditionCheckResetsTimer:true]
 
         [MaxActions:-1]
-        [Actions:MSB_HealthSystem_Action_HasAntennaForBroadcast]
+        [Actions:MSB_System_Health_Action_HasAntennaForBroadcast]
 
         [UseElseActions:true]
-        [ElseActions:MSB_HealthSystem_Action_HasNotAntennaForBroadcast]
+        [ElseActions:MSB_System_Health_Action_HasNotAntennaForBroadcast]
       </Description>
     </EntityComponent>
 
 	  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_HealthSystem_Condition_HasAntennaForBroadcast</SubtypeId>
+        <SubtypeId>MSB_System_Health_Condition_HasAntennaForBroadcast</SubtypeId>
       </Id>
       <Description>
         [RivalAI Condition]
@@ -66,7 +66,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_HealthSystem_Action_HasAntennaForBroadcast</SubtypeId>
+        <SubtypeId>MSB_System_Health_Action_HasAntennaForBroadcast</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
@@ -78,7 +78,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_HealthSystem_Action_HasNotAntennaForBroadcast</SubtypeId>
+        <SubtypeId>MSB_System_Health_Action_HasNotAntennaForBroadcast</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]

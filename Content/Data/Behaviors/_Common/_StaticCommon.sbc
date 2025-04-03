@@ -43,7 +43,7 @@
         [Triggers:MSB_Common_Triggers_MaxRange]
         [Triggers:MSB_Common_Trigger_MSBAliveCheck]
 
-[Triggers:MSB_HealthSystem_Trigger_HasAntennaForBroadcast]
+[Triggers:MSB_System_Health_Trigger_HasAntennaForBroadcast]
 
 
         [Triggers:MSB_DefenseSystem_Trigger_Guards]
