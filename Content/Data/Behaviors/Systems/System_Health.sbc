@@ -39,7 +39,8 @@
         [MinCooldownMs:10000]
         [MaxCooldownMs:10001]
         [ConditionCheckResetsTimer:true]
-
+		[Conditions:MSB_System_Health_Condition_HasAntennaForBroadcast_Expensive]
+		
         [MaxActions:-1]
         [Actions:MSB_System_Health_Action_HasAntennaForBroadcast]
 
@@ -51,7 +52,7 @@
 	  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_System_Health_Condition_HasAntennaForBroadcast</SubtypeId>
+        <SubtypeId>MSB_System_Health_Condition_HasAntennaForBroadcast_Expensive</SubtypeId>
       </Id>
       <Description>
         [RivalAI Condition]
