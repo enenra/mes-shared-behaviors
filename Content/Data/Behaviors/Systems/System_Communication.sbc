@@ -5,8 +5,8 @@
     <!--
 
     Communications System (succcessor to alerts)
-      * Commands are sent out when certain conditions are met.
-      * Roles can hook into these commands and respond to them.
+      * Encounters broadcast SOS when in battle (10km range).
+      * Dynamic encounters can be set to respond to this by flying to the SOS sender to provide backup.
 
     Contents:
       * AllGood: Battle has ended / enemy has left.
@@ -14,7 +14,7 @@
       * Compromised: Encounter disabled.
 
     Usage:
-      * Trigger MSB_TriggerEvent_SendSOS to force SOS.
+      * Trigger MSB_TriggerEvent_SendSOS to force SOS outside of normal logic.
       * Define [OverrideTargetData:MSB_TargetProfile_LongRange] in behavior if you want the encounter to respond to SOS.
       * Reference MSB_System_Communication_Trigger_RespondToSOS_Dynamic in your behavior if you want the encounter to respond to SOS.
 
