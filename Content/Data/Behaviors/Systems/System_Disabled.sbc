@@ -3,58 +3,43 @@
   <EntityComponents>
 
     <!--
-
-	If a ship is falling from the sky, or it has surrended
-
-	it should not say hey: I lost all morale, trying to flee now.
-
-	So it needs to communicate with MoraleSystem.
-
-
+      If a ship is falling from the sky, or it has surrended
+      it should not say hey: I lost all morale, trying to flee now.
+      So it needs to communicate with MoraleSystem.
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Disabled]
         [ForceManualTriggerActivation:false]
 
-    To use:
-      *
+      To use:
+        *
 
-    TODO:
-	  * Going Down equivalent in space.
+      TODO:
+      * Going Down equivalent in space.
 
-
-
-MSB_DisabledSystem_Trigger_CooldownStart
-
-
-
+      MSB_DisabledSystem_Trigger_CooldownStart
     -->
 
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+	  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_DisabledSystem_Trigger_CooldownStart</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DisabledSystem_Trigger_CooldownStart</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI Trigger]
-        [UseTrigger:true]
+
         [Type:Timer]
+
+        [UseTrigger:true]
+        [StartsReady:false]
 
         [MinCooldownMs:3000]
         [MaxCooldownMs:3001]
-        [StartsReady:false]
-
 		
         [MaxActions:1]
-
         [Actions:MSB_DisabledSystem_Action_CooldownStart]
       </Description>
     </EntityComponent>
-	
-	
-	
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -63,67 +48,52 @@ MSB_DisabledSystem_Trigger_CooldownStart
       <Description>
         [RivalAI Action]
 		
-		[EnableTriggers:true]
-		[EnableTriggerNames:MSB_DisabledSystem_Trigger_GoingDown]
-		
-		[ResetCooldownTimeOfTriggers:true]
-		[ResetTriggerCooldownNames:MSB_DisabledSystem_Trigger_GoingDown]
-		
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_DisabledSystem_Trigger_GoingDown]
+        
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB_DisabledSystem_Trigger_GoingDown]		
       </Description>
     </EntityComponent>
 
-
-
-
-
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+	  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_DisabledSystem_Trigger_GoingDown</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DisabledSystem_Trigger_GoingDown</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI Trigger]
-        [UseTrigger:false]
 
         [Type:Timer]
+        
+        [UseTrigger:false]
+		    [StartsReady:false]
 
-        [Conditions:MSB_DisabledSystem_Condition_CheckSufficientUpwardThrust]
-		[StartsReady:false]
-		
-		[ConditionCheckResetsTimer:true]
         [MinCooldownMs:1000]
         [MaxCooldownMs:1001]
+
+        [Conditions:MSB_DisabledSystem_Condition_CheckSufficientUpwardThrust]		
+		    [ConditionCheckResetsTimer:true]
 		
         [MaxActions:1]
-
         [Actions:MSB_DisabledSystem_Action_GoingDown]
       </Description>
-    </EntityComponent>
-
+    </EntityComponent>    
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_DisabledSystem_Condition_CheckSufficientUpwardThrust</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DisabledSystem_Condition_CheckSufficientUpwardThrust</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI Condition]
+
         [UseConditions:true]
         [MatchAnyCondition:false]
 
-
         [CheckInSufficientUpwardThrust:true]
         [InSufficientUpwardThrustTolerance:-0.3]
-
-
       </Description>
-
     </EntityComponent>
-
-
-
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -131,24 +101,14 @@ MSB_DisabledSystem_Trigger_CooldownStart
       </Id>
       <Description>
         [RivalAI Action]
-        [//DebugMessage:MSB_DisabledSystem_Action_GoingDown]
 
+        [//DebugMessage:MSB_DisabledSystem_Action_GoingDown]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Disabled]
         [ForceManualTriggerActivation:false]
-
-
-
       </Description>
     </EntityComponent>
-
-
-
-
-
-
-
 
   </EntityComponents>
 </Definitions>
