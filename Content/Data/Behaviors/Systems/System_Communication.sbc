@@ -335,7 +335,7 @@
         [Actions:MSB_System_Communication_Action_SOS_Response_Timeout]
 
         [UseElseActions:true]
-        [ElseActions:MSB_System_Communication_Action_SOS_Response_Timeout_StillInbattle]
+        [ElseActions:MSB_System_Communication_Action_SOS_Response_Timeout_StillInBattle]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -376,12 +376,12 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_System_Communication_Action_SOS_Response_Timeout_StillInbattle</SubtypeId>
+        <SubtypeId>MSB_System_Communication_Action_SOS_Response_Timeout_StillInBattle</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:CommSystem - SOS Response Timeout]
+        [DebugMessage:CommSystem - SOS Response Timeout StillInBattle]
 
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_System_Communication_Trigger_SOS_Response_Timeout]
