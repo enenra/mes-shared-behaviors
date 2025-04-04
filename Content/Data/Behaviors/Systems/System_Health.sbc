@@ -3,6 +3,11 @@
   <EntityComponents>
 
     <!--
+      Health System:
+        * Currently not finished.
+        * Will be used to determine whether an encounter is too damaged to continue a fight.
+        * Encounter is made to retreat, if so.
+
       [Conditions:MSB_System_Health_Condition_HasAntennaForBroadcast]
       [Triggers:MSB_System_Health_Trigger_HasAntennaForBroadcast]
     -->
