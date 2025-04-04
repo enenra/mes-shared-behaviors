@@ -2,7 +2,7 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 
-    <!-- 
+    <!--
       From now on PlayerKnownLocation == PKL
       MSB_System_PKL_Trigger_InPKL
     -->
@@ -18,13 +18,13 @@
 
         [UseTrigger:true]
         [StartsReady:false]
-		
+
         [MinCooldownMs:10000]
         [MaxCooldownMs:10001]
-		
+
         [MaxActions:-1]
         [Actions:MSB_System_PKL_Action_InPKL]
-        
+
         [UseElseActions:true]
         [ElseActions:MSB_System_PKL_Action_NotPKL]
       </Description>
@@ -48,21 +48,9 @@
       <Description>
         [RivalAI Action]
 
-		    [SetBooleansFalse:InPKL]		
+		    [SetBooleansFalse:InPKL]
       </Description>
     </EntityComponent>
-
-
-
-
-
-
-
-
-
-
-
-
 
   </EntityComponents>
 </Definitions>

@@ -12,7 +12,7 @@
       [Triggers:MSB_System_Health_Trigger_HasAntennaForBroadcast]
     -->
 
-	 <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_System_Health_Condition_HasAntennaForBroadcast</SubtypeId>
@@ -54,7 +54,7 @@
       </Description>
     </EntityComponent>
 
-	  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_System_Health_Condition_HasAntennaForBroadcast_Expensive</SubtypeId>
