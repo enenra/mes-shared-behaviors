@@ -338,7 +338,6 @@
         [ElseActions:MSB_System_Communication_Action_SOS_Response_Timeout_StillInbattle]
       </Description>
     </EntityComponent>
-    <!-- TODO: Only release encounter when it's not in battle. -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
