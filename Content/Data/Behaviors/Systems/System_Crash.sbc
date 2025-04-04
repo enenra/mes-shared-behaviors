@@ -218,7 +218,7 @@
         [AltitudeCheck:true]
         [MinAltitude:5]
         [MaxAltitude:50]
-		    [AltitudeCheckIgnoreWater:false]
+        [AltitudeCheckIgnoreWater:false]
 
         [CheckGridVerticalSpeed:true]
         [MinGridVerticalSpeed:-1]
@@ -274,7 +274,7 @@
         [AltitudeCheck:true]
         [MinAltitude:5]
         [MaxAltitude:200]
-		    [AltitudeCheckIgnoreWater:false]
+        [AltitudeCheckIgnoreWater:false]
 
         [CheckGridVerticalSpeed:true]
         [MinGridVerticalSpeed:50]
@@ -322,7 +322,7 @@
 
         [Conditions:MSB_System_Crash_Condition_AfterHighSpeedImpact]
 
-		    [MaxActions:1]
+        [MaxActions:1]
         [Actions:MSB_System_Crash_Action_AfterHighSpeedImpact]
       </Description>
     </EntityComponent>
@@ -340,7 +340,7 @@
         [AltitudeCheck:true]
         [MinAltitude:-1]
         [MaxAltitude:15]
-		    [AltitudeCheckIgnoreWater:false]
+        [AltitudeCheckIgnoreWater:false]
 
         [CheckGridVerticalSpeed:true]
         [MaxGridVerticalSpeed:15]

@@ -37,13 +37,13 @@
         [Triggers:MSB_ContextTarget_Trigger_TargetHasBeenClose]
         [Triggers:MSB_ContextTarget_Trigger_LostTarget]
         [Triggers:MSB_ContextTarget_Trigger_SwitchTarget]
-		[Triggers:MSB_ContextTarget_TriggerEvent_ApproachingTarget]
-		[Triggers:MSB_ContextTarget_TriggerEvent_TargetIsApproaching]
-		
+        [Triggers:MSB_ContextTarget_TriggerEvent_ApproachingTarget]
+        [Triggers:MSB_ContextTarget_TriggerEvent_TargetIsApproaching]
+
         [Triggers:MSB_Common_Triggers_MaxRange]
         [Triggers:MSB_Common_Trigger_MSBAliveCheck]
 
-[Triggers:MSB_System_Health_Trigger_HasAntennaForBroadcast]
+        [Triggers:MSB_System_Health_Trigger_HasAntennaForBroadcast]
 
 
         [Triggers:MSB_DefenseSystem_Trigger_Guards]
@@ -69,11 +69,11 @@
         [Triggers:MSB_Common_Trigger_DamageByNeutral_Cue]
         [Triggers:MSB_Common_Trigger_DamageByFriendly]
         [Triggers:MSB_Common_Trigger_DamageByFriendly_Cue]
-		
-		
-		[Triggers:MSB_Common_Trigger_EnemyDestroyedPlayerHelped]
-		[Triggers:MSB_Common_Trigger_EnemyDestroyedPlayerMadeFinalShot]
-		[Triggers:MSB_Common_Trigger_FriendlyDestroyedPlayerMadeFinalShot]
+
+
+        [Triggers:MSB_Common_Trigger_EnemyDestroyedPlayerHelped]
+        [Triggers:MSB_Common_Trigger_EnemyDestroyedPlayerMadeFinalShot]
+        [Triggers:MSB_Common_Trigger_FriendlyDestroyedPlayerMadeFinalShot]
 
       </Description>
     </EntityComponent>
@@ -84,7 +84,7 @@
 
 
 
-		
+
 
   </EntityComponents>
 </Definitions>

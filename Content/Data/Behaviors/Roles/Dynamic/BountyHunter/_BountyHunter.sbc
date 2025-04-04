@@ -12,8 +12,8 @@
 
         [Triggers:MSB_BountyHunter_Trigger_Setup]
 
-	[Triggers:MSB_BountyHunter_Trigger_InitRole]
-	[Triggers:MSB_BountyHunter_Trigger_CloseRole]
+        [Triggers:MSB_BountyHunter_Trigger_InitRole]
+        [Triggers:MSB_BountyHunter_Trigger_CloseRole]
       </Description>
     </EntityComponent>
 
@@ -61,8 +61,8 @@
 
 <!--
 
-[Triggers:MSB_BountyHunter_Trigger_InitRole]
-[Triggers:MSB_BountyHunter_Trigger_CloseRole]
+        [Triggers:MSB_BountyHunter_Trigger_InitRole]
+        [Triggers:MSB_BountyHunter_Trigger_CloseRole]
 
 
 -->

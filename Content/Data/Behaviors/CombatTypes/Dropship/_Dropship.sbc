@@ -12,8 +12,8 @@
 
         [Triggers:MSB_Dropship_Trigger_Setup]
 
-		[Triggers:MSB_Dropship_Trigger_InitCombatType]
-		[Triggers:MSB_Dropship_Trigger_CloseCombatType]
+        [Triggers:MSB_Dropship_Trigger_InitCombatType]
+        [Triggers:MSB_Dropship_Trigger_CloseCombatType]
 
 
 
@@ -63,8 +63,8 @@
 
 
 <!--
-[Triggers:MSB_Dropship_Trigger_InitCombatType]
-[Triggers:MSB_Dropship_Trigger_CloseCombatType]
+        [Triggers:MSB_Dropship_Trigger_InitCombatType]
+        [Triggers:MSB_Dropship_Trigger_CloseCombatType]
 
 
 

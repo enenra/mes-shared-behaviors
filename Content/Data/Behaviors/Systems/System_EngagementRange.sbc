@@ -26,12 +26,12 @@
 
         [Type:HasTarget]
 
-		    [Tags:MSB_RoleToCombat_Trigger]
+        [Tags:MSB_RoleToCombat_Trigger]
 
         [UseTrigger:true]
         [StartsReady:true]
 
-		    [Conditions:MSB_System_EngagementRange_Condition_1000]
+        [Conditions:MSB_System_EngagementRange_Condition_1000]
 
         [Actions:MSB_System_EngagementRange_Action_InitCombatType]
       </Description>
@@ -64,12 +64,12 @@
 
         [Type:HasTarget]
 
-		    [Tags:MSB_RoleToCombat_Trigger]
+        [Tags:MSB_RoleToCombat_Trigger]
 
         [UseTrigger:true]
         [StartsReady:true]
 
-		    [Conditions:MSB_System_EngagementRange_Condition_2000]
+        [Conditions:MSB_System_EngagementRange_Condition_2000]
 
         [Actions:MSB_System_EngagementRange_Action_InitCombatType]
       </Description>
@@ -102,12 +102,12 @@
 
         [Type:HasTarget]
 
-		    [Tags:MSB_RoleToCombat_Trigger]
+        [Tags:MSB_RoleToCombat_Trigger]
 
         [UseTrigger:true]
         [StartsReady:true]
 
-		    [Conditions:MSB_System_EngagementRange_Condition_3000]
+        [Conditions:MSB_System_EngagementRange_Condition_3000]
 
         [Actions:MSB_System_EngagementRange_Action_InitCombatType]
       </Description>
@@ -140,12 +140,12 @@
 
         [Type:HasTarget]
 
-		    [Tags:MSB_RoleToCombat_Trigger]
+        [Tags:MSB_RoleToCombat_Trigger]
 
         [UseTrigger:true]
         [StartsReady:true]
 
-		    [Conditions:MSB_System_EngagementRange_Condition_4000]
+        [Conditions:MSB_System_EngagementRange_Condition_4000]
 
         [Actions:MSB_System_EngagementRange_Action_InitCombatType]
       </Description>
@@ -178,12 +178,12 @@
 
         [Type:HasTarget]
 
-		    [Tags:MSB_RoleToCombat_Trigger]
+        [Tags:MSB_RoleToCombat_Trigger]
 
         [UseTrigger:true]
         [StartsReady:true]
 
-		    [Conditions:MSB_System_EngagementRange_Condition_5000]
+        [Conditions:MSB_System_EngagementRange_Condition_5000]
 
         [Actions:MSB_System_EngagementRange_Action_InitCombatType]
       </Description>

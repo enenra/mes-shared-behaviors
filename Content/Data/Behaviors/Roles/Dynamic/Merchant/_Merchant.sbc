@@ -12,10 +12,10 @@
 
         [Triggers:MSB_Merchant_Trigger_Setup]
 
-		[Triggers:MSB_Merchant_Trigger_InitRole]
-		[Triggers:MSB_Merchant_Trigger_CloseRole]
+        [Triggers:MSB_Merchant_Trigger_InitRole]
+        [Triggers:MSB_Merchant_Trigger_CloseRole]
 
-		[Triggers:MSB_Merchant_Trigger_OnStart]
+        [Triggers:MSB_Merchant_Trigger_OnStart]
 
         [Triggers:MSB_Merchant_Trigger_MerchantAreaTimeout]
         [Triggers:MSB_Merchant_Trigger_RulesOfAcquisition]
@@ -70,8 +70,8 @@
 
 <!--
 
-[Triggers:MSB_Merchant_Trigger_InitRole]
-[Triggers:MSB_Merchant_Trigger_CloseRole]
+        [Triggers:MSB_Merchant_Trigger_InitRole]
+        [Triggers:MSB_Merchant_Trigger_CloseRole]
 
 
 -->

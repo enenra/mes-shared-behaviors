@@ -341,10 +341,10 @@
         [DisableTriggerTags:SpawnGuards]
       </Description>
     </EntityComponent>
-	
-	
-	
-	
+
+
+
+
 
   </EntityComponents>
 </Definitions>

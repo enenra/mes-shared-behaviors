@@ -29,8 +29,8 @@
 
         [Type:PlayerNear]
         [TargetDistance:3000]
-		
-		
+
+
         [UseTrigger:true]
         [StartsReady:true]
 
@@ -42,7 +42,7 @@
         [Actions:MSB_AreaRestrictionSystem_Action_Warning3000]
       </Description>
     </EntityComponent>
-	
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -56,14 +56,14 @@
         [ReputationChangeRadius:1000]
         [ReputationChangeAmount:-25]
         [ReputationChangesForAllRadiusPlayerFactionMembers:true]
-		[ReputationPlayerConditionIds:{Faction}_RelationNeutral_2500m]
-		
-		
-		[PlayDialogueCue:true]
-		[PlayDialogueCue:InRangeReaction_Neutral]
-		[PlayDialogueToSpecificPlayers:true]
-		[PlayDialoguePlayerConditionIds:{Faction}_RelationNeutral_Restricted2500]
-		
+        [ReputationPlayerConditionIds:{Faction}_RelationNeutral_2500m]
+
+
+        [PlayDialogueCue:true]
+        [PlayDialogueCue:InRangeReaction_Neutral]
+        [PlayDialogueToSpecificPlayers:true]
+        [PlayDialoguePlayerConditionIds:{Faction}_RelationNeutral_Restricted2500]
+
       </Description>
     </EntityComponent>
 
@@ -74,18 +74,18 @@
       </Id>
       <Description>
         [RivalAI Action]
-		
-		[PlayDialogueCue:true]
-		[PlayDialogueCue:InRangeReaction_Neutral]
-		[PlayDialogueToSpecificPlayers:true]
-		[PlayDialoguePlayerConditionIds:{Faction}_RelationNeutral_Restricted3000]
-				
-      </Description>
-    </EntityComponent>	
-	
-	
 
-	
+        [PlayDialogueCue:true]
+        [PlayDialogueCue:InRangeReaction_Neutral]
+        [PlayDialogueToSpecificPlayers:true]
+        [PlayDialoguePlayerConditionIds:{Faction}_RelationNeutral_Restricted3000]
+
+      </Description>
+    </EntityComponent>
+
+
+
+
 
 
   </EntityComponents>

@@ -1,45 +1,45 @@
 ﻿<?xml version="1.0"?>
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
-	
+
     <!--
-	
-	
+
+
         [Triggers:MSB_Cargoship_Trigger_TargetIsApproaching]
         [Triggers:MSB_Cargoship_Trigger_Surrender]
-		
-		
-		
-		
+
+
+
+
     -->
-	
-	
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition"> 
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
           <SubtypeId>MSB_Cargoship_Trigger_TargetIsApproaching</SubtypeId>
       </Id>
       <Description>
 
-		[RivalAI Trigger]
-		[Type:Manuel]
-	  
-	    [Tags:MSB_TriggerEvent_InitialTargetIsApproaching_Easy]
-	    [Tags:MSB_TriggerEvent_InitialTargetIsApproaching_Hard]
-	    [Tags:MSB_TriggerEvent_InitialTargetIsApproaching_Other]
+        [RivalAI Trigger]
+        [Type:Manuel]
 
-		[//Conditions:MSB_Cargoship_Condition_TargetIsApproaching]
-	  
-	    [UseTrigger:true]
-	    [StartsReady:true]
-	    [MinCooldownMs:120000]
-	    [MaxCooldownMs:180000]
-	    [ActionExecution:Random]
-	    [Actions:MSB_Cargoship_Action_TargetIsApproaching]
-	  
+        [Tags:MSB_TriggerEvent_InitialTargetIsApproaching_Easy]
+        [Tags:MSB_TriggerEvent_InitialTargetIsApproaching_Hard]
+        [Tags:MSB_TriggerEvent_InitialTargetIsApproaching_Other]
+
+        [//Conditions:MSB_Cargoship_Condition_TargetIsApproaching]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+        [MinCooldownMs:120000]
+        [MaxCooldownMs:180000]
+        [ActionExecution:Random]
+        [Actions:MSB_Cargoship_Action_TargetIsApproaching]
+
       </Description>
     </EntityComponent>
-	
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -51,14 +51,14 @@
         [UseConditions:true]
         [MatchAnyCondition:false]
 
-		[CheckIfTargetIsPlayerOwned:false]
-		[CheckIfTargetIsNpcOwned:false]
+        [CheckIfTargetIsPlayerOwned:false]
+        [CheckIfTargetIsNpcOwned:false]
 
       </Description>
-    </EntityComponent>	
-	
-	
-	  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition"> 
+    </EntityComponent>
+
+
+	  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
           <SubtypeId>MSB_Cargoship_Action_TargetIsApproaching</SubtypeId>
@@ -66,19 +66,19 @@
       <Description>
 
         [RivalAI Action]
-		
-		[PlayDialogueCue:true]
-		[PlayDialogueCue:MSB_CargoShip_TargetIsApproaching]
-		
-		
-		[DisableTriggers:true]
-		[DisableTriggerNames:MSB_Cargoship_Trigger_TargetIsApproaching]
+
+        [PlayDialogueCue:true]
+        [PlayDialogueCue:MSB_CargoShip_TargetIsApproaching]
+
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_Cargoship_Trigger_TargetIsApproaching]
 
       </Description>
     </EntityComponent>
-	
-	
-	
+
+
+
 		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
           <TypeId>Inventory</TypeId>
@@ -86,23 +86,23 @@
       </Id>
       <Description>
 
-		[RivalAI Trigger]
-		[UseTrigger:true]
-		[Type:Manual]
-		[Tags:MSB_TriggerEvent_VeryLowMorale]
-		[StartsReady:true]	
-		
-		[Conditions:MSB_Cargoship_Condition_Surrender]
+        [RivalAI Trigger]
+        [UseTrigger:true]
+        [Type:Manual]
+        [Tags:MSB_TriggerEvent_VeryLowMorale]
+        [StartsReady:true]
+
+        [Conditions:MSB_Cargoship_Condition_Surrender]
 
 
 
-		[Actions:MSB_Cargoship_Action_Surrender]	  
+        [Actions:MSB_Cargoship_Action_Surrender]
       </Description>
-      
-    </EntityComponent>	
-	
-	
-	
+
+    </EntityComponent>
+
+
+
 	    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -114,14 +114,14 @@
         [UseConditions:true]
         [MatchAnyCondition:false]
 
-		[HasAntennaForBroadcast:true]
+        [HasAntennaForBroadcast:true]
 
-		
+
       </Description>
-    </EntityComponent>	
-	
-	
-	
+    </EntityComponent>
+
+
+
 
 	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -130,75 +130,75 @@
       </Id>
       <Description>
 
-      [RivalAI Action]
-	  
-	  
+        [RivalAI Action]
+
+
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Terminate]
         [ForceManualTriggerActivation:false]
 
 
-		[DisableAutopilot:true]
+        [DisableAutopilot:true]
 
 
-		[ToggleBlocksOfType:true]
+        [ToggleBlocksOfType:true]
 
 
-		[BlockTypesToToggle:MyObjectBuilder_LargeGatlingTurret/(null)]
-		[BlockTypeToggles:Off]
+        [BlockTypesToToggle:MyObjectBuilder_LargeGatlingTurret/(null)]
+        [BlockTypeToggles:Off]
 
-		[BlockTypesToToggle:MyObjectBuilder_LargeGatlingTurret/SmallGatlingTurret]
-		[BlockTypeToggles:Off]
+        [BlockTypesToToggle:MyObjectBuilder_LargeGatlingTurret/SmallGatlingTurret]
+        [BlockTypeToggles:Off]
 
-		[BlockTypesToToggle:MyObjectBuilder_LargeMissileTurret/(null)]
-		[BlockTypeToggles:Off]
+        [BlockTypesToToggle:MyObjectBuilder_LargeMissileTurret/(null)]
+        [BlockTypeToggles:Off]
 
-		[BlockTypesToToggle:MyObjectBuilder_LargeMissileTurret/SmallMissileTurret]
-		[BlockTypeToggles:Off]
+        [BlockTypesToToggle:MyObjectBuilder_LargeMissileTurret/SmallMissileTurret]
+        [BlockTypeToggles:Off]
 
-		[BlockTypesToToggle:MyObjectBuilder_InteriorTurret/LargeInteriorTurret]
-		[BlockTypeToggles:Off]
+        [BlockTypesToToggle:MyObjectBuilder_InteriorTurret/LargeInteriorTurret]
+        [BlockTypeToggles:Off]
 
 
-		[BlockTypesToToggle:MyObjectBuilder_LargeMissileTurret/LargeCalibreTurret]
-		[BlockTypeToggles:Off]
+        [BlockTypesToToggle:MyObjectBuilder_LargeMissileTurret/LargeCalibreTurret]
+        [BlockTypeToggles:Off]
 
-		[BlockTypesToToggle:MyObjectBuilder_LargeMissileTurret/LargeBlockMediumCalibreTurret]
-		[BlockTypeToggles:Off]
+        [BlockTypesToToggle:MyObjectBuilder_LargeMissileTurret/LargeBlockMediumCalibreTurret]
+        [BlockTypeToggles:Off]
 
-		[BlockTypesToToggle:MyObjectBuilder_LargeMissileTurret/SmallBlockMediumCalibreTurret]
-		[BlockTypeToggles:Off]
+        [BlockTypesToToggle:MyObjectBuilder_LargeMissileTurret/SmallBlockMediumCalibreTurret]
+        [BlockTypeToggles:Off]
 
-		[BlockTypesToToggle:MyObjectBuilder_LargeGatlingTurret/AutoCannonTurret]
-		[BlockTypeToggles:Off]
-	
+        [BlockTypesToToggle:MyObjectBuilder_LargeGatlingTurret/AutoCannonTurret]
+        [BlockTypeToggles:Off]
 
-		[PlayDialogueCue:true]
-		[PlayDialogueCue:MSB_CargoShip_Surrender]
+
+        [PlayDialogueCue:true]
+        [PlayDialogueCue:MSB_CargoShip_Surrender]
 
 
 
 
       </Description>
-      
-    </EntityComponent>	
-	
-	
 
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
- 
+    </EntityComponent>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   </EntityComponents>
 </Definitions>

@@ -3,16 +3,16 @@
   <EntityComponents>
 
     <!--
-	
-MSB_TriggerEvent_InitNormal	
-MSB_TriggerEvent_InitHighAlert	
-MSB_TriggerEvent_InitBattle	
-	
-MSB_TriggerEvent_HostileToNormal	
-	
-	
-	
-	
+
+MSB_TriggerEvent_InitNormal
+MSB_TriggerEvent_InitHighAlert
+MSB_TriggerEvent_InitBattle
+
+MSB_TriggerEvent_HostileToNormal
+
+
+
+
     There are 3 Settings (bools): SettingNormal, SettingHighAlert, SettingBattle
 
     MSB_Context_Condition_ReadyforNormal

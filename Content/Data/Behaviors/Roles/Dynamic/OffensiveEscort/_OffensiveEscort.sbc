@@ -248,7 +248,7 @@
         [RivalAI Trigger]
 
         [Type:TargetNear]
-		    [Tags:MSB_RoleToCombat_Trigger]
+        [Tags:MSB_RoleToCombat_Trigger]
 
         [UseTrigger:true]
         [StartsReady:false]
@@ -271,7 +271,7 @@
         [RivalAI Trigger]
 
         [Type:TargetNear]
-		    [Tags:MSB_RoleToCombat_Trigger]
+        [Tags:MSB_RoleToCombat_Trigger]
 
         [UseTrigger:true]
         [StartsReady:false]
@@ -385,7 +385,7 @@
         [RivalAI Trigger]
 
         [Type:Timer]
-		    [Tags:MSB_CombatToRole_Trigger]
+        [Tags:MSB_CombatToRole_Trigger]
 
         [UseTrigger:false]
         [StartsReady:false]
@@ -433,7 +433,7 @@
         [RivalAI Trigger]
 
         [Type:NoTarget]
-		    [Tags:MSB_CombatToRole_Trigger]
+        [Tags:MSB_CombatToRole_Trigger]
 
         [UseTrigger:false]
         [StartsReady:true]

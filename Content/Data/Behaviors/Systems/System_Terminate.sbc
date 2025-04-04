@@ -8,9 +8,9 @@
 
       So instead of [TerminateBehavior:true] use
 
-            [ManuallyActivateTrigger:true]
-            [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Terminate]
-            [ForceManualTriggerActivation:false]
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Terminate]
+        [ForceManualTriggerActivation:false]
 
         To use:
           *
@@ -18,8 +18,8 @@
         TODO:
           *
 
-            [Triggers:MSB_TerminateSystem_Trigger_Start]
-            [Triggers:MSB_TerminateSystem_Trigger_Terminate]
+        [Triggers:MSB_TerminateSystem_Trigger_Start]
+        [Triggers:MSB_TerminateSystem_Trigger_Terminate]
     -->
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">

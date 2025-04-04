@@ -42,8 +42,8 @@
         [Triggers:MSB_ContextTarget_Trigger_TargetHasBeenClose]
         [Triggers:MSB_ContextTarget_Trigger_LostTarget]
         [Triggers:MSB_ContextTarget_Trigger_SwitchTarget]
-		    [Triggers:MSB_ContextTarget_TriggerEvent_ApproachingTarget]
-		    [Triggers:MSB_ContextTarget_TriggerEvent_TargetIsApproaching]
+        [Triggers:MSB_ContextTarget_TriggerEvent_ApproachingTarget]
+        [Triggers:MSB_ContextTarget_TriggerEvent_TargetIsApproaching]
 
         [Triggers:MSB_Common_Triggers_Compromised]
 
@@ -64,7 +64,7 @@
         [Triggers:MSB_TerminateSystem_Trigger_Start]
         [Triggers:MSB_TerminateSystem_Trigger_Terminate]
 
-		    [Triggers:MSB_System_Health_Trigger_HasAntennaForBroadcast]
+        [Triggers:MSB_System_Health_Trigger_HasAntennaForBroadcast]
 
         [Triggers:MSB_System_PKL_Trigger_InPKL]
 

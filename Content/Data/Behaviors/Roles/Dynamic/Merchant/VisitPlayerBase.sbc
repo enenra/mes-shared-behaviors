@@ -4,15 +4,15 @@
 
 
 <!--
-Not in use 
+Not in use
 
 
         [Triggers:MSB_Merchant_Trigger_VisitPlayerBase]
         [Triggers:MSB_Merchant_Trigger_ArriveAtStation]
         [Triggers:MSB_Merchant_Trigger_StartLanding]
         [Triggers:MSB_Merchant_Trigger_ArrivedAtLandingSite]
-		
-		
+
+
 -->
 
 

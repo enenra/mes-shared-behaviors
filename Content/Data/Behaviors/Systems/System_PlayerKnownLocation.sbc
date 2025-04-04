@@ -37,7 +37,7 @@
       <Description>
         [RivalAI Action]
 
-		    [SetBooleansTrue:InPKL]
+        [SetBooleansTrue:InPKL]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -48,7 +48,7 @@
       <Description>
         [RivalAI Action]
 
-		    [SetBooleansFalse:InPKL]
+        [SetBooleansFalse:InPKL]
       </Description>
     </EntityComponent>
 

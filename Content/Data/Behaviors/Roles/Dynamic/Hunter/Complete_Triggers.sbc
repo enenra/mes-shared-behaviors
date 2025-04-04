@@ -7,8 +7,8 @@
 
 
     <!--
-      [Triggers:MSB_Hunter_Trigger_HasTarget4000]
-      [Triggers:MSB_Hunter_Trigger_ApproachingTarget_Player]
+        [Triggers:MSB_Hunter_Trigger_HasTarget4000]
+        [Triggers:MSB_Hunter_Trigger_ApproachingTarget_Player]
 	  -->
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -21,16 +21,16 @@
 
         [Type:HasTarget]
 
-		    [Tags:MSB_RoleToCombat_Trigger]
+        [Tags:MSB_RoleToCombat_Trigger]
 
         [UseTrigger:true]
         [StartsReady:true]
 
-		    [Conditions:MSB_Hunter_Condition_HasTarget4000]
+        [Conditions:MSB_Hunter_Condition_HasTarget4000]
 
         [MaxActions:-1]
         [Actions:MSB_Common_Action_RoleToCombat]
-		    [ActionExecution:All]
+        [ActionExecution:All]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">

@@ -12,8 +12,8 @@
 
         [Triggers:MSB_Rover_Trigger_Setup]
 
-		[Triggers:MSB_Rover_Trigger_InitCombatType]
-		[Triggers:MSB_Rover_Trigger_CloseCombatType]
+        [Triggers:MSB_Rover_Trigger_InitCombatType]
+        [Triggers:MSB_Rover_Trigger_CloseCombatType]
       </Description>
     </EntityComponent>
 
@@ -62,8 +62,8 @@
 
 <!--
 
-[Triggers:MSB_Rover_Trigger_InitCombatType]
-[Triggers:MSB_Rover_Trigger_CloseCombatType]
+        [Triggers:MSB_Rover_Trigger_InitCombatType]
+        [Triggers:MSB_Rover_Trigger_CloseCombatType]
 
 -->
 

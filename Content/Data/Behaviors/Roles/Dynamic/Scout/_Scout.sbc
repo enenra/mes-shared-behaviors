@@ -12,8 +12,8 @@
 
         [Triggers:MSB_Scout_Trigger_Setup]
 
-		[Triggers:MSB_Scout_Trigger_InitRole]
-		[Triggers:MSB_Scout_Trigger_CloseRole]
+        [Triggers:MSB_Scout_Trigger_InitRole]
+        [Triggers:MSB_Scout_Trigger_CloseRole]
       </Description>
     </EntityComponent>
 
@@ -61,8 +61,8 @@
 
 <!--
 
-[Triggers:MSB_Scout_Trigger_InitRole]
-[Triggers:MSB_Scout_Trigger_CloseRole]
+        [Triggers:MSB_Scout_Trigger_InitRole]
+        [Triggers:MSB_Scout_Trigger_CloseRole]
 
 
 -->

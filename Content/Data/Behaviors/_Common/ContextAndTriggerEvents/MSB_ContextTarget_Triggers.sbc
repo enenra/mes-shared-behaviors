@@ -5,23 +5,23 @@
     This file handles the TriggerEvent:
 
     -MSB_TriggerEvent_ApproachingTarget
-    -MSB_TriggerEvent_TargetIsApproaching 
-	
-	
-	
+    -MSB_TriggerEvent_TargetIsApproaching
+
+
+
 	-MSB_TriggerEvent_InitialTargetIsApproaching_Easy
 	-MSB_TriggerEvent_InitialTargetIsApproaching_Hard
 	-MSB_TriggerEvent_InitialTargetIsApproaching_Other
-	
+
 	-MSB_TriggerEvent_InitialApproachingTarget_Easy
 	-MSB_TriggerEvent_InitialApproachingTarget_Hard
-	-MSB_TriggerEvent_InitialTargetIsApproaching_Other	
-	
-	
-	
-	
-[Triggers:MSB_ContextTarget_TriggerEvent_ApproachingTarget]
-[Triggers:MSB_ContextTarget_TriggerEvent_TargetIsApproaching]
+	-MSB_TriggerEvent_InitialTargetIsApproaching_Other
+
+
+
+
+        [Triggers:MSB_ContextTarget_TriggerEvent_ApproachingTarget]
+        [Triggers:MSB_ContextTarget_TriggerEvent_TargetIsApproaching]
 
 
     -MSB_TriggerEvent_TargetGettingAway (Done)
@@ -33,8 +33,8 @@
         [Triggers:MSB_ContextTarget_Trigger_LostTarget]
         [Triggers:MSB_ContextTarget_Trigger_SwitchTarget]
     -->
-	
-	
+
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -49,8 +49,8 @@
 
         [MinCooldownMs:1000]
         [MaxCooldownMs:1001]
-		[ConditionCheckResetsTimer:true]
-		
+        [ConditionCheckResetsTimer:true]
+
         [Conditions:MSB_ContextTarget_Condition_ApproachingTarget]
 
         [MaxActions:-1]
@@ -68,23 +68,23 @@
 
         [UseConditions:true]
         [MatchAnyCondition:false]
-		
-		[BehaviorModeCheck:true]
-		[CurrentBehaviorMode:ApproachTarget]
-		
-		[CheckTargetDistance:true]
-		[MinTargetDistance:800]
-		[MaxTargetDistance:4500]
-		
-		
+
+        [BehaviorModeCheck:true]
+        [CurrentBehaviorMode:ApproachTarget]
+
+        [CheckTargetDistance:true]
+        [MinTargetDistance:800]
+        [MaxTargetDistance:4500]
+
+
         [CheckTargetAngleFromForward:true]
         [MinTargetAngle:0]
         [MaxTargetAngle:75]
 
         [CheckGridSpeed:true]
         [MinGridSpeed:20]
-	
-	
+
+
       </Description>
     </EntityComponent>
 
@@ -103,9 +103,9 @@
         [ForceManualTriggerActivation:false]
 
       </Description>
-    </EntityComponent>	
-	
-	
+    </EntityComponent>
+
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -121,8 +121,8 @@
 
         [MinCooldownMs:1000]
         [MaxCooldownMs:1001]
-		[ConditionCheckResetsTimer:true]
-		
+        [ConditionCheckResetsTimer:true]
+
         [Conditions:MSB_ContextTarget_Condition_TargetIsApproaching]
 
         [MaxActions:-1]
@@ -140,26 +140,26 @@
 
         [UseConditions:true]
         [MatchAnyCondition:false]
-		
-		[BehaviorModeCheck:true]
-		[CurrentBehaviorMode:ApproachWaypoint]
-		[CurrentBehaviorMode:WaitAtWaypoint]
-		[CurrentBehaviorMode:Idle]
-		[CurrentBehaviorMode:Passive]
-		
 
-		[CheckTargetDistance:true]
-		[MinTargetDistance:800]
-		[MaxTargetDistance:4500]
+        [BehaviorModeCheck:true]
+        [CurrentBehaviorMode:ApproachWaypoint]
+        [CurrentBehaviorMode:WaitAtWaypoint]
+        [CurrentBehaviorMode:Idle]
+        [CurrentBehaviorMode:Passive]
+
+
+        [CheckTargetDistance:true]
+        [MinTargetDistance:800]
+        [MaxTargetDistance:4500]
 
         [CheckIfTargetIsChasing:true]
 
         [MaxTargetChaseAngle:80]
 
-		[CheckTargetChaseSpeed:true]
-		[MinTargetChaseSpeed:25]
-		[MaxTargetChaseSpeed:-1]
-	
+        [CheckTargetChaseSpeed:true]
+        [MinTargetChaseSpeed:25]
+        [MaxTargetChaseSpeed:-1]
+
       </Description>
     </EntityComponent>
 
@@ -178,17 +178,17 @@
         [ForceManualTriggerActivation:false]
 
       </Description>
-    </EntityComponent>		
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+    </EntityComponent>
+
+
+
+
+
+
+
+
+
+
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>

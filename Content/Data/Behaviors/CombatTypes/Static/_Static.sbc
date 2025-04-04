@@ -22,8 +22,8 @@
 
         [Triggers:MSB_Static_Trigger_Setup]
 
-[Triggers:MSB_Static_Trigger_InitCombatType]
-[Triggers:MSB_Static_Trigger_CloseCombatType]
+        [Triggers:MSB_Static_Trigger_InitCombatType]
+        [Triggers:MSB_Static_Trigger_CloseCombatType]
       </Description>
     </EntityComponent>
 
@@ -73,8 +73,8 @@
 
 <!--
 
-[Triggers:MSB_Static_Trigger_InitCombatType]
-[Triggers:MSB_Static_Trigger_CloseCombatType]
+        [Triggers:MSB_Static_Trigger_InitCombatType]
+        [Triggers:MSB_Static_Trigger_CloseCombatType]
 
 -->
 

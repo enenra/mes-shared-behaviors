@@ -12,8 +12,8 @@
 
         [Triggers:MSB_Raider_Trigger_Setup]
 
-		[Triggers:MSB_Raider_Trigger_InitRole]
-		[Triggers:MSB_Raider_Trigger_CloseRole]
+        [Triggers:MSB_Raider_Trigger_InitRole]
+        [Triggers:MSB_Raider_Trigger_CloseRole]
 
 
       </Description>
@@ -63,8 +63,8 @@
 
 <!--
 
-[Triggers:MSB_Raider_Trigger_InitRole]
-[Triggers:MSB_Raider_Trigger_CloseRole]
+        [Triggers:MSB_Raider_Trigger_InitRole]
+        [Triggers:MSB_Raider_Trigger_CloseRole]
 
 
 -->

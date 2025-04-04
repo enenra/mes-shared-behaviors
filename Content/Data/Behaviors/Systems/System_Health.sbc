@@ -8,8 +8,8 @@
         * Will be used to determine whether an encounter is too damaged to continue a fight.
         * Encounter is made to retreat, if so.
 
-      [Conditions:MSB_System_Health_Condition_HasAntennaForBroadcast]
-      [Triggers:MSB_System_Health_Trigger_HasAntennaForBroadcast]
+        [Conditions:MSB_System_Health_Condition_HasAntennaForBroadcast]
+        [Triggers:MSB_System_Health_Trigger_HasAntennaForBroadcast]
     -->
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -44,7 +44,7 @@
         [MinCooldownMs:10000]
         [MaxCooldownMs:10001]
         [ConditionCheckResetsTimer:true]
-		    [Conditions:MSB_System_Health_Condition_HasAntennaForBroadcast_Expensive]
+        [Conditions:MSB_System_Health_Condition_HasAntennaForBroadcast_Expensive]
 
         [MaxActions:-1]
         [Actions:MSB_System_Health_Action_HasAntennaForBroadcast]
@@ -65,7 +65,7 @@
         [UseConditions:true]
         [MatchAnyCondition:false]
 
-		    [HasAntennaForBroadcast:true]
+        [HasAntennaForBroadcast:true]
       </Description>
     </EntityComponent>
 
@@ -77,7 +77,7 @@
       <Description>
         [RivalAI Action]
 
-		    [SetBooleansTrue:MSB_HasAntennaForBroadcast]
+        [SetBooleansTrue:MSB_HasAntennaForBroadcast]
       </Description>
     </EntityComponent>
 
@@ -89,7 +89,7 @@
       <Description>
         [RivalAI Action]
 
-		    [SetBooleansFalse:MSB_HasAntennaForBroadcast]
+        [SetBooleansFalse:MSB_HasAntennaForBroadcast]
       </Description>
     </EntityComponent>
 

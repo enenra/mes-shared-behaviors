@@ -12,8 +12,8 @@
 
         [Triggers:MSB_Hunter_Trigger_Setup]
 
-[Triggers:MSB_Hunter_Trigger_InitRole]
-[Triggers:MSB_Hunter_Trigger_CloseRole]
+        [Triggers:MSB_Hunter_Trigger_InitRole]
+        [Triggers:MSB_Hunter_Trigger_CloseRole]
 
       </Description>
     </EntityComponent>
@@ -26,8 +26,8 @@
       <Description>
         [RivalAI TriggerGroup]
 
-      [Triggers:MSB_Hunter_Trigger_HasTarget4000]
-      [Triggers:MSB_Hunter_Trigger_ApproachingTarget_Player]
+        [Triggers:MSB_Hunter_Trigger_HasTarget4000]
+        [Triggers:MSB_Hunter_Trigger_ApproachingTarget_Player]
       </Description>
     </EntityComponent>
 
@@ -64,8 +64,8 @@
 
 <!--
 
-[Triggers:MSB_Hunter_Trigger_InitRole]
-[Triggers:MSB_Hunter_Trigger_CloseRole]
+        [Triggers:MSB_Hunter_Trigger_InitRole]
+        [Triggers:MSB_Hunter_Trigger_CloseRole]
 
 
 -->

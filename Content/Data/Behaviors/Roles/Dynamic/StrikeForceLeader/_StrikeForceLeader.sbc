@@ -13,11 +13,11 @@
 
         [Triggers:MSB_StrikeForceLeader_Trigger_Setup]
 
-	[Triggers:MSB_StikeForceLeader_Trigger_OnStart]
-	[Triggers:MSB_StikeForceLeader_Trigger_InitRole]
-	[Triggers:MSB_StikeForceLeader_Trigger_CloseRole]
-	[Triggers:MSB_StikeForceLeader_Trigger_ProcessEscortRequest]
-	[Triggers:MSB_StikeForceLeader_Trigger_Compromised]
+        [Triggers:MSB_StikeForceLeader_Trigger_OnStart]
+        [Triggers:MSB_StikeForceLeader_Trigger_InitRole]
+        [Triggers:MSB_StikeForceLeader_Trigger_CloseRole]
+        [Triggers:MSB_StikeForceLeader_Trigger_ProcessEscortRequest]
+        [Triggers:MSB_StikeForceLeader_Trigger_Compromised]
 
       </Description>
     </EntityComponent>

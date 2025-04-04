@@ -92,7 +92,7 @@
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_Role_InitRole]
-		    [ManuallyActivatedTriggerTags:MSB_CombatType_CloseCombatType]
+        [ManuallyActivatedTriggerTags:MSB_CombatType_CloseCombatType]
 
         [DisableTriggers:true]
         [DisableTriggerTags:MSB_CombatToRole_Trigger]

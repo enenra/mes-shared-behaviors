@@ -202,7 +202,7 @@
         [RivalAI Trigger]
 
         [Type:TargetNear]
-		    [Tags:MSB_RoleToCombat_Trigger]
+        [Tags:MSB_RoleToCombat_Trigger]
 
         [UseTrigger:true]
         [StartsReady:true]
@@ -222,7 +222,7 @@
         [RivalAI Trigger]
 
         [Type:TargetFar]
-		    [Tags:MSB_CombatToRole_Trigger]
+        [Tags:MSB_CombatToRole_Trigger]
 
         [UseTrigger:false]
         [StartsReady:true]

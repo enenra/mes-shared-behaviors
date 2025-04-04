@@ -185,7 +185,7 @@ NPCDamge ->
 
         [Actions:MSB_ContextDamage_Action_IncreaseCountPlayerDamage]
         [Actions:MSB_ContextDamage_Action_IncreaseUnderFireCount]
-		[Actions:MSB_ContextDamage_Action_DamageByHostile]
+        [Actions:MSB_ContextDamage_Action_DamageByHostile]
       </Description>
     </EntityComponent>
 
@@ -629,10 +629,10 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
         [AltitudeCheck:true]
         [MinAltitude:15]
         [MaxAltitude:450]
-		
-		[AltitudeCheckIgnoreWater:false]
-		
-		
+
+        [AltitudeCheckIgnoreWater:false]
+
+
       </Description>
 
     </EntityComponent>
@@ -718,8 +718,8 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
         [AltitudeCheck:true]
         [MinAltitude:451]
         [MaxAltitude:-1]
-		[AltitudeCheckIgnoreWater:false]
-		
+        [AltitudeCheckIgnoreWater:false]
+
       </Description>
     </EntityComponent>
 
