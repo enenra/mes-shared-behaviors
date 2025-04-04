@@ -149,6 +149,9 @@
 
         [DebugMessage:CommSystem - Receiving AllGood]
 
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_System_Communication_Trigger_SOS_Response_Timeout]
+
         [SetBooleansFalse:MSB_RespondingToSOS]
 
         [ManuallyActivateTrigger:true]
@@ -327,7 +330,28 @@
         [MinCooldownMs:600000]
         [MaxCooldownMs:600001]
 
+        [Conditions:MSB_System_Communication_Condition_SOS_Response_Timeout]
+
         [Actions:MSB_System_Communication_Action_SOS_Response_Timeout]
+
+        [UseElseActions:true]
+        [ElseActions:MSB_System_Communication_Action_SOS_Response_Timeout_StillInbattle]
+      </Description>
+    </EntityComponent>
+    <!-- TODO: Only release encounter when it's not in battle. -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Communication_Condition_SOS_Response_Timeout</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [CheckFalseBooleans:true]
+        [FalseBooleans:SettingBattle]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -348,6 +372,22 @@
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_SOS_ResponseTimeout]
         [ManuallyActivatedTriggerTags:MSB_Role_InitRole]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Communication_Action_SOS_Response_Timeout_StillInbattle</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:CommSystem - SOS Response Timeout]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_System_Communication_Trigger_SOS_Response_Timeout]
+
+        [SetBooleansFalse:MSB_RespondingToSOS]
       </Description>
     </EntityComponent>
 
@@ -460,6 +500,9 @@
         [RivalAI Action]
 
         [DebugMessage:CommSystem - Receiving Compromised]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_System_Communication_Trigger_SOS_Response_Timeout]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Compromised_Received]
