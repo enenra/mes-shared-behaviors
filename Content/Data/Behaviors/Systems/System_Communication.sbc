@@ -190,12 +190,11 @@
         [UseTrigger:true]
         [StartsReady:true]
 
-        [MinCooldownMs:9000]
-        [MaxCooldownMs:9001]
+        [MinCooldownMs:120000]
+        [MaxCooldownMs:120001]
 
         [Conditions:MSB_System_Communication_Condition_SOS]
 
-        [MaxActions:-1]
         [Actions:MSB_System_Communication_Action_SOS]
       </Description>
     </EntityComponent>
