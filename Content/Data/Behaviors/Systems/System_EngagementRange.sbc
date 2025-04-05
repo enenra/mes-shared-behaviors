@@ -33,7 +33,9 @@
 
         [Conditions:MSB_System_EngagementRange_Condition_1000]
 
+        [ActionExecution:All]
         [Actions:MSB_System_EngagementRange_Action_InitCombatType]
+        [Actions:MSB_Context_Action_InitBattle]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -51,6 +53,9 @@
 
         [CheckTargetDistance:true]
         [MaxTargetDistance:1000]
+
+        [CheckFalseBooleans:true]
+        [FalseBooleans:SettingBattle]
       </Description>
     </EntityComponent>
 
@@ -71,7 +76,9 @@
 
         [Conditions:MSB_System_EngagementRange_Condition_2000]
 
+        [ActionExecution:All]
         [Actions:MSB_System_EngagementRange_Action_InitCombatType]
+        [Actions:MSB_Context_Action_InitBattle]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -89,6 +96,9 @@
 
         [CheckTargetDistance:true]
         [MaxTargetDistance:2000]
+
+        [CheckFalseBooleans:true]
+        [FalseBooleans:SettingBattle]
       </Description>
     </EntityComponent>
 
@@ -109,7 +119,9 @@
 
         [Conditions:MSB_System_EngagementRange_Condition_3000]
 
+        [ActionExecution:All]
         [Actions:MSB_System_EngagementRange_Action_InitCombatType]
+        [Actions:MSB_Context_Action_InitBattle]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -127,6 +139,9 @@
 
         [CheckTargetDistance:true]
         [MaxTargetDistance:3000]
+
+        [CheckFalseBooleans:true]
+        [FalseBooleans:SettingBattle]
       </Description>
     </EntityComponent>
 
@@ -147,7 +162,9 @@
 
         [Conditions:MSB_System_EngagementRange_Condition_4000]
 
+        [ActionExecution:All]
         [Actions:MSB_System_EngagementRange_Action_InitCombatType]
+        [Actions:MSB_Context_Action_InitBattle]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -165,6 +182,9 @@
 
         [CheckTargetDistance:true]
         [MaxTargetDistance:4000]
+
+        [CheckFalseBooleans:true]
+        [FalseBooleans:SettingBattle]
       </Description>
     </EntityComponent>
 
@@ -185,7 +205,9 @@
 
         [Conditions:MSB_System_EngagementRange_Condition_5000]
 
+        [ActionExecution:All]
         [Actions:MSB_System_EngagementRange_Action_InitCombatType]
+        [Actions:MSB_Context_Action_InitBattle]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -203,6 +225,9 @@
 
         [CheckTargetDistance:true]
         [MaxTargetDistance:5000]
+
+        [CheckFalseBooleans:true]
+        [FalseBooleans:SettingBattle]
       </Description>
     </EntityComponent>
 
