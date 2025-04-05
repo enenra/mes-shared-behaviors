@@ -30,6 +30,7 @@
 
         [Triggers:MSB_System_Communication_Trigger_AllGood]
         [Triggers:MSB_System_Communication_Trigger_SOS]
+        [Triggers:MSB_System_Communication_Trigger_SOS_Received_Dynamic]
         [Triggers:MSB_System_Communication_Trigger_Compromised]
       </Description>
     </EntityComponent>
@@ -149,7 +150,7 @@
         [TrueBooleans:MSB_RespondingToSOS]
 
         [CheckFalseBooleans:true]
-        [FalseBooleans:SettingBattle]
+        [FalseBooleans:MSB_CombatTypeActive]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -223,7 +224,7 @@
         [MatchAnyCondition:false]
 
         [CheckTrueBooleans:true]
-        [TrueBooleans:SettingBattle]
+        [TrueBooleans:MSB_CombatTypeActive]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -311,7 +312,7 @@
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_SOS_Response_Dynamic]
-        [ManuallyActivatedTriggerTags:MSB_CombatType_InitCombatType]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitBattle]
 
         [SetBooleansTrue:MSB_RespondingToSOS]
 
@@ -362,7 +363,7 @@
         [MatchAnyCondition:false]
 
         [CheckFalseBooleans:true]
-        [FalseBooleans:SettingBattle]
+        [FalseBooleans:MSB_CombatTypeActive]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
