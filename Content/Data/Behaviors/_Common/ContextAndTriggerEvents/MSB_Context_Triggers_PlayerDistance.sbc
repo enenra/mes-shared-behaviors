@@ -2,13 +2,16 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
     <!--
-        [Triggers:MSB_Context_Trigger_PlayerNear]
-        [Triggers:MSB_Context_Trigger_PlayerFar]
+        [Triggers:MSB_Context_Trigger_PlayerNear] - sub 5km
+        [Triggers:MSB_Context_Trigger_PlayerFar] - over 5km
+        [Triggers:MSB_Context_Trigger_PlayerClose] - sub 1km
+        [Triggers:MSB_Context_Trigger_PlayerNotClose] - over 1km
 
     Do not remove, these booleans are used in
     MSB_Context_Condition_NormalNeutralPlayerNearNoTarget
     -->
 
+    <!-- PlayerNear - sub 5km -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -113,6 +116,114 @@
 
         [SetBooleansTrue:PlayerFar]
         [SetBooleansFalse:PlayerNear]
+      </Description>
+    </EntityComponent>
+
+    <!-- PlayerClose - sub 1km -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Trigger_PlayerClose</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:PlayerNear]
+
+        [TargetDistance:1000]
+
+        [UseTrigger:true]
+        [StartsReady:false]
+
+        [MinCooldownMs:10000]
+        [MaxCooldownMs:10001]
+
+        [MaxActions:-1]
+        [Actions:MSB_Context_Action_PlayerClose]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Condition_PlayerClose</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [CheckTrueBooleans:true]
+        [TrueBooleans:PlayerClose]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Action_PlayerClose</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [SetBooleansTrue:PlayerClose]
+        [SetBooleansFalse:PlayerNotClose]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_PlayerClose]
+        [ForceManualTriggerActivation:false]
+      </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Trigger_PlayerNotClose</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:PlayerNear]
+
+        [TargetDistance:1000]
+
+        [UseTrigger:true]
+        [StartsReady:false]
+        [UseFailCondition:true]
+
+        [MinCooldownMs:10000]
+        [MaxCooldownMs:10001]
+
+        [MaxActions:-1]
+        [Actions:MSB_Context_Action_PlayerNotClose]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Condition_PlayerNotClose</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [UseFailCondition:true]
+        [MatchAnyCondition:false]
+
+        [CheckTrueBooleans:true]
+        [TrueBooleans:PlayerNotClose]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Action_PlayerNotClose</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [SetBooleansTrue:PlayerNotClose]
+        [SetBooleansFalse:PlayerClose]
       </Description>
     </EntityComponent>
 
