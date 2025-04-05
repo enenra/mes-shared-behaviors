@@ -29,9 +29,13 @@
         [RivalAI TriggerGroup]
 
         [Triggers:MSB_System_Communication_Trigger_AllGood]
+        [Triggers:MSB_System_Communication_Trigger_Received_AllGood]
+
         [Triggers:MSB_System_Communication_Trigger_SOS]
         [Triggers:MSB_System_Communication_Trigger_SOS_Received_Dynamic]
+
         [Triggers:MSB_System_Communication_Trigger_Compromised]
+        [Triggers:MSB_System_Communication_Trigger_Received_Compromised]
       </Description>
     </EntityComponent>
 
@@ -72,10 +76,12 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:CommSystem - Sending AllGood]
+        [//DebugMessage:CommSystem - Sending AllGood]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Sending_AllGood]
 
         [BroadcastCommandProfiles:true]
-
         [CommandProfileIds:MSB_System_Communication_Command_AllGood]
         [CommandProfileIds:MSB_System_Communication_Command_AllGood_AbortResponse]
       </Description>
@@ -88,7 +94,7 @@
       <Description>
         [RivalAI Command]
 
-        [CommandCode:{Faction}_AllGood]
+        [CommandCode:AllGood]
 
         [IgnoreAntennaRequirement:true]
         [IgnoreReceiverAntennaRequirement:true]
@@ -106,7 +112,7 @@
       <Description>
         [RivalAI Command]
 
-        [CommandCode:{Faction}_AllGood_AbortResponse]
+        [CommandCode:AllGood_AbortResponse]
 
         [IgnoreAntennaRequirement:true]
         [IgnoreReceiverAntennaRequirement:true]
@@ -122,23 +128,23 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_System_Communication_Trigger_AllGood_Received</SubtypeId>
+        <SubtypeId>MSB_System_Communication_Trigger_Received_AllGood</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
 
         [Type:CommandReceived]
-        [CommandReceiveCode:{Faction}_AllGood_AbortResponse]
+        [CommandReceiveCode:AllGood_AbortResponse]
 
-        [Conditions:MSB_System_Communication_Condition_AllGood_Received]
+        [Conditions:MSB_System_Communication_Condition_Received_AllGood]
 
-        [Actions:MSB_System_Communication_Action_AllGood_Received]
+        [Actions:MSB_System_Communication_Action_Received_AllGood]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_System_Communication_Condition_AllGood_Received</SubtypeId>
+        <SubtypeId>MSB_System_Communication_Condition_Received_AllGood</SubtypeId>
       </Id>
       <Description>
         [RivalAI Condition]
@@ -156,12 +162,15 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_System_Communication_Action_AllGood_Received</SubtypeId>
+        <SubtypeId>MSB_System_Communication_Action_Received_AllGood</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:CommSystem - Receiving AllGood]
+        [//DebugMessage:CommSystem - Receiving AllGood]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Receiving_AllGood]
 
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_System_Communication_Trigger_SOS_Response_Timeout]
@@ -169,7 +178,7 @@
         [SetBooleansFalse:MSB_RespondingToSOS]
 
         [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_AllGood_Received]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Received_AllGood]
         [ManuallyActivatedTriggerTags:MSB_Role_InitRole]
       </Description>
     </EntityComponent>
@@ -225,6 +234,9 @@
 
         [CheckTrueBooleans:true]
         [TrueBooleans:MSB_CombatTypeActive]
+
+        [CheckFalseBooleans:true]
+        [FalseBooleans:MSB_RespondingToSOS]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -235,13 +247,12 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:CommSystem - Sending SOS]
+        [//DebugMessage:CommSystem - Sending SOS]
 
         [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_SOS]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Sending_SOS]
 
         [BroadcastCommandProfiles:true]
-
         [CommandProfileIds:MSB_System_Communication_Command_SOS]
       </Description>
     </EntityComponent>
@@ -253,7 +264,7 @@
       <Description>
         [RivalAI Command]
 
-        [CommandCode:{Faction}_SOS]
+        [CommandCode:SOS]
 
         [MatchSenderReceiverOwners:true]
         [SendTargetEntityId:true]
@@ -273,7 +284,7 @@
         [RivalAI Trigger]
 
         [Type:CommandReceived]
-        [CommandReceiveCode:{Faction}_SOS]
+        [CommandReceiveCode:SOS]
 
         [UseTrigger:false]
         [StartsReady:false]
@@ -306,12 +317,12 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:CommSystem - Receiving SOS Dynamic]
+        [//DebugMessage:CommSystem - Receiving SOS Dynamic]
 
         [SwitchToReceivedTarget:true]
 
         [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_SOS_Response_Dynamic]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Receiving_SOS]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitBattle]
 
         [SetBooleansTrue:MSB_RespondingToSOS]
@@ -374,7 +385,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:CommSystem - SOS Response Timeout]
+        [//DebugMessage:CommSystem - SOS Response Timeout]
 
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_System_Communication_Trigger_SOS_Response_Timeout]
@@ -394,7 +405,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:CommSystem - SOS Response Timeout StillInBattle]
+        [//DebugMessage:CommSystem - SOS Response Timeout StillInBattle]
 
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_System_Communication_Trigger_SOS_Response_Timeout]
@@ -427,10 +438,9 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:CommSystem - Sending Compromised]
+        [//DebugMessage:CommSystem - Sending Compromised]
 
         [BroadcastCommandProfiles:true]
-
         [CommandProfileIds:MSB_System_Communication_Command_Compromised]
         [CommandProfileIds:MSB_System_Communication_Command_Compromised_AbortResponse]
       </Description>
@@ -443,7 +453,7 @@
       <Description>
         [RivalAI Command]
 
-        [CommandCode:{Faction}_Compromised]
+        [CommandCode:Compromised]
 
         [MatchSenderReceiverOwners:true]
         [SendDamagerEntityId:true]
@@ -459,7 +469,7 @@
       <Description>
         [RivalAI Command]
 
-        [CommandCode:{Faction}_Compromised_AbortResponse]
+        [CommandCode:Compromised_AbortResponse]
 
         [IgnoreAntennaRequirement:true]
         [IgnoreReceiverAntennaRequirement:true]
@@ -475,23 +485,23 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_System_Communication_Trigger_Compromised_Received</SubtypeId>
+        <SubtypeId>MSB_System_Communication_Trigger_Received_Compromised</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
 
         [Type:CommandReceived]
-        [CommandReceiveCode:{Faction}_Compromised_AbortResponse]
+        [CommandReceiveCode:Compromised_AbortResponse]
 
-        [Conditions:MSB_System_Communication_Condition_Compromised_Received]
+        [Conditions:MSB_System_Communication_Condition_Received_Compromised]
 
-        [Actions:MSB_System_Communication_Action_Compromised_Received]
+        [Actions:MSB_System_Communication_Action_Received_Compromised]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_System_Communication_Condition_Compromised_Received</SubtypeId>
+        <SubtypeId>MSB_System_Communication_Condition_Received_Compromised</SubtypeId>
       </Id>
       <Description>
         [RivalAI Condition]
@@ -506,18 +516,18 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_System_Communication_Action_Compromised_Received</SubtypeId>
+        <SubtypeId>MSB_System_Communication_Action_Received_Compromised</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:CommSystem - Receiving Compromised]
+        [//DebugMessage:CommSystem - Receiving Compromised]
 
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_System_Communication_Trigger_SOS_Response_Timeout]
 
         [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Compromised_Received]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Received_Compromised]
 
         [SetBooleansFalse:MSB_RespondingToSOS]
       </Description>
