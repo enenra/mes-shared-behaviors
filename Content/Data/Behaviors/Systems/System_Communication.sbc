@@ -16,7 +16,7 @@
     Usage:
       * Trigger MSB_TriggerEvent_SendSOS to force SOS outside of normal logic.
       * Define [OverrideTargetData:MSB_TargetProfile_LongRange] in behavior if you want the encounter to respond to SOS.
-      * Reference MSB_System_Communication_Trigger_RespondToSOS_Dynamic in your behavior if you want the encounter to respond to SOS.
+      * Reference MSB_System_Communication_Action_Enable_SOS_Response_Dynamic in your behavior if you want the encounter to respond to SOS.
 
     -->
 
@@ -31,6 +31,19 @@
         [Triggers:MSB_System_Communication_Trigger_AllGood]
         [Triggers:MSB_System_Communication_Trigger_SOS]
         [Triggers:MSB_System_Communication_Trigger_Compromised]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Communication_Action_Enable_SOS_Response_Dynamic</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_System_Communication_Trigger_SOS_Received_Dynamic]
       </Description>
     </EntityComponent>
 
@@ -253,7 +266,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_System_Communication_Trigger_RespondToSOS_Dynamic</SubtypeId>
+        <SubtypeId>MSB_System_Communication_Trigger_SOS_Received_Dynamic</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
