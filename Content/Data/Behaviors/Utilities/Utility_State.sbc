@@ -265,9 +265,6 @@
         [DebugMessage:StateUtility - Role TargetNear - True]
 
         [SetBooleansTrue:MSB_State_Role_TargetNear]
-
-        [ResetCooldownTimeOfTriggers:true]
-        [ResetTriggerCooldownNames:MSB_Utility_State_Trigger_Combat_To_Role_NoTarget]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -281,9 +278,6 @@
         [DebugMessage:StateUtility - Role TargetNear - False]
 
         [SetBooleansFalse:MSB_State_Role_TargetNear]
-
-        [ResetCooldownTimeOfTriggers:true]
-        [ResetTriggerCooldownNames:MSB_Utility_State_Trigger_Combat_To_Role_NoTarget]
       </Description>
     </EntityComponent>
 
@@ -532,9 +526,6 @@
         [DebugMessage:StateUtility - Combat TargetFar - True]
 
         [SetBooleansTrue:MSB_State_Combat_TargetFar]
-
-        [ResetCooldownTimeOfTriggers:true]
-        [ResetTriggerCooldownNames:MSB_Utility_State_Trigger_Combat_To_Role_NoTarget]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -548,9 +539,6 @@
         [DebugMessage:StateUtility - Combat TargetFar - False]
 
         [SetBooleansFalse:MSB_State_Combat_TargetFar]
-
-        [ResetCooldownTimeOfTriggers:true]
-        [ResetTriggerCooldownNames:MSB_Utility_State_Trigger_Combat_To_Role_NoTarget]
       </Description>
     </EntityComponent>
 
