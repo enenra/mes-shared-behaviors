@@ -29,9 +29,11 @@
         [RivalAI TriggerGroup]
 
         [Triggers:MSB_System_Communication_Trigger_AllGood]
+        [Triggers:MSB_System_Communication_Trigger_AllGood_Delay]
         [Triggers:MSB_System_Communication_Trigger_Received_AllGood]
 
         [Triggers:MSB_System_Communication_Trigger_SOS]
+        [Triggers:MSB_System_Communication_Trigger_SOS_Delay]
         [Triggers:MSB_System_Communication_Trigger_SOS_Received_Dynamic]
 
         [Triggers:MSB_System_Communication_Trigger_Compromised]
@@ -64,7 +66,40 @@
         [Type:Manual]
         [Tags:MSB_TriggerEvent_NoLongerInBattle]
 
-        [MaxActions:-1]
+        [Actions:MSB_System_Communication_Action_AllGood_Delay]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Communication_Action_AllGood_Delay</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB_System_Communication_Trigger_AllGood_Delay]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_System_Communication_Trigger_AllGood_Delay]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Communication_Trigger_AllGood_Delay</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:false]
+        [StartsReady:false]
+
+        [MinCooldownMs:2000]
+        [MaxCooldownMs:2001]
+
         [Actions:MSB_System_Communication_Action_AllGood]
       </Description>
     </EntityComponent>
@@ -77,6 +112,9 @@
         [RivalAI Action]
 
         [//DebugMessage:CommSystem - Sending AllGood]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_System_Communication_Trigger_AllGood_Delay]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Sending_AllGood]
@@ -101,7 +139,7 @@
         [MatchSenderReceiverOwners:true]
         [Radius:10000]
 
-        [CommandDelayTicks:180]
+        [CommandDelayTicks:360]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -121,7 +159,7 @@
 
         [Radius:2500]
 
-        [CommandDelayTicks:180]
+        [CommandDelayTicks:360]
       </Description>
     </EntityComponent>
 
@@ -196,7 +234,6 @@
         [Type:Manual]
         [Tags:MSB_TriggerEvent_SendSOS]
 
-        [MaxActions:-1]
         [Actions:MSB_System_Communication_Action_SOS]
       </Description>
     </EntityComponent>
@@ -213,12 +250,12 @@
         [UseTrigger:true]
         [StartsReady:true]
 
-        [MinCooldownMs:120000]
-        [MaxCooldownMs:120001]
+        [MinCooldownMs:36000]
+        [MaxCooldownMs:36001]
 
         [Conditions:MSB_System_Communication_Condition_SOS]
 
-        [Actions:MSB_System_Communication_Action_SOS]
+        [Actions:MSB_System_Communication_Action_SOS_Delay]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -242,12 +279,49 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Communication_Action_SOS_Delay</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB_System_Communication_Trigger_SOS_Delay]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_System_Communication_Trigger_SOS_Delay]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Communication_Trigger_SOS_Delay</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:false]
+        [StartsReady:false]
+
+        [MinCooldownMs:2000]
+        [MaxCooldownMs:2001]
+
+        [Actions:MSB_System_Communication_Action_SOS]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_System_Communication_Action_SOS</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
 
         [//DebugMessage:CommSystem - Sending SOS]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_System_Communication_Trigger_SOS_Delay]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Sending_SOS]
@@ -270,7 +344,7 @@
         [SendTargetEntityId:true]
         [SendGridValue:true]
 
-        [CommandDelayTicks:180]
+        [CommandDelayTicks:360]
       </Description>
     </EntityComponent>
 
@@ -438,11 +512,11 @@
       <Description>
         [RivalAI Action]
 
-        [//DebugMessage:CommSystem - Sending Compromised]
+        [DebugMessage:CommSystem - Sending Compromised]
 
         [BroadcastCommandProfiles:true]
-        [CommandProfileIds:MSB_System_Communication_Command_Compromised]
         [CommandProfileIds:MSB_System_Communication_Command_Compromised_AbortResponse]
+        [CommandProfileIds:MSB_System_Communication_Command_Compromised]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -458,7 +532,7 @@
         [MatchSenderReceiverOwners:true]
         [SendDamagerEntityId:true]
 
-        [CommandDelayTicks:180]
+        [CommandDelayTicks:360]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -478,7 +552,7 @@
 
         [Radius:2500]
 
-        [CommandDelayTicks:180]
+        [CommandDelayTicks:360]
       </Description>
     </EntityComponent>
 
@@ -521,7 +595,7 @@
       <Description>
         [RivalAI Action]
 
-        [//DebugMessage:CommSystem - Receiving Compromised]
+        [DebugMessage:CommSystem - Receiving Compromised]
 
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_System_Communication_Trigger_SOS_Response_Timeout]
