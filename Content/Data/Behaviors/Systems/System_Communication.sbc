@@ -174,6 +174,9 @@
         [Type:CommandReceived]
         [CommandReceiveCode:AllGood_AbortResponse]
 
+        [UseTrigger:true]
+        [StartsReady:true]
+
         [Conditions:MSB_System_Communication_Condition_Received_AllGood]
 
         [Actions:MSB_System_Communication_Action_Received_AllGood]
@@ -512,7 +515,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:CommSystem - Sending Compromised]
+        [//DebugMessage:CommSystem - Sending Compromised]
 
         [BroadcastCommandProfiles:true]
         [CommandProfileIds:MSB_System_Communication_Command_Compromised_AbortResponse]
@@ -531,8 +534,6 @@
 
         [MatchSenderReceiverOwners:true]
         [SendDamagerEntityId:true]
-
-        [CommandDelayTicks:360]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -550,9 +551,7 @@
         [MatchSenderReceiverOwners:true]
         [SendDamagerEntityId:true]
 
-        [Radius:2500]
-
-        [CommandDelayTicks:360]
+        [Radius:5000]
       </Description>
     </EntityComponent>
 
@@ -566,6 +565,9 @@
 
         [Type:CommandReceived]
         [CommandReceiveCode:Compromised_AbortResponse]
+
+        [UseTrigger:true]
+        [StartsReady:true]
 
         [Conditions:MSB_System_Communication_Condition_Received_Compromised]
 
@@ -595,7 +597,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:CommSystem - Receiving Compromised]
+        [//DebugMessage:CommSystem - Receiving Compromised]
 
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_System_Communication_Trigger_SOS_Response_Timeout]
