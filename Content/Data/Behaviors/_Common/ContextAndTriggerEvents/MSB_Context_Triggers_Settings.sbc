@@ -301,7 +301,7 @@ MSB_TriggerEvent_HostileToNormal
         [SetBooleansTrue:SettingBattle]
 
         [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerNames:MSB_TriggerEvent_InitBattle]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitBattle]
         [ForceManualTriggerActivation:false]
 
         [ResetCooldownTimeOfTriggers:true]
