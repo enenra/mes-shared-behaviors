@@ -69,7 +69,7 @@
 
         [CheckFalseBooleans:true]
         [FalseBooleans:UnderFire]
-        [FalseBooleans:SettingBattle]
+        [FalseBooleans:MSB_State_Combat]
 
         [CheckTargetDistance:false]
         [MinTargetDistance:800]

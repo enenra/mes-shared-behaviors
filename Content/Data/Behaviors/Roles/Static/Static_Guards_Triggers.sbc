@@ -32,7 +32,7 @@
         [MinCooldownMs:1800000]
         [MaxCooldownMs:1800001]
 
-        [Conditions:MSB_Context_Condition_SettingBattle]
+        [Conditions:MSB_Utility_State_Condition_Check_State_Combat]
 
         [MaxActions:-1]
         [Actions:MSB_DefenseSystem_Action_Guards]

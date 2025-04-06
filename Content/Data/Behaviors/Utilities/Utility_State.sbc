@@ -1,0 +1,555 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <!--
+      State Utility
+
+      MSB_State_Role
+      MSB_State_Role_TargetNear
+
+      MSB_State_Combat
+      MSB_State_Combat_TargetFar
+    -->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Utility_State_Trigger_Start</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:true]
+        [StartsReady:false]
+
+        [MinCooldownMs:1000]
+        [MaxCooldownMs:1001]
+
+        [MaxActions:1]
+        [Actions:MSB_Context_Action_InitNormal]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Utility_State_Action_Start</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:StateUtility - Start]
+
+        [SetBooleansTrue:MSB_State_Role]
+
+        [SetBooleansFalse:MSB_State_Role_TargetNear]
+        [SetBooleansFalse:MSB_State_Combat]
+        [SetBooleansFalse:MSB_State_Combat_TargetFar]
+      </Description>
+    </EntityComponent>
+
+    <!-- Main States -->
+    <!-- Role_To_Combat -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Utility_State_Trigger_Role_To_Combat</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Manual]
+
+        [Tags:MSB_TriggerEvent_InitCombat]
+
+        [UseTrigger:true]
+        [StartsReady:false]
+
+        [MinCooldownMs:200]
+        [MaxCooldownMs:201]
+
+        [Actions:MSB_Utility_State_Action_Role_To_Combat]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Utility_State_Action_Role_To_Combat</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [SetBooleansTrue:MSB_State_Combat]
+
+        [SetBooleansFalse:MSB_State_Role]
+        [SetBooleansFalse:MSB_State_Role_TargetNear]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_CombatType_InitCombatType]
+        [ManuallyActivatedTriggerTags:MSB_Role_CloseRole]
+
+        [DisableTriggers:true]
+        [DisableTriggerTags:MSB_RoleToCombat_Triggers]
+
+        [EnableTriggers:true]
+        [EnableTriggerTags:MSB_CombatToRole_Triggers]
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB_CombatToRole_Triggers]
+      </Description>
+    </EntityComponent>
+
+    <!-- Combat_To_Role -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Utility_State_Trigger_Combat_To_Role</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Manual]
+
+        [Tags:MSB_TriggerEvent_InitRole]
+
+        [UseTrigger:true]
+        [StartsReady:false]
+
+        [MinCooldownMs:200]
+        [MaxCooldownMs:201]
+
+        [Actions:MSB_Utility_State_Action_Combat_To_Role]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Utility_State_Action_Combat_To_Role</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [SetBooleansTrue:MSB_State_Role]
+
+        [SetBooleansFalse:MSB_State_Combat]
+        [SetBooleansFalse:MSB_State_Combat_TargetFar]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_Role_InitRole]
+        [ManuallyActivatedTriggerTags:MSB_CombatType_CloseCombatType]
+
+        [DisableTriggers:true]
+        [DisableTriggerTags:MSB_CombatToRole_Triggers]
+
+        [EnableTriggers:true]
+        [EnableTriggerTags:MSB_RoleToCombat_Triggers]
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB_RoleToCombat_Triggers]
+      </Description>
+    </EntityComponent>
+
+
+    <!-- State Check Conditions -->
+    <!-- State_Role -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Utility_State_Condition_Check_State_Role</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [CheckTrueBooleans:true]
+        [TrueBooleans:MSB_State_Role]
+      </Description>
+    </EntityComponent>
+
+    <!-- State_Role_TargetNear -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Utility_State_Condition_Check_State_Role_TargetNear</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [CheckTrueBooleans:true]
+        [TrueBooleans:MSB_State_Role_TargetNear]
+      </Description>
+    </EntityComponent>
+
+    <!-- State_Combat -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Utility_State_Condition_Check_State_Combat</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [CheckTrueBooleans:true]
+        [TrueBooleans:MSB_State_Combat]
+      </Description>
+    </EntityComponent>
+
+    <!-- State_Combat_TargetFar -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Utility_State_Condition_Check_State_Combat_TargetFar</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [CheckTrueBooleans:true]
+        [TrueBooleans:MSB_State_Combat_TargetFar]
+      </Description>
+    </EntityComponent>
+
+
+    <!-- Role Logic -->
+    <!-- Role_TargetNear -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Utility_State_Trigger_Role_TargetNear</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:TargetNear]
+        [TargetDistance:4500]
+
+        [Tags:MSB_RoleToCombat_Triggers]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [MinCooldownMs:20000]
+        [MaxCooldownMs:20001]
+
+        [Conditions:MSB_Utility_State_Condition_Check_State_Role]
+
+        [Actions:MSB_Utility_State_Action_Role_TargetNear]
+
+        [UseElseActions:true]
+        [ElseActions:MSB_Utility_State_Action_Role_TargetNear_Else]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Utility_State_Action_Role_TargetNear</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:StateUtility - Role TargetNear - True]
+
+        [SetBooleansTrue:MSB_State_Role_TargetNear]
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB_Utility_State_Trigger_Combat_To_Role_NoTarget]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Utility_State_Action_Role_TargetNear_Else</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:StateUtility - Role TargetNear - False]
+
+        [SetBooleansFalse:MSB_State_Role_TargetNear]
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB_Utility_State_Trigger_Combat_To_Role_NoTarget]
+      </Description>
+    </EntityComponent>
+
+    <!-- Role_To_Combat_EnemiesApproaching -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Utility_State_Trigger_Role_To_Combat_EnemiesApproaching</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:TargetNear]
+        [TargetDistance:1000]
+
+        [Tags:MSB_RoleToCombat_Triggers]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [MinCooldownMs:20000]
+        [MaxCooldownMs:20001]
+
+        [Conditions:MSB_Utility_State_Condition_Check_State_Role]
+
+        [Actions:MSB_Utility_State_Action_Role_To_Combat_EnemiesApproaching]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Utility_State_Action_Role_To_Combat_EnemiesApproaching</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:StateUtility - Role EnemiesApproaching - InitCombat]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitCombat]
+        [ForceManualTriggerActivation:false]
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB_Utility_State_Trigger_Combat_To_Role_NoTarget]
+
+        [RefreshTarget:true]
+      </Description>
+    </EntityComponent>
+
+    <!-- Role_To_Combat_Damage -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Utility_State_Trigger_Role_To_Combat_Damage</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Damage]
+        [DamageTypes:Any]
+
+        [Tags:MSB_RoleToCombat_Triggers]
+
+        [ExcludedDamageTypes:Environment]
+        [ExcludedDamageTypes:Deformation]
+        [ExcludedDamageTypes:Fire]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+        [Conditions:MSB_Utility_State_Condition_Role_To_Combat_Damage]
+
+        [MinCooldownMs:20000]
+        [MaxCooldownMs:20001]
+
+        [MaxActions:-1]
+        [Actions:MSB_Utility_State_Action_Role_To_Combat_Damage]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Utility_State_Condition_Role_To_Combat_Damage</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [CheckTrueBooleans:true]
+        [TrueBooleans:MSB_State_Role]
+
+        [IsAttackerHostile:true]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Utility_State_Action_Role_To_Combat_Damage</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:StateUtility - Role Damage - InitCombat]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitCombat]
+        [ForceManualTriggerActivation:false]
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB_Utility_State_Trigger_Combat_To_Role_NoTarget]
+
+        [RefreshTarget:true]
+      </Description>
+    </EntityComponent>
+
+    <!-- Combat Logic-->
+    <!-- Combat_To_Role_NoTarget -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Utility_State_Action_Check_NoTarget</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB_Utility_State_Trigger_Combat_To_Role_NoTarget]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Utility_State_Trigger_Combat_To_Role_NoTarget</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:NoTarget]
+
+        [Tags:MSB_CombatToRole_Triggers]
+
+        [UseTrigger:true]
+        [StartsReady:false]
+
+        [MinCooldownMs:30000]
+        [MaxCooldownMs:30001]
+
+        [Conditions:MSB_Utility_State_Condition_Check_State_Combat]
+
+        [Actions:MSB_Utility_State_Action_Combat_To_Role_NoTarget_Delay]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Utility_State_Action_Combat_To_Role_NoTarget_Delay</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:StateUtility - Combat NoTarget - Delay]
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB_Utility_State_Trigger_Combat_To_Role_NoTarget_Delay]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_Utility_State_Trigger_Combat_To_Role_NoTarget_Delay]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Utility_State_Trigger_Combat_To_Role_NoTarget_Delay</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:false]
+        [StartsReady:false]
+
+        [MinCooldownMs:20000]
+        [MaxCooldownMs:20001]
+
+        [Conditions:MSB_Utility_State_Condition_Combat_To_Role_NoTarget]
+
+        [Actions:MSB_Utility_State_Action_Combat_To_Role_NoTarget_Delay]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Utility_State_Action_Combat_To_Role_NoTarget_Delay</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:StateUtility - Combat NoTarget - InitRole]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_Utility_State_Trigger_Combat_To_Role_NoTarget_Delay]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitRole]
+      </Description>
+    </EntityComponent>
+
+    <!-- Combat_TargetFar -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Utility_State_Trigger_Combat_TargetFar</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:TargetFar]
+        [TargetDistance:4500]
+
+        [Tags:MSB_CombatToRole_Triggers]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [MinCooldownMs:20000]
+        [MaxCooldownMs:20001]
+
+        [Conditions:MSB_Utility_State_Condition_Check_State_Combat]
+
+        [Actions:MSB_Utility_State_Action_Combat_TargetFar]
+
+        [UseElseActions:true]
+        [ElseActions:MSB_Utility_State_Action_Combat_TargetFar_Else]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Utility_State_Action_Combat_TargetFar</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:StateUtility - Combat TargetFar - True]
+
+        [SetBooleansTrue:MSB_State_Combat_TargetFar]
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB_Utility_State_Trigger_Combat_To_Role_NoTarget]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Utility_State_Action_Combat_TargetFar_Else</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:StateUtility - Combat TargetFar - False]
+
+        [SetBooleansFalse:MSB_State_Combat_TargetFar]
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB_Utility_State_Trigger_Combat_To_Role_NoTarget]
+      </Description>
+    </EntityComponent>
+
+  </EntityComponents>
+</Definitions>

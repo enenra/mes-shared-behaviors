@@ -261,7 +261,7 @@
 
         [TargetDistance:800]
 
-        [Actions:MSB_Common_Action_RoleToCombat]
+        [Actions:MSB_Utility_State_Action_Role_To_Combat]
       </Description>
     </EntityComponent>
 
@@ -286,7 +286,7 @@
 
         [TargetDistance:1200]
 
-        [Actions:MSB_Common_Action_RoleToCombat]
+        [Actions:MSB_Utility_State_Action_Role_To_Combat]
       </Description>
     </EntityComponent>
 
@@ -388,7 +388,7 @@
         [RivalAI Trigger]
 
         [Type:Timer]
-        [Tags:MSB_CombatToRole_Trigger]
+        [Tags:MSB_CombatToRole_Triggers]
 
         [UseTrigger:false]
         [StartsReady:false]
@@ -398,7 +398,7 @@
         [MinCooldownMs:14000]
         [MaxCooldownMs:16000]
 
-        [Actions:MSB_Common_Action_CombatToRole]
+        [Actions:MSB_Utility_State_Action_Combat_To_Role]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -436,7 +436,7 @@
         [RivalAI Trigger]
 
         [Type:NoTarget]
-        [Tags:MSB_CombatToRole_Trigger]
+        [Tags:MSB_CombatToRole_Triggers]
 
         [UseTrigger:false]
         [StartsReady:true]
@@ -449,7 +449,7 @@
         [MaxCooldownMs:9000]
 
         [Actions:MSB_OffensiveEscort_Action_SwitchToEscort]
-        [Actions:MSB_Common_Action_CombatToRole]
+        [Actions:MSB_Utility_State_Action_Combat_To_Role]
       </Description>
     </EntityComponent>
 

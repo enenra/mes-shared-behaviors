@@ -65,7 +65,7 @@
         [RivalAI Trigger]
 
         [Type:Manual]
-        [Tags:MSB_TriggerEvent_HostileToNormal]
+        [Tags:MSB_TriggerEvent_InitRole]
 
         [UseTrigger:true]
         [StartsReady:true]
@@ -178,6 +178,7 @@
         [DisableTriggerNames:MSB_System_Communication_Trigger_SOS_Response_Timeout]
 
         [SetBooleansFalse:MSB_RespondingToSOS]
+        [RefreshTarget:true]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerNames:MSB_System_Communication_Trigger_Received_AllGood_Abort]
@@ -213,7 +214,7 @@
         [MatchAnyCondition:false]
 
         [CheckFalseBooleans:true]
-        [FalseBooleans:MSB_CombatTypeActive]
+        [FalseBooleans:MSB_State_Combat]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -280,7 +281,7 @@
         [MatchAnyCondition:false]
 
         [CheckTrueBooleans:true]
-        [TrueBooleans:MSB_CombatTypeActive]
+        [TrueBooleans:MSB_State_Combat]
 
         [CheckFalseBooleans:true]
         [FalseBooleans:MSB_RespondingToSOS]
@@ -390,7 +391,7 @@
         [MatchAnyCondition:false]
 
         [CheckFalseBooleans:true]
-        [FalseBooleans:MSB_CombatTypeActive]
+        [FalseBooleans:MSB_State_Combat]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -407,7 +408,7 @@
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Received_SOS]
-        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitBattle]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitCombat]
 
         [SetBooleansTrue:MSB_RespondingToSOS]
 
@@ -458,7 +459,7 @@
         [MatchAnyCondition:false]
 
         [CheckFalseBooleans:true]
-        [FalseBooleans:MSB_CombatTypeActive]
+        [FalseBooleans:MSB_State_Combat]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -478,7 +479,7 @@
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_SOS_Response_Timeout]
-        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_HostileToNormal]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitRole]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -613,6 +614,7 @@
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Received_Compromised]
 
         [SetBooleansFalse:MSB_RespondingToSOS]
+        [RefreshTarget:true]
       </Description>
     </EntityComponent>
 

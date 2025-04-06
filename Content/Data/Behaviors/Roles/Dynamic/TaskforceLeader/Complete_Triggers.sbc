@@ -29,7 +29,7 @@
         [Conditions:MSB_TaskForceLeader_Condition_HasTarget3000]
 
         [MaxActions:-1]
-        [Actions:MSB_Common_Action_RoleToCombat]
+        [Actions:MSB_Utility_State_Action_Role_To_Combat]
         [ActionExecution:All]
       </Description>
     </EntityComponent>

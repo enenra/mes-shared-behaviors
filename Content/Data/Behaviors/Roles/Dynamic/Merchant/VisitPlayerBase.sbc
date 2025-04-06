@@ -70,7 +70,7 @@ Not in use
         [RivalAI Condition]
 
         [CheckTrueBooleans:true]
-        [TrueBooleans:SettingNormal]
+        [TrueBooleans:MSB_State_Role]
         [TrueBooleans:PlayerNear]
 
         [NoTarget:true]
