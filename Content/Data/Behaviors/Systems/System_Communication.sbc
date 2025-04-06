@@ -31,6 +31,7 @@
         [Triggers:MSB_System_Communication_Trigger_AllGood]
         [Triggers:MSB_System_Communication_Trigger_AllGood_Delay]
         [Triggers:MSB_System_Communication_Trigger_Received_AllGood]
+        [Triggers:MSB_System_Communication_Trigger_Received_AllGood_Abort]
 
         [Triggers:MSB_System_Communication_Trigger_SOS]
         [Triggers:MSB_System_Communication_Trigger_SOS_Delay]
@@ -64,41 +65,10 @@
         [RivalAI Trigger]
 
         [Type:Manual]
-        [Tags:MSB_TriggerEvent_NoLongerInBattle]
+        [Tags:MSB_TriggerEvent_HostileToNormal]
 
-        [Actions:MSB_System_Communication_Action_AllGood_Delay]
-      </Description>
-    </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_System_Communication_Action_AllGood_Delay</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Action]
-
-        [ResetCooldownTimeOfTriggers:true]
-        [ResetTriggerCooldownNames:MSB_System_Communication_Trigger_AllGood_Delay]
-
-        [EnableTriggers:true]
-        [EnableTriggerNames:MSB_System_Communication_Trigger_AllGood_Delay]
-      </Description>
-    </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_System_Communication_Trigger_AllGood_Delay</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Trigger]
-
-        [Type:Timer]
-
-        [UseTrigger:false]
-        [StartsReady:false]
-
-        [MinCooldownMs:2000]
-        [MaxCooldownMs:2001]
+        [UseTrigger:true]
+        [StartsReady:true]
 
         [Actions:MSB_System_Communication_Action_AllGood]
       </Description>
@@ -112,9 +82,6 @@
         [RivalAI Action]
 
         [//DebugMessage:CommSystem - Sending AllGood]
-
-        [DisableTriggers:true]
-        [DisableTriggerNames:MSB_System_Communication_Trigger_AllGood_Delay]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Sending_AllGood]
@@ -157,7 +124,7 @@
         [MatchSenderReceiverOwners:true]
         [SendDamagerEntityId:true]
 
-        [Radius:2500]
+        [Radius:7500]
 
         [CommandDelayTicks:360]
       </Description>
@@ -195,9 +162,6 @@
 
         [CheckTrueBooleans:true]
         [TrueBooleans:MSB_RespondingToSOS]
-
-        [CheckFalseBooleans:true]
-        [FalseBooleans:MSB_CombatTypeActive]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -210,17 +174,60 @@
 
         [//DebugMessage:CommSystem - Receiving AllGood]
 
-        [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Receiving_AllGood]
-
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_System_Communication_Trigger_SOS_Response_Timeout]
 
         [SetBooleansFalse:MSB_RespondingToSOS]
 
         [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerNames:MSB_System_Communication_Trigger_Received_AllGood_Abort]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Communication_Trigger_Received_AllGood_Abort</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Manual]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Conditions:MSB_System_Communication_Condition_Received_AllGood_Abort]
+
+        [Actions:MSB_System_Communication_Action_Received_AllGood_Abort]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Communication_Condition_Received_AllGood_Abort</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [CheckFalseBooleans:true]
+        [FalseBooleans:MSB_CombatTypeActive]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Communication_Action_Received_AllGood_Abort</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:CommSystem - Receiving AllGood, Aborting]
+
+        [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Received_AllGood]
-        [ManuallyActivatedTriggerTags:MSB_Role_InitRole]
       </Description>
     </EntityComponent>
 
@@ -253,8 +260,8 @@
         [UseTrigger:true]
         [StartsReady:true]
 
-        [MinCooldownMs:36000]
-        [MaxCooldownMs:36001]
+        [MinCooldownMs:120000]
+        [MaxCooldownMs:120001]
 
         [Conditions:MSB_System_Communication_Condition_SOS]
 
@@ -471,7 +478,7 @@
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_SOS_Response_Timeout]
-        [ManuallyActivatedTriggerTags:MSB_Role_InitRole]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_HostileToNormal]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -551,7 +558,7 @@
         [MatchSenderReceiverOwners:true]
         [SendDamagerEntityId:true]
 
-        [Radius:5000]
+        [Radius:7500]
       </Description>
     </EntityComponent>
 
