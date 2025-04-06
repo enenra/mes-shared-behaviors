@@ -406,7 +406,7 @@
         [SwitchToReceivedTarget:true]
 
         [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Receiving_SOS]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Received_SOS]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitBattle]
 
         [SetBooleansTrue:MSB_RespondingToSOS]
