@@ -29,7 +29,7 @@
         [MaxCooldownMs:1001]
 
         [MaxActions:1]
-        [Actions:MSB_Context_Action_InitNormal]
+        [Actions:MSB_Utility_State_Action_Start]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -47,6 +47,9 @@
         [SetBooleansFalse:MSB_State_Role_TargetNear]
         [SetBooleansFalse:MSB_State_Combat]
         [SetBooleansFalse:MSB_State_Combat_TargetFar]
+
+        [DisableTriggers:true]
+        [DisableTriggerTags:MSB_CombatToRole_Triggers]
       </Description>
     </EntityComponent>
 
