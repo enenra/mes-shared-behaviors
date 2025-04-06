@@ -497,11 +497,9 @@ MSB_TriggerEvent_HostileToNormal
       <Description>
         [RivalAI Action]
 
-
         [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerNames:MSB_TriggerEvent_HostileToNormal]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_HostileToNormal]
         [ForceManualTriggerActivation:false]
-
       </Description>
     </EntityComponent>
 
