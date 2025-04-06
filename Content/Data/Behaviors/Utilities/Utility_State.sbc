@@ -40,7 +40,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:StateUtility - Start]
+        [//DebugMessage:StateUtility - Start]
 
         [SetBooleansTrue:MSB_State_Role]
 
@@ -262,7 +262,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:StateUtility - Role TargetNear - True]
+        [//DebugMessage:StateUtility - Role TargetNear - True]
 
         [SetBooleansTrue:MSB_State_Role_TargetNear]
       </Description>
@@ -275,7 +275,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:StateUtility - Role TargetNear - False]
+        [//DebugMessage:StateUtility - Role TargetNear - False]
 
         [SetBooleansFalse:MSB_State_Role_TargetNear]
       </Description>
@@ -314,7 +314,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:StateUtility - Role EnemiesApproaching - InitCombat]
+        [//DebugMessage:StateUtility - Role EnemiesApproaching - InitCombat]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitCombat]
@@ -381,7 +381,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:StateUtility - Role Damage - InitCombat]
+        [//DebugMessage:StateUtility - Role Damage - InitCombat]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitCombat]
@@ -439,7 +439,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:StateUtility - Combat NoTarget - Delay]
+        [//DebugMessage:StateUtility - Combat NoTarget - Delay]
 
         [ResetCooldownTimeOfTriggers:true]
         [ResetTriggerCooldownNames:MSB_Utility_State_Trigger_Combat_To_Role_NoTarget_Delay]
@@ -477,7 +477,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:StateUtility - Combat NoTarget - InitRole]
+        [//DebugMessage:StateUtility - Combat NoTarget - InitRole]
 
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_Utility_State_Trigger_Combat_To_Role_NoTarget_Delay]
@@ -523,7 +523,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:StateUtility - Combat TargetFar - True]
+        [//DebugMessage:StateUtility - Combat TargetFar - True]
 
         [SetBooleansTrue:MSB_State_Combat_TargetFar]
       </Description>
@@ -536,7 +536,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:StateUtility - Combat TargetFar - False]
+        [//DebugMessage:StateUtility - Combat TargetFar - False]
 
         [SetBooleansFalse:MSB_State_Combat_TargetFar]
       </Description>
