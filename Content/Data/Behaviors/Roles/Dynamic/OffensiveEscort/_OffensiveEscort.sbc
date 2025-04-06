@@ -108,6 +108,9 @@
       <Description>
         [RivalAI Action]
 
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_OffensiveEscort_InitRole]
+
         [ChangeBehaviorSubclass:true]
         [NewBehaviorSubclass:Escort]
 

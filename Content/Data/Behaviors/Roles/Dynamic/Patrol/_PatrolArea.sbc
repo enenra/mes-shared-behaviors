@@ -135,7 +135,7 @@
         [RivalAI Action]
 
         [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Patrol_SwitchToPatrol]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Patrol_InitRole]
 
         [ChangeBehaviorSubclass:true]
         [NewBehaviorSubclass:Patrol]

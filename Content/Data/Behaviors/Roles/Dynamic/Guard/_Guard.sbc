@@ -98,6 +98,9 @@
       <Description>
         [RivalAI Action]
 
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Guard_InitRole]
+
         [ChangeBehaviorSubclass:true]
         [NewBehaviorSubclass:Patrol]
 

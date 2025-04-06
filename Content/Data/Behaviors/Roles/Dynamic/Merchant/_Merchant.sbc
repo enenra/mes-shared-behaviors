@@ -105,6 +105,9 @@
       <Description>
         [RivalAI Action]
 
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Merchant_InitRole]
+
         [ChangeBehaviorSubclass:true]
         [NewBehaviorSubclass:CargoShip]
 

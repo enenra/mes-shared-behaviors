@@ -98,6 +98,9 @@
         [ChangeBehaviorSubclass:true]
         [NewBehaviorSubclass:Escort]
 
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_DefensiveEscort_InitRole]
+
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_DefensiveEscort_Trigger_TargetfarSwitchEscort]
 

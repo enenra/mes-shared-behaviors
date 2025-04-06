@@ -101,6 +101,9 @@
       <Description>
         [RivalAI Action]
 
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Raider_InitRole]
+
         [ChangeBehaviorSubclass:true]
         [NewBehaviorSubclass:CargoShip]
 

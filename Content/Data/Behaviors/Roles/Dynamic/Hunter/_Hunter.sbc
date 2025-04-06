@@ -102,6 +102,9 @@
       <Description>
         [RivalAI Action]
 
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Hunter_InitRole]
+
         [ChangeBehaviorSubclass:true]
         [NewBehaviorSubclass:CargoShip]
 
