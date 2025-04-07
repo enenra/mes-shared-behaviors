@@ -399,18 +399,6 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Utility_State_Action_Check_NoTarget</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Action]
-
-        [ResetCooldownTimeOfTriggers:true]
-        [ResetTriggerCooldownNames:MSB_Utility_State_Trigger_Combat_To_Role_NoTarget]
-      </Description>
-    </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_Utility_State_Trigger_Combat_To_Role_NoTarget</SubtypeId>
       </Id>
       <Description>

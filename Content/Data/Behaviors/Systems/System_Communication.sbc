@@ -70,7 +70,24 @@
         [UseTrigger:true]
         [StartsReady:true]
 
+        [Conditions:MSB_System_Communication_Condition_AllGood]
+
         [Actions:MSB_System_Communication_Action_AllGood]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Communication_Condition_AllGood</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [CheckTrueBooleans:true]
+        [TrueBooleans:MSB_SentSOS]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -82,6 +99,8 @@
         [RivalAI Action]
 
         [//DebugMessage:CommSystem - Sending AllGood]
+
+        [SetBooleansFalse:MSB_SentSOS]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Sending_AllGood]
@@ -178,7 +197,6 @@
         [DisableTriggerNames:MSB_System_Communication_Trigger_SOS_Response_Timeout]
 
         [SetBooleansFalse:MSB_RespondingToSOS]
-        [RefreshTarget:true]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerNames:MSB_System_Communication_Trigger_Received_AllGood_Abort]
@@ -213,8 +231,8 @@
         [UseConditions:true]
         [MatchAnyCondition:false]
 
-        [CheckFalseBooleans:true]
-        [FalseBooleans:MSB_State_Combat]
+        [CheckTrueBooleans:true]
+        [TrueBooleans:MSB_State_Combat_TargetFar]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -225,10 +243,11 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:CommSystem - Receiving AllGood, Aborting]
+        [//DebugMessage:CommSystem - Receiving AllGood, Aborting]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Received_AllGood]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitRole]
       </Description>
     </EntityComponent>
 
@@ -294,6 +313,8 @@
       </Id>
       <Description>
         [RivalAI Action]
+
+        [SetBooleansTrue:MSB_SentSOS]
 
         [ResetCooldownTimeOfTriggers:true]
         [ResetTriggerCooldownNames:MSB_System_Communication_Trigger_SOS_Delay]
