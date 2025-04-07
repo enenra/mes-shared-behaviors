@@ -53,7 +53,7 @@
         [MaxTargetDistance:1000]
 
         [CheckFalseBooleans:true]
-        [FalseBooleans:MSB_CombatTypeActive]
+        [FalseBooleans:MSB_State_Combat]
       </Description>
     </EntityComponent>
 
@@ -94,7 +94,7 @@
         [MaxTargetDistance:2000]
 
         [CheckFalseBooleans:true]
-        [FalseBooleans:MSB_CombatTypeActive]
+        [FalseBooleans:MSB_State_Combat]
       </Description>
     </EntityComponent>
 
@@ -135,7 +135,7 @@
         [MaxTargetDistance:3000]
 
         [CheckFalseBooleans:true]
-        [FalseBooleans:MSB_CombatTypeActive]
+        [FalseBooleans:MSB_State_Combat]
       </Description>
     </EntityComponent>
 
@@ -176,7 +176,7 @@
         [MaxTargetDistance:4000]
 
         [CheckFalseBooleans:true]
-        [FalseBooleans:MSB_CombatTypeActive]
+        [FalseBooleans:MSB_State_Combat]
       </Description>
     </EntityComponent>
 
@@ -217,7 +217,7 @@
         [MaxTargetDistance:5000]
 
         [CheckFalseBooleans:true]
-        [FalseBooleans:MSB_CombatTypeActive]
+        [FalseBooleans:MSB_State_Combat]
       </Description>
     </EntityComponent>
 
@@ -231,7 +231,7 @@
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_EngageTargetAtRange]
-        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitBattle]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitCombat]
       </Description>
     </EntityComponent>
 

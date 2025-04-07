@@ -58,7 +58,7 @@ MSB_TriggerEvent_LowMorale
     <!-- Current cooldowns result in battle ending after 15min if morale is 100 to start with and nothing else decreases it. -->
 
 
-    <!-- Currently it uses UnderFire instead of SettingBattle -->
+    <!-- Currently it uses UnderFire instead of MSB_State_Combat -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>

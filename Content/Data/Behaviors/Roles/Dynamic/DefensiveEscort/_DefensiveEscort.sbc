@@ -212,7 +212,7 @@
 
         [TargetDistance:1500]
 
-        [Actions:MSB_Common_Action_RoleToCombat]
+        [Actions:MSB_Utility_State_Action_Role_To_Combat]
       </Description>
     </EntityComponent>
 
@@ -225,14 +225,14 @@
         [RivalAI Trigger]
 
         [Type:TargetFar]
-        [Tags:MSB_CombatToRole_Trigger]
+        [Tags:MSB_CombatToRole_Triggers]
 
         [UseTrigger:false]
         [StartsReady:true]
 
         [TargetDistance:2000]
 
-        [Actions:MSB_Common_Action_CombatToRole]
+        [Actions:MSB_Utility_State_Action_Combat_To_Role]
       </Description>
     </EntityComponent>
 

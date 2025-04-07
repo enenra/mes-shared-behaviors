@@ -3,17 +3,11 @@
   <EntityComponents>
 
     <!--
-    There are 3 Settings (bools): SettingNormal, SettingHighAlert, SettingBattle
     There are 2 options for target (bools): NoTarget, HasTarget
 
 
     MSB_Context_Condition_NormalNeutralPlayerNearNoTarget
     MSB_Context_Condition_CompareCommandGridValue
-
-    Not in this file:
-    MSB_Context_Condition_SettingNormal
-    MSB_Context_Condition_SettingHighAlert
-    MSB_Context_Condition_SettingBattle
 
 
     Player
@@ -64,7 +58,7 @@
         [MatchAnyCondition:false]
         [CheckTrueBooleans:true]
 
-        [TrueBooleans:SettingNormal]
+        [TrueBooleans:MSB_State_Role]
         [TrueBooleans:PlayerNear]
         [NoTarget:true]
 
@@ -94,7 +88,6 @@
       </Description>
     </EntityComponent>
 
-    <!--Settings -->
     <!--Player -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -174,7 +167,7 @@
         [MatchAnyCondition:false]
 
         [CheckTrueBooleans:true]
-        [TrueBooleans:SettingNormal]
+        [TrueBooleans:MSB_State_Role]
 
         [CheckPlayerReputation:true]
         [MaxPlayerReputationDistanceCheck:4500]
@@ -198,7 +191,7 @@
         [MatchAnyCondition:false]
         [CheckTrueBooleans:true]
 
-        [TrueBooleans:SettingNormal]
+        [TrueBooleans:MSB_State_Role]
 
         [CheckPlayerReputation:true]
         [MaxPlayerReputationDistanceCheck:4500]
@@ -222,7 +215,7 @@
         [MatchAnyCondition:false]
         [CheckTrueBooleans:true]
 
-        [TrueBooleans:SettingNormal]
+        [TrueBooleans:MSB_State_Role]
 
         [CheckPlayerReputation:true]
         [MaxPlayerReputationDistanceCheck:4500]
@@ -247,7 +240,7 @@
         [MatchAnyCondition:false]
         [CheckTrueBooleans:true]
 
-        [TrueBooleans:SettingBattle]
+        [TrueBooleans:MSB_State_Combat]
         [CheckPlayerReputation:true]
         [MaxPlayerReputationDistanceCheck:4500]
         [AllPlayersReputationMustMatch:true]
@@ -270,7 +263,7 @@
         [MatchAnyCondition:false]
         [CheckTrueBooleans:true]
 
-        [TrueBooleans:SettingBattle]
+        [TrueBooleans:MSB_State_Combat]
         [CheckPlayerReputation:true]
         [MaxPlayerReputationDistanceCheck:4500]
         [AllPlayersReputationMustMatch:true]
@@ -293,7 +286,7 @@
         [MatchAnyCondition:false]
         [CheckTrueBooleans:true]
 
-        [TrueBooleans:SettingBattle]
+        [TrueBooleans:MSB_State_Combat]
         [CheckPlayerReputation:true]
         [MaxPlayerReputationDistanceCheck:4500]
         [AllPlayersReputationMustMatch:true]
@@ -388,7 +381,7 @@
         [MatchAnyCondition:false]
 
         [CheckTrueBooleans:true]
-        [TrueBooleans:SettingNormal]
+        [TrueBooleans:MSB_State_Role]
 
         [CheckIfDamagerIsNpc:true]
       </Description>
@@ -406,7 +399,7 @@
         [MatchAnyCondition:false]
 
         [CheckTrueBooleans:true]
-        [TrueBooleans:SettingNormal]
+        [TrueBooleans:MSB_State_Role]
 
         [CheckPlayerReputation:true]
         [MaxPlayerReputationDistanceCheck:4500]

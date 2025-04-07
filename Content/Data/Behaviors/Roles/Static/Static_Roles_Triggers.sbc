@@ -160,7 +160,7 @@
 
         [TargetDistance:2500]
 
-        [Conditions:MSB_Context_Condition_SettingNormal]
+        [Conditions:MSB_Utility_State_Condition_Check_State_Role]
 
         [UsePlayerConditionProfile:true]
         [PlayerConditionProfileIds:PlayerCondition-ExcludedPlayerNear]
@@ -205,7 +205,7 @@
 
         [TargetDistance:2500]
 
-        [Conditions:MSB_Context_Condition_SettingNormal]
+        [Conditions:MSB_Utility_State_Condition_Check_State_Role]
 
         [UsePlayerConditionProfile:true]
         [PlayerConditionProfileIds:PlayerCondition-ExcludedPlayerNear]

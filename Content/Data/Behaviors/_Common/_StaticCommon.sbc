@@ -10,13 +10,15 @@
       <Description>
         [RivalAI TriggerGroup]
 
-        [Triggers:MSB_Context_Trigger_Start]
-        [Triggers:MSB_Context_Trigger_NormaltoHighAlert]
-        [Triggers:MSB_Context_Trigger_Damage]
-        [Triggers:MSB_Context_Trigger_NoTarget_ReadyforNormal]
-        [Triggers:MSB_Context_Trigger_StayHostile]
-        [Triggers:MSB_Context_Trigger_EnemiesApproaching]
-        [Triggers:MSB_Context_Trigger_Hostile_to_Normal]
+        [Triggers:MSB_Utility_State_Trigger_Start]
+        [Triggers:MSB_Utility_State_Trigger_Role_To_Combat]
+        [Triggers:MSB_Utility_State_Trigger_Combat_To_Role]
+        [Triggers:MSB_Utility_State_Trigger_Role_TargetNear]
+        [Triggers:MSB_Utility_State_Trigger_Role_To_Combat_EnemiesApproaching]
+        [Triggers:MSB_Utility_State_Trigger_Role_To_Combat_Damage]
+        [Triggers:MSB_Utility_State_Trigger_Combat_To_Role_NoTarget]
+        [Triggers:MSB_Utility_State_Trigger_Combat_To_Role_NoTarget_Delay]
+        [Triggers:MSB_Utility_State_Trigger_Combat_TargetFar]
 
         [Triggers:MSB_Context_Trigger_PlayerNear]
         [Triggers:MSB_Context_Trigger_PlayerFar]

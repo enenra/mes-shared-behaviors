@@ -39,6 +39,7 @@
 
         [Triggers:MSB_System_Communication_Trigger_Compromised]
         [Triggers:MSB_System_Communication_Trigger_Received_Compromised]
+        [Triggers:MSB_System_Communication_Trigger_Received_Compromised_NoTarget]
       </Description>
     </EntityComponent>
 
@@ -65,12 +66,29 @@
         [RivalAI Trigger]
 
         [Type:Manual]
-        [Tags:MSB_TriggerEvent_HostileToNormal]
+        [Tags:MSB_TriggerEvent_InitRole]
 
         [UseTrigger:true]
         [StartsReady:true]
 
+        [Conditions:MSB_System_Communication_Condition_AllGood]
+
         [Actions:MSB_System_Communication_Action_AllGood]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Communication_Condition_AllGood</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [CheckTrueBooleans:true]
+        [TrueBooleans:MSB_SentSOS]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -82,6 +100,8 @@
         [RivalAI Action]
 
         [//DebugMessage:CommSystem - Sending AllGood]
+
+        [SetBooleansFalse:MSB_SentSOS]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Sending_AllGood]
@@ -212,8 +232,8 @@
         [UseConditions:true]
         [MatchAnyCondition:false]
 
-        [CheckFalseBooleans:true]
-        [FalseBooleans:MSB_CombatTypeActive]
+        [CheckTrueBooleans:true]
+        [TrueBooleans:MSB_State_Combat_TargetFar]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -224,10 +244,11 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:CommSystem - Receiving AllGood, Aborting]
+        [//DebugMessage:CommSystem - Receiving AllGood, Aborting]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Received_AllGood]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitRole]
       </Description>
     </EntityComponent>
 
@@ -280,7 +301,7 @@
         [MatchAnyCondition:false]
 
         [CheckTrueBooleans:true]
-        [TrueBooleans:MSB_CombatTypeActive]
+        [TrueBooleans:MSB_State_Combat]
 
         [CheckFalseBooleans:true]
         [FalseBooleans:MSB_RespondingToSOS]
@@ -293,6 +314,8 @@
       </Id>
       <Description>
         [RivalAI Action]
+
+        [SetBooleansTrue:MSB_SentSOS]
 
         [ResetCooldownTimeOfTriggers:true]
         [ResetTriggerCooldownNames:MSB_System_Communication_Trigger_SOS_Delay]
@@ -314,8 +337,8 @@
         [UseTrigger:false]
         [StartsReady:false]
 
-        [MinCooldownMs:2000]
-        [MaxCooldownMs:2001]
+        [MinCooldownMs:4000]
+        [MaxCooldownMs:4001]
 
         [Actions:MSB_System_Communication_Action_SOS]
       </Description>
@@ -390,7 +413,7 @@
         [MatchAnyCondition:false]
 
         [CheckFalseBooleans:true]
-        [FalseBooleans:MSB_CombatTypeActive]
+        [FalseBooleans:MSB_State_Combat]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -407,7 +430,7 @@
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Received_SOS]
-        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitBattle]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitCombat]
 
         [SetBooleansTrue:MSB_RespondingToSOS]
 
@@ -457,8 +480,8 @@
         [UseConditions:true]
         [MatchAnyCondition:false]
 
-        [CheckFalseBooleans:true]
-        [FalseBooleans:MSB_CombatTypeActive]
+        [CheckTrueBooleans:true]
+        [TrueBooleans:MSB_State_Combat_TargetFar]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -478,7 +501,7 @@
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_SOS_Response_Timeout]
-        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_HostileToNormal]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitRole]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -606,13 +629,61 @@
 
         [//DebugMessage:CommSystem - Receiving Compromised]
 
+        [SetBooleansFalse:MSB_RespondingToSOS]
+
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_System_Communication_Trigger_SOS_Response_Timeout]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Received_Compromised]
+        [ManuallyActivatedTriggerNames:MSB_System_Communication_Trigger_Received_Compromised_NoTarget]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Communication_Trigger_Received_Compromised_NoTarget</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
 
-        [SetBooleansFalse:MSB_RespondingToSOS]
+        [Type:Manual]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Conditions:MSB_System_Communication_Condition_Received_Compromised_NoTarget]
+
+        [Actions:MSB_System_Communication_Action_Received_Compromised_NoTarget]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Communication_Condition_Received_Compromised_NoTarget</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [CheckTrueBooleans:true]
+        [TrueBooleans:MSB_State_Combat_TargetFar]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Communication_Action_Received_Compromised_NoTarget</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage:CommSystem - Receiving Compromised - NoTarget]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitRole]
       </Description>
     </EntityComponent>
 
