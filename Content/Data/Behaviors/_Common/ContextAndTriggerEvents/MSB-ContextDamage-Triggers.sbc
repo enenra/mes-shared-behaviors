@@ -580,44 +580,41 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
 -->
 
 
-
-    <!-- _LowAltitude -->
-
-
+    <!-- UnderFireGoingDown -->
+    <!-- LowAltitude -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_ContextUnderFire_TriggerEvent_UnderFireGoingDown_LowAltitude</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI Trigger]
-        [Tags:ContextUnderFire]
-        [UseTrigger:false]
 
         [Type:Timer]
+
+        [Tags:ContextUnderFire]
+
+        [UseTrigger:false]
 
         [Conditions:MSB_ContextUnderFire_Condition_CheckSufficientUpwardThrust_LowAltitude]
 
         [MinCooldownMs:1000]
         [MaxCooldownMs:1001]
-        [MaxActions:1]
 
+        [MaxActions:1]
         [Actions:MSB_ContextUnderFire_Action_UnderFireGoingDown_LowAltitude]
       </Description>
     </EntityComponent>
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_ContextUnderFire_Condition_CheckSufficientUpwardThrust_LowAltitude</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI Condition]
+
         [UseConditions:true]
         [MatchAnyCondition:false]
-
 
         [CheckInSufficientUpwardThrust:true]
         [InSufficientUpwardThrustTolerance:-0.3]
@@ -627,20 +624,14 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
         [MaxAltitude:450]
 
         [AltitudeCheckIgnoreWater:false]
-
-
       </Description>
-
     </EntityComponent>
-
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_ContextUnderFire_Action_UnderFireGoingDown_LowAltitude</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI Action]
 
         [//DebugMessage:TriggerEvent UnderFireGoingDown]
@@ -650,13 +641,8 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_UnderFireGoingDown_LowAltitude]
         [ForceManualTriggerActivation:false]
 
-
-
-
-
         [ResetCooldownTimeOfTriggers:true]
         [ResetTriggerCooldownTags:ContextUnderFire]
-
 
         [SetBooleansFalse:UnderFire]
         [DisableTriggers:true]
@@ -664,38 +650,33 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
 
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_ContextDamage_TriggerEvent_UnderFire]
-
       </Description>
     </EntityComponent>
 
-
-
-    <!-- _HighAltitude -->
+    <!-- HighAltitude -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_ContextUnderFire_TriggerEvent_UnderFireGoingDown_HighAltitude</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI Trigger]
-        [Tags:ContextUnderFire]
-        [UseTrigger:false]
 
         [Type:Timer]
+
+        [Tags:ContextUnderFire]
+
+        [UseTrigger:false]
 
         [Conditions:MSB_ContextUnderFire_Condition_CheckSufficientUpwardThrust_HighAltitude]
 
         [MinCooldownMs:1000]
         [MaxCooldownMs:1001]
+
         [MaxActions:1]
-
         [Actions:MSB_ContextUnderFire_Action_UnderFireGoingDown_HighAltitude]
-
-
       </Description>
     </EntityComponent>
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -703,31 +684,25 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
       </Id>
       <Description>
         [RivalAI Condition]
+
         [UseConditions:true]
         [MatchAnyCondition:false]
 
-
         [CheckInSufficientUpwardThrust:true]
         [InSufficientUpwardThrustTolerance:-0.3]
-
 
         [AltitudeCheck:true]
         [MinAltitude:451]
         [MaxAltitude:-1]
         [AltitudeCheckIgnoreWater:false]
-
       </Description>
     </EntityComponent>
-
-
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_ContextUnderFire_Action_UnderFireGoingDown_HighAltitude</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI Action]
 
         [//DebugMessage:TriggerEvent UnderFireGoingDown HighAlittude]
@@ -740,14 +715,12 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
         [ResetCooldownTimeOfTriggers:true]
         [ResetTriggerCooldownTags:ContextUnderFire]
 
-
         [SetBooleansFalse:UnderFire]
         [DisableTriggers:true]
         [DisableTriggerTags:ContextUnderFire]
 
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_ContextDamage_TriggerEvent_UnderFire]
-
       </Description>
     </EntityComponent>
 
