@@ -336,8 +336,8 @@
         [UseTrigger:false]
         [StartsReady:false]
 
-        [MinCooldownMs:2000]
-        [MaxCooldownMs:2001]
+        [MinCooldownMs:4000]
+        [MaxCooldownMs:4001]
 
         [Actions:MSB_System_Communication_Action_SOS]
       </Description>
