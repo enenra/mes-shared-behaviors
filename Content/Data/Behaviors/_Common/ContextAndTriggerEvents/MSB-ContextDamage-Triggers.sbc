@@ -634,7 +634,7 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
       <Description>
         [RivalAI Action]
 
-        [//DebugMessage:TriggerEvent UnderFireGoingDown]
+        [//DebugMessage:TriggerEvent UnderFireGoingDown LowAltitude]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_UnderFireGoingDown]
