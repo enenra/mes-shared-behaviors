@@ -212,7 +212,8 @@
 
         [TargetDistance:1500]
 
-        [Actions:MSB_Utility_State_Action_Role_To_Combat]
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitCombat]
       </Description>
     </EntityComponent>
 
@@ -232,7 +233,8 @@
 
         [TargetDistance:2000]
 
-        [Actions:MSB_Utility_State_Action_Combat_To_Role]
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitRole]
       </Description>
     </EntityComponent>
 

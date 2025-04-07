@@ -157,8 +157,8 @@
         [MinCooldownMs:1000]
         [MaxCooldownMs:1001]
 
-        [MaxActions:1]
-        [Actions:MSB_Utility_State_Action_Role_To_Combat]
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitCombat]
       </Description>
     </EntityComponent>
 

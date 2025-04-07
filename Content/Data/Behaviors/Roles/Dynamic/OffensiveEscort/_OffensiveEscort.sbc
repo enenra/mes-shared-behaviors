@@ -261,7 +261,8 @@
 
         [TargetDistance:800]
 
-        [Actions:MSB_Utility_State_Action_Role_To_Combat]
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitCombat]
       </Description>
     </EntityComponent>
 
@@ -286,7 +287,8 @@
 
         [TargetDistance:1200]
 
-        [Actions:MSB_Utility_State_Action_Role_To_Combat]
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitCombat]
       </Description>
     </EntityComponent>
 
@@ -398,7 +400,8 @@
         [MinCooldownMs:14000]
         [MaxCooldownMs:16000]
 
-        [Actions:MSB_Utility_State_Action_Combat_To_Role]
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitRole]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -448,8 +451,10 @@
         [MinCooldownMs:6000]
         [MaxCooldownMs:9000]
 
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitRole]
+
         [Actions:MSB_OffensiveEscort_Action_SwitchToEscort]
-        [Actions:MSB_Utility_State_Action_Combat_To_Role]
       </Description>
     </EntityComponent>
 

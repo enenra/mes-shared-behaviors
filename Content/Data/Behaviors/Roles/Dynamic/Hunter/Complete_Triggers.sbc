@@ -28,9 +28,8 @@
 
         [Conditions:MSB_Hunter_Condition_HasTarget4000]
 
-        [MaxActions:-1]
-        [Actions:MSB_Utility_State_Action_Role_To_Combat]
-        [ActionExecution:All]
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitCombat]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
