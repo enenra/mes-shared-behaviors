@@ -598,11 +598,10 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
 
         [Conditions:MSB_ContextUnderFire_Condition_CheckSufficientUpwardThrust_LowAltitude]
 
-        [MinCooldownMs:1000]
-        [MaxCooldownMs:1001]
+        [MinCooldownMs:6000]
+        [MaxCooldownMs:6001]
 
-        [MaxActions:1]
-        [Actions:MSB_ContextUnderFire_Action_UnderFireGoingDown_LowAltitude]
+        [Actions:MSB_ContextUnderFire_Action_UnderFireGoingDown_LowAltitude_DoubleCheck]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -629,12 +628,51 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextUnderFire_Action_UnderFireGoingDown_LowAltitude_DoubleCheck</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:TriggerEvent UnderFireGoingDown LowAltitude Check]
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB_ContextUnderFire_TriggerEvent_UnderFireGoingDown_LowAltitude_DoubleCheck]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_ContextUnderFire_TriggerEvent_UnderFireGoingDown_LowAltitude_DoubleCheck]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextUnderFire_TriggerEvent_UnderFireGoingDown_LowAltitude_DoubleCheck</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:false]
+        [StartsReady:false]
+
+        [Conditions:MSB_ContextUnderFire_Condition_CheckSufficientUpwardThrust_LowAltitude]
+
+        [MinCooldownMs:5000]
+        [MaxCooldownMs:5001]
+
+        [MaxActions:1]
+        [Actions:MSB_ContextUnderFire_Action_UnderFireGoingDown_LowAltitude]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_ContextUnderFire_Action_UnderFireGoingDown_LowAltitude</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
 
-        [//DebugMessage:TriggerEvent UnderFireGoingDown LowAltitude]
+        [DebugMessage:TriggerEvent UnderFireGoingDown LowAltitude Execution]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_UnderFireGoingDown]
@@ -650,6 +688,7 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
 
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_ContextDamage_TriggerEvent_UnderFire]
+        [DisableTriggerNames:MSB_ContextUnderFire_TriggerEvent_UnderFireGoingDown_LowAltitude_DoubleCheck]
       </Description>
     </EntityComponent>
 
@@ -670,11 +709,10 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
 
         [Conditions:MSB_ContextUnderFire_Condition_CheckSufficientUpwardThrust_HighAltitude]
 
-        [MinCooldownMs:1000]
-        [MaxCooldownMs:1001]
+        [MinCooldownMs:6000]
+        [MaxCooldownMs:6001]
 
-        [MaxActions:1]
-        [Actions:MSB_ContextUnderFire_Action_UnderFireGoingDown_HighAltitude]
+        [Actions:MSB_ContextUnderFire_Action_UnderFireGoingDown_HighAltitude_DoubleCheck]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -700,12 +738,51 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextUnderFire_Action_UnderFireGoingDown_HighAltitude_DoubleCheck</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:TriggerEvent UnderFireGoingDown HighAltitude Check]
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB_ContextUnderFire_TriggerEvent_UnderFireGoingDown_HighAltitude_DoubleCheck]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_ContextUnderFire_TriggerEvent_UnderFireGoingDown_HighAltitude_DoubleCheck]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextUnderFire_TriggerEvent_UnderFireGoingDown_HighAltitude_DoubleCheck</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:false]
+        [StartsReady:false]
+
+        [Conditions:MSB_ContextUnderFire_Condition_CheckSufficientUpwardThrust_HighAltitude]
+
+        [MinCooldownMs:5000]
+        [MaxCooldownMs:5001]
+
+        [MaxActions:1]
+        [Actions:MSB_ContextUnderFire_Action_UnderFireGoingDown_HighAltitude]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_ContextUnderFire_Action_UnderFireGoingDown_HighAltitude</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
 
-        [//DebugMessage:TriggerEvent UnderFireGoingDown HighAlittude]
+        [DebugMessage:TriggerEvent UnderFireGoingDown HighAlittude Execution]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_UnderFireGoingDown]
@@ -721,23 +798,12 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
 
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_ContextDamage_TriggerEvent_UnderFire]
+        [DisableTriggerNames:MSB_ContextUnderFire_TriggerEvent_UnderFireGoingDown_HighAltitude_DoubleCheck]
       </Description>
     </EntityComponent>
 
 
-
-
-
-
-
-
-
-
-
     <!-- Compromised -->
-
-
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
