@@ -628,14 +628,14 @@
 
         [//DebugMessage:CommSystem - Receiving Compromised]
 
+        [SetBooleansFalse:MSB_RespondingToSOS]
+
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_System_Communication_Trigger_SOS_Response_Timeout]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Received_Compromised]
-
-        [SetBooleansFalse:MSB_RespondingToSOS]
-        [RefreshTarget:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitRole]
       </Description>
     </EntityComponent>
 
