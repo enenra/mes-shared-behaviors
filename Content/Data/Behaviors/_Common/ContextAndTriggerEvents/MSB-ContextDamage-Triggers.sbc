@@ -2,7 +2,7 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 
-<!--=================
+    <!--=================
 The Commands:
 {FactionTag}Destroyed
 EnemyDestroyed
@@ -35,15 +35,11 @@ _ MSB_TriggerEvent_UnderFireGoingDown (Done)
         [Triggers:MSB_ContextUnderFire_TriggerEvent_UnderFireGoingDown]
 
         [Triggers:MSB_ContextDamage_Trigger_Compromised_PlayerNotHelped]
-        [Triggers:MSB_ContextDamage_Trigger_Compromised_PlayerMadeFinalShot]
-        [Triggers:MSB_ContextDamage_Trigger_Compromised_PlayerHelped]
+        [Triggers:MSB_ContextDamage_Trigger_Compromised_PlayerMadeFinalShot] [Triggers:MSB_ContextDamage_Trigger_Compromised_PlayerHelped] ==================-->
 
+    <!-- ============== Start DAMAGE  Conditions ============= -->
 
-==================-->
-
-	<!-- ============== Start DAMAGE  Conditions ============= -->
-
-<!--
+    <!--
 Okay this is some complicated mess.
 
 It is either playerdamage or NPC
@@ -68,8 +64,8 @@ NPCDamge ->
 -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextDamage_Condition_Hostile_PlayerDamage</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextDamage_Condition_Hostile_PlayerDamage</SubtypeId>
       </Id>
       <Description>
         [RivalAI Condition]
@@ -86,8 +82,8 @@ NPCDamge ->
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextDamage_Condition_Neutral_PlayerDamage</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextDamage_Condition_Neutral_PlayerDamage</SubtypeId>
       </Id>
       <Description>
 
@@ -106,8 +102,8 @@ NPCDamge ->
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextDamage_Condition_Friendly_PlayerDamage</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextDamage_Condition_Friendly_PlayerDamage</SubtypeId>
       </Id>
       <Description>
 
@@ -125,8 +121,8 @@ NPCDamge ->
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextDamage_Condition_Hostile_NPCDamage</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextDamage_Condition_Hostile_NPCDamage</SubtypeId>
       </Id>
       <Description>
 
@@ -144,12 +140,12 @@ NPCDamge ->
     </EntityComponent>
 
 
-	<!-- ============== End DAMAGE Conditions ============= -->
+    <!-- ============== End DAMAGE Conditions ============= -->
 
-		<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextDamage_Trigger_Hostile_NPCDamage</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextDamage_Trigger_Hostile_NPCDamage</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -167,10 +163,10 @@ NPCDamge ->
     </EntityComponent>
 
 
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextDamage_Trigger_Hostile_PlayerDamage</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextDamage_Trigger_Hostile_PlayerDamage</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -190,10 +186,10 @@ NPCDamge ->
     </EntityComponent>
 
 
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextDamage_Trigger_Neutral_PlayerDamage</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextDamage_Trigger_Neutral_PlayerDamage</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -215,10 +211,10 @@ NPCDamge ->
     </EntityComponent>
 
 
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextDamage_Trigger_Friendly_PlayerDamage</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextDamage_Trigger_Friendly_PlayerDamage</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -239,10 +235,10 @@ NPCDamge ->
     </EntityComponent>
 
 
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextDamage_Action_DamageByHostile</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextDamage_Action_DamageByHostile</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
@@ -254,10 +250,10 @@ NPCDamge ->
     </EntityComponent>
 
 
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextDamage_Action_DamageByFriendly</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextDamage_Action_DamageByFriendly</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
@@ -268,10 +264,10 @@ NPCDamge ->
       </Description>
     </EntityComponent>
 
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextDamage_Action_DamageByNeutral</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextDamage_Action_DamageByNeutral</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
@@ -284,10 +280,10 @@ NPCDamge ->
 
 
 
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextDamage_Action_IncreaseCountPlayerDamage</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextDamage_Action_IncreaseCountPlayerDamage</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
@@ -298,9 +294,9 @@ NPCDamge ->
 
 
 
-<!-- UnderFire -->
+    <!-- UnderFire -->
 
-<!--
+    <!--
 I disabled this because: MSB_ContextDamage_Trigger_Hostile_PlayerDamage
 and MSB_ContextDamage_Trigger_Hostile_PlayerDamage
 
@@ -339,10 +335,10 @@ Mmh we will need to evaluate if the cooldown makes sense.
     </EntityComponent>
 -->
 
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextDamage_Action_IncreaseUnderFireCount</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextDamage_Action_IncreaseUnderFireCount</SubtypeId>
       </Id>
       <Description>
 
@@ -360,10 +356,10 @@ Mmh we will need to evaluate if the cooldown makes sense.
 
 
 
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextDamage_Trigger_NoLongerUnderFire</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextDamage_Trigger_NoLongerUnderFire</SubtypeId>
       </Id>
       <Description>
 
@@ -380,10 +376,10 @@ Mmh we will need to evaluate if the cooldown makes sense.
       </Description>
     </EntityComponent>
 
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextDamage_Action_NoLongerUnderFire</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextDamage_Action_NoLongerUnderFire</SubtypeId>
       </Id>
       <Description>
 
@@ -403,8 +399,8 @@ Mmh we will need to evaluate if the cooldown makes sense.
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextDamage_Condition_UnderFireReady</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextDamage_Condition_UnderFireReady</SubtypeId>
       </Id>
       <Description>
 
@@ -426,10 +422,10 @@ Mmh we will need to evaluate if the cooldown makes sense.
     </EntityComponent>
 
 
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextDamage_TriggerEvent_UnderFire</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextDamage_TriggerEvent_UnderFire</SubtypeId>
       </Id>
       <Description>
 
@@ -449,10 +445,10 @@ Mmh we will need to evaluate if the cooldown makes sense.
 
 
 
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextDamage_Action_UnderFire</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextDamage_Action_UnderFire</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
@@ -484,13 +480,13 @@ Mmh we will need to evaluate if the cooldown makes sense.
 
 
 
-<!-- UnderFire Mode -->
+    <!-- UnderFire Mode -->
 
 
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextUnderFire_TriggerEvent_UnderFireHealthLow</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextUnderFire_TriggerEvent_UnderFireHealthLow</SubtypeId>
       </Id>
       <Description>
 
@@ -510,10 +506,10 @@ Mmh we will need to evaluate if the cooldown makes sense.
       </Description>
     </EntityComponent>
 
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextUnderFire_Action_UnderFireHealthLow</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextUnderFire_Action_UnderFireHealthLow</SubtypeId>
       </Id>
       <Description>
 
@@ -532,10 +528,10 @@ Mmh we will need to evaluate if the cooldown makes sense.
 
 
 
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextUnderFire_TriggerEvent_UnderFireLostWeapons</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextUnderFire_TriggerEvent_UnderFireLostWeapons</SubtypeId>
       </Id>
       <Description>
 
@@ -554,10 +550,10 @@ Mmh we will need to evaluate if the cooldown makes sense.
     </EntityComponent>
 
 
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextUnderFire_Action_UnderFireLostWeapons</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextUnderFire_Action_UnderFireLostWeapons</SubtypeId>
       </Id>
       <Description>
 
@@ -574,7 +570,7 @@ Mmh we will need to evaluate if the cooldown makes sense.
       </Description>
     </EntityComponent>
 
-<!--
+    <!--
 MSB_ContextUnderFire_TriggerEvent_UnderFireGoingDown_LowAltitude
 MSB_ContextUnderFire_TriggerEvent_UnderFireGoingDown_HighAltitude
 
@@ -585,13 +581,13 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
 
 
 
-<!-- _LowAltitude -->
+    <!-- _LowAltitude -->
 
 
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextUnderFire_TriggerEvent_UnderFireGoingDown_LowAltitude</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextUnderFire_TriggerEvent_UnderFireGoingDown_LowAltitude</SubtypeId>
       </Id>
       <Description>
 
@@ -613,8 +609,8 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextUnderFire_Condition_CheckSufficientUpwardThrust_LowAltitude</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextUnderFire_Condition_CheckSufficientUpwardThrust_LowAltitude</SubtypeId>
       </Id>
       <Description>
 
@@ -638,10 +634,10 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
     </EntityComponent>
 
 
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextUnderFire_Action_UnderFireGoingDown_LowAltitude</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextUnderFire_Action_UnderFireGoingDown_LowAltitude</SubtypeId>
       </Id>
       <Description>
 
@@ -674,11 +670,11 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
 
 
 
-<!-- _HighAltitude -->
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <!-- _HighAltitude -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextUnderFire_TriggerEvent_UnderFireGoingDown_HighAltitude</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextUnderFire_TriggerEvent_UnderFireGoingDown_HighAltitude</SubtypeId>
       </Id>
       <Description>
 
@@ -702,8 +698,8 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextUnderFire_Condition_CheckSufficientUpwardThrust_HighAltitude</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextUnderFire_Condition_CheckSufficientUpwardThrust_HighAltitude</SubtypeId>
       </Id>
       <Description>
         [RivalAI Condition]
@@ -725,10 +721,10 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
 
 
 
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextUnderFire_Action_UnderFireGoingDown_HighAltitude</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextUnderFire_Action_UnderFireGoingDown_HighAltitude</SubtypeId>
       </Id>
       <Description>
 
@@ -765,14 +761,14 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
 
 
 
-<!-- Compromised -->
+    <!-- Compromised -->
 
 
 
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextDamage_Trigger_PlayerHelpedNPC</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextDamage_Trigger_PlayerHelpedNPC</SubtypeId>
       </Id>
       <Description>
 
@@ -795,8 +791,8 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextDamage_Condition_PlayerHelpedNPC</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextDamage_Condition_PlayerHelpedNPC</SubtypeId>
       </Id>
       <Description>
 
@@ -824,10 +820,10 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
 
 
 
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextDamage_Action_PlayerHelpedNPC</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextDamage_Action_PlayerHelpedNPC</SubtypeId>
       </Id>
       <Description>
 
@@ -848,7 +844,7 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
     </EntityComponent>
 
 
-	<!--
+    <!--
 
 	PlayerHelped
 	PlayerMadeFinalShot
@@ -857,8 +853,8 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextDamage_Condition_PlayerMadeFinalShot</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextDamage_Condition_PlayerMadeFinalShot</SubtypeId>
       </Id>
       <Description>
 
@@ -876,8 +872,8 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextDamage_Condition_PlayerMadeFinalShot_Fail</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextDamage_Condition_PlayerMadeFinalShot_Fail</SubtypeId>
       </Id>
       <Description>
 
@@ -894,12 +890,12 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
     </EntityComponent>
 
 
-	<!-- PlayerHelped -->
+    <!-- PlayerHelped -->
 
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextDamage_Trigger_Compromised_PlayerHelped</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextDamage_Trigger_Compromised_PlayerHelped</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -915,10 +911,10 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
     </EntityComponent>
 
 
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextDamage_Action_Compromised_PlayerHelped</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextDamage_Action_Compromised_PlayerHelped</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
@@ -932,8 +928,8 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextDamage_Command_PlayerHelped_Faction</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextDamage_Command_PlayerHelped_Faction</SubtypeId>
       </Id>
       <Description>
 
@@ -947,14 +943,14 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
         [IgnoreReceiverAntennaRequirement:false]
         [Radius:2000]
 
-	</Description>
+      </Description>
     </EntityComponent>
 
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextDamage_Command_PlayerHelped_Enemy</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextDamage_Command_PlayerHelped_Enemy</SubtypeId>
       </Id>
       <Description>
 
@@ -972,15 +968,15 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
         [IgnoreAntennaRequirement:true]
         [IgnoreReceiverAntennaRequirement:false]
         [Radius:2000]
-		</Description>
+      </Description>
     </EntityComponent>
 
 
-<!-- PlayerMadeFinalShot -->
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <!-- PlayerMadeFinalShot -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextDamage_Trigger_Compromised_PlayerMadeFinalShot</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextDamage_Trigger_Compromised_PlayerMadeFinalShot</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -996,10 +992,10 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
     </EntityComponent>
 
 
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextDamage_Action_Compromised_PlayerMadeFinalShot</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextDamage_Action_Compromised_PlayerMadeFinalShot</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
@@ -1013,8 +1009,8 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextDamage_Command_PlayerMadeFinalShot_Faction</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextDamage_Command_PlayerMadeFinalShot_Faction</SubtypeId>
       </Id>
       <Description>
 
@@ -1029,14 +1025,14 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
         [IgnoreReceiverAntennaRequirement:false]
         [Radius:2000]
 
-	</Description>
+      </Description>
     </EntityComponent>
 
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextDamage_Command_PlayerMadeFinalShot_Enemy</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextDamage_Command_PlayerMadeFinalShot_Enemy</SubtypeId>
       </Id>
       <Description>
 
@@ -1055,19 +1051,19 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
         [IgnoreAntennaRequirement:true]
         [IgnoreReceiverAntennaRequirement:false]
         [Radius:2000]
-		</Description>
+      </Description>
     </EntityComponent>
 
 
 
 
 
-<!-- PlayerNotHelped-->
+    <!-- PlayerNotHelped-->
 
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextDamage_Trigger_Compromised_PlayerNotHelped</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextDamage_Trigger_Compromised_PlayerNotHelped</SubtypeId>
       </Id>
       <Description>
 
@@ -1083,10 +1079,10 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
 
     </EntityComponent>
 
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextDamage_Action_Compromised_PlayerNotHelped</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextDamage_Action_Compromised_PlayerNotHelped</SubtypeId>
       </Id>
       <Description>
 
@@ -1101,8 +1097,8 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextDamage_Command_PlayerNotHelped_Faction</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextDamage_Command_PlayerNotHelped_Faction</SubtypeId>
       </Id>
       <Description>
 
@@ -1116,14 +1112,14 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
         [IgnoreReceiverAntennaRequirement:false]
         [Radius:2000]
 
-	</Description>
+      </Description>
     </EntityComponent>
 
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_ContextDamage_Command_PlayerNotHelped_Enemy</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_ContextDamage_Command_PlayerNotHelped_Enemy</SubtypeId>
       </Id>
       <Description>
 
@@ -1141,7 +1137,7 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
         [IgnoreAntennaRequirement:true]
         [IgnoreReceiverAntennaRequirement:false]
         [Radius:2000]
-		</Description>
+      </Description>
     </EntityComponent>
 
 
