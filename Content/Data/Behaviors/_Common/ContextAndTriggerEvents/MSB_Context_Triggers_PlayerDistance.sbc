@@ -15,6 +15,22 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Condition_PlayerNear</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [CheckTrueBooleans:true]
+        [TrueBooleans:PlayerNear]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_Context_Trigger_PlayerNear</SubtypeId>
       </Id>
       <Description>
@@ -37,21 +53,6 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Context_Condition_PlayerNear</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Condition]
-
-        [UseConditions:true]
-        [MatchAnyCondition:false]
-
-        [CheckTrueBooleans:true]
-        [TrueBooleans:PlayerNear]
-      </Description>
-    </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_Context_Action_PlayerNear</SubtypeId>
       </Id>
       <Description>
@@ -66,6 +67,23 @@
       </Description>
     </EntityComponent>
 
+    <!-- PlayerFar - over 5km -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Condition_PlayerFar</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [UseFailCondition:true]
+        [MatchAnyCondition:false]
+
+        [CheckTrueBooleans:true]
+        [TrueBooleans:PlayerFar]
+      </Description>
+    </EntityComponent>
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -93,22 +111,6 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Context_Condition_PlayerFar</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Condition]
-
-        [UseConditions:true]
-        [UseFailCondition:true]
-        [MatchAnyCondition:false]
-
-        [CheckTrueBooleans:true]
-        [TrueBooleans:PlayerFar]
-      </Description>
-    </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_Context_Action_PlayerFar</SubtypeId>
       </Id>
       <Description>
@@ -120,6 +122,22 @@
     </EntityComponent>
 
     <!-- PlayerClose - sub 1km -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Condition_PlayerClose</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [CheckTrueBooleans:true]
+        [TrueBooleans:PlayerClose]
+      </Description>
+    </EntityComponent>
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -145,21 +163,6 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Context_Condition_PlayerClose</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Condition]
-
-        [UseConditions:true]
-        [MatchAnyCondition:false]
-
-        [CheckTrueBooleans:true]
-        [TrueBooleans:PlayerClose]
-      </Description>
-    </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_Context_Action_PlayerClose</SubtypeId>
       </Id>
       <Description>
@@ -174,6 +177,24 @@
       </Description>
     </EntityComponent>
 
+
+    <!-- PlayerNotClose - over 1km -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Condition_PlayerNotClose</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [UseFailCondition:true]
+        [MatchAnyCondition:false]
+
+        [CheckTrueBooleans:true]
+        [TrueBooleans:PlayerNotClose]
+      </Description>
+    </EntityComponent>
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -196,22 +217,6 @@
 
         [MaxActions:-1]
         [Actions:MSB_Context_Action_PlayerNotClose]
-      </Description>
-    </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Context_Condition_PlayerNotClose</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Condition]
-
-        [UseConditions:true]
-        [UseFailCondition:true]
-        [MatchAnyCondition:false]
-
-        [CheckTrueBooleans:true]
-        [TrueBooleans:PlayerNotClose]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
