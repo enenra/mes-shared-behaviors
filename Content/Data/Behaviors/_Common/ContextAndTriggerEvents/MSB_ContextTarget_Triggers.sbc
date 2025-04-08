@@ -2,31 +2,23 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
     <!--
-    This file handles the TriggerEvent:
+      This file handles the TriggerEvent:
 
-    -MSB_TriggerEvent_ApproachingTarget
-    -MSB_TriggerEvent_TargetIsApproaching
+      -MSB_TriggerEvent_ApproachingTarget
+      -MSB_TriggerEvent_TargetIsApproaching
 
+      -MSB_TriggerEvent_InitialTargetIsApproaching_Easy
+      -MSB_TriggerEvent_InitialTargetIsApproaching_Hard
+      -MSB_TriggerEvent_InitialTargetIsApproaching_Other
 
-
-	-MSB_TriggerEvent_InitialTargetIsApproaching_Easy
-	-MSB_TriggerEvent_InitialTargetIsApproaching_Hard
-	-MSB_TriggerEvent_InitialTargetIsApproaching_Other
-
-	-MSB_TriggerEvent_InitialApproachingTarget_Easy
-	-MSB_TriggerEvent_InitialApproachingTarget_Hard
-	-MSB_TriggerEvent_InitialTargetIsApproaching_Other
-
-
-
+      -MSB_TriggerEvent_InitialApproachingTarget_Easy
+      -MSB_TriggerEvent_InitialApproachingTarget_Hard
+      -MSB_TriggerEvent_InitialTargetIsApproaching_Other
 
         [Triggers:MSB_ContextTarget_TriggerEvent_ApproachingTarget]
         [Triggers:MSB_ContextTarget_TriggerEvent_TargetIsApproaching]
 
-
-    -MSB_TriggerEvent_TargetGettingAway (Done)
-
-
+      -MSB_TriggerEvent_TargetGettingAway (Done)
 
         [Triggers:MSB_ContextTarget_TriggerEvent_TargetGettingAway]
         [Triggers:MSB_ContextTarget_Trigger_TargetHasBeenClose]
@@ -34,7 +26,7 @@
         [Triggers:MSB_ContextTarget_Trigger_SwitchTarget]
     -->
 
-
+    <!-- ApproachingTarget -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -44,20 +36,20 @@
         [RivalAI Trigger]
 
         [Type:Timer]
+
         [UseTrigger:true]
         [StartsReady:false]
 
         [MinCooldownMs:1000]
         [MaxCooldownMs:1001]
-        [ConditionCheckResetsTimer:true]
 
+        [ConditionCheckResetsTimer:true]
         [Conditions:MSB_ContextTarget_Condition_ApproachingTarget]
 
         [MaxActions:-1]
         [Actions:MSB_ContextTarget_Action_TriggerEvent_ApproachingTarget]
       </Description>
     </EntityComponent>
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -76,20 +68,14 @@
         [MinTargetDistance:800]
         [MaxTargetDistance:4500]
 
-
         [CheckTargetAngleFromForward:true]
         [MinTargetAngle:0]
         [MaxTargetAngle:75]
 
         [CheckGridSpeed:true]
         [MinGridSpeed:20]
-
-
       </Description>
     </EntityComponent>
-
-
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -101,11 +87,10 @@
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_ApproachingTarget]
         [ForceManualTriggerActivation:false]
-
       </Description>
     </EntityComponent>
 
-
+    <!-- TargetIsApproaching -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -121,15 +106,14 @@
 
         [MinCooldownMs:1000]
         [MaxCooldownMs:1001]
-        [ConditionCheckResetsTimer:true]
 
+        [ConditionCheckResetsTimer:true]
         [Conditions:MSB_ContextTarget_Condition_TargetIsApproaching]
 
         [MaxActions:-1]
         [Actions:MSB_ContextTarget_Action_TriggerEvent_TargetIsApproaching]
       </Description>
     </EntityComponent>
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -147,7 +131,6 @@
         [CurrentBehaviorMode:Idle]
         [CurrentBehaviorMode:Passive]
 
-
         [CheckTargetDistance:true]
         [MinTargetDistance:800]
         [MaxTargetDistance:4500]
@@ -159,12 +142,8 @@
         [CheckTargetChaseSpeed:true]
         [MinTargetChaseSpeed:25]
         [MaxTargetChaseSpeed:-1]
-
       </Description>
     </EntityComponent>
-
-
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -176,20 +155,10 @@
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_TargetIsApproaching]
         [ForceManualTriggerActivation:false]
-
       </Description>
     </EntityComponent>
 
-
-
-
-
-
-
-
-
-
-
+    <!-- TargetGettingAway -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -212,7 +181,6 @@
         [Actions:MSB_ContextTarget_Action_TriggerEvent_TargetGettingAway]
       </Description>
     </EntityComponent>
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -235,7 +203,6 @@
         [MinTargetSpeed:35]
       </Description>
     </EntityComponent>
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -254,7 +221,6 @@
       </Description>
     </EntityComponent>
 
-
     <!-- Activate all triggers with the tag TargetGettingAway-->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -266,19 +232,18 @@
 
         [Type:TargetNear]
 
-        [Distance:800]
         [UseTrigger:true]
         [StartsReady:false]
 
         [MinCooldownMs:5000]
         [MaxCooldownMs:5001]
 
-        [MaxActions:-1]
+        [Distance:800]
 
+        [MaxActions:-1]
         [Actions:MSB_ContextTarget_Action_TargetHasBeenClose]
       </Description>
     </EntityComponent>
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -291,7 +256,6 @@
       </Description>
     </EntityComponent>
 
-
     <!-- No FirstTarget-->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -302,6 +266,7 @@
         [RivalAI Trigger]
 
         [Type:LostTarget]
+
         [UseTrigger:true]
         [StartsReady:false]
 
@@ -309,7 +274,6 @@
         [Actions:MSB_ContextTarget_Action_LostTarget]
       </Description>
     </EntityComponent>
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -331,6 +295,7 @@
         [RivalAI Trigger]
 
         [Type:SwitchTarget]
+
         [UseTrigger:true]
         [StartsReady:false]
 
@@ -338,7 +303,6 @@
         [Actions:MSB_ContextTarget_Action_SwitchTarget]
       </Description>
     </EntityComponent>
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
