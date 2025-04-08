@@ -633,7 +633,7 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:TriggerEvent UnderFireGoingDown LowAltitude Check]
+        [//DebugMessage:TriggerEvent UnderFireGoingDown LowAltitude Check]
 
         [ResetCooldownTimeOfTriggers:true]
         [ResetTriggerCooldownNames:MSB_ContextUnderFire_TriggerEvent_UnderFireGoingDown_LowAltitude_DoubleCheck]
@@ -672,7 +672,7 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:TriggerEvent UnderFireGoingDown LowAltitude Execution]
+        [//DebugMessage:TriggerEvent UnderFireGoingDown LowAltitude Execution]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_UnderFireGoingDown]
@@ -743,7 +743,7 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:TriggerEvent UnderFireGoingDown HighAltitude Check]
+        [//DebugMessage:TriggerEvent UnderFireGoingDown HighAltitude Check]
 
         [ResetCooldownTimeOfTriggers:true]
         [ResetTriggerCooldownNames:MSB_ContextUnderFire_TriggerEvent_UnderFireGoingDown_HighAltitude_DoubleCheck]
@@ -782,7 +782,7 @@ I added these 2 because at low altitude it doesn't make sense for the NPC to scr
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:TriggerEvent UnderFireGoingDown HighAlittude Execution]
+        [//DebugMessage:TriggerEvent UnderFireGoingDown HighAlittude Execution]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_UnderFireGoingDown]
