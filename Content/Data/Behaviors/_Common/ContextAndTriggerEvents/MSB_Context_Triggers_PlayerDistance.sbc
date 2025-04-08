@@ -58,6 +58,8 @@
       <Description>
         [RivalAI Action]
 
+        [//DebugMessage: PlayerNear set to True]
+
         [SetBooleansTrue:PlayerNear]
         [SetBooleansFalse:PlayerFar]
 
@@ -116,6 +118,8 @@
       <Description>
         [RivalAI Action]
 
+        [//DebugMessage: PlayerFar set to True]
+
         [SetBooleansTrue:PlayerFar]
         [SetBooleansFalse:PlayerNear]
       </Description>
@@ -167,6 +171,8 @@
       </Id>
       <Description>
         [RivalAI Action]
+
+        [//DebugMessage: PlayerClose set to True]
 
         [SetBooleansTrue:PlayerClose]
         [SetBooleansFalse:PlayerNotClose]
@@ -226,6 +232,8 @@
       </Id>
       <Description>
         [RivalAI Action]
+
+        [//DebugMessage: PlayerNotClose set to True]
 
         [SetBooleansTrue:PlayerNotClose]
         [SetBooleansFalse:PlayerClose]
