@@ -305,6 +305,8 @@
 
         [CheckFalseBooleans:true]
         [FalseBooleans:MSB_RespondingToSOS]
+        [FalseBooleans:MSB_Role_OffensiveEscort]
+        [FalseBooleans:MSB_Role_DefensiveEscort]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -414,6 +416,8 @@
 
         [CheckFalseBooleans:true]
         [FalseBooleans:MSB_State_Combat]
+        [FalseBooleans:MSB_Role_OffensiveEscort]
+        [FalseBooleans:MSB_Role_DefensiveEscort]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
