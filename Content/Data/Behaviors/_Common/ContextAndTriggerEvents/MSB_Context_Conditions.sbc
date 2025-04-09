@@ -942,5 +942,22 @@
       </Description>
     </EntityComponent>
 
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Condition_Role_NotEscort</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [CheckFalseBooleans:true]
+        [FalseBooleans:MSB_Role_OffensiveEscort]
+        [FalseBooleans:MSB_Role_DefensiveEscort]
+      </Description>
+    </EntityComponent>
+
   </EntityComponents>
 </Definitions>
