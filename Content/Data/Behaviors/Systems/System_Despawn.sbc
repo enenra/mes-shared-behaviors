@@ -5,38 +5,71 @@
     <!--
     This system offers various ways to immersively despawn an encounter.
 
-    Dynamic:
-      * MSB_Despawn_Simple: Uses MES built-in retreat.
-      * MSB_Despawn_FlyToClosestFactionStatic: Flies to closest fitting static encounter of own faction and despawns there.
-      * MSB_Despawn_FlyToHomebase: Flies back to encounter this encounter spawned from.
+    To use:
+      * Add MSB_System_Despawn_TriggerGroup to your behavior.
+      * Define one of the following despawn types by calling the trigger in your behavior:
+        * MSB_System_Despawn_Trigger_Set_Simple: Uses MES built-in retreat.
+        * MSB_System_Despawn_Trigger_Set_FlyToStatic: Flies to closest fitting static encounter of own faction and despawns there.
+        * >MSB_System_Despawn_FlyToHomebase: Flies back to encounter this encounter spawned from.
 
     TODO:
       * Implement fallback when no command response is received.
       * when "retreating" instead switch to cargoship, since that can have a destination to fly to.
       * when no player is near, set retreat:true in any case
     -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Despawn_TriggerGroup</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI TriggerGroup]
+
+        [Triggers:MSB_System_Despawn_Trigger_StartDespawnSimple]
+
+        [Triggers:MSB_System_Despawn_Trigger_Receive_ClosestFactionStatic]
+        [Triggers:MSB_System_Despawn_Trigger_Set_FlyToStatic]
+
+        [Triggers:MSB_System_Despawn_Trigger_Reset]
+      </Description>
+    </EntityComponent>
 
     <!-- Despawn: Simple -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Despawn_Condition_StartDespawnSimple</SubtypeId>
+        <SubtypeId>MSB_System_Despawn_Trigger_Set_Simple</SubtypeId>
       </Id>
       <Description>
-        [RivalAI Condition]
+        [RivalAI Trigger]
 
-        [UseConditions:true]
-        [MatchAnyCondition:true]
+        [Type:Manual]
 
-        [CheckTrueBooleans:true]
-        [TrueBooleans:MSB_Despawn]
-        [TrueBooleans:MSB_Despawn_Simple]
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Actions:MSB_System_Despawn_Action_Set_Simple]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Despawn_Trigger_StartDespawnSimple</SubtypeId>
+        <SubtypeId>MSB_System_Despawn_Action_Set_Simple</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:Despawn - Set to Simple]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_System_Despawn_Trigger_StartDespawnSimple]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Despawn_Trigger_StartDespawnSimple</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -46,19 +79,34 @@
         [UseTrigger:false]
         [StartsReady:false]
 
-        [ConditionCheckResetsTimer:true]
-        [Conditions:MSB_Despawn_Condition_StartDespawnSimple]
-
         [MinCooldownMs:60000]
         [MaxCooldownMs:90000]
 
-        [Actions:MSB_Despawn_Action_StartDespawnSimple]
+        [ConditionCheckResetsTimer:true]
+        [Conditions:MSB_System_Despawn_Condition_StartDespawnSimple]
+
+        [Actions:MSB_System_Despawn_Action_StartDespawnSimple]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Despawn_Action_StartDespawnSimple</SubtypeId>
+        <SubtypeId>MSB_System_Despawn_Condition_StartDespawnSimple</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:true]
+
+        [CheckTrueBooleans:true]
+        [TrueBooleans:MSB_Despawn]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Despawn_Action_StartDespawnSimple</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
@@ -74,27 +122,42 @@
 
 
     <!-- Despawn: Fly to closest friendly static. -->
-    <!-- StartDespawnTimer -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Despawn_Condition_FlyToClosestFactionStatic</SubtypeId>
+        <SubtypeId>MSB_System_Despawn_Trigger_Set_FlyToStatic</SubtypeId>
       </Id>
       <Description>
-        [RivalAI Condition]
+        [RivalAI Trigger]
 
-        [UseConditions:true]
-        [MatchAnyCondition:true]
+        [Type:Manual]
 
-        [CheckTrueBooleans:true]
-        [TrueBooleans:MSB_Despawn]
-        [TrueBooleans:MSB_Despawn_FlyToClosestFactionStatic]
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Actions:MSB_System_Despawn_Action_Set_FlyToStatic]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Despawn_Trigger_FlyToClosestFactionStatic</SubtypeId>
+        <SubtypeId>MSB_System_Despawn_Action_Set_FlyToStatic</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:Despawn - Set to FlyToStatic]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_System_Despawn_Trigger_FlyToStatic]
+      </Description>
+    </EntityComponent>
+
+    <!-- StartDespawnTimer -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Despawn_Trigger_FlyToStatic</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -105,12 +168,27 @@
         [StartsReady:false]
 
         [ConditionCheckResetsTimer:true]
-        [Conditions:MSB_Despawn_Condition_FlyToClosestFactionStatic]
+        [Conditions:MSB_System_Despawn_Condition_FlyToStatic]
 
         [MinCooldownMs:60000]
         [MaxCooldownMs:90000]
 
-        [Actions:MSB_Despawn_Action_Request_ClosestFactionStatic]
+        [Actions:MSB_System_Despawn_Action_Request_ClosestFactionStatic]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Despawn_Condition_FlyToStatic</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:true]
+
+        [CheckTrueBooleans:true]
+        [TrueBooleans:MSB_Despawn]
       </Description>
     </EntityComponent>
 
@@ -118,7 +196,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Despawn_Action_Request_ClosestFactionStatic</SubtypeId>
+        <SubtypeId>MSB_System_Despawn_Action_Request_ClosestFactionStatic</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
@@ -126,7 +204,7 @@
         [//DebugMessage:Despawn - Request_ClosestFactionStatic]
 
         [BroadcastCommandProfiles:true]
-        [CommandProfileIds:MSB_Despawn_Command_Request_ClosestFactionStatic]
+        [CommandProfileIds:MSB_System_Despawn_Command_Request_ClosestFactionStatic]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Despawn]
@@ -135,12 +213,12 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Despawn_Command_Request_ClosestFactionStatic</SubtypeId>
+        <SubtypeId>MSB_System_Despawn_Command_Request_ClosestFactionStatic</SubtypeId>
       </Id>
       <Description>
         [RivalAI Command]
 
-        [CommandCode:MSB_Despawn_Request_ClosestFactionStatic]
+        [CommandCode:MSB_System_Despawn_Request_ClosestFactionStatic]
 
         [MatchSenderReceiverOwners:true]
         [SendTargetEntityId:true]
@@ -157,7 +235,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Despawn_Trigger_Receive_ClosestFactionStatic</SubtypeId>
+        <SubtypeId>MSB_System_Despawn_Trigger_Receive_ClosestFactionStatic</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -170,22 +248,22 @@
         [MinCooldownMs:600000]
         [MaxCooldownMs:600001]
 
-        [CommandReceiveCode:MSB_Despawn_Response_ClosestFactionStatic]
+        [CommandReceiveCode:MSB_System_Despawn_Response_ClosestFactionStatic]
 
         [MaxActions:-1]
-        [Actions:MSB_Despawn_Action_Receive_ClosestFactionStatic]
+        [Actions:MSB_System_Despawn_Action_Receive_ClosestFactionStatic]
       </Description>
     </EntityComponent>
     <!-- TODO: In here also switch to cargoship behavior and fly to waypoint. -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Despawn_Action_Receive_ClosestFactionStatic</SubtypeId>
+        <SubtypeId>MSB_System_Despawn_Action_Receive_ClosestFactionStatic</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
 
-        [//DebugMessage:Despawn - FlyToClosestFactionStatic]
+        [//DebugMessage:Despawn - FlyToStatic]
 
         [ChangeAutopilotProfile:true]
         [AutopilotProfile:Tertiary]
@@ -203,7 +281,25 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Despawn_Condition_Reset</SubtypeId>
+        <SubtypeId>MSB_System_Despawn_Trigger_Reset</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:false]
+        [StartsReady:false]
+
+        [Conditions:MSB_System_Despawn_Condition_Reset]
+
+        [Actions:MSB_System_Despawn_Action_Reset]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Despawn_Condition_Reset</SubtypeId>
       </Id>
       <Description>
         [RivalAI Condition]
@@ -218,25 +314,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Despawn_Trigger_Reset</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Trigger]
-
-        [Type:Timer]
-
-        [UseTrigger:false]
-        [StartsReady:false]
-
-        [Conditions:MSB_Despawn_Condition_Reset]
-
-        [Actions:MSB_Despawn_Action_Reset]
-      </Description>
-    </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Despawn_Action_Reset</SubtypeId>
+        <SubtypeId>MSB_System_Despawn_Action_Reset</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
