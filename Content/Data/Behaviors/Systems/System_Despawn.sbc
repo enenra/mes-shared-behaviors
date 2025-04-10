@@ -6,10 +6,9 @@
     This system offers various ways to immersively despawn an encounter.
 
     To use:
-      * Add MSB_System_Despawn_TriggerGroup to your behavior.
-      * Define one of the following despawn types by calling the trigger in your behavior:
-        * MSB_System_Despawn_Trigger_Set_Simple: Uses MES built-in retreat.
-        * MSB_System_Despawn_Trigger_Set_FlyToStatic: Flies to closest fitting static encounter of own faction and despawns there.
+      * Define one of the following despawn types by adding the trigger group to your behavior:
+        * MSB_System_Despawn_TriggerGroup_Simple: Uses MES built-in retreat.
+        * MSB_System_Despawn_TriggerGroup_FlyToStatic: Flies to closest fitting static encounter of own faction and despawns there.
         * >MSB_System_Despawn_FlyToHomebase: Flies back to encounter this encounter spawned from.
 
     TODO:
@@ -17,24 +16,21 @@
       * when "retreating" instead switch to cargoship, since that can have a destination to fly to.
       * when no player is near, set retreat:true in any case
     -->
+
+    <!-- Despawn: Simple -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_System_Despawn_TriggerGroup</SubtypeId>
+        <SubtypeId>MSB_System_Despawn_TriggerGroup_Simple</SubtypeId>
       </Id>
       <Description>
         [RivalAI TriggerGroup]
 
-        [Triggers:MSB_System_Despawn_Trigger_StartDespawnSimple]
-
-        [Triggers:MSB_System_Despawn_Trigger_Receive_ClosestFactionStatic]
-        [Triggers:MSB_System_Despawn_Trigger_Set_FlyToStatic]
-
-        [Triggers:MSB_System_Despawn_Trigger_Reset]
+        [Triggers:MSB_System_Despawn_TriggerGroup_Simple]
+        [Triggers:MSB_System_Despawn_Trigger_Start_DespawnSimple]
       </Description>
     </EntityComponent>
 
-    <!-- Despawn: Simple -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -43,7 +39,7 @@
       <Description>
         [RivalAI Trigger]
 
-        [Type:Manual]
+        [Type:Timer]
 
         [UseTrigger:true]
         [StartsReady:true]
@@ -62,14 +58,14 @@
         [DebugMessage:Despawn - Set to Simple]
 
         [EnableTriggers:true]
-        [EnableTriggerNames:MSB_System_Despawn_Trigger_StartDespawnSimple]
+        [EnableTriggerNames:MSB_System_Despawn_Trigger_Start_Simple]
       </Description>
     </EntityComponent>
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_System_Despawn_Trigger_StartDespawnSimple</SubtypeId>
+        <SubtypeId>MSB_System_Despawn_Trigger_Start_Simple</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -79,19 +75,19 @@
         [UseTrigger:false]
         [StartsReady:false]
 
-        [MinCooldownMs:60000]
-        [MaxCooldownMs:90000]
+        [MinCooldownMs:10000]
+        [MaxCooldownMs:10001]
 
         [ConditionCheckResetsTimer:true]
-        [Conditions:MSB_System_Despawn_Condition_StartDespawnSimple]
+        [Conditions:MSB_System_Despawn_Condition_Start_Simple]
 
-        [Actions:MSB_System_Despawn_Action_StartDespawnSimple]
+        [Actions:MSB_System_Despawn_Action_Start_Simple]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_System_Despawn_Condition_StartDespawnSimple</SubtypeId>
+        <SubtypeId>MSB_System_Despawn_Condition_Start_Simple</SubtypeId>
       </Id>
       <Description>
         [RivalAI Condition]
@@ -106,12 +102,12 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_System_Despawn_Action_StartDespawnSimple</SubtypeId>
+        <SubtypeId>MSB_System_Despawn_Action_Start_Simple</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
 
-        [//DebugMessage:Despawn - StartDespawnSimple]
+        [DebugMessage:Despawn - Start Simple Despawn]
 
         [Retreat:true]
 
@@ -125,12 +121,27 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Despawn_TriggerGroup_Simple</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI TriggerGroup]
+
+        [Triggers:MSB_System_Despawn_Trigger_Receive_ClosestFactionStatic]
+        [Triggers:MSB_System_Despawn_Trigger_Set_FlyToStatic]
+
+        [Triggers:MSB_System_Despawn_Trigger_Reset]
+      </Description>
+    </EntityComponent>
+    
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_System_Despawn_Trigger_Set_FlyToStatic</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
 
-        [Type:Manual]
+        [Type:Timer]
 
         [UseTrigger:true]
         [StartsReady:true]
@@ -167,11 +178,11 @@
         [UseTrigger:false]
         [StartsReady:false]
 
+        [MinCooldownMs:10000]
+        [MaxCooldownMs:10001]
+
         [ConditionCheckResetsTimer:true]
         [Conditions:MSB_System_Despawn_Condition_FlyToStatic]
-
-        [MinCooldownMs:60000]
-        [MaxCooldownMs:90000]
 
         [Actions:MSB_System_Despawn_Action_Request_ClosestFactionStatic]
       </Description>
