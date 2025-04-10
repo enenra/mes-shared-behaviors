@@ -6,9 +6,6 @@
     This is a sample patrol behavior.
     The ship will fly to random places within a set radius around the point of origin, then despawn after 10-15min.
     If it finds a player, it will engage it. If the player puts a certain amount of distance between them and the encounter, the encounter will go back to patrol after a set amount of time.
-
-    TODO:
-    * Add reactions to commsystem alerts
     -->
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -30,25 +27,11 @@
         [PlayerDistanceTrigger:50000]
         [PlayerDistanceTimerTrigger:30000]
 
-        [Trigger:MSB_PatrolArea_Action_SetDespawnType_Sample]
-
         [TriggerGroups:MSB_DynamicCommon_TriggerGroup]
         [TriggerGroups:MSB_Fighter_TriggerGroup]
         [TriggerGroups:MSB_PatrolArea_TriggerGroup]
         [TriggerGroups:MSB_System_Communication_TriggerGroup]
-      </Description>
-    </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_PatrolArea_Action_SetDespawnType_Sample</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Action]
-
-        [//DebugMessage:PatrolArea - SetDespawnType]
-
-        [SetBooleansTrue:MSB_Despawn_Use_Simple]
+        [TriggerGroups:MSB_System_Despawn_TriggerGroup_Simple]
       </Description>
     </EntityComponent>
 
@@ -203,7 +186,8 @@
 
         [//DebugMessage:PatrolArea - Despawn]
 
-        [SetBooleansTrue:MSB_Despawn]
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Despawn]
       </Description>
     </EntityComponent>
 

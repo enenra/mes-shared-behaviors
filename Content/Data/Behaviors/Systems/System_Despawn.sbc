@@ -113,7 +113,7 @@
         [Triggers:MSB_System_Despawn_Trigger_Reset]
       </Description>
     </EntityComponent>
-    
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -145,7 +145,6 @@
       </Description>
     </EntityComponent>
 
-    <!-- StartDespawnTimer -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
