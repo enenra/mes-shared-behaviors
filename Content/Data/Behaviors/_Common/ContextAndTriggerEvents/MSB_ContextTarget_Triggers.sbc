@@ -125,11 +125,8 @@
         [UseConditions:true]
         [MatchAnyCondition:false]
 
-        [BehaviorModeCheck:true]
-        [CurrentBehaviorMode:ApproachWaypoint]
-        [CurrentBehaviorMode:WaitAtWaypoint]
-        [CurrentBehaviorMode:Idle]
-        [CurrentBehaviorMode:Passive]
+        [CheckTrueBooleans:true]
+        [TrueBooleans:MSB_State_Role]
 
         [CheckTargetDistance:true]
         [MinTargetDistance:800]
