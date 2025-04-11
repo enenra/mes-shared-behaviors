@@ -504,10 +504,9 @@
 
         [//DebugMessage:OffensiveEscort - No Target, my leader is inactive. I am going away]
 
-        [SetBooleansTrue:MSB_Despawn]
-
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_CombatType_CloseCombatType]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Despawn]
       </Description>
     </EntityComponent>
 
