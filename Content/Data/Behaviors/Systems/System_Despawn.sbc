@@ -8,8 +8,8 @@
     To use:
       * Define one of the following despawn types by adding the trigger group to your behavior:
         * MSB_System_Despawn_TriggerGroup_Simple: Uses MES built-in retreat.
-        * MSB_System_Despawn_TriggerGroup_FlyToStatic: Flies to closest fitting static encounter of own faction and despawns there.
-        * >MSB_System_Despawn_FlyToHomebase: Flies back to encounter this encounter spawned from.
+        * (WIP) MSB_System_Despawn_TriggerGroup_FlyToStatic: Flies to closest fitting static encounter of own faction and despawns there.
+        * (WIP) MSB_System_Despawn_FlyToHomebase: Flies back to encounter this encounter spawned from.
 
     TODO:
       * Implement fallback when no command response is received.
