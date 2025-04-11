@@ -44,6 +44,7 @@
         [UseTrigger:true]
         [StartsReady:true]
 
+        [MaxActions:1]
         [Actions:MSB_System_Despawn_Action_Set_Simple]
       </Description>
     </EntityComponent>
@@ -101,7 +102,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_System_Despawn_TriggerGroup_Simple</SubtypeId>
+        <SubtypeId>MSB_System_Despawn_TriggerGroup_FlyToStatic</SubtypeId>
       </Id>
       <Description>
         [RivalAI TriggerGroup]
@@ -127,6 +128,7 @@
         [UseTrigger:true]
         [StartsReady:true]
 
+        [MaxActions:1]
         [Actions:MSB_System_Despawn_Action_Set_FlyToStatic]
       </Description>
     </EntityComponent>
