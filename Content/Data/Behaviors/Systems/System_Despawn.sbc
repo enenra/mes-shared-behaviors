@@ -26,8 +26,8 @@
       <Description>
         [RivalAI TriggerGroup]
 
-        [Triggers:MSB_System_Despawn_TriggerGroup_Simple]
-        [Triggers:MSB_System_Despawn_Trigger_Start_DespawnSimple]
+        [Triggers:MSB_System_Despawn_Trigger_Set_Simple]
+        [Triggers:MSB_System_Despawn_Trigger_Start_Simple]
       </Description>
     </EntityComponent>
 
@@ -56,7 +56,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Despawn - Set to Simple]
+        [//DebugMessage:Despawn - Set to Simple]
 
         [EnableTriggers:true]
         [EnableTriggerNames:MSB_System_Despawn_Trigger_Start_Simple]
@@ -88,7 +88,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Despawn - Start Simple Despawn]
+        [//DebugMessage:Despawn - Start Simple Despawn]
 
         [Retreat:true]
 

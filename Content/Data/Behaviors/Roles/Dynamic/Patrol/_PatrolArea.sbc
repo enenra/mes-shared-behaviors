@@ -168,11 +168,12 @@
         [Type:Timer]
 
         [UseTrigger:true]
-        [StartsReady:true]
+        [StartsReady:false]
 
         [MinCooldownMs:600000]
         [MaxCooldownMs:900000]
 
+        [MaxActions:1]
         [Actions:MSB_PatrolArea_Action_Despawn]
       </Description>
     </EntityComponent>
