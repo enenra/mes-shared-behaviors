@@ -160,7 +160,7 @@
 
         [Type:PlayerNear]
 
-        [TargetDistance:1001]
+        [TargetDistance:1000]
 
         [UseTrigger:true]
         [StartsReady:false]
@@ -221,7 +221,7 @@
 
         [Type:PlayerNear]
 
-        [TargetDistance:5001]
+        [TargetDistance:5000]
 
         [UseTrigger:true]
         [StartsReady:false]
@@ -246,7 +246,7 @@
 
         [SetBooleansFalse:PlayerNear1000]
         [SetBooleansFalse:PlayerNear5000]
-        [SetBooleansTrue:PlayerFar100]
+        [SetBooleansTrue:PlayerFar1000]
         [SetBooleansTrue:PlayerFar5000]
 
         [ManuallyActivateTrigger:true]

@@ -1,0 +1,147 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <!--
+      a
+    -->
+
+    <!-- 1000 -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_AreaRestriction_TriggerGroup_1000</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI TriggerGroup]
+
+        [Triggers:MSB_System_AreaRestriction_Trigger_1000_InRange]
+        [Triggers:MSB_System_AreaRestriction_Trigger_1000_OutOfRange]
+        [Triggers:MSB_System_AreaRestriction_Trigger_StillInRange]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_AreaRestriction_Trigger_1000_InRange</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Manual]
+        [Tags:MSB_TriggerEvent_PlayerNear1000]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Actions:MSB_System_AreaRestriction_Action_1000_InRange]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_AreaRestriction_Action_1000_InRange</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage:AreaRestriction - InRange1000]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_AreaRestriction_Warning]
+        [ForceManualTriggerActivation:false]
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB_System_AreaRestriction_Trigger_StillInRange]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_System_AreaRestriction_Trigger_1000_OutOfRange]
+        [EnableTriggerNames:MSB_System_AreaRestriction_Trigger_StillInRange]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_System_AreaRestriction_Trigger_1000_InRange]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_AreaRestriction_Trigger_1000_OutOfRange</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Manual]
+        [Tags:MSB_TriggerEvent_PlayerFar1000]
+
+        [UseTrigger:false]
+        [StartsReady:true]
+
+        [Actions:MSB_System_AreaRestriction_Action_1000_OutOfRange]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_AreaRestriction_Action_1000_OutOfRange</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage:AreaRestriction - OutOfRange1000]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_System_AreaRestriction_Trigger_1000_OutOfRange]
+        [DisableTriggerNames:MSB_System_AreaRestriction_Trigger_StillInRange]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_System_AreaRestriction_Trigger_1000_InRange]
+      </Description>
+    </EntityComponent>
+
+
+    <!-- Shared -->
+    <!-- StillInRange -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_AreaRestriction_Trigger_StillInRange</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:false]
+        [StartsReady:false]
+
+        [MinCooldownMs:10000]
+        [MaxCooldownMs:10001]
+
+        [Actions:MSB_System_AreaRestriction_Action_StillInRange]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_AreaRestriction_Action_StillInRange</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage:AreaRestriction - Apply Rep Damage]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_AreaRestriction_RepDamage]
+
+        [ChangeReputationWithPlayers:true]
+        [ReputationChangeFactions:{Self}]
+        [ReputationChangeRadius:1000]
+        [ReputationChangeAmount:-25]
+        [ReputationChangesForAllRadiusPlayerFactionMembers:true]
+      </Description>
+    </EntityComponent>
+
+  </EntityComponents>
+</Definitions>

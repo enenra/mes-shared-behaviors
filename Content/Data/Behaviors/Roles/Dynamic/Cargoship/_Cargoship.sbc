@@ -185,8 +185,25 @@
         [UseTrigger:true]
         [StartsReady:true]
 
+        [Conditions:MSB_Cargoship_Condition_OverrideDespawn]
+
         [MaxActions:1]
         [Actions:MSB_Cargoship_Action_OverrideDespawn]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Cargoship_Condition_OverrideDespawn</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [CheckTrueBooleans:true]
+        [TrueBooleans:MSB_System_Despawn_Active]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
