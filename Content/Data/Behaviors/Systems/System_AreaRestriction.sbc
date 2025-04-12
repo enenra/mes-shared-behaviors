@@ -3,7 +3,12 @@
   <EntityComponents>
 
     <!--
-      a
+      Area Restriction System
+      Allows for setting restricted areas around encounters. If the player enters the defined range, they will first receive a warning. After 10s they will then lose rep every 10s with the owner faction for as long as they stay within the restricted range.
+
+      To use:
+        * Add TriggerGroup corresponding to the desired restriction distance to your encounter's behavior.
+          * MSB_System_AreaRestriction_TriggerGroup_1000
     -->
 
     <!-- 1000 -->
