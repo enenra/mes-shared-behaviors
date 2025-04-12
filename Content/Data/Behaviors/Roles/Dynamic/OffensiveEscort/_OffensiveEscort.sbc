@@ -395,13 +395,12 @@
         [UseTrigger:false]
         [StartsReady:false]
 
-        [Conditions:MSB_OffensiveEscort_Condition_LinkUpWithLeader]
-
         [MinCooldownMs:14000]
         [MaxCooldownMs:16000]
 
-        [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitRole]
+        [Conditions:MSB_OffensiveEscort_Condition_LinkUpWithLeader]
+
+        [Actions:MSB_OffensiveEscort_Action_LinkUpWithLeader]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -429,6 +428,18 @@
         [MaxTargetChaseAngle:80]
       </Description>
     </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_OffensiveEscort_Action_LinkUpWithLeader</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitRole]
+      </Description>
+    </EntityComponent>
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -451,9 +462,6 @@
         [MinCooldownMs:6000]
         [MaxCooldownMs:9000]
 
-        [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitRole]
-
         [Actions:MSB_OffensiveEscort_Action_SwitchToEscort]
       </Description>
     </EntityComponent>
@@ -467,6 +475,9 @@
         [RivalAI Action]
 
         [//DebugMessage:OffensiveEscort - No Target, Switch to Escort, grouping up with leader]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitRole]
       </Description>
     </EntityComponent>
 

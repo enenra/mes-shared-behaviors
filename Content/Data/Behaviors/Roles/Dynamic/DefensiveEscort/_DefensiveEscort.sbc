@@ -233,6 +233,18 @@
 
         [TargetDistance:2000]
 
+        [Actions:MSB_DefensiveEscort_Action_TargetfarSwitchEscort]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_DefensiveEscort_Action_TargetfarSwitchEscort</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitRole]
       </Description>
