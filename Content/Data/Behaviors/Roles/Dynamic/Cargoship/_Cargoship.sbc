@@ -60,9 +60,7 @@
         [Triggers:MSB_Cargoship_Trigger_InitRole]
         [Triggers:MSB_Cargoship_Trigger_CloseRole]
 
-        [Triggers:MSB_Cargoship_Trigger_ReturnToSpeed]
-        [Triggers:MSB_Cargoship_Trigger_ReturnToDespawn]
-        [Triggers:MSB_Cargoship_Trigger_PlayerTooClose]
+        [Triggers:MSB_Cargoship_Trigger_OverrideDespawn]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -172,56 +170,11 @@
       </Description>
     </EntityComponent>
 
-    <!-- ReturnToSpeed -->
+    <!-- OverrideDespawn -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Cargoship_Trigger_ReturnToSpeed</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Trigger]
-
-        [Type:Timer]
-
-        [UseTrigger:true]
-        [StartsReady:true]
-
-        [MinCooldownMs:60000]
-        [MaxCooldownMs:60001]
-
-        [Actions:MSB_Cargoship_Action_ReturnToSpeed]
-      </Description>
-    </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Cargoship_Action_ReturnToSpeed</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Action]
-
-        [//DebugMessage:Cargoship - ReturnToSpeed]
-
-        [OverwriteAutopilotProfile:true]
-        [OverwriteAutopilotMode:Primary]
-        [OverwriteAutopilotId:MSB_Cargoship_Autopilot]
-
-        [ChangeAutopilotSpeed:true]
-        [NewAutopilotSpeed:-1]
-
-        [CancelWaitingAtWaypoint:true]
-        [SwitchToNextWaypoint:true]
-
-        [DisableTriggers:true]
-        [DisableTriggerNames:MSB_Cargoship_Trigger_ReturnToSpeed]
-      </Description>
-    </EntityComponent>
-
-    <!-- ReturnToDespawn -->
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Cargoship_Trigger_ReturnToDespawn</SubtypeId>
+        <SubtypeId>MSB_Cargoship_Trigger_OverrideDespawn</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -229,66 +182,23 @@
         [Type:BehaviorTriggerD]
 
         [UseTrigger:true]
-        [StartsReady:true]
+        [StartsReady:false]
 
-        [Actions:MSB_Cargoship_Action_ReturnToDespawn]
+        [Actions:MSB_Cargoship_Action_OverrideDespawn]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Cargoship_Action_ReturnToDespawn</SubtypeId>
+        <SubtypeId>MSB_Cargoship_Action_OverrideDespawn</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
 
-        [//DebugMessage:Cargoship - ReturnToDespawn]
-
-        [OverwriteAutopilotProfile:true]
-        [OverwriteAutopilotMode:Primary]
-        [OverwriteAutopilotId:MSB_Cargoship_Autopilot]
-      </Description>
-    </EntityComponent>
-
-    <!-- PlayerTooClose -->
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Cargoship_Trigger_PlayerTooClose</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Trigger]
-
-        [Type:PlayerNear]
-
-        [UseTrigger:true]
-        [StartsReady:true]
-
-        [TargetDistance:100]
-        [MinCooldownMs:5000]
-        [MaxCooldownMs:5001]
-
-        [Conditions:MSB_Context_Condition_NormalNeutral]
-
-        [Actions:MSB_Cargoship_Action_PlayerTooClose]
-      </Description>
-    </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Cargoship_Action_PlayerTooClose</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Action]
-
-        [ChangeReputationWithPlayers:true]
-        [ReputationChangeFactions:{Self}]
-        [ReputationChangeRadius:800]
-        [ReputationChangeAmount:-10]
-        [ReputationChangesForAllRadiusPlayerFactionMembers:true]
+        [DebugMessage:Cargoship - OverrideDespawn]
 
         [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_PlayerTooClose]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Despawn]
       </Description>
     </EntityComponent>
 
