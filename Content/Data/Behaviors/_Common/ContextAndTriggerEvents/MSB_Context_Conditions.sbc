@@ -109,6 +109,26 @@
         [MaxPlayerReputation:-499]
       </Description>
     </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Condition_PlayerNotHostile</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [CheckPlayerReputation:true]
+        [MaxPlayerReputationDistanceCheck:4500]
+        [AllPlayersReputationMustMatch:true]
+
+        [CheckReputationwithFaction:{self}]
+        [MinPlayerReputation:-500]
+        [MaxPlayerReputation:1500]
+      </Description>
+    </EntityComponent>
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>

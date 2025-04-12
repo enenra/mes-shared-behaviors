@@ -40,6 +40,8 @@
         [UseTrigger:true]
         [StartsReady:true]
 
+        [Conditions:MSB_Context_Condition_PlayerNotHostile]
+
         [Actions:MSB_System_AreaRestriction_Action_100_InRange]
       </Description>
     </EntityComponent>
@@ -133,6 +135,8 @@
 
         [UseTrigger:true]
         [StartsReady:true]
+
+        [Conditions:MSB_Context_Condition_PlayerNotHostile]
 
         [Actions:MSB_System_AreaRestriction_Action_1000_InRange]
       </Description>

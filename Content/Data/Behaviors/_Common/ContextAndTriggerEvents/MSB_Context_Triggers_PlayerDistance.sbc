@@ -45,7 +45,7 @@
 
         [Type:PlayerNear]
 
-        [TargetDistance:1000]
+        [TargetDistance:100]
 
         [UseTrigger:true]
         [StartsReady:false]
@@ -227,7 +227,7 @@
 
         [Type:PlayerNear]
 
-        [TargetDistance:1000]
+        [TargetDistance:100]
 
         [UseTrigger:true]
         [StartsReady:false]
