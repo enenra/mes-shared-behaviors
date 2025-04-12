@@ -238,7 +238,10 @@
         [MinDistance:10000]
         [MaxDistance:20000]
 
-        [InheritRelativeAltitude:true]
+        [MinAltitude:250]
+        [MaxAltitude:1500]
+
+        [InheritRelativeAltitude:false]
       </Description>
     </EntityComponent>
 
