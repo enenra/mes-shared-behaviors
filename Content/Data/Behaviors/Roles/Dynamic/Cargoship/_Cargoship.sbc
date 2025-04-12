@@ -255,8 +255,8 @@
         [UseTrigger:false]
         [StartsReady:false]
 
-        [MinCooldownMs:1000]
-        [MaxCooldownMs:2000]
+        [MinCooldownMs:10000]
+        [MaxCooldownMs:20000]
 
         [MaxActions:1]
         [Actions:MSB_Cargoship_Action_StartDespawn]
