@@ -214,7 +214,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Cargoship - OverrideDespawn]
+        [//DebugMessage:Cargoship - OverrideDespawn]
 
         [AddWaypoints:true]
         [WaypointsToAdd:MSB_Cargoship_Waypoint_OverrideDespawn]
@@ -238,7 +238,7 @@
         [MinDistance:10000]
         [MaxDistance:20000]
 
-        [MinAltitude:250]
+        [MinAltitude:500]
         [MaxAltitude:1500]
 
         [InheritRelativeAltitude:false]
@@ -273,7 +273,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Cargoship - StartDespawn]
+        [//DebugMessage:Cargoship - StartDespawn]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Despawn]
