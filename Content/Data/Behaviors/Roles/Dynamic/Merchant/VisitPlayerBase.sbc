@@ -71,7 +71,7 @@ Not in use
 
         [CheckTrueBooleans:true]
         [TrueBooleans:MSB_State_Role]
-        [TrueBooleans:PlayerNear]
+        [TrueBooleans:PlayerNear1000]
 
         [NoTarget:true]
 

@@ -20,10 +20,9 @@
         [Triggers:MSB_Utility_State_Trigger_Combat_To_Role_NoTarget_Delay]
         [Triggers:MSB_Utility_State_Trigger_Combat_TargetFar]
 
-        [Triggers:MSB_Context_Trigger_PlayerNear]
-        [Triggers:MSB_Context_Trigger_PlayerFar]
-        [Triggers:MSB_Context_Trigger_PlayerClose]
-        [Triggers:MSB_Context_Trigger_PlayerNotClose]
+        [Triggers:MSB_Context_Trigger_PlayerNear1000]
+        [Triggers:MSB_Context_Trigger_PlayerNear5000]
+        [Triggers:MSB_Context_Trigger_PlayerFar5000]
 
         [Triggers:MSB_ContextDamage_Trigger_Hostile_NPCDamage]
         [Triggers:MSB_ContextDamage_Trigger_Hostile_PlayerDamage]
