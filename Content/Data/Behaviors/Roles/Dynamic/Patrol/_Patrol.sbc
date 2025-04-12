@@ -184,12 +184,20 @@
 
         [Type:DespawnNear]
 
+        [TargetDistance:9000]
+
         [UseTrigger:true]
         [StartsReady:true]
 
-        [TargetDistance:5000]
+        [MinCooldownMs:10000]
+        [MaxCooldownMs:20000]
+
+        [Conditions:MSB_System_Despawn_Condition_Active]
 
         [Actions:MSB_Patrol_Action_Despawn]
+
+        [UseElseActions:true]
+        [ElseActions:MSB_Patrol_Action_Despawn_SanityCheck]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -200,9 +208,21 @@
       <Description>
         [RivalAI Action]
 
-        [//DebugMessage:Patrol - Despawn]
+        [DebugMessage:Patrol - StartDespawn]
 
-        [SetBooleansTrue:MSB_Despawn]
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Despawn]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Patrol_Action_Despawn_SanityCheck</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:Patrol - Despawn Sanity Check]
       </Description>
     </EntityComponent>
 
