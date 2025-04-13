@@ -33,6 +33,8 @@
         [MinCooldownMs:4000]
         [MaxCooldownMs:4001]
 
+        [Conditions:MSB_Utility_State_Condition_Check_State_Combat]
+
         [MaxActions:1]
         [Actions:MSB_Fighter_Action_DamageByHostile]
       </Description>
@@ -83,6 +85,9 @@
         [TargetAltitudeCheck:true]
         [MinTargetAltitude:-1]
         [MaxTargetAltitude:50]
+
+        [CheckTrueBooleans:true]
+        [TrueBooleans:MSB_State_Combat]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -92,6 +97,8 @@
       </Id>
       <Description>
         [RivalAI Action]
+
+        [DebugMessage:Fighter - LowAltitude Active]
 
         [ChangeAutopilotSpeed:true]
         [NewAutopilotSpeed:45]
@@ -139,6 +146,9 @@
         [TargetAltitudeCheck:true]
         [MinTargetAltitude:60]
         [MaxTargetAltitude:-1]
+
+        [CheckTrueBooleans:true]
+        [TrueBooleans:MSB_State_Combat]
       </Description>
     </EntityComponent>
 
@@ -179,6 +189,8 @@
 
         [TargetDistance:1800]
 
+        [Conditions:MSB_Utility_State_Condition_Check_State_Combat]
+
         [MaxActions:-1]
         [Actions:MSB_Fighter_Action_LowAltitudeFighting_Reset]
       </Description>
@@ -191,6 +203,8 @@
       </Id>
       <Description>
         [RivalAI Action]
+
+        [DebugMessage:Fighter - LowAltitude Reset]
 
         [ChangeAutopilotSpeed:true]
         [NewAutopilotSpeed:300]
@@ -216,6 +230,8 @@
         [UseTrigger:true]
         [StartsReady:true]
 
+        [Conditions:MSB_Utility_State_Condition_Check_State_Combat]
+
         [MaxActions:-1]
         [Actions:MSB_Fighter_Action_LowAltitudeFighting_StartingAttackRun]
       </Description>
@@ -228,6 +244,8 @@
       </Id>
       <Description>
         [RivalAI Action]
+
+        [DebugMessage:Fighter - StartingAttackRun]
 
         [SetBooleansTrue:OnAttackRun]
 
@@ -261,6 +279,8 @@
       <Description>
         [RivalAI Action]
 
+        [DebugMessage:Fighter - EndingAttackRun]
+
         [ChangeAutopilotProfile:true]
         [AutopilotProfile:Secondary]
 
@@ -279,11 +299,12 @@
         [Type:Timer]
 
         [UseTrigger:true]
+        [StartsReady:true]
+
         [MinCooldownMs:12000]
         [MaxCooldownMs:12001]
 
         [Conditions:MSB_Fighter_Condition_EnemyOnTail]
-        [StartsReady:true]
 
         [MaxActions:-1]
         [Actions:MSB_Fighter_Action_EnemyOnTail]
@@ -317,6 +338,7 @@
 
         [CheckTrueBooleans:true]
         [TrueBooleans:UnderFire]
+        [TrueBooleans:MSB_State_Combat]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -326,6 +348,8 @@
       </Id>
       <Description>
         [RivalAI Action]
+
+        [DebugMessage:Fighter - EnemyOnTail]
 
         [Ramming:true]
       </Description>

@@ -27,11 +27,12 @@
 
         [TargetDistance:5000]
 
+        [UseTrigger:true]
+        [StartsReady:true]
+
         [MinCooldownMs:5000]
         [MaxCooldownMs:5001]
 
-        [UseTrigger:true]
-        [StartsReady:true]
         [Actions:MSB_Fighter_Action_PlayerClose]
 
         [UseElseActions:true]
@@ -173,14 +174,13 @@
 
         [Type:Timer]
 
+        [UseTrigger:false]
+        [StartsReady:false]
+
         [MinCooldownMs:1000]
         [MaxCooldownMs:1001]
 
-        [UseTrigger:false]
-
         [Conditions:MSB_Fighter_Condition_AfterHighSpeedImpact]
-
-        [StartsReady:false]
 
         [MaxActions:1]
         [Actions:MSB_Fighter_Action_AfterHighSpeedImpact]
