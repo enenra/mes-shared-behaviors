@@ -866,6 +866,9 @@
         [Blocks:MyObjectBuilder_Refinery/(null)]
         [Blocks:MyObjectBuilder_SurvivalKit/(null)]
         [Blocks:MyObjectBuilder_MedicalRoom/(null)]
+        [Blocks:MyObjectBuilder_Jukebox/(null)]
+        [Blocks:MyObjectBuilder_InteriorLight/(null)]
+        [Blocks:MyObjectBuilder_ReflectorLight/(null)]
 
         [Blocks:MyObjectBuilder_Thrust/GFA_LG_RepulsorSmall]
         [Blocks:MyObjectBuilder_Thrust/GFA_SG_RepulsorSmall]
@@ -1030,6 +1033,9 @@
         [Blocks:MyObjectBuilder_Cockpit/(null)]
         [Blocks:MyObjectBuilder_LandingGear/(null)]
         [Blocks:MyObjectBuilder_ConveyorSorter/(null)]
+        [Blocks:MyObjectBuilder_Jukebox/(null)]
+        [Blocks:MyObjectBuilder_InteriorLight/(null)]
+        [Blocks:MyObjectBuilder_ReflectorLight/(null)]
 
         [MatchOnlyTypeId:true]
 
