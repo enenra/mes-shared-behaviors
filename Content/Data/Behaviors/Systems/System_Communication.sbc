@@ -29,7 +29,6 @@
         [RivalAI TriggerGroup]
 
         [Triggers:MSB_System_Communication_Trigger_AllGood]
-        [Triggers:MSB_System_Communication_Trigger_AllGood_Delay]
         [Triggers:MSB_System_Communication_Trigger_Received_AllGood]
         [Triggers:MSB_System_Communication_Trigger_Received_AllGood_Abort]
 
