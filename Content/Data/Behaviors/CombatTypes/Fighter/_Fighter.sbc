@@ -19,7 +19,7 @@
         [Triggers:MSB_Fighter_Trigger_InitCombatType]
         [Triggers:MSB_Fighter_Trigger_CloseFight]
 
-        [Triggers:MSB_Fighter_Trigger_PlayerClose]
+        [Triggers:MSB_Fighter_Trigger_Compromised_PlayerClose]
         [Triggers:MSB_Fighter_Trigger_Compromised_PlayerFar]
 
         [Triggers:MSB_Fighter_Trigger_BeforeHighSpeedImpact]
