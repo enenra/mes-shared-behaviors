@@ -279,20 +279,16 @@
       <Description>
         [RivalAI Action]
 
-
         [//DebugMessage:Fighter - EndingAttackRun]
-
 
         [EnableTriggers:true]
         [EnableTriggerNames:MSB_Fighter_Trigger_EndingAttackRun_Delay]
-		
-		
-		[ResetCooldownTimeOfTriggers:true]
-		[ResetTriggerCooldownNames:MSB_Fighter_Trigger_EndingAttackRun_Delay]
+
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB_Fighter_Trigger_EndingAttackRun_Delay]
 
         [SetBooleansFalse:OnAttackRun]
-		
-
       </Description>
     </EntityComponent>
 
@@ -305,12 +301,13 @@
       <Description>
         [RivalAI Trigger]
 
-		[Type:Timer]
-        [MinCooldownMs:1000]
-        [MaxCooldownMs:1001]
+		    [Type:Timer]
 
         [UseTrigger:false]
         [StartsReady:false]
+
+        [MinCooldownMs:1000]
+        [MaxCooldownMs:1001]
 
         [MaxActions:-1]
         [Actions:MSB_Fighter_Action_EndingAttackRun_Delay]
@@ -325,36 +322,13 @@
       <Description>
         [RivalAI Action]
 
-
         [ChangeAutopilotProfile:true]
         [AutopilotProfile:Secondary]
 
-		
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_Fighter_Trigger_EndingAttackRun_Delay]
-		
-		
       </Description>
     </EntityComponent>
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
