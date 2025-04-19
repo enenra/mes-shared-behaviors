@@ -101,7 +101,7 @@
         [DebugMessage:Fighter - LowAltitude Active]
 
         [ChangeAutopilotSpeed:true]
-        [NewAutopilotSpeed:45]
+        [NewAutopilotSpeed:65]
 
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_Fighter_Trigger_LowAltitudeFighting]
@@ -279,14 +279,83 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Fighter - EndingAttackRun]
+
+        [//DebugMessage:Fighter - EndingAttackRun]
+
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_Fighter_Trigger_EndingAttackRun_Delay]
+		
+		
+		[ResetCooldownTimeOfTriggers:true]
+		[ResetTriggerCooldownNames:MSB_Fighter_Trigger_EndingAttackRun_Delay]
+
+        [SetBooleansFalse:OnAttackRun]
+		
+
+      </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Fighter_Trigger_EndingAttackRun_Delay</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+		[Type:Timer]
+        [MinCooldownMs:1000]
+        [MaxCooldownMs:1001]
+
+        [UseTrigger:false]
+        [StartsReady:false]
+
+        [MaxActions:-1]
+        [Actions:MSB_Fighter_Action_EndingAttackRun_Delay]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Fighter_Action_EndingAttackRun_Delay</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
 
         [ChangeAutopilotProfile:true]
         [AutopilotProfile:Secondary]
 
-        [SetBooleansFalse:OnAttackRun]
+		
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_Fighter_Trigger_EndingAttackRun_Delay]
+		
+		
       </Description>
     </EntityComponent>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>

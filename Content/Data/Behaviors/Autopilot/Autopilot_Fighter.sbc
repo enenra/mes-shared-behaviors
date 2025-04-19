@@ -23,7 +23,7 @@
         [IdealMaxSpeed:100]
         [MaxSpeedTolerance:5]
 
-        [MinimumPlanetAltitude:100]
+        [MinimumPlanetAltitude:50]
         [AltitudeTolerance:20]
 
         [LimitRotationSpeed:true]
@@ -70,7 +70,7 @@
         [IdealMaxSpeed:80]
         [MaxSpeedTolerance:5]
 
-        [MinimumPlanetAltitude:50]
+        [MinimumPlanetAltitude:25]
         [AltitudeTolerance:20]
 
         [LimitRotationSpeed:false]
