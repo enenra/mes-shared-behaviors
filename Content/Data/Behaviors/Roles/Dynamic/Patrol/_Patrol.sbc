@@ -18,7 +18,7 @@
       <Description>
         [RivalAI Behavior]
 
-        [BehaviorName:Cargoship]
+        [BehaviorName:CargoShip]
 
         [TargetData:MSB_TargetProfile_LowRange]
 
@@ -65,7 +65,8 @@
         [Triggers:MSB_Patrol_Trigger_InitRole]
         [Triggers:MSB_Patrol_Trigger_CloseRole]
 
-        [Triggers:MSB_Patrol_Trigger_Despawn]
+        [Triggers:MSB_Patrol_Trigger_OverrideDespawn]
+        [Triggers:MSB_Patrol_Trigger_StartDespawn]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -173,56 +174,96 @@
       </Description>
     </EntityComponent>
 
-    <!-- Despawn - When the encounter gets to within 5km of the built-in despawn point, this is run instead. -->
+    <!-- OverrideDespawn -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Patrol_Trigger_Despawn</SubtypeId>
+        <SubtypeId>MSB_Patrol_Trigger_OverrideDespawn</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
 
-        [Type:DespawnNear]
-
-        [TargetDistance:9000]
+        [Type:Timer]
 
         [UseTrigger:true]
         [StartsReady:true]
 
+        [Conditions:MSB_System_Despawn_Condition_Active]
+
+        [MaxActions:1]
+        [Actions:MSB_Patrol_Action_OverrideDespawn]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Patrol_Action_OverrideDespawn</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage:Patrol - OverrideDespawn]
+
+        [AddWaypoints:true]
+        [WaypointsToAdd:MSB_Patrol_Waypoint_OverrideDespawn]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_Patrol_Trigger_StartDespawn]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Patrol_Waypoint_OverrideDespawn</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Waypoint]
+
+        [Waypoint:RelativeRandom]
+        [RelativeEntity:Self]
+
+        [MinDistance:10000]
+        [MaxDistance:20000]
+
+        [MinAltitude:500]
+        [MaxAltitude:1500]
+
+        [InheritRelativeAltitude:false]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Patrol_Trigger_StartDespawn</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:BehaviorTriggerD]
+
+        [UseTrigger:false]
+        [StartsReady:false]
+
         [MinCooldownMs:10000]
         [MaxCooldownMs:20000]
 
-        [Conditions:MSB_System_Despawn_Condition_Active]
-
-        [Actions:MSB_Patrol_Action_Despawn]
-
-        [UseElseActions:true]
-        [ElseActions:MSB_Patrol_Action_Despawn_SanityCheck]
+        [MaxActions:1]
+        [Actions:MSB_Patrol_Action_StartDespawn]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Patrol_Action_Despawn</SubtypeId>
+        <SubtypeId>MSB_Patrol_Action_StartDespawn</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Patrol - StartDespawn]
+        [//DebugMessage:Patrol - StartDespawn]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Despawn]
-      </Description>
-    </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Patrol_Action_Despawn_SanityCheck</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Action]
-
-        [DebugMessage:Patrol - Despawn Sanity Check]
       </Description>
     </EntityComponent>
 
