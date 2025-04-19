@@ -46,6 +46,11 @@
         [OffsetPlanetMaxDistFromTarget:1200]
         [OffsetPlanetMinTargetAltitude:450]
         [OffsetPlanetMaxTargetAltitude:700]
+
+        [BarrelRollMinDurationMs:2000]
+        [BarrelRollMaxDurationMs:3000]
+        [RamMinDurationMs:6000]
+        [RamMaxDurationMs:7000]
       </Description>
     </EntityComponent>
 

@@ -2,19 +2,7 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 
-    <!--
-    TODO:
-      * Prevent this from triggering when not actually in a fight
-
-        [Triggers:MSB_Fighter_Trigger_LowAltitudeFighting]
-        [Triggers:MSB_Fighter_Trigger_LowAltitudeFighting_Reset_ChangedTarget]
-        [Triggers:MSB_Fighter_Trigger_LowAltitudeFighting_Reset_TargetFar]
-        [Triggers:MSB_Fighter_Trigger_LowAltitudeFighting_Reset_HighAltitude]
-
-        [Triggers:MSB_Fighter_Trigger_StartingAttackRun]
-        [Triggers:MSB_Fighter_Trigger_EndingAttackRun]
-    -->
-
+    <!-- DamageByHostile -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -51,6 +39,228 @@
       </Description>
     </EntityComponent>
 
+    <!-- EnemyOnTail -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Fighter_Trigger_EnemyOnTail</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [MinCooldownMs:12000]
+        [MaxCooldownMs:12001]
+
+        [Conditions:MSB_Fighter_Condition_EnemyOnTail]
+
+        [MaxActions:-1]
+        [Actions:MSB_Fighter_Action_EnemyOnTail_BarrelRoll]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Fighter_Condition_EnemyOnTail</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+
+        [CheckTargetDistance:true]
+        [MinTargetDistance:50]
+        [MaxTargetDistance:500]
+
+        [CheckIfTargetIsChasing:true]
+        [MaxTargetChaseAngle:7]
+
+        [AltitudeCheck:true]
+        [MinAltitude:500]
+
+        [CheckGridSpeed:true]
+        [MinGridSpeed:95]
+
+        [CheckFalseBooleans:true]
+        [FalseBooleans:OnAttackRun]
+
+        [CheckTrueBooleans:true]
+        [TrueBooleans:UnderFire]
+        [TrueBooleans:MSB_State_Combat]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Fighter_Action_EnemyOnTail_BarrelRoll</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage:Fighter - EnemyOnTail BarrelRoll]
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB_Fighter_Trigger_EnemyOnTail_Ramming]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_Fighter_Trigger_EnemyOnTail_Ramming]
+
+        [BarrelRoll:true]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Fighter_Trigger_EnemyOnTail_Ramming</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:false]
+        [StartsReady:false]
+
+        [MinCooldownMs:3000]
+        [MaxCooldownMs:3001]
+
+        [MaxActions:-1]
+        [Actions:MSB_Fighter_Action_EnemyOnTail]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Fighter_Action_EnemyOnTail</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage:Fighter - EnemyOnTail Ramming]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_Fighter_Trigger_EnemyOnTail_Ramming]
+
+        [Ramming:true]
+      </Description>
+    </EntityComponent>
+
+    <!-- StartingAttackRun -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Fighter_Trigger_StartingAttackRun</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:BehaviorTriggerB]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Conditions:MSB_Utility_State_Condition_Check_State_Combat]
+
+        [MaxActions:-1]
+        [Actions:MSB_Fighter_Action_StartingAttackRun]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Fighter_Action_StartingAttackRun</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:Fighter - StartingAttackRun]
+
+        [SetBooleansTrue:OnAttackRun]
+
+        [ChangeAutopilotProfile:true]
+        [AutopilotProfile:Tertiary]
+      </Description>
+    </EntityComponent>
+
+    <!-- EndingAttackRun -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Fighter_Trigger_EndingAttackRun</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:BehaviorTriggerA]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [MaxActions:-1]
+        [Actions:MSB_Fighter_Action_EndingAttackRun_Delay]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Fighter_Action_EndingAttackRun_Delay</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:Fighter - EndingAttackRun]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_Fighter_Trigger_EndingAttackRun_Delay]
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB_Fighter_Trigger_EndingAttackRun_Delay]
+
+        [SetBooleansFalse:OnAttackRun]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Fighter_Trigger_EndingAttackRun_Delay</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+		    [Type:Timer]
+
+        [UseTrigger:false]
+        [StartsReady:false]
+
+        [MinCooldownMs:1000]
+        [MaxCooldownMs:1001]
+
+        [MaxActions:-1]
+        [Actions:MSB_Fighter_Action_EndingAttackRun]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Fighter_Action_EndingAttackRun</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ChangeAutopilotProfile:true]
+        [AutopilotProfile:Secondary]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_Fighter_Trigger_EndingAttackRun_Delay]
+      </Description>
+    </EntityComponent>
+
+
+    <!-- Mode: LowAltitudeFighting -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -132,7 +342,6 @@
         [Actions:MSB_Fighter_Action_LowAltitudeFighting_Reset]
       </Description>
     </EntityComponent>
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -163,8 +372,8 @@
         [Type:ChangedTarget]
 
         [Tags:LowAltitudeFighting]
-        [UseTrigger:false]
 
+        [UseTrigger:false]
         [StartsReady:true]
 
         [MaxActions:-1]
@@ -216,187 +425,5 @@
         [EnableTriggerNames:MSB_Fighter_Trigger_LowAltitudeFighting]
       </Description>
     </EntityComponent>
-
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Fighter_Trigger_StartingAttackRun</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Trigger]
-
-        [Type:BehaviorTriggerB]
-
-        [UseTrigger:true]
-        [StartsReady:true]
-
-        [Conditions:MSB_Utility_State_Condition_Check_State_Combat]
-
-        [MaxActions:-1]
-        [Actions:MSB_Fighter_Action_LowAltitudeFighting_StartingAttackRun]
-      </Description>
-    </EntityComponent>
-
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Fighter_Action_LowAltitudeFighting_StartingAttackRun</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Action]
-
-        [DebugMessage:Fighter - StartingAttackRun]
-
-        [SetBooleansTrue:OnAttackRun]
-
-        [ChangeAutopilotProfile:true]
-        [AutopilotProfile:Tertiary]
-      </Description>
-    </EntityComponent>
-
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Fighter_Trigger_EndingAttackRun</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Trigger]
-
-        [Type:BehaviorTriggerA]
-
-        [UseTrigger:true]
-        [StartsReady:true]
-
-        [MaxActions:-1]
-        [Actions:MSB_Fighter_Action_EndingAttackRun]
-      </Description>
-    </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Fighter_Action_EndingAttackRun</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Action]
-
-        [//DebugMessage:Fighter - EndingAttackRun]
-
-        [EnableTriggers:true]
-        [EnableTriggerNames:MSB_Fighter_Trigger_EndingAttackRun_Delay]
-
-
-        [ResetCooldownTimeOfTriggers:true]
-        [ResetTriggerCooldownNames:MSB_Fighter_Trigger_EndingAttackRun_Delay]
-
-        [SetBooleansFalse:OnAttackRun]
-      </Description>
-    </EntityComponent>
-
-
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Fighter_Trigger_EndingAttackRun_Delay</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Trigger]
-
-		    [Type:Timer]
-
-        [UseTrigger:false]
-        [StartsReady:false]
-
-        [MinCooldownMs:1000]
-        [MaxCooldownMs:1001]
-
-        [MaxActions:-1]
-        [Actions:MSB_Fighter_Action_EndingAttackRun_Delay]
-      </Description>
-    </EntityComponent>
-
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Fighter_Action_EndingAttackRun_Delay</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Action]
-
-        [ChangeAutopilotProfile:true]
-        [AutopilotProfile:Secondary]
-
-        [DisableTriggers:true]
-        [DisableTriggerNames:MSB_Fighter_Trigger_EndingAttackRun_Delay]
-      </Description>
-    </EntityComponent>
-
-
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Fighter_Trigger_EnemyOnTail</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Trigger]
-
-        [Type:Timer]
-
-        [UseTrigger:true]
-        [StartsReady:true]
-
-        [MinCooldownMs:12000]
-        [MaxCooldownMs:12001]
-
-        [Conditions:MSB_Fighter_Condition_EnemyOnTail]
-
-        [MaxActions:-1]
-        [Actions:MSB_Fighter_Action_EnemyOnTail]
-      </Description>
-    </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Fighter_Condition_EnemyOnTail</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Condition]
-
-        [UseConditions:true]
-
-        [CheckTargetDistance:true]
-        [MinTargetDistance:50]
-        [MaxTargetDistance:500]
-
-        [CheckIfTargetIsChasing:true]
-        [MaxTargetChaseAngle:7]
-
-        [AltitudeCheck:true]
-        [MinAltitude:500]
-
-        [CheckGridSpeed:true]
-        [MinGridSpeed:95]
-
-        [CheckFalseBooleans:true]
-        [FalseBooleans:OnAttackRun]
-
-        [CheckTrueBooleans:true]
-        [TrueBooleans:UnderFire]
-        [TrueBooleans:MSB_State_Combat]
-      </Description>
-    </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Fighter_Action_EnemyOnTail</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Action]
-
-        [DebugMessage:Fighter - EnemyOnTail]
-
-        [Ramming:true]
-      </Description>
-    </EntityComponent>
-
   </EntityComponents>
 </Definitions>
