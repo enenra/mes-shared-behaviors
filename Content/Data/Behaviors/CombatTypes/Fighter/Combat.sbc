@@ -183,6 +183,7 @@
 
         [ChangeAutopilotProfile:true]
         [AutopilotProfile:Tertiary]
+        [ChangeBehaviorSubclass:Strike]
       </Description>
     </EntityComponent>
 
@@ -253,6 +254,7 @@
 
         [ChangeAutopilotProfile:true]
         [AutopilotProfile:Secondary]
+        [ChangeBehaviorSubclass:FighterPlane]
 
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_Fighter_Trigger_EndingAttackRun_Delay]
