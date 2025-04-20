@@ -6,6 +6,7 @@
     These are utilities for fighter-type grids.
     -->
 
+    <!-- TODO: Compromised triggers are broken and thus disabled for now. -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -19,12 +20,12 @@
         [Triggers:MSB_Fighter_Trigger_InitCombatType]
         [Triggers:MSB_Fighter_Trigger_CloseFight]
 
-        [Triggers:MSB_Fighter_Trigger_Compromised_PlayerClose]
-        [Triggers:MSB_Fighter_Trigger_Compromised_PlayerFar]
+        [//Triggers:MSB_Fighter_Trigger_Compromised_PlayerClose]
+        [//Triggers:MSB_Fighter_Trigger_Compromised_PlayerFar]
 
-        [Triggers:MSB_Fighter_Trigger_BeforeHighSpeedImpact]
-        [Triggers:MSB_Fighter_Trigger_Compromised_BeforeHighSpeedImpact]
-        [Triggers:MSB_Fighter_Trigger_AfterHighSpeedImpact]
+        [//Triggers:MSB_Fighter_Trigger_BeforeHighSpeedImpact]
+        [//Triggers:MSB_Fighter_Trigger_Compromised_BeforeHighSpeedImpact]
+        [//Triggers:MSB_Fighter_Trigger_AfterHighSpeedImpact]
 
         [Triggers:MSB_Fighter_Trigger_DamageByHostile]
         [Triggers:MSB_Fighter_Trigger_EnemyOnTail]
@@ -34,10 +35,15 @@
         [Triggers:MSB_Fighter_Trigger_EndingAttackRun]
         [Triggers:MSB_Fighter_Trigger_EndingAttackRun_Delay]
 
-        [Triggers:MSB_Fighter_Trigger_LowAltitudeFighting]
-        [Triggers:MSB_Fighter_Trigger_LowAltitudeFighting_Reset_ChangedTarget]
-        [Triggers:MSB_Fighter_Trigger_LowAltitudeFighting_Reset_HighAltitude]
-        [Triggers:MSB_Fighter_Trigger_LowAltitudeFighting_Reset_TargetFar]
+        [Triggers:MSB_Fighter_Trigger_AtLowAltitude]
+        [Triggers:MSB_Fighter_Trigger_NotAtLowAltitude]
+
+        [Triggers:MSB_Fighter_Trigger_LowAltitudeFighting_Enable]
+        [Triggers:MSB_Fighter_Trigger_LowAltitudeFighting_Disable]
+        [Triggers:MSB_Fighter_Trigger_LowAltitudeFighting_Disable_HighAltitude]
+        [Triggers:MSB_Fighter_Trigger_LowAltitudeFighting_Disable_ChangedTarget]
+        [Triggers:MSB_Fighter_Trigger_LowAltitudeFighting_Disable_TargetFar]
+        [Triggers:MSB_Fighter_Trigger_LowAltitudeFighting_Disable_InitRole]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
