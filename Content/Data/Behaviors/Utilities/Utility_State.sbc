@@ -444,7 +444,7 @@
       <Description>
         [RivalAI Trigger]
 
-        [Type:Timer]
+        [Type:NoTarget]
 
         [UseTrigger:false]
         [StartsReady:false]
@@ -452,15 +452,18 @@
         [MinCooldownMs:20000]
         [MaxCooldownMs:20001]
 
-        [Conditions:MSB_Utility_State_Condition_Combat_To_Role_NoTarget]
+        [Conditions:MSB_Utility_State_Condition_Check_State_Combat]
 
-        [Actions:MSB_Utility_State_Action_Combat_To_Role_NoTarget_Delay]
+        [Actions:MSB_Utility_State_Action_Combat_To_Role_NoTarget]
+
+        [UseElseActions:true]
+        [ElseActions:MSB_Utility_State_Action_Combat_To_Role_NoTarget_Else]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Utility_State_Action_Combat_To_Role_NoTarget_Delay</SubtypeId>
+        <SubtypeId>MSB_Utility_State_Action_Combat_To_Role_NoTarget</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
@@ -472,6 +475,20 @@
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitRole]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Utility_State_Action_Combat_To_Role_NoTarget_Else</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage:StateUtility - Combat NoTarget - Else]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_Utility_State_Trigger_Combat_To_Role_NoTarget_Delay]
       </Description>
     </EntityComponent>
 
