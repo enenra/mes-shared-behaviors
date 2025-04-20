@@ -248,6 +248,8 @@
         [MinCooldownMs:10000]
         [MaxCooldownMs:20000]
 
+        [Conditions:MSB_Utility_State_Condition_Check_State_Role]
+
         [MaxActions:1]
         [Actions:MSB_Patrol_Action_StartDespawn]
       </Description>
