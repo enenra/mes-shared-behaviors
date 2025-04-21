@@ -11,7 +11,6 @@
         [RivalAI Autopilot]
 
         [DisableInertiaDampeners:false]
-        [SlowDownOnWaypointApproach:true]
         [FlyLevelWithGravity:true]
 
         [MinimumPlanetAltitude:250]
@@ -20,6 +19,7 @@
         [IdealMinSpeed:50]
         [IdealMaxSpeed:75]
 
+        [SlowDownOnWaypointApproach:true]
         [WaypointTolerance:50]
         [WaypointWaitTimeTrigger:120]
 
@@ -41,13 +41,21 @@
         [RivalAI Autopilot]
 
         [DisableInertiaDampeners:false]
-        [SlowDownOnWaypointApproach:true]
-
         [FlyLevelWithGravity:true]
+        [UseVelocityCollisionEvasion:true]
+
         [MinimumPlanetAltitude:200]
         [IdealPlanetAltitude:300]
 
+        [IdealMinSpeed:50]
+        [IdealMaxSpeed:75]
+
+        [SlowDownOnWaypointApproach:true]
         [WaypointTolerance:30]
+
+        [LimitRotationSpeed:true]
+        [MaxRotationMagnitude:0.2]
+        [//AngleAllowedForForwardThrust:35]
 
         [OffsetSpaceMinDistFromTarget:3000]
         [OffsetSpaceMaxDistFromTarget:7500]

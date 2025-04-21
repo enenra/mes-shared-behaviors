@@ -1,0 +1,136 @@
+﻿<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <!-- AtLowAltitude - Switch Dampeners on. -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Gunship_Trigger_AtLowAltitude</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [MinCooldownMs:5000]
+        [MaxCooldownMs:5001]
+
+        [Conditions:MSB_Gunship_Condition_AtLowAltitude]
+
+        [MaxActions:-1]
+        [Actions:MSB_Gunship_Action_AtLowAltitude]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Gunship_Condition_AtLowAltitude</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [AltitudeCheck:true]
+        [AltitudeCheckIgnoreWater:false]
+        [MinAltitude:0]
+        [MaxAltitude:400]
+
+        [CheckTrueBooleans:true]
+        [TrueBooleans:MSB_State_Combat]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Gunship_Action_AtLowAltitude</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage:Fighter - AtLowAltitude True]
+
+        [ChangeInertiaDampeners:true]
+        [InertiaDampenersEnable:true]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_Gunship_Trigger_AtLowAltitude]
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB_Gunship_Trigger_NotAtLowAltitude]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_Gunship_Trigger_NotAtLowAltitude]
+      </Description>
+    </EntityComponent>
+
+    <!-- NotAtLowAltitude - Switch Dampeners off. -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Gunship_Trigger_NotAtLowAltitude</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:false]
+        [StartsReady:false]
+
+        [MinCooldownMs:10000]
+        [MaxCooldownMs:10001]
+
+        [Conditions:MSB_Gunship_Condition_NotAtLowAltitude]
+
+        [MaxActions:-1]
+        [Actions:MSB_Gunship_Action_NotAtLowAltitude]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Gunship_Condition_NotAtLowAltitude</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [AltitudeCheck:true]
+        [AltitudeCheckIgnoreWater:false]
+        [MinAltitude:401]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Gunship_Action_NotAtLowAltitude</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage:Fighter - AtLowAltitude False]
+
+        [ChangeInertiaDampeners:true]
+        [InertiaDampenersEnable:false]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_Gunship_Trigger_NotAtLowAltitude]
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB_Gunship_Trigger_AtLowAltitude]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_Gunship_Trigger_AtLowAltitude]
+      </Description>
+    </EntityComponent>
+
+  </EntityComponents>
+</Definitions>

@@ -14,6 +14,11 @@
 
         [Triggers:MSB_Gunship_Trigger_InitCombatType]
         [Triggers:MSB_Gunship_Trigger_CloseCombatType]
+
+        [Triggers:MSB_Gunship_Trigger_AttemptToEvade]
+
+        [Triggers:MSB_Gunship_Trigger_AtLowAltitude]
+        [Triggers:MSB_Gunship_Trigger_NotAtLowAltitude]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -87,7 +92,7 @@
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Gunship_InitCombatType]
 
         [ChangeBehaviorSubclass:true]
-        [NewBehaviorSubclass:Horsefly]
+        [NewBehaviorSubclass:HorseFighter]
 
         [ChangeAutopilotProfile:true]
         [AutopilotProfile:Secondary]
