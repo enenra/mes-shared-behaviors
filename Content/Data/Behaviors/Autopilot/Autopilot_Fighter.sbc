@@ -60,53 +60,6 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Fighter_Autopilot_NoSafety</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Autopilot]
-
-        [DisableInertiaDampeners:true]
-        [FlyLevelWithGravity:false]
-        [LevelWithGravityWhenIdle:false]
-        [UseVelocityCollisionEvasion:false]
-
-        [SlowDownOnWaypointApproach:true]
-        [ExtraSlowDownDistance:100]
-        [WaypointTolerance:150]
-
-        [IdealMinSpeed:55]
-        [IdealMaxSpeed:80]
-        [MaxSpeedTolerance:5]
-
-        [MinimumPlanetAltitude:25]
-        [AltitudeTolerance:20]
-
-        [LimitRotationSpeed:false]
-        [MaxRotationMagnitude:1]
-        [AngleAllowedForForwardThrust:180]
-
-        [AllowStrafing:true]
-        [StrafeMinDurationMs:3000]
-        [StrafeMaxDurationMs:6000]
-
-        [UseProjectileLeadPrediction:true]
-        [StrikeBeginPlanetAttackRunDistance:600]
-        [StrikeBreakawayDistance:50]
-        [StrikeEngageUseSafePlanetPathing:true]
-        [StrikeEngageUseCollisionEvasion:true]
-
-        [CollisionEvasionWaypointCalculatedAwayFromEntity:true]
-
-        [OffsetPlanetMinDistFromTarget:800]
-        [OffsetPlanetMaxDistFromTarget:1200]
-        [OffsetPlanetMinTargetAltitude:450]
-        [OffsetPlanetMaxTargetAltitude:700]
-      </Description>
-    </EntityComponent>
-
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_Fighter_Autopilot_Strike</SubtypeId>
       </Id>
       <Description>
@@ -166,40 +119,54 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Fighter_Autopilot_Fighter</SubtypeId>
+        <SubtypeId>MSB_Fighter_Autopilot_NoSafety</SubtypeId>
       </Id>
       <Description>
         [RivalAI Autopilot]
 
-        [IdealPlanetAltitude:450]
-        [MinimumPlanetAltitude:250]
-
-        [DisableInertiaDampeners:false]
+        [DisableInertiaDampeners:true]
         [FlyLevelWithGravity:false]
-        [WaypointTolerance:40]
-        [IdealMinSpeed:20]
+        [LevelWithGravityWhenIdle:false]
+        [UseVelocityCollisionEvasion:false]
+
+        [SlowDownOnWaypointApproach:true]
+        [ExtraSlowDownDistance:100]
+        [WaypointTolerance:150]
+
+        [IdealMinSpeed:55]
         [IdealMaxSpeed:80]
         [MaxSpeedTolerance:5]
-        [SlowDownOnWaypointApproach:true]
-        [ExtraSlowDownDistance:250]
+
+        [MinimumPlanetAltitude:25]
+        [AltitudeTolerance:20]
+
+        [LimitRotationSpeed:false]
+        [MaxRotationMagnitude:1]
+        [AngleAllowedForForwardThrust:180]
 
         [AllowStrafing:true]
-        [StrafeMinDurationMs:500]
-        [StrafeMaxDurationMs:2000]
+        [StrafeMinDurationMs:3000]
+        [StrafeMaxDurationMs:6000]
 
-        [StrafeMinCooldownMs:3000]
-        [StrafeMaxCooldownMs:5000]
+        [UseProjectileLeadPrediction:true]
+        [StrikeBeginPlanetAttackRunDistance:600]
+        [StrikeBreakawayDistance:50]
+        [StrikeEngageUseSafePlanetPathing:true]
+        [StrikeEngageUseCollisionEvasion:true]
 
-        [StrafeMinimumTargetDistance:250]
-        [StrafeSpeedCutOff:50]
-        [StrafeDistanceCutOff:100]
+        [CollisionEvasionWaypointCalculatedAwayFromEntity:true]
+
+        [OffsetPlanetMinDistFromTarget:800]
+        [OffsetPlanetMaxDistFromTarget:1200]
+        [OffsetPlanetMinTargetAltitude:450]
+        [OffsetPlanetMaxTargetAltitude:700]
       </Description>
     </EntityComponent>
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Fighter_Autopilot_Fighter_LowAltitude</SubtypeId>
+        <SubtypeId>MSB_Fighter_Autopilot_LowAltitude</SubtypeId>
       </Id>
       <Description>
         [RivalAI Autopilot]
