@@ -180,7 +180,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Fighter - LowAltitude Enable]
+        [//DebugMessage:Fighter - LowAltitude Enable]
 
         [ChangeAutopilotSpeed:true]
         [NewAutopilotSpeed:65]
@@ -281,7 +281,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Fighter - LowAltitude Disable (HighAltitude)]
+        [//DebugMessage:Fighter - LowAltitude Disable (HighAltitude)]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_Fighter_LowAltitudeFighting_Disable]
@@ -315,7 +315,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Fighter - LowAltitude Disable (ChangedTarget)]
+        [//DebugMessage:Fighter - LowAltitude Disable (ChangedTarget)]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_Fighter_LowAltitudeFighting_Disable]
@@ -353,7 +353,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Fighter - LowAltitude Disable (TargetFar)]
+        [//DebugMessage:Fighter - LowAltitude Disable (TargetFar)]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_Fighter_LowAltitudeFighting_Disable]
@@ -387,7 +387,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Fighter - LowAltitude Disable (InitRole)]
+        [//DebugMessage:Fighter - LowAltitude Disable (InitRole)]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_Fighter_LowAltitudeFighting_Disable]

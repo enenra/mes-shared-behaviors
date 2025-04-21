@@ -53,13 +53,15 @@
         [UseTrigger:true]
         [StartsReady:true]
 
-        [MinCooldownMs:12000]
-        [MaxCooldownMs:12001]
+        [MinCooldownMs:8000]
+        [MaxCooldownMs:8001]
 
         [Conditions:MSB_Fighter_Condition_EnemyOnTail]
 
+        [ActionExecution:Random]
         [MaxActions:-1]
         [Actions:MSB_Fighter_Action_EnemyOnTail_BarrelRoll]
+        [Actions:MSB_Fighter_Action_EnemyOnTail_DirectRamming]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -129,13 +131,13 @@
         [MaxCooldownMs:3001]
 
         [MaxActions:-1]
-        [Actions:MSB_Fighter_Action_EnemyOnTail]
+        [Actions:MSB_Fighter_Action_EnemyOnTail_Ramming]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Fighter_Action_EnemyOnTail</SubtypeId>
+        <SubtypeId>MSB_Fighter_Action_EnemyOnTail_Ramming</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
@@ -144,6 +146,19 @@
 
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_Fighter_Trigger_EnemyOnTail_Ramming]
+
+        [Ramming:true]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Fighter_Action_EnemyOnTail_DirectRamming</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage:Fighter - EnemyOnTail DirectRamming]
 
         [Ramming:true]
       </Description>
