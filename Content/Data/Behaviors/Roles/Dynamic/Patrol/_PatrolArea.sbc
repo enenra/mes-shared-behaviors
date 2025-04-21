@@ -21,7 +21,8 @@
         [TargetData:MSB_TargetProfile_LowRange]
 
         [AutopilotData:MSB_PatrolArea_Autopilot]
-        [SecondaryAutopilotData:MSB_Fighter_Autopilot_Fighter]
+        [SecondaryAutopilotData:MSB_Fighter_Autopilot]
+        [TertiaryAutopilotData:MSB_Fighter_Autopilot_Strike]
 
         [UsePlayerDistanceTimer:true]
         [PlayerDistanceTrigger:50000]

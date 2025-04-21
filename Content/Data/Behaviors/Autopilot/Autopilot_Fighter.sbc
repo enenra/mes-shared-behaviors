@@ -42,6 +42,9 @@
 
         [CollisionEvasionWaypointCalculatedAwayFromEntity:true]
 
+        [OffsetSpaceMinDistFromTarget:500]
+        [OffsetSpaceMaxDistFromTarget:800]
+
         [OffsetPlanetMinDistFromTarget:800]
         [OffsetPlanetMaxDistFromTarget:1200]
         [OffsetPlanetMinTargetAltitude:450]
@@ -109,34 +112,54 @@
       <Description>
         [RivalAI Autopilot]
 
-        [DisableInertiaDampeners:false]
+        [DisableInertiaDampeners:true]
         [FlyLevelWithGravity:false]
-        [CollisionEvasionWaypointCalculatedAwayFromEntity:true]
-        [WaypointTolerance:50]
-        [IdealMinSpeed:12]
-        [IdealMaxSpeed:100]
-        [MaxSpeedTolerance:3]
+        [LevelWithGravityWhenIdle:false]
+        [UseVelocityCollisionEvasion:true]
+
         [SlowDownOnWaypointApproach:true]
         [ExtraSlowDownDistance:150]
+        [WaypointTolerance:50]
+
+        [IdealMinSpeed:12]
+        [IdealMaxSpeed:50]
+        [MaxSpeedTolerance:3]
+
+        [MinimumPlanetAltitude:150]
+        [AltitudeTolerance:300]
+
+        [LimitRotationSpeed:true]
+        [MaxRotationMagnitude:1.5]
+        [AngleAllowedForForwardThrust:35]
+
+        [AllowStrafing:true]
+        [StrafeMinDurationMs:3000]
+        [StrafeMaxDurationMs:6000]
+        [//StrafeSpeedCutOff:25]
+
+        [UseProjectileLeadPrediction:true]
+        [StrikeBeginPlanetAttackRunDistance:600]
+        [StrikeBreakawayDistance:100]
+        [StrikeEngageUseSafePlanetPathing:true]
+        [StrikeEngageUseCollisionEvasion:true]
+
+        [CollisionEvasionWaypointCalculatedAwayFromEntity:true]
 
         [OffsetSpaceMinDistFromTarget:900]
         [OffsetSpaceMaxDistFromTarget:1000]
-        [OffsetPlanetMinDistFromTarget:100]
-        [OffsetPlanetMaxDistFromTarget:150]
-        [OffsetPlanetMinTargetAltitude:900]
-        [OffsetPlanetMaxTargetAltitude:1100]
+
+        [OffsetPlanetMinDistFromTarget:800]
+        [OffsetPlanetMaxDistFromTarget:1200]
+        [OffsetPlanetMinTargetAltitude:450]
+        [OffsetPlanetMaxTargetAltitude:700]
 
         [ReverseOffsetDistAltAboveHeight:true]
         [ReverseOffsetHeight:1300]
 
-        [UseProjectileLeadPrediction:true]
-
-        [MinimumPlanetAltitude:150]
-        [IdealPlanetAltitude:300]
-
-        [UseVelocityCollisionEvasion:false]
-        [LimitRotationSpeed:true]
-        [MaxRotationMagnitude:1.5]
+        [BarrelRollMinDurationMs:2000]
+        [BarrelRollMaxDurationMs:3000]
+        [RamMinDurationMs:6000]
+        [RamMaxDurationMs:7000]
       </Description>
     </EntityComponent>
 

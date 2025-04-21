@@ -24,6 +24,7 @@
 
         [AutopilotData:MSB_Patrol_Autopilot]
         [SecondaryAutopilotData:MSB_Fighter_Autopilot]
+        [TertiaryAutopilotData:MSB_Fighter_Autopilot_Strike]
 
         [UsePlayerDistanceTimer:true]
         [PlayerDistanceTrigger:50000]
