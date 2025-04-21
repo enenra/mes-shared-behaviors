@@ -10,17 +10,25 @@
       <Description>
         [RivalAI Autopilot]
 
-        [SlowDownOnWaypointApproach:true]
-        [ExtraSlowDownDistance:50]
+        [DisableInertiaDampeners:false]
         [FlyLevelWithGravity:true]
-        [ForceDampenersEnabled:true]
 
-        [IdealMinSpeed:12]
-        [IdealMaxSpeed:25]
+        [UseVelocityCollisionEvasion:true]
+        [CollisionEvasionWaypointCalculatedAwayFromEntity:true]
+
+        [SlowDownOnWaypointApproach:false]
+        [ExtraSlowDownDistance:50]
+
+        [IdealMinSpeed:50]
+        [IdealMaxSpeed:75]
         [MaxSpeedTolerance:3]
 
-        [MinimumPlanetAltitude:1000]
+        [MinimumPlanetAltitude:500]
         [IdealPlanetAltitude:1200]
+
+        [LimitRotationSpeed:true]
+        [MaxRotationMagnitude:0.5]
+        [AngleAllowedForForwardThrust:180]
 
         [WaypointTolerance:50]
         [WaypointWaitTimeTrigger:120]
@@ -28,13 +36,10 @@
         [MinAngleForLeveledDescent:135]
         [MaxAngleForLeveledAscent:90]
 
-        [UseVelocityCollisionEvasion:false]
-        [LimitRotationSpeed:true]
-        [MaxRotationMagnitude:0.2]
+        [RamMinDurationMs:5000]
+        [RamMaxDurationMs:6000]
       </Description>
     </EntityComponent>
-
-
 
   </EntityComponents>
 </Definitions>

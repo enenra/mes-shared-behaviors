@@ -1,0 +1,44 @@
+﻿<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <!-- AttemptToEvade -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Freighter_Trigger_AttemptToEvade</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Manual]
+
+        [Tags:MSB_TriggerEvent_UnderFire]
+
+        [UseTrigger:true]
+        [StartsReady:false]
+
+        [MinCooldownMs:10000]
+        [MaxCooldownMs:10001]
+
+        [Conditions:MSB_Utility_State_Condition_Check_State_Combat]
+
+        [MaxActions:1]
+        [Actions:MSB_Freighter_Action_AttemptToEvade]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Freighter_Action_AttemptToEvade</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [SwitchTargetToDamager:true]
+        [Ramming:true]
+      </Description>
+    </EntityComponent>
+
+  </EntityComponents>
+</Definitions>
