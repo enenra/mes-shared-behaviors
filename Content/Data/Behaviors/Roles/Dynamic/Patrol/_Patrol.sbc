@@ -66,8 +66,7 @@
         [Triggers:MSB_Patrol_Trigger_InitRole]
         [Triggers:MSB_Patrol_Trigger_CloseRole]
 
-        [Triggers:MSB_Patrol_Trigger_OverrideDespawn]
-        [Triggers:MSB_Patrol_Trigger_StartDespawn]
+        [Triggers:MSB_Patrol_Trigger_Despawn]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -175,90 +174,35 @@
       </Description>
     </EntityComponent>
 
-    <!-- OverrideDespawn -->
+    <!-- Despawn Override -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Patrol_Trigger_OverrideDespawn</SubtypeId>
+        <SubtypeId>MSB_Patrol_Trigger_Despawn</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
 
-        [Type:Timer]
+        [Type:DespawnNear]
+
+        [TargetDistance:1000]
 
         [UseTrigger:true]
         [StartsReady:true]
 
+        [MinCooldownMs:10000]
+        [MaxCooldownMs:10001]
+
         [Conditions:MSB_System_Despawn_Condition_Active]
 
         [MaxActions:1]
-        [Actions:MSB_Patrol_Action_OverrideDespawn]
+        [Actions:MSB_Patrol_Action_Despawn]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Patrol_Action_OverrideDespawn</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Action]
-
-        [//DebugMessage:Patrol - OverrideDespawn]
-
-        [AddWaypoints:true]
-        [WaypointsToAdd:MSB_Patrol_Waypoint_OverrideDespawn]
-
-        [EnableTriggers:true]
-        [EnableTriggerNames:MSB_Patrol_Trigger_StartDespawn]
-      </Description>
-    </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Patrol_Waypoint_OverrideDespawn</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Waypoint]
-
-        [Waypoint:RelativeRandom]
-        [RelativeEntity:Self]
-
-        [MinDistance:10000]
-        [MaxDistance:20000]
-
-        [MinAltitude:500]
-        [MaxAltitude:1500]
-
-        [InheritRelativeAltitude:false]
-      </Description>
-    </EntityComponent>
-
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Patrol_Trigger_StartDespawn</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Trigger]
-
-        [Type:BehaviorTriggerD]
-
-        [UseTrigger:false]
-        [StartsReady:false]
-
-        [MinCooldownMs:10000]
-        [MaxCooldownMs:20000]
-
-        [Conditions:MSB_Utility_State_Condition_Check_State_Role]
-
-        [MaxActions:1]
-        [Actions:MSB_Patrol_Action_StartDespawn]
-      </Description>
-    </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Patrol_Action_StartDespawn</SubtypeId>
+        <SubtypeId>MSB_Patrol_Action_Despawn</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
