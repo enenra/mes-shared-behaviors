@@ -52,7 +52,7 @@ There are two Common TriggerGroups - [`MSB_DynamicCommon_TriggerGroup`](https://
 | AreaRestriction | Done | Allows for setting restricted areas around encounters. If the player enters the defined range, they will first receive a warning. After 10s they will then lose rep every 10s with the owner faction for as long as they stay within the restricted range. |
 | CommandChain | Working | Used to handle escorts and lead grids in an encounter that uses escorts. It's added to both the leader and the escorts and handles the logic for them joining up, the rename of the leader and notifications when the leader is destroyed. |
 | Communication | Working | Allows encounters to send out SOS signals when entering battle. Other encounters who also have this system set up can then respond to those SOS signals and partake in combat. After combat has ended, both the sender and the responders return to their original Roles. |
-| EngagementRange | Working | Defines the range to a target below which the encounter actively initiates combat and thus switches to its CombatType logic. |
+| EngagementRange | Done | Defines the range to a target below which the encounter actively initiates combat and thus switches to its CombatType logic. |
 | Environment | Working | Offers various options to make the encounter react to its environment, for example via Timer blocks with specific names being triggered or swapping a skin for another if spawning on specific voxels. |
 | Crash | WIP |  |
 | Despawn | WIP |  |
