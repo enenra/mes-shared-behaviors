@@ -7,7 +7,7 @@ Fundamentally, we differentiate between dynamic and static encounters. Static be
 When setting up an encounter with MSB - for example a Patrol - there are generally two important things that need to be defined, and upon whose distinction the entirety of MSB is built: Roles and CombatTypes. An dynamic encounter, in this case the Patrol encounter, will have one of each assigned to it and will switch back and forth between their logics depending on whether it is in combat mode, or not. Static encounters generally do not have Roles, only CombatTypes.
 
 ### Roles
-Roles contain the logic of how an encounter behaves outside of combat. The currently available Roles are:
+Roles contain the logic of how an encounter behaves outside of combat. Generally, Roles can vary for the same prefab - i.e. a fighter prefab could be used with the Role Patrol, PatrolArea and Escort depending on the encounter. The currently available Roles are:
 | Role | Status | Description |
 | ---- | ---- | ---- |
 | Cargoship | Working | |
@@ -17,17 +17,18 @@ Roles contain the logic of how an encounter behaves outside of combat. The curre
 | ConvoyLeader | WIP |  |
 | StrikeForceLeader | WIP |  |
 | TaskForceLeader | WIP |  |
-| BountyHunter | WIP |  |
-| Guard | WIP |  |
-| Hunter | WIP |  |
-| Merchant | WIP |  |
-| Raider | WIP |  |
-| Salvager | WIP |  |
-| Scout | WIP |  |
+| BountyHunter | Planned |  |
+| Guard | Planned |  |
+| Hunter | Planned |  |
+| Merchant | Planned |  |
+| Raider | Planned |  |
+| Salvager | Planned |  |
+| Scout | Planned |  |
 
+A Role is assigned to an encounter by referencing its triggergroup in the behavior: `[TriggerGroups:MSB_Cargoship_TriggerGroup]` (example for Cargoship)
 
 ### CombatTypes
-CombatTypes contain the logic of how an encounter behaves during combat. The currently available CombatTypes are:
+CombatTypes contain the logic of how an encounter behaves during combat. Generally, the CombatType depends on the prefab - i.e. if you have a prefab of a SPRT freighter you would usually use the Freighter CombatType for all encounters that use this prefab. The currently available CombatTypes are:
 | Role | Status | Description |
 | ---- | ---- | ---- |
 | Fighter | Working |  |
@@ -37,6 +38,7 @@ CombatTypes contain the logic of how an encounter behaves during combat. The cur
 | Rover | WIP |  |
 | Static | WIP |  |
 
+A CombatType is assigned to an encounter by referencing its triggergroup in the behavior: `[TriggerGroups:MSB_Freighter_TriggerGroup]` (example for Freighter)
 
 ### Common TriggerGroups
 
