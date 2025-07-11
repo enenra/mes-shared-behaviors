@@ -67,3 +67,11 @@ A System is assigned to an encounter by referencing its triggergroup in the beha
 
 ## How to use
 Usage of MSB requires knowledge of the creation of MES config files. While it makes the creation of encounter mods much easier, it still requires users to know their way around setting up their own side and being able to understand the way MSB works enough to use it.
+
+### Autopilots
+
+### TargetProfiles
+
+### TriggerEvents
+
+### Utilities
