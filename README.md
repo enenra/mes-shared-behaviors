@@ -74,4 +74,7 @@ Usage of MSB requires knowledge of the creation of MES config files. While it ma
 
 ### TriggerEvents
 
+## Example Mods
+* [GFA - Mining Guild Faction (MES)](https://github.com/enenra/gfa/tree/main/GFA%20-%20Mining%20Guild%20Faction/Content) - It's built entirely upon MSB and also extends MSB logic in multiple ways - for example by spawning AiEnabled crew, and implementing an extensive dialogue system based on the TriggerEvents MSB provides.
+
 ### Utilities
