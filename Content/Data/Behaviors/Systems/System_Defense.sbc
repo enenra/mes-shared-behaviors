@@ -4,22 +4,22 @@
     <!--
         [Tags:SpawnGuards]
 
-        [Triggers:MSB_DefenseSystem_Trigger_Guards]
+        [Triggers:MSB_System_Defense_Trigger_Guards]
 
-        [Triggers:MSB_DefenseSystem_Trigger_Guards_SpawnCustomVariablesName] 1001
+        [Triggers:MSB_System_Defense_Trigger_Guards_SpawnCustomVariablesName] 1001
 
-        [Triggers:MSB_DefenseSystem_Trigger_Guards_SpawnSpawnGroupName] 2001
+        [Triggers:MSB_System_Defense_Trigger_Guards_SpawnSpawnGroupName] 2001
 
-        ex: MSB_DefenseSystem_Trigger_Guards_SpawnMilitaryBase 3001
+        ex: MSB_System_Defense_Trigger_Guards_SpawnMilitaryBase 3001
 
-        [Triggers:MSB_DefenseSystem_Trigger_Guards_SpawnDefault] 5001
-        [Triggers:MSB_DefenseSystem_Trigger_Guards_AutoDisable] 10000
+        [Triggers:MSB_System_Defense_Trigger_Guards_SpawnDefault] 5001
+        [Triggers:MSB_System_Defense_Trigger_Guards_AutoDisable] 10000
     -->
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DefenseSystem_Trigger_Guards</SubtypeId>
+        <SubtypeId>MSB_System_Defense_Trigger_Guards</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -35,13 +35,13 @@
         [Conditions:MSB_Utility_State_Condition_Check_State_Combat]
 
         [MaxActions:-1]
-        [Actions:MSB_DefenseSystem_Action_Guards]
+        [Actions:MSB_System_Defense_Action_Guards]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DefenseSystem_Action_Guards</SubtypeId>
+        <SubtypeId>MSB_System_Defense_Action_Guards</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
@@ -58,7 +58,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DefenseSystem_Trigger_Guards_SpawnCustomVariablesName</SubtypeId>
+        <SubtypeId>MSB_System_Defense_Trigger_Guards_SpawnCustomVariablesName</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -73,16 +73,16 @@
         [MinCooldownMs:1000]
         [MaxCooldownMs:1001]
 
-        [Conditions:MSB_DefenseSystem_Condition_Guards_SpawnCustomVariablesName]
+        [Conditions:MSB_System_Defense_Condition_Guards_SpawnCustomVariablesName]
 
         [MaxActions:-1]
-        [Actions:MSB_DefenseSystem_Action_Guards_SpawnCustomVariablesName]
+        [Actions:MSB_System_Defense_Action_Guards_SpawnCustomVariablesName]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DefenseSystem_Condition_Guards_SpawnCustomVariablesName</SubtypeId>
+        <SubtypeId>MSB_System_Defense_Condition_Guards_SpawnCustomVariablesName</SubtypeId>
       </Id>
       <Description>
         [RivalAI Condition]
@@ -97,7 +97,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DefenseSystem_Action_Guards_SpawnCustomVariablesName</SubtypeId>
+        <SubtypeId>MSB_System_Defense_Action_Guards_SpawnCustomVariablesName</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
@@ -106,7 +106,7 @@
         [DialogueCueId:LaunchGuards]
 
         [SpawnEncounter:true]
-        [Spawner:MSB_DefenseSystem_Spawner_Guards_SpawnCustomVariablesName]
+        [Spawner:MSB_System_Defense_Spawner_Guards_SpawnCustomVariablesName]
         [ForceSameFactionOwnership:true]
 
         [DisableTriggers:true]
@@ -116,7 +116,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DefenseSystem_Spawner_Guards_SpawnCustomVariablesName</SubtypeId>
+        <SubtypeId>MSB_System_Defense_Spawner_Guards_SpawnCustomVariablesName</SubtypeId>
       </Id>
       <Description>
         [RivalAI Spawn]
@@ -143,7 +143,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DefenseSystem_Trigger_Guards_SpawnSpawnGroupName</SubtypeId>
+        <SubtypeId>MSB_System_Defense_Trigger_Guards_SpawnSpawnGroupName</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -158,16 +158,16 @@
         [MinCooldownMs:2000]
         [MaxCooldownMs:2001]
 
-        [Conditions:MSB_DefenseSystem_Condition_Guards_SpawnSpawnGroupName]
+        [Conditions:MSB_System_Defense_Condition_Guards_SpawnSpawnGroupName]
 
         [MaxActions:-1]
-        [Actions:MSB_DefenseSystem_Action_Guards_SpawnSpawnGroupName]
+        [Actions:MSB_System_Defense_Action_Guards_SpawnSpawnGroupName]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DefenseSystem_Condition_Guards_SpawnSpawnGroupName</SubtypeId>
+        <SubtypeId>MSB_System_Defense_Condition_Guards_SpawnSpawnGroupName</SubtypeId>
       </Id>
       <Description>
         [RivalAI Condition]
@@ -182,7 +182,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DefenseSystem_Action_Guards_SpawnSpawnGroupName</SubtypeId>
+        <SubtypeId>MSB_System_Defense_Action_Guards_SpawnSpawnGroupName</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
@@ -191,7 +191,7 @@
         [DialogueCueId:LaunchGuards]
 
         [SpawnEncounter:true]
-        [Spawner:MSB_DefenseSystem_Spawner_Guards_SpawnSpawnGroupName]
+        [Spawner:MSB_System_Defense_Spawner_Guards_SpawnSpawnGroupName]
         [ForceSameFactionOwnership:true]
 
         [DisableTriggers:true]
@@ -201,7 +201,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DefenseSystem_Spawner_Guards_SpawnSpawnGroupName</SubtypeId>
+        <SubtypeId>MSB_System_Defense_Spawner_Guards_SpawnSpawnGroupName</SubtypeId>
       </Id>
       <Description>
         [RivalAI Spawn]
@@ -226,7 +226,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DefenseSystem_Trigger_Guards_SpawnDefault</SubtypeId>
+        <SubtypeId>MSB_System_Defense_Trigger_Guards_SpawnDefault</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -240,16 +240,16 @@
         [MinCooldownMs:5000]
         [MaxCooldownMs:5001]
 
-        [Conditions:MSB_DefenseSystem_Condition_Guards_SpawnDefault]
+        [Conditions:MSB_System_Defense_Condition_Guards_SpawnDefault]
 
         [MaxActions:-1]
-        [Actions:MSB_DefenseSystem_Action_Guards_SpawnDefault]
+        [Actions:MSB_System_Defense_Action_Guards_SpawnDefault]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DefenseSystem_Condition_Guards_SpawnDefault</SubtypeId>
+        <SubtypeId>MSB_System_Defense_Condition_Guards_SpawnDefault</SubtypeId>
       </Id>
       <Description>
         [RivalAI Condition]
@@ -264,7 +264,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DefenseSystem_Action_Guards_SpawnDefault</SubtypeId>
+        <SubtypeId>MSB_System_Defense_Action_Guards_SpawnDefault</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
@@ -273,7 +273,7 @@
         [DialogueCueId:LaunchGuards]
 
         [SpawnEncounter:true]
-        [Spawner:MSB_DefenseSystem_Spawner_Guards_SpawnDefault]
+        [Spawner:MSB_System_Defense_Spawner_Guards_SpawnDefault]
         [ForceSameFactionOwnership:true]
 
         [DisableTriggers:true]
@@ -283,7 +283,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DefenseSystem_Spawner_Guards_SpawnDefault</SubtypeId>
+        <SubtypeId>MSB_System_Defense_Spawner_Guards_SpawnDefault</SubtypeId>
       </Id>
       <Description>
         [RivalAI Spawn]
@@ -309,7 +309,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DefenseSystem_Trigger_Guards_AutoDisable</SubtypeId>
+        <SubtypeId>MSB_System_Defense_Trigger_Guards_AutoDisable</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -324,13 +324,13 @@
         [MaxCooldownMs:10001]
 
         [MaxActions:-1]
-        [Actions:MSB_DefenseSystem_Action_Guards_AutoDisable]
+        [Actions:MSB_System_Defense_Action_Guards_AutoDisable]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DefenseSystem_Action_Guards_AutoDisable</SubtypeId>
+        <SubtypeId>MSB_System_Defense_Action_Guards_AutoDisable</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
