@@ -2,6 +2,13 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 
+    <!--
+
+
+    TODO:
+      *
+    -->
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -14,6 +21,13 @@
 
         [Triggers:MSB_Scout_Trigger_InitRole]
         [Triggers:MSB_Scout_Trigger_CloseRole]
+
+        [Triggers:MSB_Scout_Trigger_Despawn]
+
+        [Triggers:MSB_Scout_Trigger_InitiateScan]
+        [Triggers:MSB_Scout_Trigger_InitiateScan_UpdateSignal]
+        [Triggers:MSB_Scout_Trigger_InitiateScan_UpdateSignal_Loop]
+        [Triggers:MSB_Scout_Trigger_InitiateScan_UpdateSignal_Done]
       </Description>
     </EntityComponent>
 
@@ -24,7 +38,6 @@
       </Id>
       <Description>
         [RivalAI TriggerGroup]
-
 
       </Description>
     </EntityComponent>
@@ -59,42 +72,27 @@
       </Description>
     </EntityComponent>
 
-<!--
-
-        [Triggers:MSB_Scout_Trigger_InitRole]
-        [Triggers:MSB_Scout_Trigger_CloseRole]
-
-
--->
-
-
-
-
-<!-- Start Required stuff -->
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Scout_Trigger_InitRole</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Scout_Trigger_InitRole</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
+
+        [Type:Manual]
         [Tags:MSB_Role_InitRole]
 
         [UseTrigger:true]
-        [Type:Manual]
-
         [StartsReady:false]
 
-        [MaxActions:-1]
         [Actions:MSB_Scout_Action_InitRole]
       </Description>
-
     </EntityComponent>
-
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Scout_Action_InitRole</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Scout_Action_InitRole</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
@@ -110,7 +108,7 @@
       </Description>
     </EntityComponent>
 
-   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_Scout_Trigger_CloseRole</SubtypeId>
@@ -118,18 +116,15 @@
       <Description>
         [RivalAI Trigger]
 
+        [Type:Manual]
         [Tags:MSB_Role_CloseRole]
 
         [UseTrigger:true]
-        [Type:Manual]
-
         [StartsReady:false]
 
-        [MaxActions:-1]
         [Actions:MSB_Scout_Action_CloseRole]
       </Description>
     </EntityComponent>
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -140,19 +135,201 @@
 
       </Description>
     </EntityComponent>
-<!-- End Required stuff -->
 
+    <!-- Despawn Override -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Scout_Trigger_Despawn</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
 
+        [Type:DespawnNear]
 
+        [TargetDistance:1000]
 
+        [UseTrigger:true]
+        [StartsReady:true]
 
+        [MinCooldownMs:10000]
+        [MaxCooldownMs:10001]
 
+        [Conditions:MSB_System_Despawn_Condition_Active]
 
+        [MaxActions:1]
+        [Actions:MSB_Scout_Action_Despawn]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Scout_Action_Despawn</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
 
+        [//DebugMessage:Scout - StartDespawn]
 
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Despawn]
+      </Description>
+    </EntityComponent>
 
+    <!-- Scan for Enemy Statics -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Scout_Trigger_InitiateScan</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
 
+        [Type:Timer]
 
+        [UseTrigger:true]
+        [StartsReady:false]
+
+        [MinCooldownMs:300000]
+        [MaxCooldownMs:400000]
+
+        [Actions:MSB_Scout_Action_InitiateScan]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Scout_Action_InitiateScan</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:Scout - InitiateScan]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Scout_InitiateScan]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_Scout_Trigger_InitiateScan]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Scout_Trigger_InitiateScan_UpdateSignal</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Manual]
+        [Tags:MSB_TriggerEvent_Scout_InitiateScan]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Actions:MSB_Scout_Action_InitiateScan_UpdateSignal]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Scout_Action_InitiateScan_UpdateSignal</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:Scout - UpdateSignal]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_Scout_InitiateScan_Loop]
+
+        [SetAntennaThoughtBubble:Initiating Long Range Scan...]
+        [StartAntennaThoughtBubblePercentage:true]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_Scout_Trigger_InitiateScan_UpdateSignal_Done]
+      </Description>
+    </EntityComponent>
+
+    <!-- Start ThoughtBubble Loop -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Scout_Trigger_InitiateScan_UpdateSignal_Loop</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Manual]
+        [Tags:MSB_Scout_InitiateScan_Loop]
+
+        [UseTrigger:true]
+        [StartsReady:false]
+
+        [MinCooldownMs:5000]
+        [MaxCooldownMs:5001]
+
+        [Actions:MSB_Scout_Action_InitiateScan_UpdateSignal_Loop]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Scout_Action_InitiateScan_UpdateSignal_Loop</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:Scout - UpdateSignal_Loop]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_Scout_InitiateScan_Loop]
+
+        [IncreaseAntennaThoughtBubblePercentage:true]
+        [IncreaseAntennaThoughtBubblePercentageAmount:10]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Scout_Trigger_InitiateScan_UpdateSignal_Done</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:AntennaThoughtBubblePercentageComplete]
+
+        [UseTrigger:false]
+        [StartsReady:false]
+
+        [MinCooldownMs:2000]
+        [MaxCooldownMs:2001]
+
+        [Actions:MSB_Scout_Action_InitiateScan_UpdateSignal_Done]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Scout_Action_InitiateScan_UpdateSignal_Done</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:Scout - UpdateSignal_Done]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Scout_InitiateScan_Done]
+
+        [EndAntennaThoughtBubblePercentage:true]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_Scout_Trigger_InitiateScan_UpdateSignal_Loop]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_Scout_Trigger_InitiateScan_FindTarget]
+      </Description>
+    </EntityComponent>
 
   </EntityComponents>
 </Definitions>
