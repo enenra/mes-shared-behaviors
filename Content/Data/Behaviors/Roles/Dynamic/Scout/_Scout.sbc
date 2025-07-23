@@ -240,14 +240,21 @@
 
         [DebugMessage:Scout - UpdateSignal]
 
-        [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:MSB_Scout_InitiateScan_Loop]
 
-        [SetAntennaThoughtBubble:Initiating Long Range Scan...]
+
+
+		[SetAntennaThoughtBubble:true]
+        [SetAntennaThoughtBubbleName:Initiating Long Range Scan...]
         [StartAntennaThoughtBubblePercentage:true]
 
         [EnableTriggers:true]
         [EnableTriggerNames:MSB_Scout_Trigger_InitiateScan_UpdateSignal_Done]
+		[EnableTriggerNames:MSB_Scout_Trigger_InitiateScan_UpdateSignal_Loop]
+		
+		[ResetCooldownTimeOfTriggers:true]
+		[EnableTriggerNames:MSB_Scout_Trigger_InitiateScan_UpdateSignal_Loop]		
+		
+		
       </Description>
     </EntityComponent>
 
@@ -260,10 +267,10 @@
       <Description>
         [RivalAI Trigger]
 
-        [Type:Manual]
+        [Type:Timer]
         [Tags:MSB_Scout_InitiateScan_Loop]
 
-        [UseTrigger:true]
+        [UseTrigger:false] 
         [StartsReady:false]
 
         [MinCooldownMs:5000]
@@ -297,7 +304,7 @@
       <Description>
         [RivalAI Trigger]
 
-        [Type:AntennaThoughtBubblePercentageComplete]
+        [Type:AntennaThoughtBubblePercentageReachedMax]
 
         [UseTrigger:false]
         [StartsReady:false]
@@ -322,7 +329,8 @@
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Scout_InitiateScan_Done]
 
         [EndAntennaThoughtBubblePercentage:true]
-
+		[ClearAntennaThoughtBubble:true]
+		
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_Scout_Trigger_InitiateScan_UpdateSignal_Loop]
 
