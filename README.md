@@ -83,7 +83,7 @@ MSB provides default [TargetProfiles](https://github.com/enenra/mes-shared-behav
 TriggerEvents are triggered everywhere in MSB code, and can be used to hook additional logic into the existing one. For example, you can set up a dialogue system that listens to specific trigger tags to then play the corresponding chat lines.
 
 ### Utilities
-Utilities are lower-level logic packages used by Systems. They generally are not referenced within encounter mods, but logic could be written utilizing them.
+[Utilities](https://github.com/enenra/mes-shared-behaviors/tree/main/Content/Data/Behaviors/Utilities) are lower-level logic packages used by Systems. They generally are not referenced within encounter mods, but logic could be written utilizing them.
 
 ## Example Mods
 * [GFA - Mining Guild Faction (MES)](https://github.com/enenra/gfa/tree/main/GFA%20-%20Mining%20Guild%20Faction/Content) - It's built entirely upon MSB and also extends MSB logic in multiple ways - for example by spawning AiEnabled crew, and implementing an extensive dialogue system based on the TriggerEvents MSB provides.
