@@ -74,12 +74,16 @@ A System is assigned to an encounter by referencing its triggergroup in the beha
 Usage of MSB requires knowledge of the creation of MES config files. While it makes the creation of encounter mods much easier, it still requires users to know their way around setting up their own side and being able to understand the way MSB works enough to use it.
 
 ### Autopilots
+MSB does provide some [autopilot profiles](https://github.com/enenra/mes-shared-behaviors/tree/main/Content/Data/Behaviors/Autopilot) for your to use, but they are by no means obligatory. Note that there are autopilots for each Role and CombatType, as encounters with the Role currently active will use their primary autopilot, but once they swith to CombatType, they will be using the secondary (and in some cases tertiary) autopilot. 
 
 ### TargetProfiles
+MSB provides default [TargetProfiles](https://github.com/enenra/mes-shared-behaviors/tree/main/Content/Data/TargetProfiles), but those do not have to be used by encounters. The profiles included make detection work in the same way as the detection works for Reavers.
 
 ### TriggerEvents
+TriggerEvents are triggered everywhere in MSB code, and can be used to hook additional logic into the existing one. For example, you can set up a dialogue system that listens to specific trigger tags to then play the corresponding chat lines.
 
 ### Utilities
+Utilities are lower-level logic packages used by Systems. They generally are not referenced within encounter mods, but logic could be written utilizing them.
 
 ## Example Mods
 * [GFA - Mining Guild Faction (MES)](https://github.com/enenra/gfa/tree/main/GFA%20-%20Mining%20Guild%20Faction/Content) - It's built entirely upon MSB and also extends MSB logic in multiple ways - for example by spawning AiEnabled crew, and implementing an extensive dialogue system based on the TriggerEvents MSB provides.
