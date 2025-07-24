@@ -18,15 +18,16 @@ When setting up an encounter with MSB - for example a Patrol - there are general
 | ConvoyLeader | WIP |  |
 | StrikeForceLeader | WIP |  |
 | TaskForceLeader | WIP |  |
-| BountyHunter | Planned |  |
+| BountyHunter | Planned | If player reputation with a faction (except SPRT) drops to a low enough point, encounters with this role can spawn. They fly directly to the player and offer the player a chance to pay them off - else they will attack the player. |
 | Guard | Planned |  |
 | Hunter | Planned |  |
-| Merchant | Planned |  |
-| Raider | Planned |  |
+| Merchant | Planned | Will fly in a straight line. If it detects a player static grid, it will land nearby and open its doors to give access to a store block. If the player approaches it while it's flying, it also stops to let the player board and trade. Despawns after reaching original waypoint roughly 15km from their spawn. |
+| Raider | Planned | Only spawns nearby Known Player Areas. Searches the area to find player grids and attacks them. Times out if it has not found anything after 10-15min. |
 | Salvager | Planned |  |
-| Scout | Planned |  |
+| Scout | Planned | Flies in a straight line to a despawn point roughly 15km away. Periodically, it initiates a long range scan by charging up for a period of time and then extending its detection range. If it detects a player static grid, it approaches it to around 2km. Then it sets a KnownPlayerArea and attempts to reach its original despawn point. If it is destroyed before it does, the KnownPlayerArea is removed. |
 
 A Role is assigned to an encounter by referencing its triggergroup in the behavior: `[TriggerGroups:MSB_Cargoship_TriggerGroup]` (example for Cargoship)
+An encounter cannot have more than one Role.
 
 ### CombatTypes
 [CombatTypes](Content/Data/Behaviors/CombatTypes) contain the logic of how an encounter behaves during combat. Generally, the CombatType depends on the prefab - i.e. if you have a prefab of a SPRT freighter you would usually use the Freighter CombatType for all encounters that use this prefab. The currently available CombatTypes are:
@@ -35,11 +36,14 @@ A Role is assigned to an encounter by referencing its triggergroup in the behavi
 | Fighter | Working | The encounter will fly in a fighter plane style: Fast moving and attempting attack runs. It will also attempt to shake off any pursuers by doing various maneuvers. It will attempt to face its front towards its target and thus is ideal for encounters with front-facing weapons. |
 | Freighter | Working | The encounter will attempt to continue to its waypoint but also try to evade if being fired upon. Only suitable for encounters with no or turreted weapons. |
 | Gunship | Working | The encounter will attempt to chase its target, but not necessarily point its front at the target, making it more suitable for turret or mixed turret and front-facing weapons. |
-| Dropship | WIP |  |
-| Rover | WIP |  |
+| Capital | WIP |  |
+| Dropship | Planned |  |
+| Rover | Planned |  |
+| Hover | Planned |  |
 | Static | WIP |  |
 
 A CombatType is assigned to an encounter by referencing its triggergroup in the behavior: `[TriggerGroups:MSB_Freighter_TriggerGroup]` (example for Freighter)
+An encounter cannot have more than one CombatType.
 
 ### Common TriggerGroups
 There are two Common TriggerGroups - [`MSB_DynamicCommon_TriggerGroup`](https://github.com/enenra/mes-shared-behaviors/blob/f03f2df58cdb390fbabacea91656dd339ff351a1/Content/Data/Behaviors/_Common/_DynamicCommon.sbc#L8) and [`MSB_StaticCommon_TriggerGroup`](https://github.com/enenra/mes-shared-behaviors/blob/f03f2df58cdb390fbabacea91656dd339ff351a1/Content/Data/Behaviors/_Common/_StaticCommon.sbc#L8). They contain various logic that other parts of MSB rely on, including Roles and CombatTypes. Either of the two must be added to all encounters that use other MSB logic.
