@@ -18,13 +18,14 @@ When setting up an encounter with MSB - for example a Patrol - there are general
 | ConvoyLeader | WIP |  |
 | StrikeForceLeader | WIP |  |
 | TaskForceLeader | WIP |  |
+| Scout | Planned | Flies in a straight line to a despawn point roughly 15km away. Periodically, it initiates a long range scan by charging up for a period of time and then extending its detection range. If it detects a player static grid, it approaches it to around 2km. Then it sets a KnownPlayerArea and attempts to reach its original despawn point. If it is destroyed before it does, the KnownPlayerArea is removed. |
+| Raider | Planned | Only spawns nearby KnownPlayerAreas. Searches the area to find player grids and attacks them. Times out if it has not found anything after 10-15min. |
 | BountyHunter | Planned | If player reputation with a faction (except SPRT) drops to a low enough point, encounters with this role can spawn. They fly directly to the player and offer the player a chance to pay them off - else they will attack the player. |
 | Guard | Planned |  |
 | Hunter | Planned |  |
 | Merchant | Planned | Will fly in a straight line. If it detects a player static grid, it will land nearby and open its doors to give access to a store block. If the player approaches it while it's flying, it also stops to let the player board and trade. Despawns after reaching original waypoint roughly 15km from their spawn. |
-| Raider | Planned | Only spawns nearby Known Player Areas. Searches the area to find player grids and attacks them. Times out if it has not found anything after 10-15min. |
 | Salvager | Planned |  |
-| Scout | Planned | Flies in a straight line to a despawn point roughly 15km away. Periodically, it initiates a long range scan by charging up for a period of time and then extending its detection range. If it detects a player static grid, it approaches it to around 2km. Then it sets a KnownPlayerArea and attempts to reach its original despawn point. If it is destroyed before it does, the KnownPlayerArea is removed. |
+| Miner | Planned |  |
 
 A Role is assigned to an encounter by referencing its triggergroup in the behavior: `[TriggerGroups:MSB_Cargoship_TriggerGroup]` (example for Cargoship)
 An encounter cannot have more than one Role.
