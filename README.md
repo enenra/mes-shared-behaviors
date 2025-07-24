@@ -68,7 +68,7 @@ There are two Common TriggerGroups - [`MSB_DynamicCommon_TriggerGroup`](https://
 | PlayerKnownLocation | WIP |  |
 | Terminate | WIP |  |
 
-A System is assigned to an encounter by referencing its triggergroup in the behavior. Depending on the system, there may be multiple TriggerGroups available though, so be sure to read up on it and reference the right one. Example for AreaRestriction: `[TriggerGroups:MSB_System_AreaRestriction_TriggerGroup_1000]` (establishes a restricted area of 1000km radius around the encounter)
+A System is assigned to an encounter by referencing its triggergroup in the behavior. Depending on the system, there may be multiple TriggerGroups available though, so be sure to read up on it and reference the right one. Example for AreaRestriction: `[TriggerGroups:MSB_System_AreaRestriction_TriggerGroup_1000]` (establishes a restricted area of 1000m radius around the encounter)
 
 ## How to use
 Usage of MSB requires knowledge of the creation of MES config files. While it makes the creation of encounter mods much easier, it still requires users to know their way around setting up their own side and being able to understand the way MSB works enough to use it.
