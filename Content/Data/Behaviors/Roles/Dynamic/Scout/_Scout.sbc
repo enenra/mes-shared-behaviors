@@ -240,21 +240,16 @@
 
         [DebugMessage:Scout - UpdateSignal]
 
-
-
-
-		[SetAntennaThoughtBubble:true]
+		    [SetAntennaThoughtBubble:true]
         [SetAntennaThoughtBubbleName:Initiating Long Range Scan...]
         [StartAntennaThoughtBubblePercentage:true]
 
         [EnableTriggers:true]
         [EnableTriggerNames:MSB_Scout_Trigger_InitiateScan_UpdateSignal_Done]
-		[EnableTriggerNames:MSB_Scout_Trigger_InitiateScan_UpdateSignal_Loop]
-		
-		[ResetCooldownTimeOfTriggers:true]
-		[EnableTriggerNames:MSB_Scout_Trigger_InitiateScan_UpdateSignal_Loop]		
-		
-		
+		    [EnableTriggerNames:MSB_Scout_Trigger_InitiateScan_UpdateSignal_Loop]
+
+		    [ResetCooldownTimeOfTriggers:true]
+		    [EnableTriggerNames:MSB_Scout_Trigger_InitiateScan_UpdateSignal_Loop]
       </Description>
     </EntityComponent>
 
@@ -270,7 +265,7 @@
         [Type:Timer]
         [Tags:MSB_Scout_InitiateScan_Loop]
 
-        [UseTrigger:false] 
+        [UseTrigger:false]
         [StartsReady:false]
 
         [MinCooldownMs:5000]
@@ -329,8 +324,8 @@
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Scout_InitiateScan_Done]
 
         [EndAntennaThoughtBubblePercentage:true]
-		[ClearAntennaThoughtBubble:true]
-		
+		    [ClearAntennaThoughtBubble:true]
+
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_Scout_Trigger_InitiateScan_UpdateSignal_Loop]
 
