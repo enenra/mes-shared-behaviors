@@ -32,6 +32,8 @@
         [Triggers:MSB_Scout_Trigger_Scan_CheckForStatics]
         [Triggers:MSB_Scout_Trigger_FlyToTarget]
         [Triggers:MSB_Scout_Trigger_NearTarget]
+
+        [Triggers:MSB_Scout_Trigger_TransmitLocation]
       </Description>
     </EntityComponent>
 
@@ -567,7 +569,24 @@
         [UseTrigger:false]
         [StartsReady:true]
 
+        [Conditions:MSB_System_Despawn_Condition_Active]
+
         [Actions:MSB_Scout_Action_TransmitLocation]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Scout_Condition_TransmitLocation</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [CheckTrueBooleans:true]
+        [TrueBooleans:MSB_Role_Scout_FoundTarget]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
