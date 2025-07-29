@@ -28,6 +28,7 @@
 
         [Triggers:MSB_System_Despawn_Trigger_Set_Simple]
         [Triggers:MSB_System_Despawn_Trigger_Start_Simple]
+        [Triggers:MSB_System_Despawn_Trigger_Start_Simple_Delay]
       </Description>
     </EntityComponent>
 
@@ -78,6 +79,40 @@
 
         [UseTrigger:true]
         [StartsReady:true]
+
+        [Actions:MSB_System_Despawn_Action_Start_Simple_Delay]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Despawn_Action_Start_Simple_Delay</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB_System_Despawn_Trigger_Start_Simple_Delay]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_System_Despawn_Trigger_Start_Simple_Delay]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Despawn_Trigger_Start_Simple_Delay</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:false]
+        [StartsReady:false]
+
+        [MinCooldownMs:3000]
+        [MaxCooldownMs:3001]
 
         [Actions:MSB_System_Despawn_Action_Start_Simple]
       </Description>
