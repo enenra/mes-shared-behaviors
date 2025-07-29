@@ -1,0 +1,41 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_TargetProfile_Scan_5000</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Target]
+
+        [UseCustomTargeting:true]
+        [Target:Grid]
+
+        [MaxDistance:5000]
+
+        [TimeUntilTargetAcquisition:1]
+        [TimeUntilNextEvaluation:3]
+
+        [MatchAllFilters:Owner]
+        [MatchAllFilters:Relation]
+        [MatchAllFilters:Powered]
+
+        [MatchAnyFilters:Broadcasting]
+        [MatchAnyFilters:LineOfSight]
+
+        [NonBroadcastVisualRange:5000]
+        [MaxLineOfSight:5000]
+
+        [Owners:Player]
+        [Relations:Enemy]
+        [IsStatic:Yes]
+
+        [GetTargetBy:HighestTargetValue]
+        [MinTargetValue:50]
+      </Description>
+    </EntityComponent>
+
+  </EntityComponents>
+</Definitions>
