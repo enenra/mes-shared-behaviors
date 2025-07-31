@@ -34,6 +34,7 @@
         [Triggers:MSB_Scout_Trigger_NearTarget]
 
         [Triggers:MSB_Scout_Trigger_TransmitLocation]
+        [Triggers:MSB_Scout_Trigger_SpawnRelay]
       </Description>
     </EntityComponent>
 
@@ -79,7 +80,6 @@
         [SetBooleansFalse:MSB_Role_Scout_FoundTarget]
       </Description>
     </EntityComponent>
-    <!-- TODO: What if combat starts while within scan stuff? -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -113,6 +113,9 @@
 
         [ChangeAutopilotProfile:true]
         [AutopilotProfile:Primary]
+
+		    [ResetCooldownTimeOfTriggers:true]
+		    [EnableTriggerNames:MSB_Scout_Trigger_InitiateScan]
       </Description>
     </EntityComponent>
 
@@ -202,6 +205,8 @@
         [MinCooldownMs:300000]
         [MaxCooldownMs:400000]
 
+        [Conditions:MSB_Utility_State_Condition_Check_State_Role]
+
         [Actions:MSB_Scout_Action_InitiateScan]
       </Description>
     </EntityComponent>
@@ -283,7 +288,12 @@
         [MinCooldownMs:5000]
         [MaxCooldownMs:5001]
 
+        [Conditions:MSB_Utility_State_Condition_Check_State_Role]
+
         [Actions:MSB_Scout_Action_InitiateScan_UpdateSignal_Loop]
+
+        [UseElseActions:true]
+        [ElseActions:MSB_Scout_Action_InitiateScan_UpdateSignal_Cancel]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -294,13 +304,30 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Scout - UpdateSignal_Loop]
+        [DebugMessage:Scout - UpdateSignal Loop]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_Scout_InitiateScan_Loop]
 
         [IncreaseAntennaThoughtBubblePercentage:true]
         [IncreaseAntennaThoughtBubblePercentageAmount:10]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Scout_Action_InitiateScan_UpdateSignal_Cancel</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:Scout - UpdateSignal Cancel]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_Scout_InitiateScan_Cancel]
+
+        [EndAntennaThoughtBubblePercentage:true]
+		    [ClearAntennaThoughtBubble:true]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -330,7 +357,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Scout - UpdateSignal_Done]
+        [DebugMessage:Scout - UpdateSignal Done]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Scout_InitiateScan_Done]
@@ -541,6 +568,9 @@
         [ChangeAutopilotSpeed:true]
         [NewAutopilotSpeed:65]
 
+        [ChangeTargetProfile:true]
+        [NewTargetProfileId:MSB_TargetProfile_LowRange]
+
         [SetBooleansTrue:MSB_Role_Scout_FoundTarget]
 
         [ManuallyActivateTrigger:true]
@@ -569,7 +599,7 @@
         [UseTrigger:false]
         [StartsReady:true]
 
-        [Conditions:MSB_System_Despawn_Condition_Active]
+        [Conditions:MSB_Scout_Condition_TransmitLocation]
 
         [Actions:MSB_Scout_Action_TransmitLocation]
       </Description>
@@ -602,6 +632,74 @@
         [CreateKnownPlayerArea:true]
         [KnownPlayerAreaRadius:25000]
         [KnownPlayerAreaTimer:180]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Scout_TransmitLocation]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Scout_Trigger_SpawnRelay</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Manual]
+        [Tags:MSB_TriggerEvent_Scout_TransmitLocation]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Conditions:MSB_Scout_Condition_SpawnRelay]
+
+        [Actions:MSB_Scout_Action_SpawnRelay_Space]
+
+        [UseElseActions:true]
+        [ElseActions:MSB_Scout_Action_SpawnRelay_Gravity]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Scout_Condition_SpawnRelay</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [GravityCheck:true]
+        [MaxGravity:0.001]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Scout_Action_SpawnRelay_Space</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:Scout - SpawnRelay Space]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Scout_SpawnRelay_Space]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Scout_Action_SpawnRelay_Gravity</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:Scout - SpawnRelay Gravity]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Scout_SpawnRelay_Gravity]
       </Description>
     </EntityComponent>
 
