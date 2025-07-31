@@ -115,7 +115,7 @@
         [AutopilotProfile:Primary]
 
 		    [ResetCooldownTimeOfTriggers:true]
-		    [EnableTriggerNames:MSB_Scout_Trigger_InitiateScan]
+		    [ResetTriggerCooldownNames:MSB_Scout_Trigger_InitiateScan]
       </Description>
     </EntityComponent>
 
@@ -202,8 +202,8 @@
         [UseTrigger:true]
         [StartsReady:false]
 
-        [MinCooldownMs:300000]
-        [MaxCooldownMs:400000]
+        [MinCooldownMs:30000]
+        [MaxCooldownMs:90000]
 
         [Conditions:MSB_Utility_State_Condition_Check_State_Role]
 
@@ -218,7 +218,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Scout - InitiateScan]
+        [//DebugMessage:Scout - InitiateScan]
 
         [ChangeAutopilotSpeed:true]
         [NewAutopilotSpeed:0]
@@ -255,7 +255,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Scout - UpdateSignal]
+        [//DebugMessage:Scout - UpdateSignal]
 
 		    [SetAntennaThoughtBubble:true]
         [SetAntennaThoughtBubbleName:Initiating Long Range Scan...]
@@ -266,7 +266,7 @@
 		    [EnableTriggerNames:MSB_Scout_Trigger_InitiateScan_UpdateSignal_Loop]
 
 		    [ResetCooldownTimeOfTriggers:true]
-		    [EnableTriggerNames:MSB_Scout_Trigger_InitiateScan_UpdateSignal_Loop]
+		    [ResetTriggerCooldownNames:MSB_Scout_Trigger_InitiateScan_UpdateSignal_Loop]
       </Description>
     </EntityComponent>
 
@@ -280,7 +280,6 @@
         [RivalAI Trigger]
 
         [Type:Timer]
-        [Tags:MSB_Scout_InitiateScan_Loop]
 
         [UseTrigger:false]
         [StartsReady:false]
@@ -304,7 +303,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Scout - UpdateSignal Loop]
+        [//DebugMessage:Scout - UpdateSignal Loop]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_Scout_InitiateScan_Loop]
@@ -321,7 +320,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Scout - UpdateSignal Cancel]
+        [//DebugMessage:Scout - UpdateSignal Cancel]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_Scout_InitiateScan_Cancel]
@@ -357,7 +356,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Scout - UpdateSignal Done]
+        [//DebugMessage:Scout - UpdateSignal Done]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Scout_InitiateScan_Done]
@@ -424,7 +423,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Scout - CheckForStatics Found]
+        [//DebugMessage:Scout - CheckForStatics Found]
 
         [ChangeAutopilotSpeed:true]
         [NewAutopilotSpeed:55]
@@ -441,7 +440,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Scout - CheckForStatics NotFound]
+        [//DebugMessage:Scout - CheckForStatics NotFound]
 
         [ChangeAutopilotSpeed:true]
         [NewAutopilotSpeed:55]
@@ -484,10 +483,10 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Scout - FlyToTarget]
+        [//DebugMessage:Scout - FlyToTarget]
 
         [AddWaypoints:true]
-        [WaypointsToAdd:Value]
+        [WaypointsToAdd:MSB_Scout_Waypoint_NearTarget]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -561,7 +560,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Scout - NearTarget]
+        [//DebugMessage:Scout - NearTarget]
 
         [SwitchToNextWaypoint:true]
 
@@ -627,7 +626,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Scout - TransmitLocation]
+        [//DebugMessage:Scout - TransmitLocation]
 
         [CreateKnownPlayerArea:true]
         [KnownPlayerAreaRadius:25000]
