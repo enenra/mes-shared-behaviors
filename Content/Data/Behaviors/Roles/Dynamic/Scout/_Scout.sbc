@@ -488,6 +488,9 @@
         [EnableTriggers:true]
         [EnableTriggerNames:MSB_Scout_Trigger_NearTarget]
         [EnableTriggerNames:MSB_Scout_Trigger_NearTarget_Timeout]
+
+		    [ResetCooldownTimeOfTriggers:true]
+		    [ResetTriggerCooldownNames:MSB_Scout_Trigger_NearTarget_Timeout]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -581,7 +584,7 @@
 
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_Scout_Trigger_NearTarget]
-        [DisableTriggerNames:MSB_Scout_Action_NearTarget_Timeout]
+        [DisableTriggerNames:MSB_Scout_Trigger_NearTarget_Timeout]
 
         [EnableTriggers:true]
         [EnableTriggerNames:MSB_Scout_Trigger_TransmitLocation]
@@ -618,7 +621,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Scout - NearTarget Timeout]
+        [//DebugMessage:Scout - NearTarget Timeout]
 
         [SwitchToNextWaypoint:true]
 
@@ -633,6 +636,9 @@
 
         [EnableTriggers:true]
         [EnableTriggerNames:MSB_Scout_Trigger_InitiateScan]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_Scout_Trigger_NearTarget_Timeout]
       </Description>
     </EntityComponent>
 
