@@ -20,7 +20,7 @@
 
         [MatchAllFilters:Owner]
         [MatchAllFilters:Relation]
-        [MatchAllFilters:Powered]
+        [MatchAllFilters:Static]
 
         [Owners:Player]
         [Relations:Enemy]

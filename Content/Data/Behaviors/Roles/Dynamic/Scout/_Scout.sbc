@@ -32,6 +32,7 @@
         [Triggers:MSB_Scout_Trigger_Scan_CheckForStatics]
         [Triggers:MSB_Scout_Trigger_FlyToTarget]
         [Triggers:MSB_Scout_Trigger_NearTarget]
+        [Triggers:MSB_Scout_Trigger_NearTarget_Timeout]
 
         [Triggers:MSB_Scout_Trigger_TransmitLocation]
         [Triggers:MSB_Scout_Trigger_SpawnRelay]
@@ -419,7 +420,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Scout - CheckForStatics Found]
+        [//DebugMessage:Scout - CheckForStatics Found]
 
         [ChangeAutopilotSpeed:true]
         [NewAutopilotSpeed:55]
@@ -436,7 +437,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Scout - CheckForStatics NotFound]
+        [//DebugMessage:Scout - CheckForStatics NotFound]
 
         [ChangeAutopilotSpeed:true]
         [NewAutopilotSpeed:55]
@@ -479,7 +480,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Scout - FlyToTarget]
+        [//DebugMessage:Scout - FlyToTarget]
 
         [AddWaypoints:true]
         [WaypointsToAdd:MSB_Scout_Waypoint_NearTarget]
@@ -548,6 +549,9 @@
         [CheckTargetDistance:true]
         [MaxTargetDistance:2500]
 
+        [IsTargetGrid:true]
+        [IsTargetStatic:true]
+
         [CheckFalseBooleans:true]
         [FalseBooleans:MSB_State_Combat]
       </Description>
@@ -560,7 +564,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Scout - NearTarget]
+        [//DebugMessage:Scout - NearTarget]
 
         [SwitchToNextWaypoint:true]
 
@@ -577,6 +581,7 @@
 
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_Scout_Trigger_NearTarget]
+        [DisableTriggerNames:MSB_Scout_Action_NearTarget_Timeout]
 
         [EnableTriggers:true]
         [EnableTriggerNames:MSB_Scout_Trigger_TransmitLocation]
@@ -596,13 +601,13 @@
         [UseTrigger:false]
         [StartsReady:false]
 
-        [MinCooldownMs:180000]
-        [MaxCooldownMs:180001]
+        [MinCooldownMs:120000]
+        [MaxCooldownMs:120001]
 
         [Conditions:MSB_Scout_Condition_NearTarget]
         [UseFailCondition:true]
 
-        [Actions:MSB_Scout_Action_NearTarget]
+        [Actions:MSB_Scout_Action_NearTarget_Timeout]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -729,7 +734,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Scout - SpawnRelay Space]
+        [//DebugMessage:Scout - SpawnRelay Space]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Scout_SpawnRelay_Space]
@@ -743,7 +748,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Scout - SpawnRelay Gravity]
+        [//DebugMessage:Scout - SpawnRelay Gravity]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Scout_SpawnRelay_Gravity]
