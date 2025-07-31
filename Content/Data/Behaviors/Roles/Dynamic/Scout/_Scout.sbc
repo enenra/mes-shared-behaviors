@@ -38,17 +38,6 @@
       </Description>
     </EntityComponent>
 
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Scout_TriggerGroup_Complete</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI TriggerGroup]
-
-      </Description>
-    </EntityComponent>
-
     <!-- Setup -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -116,6 +105,10 @@
 
 		    [ResetCooldownTimeOfTriggers:true]
 		    [ResetTriggerCooldownNames:MSB_Scout_Trigger_InitiateScan]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_Scout_Trigger_InitiateScan]
+        [EnableTriggerNames:MSB_Scout_Trigger_NearTarget]
       </Description>
     </EntityComponent>
 
@@ -144,6 +137,9 @@
       <Description>
         [RivalAI Action]
 
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_Scout_Trigger_InitiateScan]
+        [DisableTriggerNames:MSB_Scout_Trigger_NearTarget]
       </Description>
     </EntityComponent>
 
@@ -267,6 +263,9 @@
 
 		    [ResetCooldownTimeOfTriggers:true]
 		    [ResetTriggerCooldownNames:MSB_Scout_Trigger_InitiateScan_UpdateSignal_Loop]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_Scout_Trigger_InitiateScan]
       </Description>
     </EntityComponent>
 
@@ -306,7 +305,7 @@
         [//DebugMessage:Scout - UpdateSignal Loop]
 
         [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:MSB_Scout_InitiateScan_Loop]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Scout_InitiateScan_Loop]
 
         [IncreaseAntennaThoughtBubblePercentage:true]
         [IncreaseAntennaThoughtBubblePercentageAmount:10]
@@ -323,7 +322,7 @@
         [//DebugMessage:Scout - UpdateSignal Cancel]
 
         [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:MSB_Scout_InitiateScan_Cancel]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Scout_InitiateScan_Cancel]
 
         [EndAntennaThoughtBubblePercentage:true]
 		    [ClearAntennaThoughtBubble:true]
@@ -369,9 +368,6 @@
 
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_Scout_Trigger_InitiateScan_UpdateSignal_Loop]
-
-        [EnableTriggers:true]
-        [EnableTriggerNames:MSB_Scout_Trigger_InitiateScan_FindTarget]
       </Description>
     </EntityComponent>
 
@@ -423,7 +419,7 @@
       <Description>
         [RivalAI Action]
 
-        [//DebugMessage:Scout - CheckForStatics Found]
+        [DebugMessage:Scout - CheckForStatics Found]
 
         [ChangeAutopilotSpeed:true]
         [NewAutopilotSpeed:55]
@@ -440,7 +436,7 @@
       <Description>
         [RivalAI Action]
 
-        [//DebugMessage:Scout - CheckForStatics NotFound]
+        [DebugMessage:Scout - CheckForStatics NotFound]
 
         [ChangeAutopilotSpeed:true]
         [NewAutopilotSpeed:55]
@@ -483,10 +479,14 @@
       <Description>
         [RivalAI Action]
 
-        [//DebugMessage:Scout - FlyToTarget]
+        [DebugMessage:Scout - FlyToTarget]
 
         [AddWaypoints:true]
         [WaypointsToAdd:MSB_Scout_Waypoint_NearTarget]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_Scout_Trigger_NearTarget]
+        [EnableTriggerNames:MSB_Scout_Trigger_NearTarget_Timeout]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -521,7 +521,7 @@
 
         [Type:HasTarget]
 
-        [UseTrigger:true]
+        [UseTrigger:false]
         [StartsReady:true]
 
         [MinCooldownMs:10000]
@@ -560,7 +560,7 @@
       <Description>
         [RivalAI Action]
 
-        [//DebugMessage:Scout - NearTarget]
+        [DebugMessage:Scout - NearTarget]
 
         [SwitchToNextWaypoint:true]
 
@@ -580,6 +580,54 @@
 
         [EnableTriggers:true]
         [EnableTriggerNames:MSB_Scout_Trigger_TransmitLocation]
+      </Description>
+    </EntityComponent>
+    <!-- For the case in which the static grid can no longer be found. -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Scout_Trigger_NearTarget_Timeout</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:HasTarget]
+
+        [UseTrigger:false]
+        [StartsReady:false]
+
+        [MinCooldownMs:180000]
+        [MaxCooldownMs:180001]
+
+        [Conditions:MSB_Scout_Condition_NearTarget]
+        [UseFailCondition:true]
+
+        [Actions:MSB_Scout_Action_NearTarget]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Scout_Action_NearTarget_Timeout</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:Scout - NearTarget Timeout]
+
+        [SwitchToNextWaypoint:true]
+
+        [ChangeTargetProfile:true]
+        [NewTargetProfileId:MSB_TargetProfile_LowRange]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Scout_NearTarget_Timeout]
+
+		    [ResetCooldownTimeOfTriggers:true]
+		    [ResetTriggerCooldownNames:MSB_Scout_Trigger_InitiateScan]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_Scout_Trigger_InitiateScan]
       </Description>
     </EntityComponent>
 

@@ -22,12 +22,6 @@
         [MatchAllFilters:Relation]
         [MatchAllFilters:Powered]
 
-        [MatchAnyFilters:Broadcasting]
-        [MatchAnyFilters:LineOfSight]
-
-        [NonBroadcastVisualRange:5000]
-        [MaxLineOfSight:5000]
-
         [Owners:Player]
         [Relations:Enemy]
         [IsStatic:Yes]
