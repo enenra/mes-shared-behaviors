@@ -3,12 +3,14 @@
   <EntityComponents>
 
     <!--
-    Only spawns nearby KnownPlayerAreas. Searches the area to find player grids and attacks them. Times out if it has not found anything after 10-15min. Removes KnownPlayerArea if nothing is found.
+    Only spawns in marked KnownPlayerAreas. Searches the area to find player grids and attacks them. Times out if it has not found anything after 10-15min. Removes KnownPlayerArea if nothing is found.
 
     To use:
       * Assign a longer-range TargetProfile to encounter.
       * Reference MSB_Raider_TriggerGroup in behavior.
-
+      * Restrict spawning to KnownPlayerAreas using SpawnConditions:
+        [UseKnownPlayerLocations:true]
+        [KnownPlayerLocationMustMatchFaction:true]
     -->
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
