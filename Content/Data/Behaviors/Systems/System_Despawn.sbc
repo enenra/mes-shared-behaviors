@@ -114,6 +114,9 @@
         [MinCooldownMs:3000]
         [MaxCooldownMs:3001]
 
+        [Conditions:MSB_Utility_State_Condition_Check_State_Combat]
+        [UseFailCondition:true]
+
         [Actions:MSB_System_Despawn_Action_Start_Simple]
       </Description>
     </EntityComponent>
