@@ -29,6 +29,8 @@
         [Triggers:MSB_Raider_Trigger_DetectedEnemy]
 
         [Triggers:MSB_Raider_Trigger_ClearKPA]
+
+        [Triggers:MSB_Raider_Trigger_ReadyForDespawn]
         [Triggers:MSB_Raider_Trigger_Despawn]
       </Description>
     </EntityComponent>
@@ -141,7 +143,7 @@
 
         [Type:HasTarget]
 
-        [UseTrigger:false]
+        [UseTrigger:true]
         [StartsReady:true]
 
         [MinCooldownMs:10000]
@@ -149,6 +151,7 @@
 
         [Conditions:MSB_Raider_Condition_DetectedEnemy]
 
+        [MaxActions:1]
         [Actions:MSB_Raider_DetectedEnemy]
       </Description>
     </EntityComponent>
@@ -176,7 +179,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Raider - DetectedEnemy]
+        [//DebugMessage:Raider - DetectedEnemy]
 
         [SetBooleansTrue:MSB_Role_Raider_DetectedEnemy]
 
@@ -197,7 +200,7 @@
         [Type:Manual]
         [Tags:MSB_TriggerEvent_Despawn]
 
-        [UseTrigger:false]
+        [UseTrigger:true]
         [StartsReady:true]
 
         [Conditions:MSB_Raider_Condition_ClearKPA]
@@ -228,7 +231,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Raider - ClearKPA]
+        [//DebugMessage:Raider - ClearKPA]
 
         [RemoveKnownPlayerArea:true]
 
@@ -241,7 +244,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Raider_Trigger_Despawn</SubtypeId>
+        <SubtypeId>MSB_Raider_Trigger_ReadyForDespawn</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -253,6 +256,42 @@
 
         [MinCooldownMs:600000]
         [MaxCooldownMs:900000]
+
+        [MaxActions:1]
+        [Actions:MSB_Raider_Action_ReadyForDespawn]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Raider_Action_ReadyForDespawn</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage:Raider - ReadyForDespawn]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_Raider_Trigger_Despawn]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Raider_Trigger_Despawn</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:false]
+        [StartsReady:true]
+
+        [MinCooldownMs:60000]
+        [MaxCooldownMs:90000]
+
+        [Conditions:MSB_Utility_State_Condition_Check_State_Role]
 
         [MaxActions:1]
         [Actions:MSB_Raider_Action_Despawn]
