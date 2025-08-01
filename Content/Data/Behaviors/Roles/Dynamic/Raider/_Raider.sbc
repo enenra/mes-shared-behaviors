@@ -2,6 +2,15 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 
+    <!--
+    Only spawns nearby KnownPlayerAreas. Searches the area to find player grids and attacks them. Times out if it has not found anything after 10-15min. Removes KnownPlayerArea if nothing is found.
+
+    To use:
+      * Assign a longer-range TargetProfile to encounter.
+      * Reference MSB_Raider_TriggerGroup in behavior.
+
+    -->
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -15,19 +24,10 @@
         [Triggers:MSB_Raider_Trigger_InitRole]
         [Triggers:MSB_Raider_Trigger_CloseRole]
 
+        [Triggers:MSB_Raider_Trigger_DetectedEnemy]
 
-      </Description>
-    </EntityComponent>
-
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Raider_TriggerGroup_Complete</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI TriggerGroup]
-
-
+        [Triggers:MSB_Raider_Trigger_ClearKPA]
+        [Triggers:MSB_Raider_Trigger_Despawn]
       </Description>
     </EntityComponent>
 
@@ -58,45 +58,33 @@
         [RivalAI Action]
 
         [SetBooleansTrue:MSB_Role_Raider]
+
+        [SetBooleansFalse:MSB_Role_Raider_DetectedEnemy]
       </Description>
     </EntityComponent>
 
-<!--
-
-        [Triggers:MSB_Raider_Trigger_InitRole]
-        [Triggers:MSB_Raider_Trigger_CloseRole]
-
-
--->
-
-
-
-
-<!-- Start Required stuff -->
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Raider_Trigger_InitRole</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Raider_Trigger_InitRole</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
+
+        [Type:Manual]
         [Tags:MSB_Role_InitRole]
 
         [UseTrigger:true]
-        [Type:Manual]
-
         [StartsReady:false]
 
-        [MaxActions:-1]
         [Actions:MSB_Raider_Action_InitRole]
       </Description>
 
     </EntityComponent>
-
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Raider_Action_InitRole</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Raider_Action_InitRole</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
@@ -105,14 +93,14 @@
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Raider_InitRole]
 
         [ChangeBehaviorSubclass:true]
-        [NewBehaviorSubclass:CargoShip]
+        [NewBehaviorSubclass:Patrol]
 
         [ChangeAutopilotProfile:true]
         [AutopilotProfile:Primary]
       </Description>
     </EntityComponent>
 
-   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_Raider_Trigger_CloseRole</SubtypeId>
@@ -120,18 +108,15 @@
       <Description>
         [RivalAI Trigger]
 
+        [Type:Manual]
         [Tags:MSB_Role_CloseRole]
 
         [UseTrigger:true]
-        [Type:Manual]
-
         [StartsReady:false]
 
-        [MaxActions:-1]
         [Actions:MSB_Raider_Action_CloseRole]
       </Description>
     </EntityComponent>
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -142,8 +127,149 @@
 
       </Description>
     </EntityComponent>
-<!-- End Required stuff -->
 
+    <!-- When detecting enemy, engage in combat. -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Raider_Trigger_DetectedEnemy</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:HasTarget]
+
+        [UseTrigger:false]
+        [StartsReady:true]
+
+        [MinCooldownMs:10000]
+        [MaxCooldownMs:10001]
+
+        [Conditions:MSB_Raider_Condition_DetectedEnemy]
+
+        [Actions:MSB_Raider_DetectedEnemy]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Raider_Condition_DetectedEnemy</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [HasTarget:true]
+
+        [CheckIfTargetIsPlayerOwned:true]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Raider_DetectedEnemy</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:Raider - DetectedEnemy]
+
+        [SetBooleansTrue:MSB_Role_Raider_DetectedEnemy]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitCombat]
+      </Description>
+    </EntityComponent>
+
+    <!-- Clear KnownPlayerArea if no player grid is detected until despawn. -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Raider_Trigger_ClearKPA</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Manual]
+        [Tags:MSB_TriggerEvent_Despawn]
+
+        [UseTrigger:false]
+        [StartsReady:true]
+
+        [Conditions:MSB_Raider_Condition_ClearKPA]
+
+        [Actions:MSB_Raider_Action_ClearKPA]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Raider_Condition_ClearKPA</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [CheckFalseBooleans:true]
+        [FalseBooleans:MSB_Role_Raider_DetectedEnemy]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Raider_Action_ClearKPA</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:Raider - ClearKPA]
+
+        [RemoveKnownPlayerArea:true]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Raider_ClearKPA]
+      </Description>
+    </EntityComponent>
+
+    <!-- Despawn -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Raider_Trigger_Despawn</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:true]
+        [StartsReady:false]
+
+        [MinCooldownMs:600000]
+        [MaxCooldownMs:900000]
+
+        [MaxActions:1]
+        [Actions:MSB_Raider_Action_Despawn]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Raider_Action_Despawn</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage:Raider - Despawn]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Despawn]
+      </Description>
+    </EntityComponent>
 
   </EntityComponents>
 </Definitions>

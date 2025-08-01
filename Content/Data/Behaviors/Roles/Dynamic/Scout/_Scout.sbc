@@ -81,6 +81,7 @@
         [SetBooleansFalse:MSB_Role_Scout_FoundTarget]
       </Description>
     </EntityComponent>
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
