@@ -185,6 +185,7 @@
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitCombat]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Raider_DetectedEnemy]
       </Description>
     </EntityComponent>
 
