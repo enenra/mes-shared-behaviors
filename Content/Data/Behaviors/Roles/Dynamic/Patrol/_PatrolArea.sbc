@@ -49,6 +49,7 @@
         [Triggers:MSB_PatrolArea_Trigger_InitRole]
         [Triggers:MSB_PatrolArea_Trigger_CloseRole]
 
+        [Triggers:MSB_Patrol_AreaTrigger_ReadyForDespawn]
         [Triggers:MSB_PatrolArea_Trigger_Despawn]
       </Description>
     </EntityComponent>
@@ -161,7 +162,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_PatrolArea_Trigger_Despawn</SubtypeId>
+        <SubtypeId>MSB_Patrol_AreaTrigger_ReadyForDespawn</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -175,13 +176,49 @@
         [MaxCooldownMs:900000]
 
         [MaxActions:1]
-        [Actions:MSB_PatrolArea_Action_Despawn]
+        [Actions:MSB_Patrol_AreaAction_ReadyForDespawn]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_PatrolArea_Action_Despawn</SubtypeId>
+        <SubtypeId>MSB_Patrol_AreaAction_ReadyForDespawn</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage:PatrolArea - ReadyForDespawn]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_Patrol_AreaTrigger_Despawn]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Patrol_AreaTrigger_Despawn</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:false]
+        [StartsReady:true]
+
+        [MinCooldownMs:60000]
+        [MaxCooldownMs:90000]
+
+        [Conditions:MSB_Utility_State_Condition_Check_State_Role]
+
+        [MaxActions:1]
+        [Actions:MSB_Patrol_AreaAction_Despawn]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Patrol_AreaAction_Despawn</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
