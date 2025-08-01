@@ -3,10 +3,21 @@
   <EntityComponents>
 
     <!--
+    This encounter works in both space and gravity. Flies in a straight line to a despawn point roughly 15km away. Periodically, it stops and initiates a long range scan by charging up for a period of time (and indicating it in its GPS signal) and then extending its detection range to 5km. If it detects a player static grid, it approaches it to around 2km. Then it attempts to reach its original despawn point. If it reaches its despawn point, it creates a Known Player Area and activates a trigger tag allowing for an encounter with the relay Role to be spawned.
 
+    To use:
+      * Reference MSB_Scout_TriggerGroup in your behavior
+      * Use the following in SpawnConditions to prevent multiple KnownPlayerAreas being created for the same faction in the same place:
+        [UseKnownPlayerLocations:true]
+        [KnownPlayerLocationMustMatchFaction:true]
+        [KnownPlayerLocationMustBeInside:false]
+      * If you would like to use the mechanic of destroying specific comms relays clearing the Known Player Area, spawn corresponding encounters when the following tags are called:
+        MSB_TriggerEvent_Scout_SpawnRelay_Space
+        MSB_TriggerEvent_Scout_SpawnRelay_Gravity
+        Spawn them with the "Relay" static role that allows them to clear the Known Player Area when destroyed.
 
     TODO:
-      *
+      * Logic for finding NPC bases - when they're found, spawn one wave of attackers with a delay.
     -->
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
