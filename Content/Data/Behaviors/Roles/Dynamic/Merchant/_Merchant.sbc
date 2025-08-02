@@ -18,9 +18,19 @@
         [Triggers:MSB_Merchant_Trigger_OnStart]
 
         [Triggers:MSB_Merchant_Trigger_MerchantAreaTimeout]
-        [Triggers:MSB_Merchant_Trigger_RulesOfAcquisition]
         [Triggers:MSB_Merchant_Trigger_ResumeCourse]
         [Triggers:MSB_Merchant_Trigger_StopForPlayer]
+		
+		
+		
+        [Triggers:MSB_Merchant_Trigger_VisitPlayerBase]
+        [Triggers:MSB_Merchant_Trigger_ArriveAtStation]
+        [Triggers:MSB_Merchant_Trigger_StartLanding]
+        [Triggers:MSB_Merchant_Trigger_ArrivedAtLandingSite]
+		
+		
+		
+		
 
       </Description>
     </EntityComponent>
@@ -54,6 +64,7 @@
 
         [MaxActions:1]
         [Actions:MSB_Merchant_Action_Setup]
+
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -65,6 +76,10 @@
         [RivalAI Action]
 
         [SetBooleansTrue:MSB_Role_Merchant]
+
+                [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_Role_InitRole]
+        
       </Description>
     </EntityComponent>
 
