@@ -701,7 +701,7 @@
 
         [CreateKnownPlayerArea:true]
         [KnownPlayerAreaRadius:25000]
-        [KnownPlayerAreaTimer:180]
+        [KnownPlayerAreaTimer:300]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Scout_TransmitLocation]

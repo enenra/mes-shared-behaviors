@@ -1,0 +1,129 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <!--
+    A static encounter that functions as a relay "storing" the coordinates of a Known Player Area. Players can destroy these relays in order to remove the Known Player Areas.
+
+    To use:
+      * Reference MSB_Scout_TriggerGroup in your behavior.
+      * Spawn a spawngroup with this role from an encounter using the scout role.
+    -->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Relay_TriggerGroup</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI TriggerGroup]
+
+        [Triggers:MSB_Relay_Trigger_Setup]
+        [Triggers:MSB_Relay_Trigger_ClearKPA]
+        [Triggers:MSB_Relay_Trigger_NoMoreKPA]
+      </Description>
+    </EntityComponent>
+
+    <!-- Setup -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Relay_Trigger_Setup</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [MaxActions:1]
+        [Actions:MSB_Relay_Action_Setup]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Relay_Action_Setup</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [SetBooleansTrue:MSB_Role_Relay]
+
+		    [SetAntennaThoughtBubble:true]
+        [SetAntennaThoughtBubbleName:Storing Coordinates]
+      </Description>
+    </EntityComponent>
+
+    <!-- Clear KnownPlayerArea on death. -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Relay_Trigger_ClearKPA</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Manual]
+        [Tags:MSB_TriggerEvent_Compromised]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Actions:MSB_Relay_Action_ClearKPA]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Relay_Action_ClearKPA</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:Relay - ClearKPA]
+
+        [RemoveKnownPlayerArea:true]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Relay_Trigger_NoMoreKPA</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:PlayerKnownLocation]
+
+        [UseTrigger:true]
+        [StartsReady:false]
+
+        [MinCooldownMs:300000]
+        [MaxCooldownMs:300001]
+
+        [UseFailCondition:true]
+
+        [MaxActions:1]
+        [Actions:MSB_Relay_NoMoreKPA]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Relay_NoMoreKPA</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:Relay - NoMoreKPA]
+
+        [ForceDespawn:true]
+      </Description>
+    </EntityComponent>
+
+  </EntityComponents>
+</Definitions>
