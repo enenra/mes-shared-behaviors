@@ -3,7 +3,7 @@
   <EntityComponents>
 
     <!--
-    This encounter works in both space and gravity. Flies in a straight line to a despawn point roughly 15km away. Periodically, it stops and initiates a long range scan by charging up for a period of time (and indicating it in its GPS signal) and then extending its detection range to 5km. If it detects a player static grid, it approaches it to around 2km. Then it attempts to reach its original despawn point. If it reaches its despawn point, it creates a Known Player Area and activates a trigger tag allowing for an encounter with the relay Role to be spawned.
+    This encounter works in both space and gravity. Flies in a straight line to a despawn point roughly 15km away. Periodically, it stops and initiates a long range scan by charging up for a period of time (and indicating it in its GPS signal) and then extending its detection range to 8km. If it detects a player static grid, it approaches it to around 2km. Then it attempts to reach its original despawn point. If it reaches its despawn point, it creates a Known Player Area and activates a trigger tag allowing for an encounter with the relay Role to be spawned.
 
     To use:
       * Reference MSB_Scout_TriggerGroup in your behavior
