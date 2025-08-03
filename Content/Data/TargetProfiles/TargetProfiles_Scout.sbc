@@ -13,7 +13,7 @@
         [UseCustomTargeting:true]
         [Target:Grid]
 
-        [MaxDistance:8000]
+        [MaxDistance:5000]
 
         [TimeUntilTargetAcquisition:1]
         [TimeUntilNextEvaluation:3]
