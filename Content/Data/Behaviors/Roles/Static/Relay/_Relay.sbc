@@ -89,6 +89,7 @@
       </Description>
     </EntityComponent>
 
+    <!-- Despawn if not in a KPA anymore (KPA auto-despawned). -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
