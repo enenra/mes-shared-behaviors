@@ -66,8 +66,7 @@
       <Description>
         [RivalAI Trigger]
 
-        [Type:Manual]
-        [Tags:MSB_TriggerEvent_Compromised]
+        [Type:Compromised]
 
         [UseTrigger:true]
         [StartsReady:true]
@@ -83,7 +82,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Relay - ClearKPA]
+        [//DebugMessage:Relay - ClearKPA]
 
         [RemoveKnownPlayerArea:true]
       </Description>
@@ -120,7 +119,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Relay - NoMoreKPA]
+        [//DebugMessage:Relay - NoMoreKPA]
 
         [ForceDespawn:true]
       </Description>
