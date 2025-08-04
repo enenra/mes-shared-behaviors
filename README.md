@@ -15,8 +15,9 @@ When setting up an encounter with MSB - for example a Patrol - there are general
 | OffensiveEscort | Working |  |
 | Patrol | Working | Patrol will have the encounter move in a straight line to a waypoint that is roughly 15km from their spawn, and then despawn. |
 | PatrolArea | Working | PatrolArea makes the encounter continuously create random waypoints in an area, to which it will move - and then create a new random waypoint. After between 10 and 15min, it will despawn. |
-| Scout | Working | This encounter works in both space and gravity. Flies in a straight line to a despawn point roughly 15km away. Periodically, it stops and initiates a long range scan by charging up for a period of time (and indicating it in its GPS signal) and then extending its detection range to 5km. If it detects a player static grid, it approaches it to around 2.5km. Then it attempts to reach its original despawn point. If it reaches its despawn point, it creates a Known Player Area and activates a trigger tag allowing for an encounter with the relay Role to be spawned. |
+| Scout | Working | This encounter works in both space and gravity. Flies in a straight line to a despawn point roughly 15km away. Periodically, it stops and initiates a long range scan by charging up for a period of time (and indicating it in its GPS signal) and then extending its detection range to 5km. If it detects a player static grid, it approaches it to around 2.5km. Then it attempts to reach its original despawn point. If it reaches its despawn point, it creates a Known Player Area and activates a trigger tag allowing for an encounter with the Relay Role to be spawned. |
 | Raider | Working | Only spawns nearby KnownPlayerAreas. Searches the area to find player grids and attacks them. Times out if it has not found anything after 10-15min. |
+| Relay | Working | A role intended for static encounters. When it is destroyed, it clears the Known Player Area it is located in. |
 | BountyHunter | Planned | If player reputation with a faction (except SPRT) drops to a low enough point, encounters with this role can spawn. They fly directly to the player and offer the player a chance to pay them off - else they will attack the player. |
 | Guard | Planned |  |
 | Merchant | Planned | Will fly in a straight line. If it detects a player static grid, it will land nearby and open its doors to give access to a store block. If the player approaches it while it's flying, it also stops to let the player board and trade. Despawns after reaching original waypoint roughly 15km from their spawn. |
@@ -55,6 +56,7 @@ There are two Common TriggerGroups - [`MSB_DynamicCommon_TriggerGroup`](https://
 | Communication | Working | Allows encounters to send out SOS signals when entering battle. Other encounters who also have this system set up can then respond to those SOS signals and partake in combat. After combat has ended, both the sender and the responders return to their original Roles. |
 | EngagementRange | Done | Defines the range to a target below which the encounter actively initiates combat and thus switches to its CombatType logic. |
 | Environment | Working | Offers various options to make the encounter react to its environment, for example via Timer blocks with specific names being triggered or swapping a skin for another if spawning on specific voxels. |
+| Dialogue | Working | Triggers various dialogue cues based on what is happening with and around the encounter. Must define DialogueBanks with corresponding cues in the behavior. |
 | Crash | WIP |  |
 | Despawn | WIP |  |
 | Disabled | WIP |  |
