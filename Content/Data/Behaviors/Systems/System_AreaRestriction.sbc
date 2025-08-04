@@ -40,7 +40,7 @@
         [UseTrigger:true]
         [StartsReady:true]
 
-        [Conditions:MSB_Context_Condition_PlayerNotHostile]
+        [Conditions:MSB_Context_Condition_PlayerNeutral]
 
         [Actions:MSB_System_AreaRestriction_Action_100_InRange]
       </Description>
@@ -136,7 +136,7 @@
         [UseTrigger:true]
         [StartsReady:true]
 
-        [Conditions:MSB_Context_Condition_PlayerNotHostile]
+        [Conditions:MSB_Context_Condition_PlayerNeutral]
 
         [Actions:MSB_System_AreaRestriction_Action_1000_InRange]
       </Description>
@@ -203,6 +203,102 @@
       </Description>
     </EntityComponent>
 
+    <!-- 2500 -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_AreaRestriction_TriggerGroup_2500</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI TriggerGroup]
+
+        [Triggers:MSB_System_AreaRestriction_Trigger_2500_InRange]
+        [Triggers:MSB_System_AreaRestriction_Trigger_2500_OutOfRange]
+        [Triggers:MSB_System_AreaRestriction_Trigger_StillInRange]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_AreaRestriction_Trigger_2500_InRange</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Manual]
+        [Tags:MSB_TriggerEvent_PlayerNear2500]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Conditions:MSB_Context_Condition_PlayerNeutral]
+
+        [Actions:MSB_System_AreaRestriction_Action_2500_InRange]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_AreaRestriction_Action_2500_InRange</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage:AreaRestriction - InRange2500]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_AreaRestriction_Warning]
+        [ForceManualTriggerActivation:false]
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB_System_AreaRestriction_Trigger_StillInRange]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_System_AreaRestriction_Trigger_2500_OutOfRange]
+        [EnableTriggerNames:MSB_System_AreaRestriction_Trigger_StillInRange]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_System_AreaRestriction_Trigger_2500_InRange]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_AreaRestriction_Trigger_2500_OutOfRange</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Manual]
+        [Tags:MSB_TriggerEvent_PlayerFar2500]
+
+        [UseTrigger:false]
+        [StartsReady:true]
+
+        [Actions:MSB_System_AreaRestriction_Action_2500_OutOfRange]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_AreaRestriction_Action_2500_OutOfRange</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage:AreaRestriction - OutOfRange2500]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_System_AreaRestriction_Trigger_2500_OutOfRange]
+        [DisableTriggerNames:MSB_System_AreaRestriction_Trigger_StillInRange]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_System_AreaRestriction_Trigger_2500_InRange]
+      </Description>
+    </EntityComponent>
+
 
     <!-- Shared -->
     <!-- StillInRange -->
@@ -240,7 +336,7 @@
 
         [ChangeReputationWithPlayers:true]
         [ReputationChangeFactions:{Self}]
-        [ReputationChangeRadius:1000]
+        [ReputationChangeRadius:2600]
         [ReputationChangeAmount:-25]
         [ReputationChangesForAllRadiusPlayerFactionMembers:true]
       </Description>

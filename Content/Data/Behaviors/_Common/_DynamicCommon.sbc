@@ -22,9 +22,11 @@
 
         [Triggers:MSB_Context_Trigger_PlayerNear100]
         [Triggers:MSB_Context_Trigger_PlayerNear1000]
+        [Triggers:MSB_Context_Trigger_PlayerNear2500]
         [Triggers:MSB_Context_Trigger_PlayerNear5000]
         [Triggers:MSB_Context_Trigger_PlayerFar100]
         [Triggers:MSB_Context_Trigger_PlayerFar1000]
+        [Triggers:MSB_Context_Trigger_PlayerFar2500]        
         [Triggers:MSB_Context_Trigger_PlayerFar5000]
 
         [Triggers:MSB_ContextDamage_Trigger_Hostile_NPCDamage]

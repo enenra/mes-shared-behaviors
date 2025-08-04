@@ -5,16 +5,20 @@
     <!-- Options:
         * PlayerNear100
         * PlayerNear1000
+        * PlayerNear2500      
         * PlayerNear5000
         * PlayerFar100
-        * PlayerFar1000
+        * PlayerFar2500 
         * PlayerFar5000
 
         * MSB_TriggerEvent_PlayerNear100
         * MSB_TriggerEvent_PlayerNear1000
+        * MSB_TriggerEvent_PlayerNear2500
         * MSB_TriggerEvent_PlayerNear5000
+
         * MSB_TriggerEvent_PlayerFar100
         * MSB_TriggerEvent_PlayerFar1000
+        * MSB_TriggerEvent_PlayerFar2500        
         * MSB_TriggerEvent_PlayerFar5000
     -->
 
@@ -67,16 +71,36 @@
 
         [//DebugMessage: PlayerNear100 set to True]
 
+
         [SetBooleansTrue:PlayerNear100]
         [SetBooleansTrue:PlayerNear1000]
+        [SetBooleansTrue:PlayerNear2500]        
         [SetBooleansTrue:PlayerNear5000]
         [SetBooleansFalse:PlayerFar100]
         [SetBooleansFalse:PlayerFar1000]
+        [SetBooleansFalse:PlayerFar2500]        
         [SetBooleansFalse:PlayerFar5000]
+
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_PlayerNear100]
         [ForceManualTriggerActivation:false]
+
+
+        [DisableTriggers:true]       
+        [DisableTriggerNames:MSB_Context_Trigger_PlayerNear100]
+        [DisableTriggerNames:MSB_Context_Trigger_PlayerNear1000]
+        [DisableTriggerNames:MSB_Context_Trigger_PlayerNear2500]
+        [DisableTriggerNames:MSB_Context_Trigger_PlayerNear5000]
+
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_Context_Trigger_PlayerFar100]        
+        [EnableTriggerNames:MSB_Context_Trigger_PlayerFar1000]
+        [EnableTriggerNames:MSB_Context_Trigger_PlayerFar2500]
+        [EnableTriggerNames:MSB_Context_Trigger_PlayerFar5000]
+
+
       </Description>
     </EntityComponent>
 
@@ -130,14 +154,116 @@
         [//DebugMessage: PlayerNear1000 set to True]
 
         [SetBooleansTrue:PlayerNear1000]
+        [SetBooleansTrue:PlayerNear2500]        
         [SetBooleansTrue:PlayerNear5000]
-        [SetBooleansFalse:PlayerFar100]
         [SetBooleansFalse:PlayerFar1000]
+        [SetBooleansFalse:PlayerFar2500]
         [SetBooleansFalse:PlayerFar5000]
+
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_PlayerNear1000]
         [ForceManualTriggerActivation:false]
+
+
+
+        [DisableTriggers:true]       
+        
+        [DisableTriggerNames:MSB_Context_Trigger_PlayerNear1000]
+        [DisableTriggerNames:MSB_Context_Trigger_PlayerNear2500]
+        [DisableTriggerNames:MSB_Context_Trigger_PlayerNear5000]
+        [DisableTriggerNames:MSB_Context_Trigger_PlayerFar100]  
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_Context_Trigger_PlayerNear100]
+              
+        [EnableTriggerNames:MSB_Context_Trigger_PlayerFar1000]
+        [EnableTriggerNames:MSB_Context_Trigger_PlayerFar2500]
+        [EnableTriggerNames:MSB_Context_Trigger_PlayerFar5000]
+
+
+
+
+
+      </Description>
+    </EntityComponent>
+
+    <!-- PlayerNear2500 -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Condition_PlayerNear2500</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [CheckTrueBooleans:true]
+        [TrueBooleans:PlayerNear2500]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Trigger_PlayerNear2500</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:PlayerNear]
+
+        [TargetDistance:2500]
+
+        [UseTrigger:true]
+        [StartsReady:false]
+
+        [MinCooldownMs:10000]
+        [MaxCooldownMs:10001]
+
+        [MaxActions:-1]
+        [Actions:MSB_Context_Action_PlayerNear2500]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Action_PlayerNear2500</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage: PlayerNear2500 set to True]
+
+        [SetBooleansTrue:PlayerNear2500]
+        [SetBooleansTrue:PlayerNear5000]
+        [SetBooleansFalse:PlayerFar2500]
+        [SetBooleansFalse:PlayerFar5000]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_PlayerNear2500]
+        [ForceManualTriggerActivation:false]
+
+
+        [DisableTriggers:true]       
+        
+
+        [DisableTriggerNames:MSB_Context_Trigger_PlayerNear2500]
+        [DisableTriggerNames:MSB_Context_Trigger_PlayerNear5000]
+        [DisableTriggerNames:MSB_Context_Trigger_PlayerFar100]  
+        [DisableTriggerNames:MSB_Context_Trigger_PlayerFar1000]
+
+        
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_Context_Trigger_PlayerNear100]
+        [EnableTriggerNames:MSB_Context_Trigger_PlayerNear1000]     
+
+
+        [EnableTriggerNames:MSB_Context_Trigger_PlayerFar2500]
+        [EnableTriggerNames:MSB_Context_Trigger_PlayerFar5000]
+
       </Description>
     </EntityComponent>
 
@@ -187,7 +313,6 @@
       </Id>
       <Description>
         [RivalAI Action]
-
         [//DebugMessage: PlayerNear5000 set to True]
 
         [SetBooleansTrue:PlayerNear5000]
@@ -196,6 +321,21 @@
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_PlayerNear5000]
         [ForceManualTriggerActivation:false]
+
+
+        [DisableTriggers:true]       
+        [DisableTriggerNames:MSB_Context_Trigger_PlayerNear5000]
+        [DisableTriggerNames:MSB_Context_Trigger_PlayerFar100]  
+        [DisableTriggerNames:MSB_Context_Trigger_PlayerFar1000]
+        [DisableTriggerNames:MSB_Context_Trigger_PlayerFar2500]
+        
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_Context_Trigger_PlayerNear100]
+        [EnableTriggerNames:MSB_Context_Trigger_PlayerNear1000]     
+        [EnableTriggerNames:MSB_Context_Trigger_PlayerNear2500]
+        [EnableTriggerNames:MSB_Context_Trigger_PlayerFar5000]
+
+
       </Description>
     </EntityComponent>
 
@@ -251,13 +391,27 @@
         [//DebugMessage: PlayerFar100 set to True]
 
         [SetBooleansFalse:PlayerNear100]
-        [SetBooleansFalse:PlayerNear1000]
-        [SetBooleansFalse:PlayerNear5000]
         [SetBooleansTrue:PlayerFar100]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_PlayerFar100]
         [ForceManualTriggerActivation:false]
+
+        [DisableTriggers:true]       
+        [DisableTriggerNames:MSB_Context_Trigger_PlayerFar100]  
+        [DisableTriggerNames:MSB_Context_Trigger_PlayerNear1000]   
+        [DisableTriggerNames:MSB_Context_Trigger_PlayerNear2500]       
+        [DisableTriggerNames:MSB_Context_Trigger_PlayerNear5000]
+
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_Context_Trigger_PlayerNear100]
+        [EnableTriggerNames:MSB_Context_Trigger_PlayerFar1000]
+        [EnableTriggerNames:MSB_Context_Trigger_PlayerFar2500]
+        [EnableTriggerNames:MSB_Context_Trigger_PlayerFar5000] 
+
+
+        
       </Description>
     </EntityComponent>
 
@@ -314,13 +468,106 @@
 
         [SetBooleansFalse:PlayerNear100]
         [SetBooleansFalse:PlayerNear1000]
-        [SetBooleansFalse:PlayerNear5000]
         [SetBooleansTrue:PlayerFar100]
         [SetBooleansTrue:PlayerFar1000]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_PlayerFar1000]
         [ForceManualTriggerActivation:false]
+
+        [DisableTriggers:true]       
+        [DisableTriggerNames:MSB_Context_Trigger_PlayerFar100]  
+        [DisableTriggerNames:MSB_Context_Trigger_PlayerFar1000]
+
+        [DisableTriggerNames:MSB_Context_Trigger_PlayerNear2500]       
+        [DisableTriggerNames:MSB_Context_Trigger_PlayerNear5000]
+
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_Context_Trigger_PlayerNear100]
+        [EnableTriggerNames:MSB_Context_Trigger_PlayerNear1000]     
+        [EnableTriggerNames:MSB_Context_Trigger_PlayerFar2500]
+        [EnableTriggerNames:MSB_Context_Trigger_PlayerFar5000]        
+      </Description>
+    </EntityComponent>
+    
+    <!-- PlayerFar2500-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Condition_PlayerFar2500</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [UseFailCondition:true]
+        [MatchAnyCondition:false]
+
+        [CheckTrueBooleans:true]
+        [TrueBooleans:PlayerFar2500]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Trigger_PlayerFar2500</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:PlayerNear]
+
+        [TargetDistance:2500]
+
+        [UseTrigger:true]
+        [StartsReady:false]
+        [UseFailCondition:true]
+
+        [MinCooldownMs:10000]
+        [MaxCooldownMs:10001]
+
+        [MaxActions:-1]
+        [Actions:MSB_Context_Action_PlayerFar2500]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Context_Action_PlayerFar2500</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage: PlayerFar2500 set to True]
+
+        [SetBooleansFalse:PlayerNear100]
+        [SetBooleansFalse:PlayerNear1000]        
+        [SetBooleansFalse:PlayerNear2500]
+        [SetBooleansTrue:PlayerFar100]
+        [SetBooleansTrue:PlayerFar1000]        
+        [SetBooleansTrue:PlayerFar2500]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_PlayerFar2500]
+        [ForceManualTriggerActivation:false]
+
+
+        [DisableTriggers:true]       
+
+        [DisableTriggerNames:MSB_Context_Trigger_PlayerFar100]  
+        [DisableTriggerNames:MSB_Context_Trigger_PlayerFar1000]
+        [DisableTriggerNames:MSB_Context_Trigger_PlayerFar2500]
+        [DisableTriggerNames:MSB_Context_Trigger_PlayerNear5000]
+
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_Context_Trigger_PlayerNear100]
+        [EnableTriggerNames:MSB_Context_Trigger_PlayerNear1000]     
+        [EnableTriggerNames:MSB_Context_Trigger_PlayerNear2500]
+        [EnableTriggerNames:MSB_Context_Trigger_PlayerFar5000]
+
       </Description>
     </EntityComponent>
 
@@ -377,14 +624,35 @@
 
         [SetBooleansFalse:PlayerNear100]
         [SetBooleansFalse:PlayerNear1000]
+        [SetBooleansFalse:PlayerNear2500]        
         [SetBooleansFalse:PlayerNear5000]
         [SetBooleansTrue:PlayerFar100]
         [SetBooleansTrue:PlayerFar1000]
+        [SetBooleansTrue:PlayerFar2500]        
         [SetBooleansTrue:PlayerFar5000]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_PlayerFar5000]
         [ForceManualTriggerActivation:false]
+
+        [DisableTriggers:true]       
+
+        [DisableTriggerNames:MSB_Context_Trigger_PlayerFar100]  
+        [DisableTriggerNames:MSB_Context_Trigger_PlayerFar1000]
+        [DisableTriggerNames:MSB_Context_Trigger_PlayerFar2500]
+        [DisableTriggerNames:MSB_Context_Trigger_PlayerFar5000]
+
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_Context_Trigger_PlayerNear100]
+        [EnableTriggerNames:MSB_Context_Trigger_PlayerNear1000]     
+        [EnableTriggerNames:MSB_Context_Trigger_PlayerNear2500]
+        [EnableTriggerNames:MSB_Context_Trigger_PlayerNear5000]
+
+
+
+
+
       </Description>
     </EntityComponent>
 
