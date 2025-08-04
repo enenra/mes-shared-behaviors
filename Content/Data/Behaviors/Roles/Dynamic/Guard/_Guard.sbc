@@ -2,14 +2,12 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 
-
-<!--
+    <!--
 		To do:
 
 		* Switch to patrol if no target nearby.
 
--->
-
+    -->
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -24,18 +22,6 @@
         [Triggers:MSB_Guard_Trigger_OnStart]
         [Triggers:MSB_Guard_Trigger_InitRole]
         [Triggers:MSB_Guard_Trigger_CloseRole]
-
-      </Description>
-    </EntityComponent>
-
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Guard_TriggerGroup_Complete</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI TriggerGroup]
-
       </Description>
     </EntityComponent>
 
@@ -69,9 +55,6 @@
       </Description>
     </EntityComponent>
 
-
-
-    <!-- Start Required stuff -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -138,8 +121,6 @@
 
       </Description>
     </EntityComponent>
-    <!-- End Required stuff -->
-
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -161,8 +142,6 @@
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_InitCombat]
       </Description>
     </EntityComponent>
-
-
 
   </EntityComponents>
 </Definitions>

@@ -63,18 +63,6 @@
         [Triggers:MSB_Cargoship_Trigger_Despawn]
       </Description>
     </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Cargoship_TriggerGroup_Complete</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI TriggerGroup]
-
-        [Triggers:MSB_Cargoship_Trigger_Surrender]
-        [Triggers:MSB_Cargoship_Trigger_TargetIsApproaching]
-      </Description>
-    </EntityComponent>
 
     <!-- Setup -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">

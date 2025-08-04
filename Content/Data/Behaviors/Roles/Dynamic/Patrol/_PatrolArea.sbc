@@ -53,16 +53,6 @@
         [Triggers:MSB_PatrolArea_Trigger_Despawn]
       </Description>
     </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_PatrolArea_TriggerGroup_Complete</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI TriggerGroup]
-
-      </Description>
-    </EntityComponent>
 
     <!-- Setup -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">

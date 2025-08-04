@@ -19,17 +19,6 @@
         [Triggers:MSB_DefensiveEscort_Trigger_TargetfarSwitchEscort]
       </Description>
     </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_DefensiveEscort_TriggerGroup_Complete</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI TriggerGroup]
-
-        [Triggers:MSB_DefensiveEscort_Trigger_RequestEscortSlot]
-      </Description>
-    </EntityComponent>
 
     <!-- Setup -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">

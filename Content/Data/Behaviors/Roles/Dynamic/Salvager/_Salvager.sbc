@@ -14,20 +14,6 @@
 
         [Triggers:MSB_Salvager_Trigger_InitRole]
         [Triggers:MSB_Salvager_Trigger_CloseRole]
-
-      </Description>
-    </EntityComponent>
-
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Salvager_TriggerGroup_Complete</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI TriggerGroup]
-
-
-
       </Description>
     </EntityComponent>
 
@@ -61,24 +47,11 @@
       </Description>
     </EntityComponent>
 
-
-
-<!--
-
-        [Triggers:MSB_Salvager_Trigger_InitRole]
-        [Triggers:MSB_Salvager_Trigger_CloseRole]
-
-
--->
-
-
-
-
-<!-- Start Required stuff -->
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <!-- Start Required stuff -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Salvager_Trigger_InitRole</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Salvager_Trigger_InitRole</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -92,13 +65,11 @@
         [MaxActions:-1]
         [Actions:MSB_Salvager_Action_InitRole]
       </Description>
-
     </EntityComponent>
-
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Salvager_Action_InitRole</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Salvager_Action_InitRole</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
@@ -114,7 +85,7 @@
       </Description>
     </EntityComponent>
 
-   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_Salvager_Trigger_CloseRole</SubtypeId>
@@ -133,7 +104,6 @@
         [Actions:MSB_Salvager_Action_CloseRole]
       </Description>
     </EntityComponent>
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -144,8 +114,6 @@
 
       </Description>
     </EntityComponent>
-<!-- End Required stuff -->
-
 
   </EntityComponents>
 </Definitions>
