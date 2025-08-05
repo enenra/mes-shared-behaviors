@@ -4,6 +4,17 @@
 
     <!--
 
+I ported all of this to AaW  -CptArthur
+
+Do what you want with it
+
+NOT IN USE
+
+
+
+
+
+
 	These triggers apply to both Dynamic and Static
 
 
@@ -14,11 +25,7 @@
 
 
 
-        [Triggers:MSB_Common_Trigger_UnderFireHealthLow]
-        [Triggers:MSB_Common_Trigger_DamageByNeutral]
-        [Triggers:MSB_Common_Trigger_DamageByNeutral_Cue]
-        [Triggers:MSB_Common_Trigger_DamageByFriendly]
-        [Triggers:MSB_Common_Trigger_DamageByFriendly_Cue]
+
 
 
         [Triggers:MSB_Common_Trigger_EnemyDestroyedPlayerHelped]

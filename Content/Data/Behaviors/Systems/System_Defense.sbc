@@ -2,6 +2,9 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
     <!--
+       In use do not change! -CptArthur
+
+
         [Tags:SpawnGuards]
 
         [Triggers:MSB_System_Defense_Trigger_Guards]

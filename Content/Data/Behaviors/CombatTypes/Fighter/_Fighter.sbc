@@ -46,16 +46,47 @@
         [Triggers:MSB_Fighter_Trigger_LowAltitudeFighting_Disable_InitRole]
       </Description>
     </EntityComponent>
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Fighter_TriggerGroup_Complete</SubtypeId>
+        <SubtypeId>MSB_CPTFighter_TriggerGroup</SubtypeId>
       </Id>
       <Description>
         [RivalAI TriggerGroup]
 
+        [Triggers:MSB_Fighter_Trigger_Setup]
+
+        [Triggers:MSB_Fighter_Trigger_InitCombatType]
+        [Triggers:MSB_Fighter_Trigger_CloseFight]
+
+        [Triggers:MSB_Fighter_Trigger_Compromised_PlayerClose]
+        [Triggers:MSB_Fighter_Trigger_Compromised_PlayerFar]
+
+        [Triggers:MSB_Fighter_Trigger_BeforeHighSpeedImpact]
+        [Triggers:MSB_Fighter_Trigger_Compromised_BeforeHighSpeedImpact]
+        [Triggers:MSB_Fighter_Trigger_AfterHighSpeedImpact]
+
+        [Triggers:MSB_Fighter_Trigger_DamageByHostile]
+        [Triggers:MSB_Fighter_Trigger_EnemyOnTail]
+        [Triggers:MSB_Fighter_Trigger_EnemyOnTail_Ramming]
+
+        [Triggers:MSB_Fighter_Trigger_StartingAttackRun]
+        [Triggers:MSB_Fighter_Trigger_EndingAttackRun]
+        [Triggers:MSB_Fighter_Trigger_EndingAttackRun_Delay]
+
+        [Triggers:MSB_CPTFighter_Trigger_LowAltitudeFighting]
+        [Triggers:MSB_CPTFighter_Trigger_LowAltitudeFighting_Reset_ChangedTarget]
+        [Triggers:MSB_CPTFighter_Trigger_LowAltitudeFighting_Reset_TargetFar]
+        [Triggers:MSB_CPTFighter_Trigger_LowAltitudeFighting_Reset_HighAltitude]
+
+
       </Description>
     </EntityComponent>
+
+
+
+
 
     <!-- Setup -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">

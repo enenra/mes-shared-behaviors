@@ -354,7 +354,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:AfterHighSpeedImpact somehow survived, TerminateBehavior nonetheless]
+        [//DebugMessage:AfterHighSpeedImpact somehow survived, TerminateBehavior nonetheless]
 
         [DisableAutopilot:true]
         [StopAllThrust:true]

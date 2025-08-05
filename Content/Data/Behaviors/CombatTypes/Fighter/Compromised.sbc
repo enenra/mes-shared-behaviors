@@ -89,7 +89,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Fighter - Compromised, PlayerFar, Despawn]
+        [//DebugMessage:Fighter - Compromised, PlayerFar, Despawn]
         [ForceDespawn:true]
       </Description>
     </EntityComponent>
@@ -154,7 +154,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Fighter - Compromised, BeforeHighSpeedImpact, Despawn Explosion]
+        [//DebugMessage:Fighter - Compromised, BeforeHighSpeedImpact, Despawn Explosion]
 
         [GenerateExplosion:true]
         [ExplosionRange:50]

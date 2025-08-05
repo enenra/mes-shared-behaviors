@@ -1,0 +1,184 @@
+﻿<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+
+<!--
+Do not remove this thank you...
+
+        [Triggers:MSB_CPTFighter_Trigger_LowAltitudeFighting]
+        [Triggers:MSB_CPTFighter_Trigger_LowAltitudeFighting_Reset_ChangedTarget]
+        [Triggers:MSB_CPTFighter_Trigger_LowAltitudeFighting_Reset_TargetFar]
+        [Triggers:MSB_CPTFighter_Trigger_LowAltitudeFighting_Reset_HighAltitude]
+
+
+-->
+
+     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CPTFighter_Trigger_LowAltitudeFighting</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:TargetNear]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [TargetDistance:1200]
+
+        [Conditions:MSB_CPTFighter_Condition_LowAltitudeFighting]
+
+        [MaxActions:-1]
+        [Actions:MSB_CPTFighter_Action_LowAltitudeFighting]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CPTFighter_Condition_LowAltitudeFighting</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+
+        [TargetAltitudeCheck:true]
+        [MinTargetAltitude:-1]
+        [MaxTargetAltitude:50]
+
+        [CheckTrueBooleans:true]
+        [TrueBooleans:MSB_State_Combat]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CPTFighter_Action_LowAltitudeFighting</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage:CPTFighter - LowAltitude Active]
+
+        [ChangeAutopilotSpeed:true]
+        [NewAutopilotSpeed:45]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_CPTFighter_Trigger_LowAltitudeFighting]
+
+        [EnableTriggers:true]
+        [EnableTriggerTags:LowAltitudeFighting]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CPTFighter_Trigger_LowAltitudeFighting_Reset_HighAltitude</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [Tags:LowAltitudeFighting]
+
+        [UseTrigger:false]
+        [StartsReady:true]
+
+        [Conditions:MSB_CPTFighter_Condition_HighAltitudeFighting]
+
+        [MaxActions:-1]
+        [Actions:MSB_CPTFighter_Action_LowAltitudeFighting_Reset]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CPTFighter_Condition_HighAltitudeFighting</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+
+        [TargetAltitudeCheck:true]
+        [MinTargetAltitude:60]
+        [MaxTargetAltitude:-1]
+
+        [CheckTrueBooleans:true]
+        [TrueBooleans:MSB_State_Combat]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CPTFighter_Trigger_LowAltitudeFighting_Reset_ChangedTarget</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:ChangedTarget]
+
+        [Tags:LowAltitudeFighting]
+        [UseTrigger:false]
+
+        [StartsReady:true]
+
+        [MaxActions:-1]
+        [Actions:MSB_CPTFighter_Action_LowAltitudeFighting_Reset]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CPTFighter_Trigger_LowAltitudeFighting_Reset_TargetFar</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:TargetFar]
+
+        [Tags:LowAltitudeFighting]
+
+        [UseTrigger:false]
+        [StartsReady:true]
+
+        [TargetDistance:1800]
+
+        [Conditions:MSB_Utility_State_Condition_Check_State_Combat]
+
+        [MaxActions:-1]
+        [Actions:MSB_CPTFighter_Action_LowAltitudeFighting_Reset]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CPTFighter_Action_LowAltitudeFighting_Reset</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage:CPTFighter - LowAltitude Reset]
+
+        [ChangeAutopilotSpeed:true]
+        [NewAutopilotSpeed:80]
+
+        [DisableTriggers:true]
+        [DisableTriggerTags:LowAltitudeFighting]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_CPTFighter_Trigger_LowAltitudeFighting]
+      </Description>
+    </EntityComponent>
+
+  </EntityComponents>
+</Definitions>

@@ -100,6 +100,7 @@
       </Description>
     </EntityComponent>
 
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -120,5 +121,12 @@
       </Description>
     </EntityComponent>
 
+
+
+<!--
+I don't use MSB_DynamicCommon_TriggerGroup_Complete anymore -CptArthur
+
+Do what you want with it
+-->
   </EntityComponents>
 </Definitions>
