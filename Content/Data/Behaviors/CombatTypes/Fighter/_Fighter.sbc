@@ -79,14 +79,8 @@
         [Triggers:MSB_CPTFighter_Trigger_LowAltitudeFighting_Reset_ChangedTarget]
         [Triggers:MSB_CPTFighter_Trigger_LowAltitudeFighting_Reset_TargetFar]
         [Triggers:MSB_CPTFighter_Trigger_LowAltitudeFighting_Reset_HighAltitude]
-
-
       </Description>
     </EntityComponent>
-
-
-
-
 
     <!-- Setup -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
