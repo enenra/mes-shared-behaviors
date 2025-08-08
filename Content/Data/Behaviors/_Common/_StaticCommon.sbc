@@ -26,7 +26,7 @@
         [Triggers:MSB_Context_Trigger_PlayerNear5000]
         [Triggers:MSB_Context_Trigger_PlayerFar100]
         [Triggers:MSB_Context_Trigger_PlayerFar1000]
-        [Triggers:MSB_Context_Trigger_PlayerFar2500]        
+        [Triggers:MSB_Context_Trigger_PlayerFar2500]
         [Triggers:MSB_Context_Trigger_PlayerFar5000]
 
         [Triggers:MSB_ContextDamage_Trigger_Hostile_NPCDamage]
@@ -53,50 +53,13 @@
 
         [Triggers:MSB_System_Health_Trigger_HasAntennaForBroadcast]
 
-
         [Triggers:MSB_DefenseSystem_Trigger_Guards]
         [Triggers:MSB_DefenseSystem_Trigger_Guards_SpawnCustomVariablesName]
         [Triggers:MSB_DefenseSystem_Trigger_Guards_SpawnSpawnGroupName]
         [Triggers:MSB_DefenseSystem_Trigger_Guards_SpawnDefault]
         [Triggers:MSB_DefenseSystem_Trigger_Guards_AutoDisable]
       </Description>
-
     </EntityComponent>
-
-
-
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_StaticCommon_TriggerGroup_Complete</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI TriggerGroup]
-
-        [Triggers:MSB_Common_Trigger_DamageByNeutral]
-        [Triggers:MSB_Common_Trigger_DamageByNeutral_Cue]
-        [Triggers:MSB_Common_Trigger_DamageByFriendly]
-        [Triggers:MSB_Common_Trigger_DamageByFriendly_Cue]
-
-
-        [Triggers:MSB_Common_Trigger_EnemyDestroyedPlayerHelped]
-        [Triggers:MSB_Common_Trigger_EnemyDestroyedPlayerMadeFinalShot]
-        [Triggers:MSB_Common_Trigger_FriendlyDestroyedPlayerMadeFinalShot]
-
-      </Description>
-    </EntityComponent>
-
-
-<!--
-I don't use MSB_StaticCommon_TriggerGroup_Complete anymore -CptArthur
-
-Do what you want with it
--->
-
-
-
-
-
 
   </EntityComponents>
 </Definitions>

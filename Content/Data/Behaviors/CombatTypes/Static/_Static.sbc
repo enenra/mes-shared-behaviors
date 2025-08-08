@@ -27,19 +27,6 @@
       </Description>
     </EntityComponent>
 
-
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Static_TriggerGroup_Complete</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI TriggerGroup]
-
-
-      </Description>
-    </EntityComponent>
-
     <!-- Setup -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -70,16 +57,6 @@
       </Description>
     </EntityComponent>
 
-
-<!--
-
-        [Triggers:MSB_Static_Trigger_InitCombatType]
-        [Triggers:MSB_Static_Trigger_CloseCombatType]
-
--->
-
-
-<!-- Start Required stuff -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -99,7 +76,6 @@
         [Actions:MSB_Static_Action_InitCombatType]
       </Description>
     </EntityComponent>
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -107,7 +83,6 @@
       </Id>
       <Description>
         [RivalAI Action]
-
 
       </Description>
     </EntityComponent>
@@ -131,7 +106,6 @@
         [Actions:MSB_Static_Action_CloseCombatType]
       </Description>
     </EntityComponent>
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -143,9 +117,6 @@
 
       </Description>
     </EntityComponent>
-<!-- End Required stuff -->
-
-
 
   </EntityComponents>
 </Definitions>
