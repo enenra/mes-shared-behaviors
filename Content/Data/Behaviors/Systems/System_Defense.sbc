@@ -105,8 +105,11 @@
       <Description>
         [RivalAI Action]
 
-        [PlayDialogueCue:true]
-        [DialogueCueId:LaunchGuards]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Defense_LaunchGuards]
+
+
 
         [SpawnEncounter:true]
         [Spawner:MSB_System_Defense_Spawner_Guards_SpawnCustomVariablesName]
@@ -190,8 +193,9 @@
       <Description>
         [RivalAI Action]
 
-        [PlayDialogueCue:true]
-        [DialogueCueId:LaunchGuards]
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Defense_LaunchGuards]
+
 
         [SpawnEncounter:true]
         [Spawner:MSB_System_Defense_Spawner_Guards_SpawnSpawnGroupName]
@@ -272,8 +276,9 @@
       <Description>
         [RivalAI Action]
 
-        [PlayDialogueCue:true]
-        [DialogueCueId:LaunchGuards]
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Defense_LaunchGuards]
+
 
         [SpawnEncounter:true]
         [Spawner:MSB_System_Defense_Spawner_Guards_SpawnDefault]
