@@ -136,16 +136,18 @@
       <Description>
         [RivalAI Trigger]
 
-        [UseTrigger:true]
         [Type:Timer]
+
+        [UseTrigger:true]
+        [StartsReady:false]
+
         [MinCooldownMs:1000]
         [MaxCooldownMs:1001]
-        [StartsReady:false]
+
         [MaxActions:1]
         [Actions:MSB_Merchant_Action_Init]
       </Description>
     </EntityComponent>
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -165,27 +167,27 @@
         <SubtypeId>MSB_Merchant_Trigger_MerchantAreaTimeout</SubtypeId>
       </Id>
       <Description>
-        [MES AI Trigger]
+        [RivalAI Trigger]
+
+        [Type:Timer]
 
         [UseTrigger:true]
-        [Type:Timer]
+        [StartsReady:false]
 
         [MinCooldownMs:1500000]
         [MaxCooldownMs:1500001]
-        [StartsReady:false]
 
         [MaxActions:1]
         [Actions:MSB_Merchant_Action_MerchantAreaTimeout]
       </Description>
     </EntityComponent>
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_Merchant_Action_MerchantAreaTimeout</SubtypeId>
       </Id>
       <Description>
-        [MES AI Action]
+        [RivalAI Action]
 
         [EnableAutopilot:true]
 
@@ -201,7 +203,7 @@
         <SubtypeId>MSB_Merchant_Trigger_ResumeCourse</SubtypeId>
       </Id>
       <Description>
-        [MES AI Trigger]
+        [RivalAI Trigger]
 
         [UseTrigger:false]
         [Type:PlayerFar]
@@ -218,14 +220,13 @@
         [Actions:MSB_Merchant_Action_ResumeCourse]
       </Description>
     </EntityComponent>
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_Merchant_Action_ResumeCourse</SubtypeId>
       </Id>
       <Description>
-        [MES AI Action]
+        [RivalAI Action]
 
         [EnableAutopilot:true]
       </Description>
@@ -237,7 +238,7 @@
         <SubtypeId>MSB_Merchant_Trigger_StopForPlayer</SubtypeId>
       </Id>
       <Description>
-        [MES AI Trigger]
+        [RivalAI Trigger]
 
         [UseTrigger:true]
         [Type:PlayerNear]
@@ -255,14 +256,13 @@
         [Actions:MSB_Merchant_Action_StopForPlayer]
       </Description>
     </EntityComponent>
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_Merchant_Action_StopForPlayer</SubtypeId>
       </Id>
       <Description>
-        [MES AI Action]
+        [RivalAI Action]
 
         [DisableAutopilot:true]
         [StopAllRotation:true]
