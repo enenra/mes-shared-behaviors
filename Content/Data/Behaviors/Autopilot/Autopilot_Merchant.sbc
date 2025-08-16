@@ -22,12 +22,12 @@ Primairy
         [WaypointTolerance:50]
         [WaypointWaitTimeTrigger:120]
 
-        [IdealMinSpeed:12]
-        [IdealMaxSpeed:25]
+        [IdealMinSpeed:25]
+        [IdealMaxSpeed:55]
         [MaxSpeedTolerance:3]
 
-        [MinimumPlanetAltitude:1000]
-        [IdealPlanetAltitude:1200]
+        [MinimumPlanetAltitude:500]
+        [IdealPlanetAltitude:800]
 
         [MinAngleForLeveledDescent:135]
         [MaxAngleForLeveledAscent:90]
@@ -78,12 +78,12 @@ Primairy
         [DisableInertiaDampeners:false]
         [FlyLevelWithGravity:true]
         [IdealMinSpeed:1]
-        [IdealMaxSpeed:7]
+        [IdealMaxSpeed:15]
         [MaxSpeedTolerance:5]
         [SlowDownOnWaypointApproach:false]
 
         [UseSurfaceHoverThrustMode:true]
-        [MaxVerticalSpeed:20]
+        [MaxVerticalSpeed:15]
         [MaxAngleForLeveledAscent:40]
       </Description>
     </EntityComponent>

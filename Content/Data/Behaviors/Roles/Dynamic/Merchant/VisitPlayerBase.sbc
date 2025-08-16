@@ -21,7 +21,9 @@
       <Description>
         [RivalAI Trigger]
 
-        [Type:Timer]
+        [Type:CommandReceived]
+        [CommandReceiveCode:MSB_TradeRequest]
+
 
         [UseTrigger:true]
         [StartsReady:false]
@@ -35,6 +37,8 @@
         [MaxActions:1]
         [ActionExecution:All]
         [Actions:MSB_Merchant_Action_VisitPlayerBase]
+
+
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -57,16 +61,9 @@
         [MinPlayerReputation:-500]
         [MaxPlayerReputation:1501]
 
-        [CheckThreatScore:true]
-        [CheckThreatScoreMinimum:15]
-        [CheckThreatScoreMaximum:99999999999999]
-        [CheckThreatScoreIncludeOtherNpcOwners:false]
-        [CheckThreatScoreRadius:1200]
-        [CheckThreatScoreFromTargetPosition:false]
-        [CheckThreatScoreFromClosestPlayerPosition:true]
-        [CheckThreatScoreGridConfiguration:Static]
       </Description>
     </EntityComponent>
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -75,7 +72,7 @@
       <Description>
         [RivalAI Action]
 
-        [//DebugMessage:Merchant is trying to	VisitPlayerBase]
+        [DebugMessage:Merchant is trying to	VisitPlayerBase]
 
         [Chance:100]
 
@@ -83,6 +80,8 @@
         [WaypointsToAdd:MSB_Merchant_ClosestPlayerWaypointProfile]
       </Description>
     </EntityComponent>
+
+    
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -91,13 +90,13 @@
       <Description>
         [RivalAI Waypoint]
 
-        [Waypoint:EntityRandom]
+        [Waypoint:EntityOffset]
         [RelativeEntity:ClosestPlayer]
 
-        [MinDistance:50]
+        [MinDistance:0]
         [MaxDistance:800]
-        [MinAltitude:100]
-        [MaxAltitude:500]
+        [MinAltitude:1]
+        [MaxAltitude:5]
 
         [InheritRelativeAltitude:false]
       </Description>
@@ -115,7 +114,7 @@
 
         [UseTrigger:true]
 
-        [TargetDistance:1200]
+        [TargetDistance:2400]
 
         [MaxActions:1]
         [Actions:MSB_Merchant_Action_StartLanding]
@@ -129,12 +128,13 @@
       <Description>
         [RivalAI Action]
 
-        [//DebugMessage:Merchant is trying to land]
+        [DebugMessage:Merchant is trying to land]
 
         [ChangeAutopilotProfile:true]
         [AutopilotProfile:Tertiary]
 
-        [ClearAllWaypoints:true]
+
+
       </Description>
     </EntityComponent>
 
@@ -168,7 +168,7 @@
         [UseConditions:true]
 
         [AltitudeCheck:true]
-        [MaxAltitude:15]
+        [MaxAltitude:50]
 
         [CheckGridSpeed:true]
         [MaxGridSpeed:15]
@@ -182,7 +182,7 @@
       <Description>
         [RivalAI Action]
 
-        [//DebugMessage:Arrived ready to trade]
+        [DebugMessage:Arrived ready to trade]
 
         [DisableAutopilot:true]
         [StopAllRotation:true]
@@ -215,7 +215,7 @@
       <Description>
         [RivalAI Action]
 
-        [//DebugMessage:Arrived At PlayerBase]
+        [DebugMessage:Arrived At PlayerBase]
       </Description>
     </EntityComponent>
 
