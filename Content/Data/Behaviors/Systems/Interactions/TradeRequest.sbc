@@ -1,0 +1,238 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Interaction_TradeRequest_TriggerGroup</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI TriggerGroup]
+
+        [Triggers:MSB_Interaction_TradeRequest_Trigger_CommandReceived]
+        [Triggers:MSB_Interaction_TradeRequest_Trigger_Duration30min]
+        [Triggers:MSB_Interaction_TradeRequest_Trigger_ResumeCourse1min]
+        [Triggers:MSB_Interaction_TradeRequest_Trigger_CombatMode]
+
+
+
+      </Description>
+    </EntityComponent>
+
+
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_Interaction_TradeRequest_Trigger_CommandReceived</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Trigger]
+
+        [UseTrigger:true]
+        [Type:CommandReceived]
+        [CommandReceiveCode:MSB_TradeRequest]
+
+        [//Conditions:MSB_Interaction_TradeRequest_Condition_CommandReceived]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+        [MinCooldownMs:5000]
+        [MaxCooldownMs:5001]
+        [ActionExecution:Random]
+        [Actions:MSB_Interaction_TradeRequest_Action_StopForPlayer]
+
+      </Description>
+    </EntityComponent>
+
+
+	  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_Interaction_TradeRequest_Action_StopForPlayer</SubtypeId>
+      </Id>
+      <Description>
+
+        [RivalAI Action]
+
+        [DebugMessage:Receiving. Stopping for player]
+
+        [DisableAutopilot:true]
+        [StopAllRotation:true]
+        [StopAllThrust:true]
+
+        [ClearAllWaypoints:true]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_Interaction_TradeRequest_Trigger_CommandReceived]
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownTags:MSB_TradingModeDuration]
+
+        [EnableTriggers:true]
+        [EnableTriggerTags:MSB_TradingModeDuration]
+        [EnableTriggerNames:MSB_Interaction_TradeRequest_Trigger_CombatMode]
+
+
+        [SetAntennaThoughtBubble:true]
+        [SetAntennaThoughtBubbleName:Trading]
+
+      </Description>
+    </EntityComponent>
+
+
+
+
+<!-- Start Common Actions-->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Interaction_TradeRequest_Action_SignalLeaving</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:Preparing to leave]
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownTags:MSB_TradingModeResumeCourse]
+
+        [EnableTriggers:true]
+        [EnableTriggerTags:MSB_TradingModeResumeCourse]
+        [EnableTriggerNames:MSB_Interaction_TradeRequest_Trigger_CombatMode]
+
+
+        [DisableTriggers:true]
+        [DisableTriggerTags:MSB_TradingModeDuration]
+
+
+        [SetAntennaThoughtBubble:true]
+        [SetAntennaThoughtBubbleName:Preparing to leave]
+
+
+
+      </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Interaction_TradeRequest_Action_ResumeCourse</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [EnableAutopilot:true]
+
+        [ClearAntennaThoughtBubble:true]
+
+        [DisableTriggers:true]
+        [DisableTriggerTags:MSB_TradingModeResumeCourse]
+        [DisableTriggerNames:MSB_Interaction_TradeRequest_Trigger_CombatMode]
+
+      </Description>
+    </EntityComponent>
+
+<!-- End Common Actions-->
+
+<!-- MSB_TradingModeDuration -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Interaction_TradeRequest_Trigger_Duration30min</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+        [Tags:MSB_TradingModeDuration]
+        [UseTrigger:false]
+        [StartsReady:false]
+
+        [MinCooldownMs:1800000]
+        [MaxCooldownMs:1800001]
+
+        [MaxActions:-1]
+        [Actions:MSB_Interaction_TradeRequest_Action_SignalLeaving]
+      </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Interaction_TradeRequest_Trigger_ResumeCourse1min</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+        [Tags:MSB_TradingModeResumeCourse]
+        [UseTrigger:false]
+        [StartsReady:false]
+
+        [MinCooldownMs:60000]
+        [MaxCooldownMs:60001]
+
+        [MaxActions:-1]
+        [Actions:MSB_Interaction_TradeRequest_Action_ResumeCourse]
+      </Description>
+    </EntityComponent>
+
+
+<!-- Combat mode -->
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Interaction_TradeRequest_Trigger_CombatMode</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Manual]
+        [Tags:MSB_CombatType_InitCombatType]
+        [UseTrigger:false]
+        [StartsReady:true]
+
+        [MinCooldownMs:600]
+        [MaxCooldownMs:601]
+
+        [MaxActions:-1]
+        [Actions:MSB_Interaction_TradeRequest_Action_ResumeCourse]
+      </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Interaction_TradeRequest_Action_CombatMode</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [EnableAutopilot:true]
+
+        [ClearAntennaThoughtBubble:true]
+
+        [DisableTriggers:true]
+        [DisableTriggerTags:MSB_TradingModeResumeCourse]
+        [DisableTriggerTags:MSB_TradingModeDuration]
+
+        [DisableTriggerNames:MSB_Interaction_TradeRequest_Trigger_CombatMode]
+
+      </Description>
+    </EntityComponent>
+
+
+
+
+
+  </EntityComponents>
+</Definitions>
