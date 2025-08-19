@@ -1,0 +1,243 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <!--
+
+Don't forget to add 
+[UniqueEncounter:true]
+to your spawncondition
+
+	  -->
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_UniqueEncounterSystem_TriggerGroup</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI TriggerGroup]
+
+        [Triggers:MSB_UniqueEncounterSystem_Trigger_OnStart]
+        [Triggers:MSB_UniqueEncounterSystem_Trigger_ResetEvent]
+        [Triggers:MSB_UniqueEncounterSystem_Trigger_Compromised]
+
+
+      </Description>
+    </EntityComponent>
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_UniqueEncounterSystem_Trigger_OnStart</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:true]
+        [StartsReady:false]
+
+        [MinCooldownMs:1000]
+        [MaxCooldownMs:1001]
+
+        [MaxActions:1]
+        [Actions:MSB_UniqueEncounterSystem_Action_OnStart]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_UniqueEncounterSystem_Action_OnStart</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:I am UniqueEncounterSystem]
+
+
+        [AddInstanceEventGroup:true]
+        [InstanceEventGroupId:MSB_UniqueEcounterSystem_EventGroup]
+
+        [InstanceEventGroupReplaceKeys:{SpawnGroupName}]
+        [InstanceEventGroupReplaceValues:{SpawnGroupName}]     
+      </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_UniqueEncounterSystem_Trigger_ResetEvent</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:true]
+        [StartsReady:false]
+
+        [MinCooldownMs:5000]
+        [MaxCooldownMs:5001]
+
+        [MaxActions:-1]
+        [Actions:MSB_UniqueEncounterSystem_Action_ResetEvent]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_UniqueEncounterSystem_Action_ResetEvent</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ResetCooldownTimeOfEvents:true]
+        [ResetEventCooldownTags:{SpawnGroupName}_UniqueEncounterSystem]
+
+        [DebugMessage:I am still in game]
+      </Description>
+    </EntityComponent>
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_UniqueEncounterSystem_Trigger_Compromised</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Compromised]
+        [Tags:MSB_TriggerEvent_Compromised]
+
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+
+        [Actions:MSB_UniqueEncounterSystem_Action_Compromised]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_UniqueEncounterSystem_Action_Compromised</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ActivateEvent:true]
+        [ActivateEventTags:{SpawnGroupName}_Destroyed]
+      </Description>
+    </EntityComponent>
+
+
+
+
+
+
+<!-- Event stuff -->
+
+   <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>MSB_UniqueEcounterSystem_EventGroup</SubtypeId>
+      </Id>
+      <Description>
+		[MES Event TemplateGroup]
+
+		[TemplateEventIds:AaW_EventTemplate_UniqueEncounterSystem_Reset]	
+		[TemplateEventIds:AaW_EventTemplate_UniqueEncounterSystem_Destroyed]	
+      </Description>
+	</EntityComponent>	
+	
+
+	<!-- Start Required -->
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventTemplate_UniqueEncounterSystem_Reset</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Template]
+		[Tags:{SpawnGroupName}_UniqueEncounterSystem]
+
+    [MinCooldownMs:30000]
+    [MaxCooldownMs:30001]
+
+		[UseEvent:true]
+		[UniqueEvent:false]		
+
+
+		[ActionExecution:All]
+		[ActionIds:AaW_EventActionTemplate_UniqueEncounterSystem_Reset]
+
+      </Description>
+	</EntityComponent>		
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_UniqueEncounterSystem_Reset</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+	
+  [DebugHudMessage:ResetUniqueSpawnGroup of {SpawnGroupName}]
+	[RemoveThisInstanceGroup:true]
+	
+  [ResetUniqueSpawnGroup:true]
+  [ResetUniqueSpawnGroupName:{SpawnGroupName}]
+
+      </Description>
+    </EntityComponent>		
+
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventTemplate_UniqueEncounterSystem_Destroyed</SubtypeId>
+      </Id>
+      <Description>
+
+		[MES Event Template]
+		[Tags:{SpawnGroupName}_Destroyed]
+
+		[UseEvent:false]
+		[UniqueEvent:false]		
+
+		[ActionExecution:All]
+		[ActionIds:AaW_EventActionTemplate_UniqueEncounterSystem_Destroyed]
+
+      </Description>
+	</EntityComponent>		
+	
+	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+          <TypeId>Inventory</TypeId>
+          <SubtypeId>AaW_EventActionTemplate_UniqueEncounterSystem_Destroyed</SubtypeId>
+      </Id>
+      <Description>
+	[MES Event Action Template]
+	
+  [DebugHudMessage:{SpawnGroupName} is dead. Dead men tell no tales!]
+	[RemoveThisInstanceGroup:true]
+
+      </Description>
+    </EntityComponent>		
+
+
+
+
+
+
+  </EntityComponents>
+</Definitions>
