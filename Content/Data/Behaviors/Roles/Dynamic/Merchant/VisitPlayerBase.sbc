@@ -72,12 +72,19 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Merchant is trying to	VisitPlayerBase]
+        
+        [DebugMessage:Merchant is trying to land]
 
         [Chance:100]
 
         [AddWaypoints:true]
         [WaypointsToAdd:MSB_Merchant_ClosestPlayerWaypointProfile]
+        
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB_Merchant_Trigger_ArriveAtStation]
+
+        [ChangeAutopilotProfile:true]
+        [AutopilotProfile:Tertiary]
       </Description>
     </EntityComponent>
 
@@ -91,16 +98,22 @@
         [RivalAI Waypoint]
 
         [Waypoint:EntityOffset]
-        [RelativeEntity:ClosestPlayer]
+        [RelativeEntity:Self]
 
-        [MinDistance:0]
-        [MaxDistance:800]
-        [MinAltitude:1]
-        [MaxAltitude:5]
+      [MinDistance:20]
+      [MaxDistance:100]
+      [MinAltitude:5]
+      [MaxAltitude:10]
 
-        [InheritRelativeAltitude:false]
+      [InheritRelativeAltitude:true]
+
+
       </Description>
     </EntityComponent>
+
+
+
+
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -114,7 +127,7 @@
 
         [UseTrigger:true]
 
-        [TargetDistance:2400]
+        [TargetDistance:4500]
 
         [MaxActions:1]
         [Actions:MSB_Merchant_Action_StartLanding]
@@ -128,15 +141,66 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Merchant is trying to land]
-
-        [ChangeAutopilotProfile:true]
-        [AutopilotProfile:Tertiary]
-
 
 
       </Description>
     </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Merchant_Trigger_AlmostAtLandingSite</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Conditions:MSB_Merchant_Condition_AlmostAtLandingSite]
+
+        [MaxActions:1]
+        [Actions:MSB_Merchant_Action_AlmostAtLandingSite]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Merchant_Condition_AlmostAtLandingSite</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+
+        [AltitudeCheck:true]
+        [MaxAltitude:150]
+        [AltitudeCheckIgnoreWater:false]
+
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Merchant_Action_AlmostAtLandingSite</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:Slowing down]
+
+        [ChangeAutopilotSpeed:true]
+        [NewAutopilotSpeed:3]
+
+      </Description>
+    </EntityComponent>
+
+
+
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -168,12 +232,14 @@
         [UseConditions:true]
 
         [AltitudeCheck:true]
+         [AltitudeCheckIgnoreWater:false]
         [MaxAltitude:50]
 
-        [CheckGridSpeed:true]
-        [MaxGridSpeed:15]
+        [CheckGridVerticalSpeed:true]
+        [MaxGridVerticalSpeed:1]
       </Description>
     </EntityComponent>
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -190,6 +256,11 @@
       </Description>
     </EntityComponent>
 
+
+
+
+
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -199,9 +270,11 @@
         [RivalAI Trigger]
 
         [Type:BehaviorTriggerA]
+        [MinCooldownMs:5000]
+        [MaxCooldownMs:5001]
 
         [UseTrigger:true]
-        [StartsReady:true]
+        [StartsReady:false]
 
         [MaxActions:1]
         [Actions:MSB_Merchant_Action_ArriveAtStation]
@@ -216,6 +289,10 @@
         [RivalAI Action]
 
         [DebugMessage:Arrived At PlayerBase]
+
+        [DisableAutopilot:true]
+        [StopAllRotation:true]
+        [StopAllThrust:true]
       </Description>
     </EntityComponent>
 

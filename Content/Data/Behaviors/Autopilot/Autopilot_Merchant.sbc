@@ -73,18 +73,23 @@ Primairy
       <Description>
         [RivalAI Autopilot]
 
-        [IdealPlanetAltitude:0]
+        [IdealPlanetAltitude:10]
+
+
 
         [DisableInertiaDampeners:false]
         [FlyLevelWithGravity:true]
-        [IdealMinSpeed:1]
-        [IdealMaxSpeed:15]
+        [IdealMinSpeed:30]
+        [IdealMaxSpeed:45]
         [MaxSpeedTolerance:5]
-        [SlowDownOnWaypointApproach:false]
+        [SlowDownOnWaypointApproach:true]
 
         [UseSurfaceHoverThrustMode:true]
         [MaxVerticalSpeed:15]
-        [MaxAngleForLeveledAscent:40]
+        [MaxAngleForLeveledAscent:180]
+
+
+
       </Description>
     </EntityComponent>
 
