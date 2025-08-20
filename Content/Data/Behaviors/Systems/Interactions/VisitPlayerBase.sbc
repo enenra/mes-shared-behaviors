@@ -22,7 +22,6 @@
         [Type:CommandReceived]
         [CommandReceiveCode:MSB_TradeRequest]
 
-
         [UseTrigger:true]
         [StartsReady:false]
 
