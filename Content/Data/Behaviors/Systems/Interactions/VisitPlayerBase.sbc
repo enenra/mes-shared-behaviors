@@ -3,20 +3,18 @@
   <EntityComponents>
 
     <!--
-    Not in use
+      Not in use
 
-        [Triggers:MSB_Merchant_Trigger_VisitPlayerBase]
-        [Triggers:MSB_Merchant_Trigger_ArriveAtStation]
-        [Triggers:MSB_Merchant_Trigger_StartLanding]
-        [Triggers:MSB_Merchant_Trigger_ArrivedAtLandingSite]
-
-
+        [Triggers:MSB_Interaction_Trigger_VisitPlayerBase]
+        [Triggers:MSB_Interaction_Trigger_ArriveAtStation]
+        [Triggers:MSB_Interaction_Trigger_StartLanding]
+        [Triggers:MSB_Interaction_Trigger_ArrivedAtLandingSite]
     -->
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Merchant_Trigger_VisitPlayerBase</SubtypeId>
+        <SubtypeId>MSB_Interaction_Trigger_VisitPlayerBase</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -32,19 +30,17 @@
         [MaxCooldownMs:5001]
 
         [ConditionCheckResetsTimer:true]
-        [Conditions:MSB_Merchant_Condition_VisitPlayerBase]
+        [Conditions:MSB_Interaction_Condition_VisitPlayerBase]
 
         [MaxActions:1]
         [ActionExecution:All]
-        [Actions:MSB_Merchant_Action_VisitPlayerBase]
-
-
+        [Actions:MSB_Interaction_Action_VisitPlayerBase]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Merchant_Condition_VisitPlayerBase</SubtypeId>
+        <SubtypeId>MSB_Interaction_Condition_VisitPlayerBase</SubtypeId>
       </Id>
       <Description>
         [RivalAI Condition]
@@ -60,39 +56,34 @@
         [CheckReputationwithFaction:{self}]
         [MinPlayerReputation:-500]
         [MaxPlayerReputation:1501]
-
       </Description>
     </EntityComponent>
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Merchant_Action_VisitPlayerBase</SubtypeId>
+        <SubtypeId>MSB_Interaction_Action_VisitPlayerBase</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
 
-        
-        [DebugMessage:Merchant is trying to land]
+        [DebugMessage:Encounter is trying to land]
 
         [Chance:100]
 
         [AddWaypoints:true]
-        [WaypointsToAdd:MSB_Merchant_ClosestPlayerWaypointProfile]
-        
+        [WaypointsToAdd:MSB_Interaction_Waypoint_ClosestPlayerWaypoint]
+
         [ResetCooldownTimeOfTriggers:true]
-        [ResetTriggerCooldownNames:MSB_Merchant_Trigger_ArriveAtStation]
+        [ResetTriggerCooldownNames:MSB_Interaction_Trigger_ArriveAtStation]
 
         [ChangeAutopilotProfile:true]
         [AutopilotProfile:Tertiary]
       </Description>
     </EntityComponent>
-
-    
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Merchant_ClosestPlayerWaypointProfile</SubtypeId>
+        <SubtypeId>MSB_Interaction_Waypoint_ClosestPlayerWaypoint</SubtypeId>
       </Id>
       <Description>
         [RivalAI Waypoint]
@@ -100,25 +91,19 @@
         [Waypoint:EntityOffset]
         [RelativeEntity:Self]
 
-      [MinDistance:20]
-      [MaxDistance:100]
-      [MinAltitude:5]
-      [MaxAltitude:10]
+        [MinDistance:20]
+        [MaxDistance:100]
+        [MinAltitude:5]
+        [MaxAltitude:10]
 
-      [InheritRelativeAltitude:true]
-
-
+        [InheritRelativeAltitude:true]
       </Description>
     </EntityComponent>
-
-
-
-
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Merchant_Trigger_StartLanding</SubtypeId>
+        <SubtypeId>MSB_Interaction_Trigger_StartLanding</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -130,27 +115,24 @@
         [TargetDistance:4500]
 
         [MaxActions:1]
-        [Actions:MSB_Merchant_Action_StartLanding]
+        [Actions:MSB_Interaction_Action_StartLanding]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Merchant_Action_StartLanding</SubtypeId>
+        <SubtypeId>MSB_Interaction_Action_StartLanding</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
 
-
-
       </Description>
     </EntityComponent>
-
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Merchant_Trigger_AlmostAtLandingSite</SubtypeId>
+        <SubtypeId>MSB_Interaction_Trigger_AlmostAtLandingSite</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -160,16 +142,16 @@
         [UseTrigger:true]
         [StartsReady:true]
 
-        [Conditions:MSB_Merchant_Condition_AlmostAtLandingSite]
+        [Conditions:MSB_Interaction_Condition_AlmostAtLandingSite]
 
         [MaxActions:1]
-        [Actions:MSB_Merchant_Action_AlmostAtLandingSite]
+        [Actions:MSB_Interaction_Action_AlmostAtLandingSite]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Merchant_Condition_AlmostAtLandingSite</SubtypeId>
+        <SubtypeId>MSB_Interaction_Condition_AlmostAtLandingSite</SubtypeId>
       </Id>
       <Description>
         [RivalAI Condition]
@@ -179,14 +161,12 @@
         [AltitudeCheck:true]
         [MaxAltitude:150]
         [AltitudeCheckIgnoreWater:false]
-
       </Description>
     </EntityComponent>
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Merchant_Action_AlmostAtLandingSite</SubtypeId>
+        <SubtypeId>MSB_Interaction_Action_AlmostAtLandingSite</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
@@ -195,17 +175,13 @@
 
         [ChangeAutopilotSpeed:true]
         [NewAutopilotSpeed:3]
-
       </Description>
     </EntityComponent>
-
-
-
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Merchant_Trigger_ArrivedAtLandingSite</SubtypeId>
+        <SubtypeId>MSB_Interaction_Trigger_ArrivedAtLandingSite</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
@@ -215,16 +191,16 @@
         [UseTrigger:true]
         [StartsReady:true]
 
-        [Conditions:MSB_Merchant_Condition_ArrivedAtLandingSite]
+        [Conditions:MSB_Interaction_Condition_ArrivedAtLandingSite]
 
         [MaxActions:1]
-        [Actions:MSB_Merchant_Action_ArrivedAtLandingSite]
+        [Actions:MSB_Interaction_Action_ArrivedAtLandingSite]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Merchant_Condition_ArrivedAtLandingSite</SubtypeId>
+        <SubtypeId>MSB_Interaction_Condition_ArrivedAtLandingSite</SubtypeId>
       </Id>
       <Description>
         [RivalAI Condition]
@@ -232,18 +208,17 @@
         [UseConditions:true]
 
         [AltitudeCheck:true]
-         [AltitudeCheckIgnoreWater:false]
+        [AltitudeCheckIgnoreWater:false]
         [MaxAltitude:50]
 
         [CheckGridVerticalSpeed:true]
         [MaxGridVerticalSpeed:1]
       </Description>
     </EntityComponent>
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Merchant_Action_ArrivedAtLandingSite</SubtypeId>
+        <SubtypeId>MSB_Interaction_Action_ArrivedAtLandingSite</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
@@ -256,34 +231,30 @@
       </Description>
     </EntityComponent>
 
-
-
-
-
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Merchant_Trigger_ArriveAtStation</SubtypeId>
+        <SubtypeId>MSB_Interaction_Trigger_ArriveAtStation</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
 
         [Type:BehaviorTriggerA]
-        [MinCooldownMs:5000]
-        [MaxCooldownMs:5001]
 
         [UseTrigger:true]
         [StartsReady:false]
 
+        [MinCooldownMs:5000]
+        [MaxCooldownMs:5001]
+
         [MaxActions:1]
-        [Actions:MSB_Merchant_Action_ArriveAtStation]
+        [Actions:MSB_Interaction_Action_ArriveAtStation]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Merchant_Action_ArriveAtStation</SubtypeId>
+        <SubtypeId>MSB_Interaction_Action_ArriveAtStation</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]

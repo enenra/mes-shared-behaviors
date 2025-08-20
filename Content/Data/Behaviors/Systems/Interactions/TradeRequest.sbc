@@ -14,47 +14,38 @@
         [Triggers:MSB_Interaction_TradeRequest_Trigger_Duration30min]
         [Triggers:MSB_Interaction_TradeRequest_Trigger_ResumeCourse1min]
         [Triggers:MSB_Interaction_TradeRequest_Trigger_CombatMode]
-
-
-
       </Description>
     </EntityComponent>
 
-
-
-	<EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Interaction_TradeRequest_Trigger_CommandReceived</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Interaction_TradeRequest_Trigger_CommandReceived</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI Trigger]
 
-        [UseTrigger:true]
         [Type:CommandReceived]
         [CommandReceiveCode:MSB_TradeRequest]
 
-        [//Conditions:MSB_Interaction_TradeRequest_Condition_CommandReceived]
-
         [UseTrigger:true]
         [StartsReady:true]
+
+        [//Conditions:MSB_Interaction_TradeRequest_Condition_CommandReceived]
+
         [MinCooldownMs:5000]
         [MaxCooldownMs:5001]
+
         [ActionExecution:Random]
         [Actions:MSB_Interaction_TradeRequest_Action_StopForPlayer]
-
       </Description>
     </EntityComponent>
-
-
-	  <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
-          <TypeId>Inventory</TypeId>
-          <SubtypeId>MSB_Interaction_TradeRequest_Action_StopForPlayer</SubtypeId>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Interaction_TradeRequest_Action_StopForPlayer</SubtypeId>
       </Id>
       <Description>
-
         [RivalAI Action]
 
         [DebugMessage:Receiving. Stopping for player]
@@ -75,18 +66,12 @@
         [EnableTriggerTags:MSB_TradingModeDuration]
         [EnableTriggerNames:MSB_Interaction_TradeRequest_Trigger_CombatMode]
 
-
         [SetAntennaThoughtBubble:true]
         [SetAntennaThoughtBubbleName:Trading]
-
       </Description>
     </EntityComponent>
 
-
-
-
-<!-- Start Common Actions-->
-
+    <!-- Start Common Actions-->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -104,19 +89,13 @@
         [EnableTriggerTags:MSB_TradingModeResumeCourse]
         [EnableTriggerNames:MSB_Interaction_TradeRequest_Trigger_CombatMode]
 
-
         [DisableTriggers:true]
         [DisableTriggerTags:MSB_TradingModeDuration]
 
-
         [SetAntennaThoughtBubble:true]
         [SetAntennaThoughtBubbleName:Preparing to leave]
-
-
-
       </Description>
     </EntityComponent>
-
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -133,13 +112,11 @@
         [DisableTriggers:true]
         [DisableTriggerTags:MSB_TradingModeResumeCourse]
         [DisableTriggerNames:MSB_Interaction_TradeRequest_Trigger_CombatMode]
-
       </Description>
     </EntityComponent>
+    <!-- End Common Actions-->
 
-<!-- End Common Actions-->
-
-<!-- MSB_TradingModeDuration -->
+    <!-- MSB_TradingModeDuration -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -150,6 +127,7 @@
 
         [Type:Timer]
         [Tags:MSB_TradingModeDuration]
+
         [UseTrigger:false]
         [StartsReady:false]
 
@@ -161,7 +139,6 @@
       </Description>
     </EntityComponent>
 
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -172,6 +149,7 @@
 
         [Type:Timer]
         [Tags:MSB_TradingModeResumeCourse]
+
         [UseTrigger:false]
         [StartsReady:false]
 
@@ -183,10 +161,7 @@
       </Description>
     </EntityComponent>
 
-
-<!-- Combat mode -->
-
-
+    <!-- Combat mode -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -197,6 +172,7 @@
 
         [Type:Manual]
         [Tags:MSB_CombatType_InitCombatType]
+
         [UseTrigger:false]
         [StartsReady:true]
 
@@ -207,8 +183,6 @@
         [Actions:MSB_Interaction_TradeRequest_Action_ResumeCourse]
       </Description>
     </EntityComponent>
-
-
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -226,13 +200,8 @@
         [DisableTriggerTags:MSB_TradingModeDuration]
 
         [DisableTriggerNames:MSB_Interaction_TradeRequest_Trigger_CombatMode]
-
       </Description>
     </EntityComponent>
-
-
-
-
 
   </EntityComponents>
 </Definitions>
