@@ -180,7 +180,7 @@
         [MaxCooldownMs:601]
 
         [MaxActions:-1]
-        [Actions:MSB_Interaction_TradeRequest_Action_ResumeCourse]
+        [Actions:MSB_Interaction_TradeRequest_Action_CombatMode]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
