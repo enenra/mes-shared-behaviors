@@ -1,0 +1,124 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <!-- _TradeRequestAccepted -->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Dialogue_Trigger_Interaction_TradeRequestAccepted</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Manual]
+        [Tags:MSB_TriggerEvent_Interaction_TradeRequestAccepted]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [//Conditions:MSB_Context_Condition_Role_NotEscort]
+
+        [Actions:MSB_System_Dialogue_Action_Interaction_TradeRequestAccepted]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Dialogue_Action_Interaction_TradeRequestAccepted</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [Chance:100]
+
+        [PlayDialogueCue:true]
+        [DialogueCueId:Interaction_TradeRequestAccepted]
+      </Description>
+    </EntityComponent>
+
+
+    <!-- _TradeSignalLeaving -->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Dialogue_Trigger_Interaction_TradeSignalLeaving</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Manual]
+        [Tags:MSB_TriggerEvent_Interaction_TradeSignalLeaving]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [//Conditions:MSB_Context_Condition_Role_NotEscort]
+
+        [Actions:MSB_System_Dialogue_Action_Interaction_TradeSignalLeaving]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Dialogue_Action_Interaction_TradeSignalLeaving</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [Chance:100]
+
+        [PlayDialogueCue:true]
+        [DialogueCueId:Interaction_TradeSignalLeaving]
+      </Description>
+    </EntityComponent>
+
+
+    <!-- _TradeResumeCourse -->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Dialogue_Trigger_Interaction_TradeResumeCourse</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Manual]
+        [Tags:MSB_TriggerEvent_Interaction_TradeResumeCourse]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [//Conditions:MSB_Context_Condition_Role_NotEscort]
+
+        [Actions:MSB_System_Dialogue_Action_Interaction_TradeResumeCourse]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Dialogue_Action_Interaction_TradeResumeCourse</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [Chance:100]
+
+        [PlayDialogueCue:true]
+        [DialogueCueId:Interaction_TradeResumeCourse]
+      </Description>
+    </EntityComponent>
+
+
+
+
+
+
+  </EntityComponents>
+</Definitions>
