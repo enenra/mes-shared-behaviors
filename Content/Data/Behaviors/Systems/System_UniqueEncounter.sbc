@@ -139,7 +139,6 @@
       </Description>
     </EntityComponent>
 
-
     <!-- Start Required -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
