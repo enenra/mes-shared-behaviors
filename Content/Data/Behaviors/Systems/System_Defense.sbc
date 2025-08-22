@@ -4,17 +4,12 @@
     <!--
        In use do not change! -CptArthur
 
-
         [Tags:SpawnGuards]
 
         [Triggers:MSB_System_Defense_Trigger_Guards]
-
         [Triggers:MSB_System_Defense_Trigger_Guards_SpawnCustomVariablesName] 1001
-
         [Triggers:MSB_System_Defense_Trigger_Guards_SpawnSpawnGroupName] 2001
-
         ex: MSB_System_Defense_Trigger_Guards_SpawnMilitaryBase 3001
-
         [Triggers:MSB_System_Defense_Trigger_Guards_SpawnDefault] 5001
         [Triggers:MSB_System_Defense_Trigger_Guards_AutoDisable] 10000
     -->
@@ -105,11 +100,8 @@
       <Description>
         [RivalAI Action]
 
-
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Defense_LaunchGuards]
-
-
 
         [SpawnEncounter:true]
         [Spawner:MSB_System_Defense_Spawner_Guards_SpawnCustomVariablesName]
@@ -128,8 +120,9 @@
         [RivalAI Spawn]
 
         [UseSpawn:true]
-        [IgnoreSafetyChecks:true]
         [StartsReady:false]
+
+        [IgnoreSafetyChecks:true]
         [UseRelativeSpawnPosition:false]
 
         [SpawningType:CustomSpawn]
@@ -143,7 +136,6 @@
         [SpawnGroups:{Faction}_SpawnGroup_Guards_{CustomVariablesName}]
       </Description>
     </EntityComponent>
-
 
     <!-- SpawnSpawnGroupName -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -196,7 +188,6 @@
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Defense_LaunchGuards]
 
-
         [SpawnEncounter:true]
         [Spawner:MSB_System_Defense_Spawner_Guards_SpawnSpawnGroupName]
         [ForceSameFactionOwnership:true]
@@ -214,9 +205,10 @@
         [RivalAI Spawn]
 
         [UseSpawn:true]
+        [StartsReady:false]
+
         [UseRelativeSpawnPosition:false]
         [IgnoreSafetyChecks:true]
-        [StartsReady:false]
         [SpawningType:CustomSpawn]
 
         [MinDistance:250]
@@ -278,7 +270,6 @@
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Defense_LaunchGuards]
-
 
         [SpawnEncounter:true]
         [Spawner:MSB_System_Defense_Spawner_Guards_SpawnDefault]
@@ -349,10 +340,6 @@
         [DisableTriggerTags:SpawnGuards]
       </Description>
     </EntityComponent>
-
-
-
-
 
   </EntityComponents>
 </Definitions>
