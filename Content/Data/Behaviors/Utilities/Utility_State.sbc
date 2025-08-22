@@ -344,6 +344,8 @@
         [ExcludedDamageTypes:Environment]
         [ExcludedDamageTypes:Deformation]
         [ExcludedDamageTypes:Fire]
+        [ExcludedDamageTypes:Fall]
+
 
         [UseTrigger:true]
         [StartsReady:true]
