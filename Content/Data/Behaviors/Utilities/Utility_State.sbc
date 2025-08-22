@@ -345,7 +345,7 @@
         [ExcludedDamageTypes:Deformation]
         [ExcludedDamageTypes:Fire]
         [ExcludedDamageTypes:Fall]
-
+        [ExcludedDamageTypes:Thruster]
 
         [UseTrigger:true]
         [StartsReady:true]
