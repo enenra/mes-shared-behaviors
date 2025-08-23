@@ -65,7 +65,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Receiving. Declined]
+        [//DebugMessage:Receiving. Declined]
 
 
         [DisableTriggers:true]
@@ -111,7 +111,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Receiving. Stopping for player]
+        [//DebugMessage:Receiving. Stopping for player]
 
         [DisableAutopilot:true]
         [StopAllRotation:true]
@@ -148,7 +148,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Preparing to leave]
+        [//DebugMessage:Preparing to leave]
 
         [ResetCooldownTimeOfTriggers:true]
         [ResetTriggerCooldownTags:MSB_TradingModeResumeCourse]
