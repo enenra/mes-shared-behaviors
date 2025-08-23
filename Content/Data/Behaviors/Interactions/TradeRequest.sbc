@@ -2,6 +2,23 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Interaction_TradeRequest_TriggerGroup_Decline</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI TriggerGroup]
+
+        [Triggers:MSB_Interaction_TradeRequest_Trigger_CommandReceived_Declined]
+
+      </Description>
+    </EntityComponent>
+
+
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -16,6 +33,52 @@
         [Triggers:MSB_Interaction_TradeRequest_Trigger_CombatMode]
       </Description>
     </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Interaction_TradeRequest_Trigger_CommandReceived_Declined</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:CommandReceived]
+        [CommandReceiveCode:MSB_TradeRequest]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [//Conditions:MSB_Interaction_TradeRequest_Condition_CommandReceived]
+
+        [MinCooldownMs:5000]
+        [MaxCooldownMs:5001]
+
+        [ActionExecution:Random]
+        [Actions:MSB_Interaction_TradeRequest_Action_Declined]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Interaction_TradeRequest_Action_Declined</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:Receiving. Declined]
+
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_Interaction_TradeRequest_Trigger_CommandReceived_Declined]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Interaction_TradeRequestDeclined]
+
+
+      </Description>
+    </EntityComponent>
+
+
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>

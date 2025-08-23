@@ -2,6 +2,47 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 
+
+    <!-- TradeRequestDeclined -->
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Dialogue_Trigger_Interaction_TradeRequestDeclined</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Manual]
+        [Tags:MSB_TriggerEvent_Interaction_TradeRequestDeclined]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [//Conditions:MSB_Context_Condition_Role_NotEscort]
+
+        [Actions:MSB_System_Dialogue_Action_Interaction_TradeRequestDeclined]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Dialogue_Action_Interaction_TradeRequestDeclined</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [Chance:100]
+
+        [PlayDialogueCue:true]
+        [DialogueCueId:Interaction_TradeRequestDeclined]
+      </Description>
+    </EntityComponent>
+
+
+
+
     <!-- _TradeRequestAccepted -->
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -38,6 +79,8 @@
         [DialogueCueId:Interaction_TradeRequestAccepted]
       </Description>
     </EntityComponent>
+
+
 
 
     <!-- _TradeSignalLeaving -->
