@@ -53,7 +53,7 @@
         [//DebugMessage:I am UniqueEncounterSystem]
 
         [AddInstanceEventGroup:true]
-        [InstanceEventGroupId:MSB_UniqueEcounterSystem_EventGroup]
+        [InstanceEventGroupId:MSB_System_UniqueEncounters_EventGroup]
 
         [InstanceEventGroupReplaceKeys:{SpawnGroupName}]
         [InstanceEventGroupReplaceValues:{SpawnGroupName}]
@@ -129,7 +129,7 @@
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_UniqueEcounterSystem_EventGroup</SubtypeId>
+        <SubtypeId>MSB_System_UniqueEncounters_EventGroup</SubtypeId>
       </Id>
       <Description>
         [MES Event TemplateGroup]
@@ -139,7 +139,12 @@
       </Description>
     </EntityComponent>
 
-    <!-- Start Required -->
+    <!-- 
+    
+    4 hours to 6 hours
+
+    
+     -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -150,8 +155,8 @@
 
         [Tags:{SpawnGroupName}_UniqueEncounterSystem]
 
-        [MinCooldownMs:30000]
-        [MaxCooldownMs:30001]
+        [MinCooldownMs:14400000]
+        [MaxCooldownMs:21600000]
 
         [UseEvent:true]
         [UniqueEvent:false]
