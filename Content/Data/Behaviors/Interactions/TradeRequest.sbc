@@ -164,7 +164,7 @@
         [SetAntennaThoughtBubbleName:Preparing to leave]
 
         [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Interaction_SignalLeaving]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Interaction_TradeSignalLeaving]
 
 
       </Description>
@@ -187,7 +187,7 @@
         [DisableTriggerNames:MSB_Interaction_TradeRequest_Trigger_CombatMode]
 
         [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Interaction_ResumeCourse]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Interaction_TradeResumeCourse]
 
 
       </Description>

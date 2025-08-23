@@ -19,7 +19,7 @@
         [UseTrigger:true]
         [StartsReady:true]
 
-        [//Conditions:MSB_Context_Condition_Role_NotEscort]
+        [Conditions:MSB_Utility_State_Condition_Check_State_Role]
 
         [Actions:MSB_System_Dialogue_Action_Interaction_TradeRequestDeclined]
       </Description>
@@ -59,7 +59,7 @@
         [UseTrigger:true]
         [StartsReady:true]
 
-        [//Conditions:MSB_Context_Condition_Role_NotEscort]
+        [Conditions:MSB_Utility_State_Condition_Check_State_Role]
 
         [Actions:MSB_System_Dialogue_Action_Interaction_TradeRequestAccepted]
       </Description>
@@ -99,7 +99,7 @@
         [UseTrigger:true]
         [StartsReady:true]
 
-        [//Conditions:MSB_Context_Condition_Role_NotEscort]
+        [Conditions:MSB_Utility_State_Condition_Check_State_Role]
 
         [Actions:MSB_System_Dialogue_Action_Interaction_TradeSignalLeaving]
       </Description>
@@ -137,7 +137,7 @@
         [UseTrigger:true]
         [StartsReady:true]
 
-        [//Conditions:MSB_Context_Condition_Role_NotEscort]
+        [Conditions:MSB_Utility_State_Condition_Check_State_Role]
 
         [Actions:MSB_System_Dialogue_Action_Interaction_TradeResumeCourse]
       </Description>
