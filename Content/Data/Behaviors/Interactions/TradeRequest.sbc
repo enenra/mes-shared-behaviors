@@ -43,6 +43,81 @@
       </Description>
     </EntityComponent>
 
+    <!--  Conditions  - Encounters should not reply if in combat. -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Interaction_TradeRequest_Condition_PlayerHostile</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [CheckPlayerReputation:true]
+        [MaxPlayerReputationDistanceCheck:4500]
+        [AllPlayersReputationMustMatch:true]
+
+        [CheckReputationwithFaction:{self}]
+        [MinPlayerReputation:-1500]
+        [MaxPlayerReputation:-499]
+
+        [CheckFalseBooleans:true]
+        [FalseBooleans:MSB_State_Combat]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Interaction_TradeRequest_Condition_PlayerNeutral</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+        [CheckTrueBooleans:true]
+
+        [CheckPlayerReputation:true]
+        [MaxPlayerReputationDistanceCheck:4500]
+        [AllPlayersReputationMustMatch:true]
+
+        [CheckReputationwithFaction:{self}]
+        [MinPlayerReputation:-500]
+        [MaxPlayerReputation:500]
+
+        [CheckFalseBooleans:true]
+        [FalseBooleans:MSB_State_Combat]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Interaction_TradeRequest_Condition_PlayerFriendly</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+        [CheckTrueBooleans:true]
+
+        [CheckPlayerReputation:true]
+        [MaxPlayerReputationDistanceCheck:4500]
+        [AllPlayersReputationMustMatch:true]
+
+        [CheckReputationwithFaction:{self}]
+        [MinPlayerReputation:501]
+        [MaxPlayerReputation:1500]
+
+        [CheckFalseBooleans:true]
+        [FalseBooleans:MSB_State_Combat]
+      </Description>
+    </EntityComponent>
+
     <!-- Decline - When the encounter refuses to trade in all instances. -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -61,7 +136,7 @@
         [MinCooldownMs:5000]
         [MaxCooldownMs:5001]
 
-        [Conditions:MSB_Context_Condition_PlayerFriendly]
+        [Conditions:MSB_Interaction_TradeRequest_Condition_PlayerFriendly]
 
         [Actions:MSB_Interaction_TradeRequest_Action_Decline_Friendly]
       </Description>
@@ -101,7 +176,7 @@
         [MinCooldownMs:5000]
         [MaxCooldownMs:5001]
 
-        [Conditions:MSB_Context_Condition_PlayerNeutral]
+        [Conditions:MSB_Interaction_TradeRequest_Condition_PlayerNeutral]
 
         [Actions:MSB_Interaction_TradeRequest_Action_Decline_Neutral]
       </Description>
@@ -141,7 +216,7 @@
         [MinCooldownMs:5000]
         [MaxCooldownMs:5001]
 
-        [Conditions:MSB_Context_Condition_PlayerHostile]
+        [Conditions:MSB_Interaction_TradeRequest_Condition_PlayerHostile]
 
         [Actions:MSB_Interaction_TradeRequest_Action_Decline_Hostile]
       </Description>
@@ -182,7 +257,7 @@
         [MinCooldownMs:5000]
         [MaxCooldownMs:5001]
 
-        [Conditions:MSB_Context_Condition_PlayerFriendly]
+        [Conditions:MSB_Interaction_TradeRequest_Condition_PlayerFriendly]
 
         [Actions:MSB_Interaction_TradeRequest_Action_Received_Friendly]
       </Description>
@@ -238,7 +313,7 @@
         [MinCooldownMs:5000]
         [MaxCooldownMs:5001]
 
-        [Conditions:MSB_Context_Condition_PlayerNeutral]
+        [Conditions:MSB_Interaction_TradeRequest_Condition_PlayerNeutral]
 
         [Actions:MSB_Interaction_TradeRequest_Action_Received_Neutral]
       </Description>
@@ -294,7 +369,7 @@
         [MinCooldownMs:5000]
         [MaxCooldownMs:5001]
 
-        [Conditions:MSB_Context_Condition_PlayerHostile]
+        [Conditions:MSB_Interaction_TradeRequest_Condition_PlayerHostile]
 
         [Actions:MSB_Interaction_TradeRequest_Action_Received_Hostile]
       </Description>
@@ -313,7 +388,7 @@
         [DisableTriggerNames:MSB_Interaction_TradeRequest_Trigger_Received_Hostile]
 
         [PlayDialogueCue:true]
-        [DialogueCueId:Interaction_TradeRequest_Received_Hostile]
+        [DialogueCueId:Interaction_TradeRequest_Decline_Hostile]
       </Description>
     </EntityComponent>
 
