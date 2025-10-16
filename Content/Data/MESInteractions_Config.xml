@@ -1,0 +1,27 @@
+<MESInteractions>
+
+  <MESInteraction>
+    <MESInteractionId>MSB_Interaction_RadioCheck</MESInteractionId>
+    <CommandProfileIds>
+      <CommandProfileId>MSB_Interaction_RadioCheck</CommandProfileId>
+    </CommandProfileIds>
+    <AntennaCall>Radio Check</AntennaCall>
+    <AntennaCallTooltip>Requests receivers in range to reply.</AntennaCallTooltip>
+    <RadioCalls>
+      <RadioCall>Radio check.</RadioCall>
+    </RadioCalls>
+  </MESInteraction>
+
+  <MESInteraction>
+    <MESInteractionId>MSB_Interaction_TradeRequest</MESInteractionId>
+    <CommandProfileIds>
+      <CommandProfileId>MSB_Interaction_TradeRequest</CommandProfileId>
+    </CommandProfileIds>
+    <AntennaCall>Request Trade</AntennaCall>
+    <AntennaCallTooltip>Requests receivers in range to trade with the player.</AntennaCallTooltip>
+    <RadioCalls>
+      <RadioCall>Are you available for trading?</RadioCall>
+    </RadioCalls>
+  </MESInteraction>
+
+</MESInteractions>

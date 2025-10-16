@@ -1,0 +1,151 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Interaction_RadioCheck_TriggerGroup</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI TriggerGroup]
+
+        [Triggers:MSB_Interaction_RadioCheck_Trigger_Received]
+
+        [Triggers:MSB_Interaction_RadioCheck_Trigger_Received_Friendly]
+        [Triggers:MSB_Interaction_RadioCheck_Trigger_Received_Neutral]
+        [Triggers:MSB_Interaction_RadioCheck_Trigger_Received_Hostile]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Interaction_RadioCheck_Trigger_Received</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:CommandReceived]
+        [CommandReceiveCode:MSB_Interaction_RadioCheck]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [MinCooldownMs:5000]
+        [MaxCooldownMs:5001]
+
+        [Actions:MSB_Interaction_RadioCheck_Action_Received]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Interaction_RadioCheck_Action_Received</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Interaction_RadioCheck_Received]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Interaction_RadioCheck_Trigger_Received_Friendly</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Manual]
+        [Tags:MSB_TriggerEvent_Interaction_RadioCheck_Received]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Conditions:MSB_Context_Condition_PlayerFriendly]
+
+        [Actions:MSB_Interaction_RadioCheck_Action_Received_Friendly]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Interaction_RadioCheck_Action_Received_Friendly</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [PlayDialogueCue:true]
+        [DialogueCueId:Interaction_RadioCheck_Friendly]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Interaction_RadioCheck_Trigger_Received_Neutral</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Manual]
+        [Tags:MSB_TriggerEvent_Interaction_RadioCheck_Received]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Conditions:MSB_Context_Condition_PlayerNeutral]
+
+        [Actions:MSB_Interaction_RadioCheck_Action_Received_Neutral]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Interaction_RadioCheck_Action_Received_Neutral</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [PlayDialogueCue:true]
+        [DialogueCueId:Interaction_RadioCheck_Neutral]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Interaction_RadioCheck_Trigger_Received_Hostile</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Manual]
+        [Tags:MSB_TriggerEvent_Interaction_RadioCheck_Received]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Conditions:MSB_Context_Condition_PlayerHostile]
+
+        [Actions:MSB_Interaction_RadioCheck_Action_Received_Hostile]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Interaction_RadioCheck_Action_Received_Hostile</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [PlayDialogueCue:true]
+        [DialogueCueId:Interaction_RadioCheck_Hostile]
+      </Description>
+    </EntityComponent>
+
+  </EntityComponents>
+</Definitions>
