@@ -91,7 +91,8 @@ TriggerEvents are triggered everywhere in MSB code, and can be used to hook addi
 
 | Interaction | Status | Description |
 | ---- | ---- | ---- |
-| TradeRequest | Working |  |
+| RadioCheck | Working | Requests that all receivers reply to indicate that they are in range. Replies can vary by player reputation with encounter owner faction. |
+| TradeRequest | Working | Requests receivers in range to trade with the player. This will make cargo ships stop where they are for 30min and then continue on. If trade is requested a second time, it is declined. Encounters can also be set up to reply but always decline. Encounters will also generally decline when in combat and based on player reputation. |
 | VisitPlayerBase | WIP |  |
 
 ## Example Mods
