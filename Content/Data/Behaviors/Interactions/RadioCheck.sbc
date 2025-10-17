@@ -10,44 +10,24 @@
       <Description>
         [RivalAI TriggerGroup]
 
-        [Triggers:MSB_Interaction_RadioCheck_Trigger_Received]
-
         [Triggers:MSB_Interaction_RadioCheck_Trigger_Received_Friendly]
         [Triggers:MSB_Interaction_RadioCheck_Trigger_Received_Neutral]
         [Triggers:MSB_Interaction_RadioCheck_Trigger_Received_Hostile]
       </Description>
     </EntityComponent>
 
+    <!-- Commands -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Interaction_RadioCheck_Trigger_Received</SubtypeId>
+        <SubtypeId>MSB_Interaction_RadioCheck</SubtypeId>
       </Id>
       <Description>
-        [RivalAI Trigger]
+        [RivalAI Command]
 
-        [Type:CommandReceived]
-        [CommandReceiveCode:MSB_Interaction_RadioCheck]
+        [CommandCode:MSB_RadioCheck]
 
-        [UseTrigger:true]
-        [StartsReady:true]
-
-        [MinCooldownMs:5000]
-        [MaxCooldownMs:5001]
-
-        [Actions:MSB_Interaction_RadioCheck_Action_Received]
-      </Description>
-    </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Interaction_RadioCheck_Action_Received</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Action]
-
-        [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Interaction_RadioCheck_Received]
+        [CommandDelayTicks:60]
       </Description>
     </EntityComponent>
 
@@ -59,13 +39,16 @@
       <Description>
         [RivalAI Trigger]
 
-        [Type:Manual]
-        [Tags:MSB_TriggerEvent_Interaction_RadioCheck_Received]
+        [Type:CommandReceived]
+        [CommandReceiveCode:MSB_RadioCheck]
 
         [UseTrigger:true]
         [StartsReady:true]
 
-        [Conditions:MSB_Context_Condition_PlayerFriendly]
+        [MinCooldownMs:5000]
+        [MaxCooldownMs:5001]
+
+        [Conditions:MSB_Interaction_Condition_Received_Friendly]
 
         [Actions:MSB_Interaction_RadioCheck_Action_Received_Friendly]
       </Description>
@@ -77,6 +60,8 @@
       </Id>
       <Description>
         [RivalAI Action]
+
+        [//DebugMessage:RadioCheck - Received - Friendly]
 
         [PlayDialogueCue:true]
         [DialogueCueId:Interaction_RadioCheck_Friendly]
@@ -91,13 +76,16 @@
       <Description>
         [RivalAI Trigger]
 
-        [Type:Manual]
-        [Tags:MSB_TriggerEvent_Interaction_RadioCheck_Received]
+        [Type:CommandReceived]
+        [CommandReceiveCode:MSB_RadioCheck]
 
         [UseTrigger:true]
         [StartsReady:true]
 
-        [Conditions:MSB_Context_Condition_PlayerNeutral]
+        [MinCooldownMs:5000]
+        [MaxCooldownMs:5001]
+
+        [Conditions:MSB_Interaction_Condition_Received_Neutral]
 
         [Actions:MSB_Interaction_RadioCheck_Action_Received_Neutral]
       </Description>
@@ -109,6 +97,8 @@
       </Id>
       <Description>
         [RivalAI Action]
+
+        [//DebugMessage:RadioCheck - Received - Neutral]
 
         [PlayDialogueCue:true]
         [DialogueCueId:Interaction_RadioCheck_Neutral]
@@ -123,13 +113,16 @@
       <Description>
         [RivalAI Trigger]
 
-        [Type:Manual]
-        [Tags:MSB_TriggerEvent_Interaction_RadioCheck_Received]
+        [Type:CommandReceived]
+        [CommandReceiveCode:MSB_RadioCheck]
 
         [UseTrigger:true]
         [StartsReady:true]
 
-        [Conditions:MSB_Context_Condition_PlayerHostile]
+        [MinCooldownMs:5000]
+        [MaxCooldownMs:5001]
+
+        [Conditions:MSB_Interaction_Condition_Received_Hostile]
 
         [Actions:MSB_Interaction_RadioCheck_Action_Received_Hostile]
       </Description>
@@ -141,6 +134,8 @@
       </Id>
       <Description>
         [RivalAI Action]
+
+        [//DebugMessage:RadioCheck - Received - Hostile]
 
         [PlayDialogueCue:true]
         [DialogueCueId:Interaction_RadioCheck_Hostile]
