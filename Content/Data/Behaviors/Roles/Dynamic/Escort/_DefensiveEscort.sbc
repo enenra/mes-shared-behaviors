@@ -178,7 +178,7 @@
       <Description>
         [RivalAI Command]
 
-        [CommandCode:DefensiveEscortRequest]
+        [CommandCode:MSB_DefensiveEscortRequest]
 
         [MatchSenderReceiverOwners:true]
         [RequestEscortSlot:true]

@@ -203,7 +203,7 @@
       <Description>
         [RivalAI Command]
 
-        [CommandCode:OffensiveEscortRequest]
+        [CommandCode:MSB_OffensiveEscortRequest]
 
         [MatchSenderReceiverOwners:true]
         [IgnoreAntennaRequirement:true]
@@ -313,7 +313,7 @@
         [RivalAI Trigger]
 
         [Type:CommandReceived]
-        [CommandReceiveCode:LeaderDead]
+        [CommandReceiveCode:MSB_LeaderDead]
 
         [UseTrigger:true]
         [StartsReady:true]

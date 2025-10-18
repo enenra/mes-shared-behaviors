@@ -118,7 +118,7 @@
       <Description>
         [RivalAI Command]
 
-        [CommandCode:AllGood]
+        [CommandCode:MSB_AllGood]
 
         [IgnoreAntennaRequirement:true]
         [IgnoreReceiverAntennaRequirement:true]
@@ -136,7 +136,7 @@
       <Description>
         [RivalAI Command]
 
-        [CommandCode:AllGood_AbortResponse]
+        [CommandCode:MSB_AllGood_AbortResponse]
 
         [IgnoreAntennaRequirement:true]
         [IgnoreReceiverAntennaRequirement:true]
@@ -158,7 +158,7 @@
         [RivalAI Trigger]
 
         [Type:CommandReceived]
-        [CommandReceiveCode:AllGood_AbortResponse]
+        [CommandReceiveCode:MSB_AllGood_AbortResponse]
 
         [UseTrigger:true]
         [StartsReady:true]
@@ -372,7 +372,7 @@
       <Description>
         [RivalAI Command]
 
-        [CommandCode:SOS]
+        [CommandCode:MSB_SOS]
 
         [MatchSenderReceiverOwners:true]
         [SendTargetEntityId:true]
@@ -392,7 +392,7 @@
         [RivalAI Trigger]
 
         [Type:CommandReceived]
-        [CommandReceiveCode:SOS]
+        [CommandReceiveCode:MSB_SOS]
 
         [UseTrigger:false]
         [StartsReady:false]
@@ -563,7 +563,7 @@
       <Description>
         [RivalAI Command]
 
-        [CommandCode:Compromised]
+        [CommandCode:MSB_Compromised]
 
         [MatchSenderReceiverOwners:true]
         [SendDamagerEntityId:true]
@@ -577,7 +577,7 @@
       <Description>
         [RivalAI Command]
 
-        [CommandCode:Compromised_AbortResponse]
+        [CommandCode:MSB_Compromised_AbortResponse]
 
         [IgnoreAntennaRequirement:true]
         [IgnoreReceiverAntennaRequirement:true]
@@ -597,7 +597,7 @@
         [RivalAI Trigger]
 
         [Type:CommandReceived]
-        [CommandReceiveCode:Compromised_AbortResponse]
+        [CommandReceiveCode:MSB_Compromised_AbortResponse]
 
         [UseTrigger:true]
         [StartsReady:true]

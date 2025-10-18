@@ -89,7 +89,7 @@
         [RivalAI Trigger]
 
         [Type:CommandReceived]
-        [CommandReceiveCode:EscortRequest]
+        [CommandReceiveCode:MSB_EscortRequest]
 
         [UseTrigger:true]
         [StartsReady:true]
@@ -151,7 +151,7 @@
       <Description>
         [RivalAI Command]
 
-        [CommandCode:LeaderDead]
+        [CommandCode:MSB_LeaderDead]
 
         [MatchSenderReceiverOwners:true]
         [IgnoreAntennaRequirement:true]
@@ -205,7 +205,7 @@
       <Description>
         [RivalAI Command]
 
-        [CommandCode:EscortRequest]
+        [CommandCode:MSB_EscortRequest]
 
         [MatchSenderReceiverOwners:true]
         [IgnoreAntennaRequirement:true]
@@ -227,7 +227,7 @@
         [RivalAI Trigger]
 
         [Type:CommandReceived]
-        [CommandReceiveCode:LeaderDead]
+        [CommandReceiveCode:MSB_LeaderDead]
 
         [UseTrigger:true]
         [StartsReady:true]
