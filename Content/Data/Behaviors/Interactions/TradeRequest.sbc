@@ -545,8 +545,8 @@
         [UseTrigger:false]
         [StartsReady:false]
 
-        [MinCooldownMs:18000]
-        [MaxCooldownMs:18001]
+        [MinCooldownMs:1800000]
+        [MaxCooldownMs:1800001]
 
         [Actions:MSB_Interaction_TradeRequest_Action_SignalLeaving]
       </Description>
@@ -566,8 +566,8 @@
         [UseTrigger:false]
         [StartsReady:false]
 
-        [MinCooldownMs:6000]
-        [MaxCooldownMs:6001]
+        [MinCooldownMs:60000]
+        [MaxCooldownMs:60001]
 
         [Actions:MSB_Interaction_TradeRequest_Action_ResumeCourse]
       </Description>
