@@ -6,7 +6,7 @@
       <CommandProfileId>MSB_Interaction_RadioCheck</CommandProfileId>
     </CommandProfileIds>
     <AntennaCall>Radio Check</AntennaCall>
-    <AntennaCallTooltip>Requests receivers in range to reply.</AntennaCallTooltip>
+    <AntennaCallTooltip>Requests all receivers in range to reply.</AntennaCallTooltip>
     <RadioCalls>
       <RadioCall>Radio check.</RadioCall>
     </RadioCalls>
@@ -18,7 +18,7 @@
       <CommandProfileId>MSB_Interaction_TradeRequest</CommandProfileId>
     </CommandProfileIds>
     <AntennaCall>Request Trade</AntennaCall>
-    <AntennaCallTooltip>Requests receivers in range to trade with the player.</AntennaCallTooltip>
+    <AntennaCallTooltip>Requests the closest receiver in range to trade with the player.</AntennaCallTooltip>
     <RadioCalls>
       <RadioCall>Are you available for trading?</RadioCall>
     </RadioCalls>
