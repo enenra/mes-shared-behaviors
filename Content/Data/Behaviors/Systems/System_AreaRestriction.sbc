@@ -36,6 +36,7 @@
 
         [Type:Manual]
         [Tags:MSB_TriggerEvent_PlayerNear100]
+        [Tags:MSB_System_AreaRestriction]
 
         [UseTrigger:true]
         [StartsReady:true]
@@ -81,6 +82,7 @@
 
         [Type:Manual]
         [Tags:MSB_TriggerEvent_PlayerFar100]
+        [Tags:MSB_System_AreaRestriction]
 
         [UseTrigger:false]
         [StartsReady:true]
@@ -132,6 +134,7 @@
 
         [Type:Manual]
         [Tags:MSB_TriggerEvent_PlayerNear1000]
+        [Tags:MSB_System_AreaRestriction]
 
         [UseTrigger:true]
         [StartsReady:true]
@@ -177,6 +180,7 @@
 
         [Type:Manual]
         [Tags:MSB_TriggerEvent_PlayerFar1000]
+        [Tags:MSB_System_AreaRestriction]
 
         [UseTrigger:false]
         [StartsReady:true]
@@ -228,6 +232,7 @@
 
         [Type:Manual]
         [Tags:MSB_TriggerEvent_PlayerNear2500]
+        [Tags:MSB_System_AreaRestriction]
 
         [UseTrigger:true]
         [StartsReady:true]
@@ -273,6 +278,7 @@
 
         [Type:Manual]
         [Tags:MSB_TriggerEvent_PlayerFar2500]
+        [Tags:MSB_System_AreaRestriction]
 
         [UseTrigger:false]
         [StartsReady:true]
@@ -324,6 +330,7 @@
 
         [Type:Manual]
         [Tags:MSB_TriggerEvent_PlayerNear5000]
+        [Tags:MSB_System_AreaRestriction]
 
         [UseTrigger:true]
         [StartsReady:true]
@@ -369,6 +376,7 @@
 
         [Type:Manual]
         [Tags:MSB_TriggerEvent_PlayerFar5000]
+        [Tags:MSB_System_AreaRestriction]
 
         [UseTrigger:false]
         [StartsReady:true]
@@ -407,6 +415,7 @@
         [RivalAI Trigger]
 
         [Type:Timer]
+        [Tags:MSB_System_AreaRestriction]
 
         [UseTrigger:false]
         [StartsReady:false]
