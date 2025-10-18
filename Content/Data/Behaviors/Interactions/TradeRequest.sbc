@@ -19,7 +19,7 @@
       <Description>
         [RivalAI TriggerGroup]
 
-        [Triggers:MSB_Interaction_TradeRequest_Trigger_Received]
+        [Triggers:MSB_Interaction_TradeRequest_Trigger_Received_InCombat]
 
         [Triggers:MSB_Interaction_TradeRequest_Trigger_Received_Friendly]
         [Triggers:MSB_Interaction_TradeRequest_Trigger_Received_Neutral]
@@ -27,6 +27,7 @@
 
         [Triggers:MSB_Interaction_TradeRequest_Trigger_Decline_Friendly]
         [Triggers:MSB_Interaction_TradeRequest_Trigger_Decline_Neutral]
+        [Triggers:MSB_Interaction_TradeRequest_Trigger_Decline_Hostile]
 
         [Triggers:MSB_Interaction_TradeRequest_Trigger_Duration30min]
         [Triggers:MSB_Interaction_TradeRequest_Trigger_ResumeCourse1min]
@@ -42,7 +43,9 @@
       <Description>
         [RivalAI TriggerGroup]
 
-        [Triggers:MSB_Interaction_TradeRequest_Trigger_Decline]
+        [Triggers:MSB_Interaction_TradeRequest_Trigger_Decline_Init]
+
+        [Triggers:MSB_Interaction_TradeRequest_Trigger_Decline_InCombat]
 
         [Triggers:MSB_Interaction_TradeRequest_Trigger_Decline_Friendly]
         [Triggers:MSB_Interaction_TradeRequest_Trigger_Decline_Neutral]
@@ -50,17 +53,69 @@
       </Description>
     </EntityComponent>
 
-    <!-- Decline - When the encounter refuses to trade in all instances. -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Interaction_TradeRequest_Trigger_Decline</SubtypeId>
+        <SubtypeId>MSB_Interaction_TradeRequest</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Command]
+
+        [CommandCode:MSB_TradeRequest]
+        [SingleRecipient:true]
+
+        [CommandDelayTicks:60]
+      </Description>
+    </EntityComponent>
+
+
+    <!-- Decline - When the encounter refuses to trade in all instances. -->
+    <!-- Init-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Interaction_TradeRequest_Trigger_Decline_Init</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [MaxActions:1]
+        [Actions:MSB_Interaction_TradeRequest_Action_Decline_Init]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Interaction_TradeRequest_Action_Decline_Init</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage:TradeRequest - Decline - Init]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_Interaction_TradeRequest_Trigger_Decline_Friendly]
+        [EnableTriggerNames:MSB_Interaction_TradeRequest_Trigger_Decline_Neutral]
+        [EnableTriggerNames:MSB_Interaction_TradeRequest_Trigger_Decline_Hostile]
+      </Description>
+    </EntityComponent>
+
+    <!-- InCombat -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Interaction_TradeRequest_Trigger_Decline_InCombat</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
 
         [Type:CommandReceived]
-        [CommandReceiveCode:MSB_Interaction_TradeRequest]
+        [CommandReceiveCode:MSB_TradeRequest]
 
         [UseTrigger:true]
         [StartsReady:true]
@@ -71,9 +126,6 @@
         [Conditions:MSB_Utility_State_Condition_Check_State_Combat]
 
         [Actions:MSB_Interaction_TradeRequest_Action_Decline_InCombat]
-
-        [UseElseActions:true]
-        [ElseActions:MSB_Interaction_TradeRequest_Action_Decline_NotInCombat]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -84,33 +136,14 @@
       <Description>
         [RivalAI Action]
 
-        [//DebugMessage:Interaction - TradeRequest - Decline - InCombat]
-
-        [DisableTriggers:true]
-        [DisableTriggerNames:MSB_Interaction_TradeRequest_Trigger_Decline]
+        [//DebugMessage:TradeRequest - Decline - InCombat]
 
         [PlayDialogueCue:true]
         [DialogueCueId:Interaction_TradeRequest_Decline_InCombat]
       </Description>
     </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Interaction_TradeRequest_Action_Decline_NotInCombat</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Action]
 
-        [//DebugMessage:Interaction - TradeRequest - Decline - NotInCombat]
-
-        [DisableTriggers:true]
-        [DisableTriggerNames:MSB_Interaction_TradeRequest_Trigger_Decline]
-
-        [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Interaction_TradeRequest_Decline]
-      </Description>
-    </EntityComponent>
-
+    <!-- NotInCombat -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -119,13 +152,16 @@
       <Description>
         [RivalAI Trigger]
 
-        [Type:Manual]
-        [Tags:MSB_TriggerEvent_Interaction_TradeRequest_Decline]
+        [Type:CommandReceived]
+        [CommandReceiveCode:MSB_TradeRequest]
 
-        [UseTrigger:true]
+        [UseTrigger:false]
         [StartsReady:true]
 
-        [Conditions:MSB_Context_Condition_PlayerFriendly]
+        [MinCooldownMs:5000]
+        [MaxCooldownMs:5001]
+
+        [Conditions:MSB_Interaction_Condition_Received_Friendly_NotInCombat]
 
         [Actions:MSB_Interaction_TradeRequest_Action_Decline_Friendly]
       </Description>
@@ -138,7 +174,7 @@
       <Description>
         [RivalAI Action]
 
-        [//DebugMessage:Interaction - TradeRequest - Decline - Friendly]
+        [//DebugMessage:TradeRequest - Decline - Friendly]
 
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_Interaction_TradeRequest_Trigger_Decline_Friendly]
@@ -158,13 +194,16 @@
       <Description>
         [RivalAI Trigger]
 
-        [Type:Manual]
-        [Tags:MSB_TriggerEvent_Interaction_TradeRequest_Decline]
+        [Type:CommandReceived]
+        [CommandReceiveCode:MSB_TradeRequest]
 
-        [UseTrigger:true]
+        [UseTrigger:false]
         [StartsReady:true]
 
-        [Conditions:MSB_Context_Condition_PlayerNeutral]
+        [MinCooldownMs:5000]
+        [MaxCooldownMs:5001]
+
+        [Conditions:MSB_Interaction_Condition_Received_Neutral_NotInCombat]
 
         [Actions:MSB_Interaction_TradeRequest_Action_Decline_Neutral]
       </Description>
@@ -177,7 +216,7 @@
       <Description>
         [RivalAI Action]
 
-        [//DebugMessage:Interaction - TradeRequest - Decline - Hostile]
+        [//DebugMessage:TradeRequest - Decline - Hostile]
 
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_Interaction_TradeRequest_Trigger_Decline_Friendly]
@@ -197,16 +236,16 @@
       <Description>
         [RivalAI Trigger]
 
-        [Type:Manual]
-        [Tags:MSB_TriggerEvent_Interaction_TradeRequest_Decline]
+        [Type:CommandReceived]
+        [CommandReceiveCode:MSB_TradeRequest]
 
-        [UseTrigger:true]
+        [UseTrigger:false]
         [StartsReady:true]
 
         [MinCooldownMs:5000]
         [MaxCooldownMs:5001]
 
-        [Conditions:MSB_Context_Condition_PlayerHostile]
+        [Conditions:MSB_Interaction_Condition_Received_Hostile_NotInCombat]
 
         [Actions:MSB_Interaction_TradeRequest_Action_Decline_Hostile]
       </Description>
@@ -219,7 +258,7 @@
       <Description>
         [RivalAI Action]
 
-        [//DebugMessage:Interaction - TradeRequest - Decline - Hostile]
+        [//DebugMessage:TradeRequest - Decline - Hostile]
 
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_Interaction_TradeRequest_Trigger_Decline_Friendly]
@@ -231,17 +270,19 @@
       </Description>
     </EntityComponent>
 
+
     <!-- Receive - Based on player reputation the encounter may accept or decline. -->
+    <!-- InCombat-->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Interaction_TradeRequest_Trigger_Received</SubtypeId>
+        <SubtypeId>MSB_Interaction_TradeRequest_Trigger_Received_InCombat</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
 
         [Type:CommandReceived]
-        [CommandReceiveCode:MSB_Interaction_TradeRequest]
+        [CommandReceiveCode:MSB_TradeRequest]
 
         [UseTrigger:true]
         [StartsReady:true]
@@ -252,9 +293,6 @@
         [Conditions:MSB_Utility_State_Condition_Check_State_Combat]
 
         [Actions:MSB_Interaction_TradeRequest_Action_Received_InCombat]
-
-        [UseElseActions:true]
-        [ElseActions:MSB_Interaction_TradeRequest_Action_Received_NotInCombat]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -265,30 +303,14 @@
       <Description>
         [RivalAI Action]
 
-        [//DebugMessage:Interaction - TradeRequest - Received - InCombat]
+        [//DebugMessage:TradeRequest - Received - InCombat]
 
         [PlayDialogueCue:true]
         [DialogueCueId:Interaction_TradeRequest_Decline_InCombat]
       </Description>
     </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Interaction_TradeRequest_Action_Received_NotInCombat</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Action]
 
-        [//DebugMessage:Interaction - TradeRequest - Received - NotInCombat]
-
-        [DisableTriggers:true]
-        [DisableTriggerNames:MSB_Interaction_TradeRequest_Trigger_Received]
-
-        [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Interaction_TradeRequest_Received]
-      </Description>
-    </EntityComponent>
-
+    <!-- NotInCombat -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -297,13 +319,16 @@
       <Description>
         [RivalAI Trigger]
 
-        [Type:Manual]
-        [Tags:MSB_TriggerEvent_Interaction_TradeRequest_Received]
+        [Type:CommandReceived]
+        [CommandReceiveCode:MSB_TradeRequest]
 
         [UseTrigger:true]
         [StartsReady:true]
 
-        [Conditions:MSB_Context_Condition_PlayerFriendly]
+        [MinCooldownMs:5000]
+        [MaxCooldownMs:5001]
+
+        [Conditions:MSB_Interaction_Condition_Received_Friendly_NotInCombat]
 
         [Actions:MSB_Interaction_TradeRequest_Action_Received_Friendly]
       </Description>
@@ -316,7 +341,7 @@
       <Description>
         [RivalAI Action]
 
-        [//DebugMessage:Interaction - TradeRequest - Received - Friendly]
+        [//DebugMessage:TradeRequest - Received - Friendly]
 
         [DisableAutopilot:true]
         [StopAllRotation:true]
@@ -328,9 +353,11 @@
         [SetAntennaThoughtBubbleName:Trading]
 
         [DisableTriggers:true]
+        [DisableTriggerNames:MSB_Interaction_TradeRequest_Trigger_Received_InCombat]
         [DisableTriggerNames:MSB_Interaction_TradeRequest_Trigger_Received_Friendly]
         [DisableTriggerNames:MSB_Interaction_TradeRequest_Trigger_Received_Neutral]
         [DisableTriggerNames:MSB_Interaction_TradeRequest_Trigger_Received_Hostile]
+        [DisableTriggerTags:MSB_System_AreaRestriction]
 
         [ResetCooldownTimeOfTriggers:true]
         [ResetTriggerCooldownTags:MSB_TradingModeDuration]
@@ -352,13 +379,16 @@
       <Description>
         [RivalAI Trigger]
 
-        [Type:Manual]
-        [Tags:MSB_TriggerEvent_Interaction_TradeRequest_Received]
+        [Type:CommandReceived]
+        [CommandReceiveCode:MSB_TradeRequest]
 
         [UseTrigger:true]
         [StartsReady:true]
 
-        [Conditions:MSB_Context_Condition_PlayerNeutral]
+        [MinCooldownMs:5000]
+        [MaxCooldownMs:5001]
+
+        [Conditions:MSB_Interaction_Condition_Received_Neutral_NotInCombat]
 
         [Actions:MSB_Interaction_TradeRequest_Action_Received_Neutral]
       </Description>
@@ -371,7 +401,7 @@
       <Description>
         [RivalAI Action]
 
-        [//DebugMessage:Interaction - TradeRequest - Received - Neutral]
+        [//DebugMessage:TradeRequest - Received - Neutral]
 
         [DisableAutopilot:true]
         [StopAllRotation:true]
@@ -383,9 +413,11 @@
         [SetAntennaThoughtBubbleName:Trading]
 
         [DisableTriggers:true]
+        [DisableTriggerNames:MSB_Interaction_TradeRequest_Trigger_Received_InCombat]
         [DisableTriggerNames:MSB_Interaction_TradeRequest_Trigger_Received_Friendly]
         [DisableTriggerNames:MSB_Interaction_TradeRequest_Trigger_Received_Neutral]
         [DisableTriggerNames:MSB_Interaction_TradeRequest_Trigger_Received_Hostile]
+        [DisableTriggerTags:MSB_System_AreaRestriction]
 
         [ResetCooldownTimeOfTriggers:true]
         [ResetTriggerCooldownTags:MSB_TradingModeDuration]
@@ -407,13 +439,16 @@
       <Description>
         [RivalAI Trigger]
 
-        [Type:Manual]
-        [Tags:MSB_TriggerEvent_Interaction_TradeRequest_Received]
+        [Type:CommandReceived]
+        [CommandReceiveCode:MSB_TradeRequest]
 
         [UseTrigger:true]
         [StartsReady:true]
 
-        [Conditions:MSB_Context_Condition_PlayerHostile]
+        [MinCooldownMs:5000]
+        [MaxCooldownMs:5001]
+
+        [Conditions:MSB_Interaction_Condition_Received_Hostile_NotInCombat]
 
         [Actions:MSB_Interaction_TradeRequest_Action_Received_Hostile]
       </Description>
@@ -426,7 +461,7 @@
       <Description>
         [RivalAI Action]
 
-        [//DebugMessage:Interaction - TradeRequest - Receive - Hostile]
+        [//DebugMessage:TradeRequest - Receive - Hostile]
 
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_Interaction_TradeRequest_Trigger_Received_Friendly]
@@ -435,67 +470,6 @@
 
         [PlayDialogueCue:true]
         [DialogueCueId:Interaction_TradeRequest_Decline_Hostile]
-      </Description>
-    </EntityComponent>
-
-    <!-- Decline - After it has entered trading mode and resumed course, decline all further requests. -->
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Interaction_TradeRequest_Trigger_Received_TradedBefore</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Trigger]
-
-        [Type:CommandReceived]
-        [CommandReceiveCode:MSB_Interaction_TradeRequest]
-
-        [UseTrigger:true]
-        [StartsReady:true]
-
-        [MinCooldownMs:5000]
-        [MaxCooldownMs:5001]
-
-        [Conditions:MSB_Utility_State_Condition_Check_State_Combat]
-
-        [Actions:MSB_Interaction_TradeRequest_Action_Received_TradedBefore_InCombat]
-
-        [UseElseActions:true]
-        [ElseActions:MSB_Interaction_TradeRequest_Action_Received_TradedBefore_NotInCombat]
-      </Description>
-    </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Interaction_TradeRequest_Action_Received_TradedBefore_InCombat</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Action]
-
-        [//DebugMessage:Interaction - TradeRequest - Received - InCombat]
-
-        [DisableTriggers:true]
-        [DisableTriggerNames:MSB_Interaction_TradeRequest_Trigger_Received_TradedBefore]
-
-        [PlayDialogueCue:true]
-        [DialogueCueId:Interaction_TradeRequest_Decline_InCombat]
-      </Description>
-    </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Interaction_TradeRequest_Action_Received_TradedBefore_NotInCombat</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Action]
-
-        [//DebugMessage:Interaction - TradeRequest - Received - NotInCombat]
-
-        [DisableTriggers:true]
-        [DisableTriggerNames:MSB_Interaction_TradeRequest_Trigger_Received_TradedBefore]
-
-        [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Interaction_TradeRequest_Decline]
       </Description>
     </EntityComponent>
 
@@ -508,7 +482,7 @@
       <Description>
         [RivalAI Action]
 
-        [//DebugMessage:Interaction - TradeRequest - SignalLeaving]
+        [//DebugMessage:TradeRequest - SignalLeaving]
 
         [SetAntennaThoughtBubble:true]
         [SetAntennaThoughtBubbleName:Preparing to leave]
@@ -546,6 +520,13 @@
         [DisableTriggers:true]
         [DisableTriggerTags:MSB_TradingModeResumeCourse]
         [DisableTriggerNames:MSB_Interaction_TradeRequest_Trigger_CombatMode]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_Interaction_TradeRequest_Trigger_Received_InCombat]
+        [EnableTriggerNames:MSB_Interaction_TradeRequest_Trigger_Decline_Friendly]
+        [EnableTriggerNames:MSB_Interaction_TradeRequest_Trigger_Decline_Neutral]
+        [EnableTriggerNames:MSB_Interaction_TradeRequest_Trigger_Decline_Hostile]
+        [EnableTriggerTags:MSB_System_AreaRestriction]
       </Description>
     </EntityComponent>
 
@@ -564,8 +545,8 @@
         [UseTrigger:false]
         [StartsReady:false]
 
-        [MinCooldownMs:1800000]
-        [MaxCooldownMs:1800001]
+        [MinCooldownMs:18000]
+        [MaxCooldownMs:18001]
 
         [Actions:MSB_Interaction_TradeRequest_Action_SignalLeaving]
       </Description>
@@ -585,8 +566,8 @@
         [UseTrigger:false]
         [StartsReady:false]
 
-        [MinCooldownMs:60000]
-        [MaxCooldownMs:60001]
+        [MinCooldownMs:6000]
+        [MaxCooldownMs:6001]
 
         [Actions:MSB_Interaction_TradeRequest_Action_ResumeCourse]
       </Description>

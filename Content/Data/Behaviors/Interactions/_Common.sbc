@@ -2,6 +2,7 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 
+    <!-- Default -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -47,6 +48,64 @@
 
         [CommandCheckRelationSenderReceiver:true]
         [CommandRelation:Enemy]
+      </Description>
+    </EntityComponent>
+
+    <!-- NotInCombat -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Interaction_Condition_Received_Friendly_NotInCombat</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [CommandCheckRelationSenderReceiver:true]
+        [CommandRelation:Friends]
+
+        [CheckFalseBooleans:true]
+        [FalseBooleans:MSB_State_Combat]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Interaction_Condition_Received_Neutral_NotInCombat</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [CommandCheckRelationSenderReceiver:true]
+        [CommandRelation:Neutral]
+
+        [CheckFalseBooleans:true]
+        [FalseBooleans:MSB_State_Combat]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Interaction_Condition_Received_Hostile_NotInCombat</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:false]
+
+        [CommandCheckRelationSenderReceiver:true]
+        [CommandRelation:Enemy]
+
+        [CheckFalseBooleans:true]
+        [FalseBooleans:MSB_State_Combat]
       </Description>
     </EntityComponent>
 
