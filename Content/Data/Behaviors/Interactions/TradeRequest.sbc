@@ -19,11 +19,17 @@
       <Description>
         [RivalAI TriggerGroup]
 
+        [Triggers:MSB_Interaction_TradeRequest_Trigger_Received_Init]
+
         [Triggers:MSB_Interaction_TradeRequest_Trigger_Received_InCombat]
 
         [Triggers:MSB_Interaction_TradeRequest_Trigger_Received_Friendly]
         [Triggers:MSB_Interaction_TradeRequest_Trigger_Received_Neutral]
         [Triggers:MSB_Interaction_TradeRequest_Trigger_Received_Hostile]
+
+        [Triggers:MSB_Interaction_TradeRequest_Trigger_Received_Static_Friendly]
+        [Triggers:MSB_Interaction_TradeRequest_Trigger_Received_Static_Neutral]
+        [Triggers:MSB_Interaction_TradeRequest_Trigger_Received_Static_Hostile]
 
         [Triggers:MSB_Interaction_TradeRequest_Trigger_Decline_Friendly]
         [Triggers:MSB_Interaction_TradeRequest_Trigger_Decline_Neutral]
@@ -272,6 +278,48 @@
 
 
     <!-- Receive - Based on player reputation the encounter may accept or decline. -->
+    <!-- Init -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Interaction_TradeRequest_Trigger_Received_Init</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Conditions:MSB_Context_Condition_GridStatic_True]
+
+        [MaxActions:1]
+        [Actions:MSB_Interaction_TradeRequest_Action_Received_Init]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Interaction_TradeRequest_Action_Received_Init</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage:TradeRequest - Received - Init]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_Interaction_TradeRequest_Trigger_Received_Friendly]
+        [DisableTriggerNames:MSB_Interaction_TradeRequest_Trigger_Received_Neutral]
+        [DisableTriggerNames:MSB_Interaction_TradeRequest_Trigger_Received_Hostile]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_Interaction_TradeRequest_Trigger_Received_Static_Friendly]
+        [EnableTriggerNames:MSB_Interaction_TradeRequest_Trigger_Received_Static_Neutral]
+        [EnableTriggerNames:MSB_Interaction_TradeRequest_Trigger_Received_Static_Hostile]
+      </Description>
+    </EntityComponent>
+
     <!-- InCombat-->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
@@ -467,6 +515,118 @@
         [DisableTriggerNames:MSB_Interaction_TradeRequest_Trigger_Received_Friendly]
         [DisableTriggerNames:MSB_Interaction_TradeRequest_Trigger_Received_Neutral]
         [DisableTriggerNames:MSB_Interaction_TradeRequest_Trigger_Received_Hostile]
+
+        [PlayDialogueCue:true]
+        [DialogueCueId:Interaction_TradeRequest_Decline_Hostile]
+      </Description>
+    </EntityComponent>
+
+    <!-- NotInCombat - Static -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Interaction_TradeRequest_Trigger_Received_Static_Friendly</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:CommandReceived]
+        [CommandReceiveCode:MSB_TradeRequest]
+
+        [UseTrigger:false]
+        [StartsReady:true]
+
+        [MinCooldownMs:5000]
+        [MaxCooldownMs:5001]
+
+        [Conditions:MSB_Interaction_Condition_Received_Friendly_NotInCombat]
+
+        [Actions:MSB_Interaction_TradeRequest_Action_Received_Static_Friendly]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Interaction_TradeRequest_Action_Received_Static_Friendly</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage:TradeRequest - Received - Friendly]
+
+        [PlayDialogueCue:true]
+        [DialogueCueId:Interaction_TradeRequest_Received_Static_Friendly]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Interaction_TradeRequest_Trigger_Received_Static_Neutral</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:CommandReceived]
+        [CommandReceiveCode:MSB_TradeRequest]
+
+        [UseTrigger:false]
+        [StartsReady:true]
+
+        [MinCooldownMs:5000]
+        [MaxCooldownMs:5001]
+
+        [Conditions:MSB_Interaction_Condition_Received_Neutral_NotInCombat]
+
+        [Actions:MSB_Interaction_TradeRequest_Action_Received_Static_Neutral]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Interaction_TradeRequest_Action_Received_Static_Neutral</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage:TradeRequest - Received - Hostile]
+
+        [PlayDialogueCue:true]
+        [DialogueCueId:Interaction_TradeRequest_Received_Static_Neutral]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Interaction_TradeRequest_Trigger_Received_Static_Hostile</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:CommandReceived]
+        [CommandReceiveCode:MSB_TradeRequest]
+
+        [UseTrigger:false]
+        [StartsReady:true]
+
+        [MinCooldownMs:5000]
+        [MaxCooldownMs:5001]
+
+        [Conditions:MSB_Interaction_Condition_Received_Hostile_NotInCombat]
+
+        [Actions:MSB_Interaction_TradeRequest_Action_Received_Static_Hostile]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Interaction_TradeRequest_Action_Received_Static_Hostile</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage:TradeRequest - Decline - Hostile]
 
         [PlayDialogueCue:true]
         [DialogueCueId:Interaction_TradeRequest_Decline_Hostile]
