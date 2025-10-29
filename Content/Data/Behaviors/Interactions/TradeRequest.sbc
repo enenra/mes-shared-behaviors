@@ -6,8 +6,23 @@
 
       TradeRequest
       Encounter is either given the MSB_Interaction_TradeRequest_TriggerGroup or the MSB_Interaction_TradeRequest_TriggerGroup_Decline, based on if it should engage in trade or not.
-        * MSB_Interaction_TradeRequest_TriggerGroup - If neutral or friendly, encounter will stop and let player trade, then move on after the defined time.
-        * MSB_Interaction_TradeRequest_TriggerGroup_Decline - Encounter will respond to request but decline and ignore further requests.
+
+      To use:
+        * Assign one of the two TriggerGroups to your behavior:
+          * MSB_Interaction_TradeRequest_TriggerGroup - If neutral or friendly, encounter will stop and let player trade, then move on after the defined time.
+          * MSB_Interaction_TradeRequest_TriggerGroup_Decline - Encounter will respond to request but decline and ignore further requests.
+        * Define the following dialogue cues in your dialogue bank:
+          * Interaction_TradeRequest_Decline_InCombat - Used if the encounter is currently in combat.
+          * Interaction_TradeRequest_Decline_Friendly - Used to decline if the encounter's faction is friendly to the player.
+          * Interaction_TradeRequest_Decline_Neutral - Used to decline if the encounter's faction is neutral to the player.
+          * Interaction_TradeRequest_Decline_Hostile - Used to decline if the encounter's faction is hostile to the player.
+          * Interaction_TradeRequest_Received_Friendly - Used to accept if the encounter's faction is friendly to the player.
+          * Interaction_TradeRequest_Received_Neutral - Used to accept if the encounter's faction is neutral to the player.
+          * Interaction_TradeRequest_Received_Static_Friendly - Used to accept if the encounter's faction is friendly to the player and the encounter is static.
+          * Interaction_TradeRequest_Received_Static_Neutral - Used to accept if the encounter's faction is neutral to the player and the encounter is static.
+          * Interaction_TradeRequest_SignalLeaving - Used to warn the player that the encounter will soon resume course.
+          * Interaction_TradeRequest_ResumeCourse - Used to inform the player that the encounter is now resuming course.
+          * Interaction_TradeRequest_CombatMode - Used if the encounter enters combat while stopped for trading.
 
     -->
 

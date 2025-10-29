@@ -2,6 +2,20 @@
 <Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
   <EntityComponents>
 
+  <!--
+  
+    RadioCheck
+    This interaction makes nearby encounters, who have been assigned the TriggerGroup, respond to a radio check interaction sent by the player.
+
+    To use:
+      * Assign MSB_Interaction_RadioCheck_TriggerGroup to your behavior.
+      * Define the following dialogue cues in your dialogue bank:
+        * Interaction_RadioCheck_Friendly - Used if the encounter's faction is friendly to the player sending the radio check.
+        * Interaction_RadioCheck_Neutral - Used if the encounter's faction is neutral to the player sending the radio check.
+        * Interaction_RadioCheck_Hostile - Used if the encounter's faction is hostile to the player sending the radio check.
+
+  -->
+
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
