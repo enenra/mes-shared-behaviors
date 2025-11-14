@@ -23,6 +23,9 @@
         [WaypointTolerance:50]
         [WaypointWaitTimeTrigger:120]
 
+        [DespawnCoordsMinDistance:15000]
+        [DespawnCoordsMaxDistance:20000]
+
         [MinAngleForLeveledDescent:135]
         [MaxAngleForLeveledAscent:90]
 
@@ -57,10 +60,10 @@
         [MaxRotationMagnitude:0.2]
         [//AngleAllowedForForwardThrust:35]
 
-        [OffsetSpaceMinDistFromTarget:3000]
+        [OffsetSpaceMinDistFromTarget:5000]
         [OffsetSpaceMaxDistFromTarget:7500]
-        [OffsetPlanetMinDistFromTarget:2000]
-        [OffsetPlanetMaxDistFromTarget:4500]
+        [OffsetPlanetMinDistFromTarget:3000]
+        [OffsetPlanetMaxDistFromTarget:5000]
         [OffsetPlanetMinTargetAltitude:500]
         [OffsetPlanetMaxTargetAltitude:1500]
       </Description>

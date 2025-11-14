@@ -18,6 +18,9 @@
         [WaypointTolerance:50]
         [WaypointWaitTimeTrigger:120]
 
+        [DespawnCoordsMinDistance:15000]
+        [DespawnCoordsMaxDistance:20000]
+
         [IdealMinSpeed:12]
         [IdealMaxSpeed:25]
         [MaxSpeedTolerance:3]
