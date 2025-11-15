@@ -676,7 +676,7 @@
         [//DebugMessage:Despawn - Arrived at despawn point]
 
         [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Despawn_FlyToStatic]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Despawn_FlyToHomebase]
 
         [ResetCooldownTimeOfTriggers:true]
         [ResetTriggerCooldownNames:MSB_System_Despawn_Trigger_ArrivedAtDespawnPoint_Delay]
@@ -818,7 +818,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:Despawn - Returning to Despawn]
+        [//DebugMessage:Despawn - Returning to Despawn]
 
         [ChangeBehaviorSubclass:true]
         [NewBehaviorSubclass:CargoShip]
