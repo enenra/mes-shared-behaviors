@@ -23,9 +23,6 @@
         [WaypointTolerance:50]
         [WaypointWaitTimeTrigger:120]
 
-        [DespawnCoordsMinDistance:15000]
-        [DespawnCoordsMaxDistance:20000]
-
         [MinAngleForLeveledDescent:135]
         [MaxAngleForLeveledAscent:90]
 
