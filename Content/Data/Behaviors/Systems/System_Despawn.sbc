@@ -292,6 +292,9 @@
         [Triggers:MSB_System_Despawn_Trigger_ArrivedAtDespawnPoint_Delay]
         [Triggers:MSB_System_Despawn_Trigger_ArrivedAtDespawnPoint]
         [Triggers:MSB_System_Despawn_Trigger_Receive_NoResponse]
+
+        [Triggers:MSB_System_Despawn_Trigger_CombatEnded]
+        [Triggers:MSB_System_Despawn_Trigger_CombatEnded_Delay]
       </Description>
     </EntityComponent>
 
@@ -381,7 +384,7 @@
         [SingleRecipient:true]
 
         [IgnoreAntennaRequirement:true]
-        [Radius:50000]
+        [Radius:20000]
 
         [CommandDelayTicks:180]
       </Description>
@@ -418,7 +421,7 @@
         [//DebugMessage:Despawn - Received Response]
 
         [ChangeBehaviorSubclass:true]
-        [NewBehaviorSubclass:Cargoship]
+        [NewBehaviorSubclass:CargoShip]
 
         [AddWaypointFromCommand:true]
 
@@ -449,6 +452,9 @@
         [Triggers:MSB_System_Despawn_Trigger_ArrivedAtDespawnPoint_Delay]
         [Triggers:MSB_System_Despawn_Trigger_ArrivedAtDespawnPoint]
         [Triggers:MSB_System_Despawn_Trigger_Receive_NoResponse]
+
+        [Triggers:MSB_System_Despawn_Trigger_CombatEnded]
+        [Triggers:MSB_System_Despawn_Trigger_CombatEnded_Delay]
       </Description>
     </EntityComponent>
 
@@ -591,7 +597,7 @@
         [//DebugMessage:Despawn - Received Response, heading to homebase]
 
         [ChangeBehaviorSubclass:true]
-        [NewBehaviorSubclass:Cargoship]
+        [NewBehaviorSubclass:CargoShip]
 
         [AddWaypointFromCommand:true]
 
@@ -748,6 +754,74 @@
         [DisableTriggerNames:MSB_System_Despawn_Trigger_Receive_Homebase]
 
         [Retreat:true]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Despawn_Trigger_CombatEnded</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Manual]
+        [Tags:MSB_Role_InitRole]
+
+        [UseTrigger:true]
+        [StartsReady:false]
+
+        [Conditions:MSB_System_Despawn_Condition_Active]
+
+        [Actions:MSB_System_Despawn_Action_CombatEnded_Delay]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Despawn_Action_CombatEnded_Delay</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB_System_Despawn_Trigger_CombatEnded_Delay]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_System_Despawn_Trigger_CombatEnded_Delay]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Despawn_Trigger_CombatEnded_Delay</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:false]
+        [StartsReady:false]
+
+        [MinCooldownMs:500]
+        [MaxCooldownMs:501]
+
+        [Actions:MSB_System_Despawn_Action_CombatEnded]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Despawn_Action_CombatEnded</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:Despawn - Returning to Despawn]
+
+        [ChangeBehaviorSubclass:true]
+        [NewBehaviorSubclass:CargoShip]
       </Description>
     </EntityComponent>
 
