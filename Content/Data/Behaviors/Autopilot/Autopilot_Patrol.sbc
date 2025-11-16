@@ -60,6 +60,9 @@
         [MaxRotationMagnitude:0.2]
         [//AngleAllowedForForwardThrust:35]
 
+        [MinAngleForLeveledDescent:90]
+        [MaxAngleForLeveledAscent:90]
+
         [OffsetSpaceMinDistFromTarget:5000]
         [OffsetSpaceMaxDistFromTarget:7500]
         [OffsetPlanetMinDistFromTarget:3000]

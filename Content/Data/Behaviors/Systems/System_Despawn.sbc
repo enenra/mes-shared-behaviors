@@ -657,7 +657,7 @@
 
         [Type:WaypointNear]
 
-        [TargetDistance:1000]
+        [TargetDistance:2000]
 
         [UseTrigger:false]
         [StartsReady:false]
