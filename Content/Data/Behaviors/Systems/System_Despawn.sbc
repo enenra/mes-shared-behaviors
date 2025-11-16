@@ -670,7 +670,7 @@
         [IgnoreAntennaRequirement:true]
         [Radius:1500]
 
-        [CommandDelayTicks:50]
+        [CommandDelayTicks:360]
       </Description>
     </EntityComponent>
 
