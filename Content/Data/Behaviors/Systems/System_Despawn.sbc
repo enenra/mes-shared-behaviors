@@ -676,7 +676,7 @@
         [//DebugMessage:Despawn - Arrived at despawn point]
 
         [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Despawn_FlyToHomebase]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Despawn_ArriveAtHomebase]
 
         [ResetCooldownTimeOfTriggers:true]
         [ResetTriggerCooldownNames:MSB_System_Despawn_Trigger_ArrivedAtDespawnPoint_Delay]
@@ -698,8 +698,8 @@
         [UseTrigger:false]
         [StartsReady:false]
 
-        [MinCooldownMs:500]
-        [MaxCooldownMs:501]
+        [MinCooldownMs:1000]
+        [MaxCooldownMs:1001]
 
         [Actions:MSB_System_Despawn_Action_ArrivedAtDespawnPoint]
       </Description>
