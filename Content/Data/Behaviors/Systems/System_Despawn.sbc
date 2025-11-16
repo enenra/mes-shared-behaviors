@@ -76,8 +76,6 @@
 
         [//DebugMessage:Despawn - Set to Simple]
 
-        [SetBooleansTrue:MSB_System_Despawn_Active]
-
         [EnableTriggers:true]
         [EnableTriggerNames:MSB_System_Despawn_Trigger_Start_Simple]
       </Description>
@@ -143,6 +141,8 @@
         [RivalAI Action]
 
         [//DebugMessage:Despawn - Start Simple Despawn]
+
+        [SetBooleansTrue:MSB_System_Despawn_Active]
 
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Despawn_Simple]
@@ -325,8 +325,6 @@
         [RivalAI Action]
 
         [//DebugMessage:Despawn - Set to FlyToStatic]
-
-        [SetBooleansTrue:MSB_System_Despawn_Active]
       </Description>
     </EntityComponent>
 
@@ -356,6 +354,8 @@
         [RivalAI Action]
 
         [//DebugMessage:Despawn - Sending request for closest faction static]
+
+        [SetBooleansTrue:MSB_System_Despawn_Active]
 
         [ResetCooldownTimeOfTriggers:true]
         [ResetTriggerCooldownNames:MSB_System_Despawn_Trigger_Receive_NoResponse]
@@ -485,8 +485,6 @@
         [RivalAI Action]
 
         [//DebugMessage:Despawn - Set to FlyToHomebase]
-
-        [SetBooleansTrue:MSB_System_Despawn_Active]
       </Description>
     </EntityComponent>
 
@@ -516,6 +514,8 @@
         [RivalAI Action]
 
         [//DebugMessage:Despawn - Sending request for homebase location]
+
+        [SetBooleansTrue:MSB_System_Despawn_Active]
 
         [ResetCooldownTimeOfTriggers:true]
         [ResetTriggerCooldownNames:MSB_System_Despawn_Trigger_Receive_NoResponse]
