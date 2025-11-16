@@ -641,6 +641,9 @@
 
         [//DebugMessage:Despawn - Reducing Speed and MinAltitude]
 
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Despawn_PrepareForLanding]
+
         [ChangeAutopilotMinAltitude:true]
         [NewAutopilotMinAltitude:15]
 
@@ -698,7 +701,7 @@
         [//DebugMessage:Despawn - Arrived at despawn point]
 
         [ManuallyActivateTrigger:true]
-        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Despawn_ArriveAtHomebase]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Despawn_ArriveAtDespawnPoint]
 
         [ResetCooldownTimeOfTriggers:true]
         [ResetTriggerCooldownNames:MSB_System_Despawn_Trigger_ArrivedAtDespawnPoint_Delay]

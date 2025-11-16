@@ -601,6 +601,39 @@
       </Description>
     </EntityComponent>
 
+    <!-- Despawn - PrepareForLanding-->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Dialogue_Trigger_Despawn_PrepareForLanding</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Manual]
+        [Tags:MSB_TriggerEvent_Despawn_PrepareForLanding]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Actions:MSB_System_Dialogue_Action_Despawn_PrepareForLanding]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Dialogue_Action_Despawn_PrepareForLanding</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [Chance:100]
+
+        [PlayDialogueCue:true]
+        [DialogueCueId:Despawn_PrepareForLanding]
+      </Description>
+    </EntityComponent>
+
     <!-- PlayerNear1000Friendly -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
