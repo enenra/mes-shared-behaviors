@@ -30,6 +30,7 @@
         [Triggers:MSB_System_Dialogue_Trigger_PlayerNear1000Neutral_Cooldown]
 
         [Triggers:MSB_System_Dialogue_Trigger_Despawn]
+        [Triggers:MSB_System_Dialogue_Trigger_Despawn_PrepareForLanding]
 
         [Triggers:MSB_System_Dialogue_Trigger_InitCombatType_Fighter]
         [Triggers:MSB_System_Dialogue_Trigger_InitCombatType_Fighter_Delay]
