@@ -76,6 +76,7 @@
 
         [TriggerTimerBlocks:true]
         [TimerBlockNames:Timer - IsOnDarkSide]
+        [TimerBlockNames:Timer - VeryBadOrBadWeatherOrNight]
       </Description>
     </EntityComponent>
 
@@ -128,6 +129,7 @@
 
         [TriggerTimerBlocks:true]
         [TimerBlockNames:Timer - IsOnLightSide]
+        [TimerBlockNames:Timer - GoodWeatherOrDay]
       </Description>
     </EntityComponent>
 
@@ -166,6 +168,8 @@
 
         [TriggerTimerBlocks:true]
         [TimerBlockNames:Timer - VeryBadWeather]
+        [TimerBlockNames:Timer - VeryBadOrBadWeather]
+        [TimerBlockNames:Timer - VeryBadOrBadWeatherOrNight]
       </Description>
     </EntityComponent>
 
@@ -213,6 +217,8 @@
 
         [TriggerTimerBlocks:true]
         [TimerBlockNames:Timer - BadWeather]
+        [TimerBlockNames:Timer - VeryBadOrBadWeather]
+        [TimerBlockNames:Timer - VeryBadOrBadWeatherOrNight]
       </Description>
     </EntityComponent>
 
@@ -246,6 +252,7 @@
 
         [TriggerTimerBlocks:true]
         [TimerBlockNames:Timer - GoodWeather]
+        [TimerBlockNames:Timer - GoodWeatherOrDay]
       </Description>
     </EntityComponent>
 
