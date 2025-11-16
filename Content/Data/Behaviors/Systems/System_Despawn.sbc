@@ -401,11 +401,10 @@
         [RivalAI Trigger]
 
         [Type:CommandReceived]
+        [CommandReceiveCode:MSB_System_Despawn_Response_ClosestFactionStatic]
 
         [UseTrigger:false]
         [StartsReady:true]
-
-        [CommandReceiveCode:MSB_System_Despawn_Response_ClosestFactionStatic]
 
         [MaxActions:1]
         [Actions:MSB_System_Despawn_Action_Receive_ClosestFactionStatic]
@@ -561,11 +560,10 @@
         [RivalAI Trigger]
 
         [Type:CommandReceived]
+        [CommandReceiveCode:MSB_System_Despawn_Response_Homebase]
 
         [UseTrigger:false]
         [StartsReady:true]
-
-        [CommandReceiveCode:MSB_System_Despawn_Response_Homebase]
 
         [Conditions:MSB_System_Despawn_Condition_Receive_Homebase]
 
