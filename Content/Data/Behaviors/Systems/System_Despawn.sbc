@@ -289,6 +289,7 @@
         [Triggers:MSB_System_Despawn_Trigger_Receive_ClosestFactionStatic]
 
         [Triggers:MSB_System_Despawn_Trigger_PrepareForLanding]
+        [Triggers:MSB_System_Despawn_Trigger_PrepareForLanding_Delay]
         [Triggers:MSB_System_Despawn_Trigger_ArrivedAtDespawnPoint_Delay]
         [Triggers:MSB_System_Despawn_Trigger_ArrivedAtDespawnPoint]
         [Triggers:MSB_System_Despawn_Trigger_Receive_NoResponse]
@@ -435,7 +436,7 @@
     </EntityComponent>
 
 
-    <!-- Despawn: Fly to closest friendly static. -->
+    <!-- Despawn: Fly to Homebase. -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
@@ -449,6 +450,7 @@
         [Triggers:MSB_System_Despawn_Trigger_Receive_Homebase]
 
         [Triggers:MSB_System_Despawn_Trigger_PrepareForLanding]
+        [Triggers:MSB_System_Despawn_Trigger_PrepareForLanding_Delay]
         [Triggers:MSB_System_Despawn_Trigger_ArrivedAtDespawnPoint_Delay]
         [Triggers:MSB_System_Despawn_Trigger_ArrivedAtDespawnPoint]
         [Triggers:MSB_System_Despawn_Trigger_Receive_NoResponse]
@@ -616,6 +618,41 @@
       <Id>
         <TypeId>Inventory</TypeId>
         <SubtypeId>MSB_System_Despawn_Trigger_PrepareForLanding</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:false]
+        [StartsReady:false]
+
+        [MinCooldownMs:1000]
+        [MaxCooldownMs:1001]
+
+        [MaxActions:1]
+        [Actions:MSB_System_Despawn_Action_PrepareForLanding_Delay]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Despawn_Action_PrepareForLanding_Delay</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB_System_Despawn_Trigger_PrepareForLanding_Delay]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_System_Despawn_Trigger_PrepareForLanding_Delay]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Despawn_Trigger_PrepareForLanding_Delay</SubtypeId>
       </Id>
       <Description>
         [RivalAI Trigger]
