@@ -646,6 +646,28 @@
 
         [ChangeAutopilotSpeed:true]
         [NewAutopilotSpeed:10]
+
+        [BroadcastCommandProfiles:true]
+        [CommandProfileIds:MSB_System_Despawn_Command_PrepareForLanding]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Despawn_Command_PrepareForLanding</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Command]
+
+        [CommandCode:MSB_System_Despawn_Request_PrepareForLanding]
+
+        [MatchSenderReceiverOwners:true]
+        [SingleRecipient:true]
+
+        [IgnoreAntennaRequirement:true]
+        [Radius:1500]
+
+        [CommandDelayTicks:50]
       </Description>
     </EntityComponent>
 

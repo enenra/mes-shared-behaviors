@@ -14,6 +14,8 @@
     MSB_EnvironmentSystem_Trigger_PlayerNear1000: Triggers "Timer - PlayerNear" when player is within 1km.
     MSB_EnvironmentSystem_Trigger_PlayerFar5000: Triggers "Timer - PlayerFar" when player is within 5km.
 
+    MSB_EnvironmentSystem_Trigger_ShipLanding: Triggers "Timer - ShipLanding" when a ship is preparing to land at this encounter.
+
     MSB_EnvironmentSystem_TriggerGroup_SkinReplacement: This will switch dusty / mossy / frozen skinned blocks to whichever is fitting for the surrounding voxels where the encounter spawned. Rusty skin is the fallback.
 
     MSB_Manipulation_WearAndTear_Light: These apply block damage and change skins to default / wartorn depending on severity chosen.
@@ -316,6 +318,40 @@
 
         [TriggerTimerBlocks:true]
         [TimerBlockNames:Timer - PlayerFar]
+      </Description>
+    </EntityComponent>
+
+    <!-- Prepare for landing of ship on active encounter -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_EnvironmentSystem_Trigger_ShipLanding</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:CommandReceived]
+        [CommandReceiveCode:MSB_System_Despawn_Request_PrepareForLanding]
+
+        [UseTrigger:true]
+        [StartsReady:false]
+
+        [Actions:MSB_EnvironmentSystem_Action_ShipLanding]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_EnvironmentSystem_Action_ShipLanding</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_ShipLanding]
+
+        [TriggerTimerBlocks:true]
+        [TimerBlockNames:Timer - ShipLanding]
       </Description>
     </EntityComponent>
 

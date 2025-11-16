@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Dialogue_TriggerGroup_Static</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI TriggerGroup]
+
+        [Triggers:MSB_System_Dialogue_Trigger_EnemyDestroyed]
+        [Triggers:MSB_System_Dialogue_Trigger_EnemyDestroyedwithPlayerHelp]
+        [Triggers:MSB_System_Dialogue_Trigger_EnemyDestroyedwithPlayerMadeFinalShot]
+
+        [Triggers:MSB_System_Dialogue_Trigger_DamageByFriendlyOrNeutral]
+        [Triggers:MSB_System_Dialogue_Trigger_DamageByFriendlyOrNeutral_Cooldown]
+        [Triggers:MSB_System_Dialogue_Trigger_UnderFire]
+        [Triggers:MSB_System_Dialogue_Trigger_UnderFire_Cooldown]
+        [Triggers:MSB_System_Dialogue_Trigger_UnderFireHealthLow]
+        [Triggers:MSB_System_Dialogue_Trigger_UnderFireHealthLow_Cooldown]
+        [Triggers:MSB_System_Dialogue_Trigger_UnderFireGoingDown]
+        [Triggers:MSB_System_Dialogue_Trigger_UnderFireGoingDown_Cooldown]
+        [Triggers:MSB_System_Dialogue_Trigger_Compromised]
+
+        [Triggers:MSB_System_Dialogue_Trigger_PlayerNear1000Friendly]
+        [Triggers:MSB_System_Dialogue_Trigger_PlayerNear1000Friendly_Cooldown]
+        [Triggers:MSB_System_Dialogue_Trigger_PlayerNear1000Neutral]
+        [Triggers:MSB_System_Dialogue_Trigger_PlayerNear1000Neutral_Cooldown]
+
+        [Triggers:MSB_System_Dialogue_Trigger_Despawn]
+
+        [Triggers:MSB_System_Dialogue_Trigger_Static_TargetIsApproaching]
+
+        [Triggers:MSB_System_Dialogue_Trigger_Sending_AllGood]
+        [Triggers:MSB_System_Dialogue_Trigger_Receiving_AllGood]
+        [Triggers:MSB_System_Dialogue_Trigger_Sending_SOS]
+        [Triggers:MSB_System_Dialogue_Trigger_Receiving_SOS]
+        [Triggers:MSB_System_Dialogue_Trigger_SOS_Response_Timeout]
+        [Triggers:MSB_System_Dialogue_Trigger_Received_Compromised]
+
+        [Triggers:MSB_System_Dialogue_Trigger_AreaRestriction_Warning]
+
+        [Triggers:MSB_System_Dialogue_Trigger_Environment_ShipLanding]
+      </Description>
+    </EntityComponent>
+
+  </EntityComponents>
+</Definitions>

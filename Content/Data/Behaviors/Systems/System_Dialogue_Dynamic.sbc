@@ -76,6 +76,8 @@
         [Triggers:MSB_System_Dialogue_Trigger_Received_Compromised]
 
         [Triggers:MSB_System_Dialogue_Trigger_AreaRestriction_Warning]
+
+        [Triggers:MSB_System_Dialogue_Trigger_Environment_ShipLanding]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -978,6 +980,39 @@
 
         [PlayDialogueCue:true]
         [DialogueCueId:AreaRestriction_Warning]
+      </Description>
+    </EntityComponent>
+
+    <!-- ShipLanding -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Dialogue_Trigger_Environment_ShipLanding</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Manual]
+        [Tags:MSB_TriggerEvent_ShipLanding]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [Actions:MSB_System_Dialogue_Action_Environment_ShipLanding]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Dialogue_Action_Environment_ShipLanding</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [Chance:100]
+
+        [PlayDialogueCue:true]
+        [DialogueCueId:ShipLanding]
       </Description>
     </EntityComponent>
 
