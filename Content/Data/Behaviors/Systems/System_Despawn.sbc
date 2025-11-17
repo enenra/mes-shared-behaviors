@@ -292,6 +292,7 @@
         [Triggers:MSB_System_Despawn_Trigger_PrepareForLanding_Delay]
         [Triggers:MSB_System_Despawn_Trigger_ArrivedAtDespawnPoint_Delay]
         [Triggers:MSB_System_Despawn_Trigger_ArrivedAtDespawnPoint]
+        [Triggers:MSB_System_Despawn_Trigger_LandingTimeout]
         [Triggers:MSB_System_Despawn_Trigger_Receive_NoResponse]
 
         [Triggers:MSB_System_Despawn_Trigger_CombatEnded]
@@ -452,6 +453,7 @@
         [Triggers:MSB_System_Despawn_Trigger_PrepareForLanding_Delay]
         [Triggers:MSB_System_Despawn_Trigger_ArrivedAtDespawnPoint_Delay]
         [Triggers:MSB_System_Despawn_Trigger_ArrivedAtDespawnPoint]
+        [Triggers:MSB_System_Despawn_Trigger_LandingTimeout]
         [Triggers:MSB_System_Despawn_Trigger_Receive_NoResponse]
 
         [Triggers:MSB_System_Despawn_Trigger_CombatEnded]
@@ -690,6 +692,12 @@
 
         [BroadcastCommandProfiles:true]
         [CommandProfileIds:MSB_System_Despawn_Command_PrepareForLanding]
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB_System_Despawn_Trigger_LandingTimeout]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_System_Despawn_Trigger_LandingTimeout]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -885,6 +893,46 @@
 
         [ChangeBehaviorSubclass:true]
         [NewBehaviorSubclass:CargoShip]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Despawn_Trigger_LandingTimeout</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:false]
+        [StartsReady:false]
+
+        [MinCooldownMs:300000]
+        [MaxCooldownMs:300001]
+
+        [MaxActions:1]
+        [Actions:MSB_System_Despawn_Action_LandingTimeout]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_System_Despawn_Action_LandingTimeout</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage:Despawn - Falling back to Simple Despawn]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Despawn_LandingTimeout]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_System_Despawn_Trigger_ArrivedAtDespawnPoint]
+
+        [Retreat:true]
       </Description>
     </EntityComponent>
 
