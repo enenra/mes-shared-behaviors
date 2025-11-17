@@ -754,6 +754,9 @@
 
         [EnableTriggers:true]
         [EnableTriggerNames:MSB_System_Despawn_Trigger_ArrivedAtDespawnPoint_Delay]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_System_Despawn_Trigger_LandingTimeout]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
