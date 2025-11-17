@@ -657,10 +657,13 @@
 
         [Type:WaypointNear]
 
-        [TargetDistance:2000]
+        [TargetDistance:1500]
 
         [UseTrigger:false]
         [StartsReady:false]
+
+        [MinCooldownMs:5000]
+        [MaxCooldownMs:5001]
 
         [MaxActions:1]
         [Actions:MSB_System_Despawn_Action_PrepareForLanding]
