@@ -62,11 +62,11 @@
       </Id>
       <Description>
         [RivalAI Trigger]
+
+        [Type:Manual]
         [Tags:MSB_Role_InitRole]
 
         [UseTrigger:true]
-        [Type:Manual]
-
         [StartsReady:false]
 
         [MaxActions:-1]
@@ -100,11 +100,10 @@
       <Description>
         [RivalAI Trigger]
 
+        [Type:Manual]
         [Tags:MSB_Role_CloseRole]
 
         [UseTrigger:true]
-        [Type:Manual]
-
         [StartsReady:false]
 
         [MaxActions:-1]
