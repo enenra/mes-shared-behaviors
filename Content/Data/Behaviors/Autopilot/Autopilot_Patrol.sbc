@@ -12,6 +12,7 @@
 
         [DisableInertiaDampeners:false]
         [FlyLevelWithGravity:true]
+        [UseVelocityCollisionEvasion:false]
 
         [MinimumPlanetAltitude:250]
         [IdealPlanetAltitude:500]
@@ -19,19 +20,18 @@
         [IdealMinSpeed:50]
         [IdealMaxSpeed:75]
 
+        [LimitRotationSpeed:true]
+        [MaxRotationMagnitude:0.2]
+
         [SlowDownOnWaypointApproach:true]
         [WaypointTolerance:50]
         [WaypointWaitTimeTrigger:120]
 
-        [DespawnCoordsMinDistance:15000]
-        [DespawnCoordsMaxDistance:20000]
-
         [MinAngleForLeveledDescent:135]
         [MaxAngleForLeveledAscent:90]
 
-        [UseVelocityCollisionEvasion:false]
-        [LimitRotationSpeed:true]
-        [MaxRotationMagnitude:0.2]
+        [DespawnCoordsMinDistance:15000]
+        [DespawnCoordsMaxDistance:20000]
       </Description>
     </EntityComponent>
 
@@ -45,7 +45,7 @@
 
         [DisableInertiaDampeners:false]
         [FlyLevelWithGravity:true]
-        [UseVelocityCollisionEvasion:true]
+        [UseVelocityCollisionEvasion:false]
 
         [MinimumPlanetAltitude:200]
         [IdealPlanetAltitude:300]
@@ -53,12 +53,12 @@
         [IdealMinSpeed:50]
         [IdealMaxSpeed:75]
 
-        [SlowDownOnWaypointApproach:true]
-        [WaypointTolerance:30]
-
         [LimitRotationSpeed:true]
         [MaxRotationMagnitude:0.2]
         [//AngleAllowedForForwardThrust:35]
+
+        [SlowDownOnWaypointApproach:true]
+        [WaypointTolerance:30]
 
         [MinAngleForLeveledDescent:90]
         [MaxAngleForLeveledAscent:90]
