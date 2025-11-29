@@ -339,6 +339,7 @@
 
         [Type:Manual]
         [Tags:MSB_TriggerEvent_Despawn]
+        [Tags:MSB_TriggerEvent_RestartDespawn]
 
         [UseTrigger:true]
         [StartsReady:true]
@@ -357,6 +358,9 @@
         [//DebugMessage:Despawn - Sending request for closest faction static]
 
         [SetBooleansTrue:MSB_System_Despawn_Active]
+
+        [ChangeBehaviorSubclass:true]
+        [NewBehaviorSubclass:CargoShip]
 
         [ResetCooldownTimeOfTriggers:true]
         [ResetTriggerCooldownNames:MSB_System_Despawn_Trigger_Receive_NoResponse]
@@ -407,7 +411,6 @@
         [UseTrigger:false]
         [StartsReady:true]
 
-        [MaxActions:1]
         [Actions:MSB_System_Despawn_Action_Receive_ClosestFactionStatic]
       </Description>
     </EntityComponent>
@@ -421,12 +424,13 @@
 
         [//DebugMessage:Despawn - Received Response]
 
-        [ChangeBehaviorSubclass:true]
-        [NewBehaviorSubclass:CargoShip]
+        [//ChangeBehaviorSubclass:true]
+        [//NewBehaviorSubclass:CargoShip]
 
         [AddWaypointFromCommand:true]
 
         [DisableTriggers:true]
+        [DisableTriggerNames:MSB_System_Despawn_Trigger_Receive_ClosestFactionStatic]
         [DisableTriggerNames:MSB_System_Despawn_Trigger_Receive_NoResponse]
 
         [EnableTriggers:true]
@@ -500,6 +504,7 @@
 
         [Type:Manual]
         [Tags:MSB_TriggerEvent_Despawn]
+        [Tags:MSB_TriggerEvent_RestartDespawn]
 
         [UseTrigger:true]
         [StartsReady:true]
@@ -518,6 +523,9 @@
         [//DebugMessage:Despawn - Sending request for homebase location]
 
         [SetBooleansTrue:MSB_System_Despawn_Active]
+
+        [ChangeBehaviorSubclass:true]
+        [NewBehaviorSubclass:CargoShip]
 
         [ResetCooldownTimeOfTriggers:true]
         [ResetTriggerCooldownNames:MSB_System_Despawn_Trigger_Receive_NoResponse]
@@ -569,7 +577,6 @@
 
         [Conditions:MSB_System_Despawn_Condition_Receive_Homebase]
 
-        [MaxActions:1]
         [Actions:MSB_System_Despawn_Action_Receive_Homebase]
       </Description>
     </EntityComponent>
@@ -598,12 +605,13 @@
 
         [//DebugMessage:Despawn - Received Response, heading to homebase]
 
-        [ChangeBehaviorSubclass:true]
-        [NewBehaviorSubclass:CargoShip]
+        [//ChangeBehaviorSubclass:true]
+        [//NewBehaviorSubclass:CargoShip]
 
         [AddWaypointFromCommand:true]
 
         [DisableTriggers:true]
+        [DisableTriggerNames:MSB_System_Despawn_Trigger_Receive_Homebase]
         [DisableTriggerNames:MSB_System_Despawn_Trigger_Receive_NoResponse]
 
         [EnableTriggers:true]
@@ -630,7 +638,6 @@
         [MinCooldownMs:1000]
         [MaxCooldownMs:1001]
 
-        [MaxActions:1]
         [Actions:MSB_System_Despawn_Action_PrepareForLanding_Delay]
       </Description>
     </EntityComponent>
@@ -641,6 +648,9 @@
       </Id>
       <Description>
         [RivalAI Action]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_System_Despawn_Trigger_PrepareForLanding]
 
         [ResetCooldownTimeOfTriggers:true]
         [ResetTriggerCooldownNames:MSB_System_Despawn_Trigger_PrepareForLanding_Delay]
@@ -667,7 +677,6 @@
         [MinCooldownMs:5000]
         [MaxCooldownMs:5001]
 
-        [MaxActions:1]
         [Actions:MSB_System_Despawn_Action_PrepareForLanding]
       </Description>
     </EntityComponent>
@@ -692,6 +701,9 @@
 
         [BroadcastCommandProfiles:true]
         [CommandProfileIds:MSB_System_Despawn_Command_PrepareForLanding]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_System_Despawn_Trigger_PrepareForLanding_Delay]
 
         [ResetCooldownTimeOfTriggers:true]
         [ResetTriggerCooldownNames:MSB_System_Despawn_Trigger_LandingTimeout]
@@ -806,7 +818,6 @@
         [MinCooldownMs:10000]
         [MaxCooldownMs:10001]
 
-        [MaxActions:1]
         [Actions:MSB_System_Despawn_Action_Receive_NoResponse]
       </Description>
     </EntityComponent>
@@ -894,8 +905,11 @@
 
         [//DebugMessage:Despawn - Returning to Despawn]
 
-        [ChangeBehaviorSubclass:true]
-        [NewBehaviorSubclass:CargoShip]
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_System_Despawn_Trigger_CombatEnded_Delay]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_RestartDespawn]
       </Description>
     </EntityComponent>
 
@@ -915,7 +929,6 @@
         [MinCooldownMs:300000]
         [MaxCooldownMs:300001]
 
-        [MaxActions:1]
         [Actions:MSB_System_Despawn_Action_LandingTimeout]
       </Description>
     </EntityComponent>
