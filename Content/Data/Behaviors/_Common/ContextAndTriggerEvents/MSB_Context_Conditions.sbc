@@ -44,6 +44,8 @@
     NormalNeutral
     Playernear
     HasNoTarget
+
+    NOTE: These are all used in AaW. Do not remove!
     -->
 
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">

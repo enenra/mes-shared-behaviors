@@ -74,8 +74,10 @@
       <Description>
         [RivalAI Action]
 
+        [DebugMessage:HorseNautical]
+
         [ChangeBehaviorSubclass:true]
-        [NewBehaviorSubclass:Nautical]
+        [NewBehaviorSubclass:HorseNautical]
 
         [ChangeAutopilotProfile:true]
         [AutopilotProfile:Secondary]

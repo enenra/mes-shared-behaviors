@@ -16,12 +16,90 @@
         [FlyLevelWithGravity:false]
         [AllowStrafing:false]
         [WaypointTolerance:30]
-        [IdealMinSpeed:10]
-        [IdealMaxSpeed:100]
+        [IdealMinSpeed:5]
+        [IdealMaxSpeed:15]
+        [MaxSpeedTolerance:5]
+
+        [RotationMultiplier:0.50]
+
+
+        [OffsetMaxAngleFromTarget:50]
+
+        [OffsetPlanetMinDistFromTarget:600]
+        [OffsetPlanetMaxDistFromTarget:1200]
+        [OffsetPlanetMinTargetAltitude:0]
+        [OffsetPlanetMaxTargetAltitude:500]
+
       </Description>
     </EntityComponent>
 
 
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_NauticalDisengage_AutoPilot</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Autopilot]
+
+        [DisableInertiaDampeners:false]
+        [SlowDownOnWaypointApproach:false]
+        [ExtraSlowDownDistance:0]
+        [FlyLevelWithGravity:false]
+        [AllowStrafing:false]
+        [WaypointTolerance:30]
+        [IdealMinSpeed:10]
+        [IdealMaxSpeed:40]
+
+        [RotationMultiplier:0.50]
+
+
+        [OffsetMaxAngleFromTarget:10]
+
+        [OffsetPlanetMinDistFromTarget:10000]
+        [OffsetPlanetMaxDistFromTarget:11000]
+        [OffsetPlanetMinTargetAltitude:0]
+        [OffsetPlanetMaxTargetAltitude:1]
+
+      </Description>
+    </EntityComponent>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_NauticalCarrier_AutoPilot</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Autopilot]
+
+        [DisableInertiaDampeners:false]
+        [SlowDownOnWaypointApproach:false]
+        [ExtraSlowDownDistance:0]
+        [FlyLevelWithGravity:false]
+        [AllowStrafing:false]
+        [WaypointTolerance:30]
+        [IdealMinSpeed:5]
+        [IdealMaxSpeed:110]
+        [WaypointWaitTimeTrigger:1]
+
+      [MaxSpeedTolerance:5]
+        [RotationMultiplier:0.50]
+
+
+
+        [OffsetSpaceMinDistFromTarget:3000]
+        [OffsetSpaceMaxDistFromTarget:3500]
+
+        [OffsetMaxAngleFromTarget:10]
+
+        [OffsetPlanetMinDistFromTarget:3000]
+        [OffsetPlanetMaxDistFromTarget:3500]
+        [OffsetPlanetMinTargetAltitude:0]
+        [OffsetPlanetMaxTargetAltitude:500]
+
+      </Description>
+    </EntityComponent>
 
 
   </EntityComponents>
