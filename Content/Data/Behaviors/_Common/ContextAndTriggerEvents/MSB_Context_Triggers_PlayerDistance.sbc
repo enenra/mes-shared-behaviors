@@ -81,11 +81,19 @@
         [SetBooleansFalse:PlayerFar2500]        
         [SetBooleansFalse:PlayerFar5000]
 
-
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_PlayerNear100]
         [ForceManualTriggerActivation:false]
 
+        [EnableTriggerTags:MSB_PlayerNear5000_Triggers]
+        [EnableTriggerTags:MSB_PlayerNear2500_Triggers]
+        [EnableTriggerTags:MSB_PlayerNear1000_Triggers]
+        [EnableTriggerTags:MSB_PlayerNear100_Triggers]
+
+        [DisableTriggerTags:MSB_PlayerFar5000_Triggers]
+        [DisableTriggerTags:MSB_PlayerFar2500_Triggers]
+        [DisableTriggerTags:MSB_PlayerFar1000_Triggers]
+        [DisableTriggerTags:MSB_PlayerFar100_Triggers]
 
         [DisableTriggers:true]       
         [DisableTriggerNames:MSB_Context_Trigger_PlayerNear100]
@@ -165,7 +173,13 @@
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_PlayerNear1000]
         [ForceManualTriggerActivation:false]
 
+        [EnableTriggerTags:MSB_PlayerNear5000_Triggers]
+        [EnableTriggerTags:MSB_PlayerNear2500_Triggers]
+        [EnableTriggerTags:MSB_PlayerNear1000_Triggers]
 
+        [DisableTriggerTags:MSB_PlayerFar5000_Triggers]
+        [DisableTriggerTags:MSB_PlayerFar2500_Triggers]
+        [DisableTriggerTags:MSB_PlayerFar1000_Triggers]
 
         [DisableTriggers:true]       
         
@@ -246,6 +260,11 @@
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_PlayerNear2500]
         [ForceManualTriggerActivation:false]
 
+        [EnableTriggerTags:MSB_PlayerNear5000_Triggers]
+        [EnableTriggerTags:MSB_PlayerNear2500_Triggers]
+
+        [DisableTriggerTags:MSB_PlayerFar5000_Triggers]
+        [DisableTriggerTags:MSB_PlayerFar2500_Triggers]
 
         [DisableTriggers:true]       
         
@@ -322,6 +341,9 @@
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_PlayerNear5000]
         [ForceManualTriggerActivation:false]
 
+        [EnableTriggerTags:MSB_PlayerNear5000_Triggers]
+
+        [DisableTriggerTags:MSB_PlayerFar5000_Triggers]
 
         [DisableTriggers:true]       
         [DisableTriggerNames:MSB_Context_Trigger_PlayerNear5000]
@@ -329,6 +351,12 @@
         [DisableTriggerNames:MSB_Context_Trigger_PlayerFar1000]
         [DisableTriggerNames:MSB_Context_Trigger_PlayerFar2500]
         
+        [DisableTriggerTags:MSB_PlayerFar5000_Triggers]
+
+
+
+
+
         [EnableTriggers:true]
         [EnableTriggerNames:MSB_Context_Trigger_PlayerNear100]
         [EnableTriggerNames:MSB_Context_Trigger_PlayerNear1000]     
@@ -396,6 +424,10 @@
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_PlayerFar100]
         [ForceManualTriggerActivation:false]
+
+        [DisableTriggerTags:MSB_PlayerNear100_Triggers]
+
+        [EnableTriggerTags:MSB_PlayerFar100_Triggers]
 
         [DisableTriggers:true]       
         [DisableTriggerNames:MSB_Context_Trigger_PlayerFar100]  
@@ -474,6 +506,13 @@
         [ManuallyActivateTrigger:true]
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_PlayerFar1000]
         [ForceManualTriggerActivation:false]
+
+
+        [DisableTriggerTags:MSB_PlayerNear1000_Triggers]
+        [DisableTriggerTags:MSB_PlayerNear100_Triggers]
+
+        [EnableTriggerTags:MSB_PlayerFar1000_Triggers]
+        [EnableTriggerTags:MSB_PlayerFar100_Triggers]
 
         [DisableTriggers:true]       
         [DisableTriggerNames:MSB_Context_Trigger_PlayerFar100]  
@@ -554,6 +593,17 @@
         [ForceManualTriggerActivation:false]
 
 
+        [DisableTriggerTags:MSB_PlayerNear2500_Triggers]
+        [DisableTriggerTags:MSB_PlayerNear1000_Triggers]
+        [DisableTriggerTags:MSB_PlayerNear100_Triggers]
+
+        [EnableTriggerTags:MSB_PlayerFar2500_Triggers]
+        [EnableTriggerTags:MSB_PlayerFar1000_Triggers]
+        [EnableTriggerTags:MSB_PlayerFar100_Triggers]
+
+
+
+
         [DisableTriggers:true]       
 
         [DisableTriggerNames:MSB_Context_Trigger_PlayerFar100]  
@@ -567,6 +617,9 @@
         [EnableTriggerNames:MSB_Context_Trigger_PlayerNear1000]     
         [EnableTriggerNames:MSB_Context_Trigger_PlayerNear2500]
         [EnableTriggerNames:MSB_Context_Trigger_PlayerFar5000]
+
+
+
 
       </Description>
     </EntityComponent>
@@ -635,6 +688,20 @@
         [ManuallyActivatedTriggerTags:MSB_TriggerEvent_PlayerFar5000]
         [ForceManualTriggerActivation:false]
 
+
+        [DisableTriggerTags:MSB_PlayerNear5000_Triggers]
+        [DisableTriggerTags:MSB_PlayerNear2500_Triggers]
+        [DisableTriggerTags:MSB_PlayerNear1000_Triggers]
+        [DisableTriggerTags:MSB_PlayerNear100_Triggers]
+
+        [EnableTriggerTags:MSB_PlayerFar5000_Triggers]
+        [EnableTriggerTags:MSB_PlayerFar2500_Triggers]
+        [EnableTriggerTags:MSB_PlayerFar1000_Triggers]
+        [EnableTriggerTags:MSB_PlayerFar100_Triggers]
+
+
+
+
         [DisableTriggers:true]       
 
         [DisableTriggerNames:MSB_Context_Trigger_PlayerFar100]  
@@ -643,11 +710,14 @@
         [DisableTriggerNames:MSB_Context_Trigger_PlayerFar5000]
 
 
+
+
         [EnableTriggers:true]
         [EnableTriggerNames:MSB_Context_Trigger_PlayerNear100]
         [EnableTriggerNames:MSB_Context_Trigger_PlayerNear1000]     
         [EnableTriggerNames:MSB_Context_Trigger_PlayerNear2500]
         [EnableTriggerNames:MSB_Context_Trigger_PlayerNear5000]
+
 
 
 

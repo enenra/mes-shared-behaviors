@@ -15,54 +15,6 @@
 
     -->
 
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Fighter_Trigger_Compromised_PlayerClose</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Trigger]
-
-        [Type:PlayerNear]
-
-        [TargetDistance:5000]
-
-        [UseTrigger:true]
-        [StartsReady:true]
-
-        [MinCooldownMs:5000]
-        [MaxCooldownMs:5001]
-
-        [Actions:MSB_Fighter_Action_Compromised_PlayerClose]
-
-        [UseElseActions:true]
-        [ElseActions:MSB_Fighter_Action_Compromised_PlayerFar]
-      </Description>
-    </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Fighter_Action_Compromised_PlayerClose</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Action]
-
-        [DisableTriggers:true]
-        [DisableTriggerNames:MSB_Fighter_Trigger_Compromised_PlayerFar]
-      </Description>
-    </EntityComponent>
-    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
-      <Id>
-        <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Fighter_Action_Compromised_PlayerFar</SubtypeId>
-      </Id>
-      <Description>
-        [RivalAI Action]
-
-        [EnableTriggers:true]
-        [EnableTriggerNames:MSB_Fighter_Trigger_Compromised_PlayerFar]
-      </Description>
-    </EntityComponent>
 
     <!-- TODO: Fix this. It triggers when the encounter loses its target, even when it's not compromised at all. -->
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
@@ -73,10 +25,14 @@
       <Description>
         [RivalAI Trigger]
 
+        [Tags:MSB_PlayerFar5000_Triggers]
+
         [Type:Compromised]
 
         [UseTrigger:false]
+
         [StartsReady:false]
+
 
         [Actions:MSB_Fighter_Action_Compromised_PlayerFar]
       </Description>
@@ -89,8 +45,8 @@
       <Description>
         [RivalAI Action]
 
-        [//DebugMessage:Fighter - Compromised, PlayerFar, Despawn]
-        [ForceDespawn:true]
+        [DebugMessage:Fighter - Compromised, PlayerFar, Despawn]
+        [//ForceDespawn:true]
       </Description>
     </EntityComponent>
 

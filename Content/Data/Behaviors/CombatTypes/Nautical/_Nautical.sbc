@@ -74,7 +74,7 @@
       <Description>
         [RivalAI Action]
 
-        [DebugMessage:HorseNautical]
+        [//DebugMessage:HorseNautical]
 
         [ChangeBehaviorSubclass:true]
         [NewBehaviorSubclass:HorseNautical]
