@@ -199,6 +199,7 @@
         [ChangeAutopilotProfile:true]
         [AutopilotProfile:Tertiary]
         [ChangeBehaviorSubclass:Strike]
+        
       </Description>
     </EntityComponent>
 
@@ -217,16 +218,19 @@
         [StartsReady:true]
 
         [MaxActions:-1]
-        [Actions:MSB_Fighter_Action_EndingAttackRun_Delay]
+        [Actions:MSB_Fighter_Action_EndingAttackRun]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Fighter_Action_EndingAttackRun_Delay</SubtypeId>
+        <SubtypeId>MSB_Fighter_Action_EndingAttackRun</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
+        [//DebugMessage:Fighter - EndingAttackRun]
+        [ChangeAutopilotSpeed:true]
+        [NewAutopilotSpeed:80]
 
         [EnableTriggers:true]
         [EnableTriggerNames:MSB_Fighter_Trigger_EndingAttackRun_Delay]
@@ -254,18 +258,18 @@
         [MaxCooldownMs:1001]
 
         [MaxActions:-1]
-        [Actions:MSB_Fighter_Action_EndingAttackRun]
+        [Actions:MSB_Fighter_Action_EndingAttackRun_Delay]
       </Description>
     </EntityComponent>
     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
       <Id>
         <TypeId>Inventory</TypeId>
-        <SubtypeId>MSB_Fighter_Action_EndingAttackRun</SubtypeId>
+        <SubtypeId>MSB_Fighter_Action_EndingAttackRun_Delay</SubtypeId>
       </Id>
       <Description>
         [RivalAI Action]
 
-        [//DebugMessage:Fighter - EndingAttackRun]
+        [//DebugMessage:Fighter - EndingAttackRun Delay]
 
         [ChangeAutopilotProfile:true]
         [AutopilotProfile:Secondary]
@@ -273,6 +277,10 @@
 
         [DisableTriggers:true]
         [DisableTriggerNames:MSB_Fighter_Trigger_EndingAttackRun_Delay]
+
+
+
+
       </Description>
     </EntityComponent>
 

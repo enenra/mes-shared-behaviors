@@ -1,0 +1,183 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <!--
+    These are utilities for Drone-type grids.
+    -->
+
+    <!-- TODO: Compromised triggers are broken and thus disabled for now. -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Drone_TriggerGroup</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI TriggerGroup]
+
+        [Triggers:MSB_Drone_Trigger_Setup]
+
+        [Triggers:MSB_Drone_Trigger_InitCombatType]
+        [Triggers:MSB_Drone_Trigger_CloseFight]
+
+        [//Triggers:MSB_Drone_Trigger_Compromised_PlayerClose]
+        [//Triggers:MSB_Drone_Trigger_Compromised_PlayerFar]
+
+        [//Triggers:MSB_Drone_Trigger_BeforeHighSpeedImpact]
+        [//Triggers:MSB_Drone_Trigger_Compromised_BeforeHighSpeedImpact]
+        [//Triggers:MSB_Drone_Trigger_AfterHighSpeedImpact]
+
+
+        [Triggers:MSB_Drone_Trigger_AtLowAltitude]
+        [Triggers:MSB_Drone_Trigger_NotAtLowAltitude]
+
+        [Triggers:MSB_Drone_Trigger_LowAltitudeFighting_Enable]
+        [Triggers:MSB_Drone_Trigger_LowAltitudeFighting_Disable]
+        [Triggers:MSB_Drone_Trigger_LowAltitudeFighting_Disable_HighAltitude]
+        [Triggers:MSB_Drone_Trigger_LowAltitudeFighting_Disable_ChangedTarget]
+        [Triggers:MSB_Drone_Trigger_LowAltitudeFighting_Disable_TargetFar]
+        [Triggers:MSB_Drone_Trigger_LowAltitudeFighting_Disable_InitRole]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CPTDrone_TriggerGroup</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI TriggerGroup]
+
+        [Triggers:MSB_Drone_Trigger_Setup]
+
+        [Triggers:MSB_Drone_Trigger_InitCombatType]
+        [Triggers:MSB_Drone_Trigger_CloseFight]
+
+        [Triggers:MSB_Drone_Trigger_Compromised_PlayerFar]
+		
+		
+		
+		
+        [Triggers:MSB_Drone_Trigger_NoWeapon]
+
+
+
+
+
+
+        [Triggers:MSB_Drone_Trigger_BeforeHighSpeedImpact]
+        [Triggers:MSB_Drone_Trigger_Compromised_BeforeHighSpeedImpact]
+        [Triggers:MSB_Drone_Trigger_AfterHighSpeedImpact]
+
+        [Triggers:MSB_CPTDrone_Trigger_CloseDistanceFighting]
+        [Triggers:MSB_CPTDrone_Trigger_CloseDistanceFighting_Reset_ChangedTarget]
+        [Triggers:MSB_CPTDrone_Trigger_CloseDistanceFighting_Reset_TargetFar]
+      </Description>
+    </EntityComponent>
+
+    <!-- Setup -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Drone_Trigger_Setup</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [MaxActions:1]
+        [Actions:MSB_Drone_Action_Setup]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Drone_Action_Setup</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [SetBooleansTrue:MSB_CombatType_Drone]
+
+
+
+      </Description>
+    </EntityComponent>
+
+    <!-- Role -> CombatType -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Drone_Trigger_InitCombatType</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Tags:MSB_CombatType_InitCombatType]
+
+        [UseTrigger:true]
+        [Type:Manual]
+
+        [StartsReady:true]
+
+        [MaxActions:-1]
+        [Actions:MSB_Drone_Action_InitCombatType]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Drone_Action_InitCombatType</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [ManuallyActivateTrigger:true]
+        [ManuallyActivatedTriggerTags:MSB_TriggerEvent_Drone_InitCombatType]
+
+        [ChangeBehaviorSubclass:true]
+        [NewBehaviorSubclass:Fighter]
+
+        [ChangeAutopilotProfile:true]
+        [AutopilotProfile:Secondary]
+
+        [RefreshTarget:true]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Drone_Trigger_CloseCombatType</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Tags:MSB_CombatType_CloseCombatType]
+
+        [UseTrigger:true]
+        [Type:Manual]
+
+        [StartsReady:false]
+
+        [MaxActions:-1]
+        [Actions:MSB_Drone_Action_CloseCombatType]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Drone_Action_CloseCombatType</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+      </Description>
+    </EntityComponent>
+
+  </EntityComponents>
+</Definitions>

@@ -1,0 +1,61 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Drone_Autopilot</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Autopilot]
+
+        [DisableInertiaDampeners:true]
+        [FlyLevelWithGravity:false]
+        [LevelWithGravityWhenIdle:false]
+        [UseVelocityCollisionEvasion:false]
+
+        [SlowDownOnWaypointApproach:false]
+        [//ExtraSlowDownDistance:150]
+        [WaypointTolerance:25]
+
+        [//IdealMinSpeed:6]
+        [IdealMaxSpeed:22]
+        [MaxSpeedTolerance:5]
+
+        [MaxVerticalSpeed:-1]
+
+        [MinimumPlanetAltitude:5]
+        [UseSurfaceHoverThrustMode:true]
+        [IdealPlanetAltitude:15]
+
+        [AltitudeTolerance:5]
+
+        [LimitRotationSpeed:false]
+        [//MaxRotationMagnitude:1]
+        [AngleAllowedForForwardThrust:35]
+
+
+
+
+        [EngageDistanceSpace:50]
+        [EngageDistancePlanet:50]
+        [DisengageDistanceSpace:300]
+        [DisengageDistancePlanet:300]
+
+        [//AllowStrafing:false]
+        [//StrafeMinDurationMs:1000]
+        [//StrafeMaxDurationMs:1500]
+        [//StrafeSpeedCutOff:45]
+
+
+      </Description>
+    </EntityComponent>
+
+
+ 
+
+
+  </EntityComponents>
+</Definitions>

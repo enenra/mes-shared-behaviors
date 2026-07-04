@@ -1,0 +1,180 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <!--
+
+    If Player distance > 5000:
+    compromised -> Despawn;
+
+        [Triggers:MSB_Drone_Trigger_PlayerClose]
+        [Triggers:MSB_Drone_Trigger_Compromised_PlayerFar]
+
+        [Triggers:MSB_Drone_Trigger_Compromised_BeforeHighSpeedImpact]
+        [Triggers:MSB_Drone_Trigger_BeforeHighSpeedImpact]
+
+    -->
+
+
+    <!-- TODO: Fix this. It triggers when the encounter loses its target, even when it's not compromised at all. -->
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Drone_Trigger_Compromised_PlayerFar</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Tags:MSB_PlayerFar5000_Triggers]
+
+        [Type:Compromised]
+
+        [UseTrigger:false]
+
+        [StartsReady:false]
+
+
+        [Actions:MSB_Drone_Action_Compromised_PlayerFar]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Drone_Action_Compromised_PlayerFar</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DebugMessage:Drone - Compromised, PlayerFar, Despawn]
+        [ForceDespawn:true]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Drone_Trigger_BeforeHighSpeedImpact</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Manual]
+
+        [Tags:MSB_TriggerEvent_BeforeHighSpeedImpact]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [MaxActions:1]
+        [Actions:MSB_Drone_Action_BeforeHighSpeedImpact]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Drone_Action_BeforeHighSpeedImpact</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_Drone_Trigger_Compromised_BeforeHighSpeedImpact]
+        [EnableTriggerNames:MSB_Drone_Trigger_AfterHighSpeedImpact]
+
+        [ResetCooldownTimeOfTriggers:true]
+        [ResetTriggerCooldownNames:MSB_Drone_Trigger_AfterHighSpeedImpact]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Drone_Trigger_Compromised_BeforeHighSpeedImpact</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Compromised]
+
+        [UseTrigger:false]
+        [StartsReady:false]
+
+        [MaxActions:1]
+        [Actions:MSB_Drone_Action_Compromised_BeforeHighSpeedImpact]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Drone_Action_Compromised_BeforeHighSpeedImpact</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage:Drone - Compromised, BeforeHighSpeedImpact, Despawn Explosion]
+
+        [GenerateExplosion:true]
+        [ExplosionRange:50]
+        [ExplosionDamage:20]
+        [ExplosionIgnoresVoxels:true]
+
+        [ForceDespawn:true]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Drone_Trigger_AfterHighSpeedImpact</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [UseTrigger:false]
+        [StartsReady:false]
+
+        [MinCooldownMs:1000]
+        [MaxCooldownMs:1001]
+
+        [Conditions:MSB_Drone_Condition_AfterHighSpeedImpact]
+
+        [MaxActions:1]
+        [Actions:MSB_Drone_Action_AfterHighSpeedImpact]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Drone_Condition_AfterHighSpeedImpact</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+        [MatchAnyCondition:true]
+
+        [AltitudeCheck:true]
+        [MinAltitude:-1]
+        [MaxAltitude:15]
+        [AltitudeCheckIgnoreWater:false]
+        [CheckGridVerticalSpeed:true]
+
+        [MaxGridVerticalSpeed:15]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Drone_Action_AfterHighSpeedImpact</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_Drone_Trigger_Compromised_BeforeHighSpeedImpact]
+      </Description>
+    </EntityComponent>
+
+  </EntityComponents>
+</Definitions>

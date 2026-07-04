@@ -1,0 +1,188 @@
+﻿<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+
+<!--
+Do not remove this thank you...
+
+        [Triggers:MSB_CPTDrone_Trigger_CloseDistanceFighting]
+        [Triggers:MSB_CPTDrone_Trigger_CloseDistanceFighting_Reset_ChangedTarget]
+        [Triggers:MSB_CPTDrone_Trigger_CloseDistanceFighting_Reset_TargetFar]
+        [Triggers:MSB_CPTDrone_Trigger_CloseDistanceFighting_Reset_HighAltitude]
+
+
+-->
+
+     <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CPTDrone_Trigger_CloseDistanceFighting</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:TargetNear]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [TargetDistance:1200]
+
+        [Conditions:MSB_CPTDrone_Condition_CloseDistanceFighting]
+
+        [MaxActions:-1]
+        [Actions:MSB_CPTDrone_Action_CloseDistanceFighting]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CPTDrone_Condition_CloseDistanceFighting</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+
+        [CheckTargetDistance:true]
+        [MinTargetDistance:-1]
+        [MaxTargetDistance:800]
+
+
+        [CheckTrueBooleans:true]
+        [TrueBooleans:MSB_State_Combat]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CPTDrone_Action_CloseDistanceFighting</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage:CPTDrone - Close Distance Active]
+
+        [NewAutopilotSpeed:11]
+
+        [DisableTriggers:true]
+        [DisableTriggerNames:MSB_CPTDrone_Trigger_CloseDistanceFighting]
+
+        [EnableTriggers:true]
+        [EnableTriggerTags:CloseDistanceFighting]
+      </Description>
+    </EntityComponent>
+
+<!--
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CPTDrone_Trigger_CloseDistanceFighting_Reset_HighAltitude</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:Timer]
+
+        [Tags:CloseDistanceFighting]
+
+        [UseTrigger:false]
+        [StartsReady:true]
+
+        [Conditions:MSB_CPTDrone_Condition_HighAltitudeFighting]
+
+        [MaxActions:-1]
+        [Actions:MSB_CPTDrone_Action_CloseDistanceFighting_Reset]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CPTDrone_Condition_HighAltitudeFighting</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Condition]
+
+        [UseConditions:true]
+
+        [TargetAltitudeCheck:true]
+        [MinTargetAltitude:60]
+        [MaxTargetAltitude:-1]
+
+        [CheckTrueBooleans:true]
+        [TrueBooleans:MSB_State_Combat]
+      </Description>
+    </EntityComponent>
+-->
+
+
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CPTDrone_Trigger_CloseDistanceFighting_Reset_ChangedTarget</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:ChangedTarget]
+
+        [Tags:CloseDistanceFighting]
+        [UseTrigger:false]
+
+        [StartsReady:true]
+
+        [MaxActions:-1]
+        [Actions:MSB_CPTDrone_Action_CloseDistanceFighting_Reset]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CPTDrone_Trigger_CloseDistanceFighting_Reset_TargetFar</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:TargetFar]
+
+        [Tags:CloseDistanceFighting]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [TargetDistance:1000]
+
+        [Conditions:MSB_Utility_State_Condition_Check_State_Combat]
+
+        [MaxActions:-1]
+        [Actions:MSB_CPTDrone_Action_CloseDistanceFighting_Reset]
+      </Description>
+    </EntityComponent>
+
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_CPTDrone_Action_CloseDistanceFighting_Reset</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage:CPTDrone - CloseDistance Reset]
+
+        [ChangeAutopilotSpeed:true]
+        [NewAutopilotSpeed:35]
+
+        [DisableTriggers:true]
+        [DisableTriggerTags:CloseDistanceFighting]
+
+        [EnableTriggers:true]
+        [EnableTriggerNames:MSB_CPTDrone_Trigger_CloseDistanceFighting]
+      </Description>
+    </EntityComponent>
+
+  </EntityComponents>
+</Definitions>

@@ -1,0 +1,55 @@
+<?xml version="1.0"?>
+<Definitions xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <EntityComponents>
+
+    <!--
+
+    If Player distance > 5000:
+    compromised -> Despawn;
+
+        [Triggers:MSB_Drone_Trigger_NoWeapon]
+
+
+    -->
+
+
+ 
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Drone_Trigger_NoWeapon</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Trigger]
+
+        [Type:NoWeapon]
+
+        [UseTrigger:true]
+        [StartsReady:true]
+
+        [MaxActions:-1]
+        [Actions:MSB_Drone_Action_NoWeapon]
+      </Description>
+    </EntityComponent>
+    <EntityComponent xsi:type="MyObjectBuilder_InventoryComponentDefinition">
+      <Id>
+        <TypeId>Inventory</TypeId>
+        <SubtypeId>MSB_Drone_Action_NoWeapon</SubtypeId>
+      </Id>
+      <Description>
+        [RivalAI Action]
+
+        [//DebugMessage:Drone - Compromised, BeforeHighSpeedImpact, Despawn Explosion]
+
+        [GenerateExplosion:true]
+        [ExplosionRange:2]
+        [ExplosionDamage:5]
+        [ExplosionIgnoresVoxels:true]
+
+
+      </Description>
+    </EntityComponent>
+
+
+  </EntityComponents>
+</Definitions>
